@@ -14,8 +14,7 @@ import { useState } from "react";
 import { Plus, X } from "lucide-react";
 import { useAtom } from "jotai";
 import semestersStore from "@/app/semesterStore";
-import { Badge } from "./ui/badge";
-
+import {produce} from "immer";
 
 type CourseCardProps = Course & {
   dropped: boolean
@@ -47,6 +46,13 @@ const CourseCard: React.FC<CourseCardProps> = ({
       return newSemesters;
     });
   }
+  const addCourse = () => {
+    console.log("Adding course", code, "to semester", semester, "period", period, "block", block);
+    setSemesters(produce((draft) => {
+       draft[semester - 7][period[0] - 1][block - 1] = code;
+    }));
+  }
+
   return (
     <Card
       className={`relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
@@ -63,7 +69,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setOpenDialog(true)}
+          onClick={addCourse}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <Plus className="h-4 w-4" />
@@ -100,7 +106,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
       </CardHeader>
       <CardFooter className="flex flex-col gap-2 text-foreground">
-        <div className="grid grid-cols-3 gap-x-1 text-muted-foreground text-xs">
+        <div className="flex gap-2 text-muted-foreground text-xs">
           <div><strong>S:</strong> {semester}</div>
           <div><strong>P:</strong> {period.join("/")}</div>
           <div><strong>B:</strong> {block}</div>

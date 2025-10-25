@@ -12,6 +12,7 @@ import { range } from 'lodash';
 
 import { Course, COURSES } from "./courses";
 import { Drawer } from "./Drawer";
+import { RequirementsBar } from "../components/RequirementsBar";
 
 
 const MjukvaraPage: React.FC = () => {
@@ -35,9 +36,10 @@ const MjukvaraPage: React.FC = () => {
     <DndContext onDragEnd={dragEndEventHandler} sensors={sensors}>
       <div className="grid [grid-template-columns:auto_1fr] py-4">
         <div>
-          <Drawer />
+          <Drawer/>
         </div>
-        <div className="flex flex-col  gap-4 p-8">
+        <div className="flex flex-col  gap-4 px-8">
+          <RequirementsBar/>
           {SEMESTERS.map((index) => (
             <SemesterView
               key={index}

@@ -1,7 +1,7 @@
-import { sign } from "crypto";
 import { Badge } from "./ui/badge";
-import { BrainCircuit, Pill, BrickWallShield, Joystick, BriefcaseBusiness, Variable, ServerCog, Sparkle, Sparkles, Shield, Pi, Server } from "lucide-react";
+import { Pill, Joystick, BriefcaseBusiness, Sparkles, Shield, Pi, Server } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Fragment } from "react";
 
 type MastersBadgeProps = {
     program: string;
@@ -38,13 +38,14 @@ const programIcons: Record<string, React.ReactNode> = {
     "SOFT": <Server size={size} />,
 };
 
-export const MastersBadge = ({ program }: MastersBadgeProps) => {
+export const MastersBadgeRequire = ({ program }: MastersBadgeProps) => {
 
 
     return (
         <Tooltip>
             <TooltipTrigger asChild>
-                <Badge variant={"outline"} className={`mr-2 ${programColors[program]}`}>{programIcons[program]}</Badge>
+                    <Badge variant={"outline"} className={`mr-2 ${programColors[program]}`}>{programIcons[program]} 0%</Badge>
+                
             </TooltipTrigger>
             <TooltipContent side='bottom'>
                 {programNames[program]}

@@ -144,7 +144,7 @@ export const COURSES: Record<string, Course> = {
     link: "https://studieinfo.liu.se/en/kurs/TDDD23/ht-2026",
     mastersPrograms: ["GAMES"]
   },
-  "TDDD34": {
+  "TDDC34": {
     code: "TDDC34",
     name: "Technical, Economic and Societal Evaluation of IT-products",
     semester: 7,
