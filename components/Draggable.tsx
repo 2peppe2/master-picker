@@ -9,10 +9,11 @@ type DraggableProps = {
   children: React.ReactNode;
 }
 function Draggable(props: DraggableProps) {
-  const {attributes, listeners, setNodeRef, transform} = useDraggable({
+  const {attributes, listeners, setNodeRef, transform, active} = useDraggable({
     id: props.id,
     data: props.data,
   });
+  const isDragging = active?.id === props.id;
   const style: React.CSSProperties = {
     // Outputs `translate3d(x, y, 0)`
     transform: CSS.Translate.toString(transform),
@@ -20,9 +21,11 @@ function Draggable(props: DraggableProps) {
     WebkitUserSelect: 'none',
     userSelect: 'none',
     WebkitTapHighlightColor: 'transparent',
+    zIndex: isDragging ? 9999 : undefined,
   };
 
   return (
+    
     <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
       {props.children}
     </button>

@@ -1,8 +1,7 @@
 import { sign } from "crypto";
 import { Badge } from "./ui/badge";
-import { BrainCircuit, Pill, BrickWallShield, Joystick, BriefcaseBusiness, Variable, ServerCog } from "lucide-react";
-import { Tooltip, TooltipTrigger } from "./ui/tooltip";
-import { TooltipContent } from "@radix-ui/react-tooltip";
+import { BrainCircuit, Pill, BrickWallShield, Joystick, BriefcaseBusiness, Variable, ServerCog, Sparkle, Sparkles, Shield, Pi, Server } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type MastersBadgeProps = {
     program: string;
@@ -16,8 +15,8 @@ const programColors: Record<string, string> = {
     SECURE: "bg-red-100 text-red-800 border-red-300 dark:bg-red-900/20 dark:text-red-300",
     GAMES: "bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/20 dark:text-emerald-300",
     IND: "bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-900/20 dark:text-amber-300",
-    PROG: "bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-900/20 dark:text-gray-300",
-    LARGE: "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
+    ALGO: "bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-900/20 dark:text-gray-300",
+    SOFT: "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
 };
 const programNames: Record<string, string> = {
   AI: "Artificial Intelligence & Machine Learning",
@@ -25,19 +24,19 @@ const programNames: Record<string, string> = {
   SECURE: "Secure Systems",
   GAMES: "Computer Games Programming",
   IND: "Industrial Economics",
-  PROG: "Programming & Algorithms",
-  LARGE: "Large-Scale\nSoftware Engineering",
+  ALGO: "Programming & Algorithms",
+  SOFT: "Large-Scale\nSoftware Engineering",
 };
 
 export const MastersBadge = ({ program }: MastersBadgeProps) => {
     const programIcons: Record<string, React.ReactNode> = {
-        "AI": <BrainCircuit size={size} />,
+        "AI": <Sparkles size={size} />,
         "MED": <Pill size={size} />,
-        "SECURE": <BrickWallShield size={size} />,
+        "SECURE": <Shield size={size} />,
         "GAMES": <Joystick size={size} />,
         "IND": <BriefcaseBusiness size={size} />,
-        "PROG": <Variable size={size} />,
-        "LARGE": <ServerCog size={size} />,
+        "ALGO": <Pi size={size} />,
+        "SOFT": <Server size={size} />,
     }
 
     return (
@@ -45,7 +44,7 @@ export const MastersBadge = ({ program }: MastersBadgeProps) => {
         <TooltipTrigger asChild>
             <Badge variant={"outline"} className={`mr-2 ${programColors[program]}`}>{programIcons[program]}</Badge>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent side='bottom'>
             {programNames[program]}
         </TooltipContent>
         </Tooltip>

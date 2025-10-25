@@ -16,10 +16,10 @@ import { useAtom } from "jotai";
 import semestersStore from "@/app/semesterStore";
 
 
-type CourseCardProps = Course & {
+type CourseCardHorizontalProps = Course & {
   dropped: boolean
 };
-const CourseCard: React.FC<CourseCardProps> = ({
+const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
   code,
   name,
   semester,
@@ -48,7 +48,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   }
   return (
     <Card
-      className={`relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
+      className={`relative h-20 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
     >
       {dropped &&
         <Button
@@ -104,4 +104,4 @@ const CourseCard: React.FC<CourseCardProps> = ({
   );
 };
 
-export { CourseCard };
+export { CourseCardHorizontal };

@@ -2,8 +2,8 @@ import { Course } from "@/app/courses";
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Label } from "./ui/label";
-import { tr } from "framer-motion/client";
 import { MastersBadge } from "./MastersBadge";
+import Image from "next/image";
 
 type CourseDialogProps = {
     open: boolean;
@@ -13,7 +13,7 @@ type CourseDialogProps = {
 }
 
 export const CourseDialog = ({ open, onOpenChange, course }: CourseDialogProps) => {
-    const { courseName, courseCode, period, credits, level, block, link, mastersPrograms } = course;
+    const { name: courseName, code: courseCode, period, credits, level, block, link, mastersPrograms } = course;
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-md">
@@ -23,6 +23,24 @@ export const CourseDialog = ({ open, onOpenChange, course }: CourseDialogProps) 
                         {courseName}
                     </DialogDescription>
                 </DialogHeader>
+                <div className="grid grid-cols-2 gap-4 py-4">
+                    <div>
+                        <Label>Period:</Label>
+                        <p>{period.length > 1 ? `Periods ${period.join(" and ")}` : `Period ${period[0]}`}</p>
+                    </div>
+                    <div>
+                        <Label>Credits:</Label>
+                        <p>{credits} ECTS</p>
+                    </div>
+                    <div>
+                        <Label>Level:</Label>
+                        <p>{level}</p>
+                    </div>
+                    <div>
+                        <Label>Block:</Label>
+                        <p>Block {block}</p>
+                    </div>
+                </div>
 
 
                 <DialogFooter className="sm:justify-between">

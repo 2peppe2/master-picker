@@ -11,11 +11,11 @@ import { useAtom } from "jotai";
 import { range } from 'lodash';
 
 import { Course, COURSES } from "./courses";
+import { Drawer } from "./Drawer";
 
 
 const MjukvaraPage: React.FC = () => {
   const [semesters, setSemesters] = useAtom(semestersStore);
-  const notInDropped = (course: Course) => !semesters.flat(3).includes(course.courseCode)
 
   const SEMESTERS = range(0, semesters.length);
   const sensors = useSensors(
@@ -33,8 +33,11 @@ const MjukvaraPage: React.FC = () => {
   );
   return (
     <DndContext onDragEnd={dragEndEventHandler} sensors={sensors}>
-      <div className="grid grid-cols-3">
-        <div className="col-span-2">
+      <div className="grid grid-cols-3 py-4">
+        <div className="col-span-1">
+          <Drawer />
+        </div>
+        <div className="col-span-2 flex flex-col  gap-4">
           {SEMESTERS.map((index) => (
             <SemesterView
               key={index}
@@ -42,18 +45,7 @@ const MjukvaraPage: React.FC = () => {
 
             />
           ))}        </div>
-        <div className="col-span-1 p-5">
-          <div className="grid grid-cols-2 justify-items-center gap-4 p-4">
-            {Object.values(COURSES).filter(notInDropped).map((course) => (
-            <Draggable key={course.courseCode} id={course.courseCode} data={course}>
-              <CourseCard
-                {...course}
-              />
-            </Draggable>
-          ))}
-          </div>
-          
-        </div>
+        
       </div>
 
 
@@ -80,6 +72,12 @@ const MjukvaraPage: React.FC = () => {
       return;
     }
     const overData = event.over.data.current as PeriodNodeData
+    const draggableData = event.active.data.current as Course;
+    if (draggableData.semester !== (overData.semester + 7)) return;
+    if (draggableData.period[0] !== (overData.period + 1)) return;
+    if (draggableData.block !== (overData.block + 1)) return;
+    // Valid drop target
+
     setSemesters((prev) => {
       const newPeriod = [...prev];
 

@@ -3,7 +3,7 @@
 
 import { UniqueIdentifier } from "@dnd-kit/core";
 import { Droppable } from "./Dropable";
-import { Card, CardContent, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import { useAtomValue } from "jotai";
 import semestersStore from "@/app/semesterStore";
 import { COURSES } from "@/app/courses";
@@ -28,11 +28,15 @@ export const SemesterView = ({ semesterNumber }: SemesterViewProps) => {
     const PERIODS = range(0, periods.length);
 
     return (
-        <Card className="m-4 p-4 max-w-4xl mx-auto">
+        <Card className="p-4 max-w-4xl mx-auto">
             <Collapsible defaultOpen>
                 <CollapsibleTrigger asChild>
                     <CardTitle className="flex gap-3">
-                        Semester {semesterNumber + 7}
+                        Semester {semesterNumber + 7}  - Credits: {periods.flat().reduce((acc, block) => {
+                            if (block === null) return acc;
+                            const course = COURSES[block];
+                            return acc + course.credits;
+                        }, 0)} / 30
                         <ChevronRightIcon className='size-4 transition-transform [[data-state=open]_&]:rotate-90' />
                     </CardTitle>
                 </CollapsibleTrigger>
