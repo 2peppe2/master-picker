@@ -1,6 +1,6 @@
 'use client';
 
-import { DndContext, PointerSensor, useSensor, useSensors, KeyboardSensor, DragEndEvent, UniqueIdentifier, TouchSensor } from "@dnd-kit/core";
+import { DndContext, PointerSensor, useSensor, useSensors, KeyboardSensor, DragEndEvent, UniqueIdentifier, TouchSensor, DragOverlay } from "@dnd-kit/core";
 import { CourseCard } from "@/components/CourseCard";
 import { Draggable } from "@/components/Draggable";
 import { useState } from "react";
@@ -33,18 +33,19 @@ const MjukvaraPage: React.FC = () => {
   );
   return (
     <DndContext onDragEnd={dragEndEventHandler} sensors={sensors}>
-      <div className="grid grid-cols-3 py-4">
-        <div className="col-span-1">
+      <div className="grid [grid-template-columns:auto_1fr] py-4">
+        <div>
           <Drawer />
         </div>
-        <div className="col-span-2 flex flex-col  gap-4">
+        <div className="flex flex-col  gap-4 p-8">
           {SEMESTERS.map((index) => (
             <SemesterView
               key={index}
               semesterNumber={index}
 
             />
-          ))}        </div>
+          ))}        
+          </div>
         
       </div>
 

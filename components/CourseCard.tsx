@@ -11,9 +11,10 @@ import { MastersBadge } from "./MastersBadge";
 import { Button } from "./ui/button";
 import { CourseDialog } from "./CourseDialog";
 import { useState } from "react";
-import { X } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useAtom } from "jotai";
 import semestersStore from "@/app/semesterStore";
+import { Badge } from "./ui/badge";
 
 
 type CourseCardProps = Course & {
@@ -50,7 +51,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
     <Card
       className={`relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
     >
-      {dropped &&
+      {dropped ?
         <Button
           variant="ghost"
           size="icon"
@@ -58,6 +59,14 @@ const CourseCard: React.FC<CourseCardProps> = ({
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <X className="h-4 w-4" />
+        </Button> : 
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setOpenDialog(true)}
+          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
+        >
+          <Plus className="h-4 w-4" />
         </Button>}
       <CourseDialog open={openDialog} onOpenChange={setOpenDialog} course={{ code: code, name: name, semester: semester, period, credits, level, block, link, mastersPrograms, dependencies }} />
       <CardHeader>
@@ -91,13 +100,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
       </CardHeader>
       <CardFooter className="flex flex-col gap-2 text-foreground">
-        <a>
-          {"S: " + semester}, {"P: " + period.join("/")} {"B: " + block}
-        </a>
+        <div className="grid grid-cols-3 gap-x-1 text-muted-foreground text-xs">
+          <div><strong>S:</strong> {semester}</div>
+          <div><strong>P:</strong> {period.join("/")}</div>
+          <div><strong>B:</strong> {block}</div>
+        </div>
         <div className="flex justify-between">
-        {mastersPrograms.map((program) => (
-          <MastersBadge key={program} program={program} />
-        ))}
+          {mastersPrograms.map((program) => (
+            <MastersBadge key={program} program={program} />
+          ))}
         </div>
       </CardFooter>
     </Card>

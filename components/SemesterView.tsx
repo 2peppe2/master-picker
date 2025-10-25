@@ -28,7 +28,7 @@ export const SemesterView = ({ semesterNumber }: SemesterViewProps) => {
     const PERIODS = range(0, periods.length);
 
     return (
-        <Card className="p-4 max-w-4xl mx-auto">
+        <Card className="w-full p-4 ">
             <Collapsible defaultOpen>
                 <CollapsibleTrigger asChild>
                     <CardTitle className="flex gap-3">
