@@ -1,9 +1,8 @@
 import { Course } from "@/app/courses";
-import { Button } from "./ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { Label } from "./ui/label";
 import { MastersBadge } from "./MastersBadge";
-import Image from "next/image";
+import { Button } from "./ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "./ui/dialog";
+import { Label } from "./ui/label";
 
 type CourseDialogProps = {
     open: boolean;

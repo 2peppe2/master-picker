@@ -1,8 +1,8 @@
-import React, { act } from 'react';
-import { useDroppable } from '@dnd-kit/core';
-import { useAtom, useAtomValue } from 'jotai';
-import semestersStore from '@/app/semesterStore';
 import { Course } from '@/app/courses';
+import semestersStore from '@/app/semesterStore';
+import { useDroppable } from '@dnd-kit/core';
+import { useAtomValue } from 'jotai';
+import React from 'react';
 
 type DroppableProps = {
     id: string;

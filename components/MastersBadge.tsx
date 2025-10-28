@@ -1,6 +1,5 @@
-import { sign } from "crypto";
+import { BriefcaseBusiness, Joystick, Pi, Pill, Server, Shield, Sparkles } from "lucide-react";
 import { Badge } from "./ui/badge";
-import { BrainCircuit, Pill, BrickWallShield, Joystick, BriefcaseBusiness, Variable, ServerCog, Sparkle, Sparkles, Shield, Pi, Server } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type MastersBadgeProps = {

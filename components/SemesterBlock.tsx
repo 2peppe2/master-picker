@@ -1,10 +1,10 @@
-import { useAtomValue } from "jotai";
-import { Droppable } from "./Dropable";
-import semestersStore from "@/app/semesterStore";
-import { Draggable } from "./Draggable";
-import { CourseCard } from "./CourseCard";
 import { COURSES } from "@/app/courses";
+import semestersStore from "@/app/semesterStore";
+import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
+import { CourseCard } from "./CourseCard";
+import { Draggable } from "./Draggable";
+import { Droppable } from "./Dropable";
 
 type SemesterBlockProps = {
     semesterNumber: number;
