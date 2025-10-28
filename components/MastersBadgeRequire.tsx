@@ -1,7 +1,6 @@
+import { BriefcaseBusiness, Joystick, Pi, Pill, Server, Shield, Sparkles } from "lucide-react";
 import { Badge } from "./ui/badge";
-import { Pill, Joystick, BriefcaseBusiness, Sparkles, Shield, Pi, Server } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { Fragment } from "react";
 
 type MastersBadgeProps = {
     program: string;

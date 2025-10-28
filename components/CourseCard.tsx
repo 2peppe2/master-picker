@@ -1,20 +1,18 @@
 import { Course } from "@/app/courses";
+import semestersStore from "@/app/semesterStore";
 import {
-  Card,
-  CardContent,
-  CardDescription,
+  Card, CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
+import { produce } from "immer";
+import { useAtom } from "jotai";
+import { Plus, X } from "lucide-react";
+import { useState } from "react";
+import { CourseDialog } from "./CourseDialog";
 import { MastersBadge } from "./MastersBadge";
 import { Button } from "./ui/button";
-import { CourseDialog } from "./CourseDialog";
-import { useState } from "react";
-import { Plus, X } from "lucide-react";
-import { useAtom } from "jotai";
-import semestersStore from "@/app/semesterStore";
-import {produce} from "immer";
 
 type CourseCardProps = Course & {
   dropped: boolean

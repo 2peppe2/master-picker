@@ -1,19 +1,14 @@
 'use client';
 
-
-import { UniqueIdentifier } from "@dnd-kit/core";
-import { Droppable } from "./Dropable";
-import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
-import { useAtomValue } from "jotai";
-import semestersStore from "@/app/semesterStore";
 import { COURSES } from "@/app/courses";
-import { CourseCard } from "./CourseCard";
-import { SemesterBlock } from "./SemesterBlock";
-import { range } from "lodash";
-import { SemesterPeriod } from "./SemesterPeriod";
+import semestersStore from "@/app/semesterStore";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-import { CollapsibleTrigger } from "./ui/collapsible";
+import { useAtomValue } from "jotai";
+import { range } from "lodash";
 import { ChevronRightIcon } from "lucide-react";
+import { SemesterPeriod } from "./SemesterPeriod";
+import { Card, CardContent, CardTitle } from "./ui/card";
+import { CollapsibleTrigger } from "./ui/collapsible";
 
 type SemesterViewProps = {
     semesterNumber: number;

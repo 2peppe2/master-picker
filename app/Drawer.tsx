@@ -1,11 +1,9 @@
-import { CourseCard } from "@/components/CourseCard"
-import { Draggable } from "@/components/Draggable"
-import { Course, COURSES } from "./courses"
+import { CourseCard } from "@/components/CourseCard";
+import { Draggable } from "@/components/Draggable";
 import { useAtom } from "jotai";
-import semestersStore from "./semesterStore";
-import { Sidebar } from "lucide-react";
-import { CourseCardHorizontal } from "@/components/CourseCardHorizontal";
 import SearchInput from "../components/SearchInput";
+import { Course, COURSES } from "./courses";
+import semestersStore from "./semesterStore";
 
 export const Drawer = () => {
     const [semesters, setSemesters] = useAtom(semestersStore);

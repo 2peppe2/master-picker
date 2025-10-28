@@ -1,19 +1,18 @@
 import { Course } from "@/app/courses";
+import semestersStore from "@/app/semesterStore";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
+import { useAtom } from "jotai";
+import { X } from "lucide-react";
+import { useState } from "react";
+import { CourseDialog } from "./CourseDialog";
 import { MastersBadge } from "./MastersBadge";
 import { Button } from "./ui/button";
-import { CourseDialog } from "./CourseDialog";
-import { useState } from "react";
-import { X } from "lucide-react";
-import { useAtom } from "jotai";
-import semestersStore from "@/app/semesterStore";
 
 
 type CourseCardHorizontalProps = Course & {

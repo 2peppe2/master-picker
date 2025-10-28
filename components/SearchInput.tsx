@@ -1,9 +1,9 @@
 import { useEffect, useId, useState } from 'react'
 
-import { Input } from '@/components/ui/input'
-import { ListFilter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { ListFilter } from 'lucide-react'
 
 const InputSearch = () => {
     const id = useId()

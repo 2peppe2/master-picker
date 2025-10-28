@@ -1,18 +1,15 @@
 'use client';
 
-import { DndContext, PointerSensor, useSensor, useSensors, KeyboardSensor, DragEndEvent, UniqueIdentifier, TouchSensor, DragOverlay } from "@dnd-kit/core";
-import { CourseCard } from "@/components/CourseCard";
-import { Draggable } from "@/components/Draggable";
-import { useState } from "react";
 import { PeriodNodeData } from "@/components/Dropable";
 import { SemesterView } from "@/components/SemesterView";
-import semestersStore from "./semesterStore";
+import { DndContext, DragEndEvent, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { useAtom } from "jotai";
 import { range } from 'lodash';
+import semestersStore from "./semesterStore";
 
-import { Course, COURSES } from "./courses";
-import { Drawer } from "./Drawer";
 import { RequirementsBar } from "../components/RequirementsBar";
+import { Course } from "./courses";
+import { Drawer } from "./Drawer";
 
 
 const MjukvaraPage: React.FC = () => {

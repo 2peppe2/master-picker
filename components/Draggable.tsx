@@ -1,8 +1,8 @@
 
-import React from 'react';
-import {useDraggable} from '@dnd-kit/core';
-import {CSS} from '@dnd-kit/utilities';
 import { Course } from '@/app/courses';
+import { useDraggable } from '@dnd-kit/core';
+import { CSS } from '@dnd-kit/utilities';
+import React from 'react';
 
 type DraggableProps = {
   id: string;
@@ -32,4 +32,4 @@ function Draggable(props: DraggableProps) {
     </div>
   );
 }
-export {Draggable};
+export { Draggable };

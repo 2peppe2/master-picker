@@ -1,7 +1,6 @@
-import { Badge } from "@/components/ui/badge"
 import { Card, CardTitle } from "@/components/ui/card"
-import { MastersBadgeRequire } from "./MastersBadgeRequire"
 import { MastersRequirements } from "../app/mastersRequirements"
+import { MastersBadgeRequire } from "./MastersBadgeRequire"
 
 
 
