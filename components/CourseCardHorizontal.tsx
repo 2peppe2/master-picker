@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import { useAtom } from "jotai";
 import { X } from "lucide-react";
@@ -14,9 +14,8 @@ import { CourseDialog } from "./CourseDialog";
 import { MastersBadge } from "./MastersBadge";
 import { Button } from "./ui/button";
 
-
 type CourseCardHorizontalProps = Course & {
-  dropped: boolean
+  dropped: boolean;
 };
 const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
   code,
@@ -44,12 +43,12 @@ const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
       );
       return newSemesters;
     });
-  }
+  };
   return (
     <Card
       className={`relative h-20 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
     >
-      {dropped &&
+      {dropped && (
         <Button
           variant="ghost"
           size="icon"
@@ -57,8 +56,24 @@ const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <X className="h-4 w-4" />
-        </Button>}
-      <CourseDialog open={openDialog} onOpenChange={setOpenDialog} course={{ code: code, name: name, semester: semester, period, credits, level, block, link, mastersPrograms, dependencies }} />
+        </Button>
+      )}
+      <CourseDialog
+        open={openDialog}
+        onOpenChange={setOpenDialog}
+        course={{
+          code: code,
+          name: name,
+          semester: semester,
+          period,
+          credits,
+          level,
+          block,
+          link,
+          mastersPrograms,
+          dependencies,
+        }}
+      />
       <CardHeader>
         <CardTitle>
           <p
@@ -67,7 +82,6 @@ const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
           >
             {code}
           </p>
-
         </CardTitle>
         <CardDescription className="h-6">
           <p
@@ -81,22 +95,18 @@ const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
               textOverflow: "ellipsis",
             }}
           >
-
             {name}
-
           </p>
-
         </CardDescription>
-
       </CardHeader>
       <CardFooter className="flex flex-col gap-2 text-foreground">
         <a>
           {"S: " + semester}, {"P: " + period.join("/")} {"B: " + block}
         </a>
         <div className="flex justify-between">
-        {mastersPrograms.map((program) => (
-          <MastersBadge key={program} program={program} />
-        ))}
+          {mastersPrograms.map((program) => (
+            <MastersBadge key={program} master={program} />
+          ))}
         </div>
       </CardFooter>
     </Card>
