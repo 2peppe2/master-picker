@@ -1,0 +1,38 @@
+{
+  "AI": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "G-level", "credits": 36 },
+    { "type": "Total", "credits": 90 }
+  ],
+  "ALGO": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "G-level", "credits": 36 },
+    { "type": "Total", "credits": 90 },
+    {
+      "type": "Courses",
+      "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
+    }
+  ],
+  "IND": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "Total", "credits": 90 }
+  ],
+  "MED": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "G-level", "credits": 36 },
+    { "type": "Total", "credits": 90 }
+  ],
+  "GAMES": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "G-level", "credits": 36 },
+    { "type": "Total", "credits": 90 }
+  ],
+  "SOFT": [
+    { "type": "A-level", "credits": 30 },
+    { "type": "Total", "credits": 90 }
+  ],
+  "SECURE": [
+    { "type": "G-level", "credits": 12 },
+    { "type": "Total", "credits": 90 }
+  ]
+}

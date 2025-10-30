@@ -1,17 +1,24 @@
-'use client';
+"use client";
 
 import { PeriodNodeData } from "@/components/Dropable";
 import { SemesterView } from "@/components/SemesterView";
-import { DndContext, DragEndEvent, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
+import {
+  DndContext,
+  DragEndEvent,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { useAtom } from "jotai";
 import { produce } from "immer";
 import { range } from 'lodash';
 import semestersAtom from "./semestersAtom";
 
-import { RequirementsBar } from "../components/RequirementsBar";
+import { MastersRequirementsBar } from "../components/MastersRequirementsBar";
 import { Course } from "./courses";
 import { Drawer } from "./Drawer";
-
 
 const MjukvaraPage: React.FC = () => {
   const [semesters, setSemesters] = useAtom(semestersAtom);
@@ -37,19 +44,12 @@ const MjukvaraPage: React.FC = () => {
           <Drawer />
         </div>
         <div className="flex flex-col  gap-4 px-8">
-          <RequirementsBar />
+          <MastersRequirementsBar />
           {SEMESTERS.map((index) => (
-            <SemesterView
-              key={index}
-              semesterNumber={index}
-
-            />
+            <SemesterView key={index} semesterNumber={index} />
           ))}
         </div>
-
       </div>
-
-
     </DndContext>
   );
   function dragEndEventHandler(event: DragEndEvent) {
@@ -62,11 +62,11 @@ const MjukvaraPage: React.FC = () => {
       });
       return;
     }
-    const overData = event.over.data.current as PeriodNodeData
+    const overData = event.over.data.current as PeriodNodeData;
     const draggableData = event.active.data.current as Course;
-    if (draggableData.semester !== (overData.semester + 7)) return;
-    if (draggableData.period[0] !== (overData.period + 1)) return;
-    if (draggableData.block !== (overData.block + 1)) return;
+    if (draggableData.semester !== overData.semester + 7) return;
+    if (draggableData.period[0] !== overData.period + 1) return;
+    if (draggableData.block !== overData.block + 1) return;
     // Valid drop target
 
     setSemesters((prev) => {
@@ -89,6 +89,5 @@ const MjukvaraPage: React.FC = () => {
       }
     }
   }
-
-}
+};
 export default MjukvaraPage;
