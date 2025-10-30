@@ -3,7 +3,7 @@ import { useAtomValue } from "jotai";
 import _ from "lodash";
 
 import { MasterRequirement } from "../types";
-import semestersAtom from "@/app/semesterStore";
+import semestersAtom from "@/app/semestersAtom";
 import { COURSES } from "@/app/courses";
 
 interface MasterProgress {
