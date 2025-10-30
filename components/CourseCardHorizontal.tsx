@@ -1,5 +1,5 @@
 import { Course } from "@/app/courses";
-import semestersStore from "@/app/semesterStore";
+import semestersAtom from "@/app/semestersAtom";
 import {
   Card,
   CardDescription,
@@ -34,7 +34,7 @@ const CourseCardHorizontal: React.FC<CourseCardHorizontalProps> = ({
   const [openDialog, setOpenDialog] = useState(false);
   const multiPeriod = period.length > 1;
   const shortName = name.length > 30 ? name.slice(0, 27) + "..." : name;
-  const [semesters, setSemesters] = useAtom(semestersStore);
+  const [semesters, setSemesters] = useAtom(semestersAtom);
   const removeCourse = () => {
     setSemesters((prev) => {
       const newSemesters = prev.map((semester) =>

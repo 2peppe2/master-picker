@@ -1,7 +1,7 @@
 'use client';
 
 import { COURSES } from "@/app/courses";
-import semestersStore from "@/app/semesterStore";
+import semestersAtom from "@/app/semestersAtom";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
@@ -17,7 +17,7 @@ type SemesterViewProps = {
 
 
 export const SemesterView = ({ semesterNumber }: SemesterViewProps) => {
-    const semesters = useAtomValue(semestersStore);
+    const semesters = useAtomValue(semestersAtom);
     const periods = semesters[semesterNumber];
 
     const PERIODS = range(0, periods.length);

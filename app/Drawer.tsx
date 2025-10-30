@@ -3,10 +3,10 @@ import { Draggable } from "@/components/Draggable";
 import { useAtom } from "jotai";
 import SearchInput from "../components/SearchInput";
 import { Course, COURSES } from "./courses";
-import semestersStore from "./semesterStore";
+import semestersAtom from "./semestersAtom";
 
 export const Drawer = () => {
-    const [semesters, setSemesters] = useAtom(semestersStore);
+    const [semesters, setSemesters] = useAtom(semestersAtom);
     const notInDropped = (course: Course) => !semesters.flat(3).includes(course.code)
     return (
         <div className="border p-4 rounded-r-lg shadow-lg">

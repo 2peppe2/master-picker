@@ -6,7 +6,7 @@ import { DndContext, DragEndEvent, KeyboardSensor, PointerSensor, TouchSensor, u
 import { useAtom } from "jotai";
 import { produce } from "immer";
 import { range } from 'lodash';
-import semestersStore from "./semesterStore";
+import semestersAtom from "./semestersAtom";
 
 import { RequirementsBar } from "../components/RequirementsBar";
 import { Course } from "./courses";
@@ -14,7 +14,7 @@ import { Drawer } from "./Drawer";
 
 
 const MjukvaraPage: React.FC = () => {
-  const [semesters, setSemesters] = useAtom(semestersStore);
+  const [semesters, setSemesters] = useAtom(semestersAtom);
 
   const SEMESTERS = range(0, semesters.length);
   const sensors = useSensors(

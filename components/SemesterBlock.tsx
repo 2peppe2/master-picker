@@ -1,5 +1,5 @@
 import { COURSES } from "@/app/courses";
-import semestersStore from "@/app/semesterStore";
+import semestersAtom from "@/app/semestersAtom";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
 import { CourseCard } from "./CourseCard";
@@ -14,7 +14,7 @@ type SemesterBlockProps = {
 
 
 export const SemesterBlock = ({ semesterNumber, periodNumber, blockNumber }: SemesterBlockProps) => {
-    const semesters = useAtomValue(semestersStore);
+    const semesters = useAtomValue(semestersAtom);
     const courseCode: string | null = semesters[semesterNumber][periodNumber][blockNumber];
     const active = courseCode !== null;
     const course = courseCode ? COURSES[courseCode] : null;

@@ -1,4 +1,4 @@
-import semestersStore from "@/app/semesterStore";
+import semestersAtom from "@/app/semestersAtom";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
 import { SemesterBlock } from "./SemesterBlock";
@@ -9,7 +9,7 @@ type SemesterPeriodProps = {
 }
 
 export const SemesterPeriod = ({ semesterNumber, periodNumber }: SemesterPeriodProps) => {
-    const semesters = useAtomValue(semestersStore);
+    const semesters = useAtomValue(semestersAtom);
     const blocks = semesters[semesterNumber][periodNumber];
     const BLOCKS = range(0, blocks.length);
     return (
