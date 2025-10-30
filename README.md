@@ -10,10 +10,10 @@ This applications sets out to help students at Linköping University (LiU) choos
 >- The application currently only supports the 
 U-program at Linköping University.
 
-# Visit the Live Site
+## Visit the Live Site
 Currently the website is not hosted live. Please run it locally by following the instructions below.
 
-# Run Locally
+## Run Locally
 Clone the project
 
 ```bash
