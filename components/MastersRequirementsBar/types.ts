@@ -1,14 +1,28 @@
-export type CreditsRequirements = {
-  type: "G-level" | "A-level" | "Total";
+export type TotalCreditsRequirements = {
+  type: "Total";
+  credits: number;
+};
+
+export type ALevelRequirements = {
+  type: "A-level";
+  credits: number;
+};
+
+export type GLevelRequirements = {
+  type: "G-level";
   credits: number;
 };
 
 export type CoursesRequirements = {
   type: "Courses";
-  courses: string[][]; // [(TATA24 ∨ TATA22) ∧ (TDDE23)]
+  courses: string[];
 };
 
-export type MasterRequirement = CreditsRequirements | CoursesRequirements;
+export type MasterRequirement =
+  | TotalCreditsRequirements
+  | ALevelRequirements
+  | GLevelRequirements
+  | CoursesRequirements;
 
 export type Master =
   | "AI"

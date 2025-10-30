@@ -7,11 +7,11 @@
   "ALGO": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
+    { "type": "Total", "credits": 90 },
     {
       "type": "Courses",
-      "courses": [["TATA64", "TDDD08", "TDDD20", "TDDE34"]]
-    },
-    { "type": "Total", "credits": 90 }
+      "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
+    }
   ],
   "IND": [
     { "type": "A-level", "credits": 30 },

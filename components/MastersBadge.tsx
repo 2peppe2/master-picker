@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-const programColors: Record<string, string> = {
+const masterColors: Record<string, string> = {
   AI: "bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900/20 dark:text-purple-300",
   MED: "bg-pink-100 text-pink-800 border-pink-300 dark:bg-pink-900/20 dark:text-pink-300",
   SECURE:
@@ -23,7 +23,7 @@ const programColors: Record<string, string> = {
   SOFT: "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
 };
 
-const programNames: Record<string, string> = {
+const masterNames: Record<string, string> = {
   AI: "Artificial Intelligence & Machine Learning",
   MED: "Medical Informatics",
   SECURE: "Secure Systems",
@@ -34,7 +34,7 @@ const programNames: Record<string, string> = {
 };
 
 const size = 16;
-const programIcons: Record<string, React.ReactNode> = {
+const masterIcons: Record<string, React.ReactNode> = {
   AI: <Sparkles size={size} />,
   MED: <Pill size={size} />,
   SECURE: <Shield size={size} />,
@@ -47,18 +47,22 @@ const programIcons: Record<string, React.ReactNode> = {
 type MastersBadgeProps = {
   master: string;
   text?: string;
+  tooltip?: string | ReactNode;
 };
 
 export const MastersBadge: FC<MastersBadgeProps> = ({
-  master: program,
+  master,
   text,
+  tooltip,
 }) => (
   <Tooltip>
     <TooltipTrigger asChild>
-      <Badge variant={"outline"} className={`mr-2 ${programColors[program]}`}>
-        {programIcons[program]} {text}
+      <Badge variant={"outline"} className={`mr-2 ${masterColors[master]}`}>
+        {masterIcons[master]} {text}
       </Badge>
     </TooltipTrigger>
-    <TooltipContent side="bottom">{programNames[program]}</TooltipContent>
+    <TooltipContent side="bottom">
+      {tooltip ?? masterNames[master]}
+    </TooltipContent>
   </Tooltip>
 );
