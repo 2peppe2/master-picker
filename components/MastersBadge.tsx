@@ -18,6 +18,7 @@ export const MastersBadge: FC<MastersBadgeProps> = ({
     <TooltipTrigger asChild>
       <Badge variant={"outline"} className={`mr-2 ${masterColors[master]}`}>
         {masterIcons[master]} {text}
+
       </Badge>
     </TooltipTrigger>
     <TooltipContent side="bottom">

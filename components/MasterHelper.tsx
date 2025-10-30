@@ -1,6 +1,6 @@
 import { BriefcaseBusiness, Joystick, Pi, Pill, Server, Shield, Sparkles } from "lucide-react";
 
-const size = 16;
+let size = 16;
 
 const masterIcons: Record<string, React.ReactNode> = {
   AI: <Sparkles size={size} />,
@@ -34,4 +34,4 @@ const masterNames: Record<string, string> = {
   SOFT: "Large-Scale\nSoftware Engineering",
 };
 
-export { masterIcons, masterColors, masterNames };
+export { masterIcons, masterColors, masterNames};

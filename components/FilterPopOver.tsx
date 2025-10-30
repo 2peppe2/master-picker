@@ -17,6 +17,7 @@ import { range } from "lodash";
 import { Fragment } from "react";
 import { produce } from "immer";
 import masterRequirements from "./MastersRequirementsBar/data";
+import { masterNames } from "./MasterHelper";
 
 export const FilterPopOver = () => {
   const [filter, setFilter] = useAtom(filterAtom);
@@ -37,23 +38,35 @@ export const FilterPopOver = () => {
             Show only applicable courses
           </Label>
         </div>
-        <Select>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Select Master Profile" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Master Profiles</SelectLabel>
-              <SelectItem value="ai">Show all Masters</SelectItem>
-              <SelectItem value="cs">
-                <MastersBadge program={"AI"} />
-                Computer Science
-              </SelectItem>
-              <SelectItem value="se">Software Engineering</SelectItem>
-              <SelectItem value="ds">Data Science</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <Select
+      value={filter.masterProfile}
+      onValueChange={onMasterProfileChange}
+    >
+      <SelectTrigger className="w-full">
+        <SelectValue placeholder="Select Master Profile" />
+      </SelectTrigger>
+
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Master Profiles</SelectLabel>
+          {masterProfiles.map((profile) => (
+            <SelectItem key={profile} value={profile}>
+              <div className="flex items-center">
+                <MastersBadge master={profile} />
+                <span
+                  title={masterNames[profile]}
+                  className="ml-2 truncate"
+                >
+                  {masterNames[profile].length > 24
+                    ? masterNames[profile].slice(0, 21) + "…"
+                    : masterNames[profile]}
+                </span>
+              </div>
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
 
         <div className="flex items-center gap-3">
           <Label className="text-sm">Include Semester:</Label>
@@ -117,9 +130,8 @@ export const FilterPopOver = () => {
   }
 
   function onMasterProfileChange(value: string) {
-    setFilter((prev) => ({
-      ...prev,
-      masterProfile: value === "ai" ? null : value,
+    setFilter(produce((prev) => {
+      prev.masterProfile = value;
     }));
   }
 
