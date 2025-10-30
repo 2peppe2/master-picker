@@ -11,9 +11,9 @@ import { produce } from "immer";
 import { useAtom } from "jotai";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
-import { CourseDialog } from "./CourseDialog";
-import { MastersBadge } from "./MastersBadge";
-import { Button } from "./ui/button";
+import { CourseDialog } from "./Dialog";
+import { MastersBadge } from "@/components/MastersBadge";
+import {Button} from "@/components/ui/button";
 
 type CourseCardProps = Course & {
   dropped: boolean;

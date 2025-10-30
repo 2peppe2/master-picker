@@ -2,8 +2,8 @@ import { COURSES } from "@/app/courses";
 import semestersAtom from "@/app/semestersAtom";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
-import { CourseCard } from "./CourseCard";
-import { Draggable } from "./Draggable";
+import { CourseCard } from "@/components/CourseCard/Card";
+import { Draggable } from "@/components/CourseCard/Draggable";
 import { Droppable } from "./Dropable";
 
 type SemesterBlockProps = {

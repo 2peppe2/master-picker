@@ -1,5 +1,5 @@
-import { CourseCard } from "@/components/CourseCard";
-import { Draggable } from "@/components/Draggable";
+import { CourseCard } from "@/components/CourseCard/Card";
+import { Draggable } from "@/components/CourseCard/Draggable";
 import { useAtom } from "jotai";
 import SearchInput from "../components/SearchInput";
 import { Course, COURSES } from "./courses";

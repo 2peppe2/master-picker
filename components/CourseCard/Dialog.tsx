@@ -1,6 +1,6 @@
 import { Course } from "@/app/courses";
-import { MastersBadge } from "./MastersBadge";
-import { Button } from "./ui/button";
+import { MastersBadge } from "@/components/MastersBadge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,8 +8,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "./ui/dialog";
-import { Label } from "./ui/label";
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
 
 type CourseDialogProps = {
   open: boolean;
