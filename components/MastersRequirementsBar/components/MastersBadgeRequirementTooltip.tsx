@@ -62,7 +62,7 @@ const MastersRequirementRowRenderer = <T extends MasterRequirement>({
         <LucideCircleCheck color="var(--color-emerald-500)" size={16} />
       ) : (
         <LucideCircleDashed
-          className="text-foreground dark:text-background"
+          className="text-background dark:text-foreground"
           size={16}
         />
       )}
