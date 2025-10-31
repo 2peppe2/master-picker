@@ -19,7 +19,7 @@ export const FilterPopOver = () => {
   return (
     <div className="grid gap-4">
       <div className="space-y-2">
-        <h4 className="leading-none font-medium">Filter</h4>
+        <h4 className="leading-none font-medium">Filters</h4>
       </div>
       <div className="grid gap-4">
         <div className="flex items-center gap-3">
