@@ -3,7 +3,7 @@ import { Draggable } from "@/components/CourseCard/Draggable";
 import { useAtom } from "jotai";
 import SearchInput from "../components/SearchInput";
 import { Course, COURSES } from "./courses";
-import semestersAtom from "./semestersAtom";
+import semestersAtom from "./atoms/semestersAtom";
 
 export const Drawer = () => {
     const [semesters, setSemesters] = useAtom(semestersAtom);

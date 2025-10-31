@@ -1,5 +1,5 @@
 import { COURSES } from "@/app/courses";
-import semestersAtom from "@/app/semestersAtom";
+import semestersAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
 import { CourseCard } from "@/components/CourseCard/Card";

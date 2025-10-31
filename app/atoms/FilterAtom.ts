@@ -1,6 +1,7 @@
 import { atom } from 'jotai';
 
 type filter = {
+    searchTerm?: string;
     showOnlyApplicable: boolean;
     masterProfile: string | undefined;
     semester: boolean[];
@@ -10,6 +11,7 @@ type filter = {
 
 export const filterAtom = atom<filter>(
     {
+        searchTerm: undefined,
         showOnlyApplicable: false,
         masterProfile: undefined,
         semester: [true, true, true],
