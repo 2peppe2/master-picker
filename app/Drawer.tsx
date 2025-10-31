@@ -1,13 +1,15 @@
-import { CourseCard } from "@/components/CourseCard";
-import { Draggable } from "@/components/Draggable";
+import { CourseCard } from "@/components/CourseCard/Card";
+import { Draggable } from "@/components/CourseCard/Draggable";
 import { useAtom } from "jotai";
 import SearchInput from "../components/SearchInput";
-import { Course, COURSES } from "./courses";
-import semestersAtom from "./semestersAtom";
+import { Course } from "./courses";
+import semestersAtom from "./atoms/semestersAtom";
+import useFiltered from "@/hooks/use-filtered";
 
 export const Drawer = () => {
     const [semesters, setSemesters] = useAtom(semestersAtom);
     const notInDropped = (course: Course) => !semesters.flat(3).includes(course.code)
+    const COURSES = useFiltered();
     return (
         <div className="border p-4 rounded-r-lg shadow-lg">
             <SearchInput />

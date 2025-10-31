@@ -5,10 +5,13 @@ import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { ListFilter } from 'lucide-react'
 import { FilterPopOver } from './FilterPopOver'
+import { useAtom } from 'jotai'
+import { filterAtom } from '@/app/atoms/FilterAtom'
+import { produce } from 'immer'
 
 const InputSearch = () => {
     const id = useId()
-    const [searchTerm, setSearchTerm] = useState('')
+    const [searchTerm, setSearchTerm] = useAtom(filterAtom)
     const [isMac, setIsMac] = useState(false)
 
     useEffect(() => {
@@ -43,8 +46,8 @@ const InputSearch = () => {
                     type='search'
                     placeholder='Search...'
                     className='peer pr-11 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    value={searchTerm.searchTerm}
+                    onChange={(e) => setSearchTerm(produce((draft) => { draft.searchTerm = e.target.value }))}
                 />
                 <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-3 peer-disabled:opacity-50'>
                     <kbd className='text-muted-foreground bg-accent inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium'>

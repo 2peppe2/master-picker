@@ -14,7 +14,7 @@ import {
 import { useAtom } from "jotai";
 import { produce } from "immer";
 import { range } from 'lodash';
-import semestersAtom from "./semestersAtom";
+import semestersAtom from "./atoms/semestersAtom";
 
 import { MastersRequirementsBar } from "../components/MastersRequirementsBar";
 import { Course } from "./courses";

@@ -1,5 +1,5 @@
 import { Course } from '@/app/courses';
-import semestersAtom from '@/app/semestersAtom';
+import semestersAtom from '@/app/atoms/semestersAtom';
 import { useDroppable } from '@dnd-kit/core';
 import { useAtomValue } from 'jotai';
 import React from 'react';

@@ -1,7 +1,7 @@
 "use client";
 
 import { COURSES } from "@/app/courses";
-import semestersAtom from "@/app/semestersAtom";
+import semestersAtom from "@/app/atoms/semestersAtom";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";

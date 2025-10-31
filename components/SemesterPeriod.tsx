@@ -1,4 +1,4 @@
-import semestersAtom from "@/app/semestersAtom";
+import semestersAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
 import { SemesterBlock } from "./SemesterBlock";
