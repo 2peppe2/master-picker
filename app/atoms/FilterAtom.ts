@@ -1,4 +1,4 @@
-import { atom } from 'jotai';
+import { atomWithReset } from 'jotai/utils';
 
 type filter = {
     searchTerm: string;
@@ -9,7 +9,7 @@ type filter = {
     block: boolean[];
 }
 
-export const filterAtom = atom<filter>(
+export const filterAtom = atomWithReset<filter>(
     {
         searchTerm: "",
         showOnlyApplicable: false,
@@ -18,4 +18,4 @@ export const filterAtom = atom<filter>(
         period: [true, true],
         block: [true, true, true, true],
     }
-);
+); 

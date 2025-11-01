@@ -6,6 +6,8 @@ import { TimeSlotFilter } from "@/components/TimeSlotFilter";
 import { produce } from "immer";
 import { useAtom } from "jotai";
 import { MasterSelectorFilter } from "./MastersSelectorFilter";
+import { Button } from "@/components/ui/button";
+import { RESET } from "jotai/utils";
 
 export const FilterPopOver = () => {
   const [filter, setFilter] = useAtom(filterAtom);
@@ -15,6 +17,7 @@ export const FilterPopOver = () => {
         <h4 className="leading-none font-medium">Filters</h4>
       </div>
       <div className="grid gap-4">
+        <Button variant="outline" onClick={() => setFilter(RESET)}>Reset Filters</Button>
         <div className="flex items-center gap-3">
           <Checkbox
             id="showOnly"
