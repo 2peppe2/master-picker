@@ -30,13 +30,10 @@ export const Droppable: FC<DroppableProps> = ({
   let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
 
   if (isOver && activeCourse !== null) {
-    if (
-      (activeCourse.semester === semester + 7 &&
-        activeCourse.period[0] === period + 1) ||
-      (activeCourse.period.length > 1 &&
-        activeCourse.period[1] === period + 1 &&
-        activeCourse.block === block + 1)
-    ) {
+    const isSameSemester = activeCourse.semester === semester + 7;
+    const isSamePeriod = activeCourse.period.includes(period + 1);
+    const isSameBlock = activeCourse.block === block + 1;
+    if (isSameSemester && isSamePeriod && isSameBlock) {
       // Valid drop target
       overStyles = "border-teal-500";
     }
