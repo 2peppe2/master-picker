@@ -26,7 +26,7 @@ export function Droppable(props: DroppableProps) {
     if (isOver && active !== null) {
         const draggableData = active.data.current as Course;
         if (draggableData.semester === (semester + 7)
-            && draggableData.period[0] === (period + 1)
+            && draggableData.period[0] === (period + 1) || (draggableData.period.length > 1 && draggableData.period[1] === (period + 1))
             && draggableData.block === (block + 1)) {
             // Valid drop target
             overStyles = "border-teal-500"

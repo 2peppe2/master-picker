@@ -1,9 +1,9 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { useAtomValue } from "jotai";
 import _ from "lodash";
 
 import { MasterRequirement } from "../types";
-import semestersAtom from "@/app/atoms/semestersAtom";
+import { selectedCoursesAtom } from "@/app/atoms/semestersAtom";
 import { COURSES } from "@/app/courses";
 
 interface MasterProgress {
@@ -12,13 +12,7 @@ interface MasterProgress {
 }
 
 export const useEvaluateMasterProgress = () => {
-  const semesters = useAtomValue(semestersAtom);
-
-  const selectedCourses = useMemo(
-    () =>
-      semesters.flat(2).filter((course): course is string => course !== null),
-    [semesters]
-  );
+  const selectedCourses = useAtomValue(selectedCoursesAtom)
 
   return useCallback(
     (master: string, requirements: MasterRequirement[]): MasterProgress => {
