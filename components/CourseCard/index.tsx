@@ -13,26 +13,19 @@ import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MastersBadge } from "@/components/MastersBadge";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
-type CourseCardProps = Course & {
+interface CourseCardProps {
+  course: Course;
   dropped: boolean;
-};
-const CourseCard: React.FC<CourseCardProps> = ({
-  code,
-  name,
-  semester,
-  period,
-  credits,
-  level,
-  block,
-  link,
-  mastersPrograms,
-  dependencies,
-  dropped,
-}) => {
+}
+
+const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
+  const { code, semester, period, block, name, mastersPrograms } = course;
+
   const [openDialog, setOpenDialog] = useState(false);
   const setSemesters = useSetAtom(semestersAtom);
+
   const removeCourse = () => {
     setSemesters((prev) => {
       const newSemesters = prev.map((semester) =>
@@ -43,6 +36,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
       return newSemesters;
     });
   };
+
   const addCourse = () => {
     setSemesters(
       produce((draft) => {
@@ -55,13 +49,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
   };
 
   return (
-    <Card
-      className={`relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer`}
-    >
+    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
       {dropped ? (
         <Button
-          variant="ghost"
           size="icon"
+          variant="ghost"
           onClick={removeCourse}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
@@ -78,20 +70,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </Button>
       )}
       <CourseDialog
+        course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
-        course={{
-          code: code,
-          name: name,
-          semester: semester,
-          period,
-          credits,
-          level,
-          block,
-          link,
-          mastersPrograms,
-          dependencies,
-        }}
       />
       <CardHeader>
         <CardTitle>
@@ -140,4 +121,4 @@ const CourseCard: React.FC<CourseCardProps> = ({
   );
 };
 
-export { CourseCard };
+export default CourseCard;

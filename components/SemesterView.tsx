@@ -1,6 +1,6 @@
 "use client";
 
-import { COURSES } from "@/app/courses";
+import { COURSES, Course } from "@/app/courses";
 import semestersAtom from "@/app/atoms/semestersAtom";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
@@ -9,15 +9,20 @@ import { ChevronRightIcon } from "lucide-react";
 import { SemesterPeriod } from "./SemesterPeriod";
 import { Card, CardContent, CardTitle } from "./ui/card";
 import { CollapsibleTrigger } from "./ui/collapsible";
+import { FC } from "react";
 
-type SemesterViewProps = {
+interface SemesterViewProps {
   semesterNumber: number;
-};
+  activeCourse: Course | null;
+}
 
-export const SemesterView = ({ semesterNumber }: SemesterViewProps) => {
-    const semesters = useAtomValue(semestersAtom);
-    const periods = semesters[semesterNumber];
-    const periodsSet = new Set(periods.flat().filter((block) => block !== null));
+export const SemesterView: FC<SemesterViewProps> = ({
+  semesterNumber,
+  activeCourse,
+}) => {
+  const semesters = useAtomValue(semestersAtom);
+  const periods = semesters[semesterNumber];
+  const periodsSet = new Set(periods.flat().filter((block) => block !== null));
 
   const PERIODS = range(0, periods.length);
 
@@ -41,8 +46,9 @@ export const SemesterView = ({ semesterNumber }: SemesterViewProps) => {
               {PERIODS.map((index) => (
                 <SemesterPeriod
                   key={index}
-                  semesterNumber={semesterNumber}
                   periodNumber={index}
+                  activeCourse={activeCourse}
+                  semesterNumber={semesterNumber}
                 />
               ))}
             </div>
