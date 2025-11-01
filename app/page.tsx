@@ -1,10 +1,11 @@
 "use client";
 
-import { PeriodNodeData } from "@/components/Dropable";
+import { PeriodNodeData } from "@/components/Droppable";
 import { SemesterView } from "@/components/SemesterView";
 import {
   DndContext,
   DragEndEvent,
+  DragOverlay,
   KeyboardSensor,
   PointerSensor,
   TouchSensor,
@@ -13,14 +14,17 @@ import {
 } from "@dnd-kit/core";
 import { useAtom } from "jotai";
 import { produce } from "immer";
-import { range } from 'lodash';
+import { range } from "lodash";
 import semestersAtom from "./atoms/semestersAtom";
 
 import { MastersRequirementsBar } from "../components/MastersRequirementsBar";
 import { Course } from "./courses";
 import { Drawer } from "@/components/Drawer";
+import { useState } from "react";
+import CourseCard from "@/components/CourseCard";
 
-const MjukvaraPage: React.FC = () => {
+const StartPage: React.FC = () => {
+  const [activeCourse, setActiveCourse] = useState<Course | null>(null);
   const [semesters, setSemesters] = useAtom(semestersAtom);
 
   const SEMESTERS = range(0, semesters.length);
@@ -37,21 +41,37 @@ const MjukvaraPage: React.FC = () => {
     }),
     useSensor(KeyboardSensor)
   );
+
   return (
-    <DndContext onDragEnd={dragEndEventHandler} sensors={sensors}>
-      <div className="grid [grid-template-columns:auto_1fr] py-4">
-        <div>
-          <Drawer />
-        </div>
+    <DndContext
+      onDragStart={(event) => {
+        setActiveCourse(event.active.data.current as Course);
+      }}
+      onDragEnd={(event) => {
+        setActiveCourse(null);
+        dragEndEventHandler(event);
+      }}
+      sensors={sensors}
+    >
+      <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
+        <Drawer activeCourse={activeCourse} />
         <div className="flex flex-col  gap-4 px-8">
           <MastersRequirementsBar />
           {SEMESTERS.map((index) => (
-            <SemesterView key={index} semesterNumber={index} />
+            <SemesterView
+              key={index}
+              semesterNumber={index}
+              activeCourse={activeCourse}
+            />
           ))}
         </div>
       </div>
+      <DragOverlay>
+        {activeCourse && <CourseCard dropped={false} course={activeCourse} />}
+      </DragOverlay>
     </DndContext>
   );
+
   function dragEndEventHandler(event: DragEndEvent) {
     if (!event.over) {
       setSemesters((prev) => {
@@ -63,10 +83,9 @@ const MjukvaraPage: React.FC = () => {
       return;
     }
     const overData = event.over.data.current as PeriodNodeData;
-    const draggableData = event.active.data.current as Course;
-    if (draggableData.semester !== overData.semester + 7) return;
-    if (!draggableData.period.includes(overData.period + 1) ) return;
-    if (draggableData.block !== overData.block + 1) return;
+    if (activeCourse.semester !== overData.semester + 7) return;
+    if (!activeCourse.period.includes(overData.period + 1)) return;
+    if (activeCourse.block !== overData.block + 1) return;
     // Valid drop target
 
     setSemesters((prev) => {
@@ -74,15 +93,14 @@ const MjukvaraPage: React.FC = () => {
       return produce(prev, (draft) => {
         clearActiveId(draft, activeId);
         draft[overData.semester][overData.period][overData.block] = activeId;
-        if (draggableData.period.length > 1) {
+        if (activeCourse.period.length > 1) {
           // Find the other period and set it too
           const otherPeriod =
-            draggableData.period[0] === overData.period + 1
-              ? draggableData.period[1]
-              : draggableData.period[0];
+            activeCourse.period[0] === overData.period + 1
+              ? activeCourse.period[1]
+              : activeCourse.period[0];
           draft[overData.semester][otherPeriod - 1][overData.block] = activeId;
         }
-        
       });
     });
 
@@ -99,4 +117,5 @@ const MjukvaraPage: React.FC = () => {
     }
   }
 };
-export default MjukvaraPage;
+
+export default StartPage;

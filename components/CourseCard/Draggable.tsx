@@ -1,35 +1,41 @@
+import { Course } from "@/app/courses";
+import { useDraggable } from "@dnd-kit/core";
+import { CSS } from "@dnd-kit/utilities";
+import React, { FC, ReactNode, CSSProperties } from "react";
 
-import { Course } from '@/app/courses';
-import { useDraggable } from '@dnd-kit/core';
-import { CSS } from '@dnd-kit/utilities';
-import React from 'react';
-
-type DraggableProps = {
+interface DraggableProps {
   id: string;
-  data: Course
-  children: React.ReactNode;
+  data: Course;
+  children: ReactNode;
 }
-function Draggable(props: DraggableProps) {
-  const {attributes, listeners, setNodeRef, transform, active} = useDraggable({
-    id: props.id,
-    data: props.data,
-  });
-  const isDragging = active?.id === props.id;
-  const style: React.CSSProperties = {
+
+const Draggable: FC<DraggableProps> = ({ id, data, children }) => {
+  const { attributes, listeners, setNodeRef, transform, active } = useDraggable(
+    { id, data }
+  );
+
+  const isDragging = active?.id === id;
+
+  const style  = {
     // Outputs `translate3d(x, y, 0)`
     transform: CSS.Translate.toString(transform),
-    touchAction: 'none',
-    WebkitUserSelect: 'none',
-    userSelect: 'none',
-    WebkitTapHighlightColor: 'transparent',
+    touchAction: "none",
+    WebkitUserSelect: "none",
+    userSelect: "none",
+    WebkitTapHighlightColor: "transparent",
     zIndex: isDragging ? 9999 : undefined,
-  };
+  } satisfies CSSProperties;
 
   return (
-    
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes} suppressHydrationWarning>
-      {props.children}
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...listeners}
+      {...attributes}
+      suppressHydrationWarning
+    >
+      {children}
     </div>
   );
-}
+};
 export { Draggable };
