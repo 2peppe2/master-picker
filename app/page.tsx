@@ -65,7 +65,7 @@ const MjukvaraPage: React.FC = () => {
     const overData = event.over.data.current as PeriodNodeData;
     const draggableData = event.active.data.current as Course;
     if (draggableData.semester !== overData.semester + 7) return;
-    if (draggableData.period[0] !== overData.period + 1) return;
+    if (!draggableData.period.includes(overData.period + 1) ) return;
     if (draggableData.block !== overData.block + 1) return;
     // Valid drop target
 
@@ -74,6 +74,15 @@ const MjukvaraPage: React.FC = () => {
       return produce(prev, (draft) => {
         clearActiveId(draft, activeId);
         draft[overData.semester][overData.period][overData.block] = activeId;
+        if (draggableData.period.length > 1) {
+          // Find the other period and set it too
+          const otherPeriod =
+            draggableData.period[0] === overData.period + 1
+              ? draggableData.period[1]
+              : draggableData.period[0];
+          draft[overData.semester][otherPeriod - 1][overData.block] = activeId;
+        }
+        
       });
     });
 

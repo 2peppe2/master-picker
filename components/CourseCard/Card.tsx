@@ -44,19 +44,12 @@ const CourseCard: React.FC<CourseCardProps> = ({
     });
   };
   const addCourse = () => {
-    console.log(
-      "Adding course",
-      code,
-      "to semester",
-      semester,
-      "period",
-      period,
-      "block",
-      block
-    );
     setSemesters(
       produce((draft) => {
         draft[semester - 7][period[0] - 1][block - 1] = code;
+        if (period.length > 1) {
+          draft[semester - 7][period[1] - 1][block - 1] = code;
+        }
       })
     );
   };

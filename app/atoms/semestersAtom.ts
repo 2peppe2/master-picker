@@ -15,5 +15,14 @@ const semestersAtom = atom<(string | null)[][][]>([
 
 ]);
 
+export const selectedCoursesAtom = atom((get) => {
+    const semesters = get(semestersAtom);
+    const selectedCourses: Set<string> = new Set();
+    const flattenedCourses = semesters.flat(2).filter((course): course is string => course !== null)
+    flattenedCourses.forEach((course) => selectedCourses.add(course));
+    return [...selectedCourses];
+});
+
+
 
 export default semestersAtom
