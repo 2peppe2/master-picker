@@ -1,6 +1,6 @@
 import { BriefcaseBusiness, Joystick, Pi, Pill, Server, Shield, Sparkles } from "lucide-react";
 
-let size = 16;
+const size = 16;
 
 const masterIcons: Record<string, React.ReactNode> = {
   AI: <Sparkles size={size} />,

@@ -16,7 +16,6 @@ type SemesterBlockProps = {
 export const SemesterBlock = ({ semesterNumber, periodNumber, blockNumber }: SemesterBlockProps) => {
     const semesters = useAtomValue(semestersAtom);
     const courseCode: string | null = semesters[semesterNumber][periodNumber][blockNumber];
-    const active = courseCode !== null;
     const course = courseCode ? COURSES[courseCode] : null;
     if (!courseCode || !course) {
         return (

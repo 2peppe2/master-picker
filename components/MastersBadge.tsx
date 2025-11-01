@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Badge } from "./ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { masterColors, masterIcons, masterNames } from "./MasterHelper";
+import { masterColors, masterIcons, masterNames } from "./MastersHelper";
 
 type MastersBadgeProps = {
   master: string;

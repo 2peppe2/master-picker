@@ -18,7 +18,7 @@ import semestersAtom from "./atoms/semestersAtom";
 
 import { MastersRequirementsBar } from "../components/MastersRequirementsBar";
 import { Course } from "./courses";
-import { Drawer } from "./Drawer";
+import { Drawer } from "@/components/Drawer";
 
 const MjukvaraPage: React.FC = () => {
   const [semesters, setSemesters] = useAtom(semestersAtom);
