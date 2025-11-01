@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { produce } from "immer";
-import { useAtom } from "jotai";
+import { useSetAtom } from "jotai";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
@@ -32,9 +32,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   dropped,
 }) => {
   const [openDialog, setOpenDialog] = useState(false);
-  const multiPeriod = period.length > 1;
-  const shortName = name.length > 30 ? name.slice(0, 27) + "..." : name;
-  const [semesters, setSemesters] = useAtom(semestersAtom);
+  const setSemesters = useSetAtom(semestersAtom);
   const removeCourse = () => {
     setSemesters((prev) => {
       const newSemesters = prev.map((semester) =>

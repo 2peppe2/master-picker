@@ -1,21 +1,14 @@
+import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@radix-ui/react-label";
-import { Checkbox } from "./ui/checkbox";
 
-import { Check } from "lucide-react";
-import { MastersBadge } from "./MastersBadge";
-import { useAtom } from "jotai";
 import { filterAtom } from "@/app/atoms/FilterAtom";
-import { range } from "lodash";
-import { Fragment } from "react";
+import { TimeSlotFilter } from "@/components/TimeSlotFilter";
 import { produce } from "immer";
-import masterRequirements from "./MastersRequirementsBar/data";
-import { masterNames } from "./MasterHelper";
-import { MasterSelectorFilter } from "./MasterSelectorFilter";
-import { TimeSlotFilter } from "./TimeSlotFilter";
+import { useAtom } from "jotai";
+import { MasterSelectorFilter } from "./MastersSelectorFilter";
 
 export const FilterPopOver = () => {
   const [filter, setFilter] = useAtom(filterAtom);
-  const masterProfiles = Object.keys(masterRequirements);
   return (
     <div className="grid gap-4">
       <div className="space-y-2">

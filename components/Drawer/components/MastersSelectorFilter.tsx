@@ -7,12 +7,12 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "@/components/ui/select";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
-import { MastersBadge } from "./MastersBadge";
-import { masterNames } from "./MasterHelper";
-import masterRequirements from "./MastersRequirementsBar/data";
+import { MastersBadge } from "@/components/MastersBadge";
+import { masterNames } from "@/components/MastersHelper";
+import masterRequirements from "@/components/MastersRequirementsBar/data";
 
 
 

@@ -1,7 +1,5 @@
 import { Course } from '@/app/courses';
-import semestersAtom from '@/app/atoms/semestersAtom';
 import { useDroppable } from '@dnd-kit/core';
-import { useAtomValue } from 'jotai';
 import React from 'react';
 
 type DroppableProps = {
@@ -18,7 +16,6 @@ export type PeriodNodeData = {
 
 export function Droppable(props: DroppableProps) {
     const { semester, period, block } = props.data;
-    const dropped = useAtomValue(semestersAtom)[semester][period][block] !== null;
     const { isOver, setNodeRef, active } = useDroppable({
         id: props.id,
         data: props.data,

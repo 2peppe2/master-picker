@@ -1,13 +1,13 @@
 import { CourseCard } from "@/components/CourseCard/Card";
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { useAtom } from "jotai";
-import SearchInput from "../components/SearchInput";
-import { Course } from "./courses";
-import semestersAtom from "./atoms/semestersAtom";
-import useFiltered from "@/hooks/use-filtered";
+import SearchInput from "./components/SearchInput";
+import { Course } from "@/app/courses";
+import semestersAtom from "@/app/atoms/semestersAtom";
+import useFiltered from "@/components/Drawer/hooks/useFiltered";
 
 export const Drawer = () => {
-    const [semesters, setSemesters] = useAtom(semestersAtom);
+    const [semesters] = useAtom(semestersAtom);
     const notInDropped = (course: Course) => !semesters.flat(3).includes(course.code)
     const COURSES = useFiltered();
     return (
