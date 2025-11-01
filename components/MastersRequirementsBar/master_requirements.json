@@ -2,37 +2,61 @@
   "AI": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TGTU99"] },
+    { "type": "Courses", "courses": ["TDDE01"] },
+    { "type": "Courses", "courses": ["TDDE19"] }
   ],
   "ALGO": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
     { "type": "Total", "credits": 90 },
-    {
+     {
       "type": "Courses",
       "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
-    }
+    },
+    { "type": "Courses", "courses": ["TSIT02"] },
+    
+    { "type": "Courses", "courses": ["TDDE52"] } 
   ],
   "IND": [
     { "type": "A-level", "credits": 30 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TEAE01"] },
+    { "type": "Courses", "courses": ["TEIO32"] },
+    { "type": "Courses", "courses": ["TDDC34"] },
+    { "type": "Courses", "courses": ["TDDE02"] },
+    { "type": "Courses", "courses": ["TEIO06"] },
+    { "type": "Courses", "courses": ["TDEI74", "TEIO13"] } 
   ],
   "MED": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TBME04"] },
+    { "type": "Courses", "courses": ["TBMI19"] }
   ],
   "GAMES": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TDDD23"] },
+    { "type": "Courses", "courses": ["TDDC73"] },
+    { "type": "Courses", "courses": ["TSBK07"] },
+    { "type": "Courses", "courses": ["TSBK03"] },
+    { "type": "Courses", "courses": ["TDDD57"] }
   ],
   "SOFT": [
     { "type": "A-level", "credits": 30 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TDDE52"] }
   ],
   "SECURE": [
     { "type": "G-level", "credits": 12 },
-    { "type": "Total", "credits": 90 }
+    { "type": "Total", "credits": 90 },
+    { "type": "Courses", "courses": ["TSIT02"] },
+    { "type": "Courses", "courses": ["TDDE62"] },
+    { "type": "Courses", "courses": ["TDDC90"] },
+    { "type": "Courses", "courses": ["TDDE21", "TDDE63"] }  
   ]
 }
