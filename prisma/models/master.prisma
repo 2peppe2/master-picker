@@ -1,0 +1,4 @@
+model Master {
+  program      String         @id
+  CourseMaster CourseMaster[]
+}

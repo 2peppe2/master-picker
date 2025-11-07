@@ -1,0 +1,12 @@
+model Course {
+  code         String         @id
+  credits      Int
+  level        String
+  name         String
+  link         String
+  examiner     String
+  examination  Examination[]
+  literature   String[]
+  updatedAt    DateTime       @default(now())
+  CourseMaster CourseMaster[]
+}
