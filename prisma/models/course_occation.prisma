@@ -1,0 +1,16 @@
+model CourseOccation {
+  id Int @id @default(autoincrement())
+
+  year     Int
+  semester Semester
+  period   Int[] // Becomes a new table
+  block    Int[] // Becomes a new table 
+
+  Course     Course @relation(fields: [courseCode], references: [code])
+  courseCode String
+}
+
+enum Semester {
+  HT
+  VT
+}

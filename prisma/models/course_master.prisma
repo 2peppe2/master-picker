@@ -1,8 +1,8 @@
 model CourseMaster {
-    master     String
-    courseCode String
-    Master     Master @relation(fields: [master], references: [program])
-    Course     Course @relation(fields: [courseCode], references: [code])
+  master     String
+  courseCode String
+  Master     Master @relation(fields: [master], references: [program])
+  Course     Course @relation(fields: [courseCode], references: [code])
 
-    @@id(name: "courseMasterId", [master, courseCode])
+  @@id(name: "courseMasterId", [master, courseCode])
 }

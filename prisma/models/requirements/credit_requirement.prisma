@@ -1,0 +1,14 @@
+model CreditRequirement {
+  id      Int        @id @default(autoincrement())
+  type    CreditType
+  credits Int
+
+  requirement   Requirement @relation(fields: [requirementId], references: [id])
+  requirementId Int
+}
+
+enum CreditType {
+  A_LEVEL
+  G_LEVEL
+  TOTAL
+}

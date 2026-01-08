@@ -1,4 +1,5 @@
 model Master {
   program      String         @id
+  requirements Requirement[]
   CourseMaster CourseMaster[]
 }

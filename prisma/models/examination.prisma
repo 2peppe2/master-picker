@@ -11,5 +11,5 @@ model Examination {
 
 enum Scale {
   G_OR_U
-  THREE_FOUR_FIVE
+  U_THREE_FOUR_FIVE
 }

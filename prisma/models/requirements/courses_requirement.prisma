@@ -1,0 +1,8 @@
+model CoursesRequirement {
+  id Int @id @default(autoincrement())
+
+  course String[] // TODO: Become a table 
+
+  requirementId Int
+  requirement   Requirement @relation(fields: [requirementId], references: [id])
+}

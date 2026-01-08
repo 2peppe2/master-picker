@@ -8,9 +8,6 @@
     "start": "next start",
     "lint": "eslint"
   },
-  "prisma": {
-    "schema": "./prisma"
-  },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
     "@dnd-kit/core": "^6.3.1",

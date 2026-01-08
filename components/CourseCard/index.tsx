@@ -38,6 +38,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   };
 
   const addCourse = () => {
+    // Obegiplig kod.
     setSemesters(
       produce((draft) => {
         draft[semester - 7][period[0] - 1][block - 1] = code;
