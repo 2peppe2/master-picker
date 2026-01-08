@@ -3,26 +3,37 @@ import { Badge } from "./ui/badge";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { masterColors, masterIcons, masterNames } from "./MastersHelper";
 
-type MastersBadgeProps = {
+interface TooltipFunctionArgs {
+  masterName: string;
+}
+
+interface MastersBadgeProps {
   master: string;
   text?: string;
-  tooltip?: string | ReactNode;
-};
+  tooltip?: (args: TooltipFunctionArgs) => string | ReactNode;
+}
 
 export const MastersBadge: FC<MastersBadgeProps> = ({
   master,
   text,
   tooltip,
-}) => (
-  <Tooltip>
-    <TooltipTrigger asChild>
-      <Badge variant={"outline"} className={`mr-2 ${masterColors[master]}`}>
-        {masterIcons[master]} {text}
+}) => {
+  const [name, icon, color] = [
+    masterNames[master],
+    masterIcons[master],
+    masterColors[master],
+  ];
 
-      </Badge>
-    </TooltipTrigger>
-    <TooltipContent side="bottom">
-      {tooltip ?? masterNames[master]}
-    </TooltipContent>
-  </Tooltip>
-);
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Badge variant="outline" className={`mr-2 ${color}`}>
+          {icon} {text}
+        </Badge>
+      </TooltipTrigger>
+      <TooltipContent side="bottom">
+        {tooltip?.({ masterName: name }) ?? name}
+      </TooltipContent>
+    </Tooltip>
+  );
+};

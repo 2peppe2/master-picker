@@ -25,13 +25,14 @@ export const MastersRequirementsBar = () => {
               key={master}
               master={master}
               text={`${progress}%`}
-              tooltip={
+              tooltip={({ masterName }) => (
                 <MastersBadgeRequirementTooltip
                   master={master}
+                  name={masterName}
                   fulfilled={fulfilled}
                   all={masterRequirements[master]}
                 />
-              }
+              )}
             />
           );
         })}
