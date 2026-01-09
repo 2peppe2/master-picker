@@ -1,15 +1,17 @@
 model Course {
-  code       String   @id
-  credits    Int
-  level      String
-  name       String
-  link       String
-  examiner   String
-  updatedAt  DateTime @default(now())
+  code      String   @id
+  credits   Int
+  level     String
+  name      String
+  link      String
+  examiner  String
+  ecv       String
+  updatedAt DateTime @default(now())
 
   // Relationship mappings.
-  Examination        Examination[]
-  CourseMaster       CourseMaster[]
-  CourseOccasion     CourseOccasion[]
+  Program             Program[]
+  Examination         Examination[]
+  CourseMaster        CourseMaster[]
+  CourseOccasion      CourseOccasion[]
   CoursesRequirements CoursesRequirement[]
 }
