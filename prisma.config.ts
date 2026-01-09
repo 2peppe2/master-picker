@@ -7,7 +7,10 @@ export default {
   datasource: { 
     url: env("DATABASE_URL")
     
-  }
+  },
+  migrations: {
+    seed: "tsx prisma/seed.ts",
+  },
 } satisfies PrismaConfig;
 
 
