@@ -1,8 +1,7 @@
 model CoursesRequirement {
   id Int @id @default(autoincrement())
 
-  course String[] // TODO: Become a table 
-
+  courses Course[]
   requirementId Int
   requirement   Requirement @relation(fields: [requirementId], references: [id])
 }

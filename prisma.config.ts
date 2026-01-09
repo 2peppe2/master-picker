@@ -1,6 +1,11 @@
-import { PrismaConfig } from "prisma/config";
-import path from "node:path";
+import path from "path";
+import { PrismaConfig, env } from "prisma/config";
 
 export default {
   schema: path.join("prisma", "schema.prisma"),
+  datasource: { 
+    url: env("DATABASE_URL")
+    
+  }
 } satisfies PrismaConfig;
+

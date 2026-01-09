@@ -1,0 +1,9 @@
+model CourseOccasionBlock {
+  id               Int @id @default(autoincrement())
+  courseOccasionId Int
+  block            Int
+
+  courseOccasion CourseOccasion @relation(fields: [courseOccasionId], references: [id], onDelete: Cascade)
+
+  @@unique([courseOccasionId, block])
+}

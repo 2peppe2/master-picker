@@ -5,11 +5,11 @@ model Course {
   name       String
   link       String
   examiner   String
-  literature String[]
   updatedAt  DateTime @default(now())
 
   // Relationship mappings.
   Examination        Examination[]
   CourseMaster       CourseMaster[]
-  CourseOccation     CourseOccation[]
+  CourseOccasion     CourseOccasion[]
+  CoursesRequirements CoursesRequirement[]
 }
