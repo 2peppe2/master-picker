@@ -1,5 +1,6 @@
-import { Course } from "@/app/courses";
+import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import { useDroppable } from "@dnd-kit/core";
+import { useAtomValue } from "jotai";
 import React, { FC, ReactNode } from "react";
 
 export type PeriodNodeData = {
@@ -12,11 +13,9 @@ interface DroppableProps {
   id: string;
   data: PeriodNodeData;
   children: ReactNode;
-  activeCourse: Course | null;
 }
 
 export const Droppable: FC<DroppableProps> = ({
-  activeCourse,
   children,
   data,
   id,
@@ -26,7 +25,8 @@ export const Droppable: FC<DroppableProps> = ({
     id,
     data,
   });
-
+  const activeCourse = useAtomValue(activeCourseAtom);
+  
   let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
 
   if (isOver && activeCourse !== null) {

@@ -1,0 +1,23 @@
+import DndView from "./dndView";
+import { prisma } from "@/lib/prisma";
+import { courseWithOccasions } from "./type";
+
+
+
+export default async function MainPage() {
+  const COURSES: courseWithOccasions[] = await prisma.course.findMany({
+    include: {
+      Program: true,
+      CourseOccasion: {
+        include: {
+          periods: true,
+          blocks: true,
+        },
+      },
+    },
+  });
+
+  return (
+    <DndView courses={COURSES} />
+  );
+} 

@@ -1,24 +1,20 @@
-"use client";
-
-import { COURSES, Course } from "@/app/courses";
+import { COURSES } from "@/app/courses";
 import semestersAtom from "@/app/atoms/semestersAtom";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
 import { ChevronRightIcon } from "lucide-react";
 import { SemesterPeriod } from "./SemesterPeriod";
-import { Card, CardContent, CardTitle } from "./ui/card";
-import { CollapsibleTrigger } from "./ui/collapsible";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { CollapsibleTrigger } from "@/components/ui/collapsible";
 import { FC } from "react";
 
 interface SemesterViewProps {
   semesterNumber: number;
-  activeCourse: Course | null;
 }
 
 export const SemesterView: FC<SemesterViewProps> = ({
   semesterNumber,
-  activeCourse,
 }) => {
   const semesters = useAtomValue(semestersAtom);
   const periods = semesters[semesterNumber];
@@ -47,7 +43,6 @@ export const SemesterView: FC<SemesterViewProps> = ({
                 <SemesterPeriod
                   key={index}
                   periodNumber={index}
-                  activeCourse={activeCourse}
                   semesterNumber={semesterNumber}
                 />
               ))}

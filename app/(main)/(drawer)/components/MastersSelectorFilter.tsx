@@ -12,8 +12,7 @@ import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
 import { MastersBadge } from "@/components/MastersBadge";
 import { masterNames } from "@/components/MastersHelper";
-import masterRequirements from "@/components/MastersRequirementsBar/data";
-
+import masterRequirements from "../../(mastersRequirementsBar)/data";
 
 
 export function MasterSelectorFilter() {

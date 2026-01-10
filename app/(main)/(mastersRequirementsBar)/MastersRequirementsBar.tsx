@@ -2,7 +2,7 @@ import { Card, CardTitle } from "@/components/ui/card";
 
 import { MastersBadgeRequirementTooltip } from "./components/MastersBadgeRequirementTooltip";
 import { useEvaluateMasterProgress } from "./hooks/useEvaluateMasterProgress";
-import { MastersBadge } from "../MastersBadge";
+import { MastersBadge } from "@/components/MastersBadge";
 import masterRequirements from "./data";
 import { Master } from "./types";
 

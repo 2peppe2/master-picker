@@ -1,10 +1,10 @@
-import { COURSES, Course } from "@/app/courses";
+import { COURSES } from "@/app/courses";
 import semestersAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue, useSetAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import CourseCard from "@/components/CourseCard";
 import { Draggable } from "@/components/CourseCard/Draggable";
-import { Droppable } from "./Droppable";
+import { Droppable } from "@/components/Droppable";
 import { FC } from "react";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
@@ -13,14 +13,12 @@ interface SemesterBlockProps {
   semesterNumber: number;
   periodNumber: number;
   blockNumber: number;
-  activeCourse: Course | null;
 }
 
 export const SemesterBlock: FC<SemesterBlockProps> = ({
   semesterNumber,
   periodNumber,
   blockNumber,
-  activeCourse,
 }) => {
   const semesters = useAtomValue(semestersAtom);
   const setFilter = useSetAtom(filterAtom);
@@ -52,7 +50,6 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
     return (
       <Droppable
         key={blockNumber}
-        activeCourse={activeCourse}
         id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
         data={{
           semester: semesterNumber,
@@ -73,7 +70,6 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
   return (
     <Droppable
       key={blockNumber}
-      activeCourse={activeCourse}
       id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
       data={{
         semester: semesterNumber,

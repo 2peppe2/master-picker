@@ -4,7 +4,7 @@ import { useAtom } from "jotai";
 import SearchInput from "./components/SearchInput";
 import { Course } from "@/app/courses";
 import semestersAtom from "@/app/atoms/semestersAtom";
-import useFiltered from "@/components/Drawer/hooks/useFiltered";
+import useFiltered from "./hooks/useFiltered";
 import { FC } from "react";
 
 interface DrawerProps {

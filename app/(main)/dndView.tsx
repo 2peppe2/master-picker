@@ -1,7 +1,6 @@
 "use client";
 
 import { PeriodNodeData } from "@/components/Droppable";
-import { SemesterView } from "@/components/SemesterView";
 import {
   DndContext,
   DragEndEvent,
@@ -12,22 +11,27 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import { useAtom } from "jotai";
-import { produce } from "immer";
-import { range } from "lodash";
-import semestersAtom from "./atoms/semestersAtom";
 
-import { MastersRequirementsBar } from "../components/MastersRequirementsBar";
-import { Course } from "./courses";
-import { Drawer } from "@/components/Drawer";
-import { useState } from "react";
+import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequirementsBar";
+import { Course } from "../courses";
+import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
+import { courseWithOccasions } from "./type";
+import { useAtom, useSetAtom } from "jotai";
+import semestersAtom from "../atoms/semestersAtom";
+import { produce } from "immer";
+import SchedulePage from "./(schedule)/Schedule";
+import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 
-const StartPage: React.FC = () => {
-  const [activeCourse, setActiveCourse] = useState<Course | null>(null);
-  const [semesters, setSemesters] = useAtom(semestersAtom);
+interface dndViewProps {
+    courses: courseWithOccasions[];
+};
 
-  const SEMESTERS = range(0, semesters.length);
+const DndView: React.FC<dndViewProps> = ({courses}) => {
+  const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
+  const setSemesters = useSetAtom(semestersAtom);
+
+  
   const sensors = useSensors(
     useSensor(TouchSensor, {
       activationConstraint: {
@@ -57,13 +61,7 @@ const StartPage: React.FC = () => {
         <Drawer activeCourse={activeCourse} />
         <div className="flex flex-col  gap-4 px-8">
           <MastersRequirementsBar />
-          {SEMESTERS.map((index) => (
-            <SemesterView
-              key={index}
-              semesterNumber={index}
-              activeCourse={activeCourse}
-            />
-          ))}
+          <SchedulePage />
         </div>
       </div>
       <DragOverlay>
@@ -83,6 +81,7 @@ const StartPage: React.FC = () => {
       return;
     }
     const overData = event.over.data.current as PeriodNodeData;
+    if (!activeCourse) return;
     if (activeCourse.semester !== overData.semester + 7) return;
     if (!activeCourse.period.includes(overData.period + 1)) return;
     if (activeCourse.block !== overData.block + 1) return;
@@ -118,4 +117,4 @@ const StartPage: React.FC = () => {
   }
 };
 
-export default StartPage;
+export default DndView;
