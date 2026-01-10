@@ -8,7 +8,8 @@ type courseWithOccasions = Prisma.CourseGetPayload<{
             periods: true , 
             blocks: true 
           },
-        } 
+        },
+        CourseMaster: true, 
       },
     }>;
 

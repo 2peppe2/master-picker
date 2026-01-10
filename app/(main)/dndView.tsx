@@ -58,7 +58,7 @@ const DndView: React.FC<dndViewProps> = ({courses}) => {
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
-        <Drawer activeCourse={activeCourse} />
+        <Drawer courses={courses} />
         <div className="flex flex-col  gap-4 px-8">
           <MastersRequirementsBar />
           <SchedulePage />

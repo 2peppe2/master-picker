@@ -14,6 +14,7 @@ export default async function MainPage() {
           blocks: true,
         },
       },
+      CourseMaster: true,
     },
   });
 
