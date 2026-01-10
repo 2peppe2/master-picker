@@ -1,4 +1,4 @@
-import semestersAtom from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
 import { SemesterBlock } from "./SemesterBlock";
@@ -13,7 +13,7 @@ export const SemesterPeriod: FC<SemesterPeriodProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
-  const semesters = useAtomValue(semestersAtom);
+  const semesters = useAtomValue(semesterScheduleAtom);
   const blocks = semesters[semesterNumber][periodNumber];
   const BLOCKS = range(0, blocks.length);
   return (

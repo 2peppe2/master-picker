@@ -1,12 +1,12 @@
 import { useAtomValue } from "jotai";
 import { filterAtom } from "@/app/atoms/FilterAtom";
-import semestersAtom from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom from "@/app/atoms/semestersAtom";
 import { courseWithOccasions } from "../../type";
-import { userPreferencesAtom } from "@/app/atoms/UserPrefrences";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 
 const useFiltered = (courses: courseWithOccasions[]) => {
     const filters = useAtomValue(filterAtom);
-    const semester = useAtomValue(semestersAtom);
+    const semester = useAtomValue(semesterScheduleAtom);
     const startingYear = useAtomValue(userPreferencesAtom).startingYear;
     const filteredCourses = Object.values(courses).filter((course) => {
         // Filter by search term

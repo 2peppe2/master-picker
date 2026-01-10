@@ -1,5 +1,4 @@
-import { Course } from "@/app/courses";
-import semestersAtom from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom from "@/app/atoms/semestersAtom";
 import {
   Card,
   CardDescription,
@@ -8,29 +7,41 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { produce } from "immer";
-import { useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
+import { courseWithOccasions } from "@/app/(main)/type";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 
 interface CourseCardProps {
-  course: Course;
+  course: courseWithOccasions;
   dropped: boolean;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
-  const { code, semester, period, block, name, mastersPrograms } = course;
+  const { code, name } = course;
+
+  //TODO fix for multiple semesters
+  const occasion = course.CourseOccasion?.[0];
+  const year = occasion?.year;
+  const semester = occasion?.semester; 
+  const period = occasion?.periods ?? [];
+  const block = occasion?.blocks ?? [];
+  const masterPrograms = course.CourseMaster || [];
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  
 
   const [openDialog, setOpenDialog] = useState(false);
-  const setSemesters = useSetAtom(semestersAtom);
+  const setSemesters = useSetAtom(semesterScheduleAtom);
 
   const removeCourse = () => {
     setSemesters((prev) => {
       const newSemesters = prev.map((semester) =>
         semester.map((period) =>
-          period.map((block) => (block === code ? null : block))
+          period.map((block) => (block?.code === code ? null : block))
         )
       );
       return newSemesters;
@@ -38,12 +49,17 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   };
 
   const addCourse = () => {
-    // Obegiplig kod.
+    // TODO handle multiple blocks
+    // Probably has bugs ;(
     setSemesters(
       produce((draft) => {
-        draft[semester - 7][period[0] - 1][block - 1] = code;
-        if (period.length > 1) {
-          draft[semester - 7][period[1] - 1][block - 1] = code;
+        if (year && period[0]?.period && block[0]?.block) {
+          draft[year - startingYear][period[0].period - 1][block[0].block - 1] =
+            course;
+          if (period[1]?.period) {
+            draft[year - startingYear][period[1].period - 1][block[0].block - 1] =
+              course;
+          }
         }
       })
     );
@@ -103,18 +119,19 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
       <CardFooter className="flex flex-col gap-2 text-foreground">
         <div className="flex gap-2 text-muted-foreground text-xs">
           <div>
-            <strong>S:</strong> {semester}
+            <strong>S:</strong> {semester ?? "-"}
           </div>
           <div>
-            <strong>P:</strong> {period.join("/")}
+            <strong>P:</strong>{" "}
+            {period.length ? period.map((p) => p.period).join("/") : "-"}
           </div>
           <div>
-            <strong>B:</strong> {block}
+            <strong>B:</strong> {block[0]?.block ?? "-"}
           </div>
         </div>
         <div className="flex justify-between">
-          {mastersPrograms.map((program) => (
-            <MastersBadge key={program} master={program} />
+          {masterPrograms.map((program) => (
+            <MastersBadge key={program.master} master={program.master} />
           ))}
         </div>
       </CardFooter>

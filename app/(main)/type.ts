@@ -5,8 +5,8 @@ type courseWithOccasions = Prisma.CourseGetPayload<{
         Program: true,
         CourseOccasion: { 
           include: { 
-            periods: true , 
-            blocks: true 
+            periods: {select: { period: true }}, 
+            blocks: { select: { block: true }} 
           },
         },
         CourseMaster: true, 

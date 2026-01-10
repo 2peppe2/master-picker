@@ -1,11 +1,11 @@
-import { Course } from "@/app/courses";
+import { courseWithOccasions } from "@/app/(main)/type";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import React, { FC, ReactNode, CSSProperties } from "react";
 
 interface DraggableProps {
   id: string;
-  data: Course;
+  data: courseWithOccasions;
   children: ReactNode;
 }
 

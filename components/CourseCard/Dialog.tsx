@@ -1,3 +1,4 @@
+import { courseWithOccasions } from "@/app/(main)/type";
 import { Course } from "@/app/courses";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
@@ -14,7 +15,7 @@ import { Label } from "@/components/ui/label";
 type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  course: Course;
+  course: courseWithOccasions;
 };
 
 export const CourseDialog = ({
@@ -22,54 +23,49 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  const {
-    name: courseName,
-    code: courseCode,
-    period,
-    credits,
-    level,
-    block,
-    link,
-    mastersPrograms,
-  } = course;
+  //TODO fix for multiple semesters 
+  const occasion = course.CourseOccasion?.[0];
+  const period = occasion?.periods ?? [];
+  const block = occasion?.blocks ?? [];
+  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{courseCode}</DialogTitle>
-          <DialogDescription>{courseName}</DialogDescription>
+          <DialogTitle>{course.code}</DialogTitle>
+          <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
         <div className="grid grid-cols-2 gap-4 py-4">
           <div>
             <Label>Period:</Label>
             <p>
               {period.length > 1
-                ? `Periods ${period.join(" and ")}`
-                : `Period ${period[0]}`}
+                ? `Periods ${period.map((p) => p.period).join(" and ")}`
+                : `Period ${period[0]?.period ?? "-"}`}
             </p>
           </div>
           <div>
             <Label>Credits:</Label>
-            <p>{credits} ECTS</p>
+            <p>{course.credits} ECTS</p>
           </div>
           <div>
             <Label>Level:</Label>
-            <p>{level}</p>
+            <p>{course.level}</p>
           </div>
           <div>
             <Label>Block:</Label>
-            <p>Block {block}</p>
+            <p>Block {block[0]?.block ?? "-"}</p>
           </div>
         </div>
 
         <DialogFooter className="sm:justify-between">
           <div>
-            {mastersPrograms.map((program) => (
-              <MastersBadge key={program} master={program} />
+            {course.CourseMaster.map((program) => (
+              <MastersBadge key={program.master} master={program.master} />
             ))}
           </div>
 
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a href={course.link} target="_blank" rel="noopener noreferrer">
             <Button type="button" variant="link">
               More Info
             </Button>

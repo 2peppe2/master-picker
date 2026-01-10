@@ -1,11 +1,11 @@
 import { SemesterView } from "./SemesterView";
 import { range } from "lodash";
-import semestersAtom from "../../atoms/semestersAtom";
+import semesterScheduleAtom from "../../atoms/semestersAtom";
 import { useAtomValue } from "jotai";
 
 
 export default function SchedulePage() {
-    const semesters = useAtomValue(semestersAtom);
+    const semesters = useAtomValue(semesterScheduleAtom);
     
 
     const SEMESTERS = range(0, semesters.length);

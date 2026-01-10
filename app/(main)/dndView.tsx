@@ -18,7 +18,7 @@ import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
 import { courseWithOccasions } from "./type";
 import { useAtom, useSetAtom } from "jotai";
-import semestersAtom from "../atoms/semestersAtom";
+import semesterScheduleAtom from "../atoms/semestersAtom";
 import { produce } from "immer";
 import SchedulePage from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
@@ -29,7 +29,7 @@ interface dndViewProps {
 
 const DndView: React.FC<dndViewProps> = ({courses}) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
-  const setSemesters = useSetAtom(semestersAtom);
+  const setSemesters = useSetAtom(semesterScheduleAtom);
 
   
   const sensors = useSensors(

@@ -1,5 +1,4 @@
-import { COURSES } from "@/app/courses";
-import semestersAtom from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue, useSetAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import CourseCard from "@/components/CourseCard";
@@ -8,6 +7,7 @@ import { Droppable } from "@/components/Droppable";
 import { FC } from "react";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
+import { courseWithOccasions } from "../type";
 
 interface SemesterBlockProps {
   semesterNumber: number;
@@ -20,11 +20,10 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
   periodNumber,
   blockNumber,
 }) => {
-  const semesters = useAtomValue(semestersAtom);
+  const semesters = useAtomValue(semesterScheduleAtom);
   const setFilter = useSetAtom(filterAtom);
-  const courseCode: string | null =
+  const courseSlot: courseWithOccasions | null =
     semesters[semesterNumber][periodNumber][blockNumber];
-  const course = courseCode ? COURSES[courseCode] : null;
 
   function onClickFilter() {
     unCheckOtherTimeSlots();
@@ -46,7 +45,7 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
     );
   }
 
-  if (!courseCode || !course) {
+  if (!courseSlot) {
     return (
       <Droppable
         key={blockNumber}
@@ -77,8 +76,8 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
         block: blockNumber,
       }}
     >
-      <Draggable key={courseCode} id={courseCode} data={course}>
-        <CourseCard course={course} dropped={true} />
+      <Draggable key={courseSlot.code} id={courseSlot.code} data={courseSlot}>
+        <CourseCard course={courseSlot} dropped={true} />
       </Draggable>
     </Droppable>
   );
