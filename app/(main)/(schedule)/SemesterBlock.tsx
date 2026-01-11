@@ -7,7 +7,7 @@ import { Droppable } from "@/components/Droppable";
 import { FC } from "react";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
-import { courseWithOccasions } from "../types";
+import { CourseWithOccasion } from "../types";
 
 interface SemesterBlockProps {
   semesterNumber: number;
@@ -22,7 +22,7 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
 }) => {
   const semesters = useAtomValue(semesterScheduleAtom);
   const setFilter = useSetAtom(filterAtom);
-  const courseSlot: courseWithOccasions | null =
+  const courseSlot: CourseWithOccasion | null =
     semesters[semesterNumber][periodNumber][blockNumber];
 
   function onClickFilter() {

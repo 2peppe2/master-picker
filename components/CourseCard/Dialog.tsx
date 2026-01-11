@@ -1,4 +1,4 @@
-import { courseWithOccasions } from "@/app/(main)/types";
+import { CourseWithOccasion } from "@/app/(main)/types";
 import { Course } from "@/app/courses";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label";
 type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  course: courseWithOccasions;
+  course: CourseWithOccasion;
 };
 
 export const CourseDialog = ({
