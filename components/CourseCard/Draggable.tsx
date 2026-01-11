@@ -1,4 +1,4 @@
-import { courseWithOccasions } from "@/app/(main)/type";
+import { courseWithOccasions } from "@/app/(main)/types";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import React, { FC, ReactNode, CSSProperties } from "react";
@@ -16,7 +16,7 @@ const Draggable: FC<DraggableProps> = ({ id, data, children }) => {
 
   const isDragging = active?.id === id;
 
-  const style  = {
+  const style = {
     // Outputs `translate3d(x, y, 0)`
     transform: CSS.Translate.toString(transform),
     touchAction: "none",

@@ -1,8 +1,6 @@
-import DndView from "./dndView";
+import DndView from "./DndView";
 import { prisma } from "@/lib/prisma";
-import { courseWithOccasions } from "./type";
-
-
+import { courseWithOccasions } from "./types";
 
 export default async function MainPage() {
   const COURSES: courseWithOccasions[] = await prisma.course.findMany({
@@ -26,7 +24,5 @@ export default async function MainPage() {
     },
   });
 
-  return (
-    <DndView courses={COURSES} />
-  );
-} 
+  return <DndView courses={COURSES} />;
+}

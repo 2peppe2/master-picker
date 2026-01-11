@@ -7,7 +7,7 @@ import { Droppable } from "@/components/Droppable";
 import { FC } from "react";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
-import { courseWithOccasions } from "../type";
+import { courseWithOccasions } from "../types";
 
 interface SemesterBlockProps {
   semesterNumber: number;

@@ -13,7 +13,7 @@ import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
-import { courseWithOccasions } from "@/app/(main)/type";
+import { courseWithOccasions } from "@/app/(main)/types";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 
 interface CourseCardProps {
@@ -27,12 +27,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   //TODO fix for multiple semesters
   const occasion = course.CourseOccasion?.[0];
   const year = occasion?.year;
-  const semester = occasion?.semester; 
+  const semester = occasion?.semester;
   const period = occasion?.periods ?? [];
   const block = occasion?.blocks ?? [];
   const masterPrograms = course.CourseMaster || [];
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  
 
   const [openDialog, setOpenDialog] = useState(false);
   const setSemesters = useSetAtom(semesterScheduleAtom);
@@ -57,8 +56,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
           draft[year - startingYear][period[0].period - 1][block[0].block - 1] =
             course;
           if (period[1]?.period) {
-            draft[year - startingYear][period[1].period - 1][block[0].block - 1] =
-              course;
+            draft[year - startingYear][period[1].period - 1][
+              block[0].block - 1
+            ] = course;
           }
         }
       })

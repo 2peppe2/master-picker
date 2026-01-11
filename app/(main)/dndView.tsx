@@ -16,22 +16,22 @@ import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequir
 import { Course } from "../courses";
 import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
-import { courseWithOccasions } from "./type";
+import { CourseWithOccasion } from "./types";
 import { useAtom, useSetAtom } from "jotai";
 import semesterScheduleAtom from "../atoms/semestersAtom";
 import { produce } from "immer";
-import SchedulePage from "./(schedule)/Schedule";
+import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
+import { FC } from "react";
 
 interface dndViewProps {
-    courses: courseWithOccasions[];
-};
+  courses: CourseWithOccasion[];
+}
 
-const DndView: React.FC<dndViewProps> = ({courses}) => {
+const DndView: FC<dndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const setSemesters = useSetAtom(semesterScheduleAtom);
 
-  
   const sensors = useSensors(
     useSensor(TouchSensor, {
       activationConstraint: {
@@ -61,7 +61,7 @@ const DndView: React.FC<dndViewProps> = ({courses}) => {
         <Drawer courses={courses} />
         <div className="flex flex-col  gap-4 px-8">
           <MastersRequirementsBar />
-          <SchedulePage />
+          <Schedule />
         </div>
       </div>
       <DragOverlay>

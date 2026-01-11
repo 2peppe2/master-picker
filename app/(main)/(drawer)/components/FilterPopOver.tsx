@@ -2,7 +2,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@radix-ui/react-label";
 
 import { filterAtom } from "@/app/atoms/FilterAtom";
-import { TimeSlotFilter } from "@/components/TimeSlotFilter";
+import TimeSlotFilter from "@/components/TimeSlotFilter";
 import { produce } from "immer";
 import { useAtom } from "jotai";
 import { MasterSelectorFilter } from "./MastersSelectorFilter";
@@ -17,7 +17,9 @@ export const FilterPopOver = () => {
         <h4 className="leading-none font-medium">Filters</h4>
       </div>
       <div className="grid gap-4">
-        <Button variant="outline" onClick={() => setFilter(RESET)}>Reset Filters</Button>
+        <Button variant="outline" onClick={() => setFilter(RESET)}>
+          Reset Filters
+        </Button>
         <div className="flex items-center gap-3">
           <Checkbox
             id="showOnly"
@@ -31,7 +33,9 @@ export const FilterPopOver = () => {
         <MasterSelectorFilter />
         <TimeSlotFilter
           states={filter.semester}
-          onChange={(index, checked) => onTimeChange("semester", index, checked)}
+          onChange={(index, checked) =>
+            onTimeChange("semester", index, checked)
+          }
           title="Semester"
           offset={7}
         />

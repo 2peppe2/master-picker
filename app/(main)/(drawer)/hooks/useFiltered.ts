@@ -1,25 +1,25 @@
 import { useAtomValue } from "jotai";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import semesterScheduleAtom from "@/app/atoms/semestersAtom";
-import { courseWithOccasions } from "../../type";
+import { courseWithOccasions } from "../../types";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 
 const useFiltered = (courses: courseWithOccasions[]) => {
-    const filters = useAtomValue(filterAtom);
-    const semester = useAtomValue(semesterScheduleAtom);
-    const startingYear = useAtomValue(userPreferencesAtom).startingYear;
-    const filteredCourses = Object.values(courses).filter((course) => {
-        // Filter by search term
-        if (filters.searchTerm) {
-            const searchTerm = filters.searchTerm.toLowerCase();
-            if (
-                !course.name.toLowerCase().includes(searchTerm) &&
-                !course.code.toLowerCase().includes(searchTerm)
-            ) {
-                return false;
-            }
-        }
-        /* TEMPORARILY DISABLED
+  const filters = useAtomValue(filterAtom);
+  const semester = useAtomValue(semesterScheduleAtom);
+  const startingYear = useAtomValue(userPreferencesAtom).startingYear;
+  const filteredCourses = Object.values(courses).filter((course) => {
+    // Filter by search term
+    if (filters.searchTerm) {
+      const searchTerm = filters.searchTerm.toLowerCase();
+      if (
+        !course.name.toLowerCase().includes(searchTerm) &&
+        !course.code.toLowerCase().includes(searchTerm)
+      ) {
+        return false;
+      }
+    }
+    /* TEMPORARILY DISABLED
         // Semester filter
         if (!filters.semester[course.semester - 7]) {
             return false;
@@ -54,9 +54,9 @@ const useFiltered = (courses: courseWithOccasions[]) => {
         }
             */
 
-        return true;
-    });
-    return filteredCourses;
+    return true;
+  });
+  return filteredCourses;
 };
 
 export default useFiltered;

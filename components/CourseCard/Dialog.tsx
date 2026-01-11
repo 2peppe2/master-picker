@@ -1,4 +1,4 @@
-import { courseWithOccasions } from "@/app/(main)/type";
+import { courseWithOccasions } from "@/app/(main)/types";
 import { Course } from "@/app/courses";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
@@ -23,11 +23,11 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  //TODO fix for multiple semesters 
+  //TODO fix for multiple semesters
   const occasion = course.CourseOccasion?.[0];
   const period = occasion?.periods ?? [];
   const block = occasion?.blocks ?? [];
-  
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">

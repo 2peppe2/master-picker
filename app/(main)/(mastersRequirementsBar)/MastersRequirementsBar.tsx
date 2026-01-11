@@ -17,7 +17,6 @@ export const MastersRequirementsBar = () => {
         Master Requirements:
         {MASTERS.map((master) => {
           const { fulfilled, progress } = evaluateMasterProgress(
-            master,
             masterRequirements[master]
           );
           return (
