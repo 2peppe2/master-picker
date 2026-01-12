@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import OccasionTable from "./OccasionTable";
-import { Course } from "@/app/courses";
+import { Course } from "@/app/(main)/page"
 
 type CourseDialogProps = {
   open: boolean;
@@ -31,24 +31,22 @@ export const CourseDialog = ({
           <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
 
-        <DialogDescription>
-          <div className="grid grid-cols-2 gap-4 py-4">
-            <div>
-              <Label>Examiner:</Label>
-              {course.examiner === "" ? "N/A" : course.examiner}
-            </div>
-
-            <div>
-              <Label>Credits:</Label>
-              {course.credits} ECTS
-            </div>
-            <div>
-              <Label>Level:</Label>
-              {course.level}
-            </div>
+        <div className="grid grid-cols-2 gap-4 py-4">
+          <div>
+            <Label>Examiner:</Label>
+            {course.examiner === "" ? "N/A" : course.examiner}
           </div>
-          <OccasionTable course={course} />
-        </DialogDescription>
+
+          <div>
+            <Label>Credits:</Label>
+            {course.credits} ECTS
+          </div>
+          <div>
+            <Label>Level:</Label>
+            {course.level}
+          </div>
+        </div>
+        <OccasionTable course={course} />
 
         <DialogFooter className="sm:justify-between">
           <div>

@@ -44,12 +44,8 @@ const normalizeCourse = (course: CourseWithOccasion) => ({
   ...course,
   CourseOccasion: course.CourseOccasion.map((occasion) => ({
     ...occasion,
-    periods: course.CourseOccasion.flatMap((occation) =>
-      occation.periods.map((p) => p.period)
-    ),
-    blocks: course.CourseOccasion.flatMap((occation) =>
-      occation.blocks.map((p) => p.block)
-    ),
+    periods: occasion.periods.map((p) => p.period),
+    blocks: occasion.blocks.map((b) => b.block),
   })),
 });
 

@@ -60,6 +60,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion }) => {
       </TableCell>
       <TableCell>{occasion.periods.join(", ")}</TableCell>
       <TableCell>{occasion.blocks.join(", ")}</TableCell>
+      <TableCell className="text-right"> </TableCell>
     </TableRow>
   );
 };
