@@ -12,6 +12,7 @@ import OccasionTable from "./OccasionTable";
 import { Course, Master } from "@/app/(main)/page";
 import { Suspense } from "react";
 import { MasterBadge } from "../MasterBadge";
+import ExaminationTable from "./ExaminationTable";
 
 type CourseDialogProps = {
   open: boolean;
@@ -45,11 +46,20 @@ export const CourseDialog = ({
             {course.credits} ECTS
           </div>
           <div>
+            <Label>Scheduled hours:</Label>
+            {course.scheduledHours} h
+          </div>
+          <div>
+            <Label>Self-study hours:</Label>
+            {course.selfStudyHours} h
+          </div>
+          <div>
             <Label>Level:</Label>
             {course.level}
           </div>
         </div>
         <OccasionTable course={course} />
+        <ExaminationTable examination={course.Examination} />
 
         <DialogFooter className="sm:justify-between">
           <div>
