@@ -1,6 +1,8 @@
+"use server";
+
 import { Prisma } from "@/prisma/generated/client/client";
 import { prisma } from "@/lib/prisma";
-import DndView from "./DndView";
+import ClientPage from "./ClientPage";
 
 export default async function MainPage() {
   const courses = await prisma.course.findMany({
@@ -34,7 +36,7 @@ export default async function MainPage() {
   });
 
   return (
-    <DndView
+    <ClientPage
       courses={courses.map(normalizeCourse)}
       masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
     />

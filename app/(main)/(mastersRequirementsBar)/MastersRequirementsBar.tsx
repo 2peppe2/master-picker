@@ -10,14 +10,15 @@ import {
 import { useEffect, useState } from "react";
 
 export const MastersRequirementsBar = () => {
-  const [masters, setMasters] = useState<MastersWithRequirements | null>(null);
+  const [mastersWithRequirements, setMastersWithRequirements] =
+    useState<MastersWithRequirements | null>(null);
   const evaluateMasterProgress = useEvaluateMasterProgress();
 
   useEffect(() => {
-    getMastersWithRequirements().then(setMasters);
+    getMastersWithRequirements().then(setMastersWithRequirements);
   }, []);
 
-  if (!masters) {
+  if (!mastersWithRequirements) {
     return null;
   }
 
@@ -25,14 +26,14 @@ export const MastersRequirementsBar = () => {
     <Card className="p-4 mb-4">
       <CardTitle className="flex gap-4 text-lg">
         Master Requirements:
-        {masters.map((master) => {
+        {mastersWithRequirements.map((master) => {
           const requirements = master.requirements.flatMap(
             (req) => req.requirements
           );
           const { fulfilled, progress } = evaluateMasterProgress(requirements);
           return (
             <MasterBadge
-              master={master}
+              name={master.master}
               key={master.master}
               text={`${progress}%`}
               tooltip={

@@ -17,15 +17,15 @@ type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   course: Course;
-  masters: Record<string, Master>;
 };
 
 export const CourseDialog = ({
   open,
   onOpenChange,
   course,
-  masters,
 }: CourseDialogProps) => {
+  const;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl no-drag">
@@ -54,9 +54,7 @@ export const CourseDialog = ({
         <DialogFooter className="sm:justify-between">
           <div>
             {course.CourseMaster.map((program) => (
-              <Suspense key={program.master}>
-                <MasterBadge master={masters[program.master]} />
-              </Suspense>
+              <MasterBadge key={program.master} name={program.master} />
             ))}
           </div>
 
