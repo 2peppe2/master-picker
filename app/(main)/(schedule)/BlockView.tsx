@@ -1,5 +1,5 @@
-import semesterScheduleAtom from "@/app/atoms/semestersAtom";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import { useSetAtom } from "jotai";
 import { SearchIcon } from "lucide-react";
 import CourseCard from "@/components/CourseCard";
 import { Draggable } from "@/components/CourseCard/Draggable";
@@ -20,10 +20,11 @@ export const BlockView: FC<BlockViewProps> = ({
   periodNumber,
   blockNumber,
 }) => {
-  const semesters = useAtomValue(semesterScheduleAtom);
+  const { state } = useScheduleStore();
+
   const setFilter = useSetAtom(filterAtom);
   const courseSlot: Course | null =
-    semesters[semesterNumber][periodNumber][blockNumber];
+    state.schedules[semesterNumber][periodNumber][blockNumber];
 
   function onClickFilter() {
     unCheckOtherTimeSlots();

@@ -1,5 +1,4 @@
-import semesterScheduleAtom from "@/app/atoms/semestersAtom";
-import { useAtomValue } from "jotai";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 import { range } from "lodash";
 import { BlockView } from "./BlockView";
 import { FC } from "react";
@@ -13,8 +12,8 @@ export const PeriodView: FC<PeriodViewProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
-  const semesters = useAtomValue(semesterScheduleAtom);
-  const blocks = semesters[semesterNumber][periodNumber];
+  const { state } = useScheduleStore();
+  const blocks = state.schedules[semesterNumber][periodNumber];
   const BLOCKS = range(0, blocks.length);
   return (
     <div className="flex justify-around gap-5">
