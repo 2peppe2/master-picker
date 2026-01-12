@@ -6,15 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { produce } from "immer";
-import { useAtomValue, useSetAtom } from "jotai";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course } from "@/app/(main)/page";
+import { useSetAtom } from "jotai";
 
 interface CourseCardProps {
   course: Course;
@@ -26,9 +24,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
 
   //TODO fix for multiple semesters
   const occasion = course.CourseOccasion[0];
-  const semester = occasion.semester;
-  const period = occasion.periods;
-  const block = occasion.blocks;
   const masterPrograms = course.CourseMaster || [];
   const addCourse  = useSetAtom(addCourseToSemesterAtom);
   const [openDialog, setOpenDialog] = useState(false);

@@ -11,7 +11,7 @@ import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue, useSetAtom } from "jotai";
 import { FC, useMemo } from "react";
 import { Course, CourseOccasion } from "@/app/(main)/page";
-import semesterScheduleAtom, { addCourseToSemesterAtom } from "@/app/atoms/semestersAtom";
+import { addCourseToSemesterAtom } from "@/app/atoms/semestersAtom";
 
 interface OccasionTableProps {
   course: Course;
