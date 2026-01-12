@@ -95,7 +95,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         
         <div className="flex justify-center gap-2 w-full">
           {masterPrograms.map((program) => (
-            <MastersBadge key={program.master} master={program.master} />
+            <MastersBadge key={program.master} masterID={program.master} />
           ))}
         </div>
       </CardFooter>

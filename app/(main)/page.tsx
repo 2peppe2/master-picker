@@ -52,3 +52,23 @@ const normalizeCourse = (course: CourseWithOccasion) => ({
 export type Course = ReturnType<typeof normalizeCourse>;
 
 export type CourseOccasion = Course["CourseOccasion"][0];
+
+export type Master = Prisma.MasterGetPayload<{
+  select: {
+    master: true;
+    name: true;
+    icon: true;
+    style: true;
+  };
+}>;
+
+export type MasterWithRequirements = Prisma.MasterGetPayload<{
+  include: {
+    requirements: {
+      include: {
+        creditRequirements: { select: {credits: true , type: true}};
+        courseRequirements: { select: {courses: true, }};
+      };
+    };
+  };
+}>;

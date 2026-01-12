@@ -1,7 +1,7 @@
 model CoursesRequirement {
   id Int @id @default(autoincrement())
 
-  courses Course[]
+  courses Course[] // Implicit or
   requirementId Int
   requirement   Requirement @relation(fields: [requirementId], references: [id])
 }

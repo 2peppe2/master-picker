@@ -11,7 +11,6 @@ import {
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
 import { MastersBadge } from "@/components/MastersBadge";
-import { masterNames } from "@/components/MastersHelper";
 import masterRequirements from "../../(mastersRequirementsBar)/data";
 
 
@@ -34,7 +33,7 @@ export function MasterSelectorFilter() {
               {masterProfiles.map((profile) => (
                 <SelectItem key={profile} value={profile}>
                   <div className="flex items-center">
-                    <MastersBadge master={profile} />
+                    <MastersBadge masterID={profile} />
                     <span
                       title={masterNames[profile]}
                       className="ml-2 truncate"

@@ -51,7 +51,7 @@ export const CourseDialog = ({
         <DialogFooter className="sm:justify-between">
           <div>
             {course.CourseMaster.map((program) => (
-              <MastersBadge key={program.master} master={program.master} />
+              <MastersBadge key={program.master} masterID={program.master} />
             ))}
           </div>
 
