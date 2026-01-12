@@ -3,6 +3,7 @@ import path from "node:path";
 import { prisma } from "../lib/prisma";
 import { CreditType, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
+import type { MasterRequirement } from "@/app/(main)/(mastersRequirementsBar)/types";
 
 
 function parseSemester(s : string): Semester {
@@ -20,6 +21,18 @@ function mapReqTypeToCreditType(t : string): CreditType | null {
 }
 
 async function main() {
+  await seedCoursesData();
+  await seedMasterRequirementsData();
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exitCode = 1;
+  })
+  .finally(async () => prisma.$disconnect());
+
+async function seedCoursesData() {
   const courseFilePath = path.resolve("./data/6CMJU_courses.json");
   const courses = JSON.parse(fs.readFileSync(courseFilePath, "utf8"));
 
@@ -39,7 +52,7 @@ async function main() {
         credits: Number(c.credits),
         level: c.level ?? "",
         link: c.link ?? "",
-        examiner: c.examiner ?? "", 
+        examiner: c.examiner ?? "",
         ecv: c.ecv ?? "",
       },
       create: {
@@ -93,11 +106,10 @@ async function main() {
 
       if (Array.isArray(slot.periods) && slot.periods.length) {
         await prisma.courseOccasionPeriod.createMany({
-          data: slot.periods.map((p: string ) => ({
+          data: slot.periods.map((p: string) => ({
             courseOccasionId: occ.id,
             period: Number(p),
           })),
-          
         });
       }
 
@@ -107,7 +119,6 @@ async function main() {
             courseOccasionId: occ.id,
             block: Number(b),
           })),
-          
         });
       }
     }
@@ -116,9 +127,57 @@ async function main() {
   console.log(`Seeded ${courses.length} courses`);
 }
 
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exitCode = 1;
-  })
-  .finally(async () => prisma.$disconnect());
+
+async function seedMasterRequirementsData() {
+  const masterRequirementsPath = path.resolve(
+    "./data/6CMJU_master_requirements.json"
+  );
+  const masterRequirements = JSON.parse(
+    fs.readFileSync(masterRequirementsPath, "utf8")
+  ) as Record<string, MasterRequirement[]>;
+
+  // DEV ONLY: clear existing data (children first)
+  await prisma.coursesRequirement.deleteMany();
+  await prisma.creditRequirement.deleteMany();
+  await prisma.requirement.deleteMany();
+
+  for (const [master, requirements] of entries(masterRequirements)) {
+    await prisma.master.upsert({
+      where: { master },
+      update: {},
+      create: { master },
+    });
+
+    const requirementRow = await prisma.requirement.create({
+      data: { masterProgram: master },
+    });
+
+    for (const req of requirements) {
+      if (req.type === "Courses") {
+        if (!req.courses.length) continue;
+        await prisma.coursesRequirement.create({
+          data: {
+            requirementId: requirementRow.id,
+            courses: { connect: req.courses.map((code) => ({ code })) },
+          },
+        });
+        continue;
+      }
+
+      const creditType = mapReqTypeToCreditType(req.type);
+      if (!creditType) {
+        throw new Error(`Unsupported requirement type: ${req.type}`);
+      }
+
+      await prisma.creditRequirement.create({
+        data: {
+          requirementId: requirementRow.id,
+          type: creditType,
+          credits: req.credits,
+        },
+      });
+    }
+
+    console.log(`Seeded requirements for master ${master}`);
+  }
+}
