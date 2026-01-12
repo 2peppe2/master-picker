@@ -6,6 +6,9 @@ model Course {
   link      String
   examiner  String
   ecv       String
+  prerequisitesText   String
+  scheduledHours      Int
+  selfStudyHours     Int
   updatedAt DateTime @default(now())
 
   // Relationship mappings.

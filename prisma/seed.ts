@@ -36,6 +36,9 @@ async function seedCoursesData() {
   const courseFilePath = path.resolve("./data/6CMJU_courses.json");
   const courses = JSON.parse(fs.readFileSync(courseFilePath, "utf8"));
 
+  const courseDetailsFilePath = path.resolve("./data/6CMJU_detailed_courses.json");
+  const courseDetails = JSON.parse(fs.readFileSync(courseDetailsFilePath, "utf8"));
+
   // DEV ONLY: clear existing data (children first)
   await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasionBlock.deleteMany();
@@ -45,6 +48,7 @@ async function seedCoursesData() {
   await prisma.program.deleteMany();
 
   for (const c of courses) {
+    const detailedInfo = courseDetails[c.code];
     await prisma.course.upsert({
       where: { code: c.code },
       update: {
@@ -52,7 +56,10 @@ async function seedCoursesData() {
         credits: Number(c.credits),
         level: c.level ?? "",
         link: c.link ?? "",
-        examiner: c.examiner ?? "",
+        examiner: detailedInfo?.examiner ?? "",
+        prerequisitesText: detailedInfo?.prerequisites ?? "",
+        scheduledHours: detailedInfo?.education_components[0] ?? 0,
+        selfStudyHours: detailedInfo?.education_components[1] ?? 0,
         ecv: c.ecv ?? "",
       },
       create: {
@@ -61,7 +68,10 @@ async function seedCoursesData() {
         credits: Number(c.credits),
         level: c.level ?? "",
         link: c.link ?? "",
-        examiner: c.examiner ?? "",
+        examiner: detailedInfo?.examiner ?? "",
+        prerequisitesText: detailedInfo?.prerequisites ?? "",
+        scheduledHours: detailedInfo?.education_components[0] ?? 0,
+        selfStudyHours: detailedInfo?.education_components[1] ?? 0,
         ecv: c.ecv ?? "",
       },
     });
