@@ -5,6 +5,7 @@ import {
   DndContext,
   DragEndEvent,
   DragOverlay,
+  DragStartEvent,
   KeyboardSensor,
   PointerSensor,
   TouchSensor,
@@ -15,21 +16,23 @@ import {
 import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequirementsBar";
 import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
-import { useAtom, useSetAtom } from "jotai";
-import semesterScheduleAtom from "../atoms/semestersAtom";
-import { produce } from "immer";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { addCourseToSemesterAtom } from "../atoms/semestersAtom";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { FC } from "react";
 import { Course } from "./page";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { userPreferencesAtom } from "../atoms/UserPreferences";
 
-interface dndViewProps {
+interface DndViewProps {
   courses: Course[];
 }
 
-const DndView: FC<dndViewProps> = ({ courses }) => {
+const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
-  const setSemesters = useSetAtom(semesterScheduleAtom);
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const addCourse = useSetAtom(addCourseToSemesterAtom);
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -45,15 +48,42 @@ const DndView: FC<dndViewProps> = ({ courses }) => {
     useSensor(KeyboardSensor)
   );
 
+  const onDragStart = (event: DragStartEvent) => {
+    setActiveCourse(event.active.data.current as Course);
+  };
+
+  const onDragEnd = (event: DragEndEvent) => {
+    setActiveCourse(null);
+
+    if (!event.over) return;
+    if (!activeCourse) return;
+
+    const overData = event.over.data.current as PeriodNodeData;
+
+    const { semester } = relativeSemesterToYearAndSemester(
+      startingYear,
+      overData.semesterNumber
+    );
+
+    const relevantOccasion = activeCourse.CourseOccasion.find(
+      (occ) =>
+        occ.semester === semester &&
+        occ.periods.includes(overData.periodNumber + 1) &&
+        occ.blocks.includes(overData.blockNumber + 1)
+    );
+
+    if (!relevantOccasion) return;
+
+    addCourse({
+      course: activeCourse,
+      occasion: relevantOccasion,
+    });
+  };
+
   return (
     <DndContext
-      onDragStart={(event) => {
-        setActiveCourse(event.active.data.current as Course);
-      }}
-      onDragEnd={(event) => {
-        setActiveCourse(null);
-        dragEndEventHandler(event);
-      }}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
@@ -68,52 +98,6 @@ const DndView: FC<dndViewProps> = ({ courses }) => {
       </DragOverlay>
     </DndContext>
   );
-
-  function dragEndEventHandler(event: DragEndEvent) {
-    if (!event.over) {
-      setSemesters((prev) => {
-        const activeId = event.active.id as string;
-        return produce(prev, (draft) => {
-          clearActiveId(draft, activeId);
-        });
-      });
-      return;
-    }
-    const overData = event.over.data.current as PeriodNodeData;
-    if (!activeCourse) return;
-    if (activeCourse.semester !== overData.semester + 7) return;
-    if (!activeCourse.period.includes(overData.period + 1)) return;
-    if (activeCourse.block !== overData.block + 1) return;
-    // Valid drop target
-
-    setSemesters((prev) => {
-      const activeId = event.active as Course;
-      return produce(prev, (draft) => {
-        clearActiveId(draft, activeId);
-        draft[overData.semester][overData.period][overData.block] = activeId;
-        if (activeCourse.period.length > 1) {
-          // Find the other period and set it too
-          const otherPeriod =
-            activeCourse.period[0] === overData.period + 1
-              ? activeCourse.period[1]
-              : activeCourse.period[0];
-          draft[overData.semester][otherPeriod - 1][overData.block] = activeId;
-        }
-      });
-    });
-
-    function clearActiveId(draft: (string | null)[][][], activeId: string) {
-      for (let i = 0; i < draft.length; i++) {
-        for (let j = 0; j < draft[i].length; j++) {
-          for (let k = 0; k < draft[i][j]?.length; k++) {
-            if (draft[i][j][k] === activeId) {
-              draft[i][j][k] = null;
-            }
-          }
-        }
-      }
-    }
-  }
 };
 
 export default DndView;
