@@ -6,13 +6,14 @@ import { useAtom, useAtomValue } from "jotai";
 import { FC } from "react";
 import SearchInput from "./components/SearchInput";
 import useFiltered from "./hooks/useFiltered";
-import { Course } from "../page";
+import { Course, Master } from "../page";
 
 interface DrawerProps {
   courses: Course[];
+  masters: Record<string, Master>;
 }
 
-export const Drawer: FC<DrawerProps> = ({ courses }) => {
+export const Drawer: FC<DrawerProps> = ({ courses, masters }) => {
   const [semesters] = useAtom(semesterScheduleAtom);
   const notInDropped = (course: Course) => !semesters.flat(3).includes(course);
   const COURSES = useFiltered(courses);
@@ -27,7 +28,7 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
           .filter((course) => course.code !== activeCourse?.code)
           .map((course) => (
             <Draggable key={course.code} id={course.code} data={course}>
-              <CourseCard course={course} dropped={false} />
+              <CourseCard course={course} masters={masters} dropped={false} />
             </Draggable>
           ))}
       </div>

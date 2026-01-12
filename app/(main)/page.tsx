@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import DndView from "./DndView";
 
 export default async function MainPage() {
-  const COURSES = await prisma.course.findMany({
+  const courses = await prisma.course.findMany({
     include: {
       Program: true,
       CourseOccasion: {
@@ -24,7 +24,21 @@ export default async function MainPage() {
     },
   });
 
-  return <DndView courses={COURSES.map(normalizeCourse)} />;
+  const masters = await prisma.master.findMany({
+    select: {
+      master: true,
+      name: true,
+      icon: true,
+      style: true,
+    },
+  });
+
+  return (
+    <DndView
+      courses={courses.map(normalizeCourse)}
+      masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
+    />
+  );
 }
 
 type CourseWithOccasion = Prisma.CourseGetPayload<{

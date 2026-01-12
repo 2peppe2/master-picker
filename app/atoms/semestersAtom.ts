@@ -24,25 +24,47 @@ export const semesterScheduleAtom = atom<SemestersGrid>(
   createScheduleGrid(9, 2, 4, null)
 );
 
-interface AddCoursePayload {
+interface AddCourseArgs {
   course: Course;
   occasion: CourseOccasion;
 }
 
 export const addCourseToSemesterAtom = atom(
   null,
-  (get, set, { course, occasion }: AddCoursePayload) => {
-    set(semesterScheduleAtom, (prev) => 
+  (get, set, { course, occasion }: AddCourseArgs) => {
+    set(semesterScheduleAtom, (prev) =>
       produce(prev, (draft) => {
         const { startingYear } = get(userPreferencesAtom);
-        const relativeYear = yearAndSemesterToRelativeSemester(startingYear, occasion.year, occasion.semester);
+        const relativeYear = yearAndSemesterToRelativeSemester(
+          startingYear,
+          occasion.year,
+          occasion.semester
+        );
         for (const period of occasion.periods) {
           for (const block of occasion.blocks) {
             draft[relativeYear][period - 1][block - 1] = course;
           }
         }
         return draft;
-      }));
+      })
+    );
+  }
+);
+
+interface RemoveCourseArgs {
+  courseCode: string;
+}
+
+export const removeCourseFromSemesterAtom = atom(
+  null,
+  (get, set, { courseCode }: RemoveCourseArgs) => {
+    set(semesterScheduleAtom, (prev) =>
+      prev.map((semester) =>
+        semester.map((period) =>
+          period.map((block) => (block?.code === courseCode ? null : block))
+        )
+      )
+    );
   }
 );
 

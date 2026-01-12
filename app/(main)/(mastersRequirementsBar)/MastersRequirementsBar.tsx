@@ -2,8 +2,7 @@ import { Card, CardTitle } from "@/components/ui/card";
 
 import { MastersBadgeRequirementTooltip } from "./components/MastersBadgeRequirementTooltip";
 import { useEvaluateMasterProgress } from "./hooks/useEvaluateMasterProgress";
-import { MastersBadge } from "@/components/MastersBadge";
-import masterRequirements from "./data";
+import { MasterBadge } from "@/components/MastersBadge";
 import {
   getMastersWithRequirements,
   MastersWithRequirements,
@@ -27,19 +26,20 @@ export const MastersRequirementsBar = () => {
       <CardTitle className="flex gap-4 text-lg">
         Master Requirements:
         {masters.map((master) => {
-          const { fulfilled, progress } = evaluateMasterProgress(
-            master.requirements.flatMap(req=>req.requirements)
+          const requirements = master.requirements.flatMap(
+            (req) => req.requirements
           );
+          const { fulfilled, progress } = evaluateMasterProgress(requirements);
           return (
-            <MastersBadge
+            <MasterBadge
+              master={master}
               key={master.master}
-              masterID={master.master}
               text={`${progress}%`}
               tooltip={
                 <MastersBadgeRequirementTooltip
                   master={master.master}
                   fulfilled={fulfilled}
-                  all={masterRequirements[master]}
+                  all={requirements}
                 />
               }
             />
