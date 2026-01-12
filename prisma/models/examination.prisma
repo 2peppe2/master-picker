@@ -2,6 +2,7 @@ model Examination {
   credits    Int
   module     String
   courseCode String
+  name       String
   scale      Scale  @default(G_OR_U)
 
   Course Course @relation(fields: [courseCode], references: [code])

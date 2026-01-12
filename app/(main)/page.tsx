@@ -21,6 +21,8 @@ export default async function MainPage() {
         },
       },
       CourseMaster: true,
+      Examination: { select: {credits: true, module: true, name: true, scale: true } },
+
     },
   });
 
@@ -36,6 +38,7 @@ type CourseWithOccasion = Prisma.CourseGetPayload<{
         blocks: { select: { block: true } };
       };
     };
+    Examination: { select: {credits: true, module: true, name: true, scale: true } };
     CourseMaster: true;
   };
 }>;
@@ -50,6 +53,15 @@ const normalizeCourse = (course: CourseWithOccasion) => ({
 });
 
 export type Course = ReturnType<typeof normalizeCourse>;
+
+export type CourseExamination = Prisma.ExaminationGetPayload<{
+  select: {
+    credits: true;
+    module: true;
+    name: true;
+    scale: true;
+  };
+}>;
 
 export type CourseOccasion = Course["CourseOccasion"][0];
 

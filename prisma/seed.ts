@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { prisma } from "../lib/prisma";
-import { CoursesType, CreditType, Semester } from "./generated/client/enums";
+import { CoursesType, CreditType, Scale, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
 import type { MasterRequirement } from "@/app/(main)/(mastersRequirementsBar)/types";
 
@@ -43,6 +43,7 @@ async function seedCoursesData() {
   await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasionBlock.deleteMany();
   await prisma.courseOccasion.deleteMany();
+  await prisma.examination.deleteMany();
   await prisma.courseMaster.deleteMany();
   await prisma.course.deleteMany();
   await prisma.program.deleteMany();
@@ -75,6 +76,23 @@ async function seedCoursesData() {
         ecv: c.ecv ?? "",
       },
     });
+
+    if (Array.isArray(detailedInfo?.examinations) && detailedInfo.examinations.length) {
+      await prisma.examination.createMany({
+        data: detailedInfo.examinations.map(
+          (exam: { credits: number; module: string; name: string; scale?: string }) => ({
+            courseCode: c.code,
+            credits: Number(exam.credits),
+            module: exam.module,
+            name: exam.name,
+            scale:
+              exam.scale === "U_THREE_FOUR_FIVE"
+                ? Scale.U_THREE_FOUR_FIVE
+                : Scale.G_OR_U,
+          })
+        ),
+      });
+    }
 
     for (const p of c.program ?? []) {
       await prisma.program.upsert({
