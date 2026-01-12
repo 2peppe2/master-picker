@@ -10,13 +10,22 @@ import {
 } from "@/components/ui/select";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
-import { MastersBadge } from "@/components/MastersBadge";
-import masterRequirements from "../../(mastersRequirementsBar)/data";
+import { MasterBadgeGivenMaster} from "@/components/MastersBadge";
+import { Master } from "../../page";
+import { useEffect, useState } from "react";
+import { getMasters } from "@/app/actions/getMasters";
 
 
 export function MasterSelectorFilter() {
   const [filter, setFilter] = useAtom(filterAtom);
-  const masterProfiles = Object.keys(masterRequirements);
+  const [masters, setMasters] = useState<Master[]| null>();
+  useEffect(() => {
+    getMasters().then(setMasters);
+  }, []);
+
+  if (!masters) {
+    return null;
+  }
     return (
         <Select
           value={filter.masterProfile}
@@ -30,17 +39,18 @@ export function MasterSelectorFilter() {
             <SelectGroup>
               <SelectLabel>Master Profiles</SelectLabel>
               <SelectItem value={"all"}>All Profiles</SelectItem>
-              {masterProfiles.map((profile) => (
-                <SelectItem key={profile} value={profile}>
+              {masters.map((master) => (
+                <SelectItem key={master.master} value={master.master}>
                   <div className="flex items-center">
-                    <MastersBadge masterID={profile} />
+                    <MasterBadgeGivenMaster master={master} />
                     <span
-                      title={masterNames[profile]}
+                      title={master.name ?? undefined}
                       className="ml-2 truncate"
                     >
-                      {masterNames[profile].length > 24
-                        ? masterNames[profile].slice(0, 21) + "…"
-                        : masterNames[profile]}
+                      {master.name &&
+                      master.name.length > 24
+                        ? master.name.slice(0, 21) + "…"
+                        : master.name}
                     </span>
                   </div>
                 </SelectItem>
