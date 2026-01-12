@@ -2,26 +2,25 @@ import { useCallback } from "react";
 import { useAtomValue } from "jotai";
 import _ from "lodash";
 
-import { MasterRequirement } from "../types";
 import { selectedCoursesAtom } from "@/app/atoms/semestersAtom";
-import { Course } from "../../page";
+import { Course, RequirementsUnion } from "../../page";
 
 interface MasterProgress {
   progress: number;
-  fulfilled: MasterRequirement[];
+  fulfilled: RequirementsUnion[];
 }
 
 export const useEvaluateMasterProgress = () => {
   const selectedCourses = useAtomValue(selectedCoursesAtom);
 
   return useCallback(
-    (requirements: MasterRequirement[]): MasterProgress => {
+    (requirements: RequirementsUnion[]): MasterProgress => {
       if (requirements.length === 0) {
         return { progress: 0, fulfilled: [] };
       }
 
       const percentagePerReq = 100 / requirements.length;
-      const fulfilled: MasterRequirement[] = [];
+      const fulfilled: RequirementsUnion[] = [];
       let totalPercentage = 0;
 
       for (const requirement of requirements) {
@@ -50,23 +49,25 @@ export const useEvaluateMasterProgress = () => {
  * Determines the progress (0.0 to 1.0) for a single requirement.
  */
 const getProgressForRequirement = (
-  req: MasterRequirement,
+  req: RequirementsUnion,
   courses: Course[]
 ): number => {
   switch (req.type) {
-    case "Courses": {
-      const isFulfilled = courses.some((c) => req.courses.includes(c.code));
+    case "COURSES_OR": {
+      const isFulfilled = courses.some((c) =>
+        req.courses.map((c) => c.code).includes(c.code)
+      );
       return isFulfilled ? 1 : 0;
     }
-    case "Total": {
+    case "TOTAL": {
       const current = calculateTotalCredits(courses);
       return calculateCreditProgress(current, req.credits);
     }
-    case "A-level": {
+    case "A_LEVEL": {
       const current = calculateLevelCredits(courses, "A");
       return calculateCreditProgress(current, req.credits);
     }
-    case "G-level": {
+    case "G_LEVEL": {
       const current = calculateLevelCredits(courses, "G");
       return calculateCreditProgress(current, req.credits);
     }

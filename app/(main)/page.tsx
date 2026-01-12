@@ -62,13 +62,18 @@ export type Master = Prisma.MasterGetPayload<{
   };
 }>;
 
-export type MasterWithRequirements = Prisma.MasterGetPayload<{
-  include: {
-    requirements: {
-      include: {
-        creditRequirements: { select: {credits: true , type: true}};
-        courseRequirements: { select: {courses: true, }};
-      };
-    };
+export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
+  select: {
+    type: true;
+    courses: true;
   };
 }>;
+
+export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
+  select: {
+    type: true;
+    credits: true;
+  };
+}>;
+
+export type RequirementsUnion = CourseRequirements | CreditsRequirements;

@@ -4,17 +4,20 @@ import { MastersBadgeRequirementTooltip } from "./components/MastersBadgeRequire
 import { useEvaluateMasterProgress } from "./hooks/useEvaluateMasterProgress";
 import { MastersBadge } from "@/components/MastersBadge";
 import masterRequirements from "./data";
-import { getMastersWithRequirements } from "@/app/actions/getMasters";
+import {
+  getMastersWithRequirements,
+  MastersWithRequirements,
+} from "@/app/actions/getMasters";
 import { useEffect, useState } from "react";
-import {  MasterWithRequirements } from "../page";
-
 
 export const MastersRequirementsBar = () => {
+  const [masters, setMasters] = useState<MastersWithRequirements | null>(null);
   const evaluateMasterProgress = useEvaluateMasterProgress();
-  const [masters, setMasters] = useState<MasterWithRequirements[]|null>(null);
-    useEffect(() => {
-      getMastersWithRequirements().then(setMasters);
-    }, []);
+
+  useEffect(() => {
+    getMastersWithRequirements().then(setMasters);
+  }, []);
+
   if (!masters) {
     return null;
   }
@@ -25,7 +28,7 @@ export const MastersRequirementsBar = () => {
         Master Requirements:
         {masters.map((master) => {
           const { fulfilled, progress } = evaluateMasterProgress(
-            masterRequirements[master]
+            master.requirements.flatMap(req=>req.requirements)
           );
           return (
             <MastersBadge

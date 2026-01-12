@@ -1,18 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import { prisma } from "../lib/prisma";
-import { CreditType, Semester } from "./generated/client/enums";
+import { CoursesType, CreditType, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
 import type { MasterRequirement } from "@/app/(main)/(mastersRequirementsBar)/types";
 
-
-function parseSemester(s : string): Semester {
+function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
   if (s === "VT") return Semester.VT;
   throw new Error(`Invalid semester: ${s}`);
 }
 
-function mapReqTypeToCreditType(t : string): CreditType | null {
+function mapReqTypeToCreditType(t: string): CreditType | null {
   // input uses: "A-level" | "G-level" | "Total"
   if (t === "A-level") return CreditType.A_LEVEL;
   if (t === "G-level") return CreditType.G_LEVEL;
@@ -157,6 +156,7 @@ async function seedMasterRequirementsData() {
         if (!req.courses.length) continue;
         await prisma.coursesRequirement.create({
           data: {
+            type: CoursesType.COURSES_OR,
             requirementId: requirementRow.id,
             courses: { connect: req.courses.map((code) => ({ code })) },
           },

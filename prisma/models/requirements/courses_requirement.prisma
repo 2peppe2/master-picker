@@ -1,7 +1,12 @@
 model CoursesRequirement {
   id Int @id @default(autoincrement())
 
-  courses Course[] // Implicit or
+  type          CoursesType
+  courses       Course[] // Implicit or
   requirementId Int
   requirement   Requirement @relation(fields: [requirementId], references: [id])
+}
+
+enum CoursesType {
+  COURSES_OR // Requires any 
 }
