@@ -25,7 +25,7 @@ export const CourseDialog = ({
 }: CourseDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-2xl">
+      <DialogContent className="sm:max-w-2xl no-drag">
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>

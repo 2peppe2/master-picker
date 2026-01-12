@@ -1,4 +1,4 @@
-import semesterScheduleAtom from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom, { addCourseToSemesterAtom } from "@/app/atoms/semestersAtom";
 import {
   Card,
   CardDescription,
@@ -25,14 +25,12 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const { code, name } = course;
 
   //TODO fix for multiple semesters
-  const occasion = course.CourseOccasion?.[0];
-  const year = occasion?.year;
-  const semester = occasion?.semester;
-  const period = occasion?.periods ?? [];
-  const block = occasion?.blocks ?? [];
+  const occasion = course.CourseOccasion[0];
+  const semester = occasion.semester;
+  const period = occasion.periods;
+  const block = occasion.blocks;
   const masterPrograms = course.CourseMaster || [];
-  const { startingYear } = useAtomValue(userPreferencesAtom);
-
+  const addCourse  = useSetAtom(addCourseToSemesterAtom);
   const [openDialog, setOpenDialog] = useState(false);
   const setSemesters = useSetAtom(semesterScheduleAtom);
 
@@ -45,24 +43,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
       );
       return newSemesters;
     });
-  };
-
-  const addCourse = () => {
-    // TODO handle multiple blocks
-    // Probably has bugs ;(
-    setSemesters(
-      produce((draft) => {
-        if (year && period[0]?.period && block[0]?.block) {
-          draft[year - startingYear][period[0].period - 1][block[0].block - 1] =
-            course;
-          if (period[1]?.period) {
-            draft[year - startingYear][period[1].period - 1][
-              block[0].block - 1
-            ] = course;
-          }
-        }
-      })
-    );
   };
 
   return (
@@ -80,7 +60,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={addCourse}
+          onClick={() => addCourse({ course, occasion })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <Plus className="h-4 w-4" />
@@ -116,20 +96,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
           </p>
         </CardDescription>
       </CardHeader>
-      <CardFooter className="flex flex-col gap-2 text-foreground">
-        <div className="flex gap-2 text-muted-foreground text-xs">
-          <div>
-            <strong>S:</strong> {semester ?? "-"}
-          </div>
-          <div>
-            <strong>P:</strong>{" "}
-            {period.length ? period.map((p) => p.period).join("/") : "-"}
-          </div>
-          <div>
-            <strong>B:</strong> {block[0]?.block ?? "-"}
-          </div>
-        </div>
-        <div className="flex justify-between">
+      <CardFooter className="mt-auto text-foreground">
+        
+        <div className="flex justify-center gap-2 w-full border">
           {masterPrograms.map((program) => (
             <MastersBadge key={program.master} master={program.master} />
           ))}
