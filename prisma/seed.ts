@@ -22,6 +22,7 @@ function mapReqTypeToCreditType(t : string): CreditType | null {
 
 async function main() {
   await seedCoursesData();
+  await seedMastersData();
   await seedMasterRequirementsData();
 }
 
@@ -127,7 +128,6 @@ async function seedCoursesData() {
   console.log(`Seeded ${courses.length} courses`);
 }
 
-
 async function seedMasterRequirementsData() {
   const masterRequirementsPath = path.resolve(
     "./data/6CMJU_master_requirements.json"
@@ -179,5 +179,34 @@ async function seedMasterRequirementsData() {
     }
 
     console.log(`Seeded requirements for master ${master}`);
+  }
+}
+interface MasterInfo {
+  id: string;
+  name: string;
+  icon: string;
+  style: string;
+}
+
+async function seedMastersData() {
+  const mastersFilePath = path.resolve("./data/6CMJU_master_names.json");
+  const mastersInfo = JSON.parse(
+    fs.readFileSync(mastersFilePath, "utf8")
+  ) as MasterInfo[];
+  for (const info of mastersInfo) {
+    await prisma.master.upsert({
+      where: { master: info.id },
+      update: {
+        name: info.name,
+        icon: info.icon,
+        style: info.style,
+      },
+      create: {
+        master: info.id,
+        name: info.name,
+        icon: info.icon,
+        style: info.style,
+      },
+    });
   }
 }

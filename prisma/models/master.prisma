@@ -1,5 +1,8 @@
 model Master {
   master       String         @id
+  name         String?
+  icon         String?
+  style        String?
   requirements Requirement[]
   CourseMaster CourseMaster[]
 }
