@@ -1,5 +1,4 @@
 import { CourseWithOccasion } from "@/app/(main)/types";
-import { Course } from "@/app/courses";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { OccasionTable } from "./OccasionTable";
+import OccasionTable from "./OccasionTable";
 
 type CourseDialogProps = {
   open: boolean;
@@ -24,7 +23,6 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl">
@@ -32,25 +30,24 @@ export const CourseDialog = ({
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
-        
+
         <DialogDescription>
           <div className="grid grid-cols-2 gap-4 py-4">
-          <div>
-            <Label>Examiner:</Label>
-            {course.examiner === "" ? "N/A" : course.examiner}
+            <div>
+              <Label>Examiner:</Label>
+              {course.examiner === "" ? "N/A" : course.examiner}
+            </div>
+
+            <div>
+              <Label>Credits:</Label>
+              {course.credits} ECTS
+            </div>
+            <div>
+              <Label>Level:</Label>
+              {course.level}
+            </div>
           </div>
-          
-          <div>
-            <Label>Credits:</Label>
-            {course.credits} ECTS
-          </div>
-          <div>
-            <Label>Level:</Label>
-            {course.level}
-          </div>
-        </div>
-        <OccasionTable course={course} />
-        
+          <OccasionTable course={course} />
         </DialogDescription>
 
         <DialogFooter className="sm:justify-between">
