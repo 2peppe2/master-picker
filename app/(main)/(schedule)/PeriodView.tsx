@@ -1,15 +1,15 @@
 import semesterScheduleAtom from "@/app/atoms/semestersAtom";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
-import { SemesterBlock } from "./SemesterBlock";
+import { BlockView } from "./BlockView";
 import { FC } from "react";
 
-interface SemesterPeriodProps {
+interface PeriodViewProps {
   semesterNumber: number;
   periodNumber: number;
 }
 
-export const SemesterPeriod: FC<SemesterPeriodProps> = ({
+export const PeriodView: FC<PeriodViewProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
@@ -19,7 +19,7 @@ export const SemesterPeriod: FC<SemesterPeriodProps> = ({
   return (
     <div className="flex justify-around gap-5">
       {BLOCKS.map((index: number) => (
-        <SemesterBlock
+        <BlockView
           key={index}
           semesterNumber={semesterNumber}
           periodNumber={periodNumber}

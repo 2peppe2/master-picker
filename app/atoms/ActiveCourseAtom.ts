@@ -1,4 +1,4 @@
 import { atom } from 'jotai';
-import { Course } from '../courses';
+import { CourseWithOccasion } from '../(main)/types';
 
-export const activeCourseAtom = atom<Course | null>(null);
+export const activeCourseAtom = atom<CourseWithOccasion | null>(null);

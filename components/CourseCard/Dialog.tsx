@@ -11,6 +11,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
+import { OccasionTable } from "./OccasionTable";
 
 type CourseDialogProps = {
   open: boolean;
@@ -23,40 +24,34 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  //TODO fix for multiple semesters
-  const occasion = course.CourseOccasion?.[0];
-  const period = occasion?.periods ?? [];
-  const block = occasion?.blocks ?? [];
-
+  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-2 gap-4 py-4">
+        
+        <DialogDescription>
+          <div className="grid grid-cols-2 gap-4 py-4">
           <div>
-            <Label>Period:</Label>
-            <p>
-              {period.length > 1
-                ? `Periods ${period.map((p) => p.period).join(" and ")}`
-                : `Period ${period[0]?.period ?? "-"}`}
-            </p>
+            <Label>Examiner:</Label>
+            {course.examiner === "" ? "N/A" : course.examiner}
           </div>
+          
           <div>
             <Label>Credits:</Label>
-            <p>{course.credits} ECTS</p>
+            {course.credits} ECTS
           </div>
           <div>
             <Label>Level:</Label>
-            <p>{course.level}</p>
-          </div>
-          <div>
-            <Label>Block:</Label>
-            <p>Block {block[0]?.block ?? "-"}</p>
+            {course.level}
           </div>
         </div>
+        <OccasionTable course={course} />
+        
+        </DialogDescription>
 
         <DialogFooter className="sm:justify-between">
           <div>

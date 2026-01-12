@@ -9,13 +9,13 @@ import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
 import { CourseWithOccasion } from "../types";
 
-interface SemesterBlockProps {
+interface BlockViewProps {
   semesterNumber: number;
   periodNumber: number;
   blockNumber: number;
 }
 
-export const SemesterBlock: FC<SemesterBlockProps> = ({
+export const BlockView: FC<BlockViewProps> = ({
   semesterNumber,
   periodNumber,
   blockNumber,
@@ -51,9 +51,9 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
         key={blockNumber}
         id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
         data={{
-          semester: semesterNumber,
-          period: periodNumber,
-          block: blockNumber,
+          semesterNumber: semesterNumber,
+          periodNumber: periodNumber,
+          blockNumber: blockNumber,
         }}
       >
         <div className="flex flex-col items-center">
@@ -71,9 +71,9 @@ export const SemesterBlock: FC<SemesterBlockProps> = ({
       key={blockNumber}
       id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
       data={{
-        semester: semesterNumber,
-        period: periodNumber,
-        block: blockNumber,
+        semesterNumber: semesterNumber,
+        periodNumber: periodNumber,
+        blockNumber: blockNumber,
       }}
     >
       <Draggable key={courseSlot.code} id={courseSlot.code} data={courseSlot}>

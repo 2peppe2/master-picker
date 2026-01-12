@@ -88,7 +88,7 @@ const DndView: FC<dndViewProps> = ({ courses }) => {
     // Valid drop target
 
     setSemesters((prev) => {
-      const activeId = event.active.id as string;
+      const activeId = event.active as CourseWithOccasion;
       return produce(prev, (draft) => {
         clearActiveId(draft, activeId);
         draft[overData.semester][overData.period][overData.block] = activeId;

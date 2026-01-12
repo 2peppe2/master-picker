@@ -1,12 +1,14 @@
 import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
 import React, { FC, ReactNode } from "react";
 
 export type PeriodNodeData = {
-  semester: number;
-  period: number;
-  block: number;
+  semesterNumber: number;
+  periodNumber: number;
+  blockNumber: number;
 };
 
 interface DroppableProps {
@@ -20,20 +22,23 @@ export const Droppable: FC<DroppableProps> = ({
   data,
   id,
 }) => {
-  const { semester, period, block } = data;
+  const { semesterNumber, periodNumber, blockNumber } = data;
   const { isOver, setNodeRef } = useDroppable({
     id,
     data,
   });
   const activeCourse = useAtomValue(activeCourseAtom);
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const {year, semester} = relativeSemesterToYearAndSemester(startingYear, semesterNumber);
   
   let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
 
   if (isOver && activeCourse !== null) {
-    const isSameSemester = activeCourse.semester === semester + 7;
-    const isSamePeriod = activeCourse.period.includes(period + 1);
-    const isSameBlock = activeCourse.block === block + 1;
-    if (isSameSemester && isSamePeriod && isSameBlock) {
+    const isSameYear = activeCourse.CourseOccasion[0].year === year;
+    const isSameSemester = activeCourse.CourseOccasion[0].semester === semester;
+    const isSamePeriod = activeCourse.CourseOccasion[0].periods.includes(periodNumber + 1);
+    const isSameBlock = activeCourse.CourseOccasion[0].blocks.includes(blockNumber + 1);
+    if (isSameYear && isSameSemester && isSamePeriod && isSameBlock) {
       // Valid drop target
       overStyles = "border-teal-500";
     }

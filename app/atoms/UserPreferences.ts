@@ -5,3 +5,4 @@ export const userPreferencesAtom = atom({
   selectedProgram: "6CMJU",
   numberOfSemesters: 9,
 });
+

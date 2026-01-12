@@ -3,10 +3,12 @@ import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
 import { ChevronRightIcon } from "lucide-react";
-import { SemesterPeriod } from "./SemesterPeriod";
+import { PeriodView } from "./PeriodView";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
 import { FC } from "react";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
 
 interface SemesterViewProps {
   semesterNumber: number;
@@ -15,6 +17,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
   const semesters = useAtomValue(semesterScheduleAtom);
   const periods = semesters[semesterNumber];
   const ht_or_vt = semesterNumber % 2 === 0 ? "HT" : "VT";
+  const { startingYear } = useAtomValue(userPreferencesAtom);
 
   const getCredits = () => {
     const semester = semesters[semesterNumber];
@@ -35,7 +38,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
       <Collapsible defaultOpen>
         <CollapsibleTrigger asChild>
           <CardTitle className="flex gap-3">
-            Semester {semesterNumber} {ht_or_vt} - Credits: {getCredits()} / 30
+            Semester {semesterNumber + 1}, {ht_or_vt} {relativeSemesterToYear(startingYear, semesterNumber)} - Credits: {getCredits()} / 30
             <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
           </CardTitle>
         </CollapsibleTrigger>
@@ -43,7 +46,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
           <CardContent>
             <div className="flex flex-col gap-4 pt-5">
               {PERIODS.map((index) => (
-                <SemesterPeriod
+                <PeriodView
                   key={index}
                   periodNumber={index}
                   semesterNumber={semesterNumber}
