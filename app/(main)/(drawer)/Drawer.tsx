@@ -1,20 +1,22 @@
 import CourseCard from "@/components/CourseCard";
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
-import semesterScheduleAtom from "@/app/atoms/semestersAtom";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtomValue } from "jotai";
 import { FC } from "react";
 import SearchInput from "./components/SearchInput";
 import useFiltered from "./hooks/useFiltered";
 import { Course } from "../page";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 
 interface DrawerProps {
   courses: Course[];
 }
 
 export const Drawer: FC<DrawerProps> = ({ courses }) => {
-  const [semesters] = useAtom(semesterScheduleAtom);
-  const notInDropped = (course: Course) => !semesters.flat(3).includes(course);
+  const { state } = useScheduleStore();
+
+  const notInDropped = (course: Course) =>
+    !state.schedules.flat(3).includes(course);
   const COURSES = useFiltered(courses);
   const activeCourse = useAtomValue(activeCourseAtom);
 

@@ -16,8 +16,8 @@ import {
 import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequirementsBar";
 import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
-import { addCourseToSemesterAtom } from "../atoms/semestersAtom";
+import { useAtom, useAtomValue } from "jotai";
+import { useScheduleStore } from "../atoms/scheduleStore";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { FC } from "react";
@@ -32,7 +32,7 @@ interface DndViewProps {
 const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const addCourse = useSetAtom(addCourseToSemesterAtom);
+  const { mutators } = useScheduleStore();
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -74,7 +74,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     if (!relevantOccasion) return;
 
-    addCourse({
+    mutators.addCourse({
       course: activeCourse,
       occasion: relevantOccasion,
     });

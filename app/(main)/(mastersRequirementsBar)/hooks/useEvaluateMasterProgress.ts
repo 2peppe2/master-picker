@@ -1,8 +1,7 @@
 import { useCallback } from "react";
-import { useAtomValue } from "jotai";
 import _ from "lodash";
 
-import { selectedCoursesAtom } from "@/app/atoms/semestersAtom";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 import { Course, RequirementsUnion } from "../../page";
 
 interface MasterProgress {
@@ -11,7 +10,7 @@ interface MasterProgress {
 }
 
 export const useEvaluateMasterProgress = () => {
-  const selectedCourses = useAtomValue(selectedCoursesAtom);
+  const { state } = useScheduleStore();
 
   return useCallback(
     (requirements: RequirementsUnion[]): MasterProgress => {
@@ -26,7 +25,7 @@ export const useEvaluateMasterProgress = () => {
       for (const requirement of requirements) {
         const progress = getProgressForRequirement(
           requirement,
-          selectedCourses
+          state.selectedCourses
         );
 
         totalPercentage += percentagePerReq * progress;
@@ -41,7 +40,7 @@ export const useEvaluateMasterProgress = () => {
         progress: Math.floor(totalPercentage),
       };
     },
-    [selectedCourses]
+    [state.selectedCourses]
   );
 };
 

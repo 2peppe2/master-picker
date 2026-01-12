@@ -1,4 +1,4 @@
-import semesterScheduleAtom from "@/app/atoms/semestersAtom";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useAtomValue } from "jotai";
 import { range } from "lodash";
@@ -14,13 +14,15 @@ interface SemesterViewProps {
   semesterNumber: number;
 }
 export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
-  const semesters = useAtomValue(semesterScheduleAtom);
-  const periods = semesters[semesterNumber];
+  const { state } = useScheduleStore();
+
+  const schedules = state.schedules;
+  const periods = schedules[semesterNumber];
   const ht_or_vt = semesterNumber % 2 === 0 ? "HT" : "VT";
   const { startingYear } = useAtomValue(userPreferencesAtom);
 
   const getCredits = () => {
-    const semester = semesters[semesterNumber];
+    const semester = schedules[semesterNumber];
     const coursesInSemester = new Set(
       semester.flat().filter((block) => block !== null)
     );
@@ -38,7 +40,9 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
       <Collapsible defaultOpen>
         <CollapsibleTrigger asChild>
           <CardTitle className="flex gap-3">
-            Semester {semesterNumber + 1}, {ht_or_vt} {relativeSemesterToYear(startingYear, semesterNumber)} - Credits: {getCredits()} / 30
+            Semester {semesterNumber + 1}, {ht_or_vt}{" "}
+            {relativeSemesterToYear(startingYear, semesterNumber)} - Credits:{" "}
+            {getCredits()} / 30
             <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
           </CardTitle>
         </CollapsibleTrigger>

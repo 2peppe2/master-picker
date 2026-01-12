@@ -1,8 +1,4 @@
 import {
-  addCourseToSemesterAtom,
-  removeCourseFromSemesterAtom,
-} from "@/app/atoms/semestersAtom";
-import {
   Card,
   CardDescription,
   CardFooter,
@@ -15,7 +11,7 @@ import { CourseDialog } from "./Dialog";
 import { MasterBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/(main)/page";
-import { useSetAtom } from "jotai";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 
 interface CourseCardProps {
   course: Course;
@@ -29,8 +25,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const occasion = course.CourseOccasion[0];
   const masterPrograms = course.CourseMaster || [];
 
-  const removeCourse = useSetAtom(removeCourseFromSemesterAtom);
-  const addCourse = useSetAtom(addCourseToSemesterAtom);
+  const { mutators } = useScheduleStore();
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -40,7 +35,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           size="icon"
           variant="ghost"
-          onClick={() => removeCourse({ courseCode: course.code })}
+          onClick={() => mutators.removeCourse({ courseCode: course.code })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <X className="h-4 w-4" />
@@ -49,7 +44,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => addCourse({ course, occasion })}
+          onClick={() => mutators.addCourse({ course, occasion })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <Plus className="h-4 w-4" />
