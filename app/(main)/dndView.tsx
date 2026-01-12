@@ -13,19 +13,18 @@ import {
 } from "@dnd-kit/core";
 
 import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { Course } from "../courses";
 import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
-import { CourseWithOccasion } from "./types";
 import { useAtom, useSetAtom } from "jotai";
 import semesterScheduleAtom from "../atoms/semestersAtom";
 import { produce } from "immer";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { FC } from "react";
+import { Course } from "./page";
 
 interface dndViewProps {
-  courses: CourseWithOccasion[];
+  courses: Course[];
 }
 
 const DndView: FC<dndViewProps> = ({ courses }) => {
@@ -88,7 +87,7 @@ const DndView: FC<dndViewProps> = ({ courses }) => {
     // Valid drop target
 
     setSemesters((prev) => {
-      const activeId = event.active as CourseWithOccasion;
+      const activeId = event.active as Course;
       return produce(prev, (draft) => {
         clearActiveId(draft, activeId);
         draft[overData.semester][overData.period][overData.block] = activeId;

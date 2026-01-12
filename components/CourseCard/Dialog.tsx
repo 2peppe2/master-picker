@@ -1,4 +1,3 @@
-import { CourseWithOccasion } from "@/app/(main)/types";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,11 +10,12 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import OccasionTable from "./OccasionTable";
+import { Course } from "@/app/courses";
 
 type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  course: CourseWithOccasion;
+  course: Course;
 };
 
 export const CourseDialog = ({

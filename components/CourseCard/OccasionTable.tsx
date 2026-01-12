@@ -1,4 +1,3 @@
-import { CourseWithOccasion } from "@/app/(main)/types";
 import {
   Table,
   TableBody,
@@ -11,9 +10,10 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
+import { Course, CourseOccasion } from "@/app/(main)/page";
 
 interface OccasionTableProps {
-  course: CourseWithOccasion;
+  course: Course;
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => (
@@ -36,20 +36,12 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => (
 
 export default OccasionTable;
 
-// TODO: Make this type be better.
 interface OccasionTableRowProps {
-  occasion: CourseWithOccasion["CourseOccasion"][0];
+  occasion: CourseOccasion;
 }
 
 const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-
-  const periods = useMemo(
-    () => occasion.periods.map((p) => p.period),
-    [occasion]
-  );
-
-  const blocks = useMemo(() => occasion.blocks.map((p) => p.block), [occasion]);
 
   const relativeSemester = useMemo(
     () =>
@@ -66,8 +58,8 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion }) => {
       <TableCell>
         {relativeSemester} ({occasion.semester} {occasion.year})
       </TableCell>
-      <TableCell>{periods.join(", ")}</TableCell>
-      <TableCell>{blocks.join(", ")}</TableCell>
+      <TableCell>{occasion.periods.join(", ")}</TableCell>
+      <TableCell>{occasion.blocks.join(", ")}</TableCell>
     </TableRow>
   );
 };

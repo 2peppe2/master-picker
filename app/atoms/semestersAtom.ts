@@ -1,7 +1,7 @@
+import { Course } from "../(main)/page";
 import { atom } from "jotai";
-import { CourseWithOccasion } from "@/app/(main)/types";
 
-type Cell = CourseWithOccasion | null;
+type Cell = Course | null;
 type SemestersGrid = Cell[][][]; // [semester][period][block]
 
 function createScheduleGrid(
@@ -23,7 +23,7 @@ export const semesterScheduleAtom = atom<SemestersGrid>(
 
 export const selectedCoursesAtom = atom((get) => {
   const semesters = get(semesterScheduleAtom);
-  const selectedCourses: Set<CourseWithOccasion> = new Set();
+  const selectedCourses: Set<Course> = new Set();
   const flattenedCourses = semesters
     .flat(2)
     .filter((course) => course !== null);

@@ -3,8 +3,8 @@ import { useAtomValue } from "jotai";
 import _ from "lodash";
 
 import { MasterRequirement } from "../types";
-import { CourseWithOccasion } from "../../types";
 import { selectedCoursesAtom } from "@/app/atoms/semestersAtom";
+import { Course } from "../../page";
 
 interface MasterProgress {
   progress: number;
@@ -51,7 +51,7 @@ export const useEvaluateMasterProgress = () => {
  */
 const getProgressForRequirement = (
   req: MasterRequirement,
-  courses: CourseWithOccasion[]
+  courses: Course[]
 ): number => {
   switch (req.type) {
     case "Courses": {
@@ -80,13 +80,10 @@ const calculateCreditProgress = (current: number, required: number) => {
   return _.clamp(current / required, 0, 1);
 };
 
-const calculateTotalCredits = (courses: CourseWithOccasion[]): number =>
+const calculateTotalCredits = (courses: Course[]): number =>
   courses.reduce((sum, c) => sum + c.credits, 0);
 
-const calculateLevelCredits = (
-  courses: CourseWithOccasion[],
-  level: "A" | "G"
-): number => {
+const calculateLevelCredits = (courses: Course[], level: "A" | "G"): number => {
   return courses
     .filter(
       (c) => !c.CourseMaster.some((master) => master.courseCode === c.code)

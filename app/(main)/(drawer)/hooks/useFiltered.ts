@@ -1,10 +1,10 @@
 import { useAtomValue } from "jotai";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import semesterScheduleAtom from "@/app/atoms/semestersAtom";
-import { CourseWithOccasion } from "../../types";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Course } from "../../page";
 
-const useFiltered = (courses: CourseWithOccasion[]) => {
+const useFiltered = (courses: Course[]) => {
   const filters = useAtomValue(filterAtom);
   const semester = useAtomValue(semesterScheduleAtom);
   const startingYear = useAtomValue(userPreferencesAtom).startingYear;

@@ -13,11 +13,11 @@ import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
-import { CourseWithOccasion } from "@/app/(main)/types";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Course } from "@/app/(main)/page";
 
 interface CourseCardProps {
-  course: CourseWithOccasion;
+  course: Course;
   dropped: boolean;
 }
 

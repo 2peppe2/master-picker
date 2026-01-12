@@ -6,16 +6,15 @@ import { useAtom, useAtomValue } from "jotai";
 import { FC } from "react";
 import SearchInput from "./components/SearchInput";
 import useFiltered from "./hooks/useFiltered";
-import { CourseWithOccasion } from "../types";
+import { Course } from "../page";
 
 interface DrawerProps {
-  courses: CourseWithOccasion[];
+  courses: Course[];
 }
 
 export const Drawer: FC<DrawerProps> = ({ courses }) => {
   const [semesters] = useAtom(semesterScheduleAtom);
-  const notInDropped = (course: CourseWithOccasion) =>
-    !semesters.flat(3).includes(course);
+  const notInDropped = (course: Course) => !semesters.flat(3).includes(course);
   const COURSES = useFiltered(courses);
   const activeCourse = useAtomValue(activeCourseAtom);
 

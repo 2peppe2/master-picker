@@ -1,9 +1,9 @@
-import DndView from "./DndView";
+import { Prisma } from "@/prisma/generated/client/client";
 import { prisma } from "@/lib/prisma";
-import { CourseWithOccasion } from "./types";
+import DndView from "./DndView";
 
 export default async function MainPage() {
-  const COURSES: CourseWithOccasion[] = await prisma.course.findMany({
+  const COURSES = await prisma.course.findMany({
     include: {
       Program: true,
       CourseOccasion: {
@@ -24,5 +24,35 @@ export default async function MainPage() {
     },
   });
 
-  return <DndView courses={COURSES} />;
+  return <DndView courses={COURSES.map(normalizeCourse)} />;
 }
+
+type CourseWithOccasion = Prisma.CourseGetPayload<{
+  include: {
+    Program: true;
+    CourseOccasion: {
+      include: {
+        periods: { select: { period: true } };
+        blocks: { select: { block: true } };
+      };
+    };
+    CourseMaster: true;
+  };
+}>;
+
+const normalizeCourse = (course: CourseWithOccasion) => ({
+  ...course,
+  CourseOccasion: course.CourseOccasion.map((occasion) => ({
+    ...occasion,
+    periods: course.CourseOccasion.flatMap((occation) =>
+      occation.periods.map((p) => p.period)
+    ),
+    blocks: course.CourseOccasion.flatMap((occation) =>
+      occation.blocks.map((p) => p.block)
+    ),
+  })),
+});
+
+export type Course = ReturnType<typeof normalizeCourse>;
+
+export type CourseOccasion = Course["CourseOccasion"][0];
