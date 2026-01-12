@@ -21,16 +21,15 @@ import { addCourseToSemesterAtom } from "../atoms/semestersAtom";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { FC } from "react";
-import { Course, Master } from "./page";
+import { Course } from "./page";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
 
 interface DndViewProps {
   courses: Course[];
-  masters: Record<string, Master>;
 }
 
-const DndView: FC<DndViewProps> = ({ courses, masters }) => {
+const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const addCourse = useSetAtom(addCourseToSemesterAtom);
@@ -88,16 +87,14 @@ const DndView: FC<DndViewProps> = ({ courses, masters }) => {
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
-        <Drawer courses={courses} masters={masters} />
+        <Drawer courses={courses} />
         <div className="flex flex-col  gap-4 px-8">
           <MastersRequirementsBar />
           <Schedule />
         </div>
       </div>
       <DragOverlay>
-        {activeCourse && (
-          <CourseCard dropped={false} course={activeCourse} masters={masters} />
-        )}
+        {activeCourse && <CourseCard dropped={false} course={activeCourse} />}
       </DragOverlay>
     </DndContext>
   );

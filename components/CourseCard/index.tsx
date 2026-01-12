@@ -1,4 +1,4 @@
-import semesterScheduleAtom, {
+import {
   addCourseToSemesterAtom,
   removeCourseFromSemesterAtom,
 } from "@/app/atoms/semestersAtom";
@@ -14,28 +14,23 @@ import { useState } from "react";
 import { CourseDialog } from "./Dialog";
 import { MasterBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
-import { Course, Master } from "@/app/(main)/page";
+import { Course } from "@/app/(main)/page";
 import { useSetAtom } from "jotai";
 
 interface CourseCardProps {
   course: Course;
-  masters: Record<string, Master>;
   dropped: boolean;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({
-  course,
-  masters,
-  dropped,
-}) => {
+const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const { code, name } = course;
 
   //TODO fix for multiple semesters
   const occasion = course.CourseOccasion[0];
   const masterPrograms = course.CourseMaster || [];
 
-  const addCourse = useSetAtom(addCourseToSemesterAtom);
   const removeCourse = useSetAtom(removeCourseFromSemesterAtom);
+  const addCourse = useSetAtom(addCourseToSemesterAtom);
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -63,7 +58,6 @@ const CourseCard: React.FC<CourseCardProps> = ({
       <CourseDialog
         course={course}
         open={openDialog}
-        masters={masters}
         onOpenChange={setOpenDialog}
       />
       <CardHeader>
@@ -94,10 +88,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
       <CardFooter className="mt-auto text-foreground">
         <div className="flex justify-center gap-2 w-full">
           {masterPrograms.map((program) => (
-            <MasterBadge
-              key={program.master}
-              master={masters[program.master]}
-            />
+            <MasterBadge name={program.master} key={program.master} />
           ))}
         </div>
       </CardFooter>
