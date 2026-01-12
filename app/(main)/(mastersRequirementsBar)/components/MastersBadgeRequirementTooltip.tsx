@@ -1,11 +1,11 @@
 import { LucideCircleCheck, LucideCircleDashed } from "lucide-react";
-import { MasterRequirement } from "../types";
+import { RequirementsUnion } from "../../page";
 import { FC } from "react";
 
 interface MastersBadgeTooltipProps {
   master: string;
-  all: MasterRequirement[];
-  fulfilled: MasterRequirement[];
+  all: RequirementsUnion[];
+  fulfilled: RequirementsUnion[];
 }
 
 export const MastersBadgeRequirementTooltip: FC<MastersBadgeTooltipProps> = ({
@@ -25,27 +25,28 @@ export const MastersBadgeRequirementTooltip: FC<MastersBadgeTooltipProps> = ({
 );
 
 type RequirementComponentMap = {
-  [K in MasterRequirement["type"]]: FC<{
-    requirement: Extract<MasterRequirement, { type: K }>;
-  }>;
+  [T in RequirementsUnion as T["type"]]: FC<{ requirement: T }>;
 };
 
 const RequirementRows: RequirementComponentMap = {
-  "G-level": ({ requirement }) => (
+  G_LEVEL: ({ requirement }) => (
     <>Have at least {requirement.credits} G-level credits.</>
   ),
-  "A-level": ({ requirement }) => (
+  A_LEVEL: ({ requirement }) => (
     <>Have at least {requirement.credits} A-level credits.</>
   ),
-  Total: ({ requirement }) => (
+  TOTAL: ({ requirement }) => (
     <>Have at least {requirement.credits} total credits.</>
   ),
-  Courses: ({ requirement }) => (
-    <>Have selected at least one of {requirement.courses.join(", ")}.</>
+  COURSES_OR: ({ requirement }) => (
+    <>
+      Have selected at least one of{" "}
+      {requirement.courses.map((course) => course.code).join(", ")}.
+    </>
   ),
 };
 
-const MastersRequirementRowRenderer = <T extends MasterRequirement>({
+const MastersRequirementRowRenderer = <T extends RequirementsUnion>({
   requirement,
   isFulfilled,
 }: {
@@ -61,10 +62,7 @@ const MastersRequirementRowRenderer = <T extends MasterRequirement>({
       {isFulfilled ? (
         <LucideCircleCheck color="var(--color-emerald-500)" size={16} />
       ) : (
-        <LucideCircleDashed
-          className="dark:text-background"
-          size={16}
-        />
+        <LucideCircleDashed className="dark:text-background" size={16} />
       )}
       <RequirementRow requirement={requirement} />
     </div>

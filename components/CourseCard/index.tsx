@@ -1,4 +1,7 @@
-import semesterScheduleAtom, { addCourseToSemesterAtom } from "@/app/atoms/semestersAtom";
+import semesterScheduleAtom, {
+  addCourseToSemesterAtom,
+  removeCourseFromSemesterAtom,
+} from "@/app/atoms/semestersAtom";
 import {
   Card,
   CardDescription,
@@ -9,36 +12,32 @@ import {
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
-import { MastersBadge } from "@/components/MastersBadge";
+import { MasterBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
-import { Course } from "@/app/(main)/page";
+import { Course, Master } from "@/app/(main)/page";
 import { useSetAtom } from "jotai";
 
 interface CourseCardProps {
   course: Course;
+  masters: Record<string, Master>;
   dropped: boolean;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
+const CourseCard: React.FC<CourseCardProps> = ({
+  course,
+  masters,
+  dropped,
+}) => {
   const { code, name } = course;
 
   //TODO fix for multiple semesters
   const occasion = course.CourseOccasion[0];
   const masterPrograms = course.CourseMaster || [];
-  const addCourse  = useSetAtom(addCourseToSemesterAtom);
-  const [openDialog, setOpenDialog] = useState(false);
-  const setSemesters = useSetAtom(semesterScheduleAtom);
 
-  const removeCourse = () => {
-    setSemesters((prev) => {
-      const newSemesters = prev.map((semester) =>
-        semester.map((period) =>
-          period.map((block) => (block?.code === code ? null : block))
-        )
-      );
-      return newSemesters;
-    });
-  };
+  const addCourse = useSetAtom(addCourseToSemesterAtom);
+  const removeCourse = useSetAtom(removeCourseFromSemesterAtom);
+
+  const [openDialog, setOpenDialog] = useState(false);
 
   return (
     <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
@@ -46,7 +45,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           size="icon"
           variant="ghost"
-          onClick={removeCourse}
+          onClick={() => removeCourse({ courseCode: course.code })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <X className="h-4 w-4" />
@@ -64,6 +63,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
       <CourseDialog
         course={course}
         open={openDialog}
+        masters={masters}
         onOpenChange={setOpenDialog}
       />
       <CardHeader>
@@ -92,10 +92,12 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         </CardDescription>
       </CardHeader>
       <CardFooter className="mt-auto text-foreground">
-        
         <div className="flex justify-center gap-2 w-full">
           {masterPrograms.map((program) => (
-            <MastersBadge key={program.master} masterID={program.master} />
+            <MasterBadge
+              key={program.master}
+              master={masters[program.master]}
+            />
           ))}
         </div>
       </CardFooter>

@@ -1,4 +1,3 @@
-import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,19 +9,23 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import OccasionTable from "./OccasionTable";
-import { Course } from "@/app/(main)/page"
+import { Course, Master } from "@/app/(main)/page";
+import { Suspense } from "react";
+import { MasterBadge } from "../MastersBadge";
 import ExaminationTable from "./ExaminationTable";
 
 type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   course: Course;
+  masters: Record<string, Master>;
 };
 
 export const CourseDialog = ({
   open,
   onOpenChange,
   course,
+  masters,
 }: CourseDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -61,7 +64,9 @@ export const CourseDialog = ({
         <DialogFooter className="sm:justify-between">
           <div>
             {course.CourseMaster.map((program) => (
-              <MastersBadge key={program.master} masterID={program.master} />
+              <Suspense key={program.master}>
+                <MasterBadge master={masters[program.master]} />
+              </Suspense>
             ))}
           </div>
 
