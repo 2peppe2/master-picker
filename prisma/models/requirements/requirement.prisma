@@ -1,0 +1,9 @@
+model Requirement {
+  id Int @id @default(autoincrement())
+
+  masterProgram String
+  master        Master @relation(fields: [masterProgram], references: [master])
+
+  creditRequirements CreditRequirement[]
+  courseRequirements CoursesRequirement[]
+}

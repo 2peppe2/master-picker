@@ -1,5 +1,3 @@
-import { Course } from "@/app/courses";
-import { MastersBadge } from "@/components/MastersBadge";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,6 +8,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
+import OccasionTable from "./OccasionTable";
+import { Course, Master } from "@/app/(main)/page";
+import { Suspense } from "react";
+import { MasterBadge } from "../MasterBadge";
 
 type CourseDialogProps = {
   open: boolean;
@@ -22,54 +24,41 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  const {
-    name: courseName,
-    code: courseCode,
-    period,
-    credits,
-    level,
-    block,
-    link,
-    mastersPrograms,
-  } = course;
+  const;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-2xl no-drag">
         <DialogHeader>
-          <DialogTitle>{courseCode}</DialogTitle>
-          <DialogDescription>{courseName}</DialogDescription>
+          <DialogTitle>{course.code}</DialogTitle>
+          <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
+
         <div className="grid grid-cols-2 gap-4 py-4">
           <div>
-            <Label>Period:</Label>
-            <p>
-              {period.length > 1
-                ? `Periods ${period.join(" and ")}`
-                : `Period ${period[0]}`}
-            </p>
+            <Label>Examiner:</Label>
+            {course.examiner === "" ? "N/A" : course.examiner}
           </div>
+
           <div>
             <Label>Credits:</Label>
-            <p>{credits} ECTS</p>
+            {course.credits} ECTS
           </div>
           <div>
             <Label>Level:</Label>
-            <p>{level}</p>
-          </div>
-          <div>
-            <Label>Block:</Label>
-            <p>Block {block}</p>
+            {course.level}
           </div>
         </div>
+        <OccasionTable course={course} />
 
         <DialogFooter className="sm:justify-between">
           <div>
-            {mastersPrograms.map((program) => (
-              <MastersBadge key={program} master={program} />
+            {course.CourseMaster.map((program) => (
+              <MasterBadge key={program.master} name={program.master} />
             ))}
           </div>
 
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a href={course.link} target="_blank" rel="noopener noreferrer">
             <Button type="button" variant="link">
               More Info
             </Button>

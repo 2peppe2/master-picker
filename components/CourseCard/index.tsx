@@ -1,5 +1,3 @@
-import { Course } from "@/app/courses";
-import semestersAtom from "@/app/atoms/semestersAtom";
 import {
   Card,
   CardDescription,
@@ -7,13 +5,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { produce } from "immer";
-import { useSetAtom } from "jotai";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
-import { MastersBadge } from "@/components/MastersBadge";
+import { MasterBadge } from "@/components/MasterBadge";
 import { Button } from "@/components/ui/button";
+import { Course } from "@/app/(main)/page";
+import { useScheduleStore } from "@/app/atoms/scheduleStore";
 
 interface CourseCardProps {
   course: Course;
@@ -21,32 +19,15 @@ interface CourseCardProps {
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
-  const { code, semester, period, block, name, mastersPrograms } = course;
+  const { code, name } = course;
+
+  //TODO fix for multiple semesters
+  const occasion = course.CourseOccasion[0];
+  const masterPrograms = course.CourseMaster || [];
+
+  const { mutators } = useScheduleStore();
 
   const [openDialog, setOpenDialog] = useState(false);
-  const setSemesters = useSetAtom(semestersAtom);
-
-  const removeCourse = () => {
-    setSemesters((prev) => {
-      const newSemesters = prev.map((semester) =>
-        semester.map((period) =>
-          period.map((block) => (block === code ? null : block))
-        )
-      );
-      return newSemesters;
-    });
-  };
-
-  const addCourse = () => {
-    setSemesters(
-      produce((draft) => {
-        draft[semester - 7][period[0] - 1][block - 1] = code;
-        if (period.length > 1) {
-          draft[semester - 7][period[1] - 1][block - 1] = code;
-        }
-      })
-    );
-  };
 
   return (
     <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
@@ -54,7 +35,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           size="icon"
           variant="ghost"
-          onClick={removeCourse}
+          onClick={() => mutators.removeCourse({ courseCode: course.code })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <X className="h-4 w-4" />
@@ -63,7 +44,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={addCourse}
+          onClick={() => mutators.addCourse({ course, occasion })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
         >
           <Plus className="h-4 w-4" />
@@ -99,21 +80,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
           </p>
         </CardDescription>
       </CardHeader>
-      <CardFooter className="flex flex-col gap-2 text-foreground">
-        <div className="flex gap-2 text-muted-foreground text-xs">
-          <div>
-            <strong>S:</strong> {semester}
-          </div>
-          <div>
-            <strong>P:</strong> {period.join("/")}
-          </div>
-          <div>
-            <strong>B:</strong> {block}
-          </div>
-        </div>
-        <div className="flex justify-between">
-          {mastersPrograms.map((program) => (
-            <MastersBadge key={program} master={program} />
+      <CardFooter className="mt-auto text-foreground">
+        <div className="flex justify-center gap-2 w-full">
+          {masterPrograms.map((program) => (
+            <MasterBadge name={program.master} key={program.master} />
           ))}
         </div>
       </CardFooter>

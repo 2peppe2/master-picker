@@ -1,0 +1,8 @@
+model CourseMaster {
+  master     String
+  courseCode String
+  Master     Master @relation(fields: [master], references: [master])
+  Course     Course @relation(fields: [courseCode], references: [code])
+
+  @@id(name: "courseMasterId", [master, courseCode])
+}

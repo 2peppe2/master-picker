@@ -1,0 +1,12 @@
+model CoursesRequirement {
+  id Int @id @default(autoincrement())
+
+  type          CoursesType
+  courses       Course[]
+  requirementId Int
+  requirement   Requirement @relation(fields: [requirementId], references: [id])
+}
+
+enum CoursesType {
+  COURSES_OR // Requires one of the courses in the list when applied to a course requirement.
+}
