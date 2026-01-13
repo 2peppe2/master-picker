@@ -25,8 +25,6 @@ export const CourseDialog = ({
   onOpenChange,
   course,
 }: CourseDialogProps) => {
-  const;
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl no-drag">
@@ -58,7 +56,10 @@ export const CourseDialog = ({
             {course.level}
           </div>
         </div>
+        
+        <Label className="mb-2 font-semibold">Schedule:</Label>
         <OccasionTable course={course} />
+        <Label className="mb-2 font-semibold">Examinations:</Label>
         <ExaminationTable examination={course.Examination} />
 
         <DialogFooter className="sm:justify-between">
