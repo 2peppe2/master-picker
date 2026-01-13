@@ -5,10 +5,14 @@ import { FC, ReactNode } from "react";
 import { useAtomValue } from "jotai";
 import { Badge } from "./ui/badge";
 
+interface TooltipFunctionArgs {
+  masterName: string;
+}
+
 interface MasterBadgeProps {
   name: string;
   text?: string;
-  tooltip?: string | ReactNode;
+  tooltip?: (args: TooltipFunctionArgs) => string | ReactNode;
 }
 
 export const MasterBadge: FC<MasterBadgeProps> = ({ name, text, tooltip }) => {
@@ -22,7 +26,9 @@ export const MasterBadge: FC<MasterBadgeProps> = ({ name, text, tooltip }) => {
           <MasterIcon iconName={master.icon} /> {text}
         </Badge>
       </TooltipTrigger>
-      <TooltipContent side="bottom">{tooltip ?? master.name}</TooltipContent>
+      <TooltipContent side="bottom">
+        {tooltip?.({ masterName: name }) ?? name}
+      </TooltipContent>
     </Tooltip>
   );
 };

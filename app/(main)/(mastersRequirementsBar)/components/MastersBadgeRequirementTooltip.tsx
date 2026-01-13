@@ -4,6 +4,7 @@ import { FC } from "react";
 
 interface MastersBadgeTooltipProps {
   master: string;
+  name: string;
   all: RequirementsUnion[];
   fulfilled: RequirementsUnion[];
 }
@@ -11,9 +12,11 @@ interface MastersBadgeTooltipProps {
 export const MastersBadgeRequirementTooltip: FC<MastersBadgeTooltipProps> = ({
   master,
   all,
+  name,
   fulfilled,
 }) => (
   <div className="flex flex-col gap-2 mt-2 mb-2">
+    <p className="font-semibold">{name}</p>
     {all.map((requirement, i) => (
       <MastersRequirementRowRenderer
         key={`${master}-requirement-row-${i}`}
