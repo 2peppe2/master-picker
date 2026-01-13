@@ -8,6 +8,7 @@ import { useAtom } from "jotai";
 import { MasterSelectorFilter } from "./MastersSelectorFilter";
 import { Button } from "@/components/ui/button";
 import { RESET } from "jotai/utils";
+import SemesterSelectorFilter from "./SemesterSelectorFilter";
 
 export const FilterPopOver = () => {
   const [filter, setFilter] = useAtom(filterAtom);
@@ -31,14 +32,7 @@ export const FilterPopOver = () => {
           </Label>
         </div>
         <MasterSelectorFilter />
-        <TimeSlotFilter
-          states={filter.semester}
-          onChange={(index, checked) =>
-            onTimeChange("semester", index, checked)
-          }
-          title="Semester"
-          offset={7}
-        />
+        <SemesterSelectorFilter />
         <TimeSlotFilter
           states={filter.period}
           onChange={(index, checked) => onTimeChange("period", index, checked)}

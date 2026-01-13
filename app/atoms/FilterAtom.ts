@@ -15,7 +15,7 @@ export const filterAtom = atomWithReset<filter>(
         searchTerm: "",
         showOnlyApplicable: false,
         masterProfile: undefined,
-        semester: [],
+        semester: [7, 8 , 9],
         ht_or_vt: [true, true],
         period: [true, true],
         block: [true, true, true, true],
