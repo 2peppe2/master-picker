@@ -18,6 +18,7 @@ interface MasterBadgeProps {
 export const MasterBadge: FC<MasterBadgeProps> = ({ name, text, tooltip }) => {
   const masters = useAtomValue(mastersAtom);
   const master = masters[name];
+  const masterName = master.name ?? "";
 
   return (
     <Tooltip>
@@ -27,7 +28,7 @@ export const MasterBadge: FC<MasterBadgeProps> = ({ name, text, tooltip }) => {
         </Badge>
       </TooltipTrigger>
       <TooltipContent side="bottom">
-        {tooltip?.({ masterName: name }) ?? name}
+        {tooltip?.({ masterName }) ?? masterName}
       </TooltipContent>
     </Tooltip>
   );

@@ -8,7 +8,7 @@ import {
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./Dialog";
-import { MasterBadge } from "@/components/MastersBadge";
+import { MasterBadge } from "@/components/MasterBadge";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/(main)/page";
 import { useScheduleStore } from "@/app/atoms/scheduleStore";

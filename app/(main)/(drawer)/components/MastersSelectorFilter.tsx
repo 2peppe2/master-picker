@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { filterAtom } from "@/app/atoms/FilterAtom";
 import { produce } from "immer";
-import { MasterBadge } from "@/components/MastersBadge";
+import { MasterBadge } from "@/components/MasterBadge";
 import { mastersAtom } from "@/app/atoms/mastersAtom";
 
 export function MasterSelectorFilter() {

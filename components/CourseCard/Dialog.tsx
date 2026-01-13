@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import OccasionTable from "./OccasionTable";
 import { Course, Master } from "@/app/(main)/page";
 import { Suspense } from "react";
-import { MasterBadge } from "../MastersBadge";
+import { MasterBadge } from "../MasterBadge";
 
 type CourseDialogProps = {
   open: boolean;
