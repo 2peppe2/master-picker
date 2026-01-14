@@ -24,7 +24,7 @@ const ExaminationTable: FC<ExaminationTableProps> = ({ examination }) => {
             <TableBody>
                 {examination.map((exam) => (
                     <TableRow key={exam.module}>
-                        <TableCell>{exam.name}</TableCell>
+                        <TableCell>{exam.name.length <= 50 ? exam.name : exam.name.substring(0, 50) + "..."}</TableCell>
                         <TableCell>{exam.module}</TableCell>
                         <TableCell>{exam.credits} ECTS</TableCell>
                         <TableCell>{exam.scale == Scale.G_OR_U ? "U, G" : "U, 3, 4, 5"}</TableCell>
