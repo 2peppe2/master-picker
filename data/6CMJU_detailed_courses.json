@@ -1,0 +1,3650 @@
+{
+  "TAMS43": {
+    "examiner": "Torkel Erhardsson",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Compulsory Assignment"
+      },
+      {
+        "credits": 5.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "A first course in probability theory and statistics."
+  },
+  "TANA15": {
+    "examiner": "Fredrik Berntsson",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": "Basic courses in Calculus in one and several variables and a course in linear algebra."
+  },
+  "TANA21": {
+    "examiner": "Andrew Winters",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic courses in calculus, linear algebra and programming."
+  },
+  "TANA24": {
+    "examiner": "Fredrik Berntsson",
+    "examinations": [
+      {
+        "credits": 2.5,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer assignments, compulsory attendance at sessions"
+      },
+      {
+        "credits": 3.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      46.0,
+      114.0
+    ],
+    "prerequisites": "Basic courses in calculus, linear algebra and programming"
+  },
+  "TAOP07": {
+    "examiner": "Elina Rönnberg",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 5.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "Calculus, linear algebra, and programming"
+  },
+  "TAOP33": {
+    "examiner": "Roghayeh Hajizadeh",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      44.0,
+      63.0
+    ],
+    "prerequisites": "Linear Algebra"
+  },
+  "TAOP88": {
+    "examiner": "Björn Morén",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      54.0,
+      106.0
+    ],
+    "prerequisites": "Calculus, linear algebra, and Matlab."
+  },
+  "TATA24": {
+    "examiner": "Axel Hultman, Jan Snellman",
+    "examinations": [
+      {
+        "credits": 0.0,
+        "module": "KTR1",
+        "scale": "G_OR_U",
+        "name": "Written test"
+      },
+      {
+        "credits": 8.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      108.0,
+      105.0
+    ],
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent)."
+  },
+  "TATA40": {
+    "examiner": "Hans Lundmark",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "MOM1",
+        "scale": "G_OR_U",
+        "name": "Participation in at least 12 of 16 lectures"
+      }
+    ],
+    "education_components": [
+      32.0,
+      5.0
+    ],
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent)."
+  },
+  "TATA41": {
+    "examiner": "Magnus Herberthson, Mikael Langer, Fredrik Andersson, Erik Darpö",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "Foundation Course in Mathematics"
+  },
+  "TATA53": {
+    "examiner": "Jonathan Nilsson",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in exercises"
+      }
+    ],
+    "education_components": [
+      38.0,
+      122.0
+    ],
+    "prerequisites": "A basic course in linear algebra."
+  },
+  "TATA54": {
+    "examiner": "Jan Snellman",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Basic concepts in discrete mathematics."
+  },
+  "TATA55": {
+    "examiner": "Jesper Thorén",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignments"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Mathematics corresponding to basic courses in discrete algebra and linear algebra."
+  },
+  "TATA64": {
+    "examiner": "Carl Johan Casselgren",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in assignment"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Elementary courses in linear algebra and discrete mathematics."
+  },
+  "TATA65": {
+    "examiner": "Carl Johan Casselgren",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      80.0,
+      80.0
+    ],
+    "prerequisites": null
+  },
+  "TATA91": {
+    "examiner": "Jesper Thorén",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written exam"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Calculus in one variable 1, Linear Algebra"
+  },
+  "TATB04": {
+    "examiner": "David Rule",
+    "examinations": [
+      {
+        "credits": 4.5,
+        "module": "TEN3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written summary examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written partial examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written partial examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Hand-in exercises and group work"
+      }
+    ],
+    "education_components": [
+      78.0,
+      82.0
+    ],
+    "prerequisites": null
+  },
+  "TBME03": {
+    "examiner": "Padraig D´arcy",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital Examination"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Handing in task"
+      },
+      {
+        "credits": 1.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic knowledge in biology and chemistry"
+  },
+  "TBME04": {
+    "examiner": "Hanna Jonasson",
+    "examinations": [
+      {
+        "credits": 0.5,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Seminars"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 3.5,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital Examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic skills from first and second academic year at LiTH."
+  },
+  "TBMI02": {
+    "examiner": "Anders Eklund",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic Linear Algebra: bases, scalar product, least squares problem, eigenvalue problems. Basic signal processing: sampling, convolution and Fourier transform of o1D signals. Basic programming skills in Matlab and Python are recommended."
+  },
+  "TBMI04": {
+    "examiner": "Håkan Örman",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "BAS1",
+        "scale": "G_OR_U",
+        "name": "Tutorial groups and seminars"
+      },
+      {
+        "credits": 4.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Written group report and individual reflection report"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Three years of university studies with an engineering major. Basic knowledge in anatomy and physiology."
+  },
+  "TBMI19": {
+    "examiner": "Håkan Örman",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 1.0,
+        "module": "BAS1",
+        "scale": "G_OR_U",
+        "name": "Seminars"
+      },
+      {
+        "credits": 3.5,
+        "module": "HEM1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Essay assignements"
+      }
+    ],
+    "education_components": [
+      58.0,
+      102.0
+    ],
+    "prerequisites": "Basic laboratory skills and computer proficiency, basic skills regarding structured and systematic problem analysis; basic knowledge of anatomy and physiology is recommended but not required"
+  },
+  "TBMI26": {
+    "examiner": "Magnus Borga",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      54.0,
+      106.0
+    ],
+    "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics. Recommended: Signal theory, programming (Python)."
+  },
+  "TBMI28": {
+    "examiner": "Elin Nyman",
+    "examinations": [
+      {
+        "credits": 12.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      0.0,
+      320.0
+    ],
+    "prerequisites": "Knowledge from “eHealth: Aims and Applications” and “eHealth: from Idea to Impact”"
+  },
+  "TBMI32": {
+    "examiner": "Rolf Saager",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project"
+      },
+      {
+        "credits": 2.0,
+        "module": "BAS1",
+        "scale": "G_OR_U",
+        "name": "Tutorial groups"
+      }
+    ],
+    "education_components": [
+      44.0,
+      116.0
+    ],
+    "prerequisites": "Three years of study at an engineering programme at university level. Knowledge in eHealth corresponding to TBMI04 eHealth: Aims and Applications."
+  },
+  "TBMT26": {
+    "examiner": "Johannes Johansson",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 1.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Project assignment"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Anatomy and Physiology"
+  },
+  "TDAB01": {
+    "examiner": "Ann-Charlotte Hallberg",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Computer assignments"
+      },
+      {
+        "credits": 5.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Mathematical Analysis, especially derivatives, integrals; Linear Algebra, especially calculations with vectors and matrices; Discrete Mathematics, especially set theory and combinatorics. Basic programming."
+  },
+  "TDDC17": {
+    "examiner": "Fredrik Heintz",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Programming in a functional, imperative or object oriented programming language. Knowledge of data structures and algorithms. Knowledge in logic and discrete mathematics is useful."
+  },
+  "TDDC34": {
+    "examiner": "Thomas Rosenfall",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG4",
+        "scale": "G_OR_U",
+        "name": "Project in group"
+      },
+      {
+        "credits": 4.0,
+        "module": "UPG5",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Individual hand-in assignments"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Introduction to programming datastructures and algorithms, computer science, at least 45 credits. Basic course in industrial economics.."
+  },
+  "TDDC73": {
+    "examiner": "Anders Fröberg",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Programming 15 credits, of which at least 6 credits are object-oriented programming"
+  },
+  "TDDC90": {
+    "examiner": "Ulf Kargén",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work and assignments"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      42.0,
+      118.0
+    ],
+    "prerequisites": "Basic course in security. Students are expected to have knowledge of operating systems, programming languages, and software engineering. Students should be able to develop, test and debug software in Unix or Linux environments. Some experience with C-programming as well as basic knowledge of web application development are recommended."
+  },
+  "TDDC93": {
+    "examiner": "Daniel Varro",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      },
+      {
+        "credits": 0.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Voluntary hand-in assignment"
+      }
+    ],
+    "education_components": [
+      32.0,
+      75.0
+    ],
+    "prerequisites": "The student must be well acquainted with programming in at least one high level programming language and must have used advanced algorithms and data structures. Elementary knowledge about object-oriented analysis and design. The student must also be acquainted to work without a central course book."
+  },
+  "TDDD04": {
+    "examiner": "Lena Buffoni",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "LAB2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Programming (Java, C, C++,C#), Data Structures and Algorithms, practical experience in developing complex software."
+  },
+  "TDDD07": {
+    "examiner": "Simin Nadjm-Tehrani",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": "First and second programming courses. A course on concurrent programming and operating systems."
+  },
+  "TDDD08": {
+    "examiner": "Victor Lagerkvist",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic courses in discrete mathematics and logic, and a course on basic programming."
+  },
+  "TDDD20": {
+    "examiner": "Peter Jonsson",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "Discrete mathematics and logic. An introductory course on data structures and algorithms. That is, the student is expected to be familiar with asymptotic notation, basic data structures, such as lists, stacks, queues, trees etc., and algorithms for fundamental problems, such as searching, sorting, etc. Basic knowledge in probability theory and optimization."
+  },
+  "TDDD23": {
+    "examiner": "Erik Berglund",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Programming 10 credits (at least 6 credits object-oriented programming), Basic course in Usable/Interactive systems or similar."
+  },
+  "TDDD25": {
+    "examiner": "Christoph Kessler",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Concurrent Programming and operating system or Real Time and Concurrent Programming"
+  },
+  "TDDD27": {
+    "examiner": "Erik Berglund",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Seminars and project"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Good programming skills and ability to work with frameworks. Good understanding of how HTML / CSS / Javascript forms the basis for system development in the browser. Good JavaScript knowledge and knowledge of asynchronous communication with server and use of ROUTS and JSON. Good understanding of the web's REST technologies, micro frameworks such as Flask and Express.js, integration of external services via REST API. Ability to build larger web-based interactive systems and to independently run software projects."
+  },
+  "TDDD37": {
+    "examiner": "Olaf Hartig",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "The course requires thorough knowledge in programming, data structures and algorithms, and mathematics preferrably directed towards discrete mathematics or logics."
+  },
+  "TDDD38": {
+    "examiner": "Klas Arvidsson",
+    "examinations": [
+      {
+        "credits": 0.0,
+        "module": "DAK1",
+        "scale": "G_OR_U",
+        "name": "Voluntary examination in computer lab (part 1)"
+      },
+      {
+        "credits": 0.0,
+        "module": "DAK2",
+        "scale": "G_OR_U",
+        "name": "Voluntary examination in computer lab (part 2)"
+      },
+      {
+        "credits": 0.0,
+        "module": "DAK3",
+        "scale": "G_OR_U",
+        "name": "Voluntary examination in computer lab (part 3)"
+      },
+      {
+        "credits": 6.0,
+        "module": "DAT3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      84.0,
+      76.0
+    ],
+    "prerequisites": "Strong programming experience, familiarity with composite types or object-oriented programming, and proficiency in C++."
+  },
+  "TDDD41": {
+    "examiner": "Patrick Lambrix",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      26.0,
+      134.0
+    ],
+    "prerequisites": "The course requires thorough knowledge in programming, discrete mathematics, data structures and algorithms and databases."
+  },
+  "TDDD43": {
+    "examiner": "Patrick Lambrix",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Programming, Databases."
+  },
+  "TDDD48": {
+    "examiner": "Jendrik Seipp",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "Basic knowledge and understanding of data structures and algorithms as well as logic and discrete mathematics. Knowledge and understanding of basic artificial intelligence techniques and concepts, including state-space search, heuristics and the A* search algorithm."
+  },
+  "TDDD49": {
+    "examiner": "Sahand Sadjadee",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Labs"
+      }
+    ],
+    "education_components": [
+      40.0,
+      67.0
+    ],
+    "prerequisites": "Object-oriented programming"
+  },
+  "TDDD50": {
+    "examiner": "Simin Nadjm-Tehrani",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Active participation in seminars, and written report"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Oral Presentation and Seminar Leadership"
+      }
+    ],
+    "education_components": [
+      24.0,
+      83.0
+    ],
+    "prerequisites": "Basic knowledge of digital systems, computer architecture, programming, operating systems, and computer networks."
+  },
+  "TDDD53": {
+    "examiner": "Johan Blomkvist",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Translation is not available"
+      },
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Group Assignment"
+      }
+    ],
+    "education_components": [
+      32.0,
+      128.0
+    ],
+    "prerequisites": "User-centred design at basic level (courses like System Usability Issues, Interaction Design, Interactive Systems, Mobile and Social Applcations, User Driven Product Development or Product Ergonomics, or Create and Understand 3D)"
+  },
+  "TDDD56": {
+    "examiner": "Christoph Kessler",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful."
+  },
+  "TDDD57": {
+    "examiner": "Erik Berglund",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Excellent programming skills and ability to independently carry out a programming project."
+  },
+  "TDDD70": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      23.0,
+      4.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDD72": {
+    "examiner": "Andrzej Szalas",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Discrete mathematics"
+  },
+  "TDDD78": {
+    "examiner": "Marco Kuhlmann",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB3",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "PRA3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignment"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "Basic knowledge in programming. Practical programming experience in Python, corresponding to (for example) the course Functional and Imperative Programming part 1 and part 2."
+  },
+  "TDDD79": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      16.0,
+      11.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDD80": {
+    "examiner": "Rita Kovordanyi",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Computer labs"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer labs"
+      },
+      {
+        "credits": 6.0,
+        "module": "PRA2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignment"
+      }
+    ],
+    "education_components": [
+      196.0,
+      97.0
+    ],
+    "prerequisites": null
+  },
+  "TDDD84": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      8.0,
+      19.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDD85": {
+    "examiner": "Victor Lagerkvist",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Compulsory lab assignments"
+      },
+      {
+        "credits": 5.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": "Basic mathematics, for instance given by discrete mathematics courses. Logic."
+  },
+  "TDDD86": {
+    "examiner": "Ahmed Rezine",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Written assignment"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Computer based exercises"
+      },
+      {
+        "credits": 5.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Programming assignments"
+      },
+      {
+        "credits": 3.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      90.0,
+      203.0
+    ],
+    "prerequisites": "Discrete mathematics, and basic knowledge of functional, imperative, and object-oriented programming."
+  },
+  "TDDD89": {
+    "examiner": "Christoph Kessler",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Seminars"
+      },
+      {
+        "credits": 4.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Hand-in assignment"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area."
+  },
+  "TDDD91": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      8.0,
+      19.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDD92": {
+    "examiner": "Jonas Kvarnström",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Individual written report"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG4",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      74.0,
+      59.0
+    ],
+    "prerequisites": "Programming, data structures and algorithms. This course runs in parallel with the introductory artificial intelligence course."
+  },
+  "TDDD94": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      8.0,
+      19.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDD95": {
+    "examiner": "Fredrik Heintz",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Design and Analysis of Algorithms"
+  },
+  "TDDD96": {
+    "examiner": "Lena Buffoni",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Opposition"
+      },
+      {
+        "credits": 14.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      64.0,
+      336.0
+    ],
+    "prerequisites": "To start the course project, the following requirements must be met:\nCompleted the subject courses in: programming in multiple programming paradigms data structures and algorithms concurrent programming and operating systems perspectives to computer technology professionalism for engineers"
+  },
+  "TDDD97": {
+    "examiner": "Sahand Sadjadee",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project and laboratory work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Good knowledge of object-oriented programming for example Python or Java. Basic familiarity with web browsers and the Internet is assumed."
+  },
+  "TDDD98": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      8.0,
+      19.0
+    ],
+    "prerequisites": "The course requires experience and knowledge from studies in the lower grades in the degree program in Computer Science and Engineering or Computer Science and Software Engineering acquired in parallel with this course."
+  },
+  "TDDE01": {
+    "examiner": "Oleg Sysoev",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "DAT2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Probability theory; Statistics; Mathematical analysis; Linear Algebra; Basic programming."
+  },
+  "TDDE02": {
+    "examiner": "Aseel Berglund",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "The course requires that the student has advanced programming skills and good knowledge of any software-related technical field (e.g. computer networks, security, mobile and social applications, AI, signal processing, and computer graphics). The student has also experience from programming projects in teams. The student must also be able to search and organize information, and to communicate orally and in writing."
+  },
+  "TDDE05": {
+    "examiner": "Mariusz Wzorek",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignment"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "An introductory AI course, Object-oriented programming (preferably in C++ or Python.)"
+  },
+  "TDDE07": {
+    "examiner": "Bertil Wegmann",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer assignments"
+      },
+      {
+        "credits": 5.0,
+        "module": "DAT2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Mathematical analysis; Linear Algebra; Probability and Statistics; Machine Learning; Basic programming."
+  },
+  "TDDE09": {
+    "examiner": "Marco Kuhlmann",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "UPG3",
+        "scale": "G_OR_U",
+        "name": "Theory assignments"
+      },
+      {
+        "credits": 1.5,
+        "module": "LAB3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory assignments"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG4",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignments (group part)"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG5",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignments (individual part)"
+      }
+    ],
+    "education_components": [
+      42.0,
+      118.0
+    ],
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\ngood knowledge of programming, data structures, and algorithms\nmachine learning (such as TDDE01 or TBMI26)\nThe lab series for the course uses Python and the PyTorch library."
+  },
+  "TDDE13": {
+    "examiner": "Fredrik Heintz",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignments"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "An introductory AI course, knowledge of programming, probabilities, and logic."
+  },
+  "TDDE15": {
+    "examiner": "Jose M Pena",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer-based laboratory exercises"
+      },
+      {
+        "credits": 5.0,
+        "module": "DAT2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Probability theory and Statistics; Bayesian Learning; Machine Learning; Mathematical analysis; Linear Algebra; Basic programming."
+  },
+  "TDDE16": {
+    "examiner": "Marcel Bollmann",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory exercises"
+      }
+    ],
+    "education_components": [
+      24.0,
+      136.0
+    ],
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\nprogramming, data structures and algorithms\nmachine learning\nThe lab series for the course uses Python."
+  },
+  "TDDE19": {
+    "examiner": "Mattias Tiger",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile \"AI and machine learning\" or the specialization \"AI and data mining\" in the area covered by the project."
+  },
+  "TDDE20": {
+    "examiner": "Erik Berglund",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile ”Game Programming\" or similar set of base courses for the webb and app- area covered by the project."
+  },
+  "TDDE21": {
+    "examiner": "Andrei Gurtov",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in one the profiles \"Secure systems” or ”Computer systems”, or in one of the specializations ”Embedded systems” or ”Networks, distributed systems and security” in the area covered by the project."
+  },
+  "TDDE23": {
+    "examiner": "Peter Dalenius",
+    "examinations": [
+      {
+        "credits": 5.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Exercises"
+      }
+    ],
+    "education_components": [
+      46.0,
+      114.0
+    ],
+    "prerequisites": null
+  },
+  "TDDE24": {
+    "examiner": "Jonas Kvarnström",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer Examination"
+      }
+    ],
+    "education_components": [
+      0.0,
+      133.0
+    ],
+    "prerequisites": "Elementary computer skills, basic programming in Python corresponding to \"Funcional and Imperative Programming, part 1\" and basic concepts from a course in discrete mathematics (sets, functions, relations, induction, graphs, logical expressions)."
+  },
+  "TDDE25": {
+    "examiner": "Jonas Kvarnström",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Hand-in Assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project Work"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": "Although there are no prerequisites, this course will be run in parallel with the introduction to programming course and be tightly integrated with it."
+  },
+  "TDDE31": {
+    "examiner": "Huanyu Li",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Labs"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written exam"
+      }
+    ],
+    "education_components": [
+      42.0,
+      118.0
+    ],
+    "prerequisites": "Basic database course. Data mining or machine learning course."
+  },
+  "TDDE34": {
+    "examiner": "Ahmed Rezine",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Programming, discrete mathematics and logic"
+  },
+  "TDDE35": {
+    "examiner": "Niklas Carlsson",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      80.0,
+      213.0
+    ],
+    "prerequisites": "Calculus, statistics, and programming knowledge (preferably both in java and C)."
+  },
+  "TDDE41": {
+    "examiner": "Lena Buffoni",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written assignment"
+      },
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project assignment"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "Software engineering - theory. Object-oriented programming. It is not required but good to have some experience in reading software engineering papers. Software quality. Metaprogramming."
+  },
+  "TDDE45": {
+    "examiner": "Adrian Pop",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer-based exam"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Basic course in software engineering (including UML)\nAbility to program in multiple programming languages (including object-oriented programming and pointers / memory management)\nData structures\nThe student should know how to read research papers on software engineering and search information independently on new topics."
+  },
+  "TDDE50": {
+    "examiner": "Ola Leifler",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project assignment"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Reflection report"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Systems analysis"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": null
+  },
+  "TDDE51": {
+    "examiner": "August Ernstsson",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer assignments"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Hand-in assignments"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "Proficient in unit-level testing and software design principles and patterns. Also have basic proficiency in source code management tools and build tools for software. Proficient in reading technical English texts."
+  },
+  "TDDE52": {
+    "examiner": "Daniel Varro",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Students from the swedish programme “Civilingenjör” are expected to have acquired knowledge corresponding to courses in one of the two profiles “Large Scale Software Engineering” or “Programming and Algorithms” depending on which focus area in the course the student chooses. In particular, for the “Large Scale Software Engineering” profile it is recommended to have acquired the knowledge from Methods and tools for large distributed projects.\nStudents from the international Master's programme in Computer Science are expected to have acquired knowledge corresponding to courses in the specialization “Programming and Software Methods”."
+  },
+  "TDDE58": {
+    "examiner": "Nikolaos Pappas",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Probability and Statistics.\nMathematical knowledge on basic information theoretic concepts and the time and frequency sharing ideas from for example “Signals, Information, Communication” is helpful but not a requirement."
+  },
+  "TDDE61": {
+    "examiner": "Mikael Asplund",
+    "examinations": [
+      {
+        "credits": 0.5,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Seminar"
+      },
+      {
+        "credits": 4.5,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer labs"
+      },
+      {
+        "credits": 0.5,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Online quiz"
+      },
+      {
+        "credits": 0.5,
+        "module": "DAK1",
+        "scale": "G_OR_U",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic security course\nBasic networking\nEthics"
+  },
+  "TDDE62": {
+    "examiner": "Ulf Kargén",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work and written assignments"
+      }
+    ],
+    "education_components": [
+      46.0,
+      114.0
+    ],
+    "prerequisites": "Basic course in computer security. Basic understanding of operating system concepts and TCP/IP networks is recommended."
+  },
+  "TDDE63": {
+    "examiner": "Ulf Kargén",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project"
+      }
+    ],
+    "education_components": [
+      12.0,
+      148.0
+    ],
+    "prerequisites": "The course “Information Security: Privacy, System and Network Security”, or equivalent. Students are expected to be able to produce written reports of high quality and be capable of independent work in project form."
+  },
+  "TDDE64": {
+    "examiner": "Patrick Lambrix",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "MUN1",
+        "scale": "G_OR_U",
+        "name": "Oral presentation of research paper"
+      },
+      {
+        "credits": 4.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Machine Learning an/or Data mining and/or a course in AI. A course in Statistics."
+  },
+  "TDDE65": {
+    "examiner": "Christoph Kessler",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Basic course in programming. A course in process programming  is useful but not required, since understanding the process concept is assumed. Programming skills in C/C++ are required."
+  },
+  "TDDE66": {
+    "examiner": "Adrian Pop",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Data Structures and Algorithms. Formal Languages and Automata Theory, either via that course or studying selected material (check with lecturer). Some knowledge of C-based languages such as C++ is an advantage."
+  },
+  "TDDE68": {
+    "examiner": "August Ernstsson",
+    "examinations": [
+      {
+        "credits": 0.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Voluntary lab assignment"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "Programming in C or C++. Data structures and algorithms. Computer hardware. Distributed version management (e.g., git)."
+  },
+  "TDDE70": {
+    "examiner": "Fredrik Lindsten",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer Based Laboratory Assignmnets"
+      },
+      {
+        "credits": 2.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital Examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project Work"
+      }
+    ],
+    "education_components": [
+      42.0,
+      118.0
+    ],
+    "prerequisites": "Calculus in one and several variables, linear algebra, statistics, optimization and programming. Basic machine learning (at least 6 credits) including artificial neural networks. Programming in Python and experience in programming for numerical problem solving and linear algebra (e.g. via NumPy, Matlab or Julia)."
+  },
+  "TDDE74": {
+    "examiner": "Björn Johansson",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Active participation in seminars"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Active participation in scenario-based excercises"
+      },
+      {
+        "credits": 2.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      54.0,
+      106.0
+    ],
+    "prerequisites": "BSc in Computer Science, Computer Engineering, Information Technology or similar."
+  },
+  "TDDE78": {
+    "examiner": "Fredrik Heintz",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Practical skills of programming in Python. Working knowledge of deep learning, especially deep neural networks from for example “Artificial Intelligence” (TDDC17) . Understanding of common concepts in computer science and optimization."
+  },
+  "TDEI19": {
+    "examiner": "Emelie Havemo",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Case Seminars"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Assignment"
+      },
+      {
+        "credits": 3.0,
+        "module": "KTR1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      24.0,
+      136.0
+    ],
+    "prerequisites": "Basic knowledge regarding management control."
+  },
+  "TDEI74": {
+    "examiner": "Harald Brege",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work and reflections"
+      },
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Industrial Economics, fundamental course in statistics."
+  },
+  "TDTS07": {
+    "examiner": "Ahmed Rezine",
+    "examinations": [
+      {
+        "credits": 2.5,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      },
+      {
+        "credits": 3.5,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Computer Hardware and Basic Computer Architectures, Programming"
+  },
+  "TDTS08": {
+    "examiner": "Zebo Peng",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Computer Hardware and Architecture"
+  },
+  "TDTS21": {
+    "examiner": "Niklas Carlsson",
+    "examinations": [
+      {
+        "credits": 3.5,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project assignment with oral presentation"
+      },
+      {
+        "credits": 2.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "Basic computer networks course. (For LiU students, this normally corresponds to having taken TDTS06, TDDE35/TDDD93, TDTS11, eller TDTS04.)"
+  },
+  "TEAE01": {
+    "examiner": "Sofi Rehme, Stefan Maass",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 1.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      49.0,
+      111.0
+    ],
+    "prerequisites": "Foundation Course in Mathematics"
+  },
+  "TEAE13": {
+    "examiner": "Ingrid Thörn Berggren",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital written examination"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Basic course in industrial engineering"
+  },
+  "TEAE20": {
+    "examiner": "Marc Stuhldreier",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Mandatory seminars and written assignments"
+      },
+      {
+        "credits": 5.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital written examination"
+      }
+    ],
+    "education_components": [
+      32.0,
+      128.0
+    ],
+    "prerequisites": null
+  },
+  "TEAE21": {
+    "examiner": "Marc Stuhldreier",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Approved seminars"
+      },
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital written examination"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": null
+  },
+  "TEIE88": {
+    "examiner": "Susanna Wallner",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital written examination"
+      }
+    ],
+    "education_components": [
+      32.0,
+      75.0
+    ],
+    "prerequisites": null
+  },
+  "TEIG01": {
+    "examiner": "Andrea Fried",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Group seminars and assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "Achieved Bachelor level studies in Computer Science."
+  },
+  "TEIM11": {
+    "examiner": "Daniel Ellström",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      44.0,
+      116.0
+    ],
+    "prerequisites": "Basic course in industrial economics"
+  },
+  "TEIM13": {
+    "examiner": "Christoph Röcklinsberg",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "KTR1",
+        "scale": "G_OR_U",
+        "name": "Written test"
+      },
+      {
+        "credits": 5.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": null
+  },
+  "TEIO06": {
+    "examiner": "Viktor Werner",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Individual assignments"
+      }
+    ],
+    "education_components": [
+      47.0,
+      113.0
+    ],
+    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent."
+  },
+  "TEIO13": {
+    "examiner": "Anna Yström",
+    "examinations": [
+      {
+        "credits": 2.5,
+        "module": "MUN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG4",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written assignment and participation"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project assignment"
+      }
+    ],
+    "education_components": [
+      88.0,
+      72.0
+    ],
+    "prerequisites": "Industrial Management, Corporate Organization or corresponding relevant knowledge about general models and theories about organizations."
+  },
+  "TEIO29": {
+    "examiner": "Stefan Cavalcante Bernat Junior",
+    "examinations": [
+      {
+        "credits": 2.5,
+        "module": "MUN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written group assignment"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG4",
+        "scale": "G_OR_U",
+        "name": "Participation in seminars and individual assignment"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "At least two years of academic studies."
+  },
+  "TEIO32": {
+    "examiner": "Dag Swartling",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "KTR2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written test"
+      },
+      {
+        "credits": 1.5,
+        "module": "KTR1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written test"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG8",
+        "scale": "G_OR_U",
+        "name": "Group assignment project management"
+      },
+      {
+        "credits": 1.5,
+        "module": "UPG9",
+        "scale": "G_OR_U",
+        "name": "Group assignment organization"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": null
+  },
+  "TEIO90": {
+    "examiner": "Viktor Werner",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG6",
+        "scale": "G_OR_U",
+        "name": "Group assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      80.0,
+      80.0
+    ],
+    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent."
+  },
+  "TEIO94": {
+    "examiner": "Jeanette Engzell",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project group assignment"
+      },
+      {
+        "credits": 0.5,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Reflection assignment individual/in pairs"
+      },
+      {
+        "credits": 2.5,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      44.0,
+      116.0
+    ],
+    "prerequisites": "Two years studies at university level. Students should be able to search for and structure information, communicate orally and in writing, plan and execute a group project assignment and make basic mathematical calculations. They should also have an ability for creative and critical thinking."
+  },
+  "TFYA87": {
+    "examiner": "Mats Eriksson",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Group assignment"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 0.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Voluntary assignments"
+      }
+    ],
+    "education_components": [
+      54.0,
+      106.0
+    ],
+    "prerequisites": "Introductory mathematics, calculus of one variable, linear algebra, calculus of several variables, differential equations, basic programming"
+  },
+  "TGTU49": {
+    "examiner": "Corinna Röver",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Seminars"
+      },
+      {
+        "credits": 4.0,
+        "module": "HEM2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in examination"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": null
+  },
+  "TGTU84": {
+    "examiner": "H Devinney",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "MOM1",
+        "scale": "G_OR_U",
+        "name": "Seminars"
+      },
+      {
+        "credits": 5.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in assignments"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": null
+  },
+  "TGTU91": {
+    "examiner": "Victoria Pihlgren",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Successful completion of written assignments"
+      },
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Successful completion of oral assignments"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "University studies corresponding to 60 credits / one year full time studies."
+  },
+  "TGTU94": {
+    "examiner": "Elin Palm",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Written assignment, seminar"
+      },
+      {
+        "credits": 4.5,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "Requisite general qualifications for university."
+  },
+  "TGTU95": {
+    "examiner": "Elin Palm",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Compulsory Seminars"
+      },
+      {
+        "credits": 5.0,
+        "module": "HEM1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in Examination"
+      }
+    ],
+    "education_components": [
+      30.0,
+      130.0
+    ],
+    "prerequisites": "At least two years studies at university."
+  },
+  "TGTU99": {
+    "examiner": "Lars Lindblom",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "SEM1",
+        "scale": "G_OR_U",
+        "name": "Active participation on seminars"
+      },
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Individual written assignment"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "BSc level within Computer Science, Computer Science and Engineering or Information Technology and Engineering. Completed course corresponding to 6 credits in AI, alternatively studied in parallel with course corresponding to 6 credits in AI."
+  },
+  "THEN18": {
+    "examiner": "Mikael Svensson",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "MUN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination and assignments"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": null
+  },
+  "TINT01": {
+    "examiner": "Christoph Röcklinsberg",
+    "examinations": [
+      {
+        "credits": 0.5,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital assignment"
+      },
+      {
+        "credits": 0.5,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital assignment"
+      },
+      {
+        "credits": 1.0,
+        "module": "MOM1",
+        "scale": "G_OR_U",
+        "name": "Active participation in seminars and group discussions"
+      }
+    ],
+    "education_components": [
+      14.0,
+      39.0
+    ],
+    "prerequisites": null
+  },
+  "TINT02": {
+    "examiner": "Christoph Röcklinsberg",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project with oral presentation and opposition"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Individual written analysis and group discussion"
+      },
+      {
+        "credits": 1.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Hand-in assignments and active participation in seminars"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": null
+  },
+  "TKMJ15": {
+    "examiner": "Jonas Ammenberg",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Assignments"
+      },
+      {
+        "credits": 4.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      31.0,
+      129.0
+    ],
+    "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous."
+  },
+  "TKMJ24": {
+    "examiner": "Annica Carlsson",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG3",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital examination"
+      }
+    ],
+    "education_components": [
+      45.0,
+      115.0
+    ],
+    "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry."
+  },
+  "TMKA11": {
+    "examiner": "Christopher Jouannet",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work"
+      },
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand-in assignments"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "The course assumes that the student meets the requirements for studies in the higher levels of the engineering programs, and has good knowledge of mathematics as well as basic programming. The course is open to students from different backgrounds, and it is assumed that the student has good knowledge of general development methodology in his/her own subject area as well as specific technical knowledge corresponding to the last semester of the respective engineering program."
+  },
+  "TNA010": {
+    "examiner": "Berkant Savas",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Inplementation and report of applied project"
+      },
+      {
+        "credits": 2.0,
+        "module": "UPG2",
+        "scale": "G_OR_U",
+        "name": "Hand-in assignments"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB."
+  },
+  "TNCG15": {
+    "examiner": "Mark E Dieckmann",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project work with oral and written presentation"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Computer graphics, 3D Computer Graphics and Animation"
+  },
+  "TNM067": {
+    "examiner": "Ingrid Hotz",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "MUN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Computer Graphics, Physical modeling"
+  },
+  "TNM079": {
+    "examiner": "Mark E Dieckmann",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "LAB4",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 2.0,
+        "module": "TEN3",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      58.0,
+      102.0
+    ],
+    "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables,  Programming"
+  },
+  "TNM111": {
+    "examiner": "Andreas Kerren",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Assignments with oral and written presentations"
+      },
+      {
+        "credits": 3.0,
+        "module": "MUN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination"
+      }
+    ],
+    "education_components": [
+      51.0,
+      109.0
+    ],
+    "prerequisites": "Programming.\nThe course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required."
+  },
+  "TNM114": {
+    "examiner": "Pierangelo Dellacqua",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      12.0,
+      148.0
+    ],
+    "prerequisites": "Artificial Intelligence"
+  },
+  "TNM116": {
+    "examiner": "Karljohan Lundin Palmerius",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "MUN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Oral examination"
+      },
+      {
+        "credits": 4.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laborations"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++"
+  },
+  "TPTE06": {
+    "examiner": "Nämndspecifikt",
+    "examinations": [
+      {
+        "credits": 6.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Assignment"
+      }
+    ],
+    "education_components": [
+      0.0,
+      160.0
+    ],
+    "prerequisites": null
+  },
+  "TQXX33": {
+    "examiner": null,
+    "examinations": [
+      {
+        "credits": 0.5,
+        "module": "AUSK",
+        "scale": "OTHER",
+        "name": "Attendance at three thesis presentations"
+      },
+      {
+        "credits": 1.5,
+        "module": "OPPO",
+        "scale": "G_OR_U",
+        "name": "Opposition"
+      },
+      {
+        "credits": 28.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Planning report, midterm assessment, written report, oral presentation and reflection document"
+      }
+    ],
+    "education_components": [
+      0.0,
+      800.0
+    ],
+    "prerequisites": null
+  },
+  "TSBB06": {
+    "examiner": "Mårten Wadenbäck",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      },
+      {
+        "credits": 0.0,
+        "module": "KTR2",
+        "scale": "G_OR_U",
+        "name": "Optional Written Test"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      68.0,
+      92.0
+    ],
+    "prerequisites": "Basic Linear Algebra: vector spaces, bases, scalar product, least squares problems, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended."
+  },
+  "TSBB08": {
+    "examiner": "Maria Magnusson",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      60.0,
+      100.0
+    ],
+    "prerequisites": "From any of the courses Signals and Systems, Linear systems, Signals and Images, Multidimensional Signal and Image Analysis: Deterministic signals, linear systems, convolution, 1D continuous Fourier transform and its theorems, basic filters (low-pass, high-pass, and band-pass), discrete Fourier transform (desirable but not necessary), sampling and reconstruction (desirable but not necessary).\nFrom course Linear algebra: vector, matrix, determinant, scalar product, bases, the least square method.\nOne- and multidimensional calculus.\nProgramming in one of the following languages: C, C++, Java, Ada, Python or Matlab."
+  },
+  "TSBB19": {
+    "examiner": "Per-Erik Forssén",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project with oral and written presentation"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examiation"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Basic image processing: thresholding, segmentation, edge detection from for example Signals, Information and Images or Digital Image Processing.\nUse of Python or Matlab.\nProbability Theory and Statistics."
+  },
+  "TSBB21": {
+    "examiner": "Maria Magnusson",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      50.0,
+      110.0
+    ],
+    "prerequisites": "Linear algebra: points, lines and planes in two and three dimensions, vector spaces and linear maps. Basic optics (secondary school): light spectrum and light refraction in lenses. Basic use of Matlab. 1-D signal processing: linear systems, convolution, the continuous Fourier transform and its theorems, sampling and reconstruction. Digital image processing: 2-D Fourier transform, 2-D convolution on digital images, 2-D interpolation (desirable but not necessary)."
+  },
+  "TSBB22": {
+    "examiner": "Yonghao Xu",
+    "examinations": [
+      {
+        "credits": 12.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project work"
+      }
+    ],
+    "education_components": [
+      52.0,
+      268.0
+    ],
+    "prerequisites": "Digital image processing, machine learning, computer vision, linear algebra, statistics, and programming. Knowledge from the course computer graphics is beneficial."
+  },
+  "TSBB33": {
+    "examiner": "Per-Erik Forssén",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project Work"
+      },
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      101.0,
+      59.0
+    ],
+    "prerequisites": "Probability theory, estimation theory, the least squares method. From e.g. Multi-dimensional signal analysis: Projective spaces, homogeneous representations of 2D and 3D geometry, perspective projection, camera calibration, and epipolar geometry.\nBasic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended."
+  },
+  "TSBB34": {
+    "examiner": "Michael Felsberg",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project Work"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      100.0,
+      60.0
+    ],
+    "prerequisites": "Probability theory, estimation theory, the least squares method, partial differential equations, 1D & 2D linear system theory (deterministic and stochastic). Basic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended."
+  },
+  "TSBK03": {
+    "examiner": "Ingemar Ragnemalm",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "PRA1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Project"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work with tests"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics."
+  },
+  "TSBK07": {
+    "examiner": "Ingemar Ragnemalm",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "PRA1",
+        "scale": "G_OR_U",
+        "name": "Project, oral and written examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 2.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      48.0,
+      112.0
+    ],
+    "prerequisites": "Linear algebra. Programming knowledge."
+  },
+  "TSDT14": {
+    "examiner": "Danyo Danev",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written Examination"
+      }
+    ],
+    "education_components": [
+      56.0,
+      104.0
+    ],
+    "prerequisites": "From Calculus: Derivatives and integrals. From Probability theory: Most, but with focus on binary distributions, rectangular distributions and Gaussian distributions. From Signals and systems or Linear Systems: Fourier transforms, LTI systems, convolution, amplitude modulation, sampling and pulse amplitude modulation. (all of it deterministic)"
+  },
+  "TSEA28": {
+    "examiner": "Kent Palmkvist",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "DIT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Digital Examination"
+      },
+      {
+        "credits": 3.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      58.0,
+      102.0
+    ],
+    "prerequisites": "Switching theory and logical design. Basic knowledge in analogue electronics. Be able to perform a simple programming task."
+  },
+  "TSFS12": {
+    "examiner": "Erik Frisk",
+    "examinations": [
+      {
+        "credits": 0.0,
+        "module": "UPG2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand in exercise for higher grade"
+      },
+      {
+        "credits": 2.0,
+        "module": "PROJ",
+        "scale": "G_OR_U",
+        "name": "Project"
+      },
+      {
+        "credits": 4.0,
+        "module": "UPG1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Hand in exercises"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Automatic control, introductory courses in mechanics and programming"
+  },
+  "TSFS22": {
+    "examiner": "Daniel Jung",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer exam"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Automatic Control, Probability theory"
+  },
+  "TSIN01": {
+    "examiner": "Khac-Hoang Ngo",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Assignment report"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      36.0,
+      124.0
+    ],
+    "prerequisites": "Basic knowledge of Probability theory."
+  },
+  "TSIN02": {
+    "examiner": "Harald Nautsch",
+    "examinations": [
+      {
+        "credits": 1.5,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Hand-in assignments"
+      },
+      {
+        "credits": 4.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination."
+      }
+    ],
+    "education_components": [
+      38.0,
+      122.0
+    ],
+    "prerequisites": "Basic knowledge in computer science"
+  },
+  "TSIT02": {
+    "examiner": "Arunava Naha",
+    "examinations": [
+      {
+        "credits": 1.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 5.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      28.0,
+      132.0
+    ],
+    "prerequisites": "At least one course in basic computer science, and some knowledge on operating systems and computer communications."
+  },
+  "TSIT03": {
+    "examiner": "Guilherme B. Xavier",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "TEN2",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      32.0,
+      128.0
+    ],
+    "prerequisites": "Probability theory"
+  },
+  "TSIT11": {
+    "examiner": "Jan-Åke Larsson",
+    "examinations": [
+      {
+        "credits": 4.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      32.0,
+      128.0
+    ],
+    "prerequisites": "Linear Algebra"
+  },
+  "TSIT14": {
+    "examiner": "Shizhen Chang",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 2.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      40.0,
+      120.0
+    ],
+    "prerequisites": "Computer networks, Ethical hacking"
+  },
+  "TSKS24": {
+    "examiner": "Danyo Danev",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 6.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      }
+    ],
+    "education_components": [
+      70.0,
+      143.0
+    ],
+    "prerequisites": "Ordinary differential equations and difference equations of low orders. Matrix- and vector concepts, determinant, inner product, bases, the least-square method. One-dimensional and multi-dimensional calculus, especially derivatives and integrals. Ability to program in Python, and preferrably also in Matlab. General ability to program."
+  },
+  "TSKS33": {
+    "examiner": "Danyo Danev",
+    "examinations": [
+      {
+        "credits": 4.0,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      }
+    ],
+    "education_components": [
+      54.0,
+      106.0
+    ],
+    "prerequisites": "Linear algebra. Basic knowledge and understanding of probability theory/statistics. Programming skills in Python and Matlab."
+  },
+  "TSKS37": {
+    "examiner": "Karl-Ludwig Besser",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Computer exercise"
+      }
+    ],
+    "education_components": [
+      14.0,
+      39.0
+    ],
+    "prerequisites": "Linear algebra (can be studied in parallel), Programming"
+  },
+  "TSRT07": {
+    "examiner": "Martin Enqvist",
+    "examinations": [
+      {
+        "credits": 2.0,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 4.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      52.0,
+      108.0
+    ],
+    "prerequisites": "Automatic control"
+  },
+  "TSRT14": {
+    "examiner": "Gustaf Hendeby",
+    "examinations": [
+      {
+        "credits": 3.0,
+        "module": "UPG1",
+        "scale": "G_OR_U",
+        "name": "Laboratory work"
+      },
+      {
+        "credits": 3.0,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer examination"
+      }
+    ],
+    "education_components": [
+      41.0,
+      119.0
+    ],
+    "prerequisites": "A introductory course in statistics, as well as a course discussing signals and systems, for example Automatic Control or Signals and Systems."
+  },
+  "TSRT92": {
+    "examiner": "Martin Enqvist",
+    "examinations": [
+      {
+        "credits": 4.5,
+        "module": "DAT1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Computer Examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "LAB1",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      58.0,
+      102.0
+    ],
+    "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics"
+  },
+  "TSRT93": {
+    "examiner": "Anders Hansson",
+    "examinations": [
+      {
+        "credits": 4.5,
+        "module": "TEN1",
+        "scale": "U_THREE_FOUR_FIVE",
+        "name": "Written examination"
+      },
+      {
+        "credits": 1.5,
+        "module": "LAB2",
+        "scale": "G_OR_U",
+        "name": "Laboratory Work"
+      }
+    ],
+    "education_components": [
+      64.0,
+      96.0
+    ],
+    "prerequisites": "Calculus, one variable, Calculus, several variables, Linear Algebra"
+  }
+}

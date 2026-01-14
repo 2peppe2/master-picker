@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
-import { CourseDialog } from "./Dialog";
+import { CourseDialog } from "./courseDialog/Dialog";
 import { MasterBadge } from "@/components/MasterBadge";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/(main)/page";

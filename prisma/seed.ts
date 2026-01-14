@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { prisma } from "../lib/prisma";
-import { CoursesType, CreditType, Semester } from "./generated/client/enums";
+import { CoursesType, CreditType, Scale, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
 import type { MasterRequirement } from "@/app/(main)/(mastersRequirementsBar)/types";
 
@@ -36,15 +36,20 @@ async function seedCoursesData() {
   const courseFilePath = path.resolve("./data/6CMJU_courses.json");
   const courses = JSON.parse(fs.readFileSync(courseFilePath, "utf8"));
 
+  const courseDetailsFilePath = path.resolve("./data/6CMJU_detailed_courses.json");
+  const courseDetails = JSON.parse(fs.readFileSync(courseDetailsFilePath, "utf8"));
+
   // DEV ONLY: clear existing data (children first)
   await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasionBlock.deleteMany();
   await prisma.courseOccasion.deleteMany();
+  await prisma.examination.deleteMany();
   await prisma.courseMaster.deleteMany();
   await prisma.course.deleteMany();
   await prisma.program.deleteMany();
 
   for (const c of courses) {
+    const detailedInfo = courseDetails[c.code];
     await prisma.course.upsert({
       where: { code: c.code },
       update: {
@@ -52,7 +57,10 @@ async function seedCoursesData() {
         credits: Number(c.credits),
         level: c.level ?? "",
         link: c.link ?? "",
-        examiner: c.examiner ?? "",
+        examiner: detailedInfo?.examiner ?? "",
+        prerequisitesText: detailedInfo?.prerequisites ?? "",
+        scheduledHours: detailedInfo?.education_components[0] ?? 0,
+        selfStudyHours: detailedInfo?.education_components[1] ?? 0,
         ecv: c.ecv ?? "",
       },
       create: {
@@ -61,10 +69,30 @@ async function seedCoursesData() {
         credits: Number(c.credits),
         level: c.level ?? "",
         link: c.link ?? "",
-        examiner: c.examiner ?? "",
+        examiner: detailedInfo?.examiner ?? "",
+        prerequisitesText: detailedInfo?.prerequisites ?? "",
+        scheduledHours: detailedInfo?.education_components[0] ?? 0,
+        selfStudyHours: detailedInfo?.education_components[1] ?? 0,
         ecv: c.ecv ?? "",
       },
     });
+
+    if (Array.isArray(detailedInfo?.examinations) && detailedInfo.examinations.length) {
+      await prisma.examination.createMany({
+        data: detailedInfo.examinations.map(
+          (exam: { credits: number; module: string; name: string; scale?: string }) => ({
+            courseCode: c.code,
+            credits: Number(exam.credits),
+            module: exam.module,
+            name: exam.name,
+            scale:
+              exam.scale === "U_THREE_FOUR_FIVE"
+                ? Scale.U_THREE_FOUR_FIVE
+                : Scale.G_OR_U,
+          })
+        ),
+      });
+    }
 
     for (const p of c.program ?? []) {
       await prisma.program.upsert({
