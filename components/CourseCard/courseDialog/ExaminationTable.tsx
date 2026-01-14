@@ -1,8 +1,7 @@
 import { CourseExamination } from "@/app/(main)/page";
 import { FC } from "react";
-import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../ui/table";
+import { Table, TableBody,  TableCell,  TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Scale } from "@/prisma/generated/client/enums";
-import { Label } from "@radix-ui/react-label";
 
 type ExaminationTableProps = {
     examination: CourseExamination[];
