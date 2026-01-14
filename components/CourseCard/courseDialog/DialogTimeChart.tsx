@@ -8,11 +8,11 @@ import { Label, Pie, PieChart } from "recharts";
 const revenueChartConfig = {
     scheduled: {
         label: 'Scheduled Hours:',
-        color: 'var(--primary)'
+        color: '#dbeafe'
     },
     selfStudy: {
         label: 'Self-study Hours:',
-        color: 'color-mix(in oklab, var(--primary) 60%, transparent)'
+        color: '#bfdbfe'
     }
 } satisfies ChartConfig
 
