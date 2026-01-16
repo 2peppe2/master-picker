@@ -5,4 +5,6 @@ model Master {
   style        String?
   requirements Requirement[]
   CourseMaster CourseMaster[]
+
+  courseOccasions CourseOccasion[]
 }
