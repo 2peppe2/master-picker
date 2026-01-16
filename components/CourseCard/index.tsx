@@ -5,13 +5,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Plus, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./courseDialog/Dialog";
 import { MasterBadge } from "@/components/MasterBadge";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/(main)/page";
 import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import CourseAddButton from "./CourseAddButton";
 
 interface CourseCardProps {
   course: Course;
@@ -21,8 +22,6 @@ interface CourseCardProps {
 const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const { code, name } = course;
 
-  //TODO fix for multiple semesters
-  const occasion = course.CourseOccasion[0];
   const masterPrograms = course.CourseMaster || [];
 
   const { mutators } = useScheduleStore();
@@ -41,14 +40,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
           <X className="h-4 w-4" />
         </Button>
       ) : (
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => mutators.addCourse({ course, occasion })}
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
-        >
-          <Plus className="h-4 w-4" />
-        </Button>
+        <CourseAddButton course={course} />
       )}
       <CourseDialog
         course={course}

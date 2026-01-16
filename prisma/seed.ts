@@ -125,11 +125,18 @@ async function seedCoursesData() {
 
     for (const occasion of c.occasions) {
       // Create CourseOccasion
+      const masters = Array.isArray(occasion.recommended_masters)
+        ? occasion.recommended_masters.map((m) => m?.trim()).filter(Boolean)
+        : [];
+
       const dbOccasion = await prisma.courseOccasion.create({
         data: {
           year: Number(occasion.year),
           semester: parseSemester(occasion.ht_or_vt),
           courseCode: c.code,
+          ...(masters.length
+            ? { recommendedMaster: { connect: masters.map((master) => ({ master })) } }
+            : {}),
         },
       });
       // Create periods
