@@ -22,7 +22,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -49,7 +50,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -76,7 +78,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -103,7 +106,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -130,7 +134,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -157,7 +162,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -184,7 +190,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -204,6 +211,7 @@
         "year": 2024,
         "semester": 3,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -237,6 +245,7 @@
         "year": 2024,
         "semester": 3,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -252,6 +261,7 @@
         "year": 2025,
         "semester": 4,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -288,7 +298,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -308,6 +319,7 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -341,6 +353,7 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -376,6 +389,9 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DPAL"
+        ],
         "periods": [
           {
             "period": 1,
@@ -409,6 +425,7 @@
         "year": 2023,
         "semester": 1,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 0,
@@ -447,7 +464,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -474,7 +492,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -503,19 +522,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -545,6 +554,9 @@
               3
             ]
           }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -572,7 +584,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -602,20 +615,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2,
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -639,6 +641,10 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM",
+          "DMEI"
+        ],
         "periods": [
           {
             "period": 1,
@@ -683,45 +689,11 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI",
+          "DSPE"
         ]
       }
     ]
@@ -744,6 +716,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DMEI"
+        ],
         "periods": [
           {
             "period": 1,
@@ -787,20 +762,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2,
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -830,19 +794,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -870,7 +824,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -897,7 +852,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -927,32 +883,10 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              4
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND",
+          "DSMU"
         ]
       }
     ]
@@ -982,19 +916,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -1024,19 +948,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -1064,7 +978,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1093,19 +1008,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSMU"
         ]
       },
       {
@@ -1119,7 +1024,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1146,7 +1052,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1176,32 +1083,10 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
         ]
       }
     ]
@@ -1232,32 +1117,10 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
         ]
       }
     ]
@@ -1287,19 +1150,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -1329,19 +1182,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -1369,7 +1212,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1396,7 +1240,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1418,6 +1263,7 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -1437,6 +1283,7 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -1456,6 +1303,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSMU"
+        ],
         "periods": [
           {
             "period": 1,
@@ -1500,45 +1350,11 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI",
+          "DPAL"
         ]
       }
     ]
@@ -1561,6 +1377,7 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -1580,6 +1397,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DMEI"
+        ],
         "periods": [
           {
             "period": 1,
@@ -1622,19 +1442,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -1662,7 +1472,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1689,7 +1500,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1720,32 +1532,10 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI",
+          "DSPE"
         ]
       },
       {
@@ -1759,19 +1549,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSMU"
         ]
       }
     ]
@@ -1801,7 +1581,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       },
       {
         "year": 2027,
@@ -1814,19 +1595,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL"
         ]
       }
     ]
@@ -1856,19 +1627,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -1889,6 +1650,7 @@
         "year": 2023,
         "semester": 1,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -1925,7 +1687,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1953,7 +1716,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -1973,6 +1737,7 @@
         "year": 2026,
         "semester": 6,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2002,6 +1767,7 @@
         "year": 2024,
         "semester": 2,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2036,6 +1802,7 @@
         "year": 2024,
         "semester": 3,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2072,7 +1839,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -2092,6 +1860,7 @@
         "year": 2024,
         "semester": 3,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2132,7 +1901,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -2152,6 +1922,7 @@
         "year": 2025,
         "semester": 5,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2181,6 +1952,7 @@
         "year": 2025,
         "semester": 5,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2214,6 +1986,7 @@
         "year": 2024,
         "semester": 2,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2246,6 +2019,10 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
+        ],
         "periods": [
           {
             "period": 1,
@@ -2279,6 +2056,7 @@
         "year": 2026,
         "semester": 6,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2323,19 +2101,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -2356,6 +2124,7 @@
         "year": 2025,
         "semester": 4,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2395,19 +2164,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       },
       {
@@ -2421,6 +2180,9 @@
               1
             ]
           }
+        ],
+        "recommended_masters": [
+          "DMEI"
         ]
       }
     ]
@@ -2452,45 +2214,11 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND",
+          "DSMU",
+          "DSPE"
         ]
       }
     ]
@@ -2513,6 +2241,9 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DAIM"
+        ],
         "periods": [
           {
             "period": 1,
@@ -2555,19 +2286,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -2597,19 +2318,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -2639,19 +2350,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -2681,19 +2382,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -2723,19 +2414,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -2758,6 +2439,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
         "periods": [
           {
             "period": 1,
@@ -2793,6 +2477,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
         "periods": [
           {
             "period": 1,
@@ -2828,6 +2515,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSEC"
+        ],
         "periods": [
           {
             "period": 1,
@@ -2861,6 +2551,7 @@
         "year": 2023,
         "semester": 1,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 0,
@@ -2899,7 +2590,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -2919,6 +2611,7 @@
         "year": 2023,
         "semester": 1,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -2962,32 +2655,10 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              3
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI"
         ]
       }
     ]
@@ -3018,32 +2689,10 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL",
+          "DSMU"
         ]
       }
     ]
@@ -3064,6 +2713,7 @@
         "year": 2025,
         "semester": 4,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -3106,19 +2756,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSMU"
         ]
       }
     ]
@@ -3148,19 +2788,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSMU"
         ]
       }
     ]
@@ -3181,6 +2811,7 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -3216,6 +2847,9 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSMU"
+        ],
         "periods": [
           {
             "period": 1,
@@ -3252,6 +2886,10 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DPAL",
+          "DSMU"
+        ],
         "periods": [
           {
             "period": 1,
@@ -3294,19 +2932,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -3329,6 +2957,9 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSEC"
+        ],
         "periods": [
           {
             "period": 1,
@@ -3372,32 +3003,10 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI",
+          "DSEC"
         ]
       }
     ]
@@ -3420,6 +3029,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSEC"
+        ],
         "periods": [
           {
             "period": 1,
@@ -3462,19 +3074,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -3504,19 +3106,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL"
         ]
       }
     ]
@@ -3546,19 +3138,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL"
         ]
       },
       {
@@ -3572,19 +3154,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL"
         ]
       }
     ]
@@ -3612,7 +3184,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3641,19 +3214,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -3683,19 +3246,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -3725,19 +3278,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -3765,7 +3308,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3794,19 +3338,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       }
     ]
@@ -3834,7 +3368,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3861,7 +3396,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3890,6 +3426,9 @@
               2
             ]
           }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       },
       {
@@ -3903,20 +3442,8 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3943,7 +3470,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3970,7 +3498,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -3999,19 +3528,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -4039,7 +3558,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4068,19 +3588,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -4110,19 +3620,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       }
     ]
@@ -4150,7 +3650,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4179,19 +3680,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       }
     ]
@@ -4221,19 +3712,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       }
     ]
@@ -4261,7 +3742,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4283,6 +3765,9 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DIND"
+        ],
         "periods": [
           {
             "period": 1,
@@ -4325,19 +3810,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DIND"
         ]
       }
     ]
@@ -4365,7 +3840,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4392,7 +3868,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4419,7 +3896,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4446,7 +3924,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4473,7 +3952,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4500,7 +3980,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4522,6 +4003,9 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
         "periods": [
           {
             "period": 1,
@@ -4555,6 +4039,7 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -4574,6 +4059,7 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -4612,7 +4098,8 @@
             "period": 1,
             "blocks": []
           }
-        ]
+        ],
+        "recommended_masters": []
       },
       {
         "year": 2026,
@@ -4623,7 +4110,8 @@
             "period": 1,
             "blocks": []
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4643,6 +4131,7 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -4679,7 +4168,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4706,7 +4196,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4733,7 +4224,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4762,19 +4254,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -4804,19 +4286,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -4844,7 +4316,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4873,19 +4346,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -4913,7 +4376,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4940,7 +4404,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4967,7 +4432,8 @@
               2
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -4992,7 +4458,8 @@
             "period": 2,
             "blocks": []
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5012,6 +4479,7 @@
         "year": 2028,
         "semester": 10,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -5043,6 +4511,9 @@
         "year": 2026,
         "semester": 7,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
         "periods": [
           {
             "period": 1,
@@ -5085,19 +4556,9 @@
               4
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              4
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5127,19 +4588,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5167,7 +4618,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5189,6 +4641,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
         "periods": [
           {
             "period": 1,
@@ -5229,7 +4684,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5256,7 +4712,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5278,6 +4735,9 @@
         "year": 2027,
         "semester": 9,
         "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
         "periods": [
           {
             "period": 1,
@@ -5313,6 +4773,9 @@
         "year": 2027,
         "semester": 8,
         "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSPE"
+        ],
         "periods": [
           {
             "period": 1,
@@ -5353,7 +4816,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5373,6 +4837,7 @@
         "year": 2024,
         "semester": 2,
         "ht_or_vt": "VT",
+        "recommended_masters": [],
         "periods": [
           {
             "period": 1,
@@ -5415,19 +4880,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5455,7 +4910,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5484,19 +4940,9 @@
               1
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              1
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSPE"
         ]
       }
     ]
@@ -5528,45 +4974,11 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DMEI",
+          "DPAL",
+          "DSEC"
         ]
       }
     ]
@@ -5597,32 +5009,10 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DPAL",
+          "DSEC"
         ]
       },
       {
@@ -5636,6 +5026,9 @@
               2
             ]
           }
+        ],
+        "recommended_masters": [
+          "DPAL"
         ]
       }
     ]
@@ -5663,7 +5056,8 @@
               3
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5692,19 +5086,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DSEC"
         ]
       }
     ]
@@ -5732,7 +5116,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5762,32 +5147,10 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "year": 2026,
-        "semester": 7,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
         ]
       }
     ]
@@ -5815,7 +5178,8 @@
               4
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   },
@@ -5844,19 +5208,9 @@
               2
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              2
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5886,19 +5240,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 8,
-        "ht_or_vt": "VT",
-        "periods": [
-          {
-            "period": 2,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5928,19 +5272,9 @@
               3
             ]
           }
-        ]
-      },
-      {
-        "year": 2027,
-        "semester": 9,
-        "ht_or_vt": "HT",
-        "periods": [
-          {
-            "period": 1,
-            "blocks": [
-              3
-            ]
-          }
+        ],
+        "recommended_masters": [
+          "DAIM"
         ]
       }
     ]
@@ -5968,7 +5302,8 @@
               1
             ]
           }
-        ]
+        ],
+        "recommended_masters": []
       }
     ]
   }

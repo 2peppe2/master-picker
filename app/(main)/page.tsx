@@ -19,7 +19,8 @@ export default async function MainPage() {
                 }
               }
             }
-          }
+          },
+          recommendedMaster: { select: { master: true }},
         }
       },
       CourseMaster: true,
@@ -60,7 +61,10 @@ type CourseWithOccasion = Prisma.CourseGetPayload<{
             }
           };
         }
+        recommendedMaster: { select: { master: true }}
       };
+      
+
     };
     Examination: { select: { credits: true, module: true, name: true, scale: true } };
     CourseMaster: true;

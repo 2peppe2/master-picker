@@ -60,18 +60,19 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     const overData = event.over.data.current as PeriodNodeData;
 
-    const { semester } = relativeSemesterToYearAndSemester(
+    const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
       overData.semesterNumber
     );
-    //TODO check that this works as intended
     const relevantOccasion = activeCourse.CourseOccasion.find(
-      (occ) =>
-        occ.semester === semester &&
-        occ.periods.map((p) => 
-          p.period === overData.periodNumber + 1  &&
-          p.blocks.includes(overData.blockNumber + 1)
-          ).length > 0
+      (occ) => {
+        if (occ.year !== year || occ.semester !== semester) return false;
+        for (const period of occ.periods) {
+          if (period.period !== overData.periodNumber + 1) continue;
+          if (period.blocks.includes(overData.blockNumber + 1)) return true;
+        }
+        return false;
+      }
     );
 
     if (!relevantOccasion) return;
