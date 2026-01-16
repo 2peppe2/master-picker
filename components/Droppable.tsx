@@ -32,12 +32,12 @@ export const Droppable: FC<DroppableProps> = ({
   const {year, semester} = relativeSemesterToYearAndSemester(startingYear, semesterNumber);
   
   let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
-
+  //TODO fix the occasion check to account for periods and blocks
   if (isOver && activeCourse !== null) {
     const isSameYear = activeCourse.CourseOccasion[0].year === year;
     const isSameSemester = activeCourse.CourseOccasion[0].semester === semester;
-    const isSamePeriod = activeCourse.CourseOccasion[0].periods.includes(periodNumber + 1);
-    const isSameBlock = activeCourse.CourseOccasion[0].blocks.includes(blockNumber + 1);
+    const isSamePeriod = activeCourse.CourseOccasion[0].periods[0].period === periodNumber + 1;
+    const isSameBlock = activeCourse.CourseOccasion[0].periods[0].blocks.includes(blockNumber + 1);
     if (isSameYear && isSameSemester && isSamePeriod && isSameBlock) {
       // Valid drop target
       overStyles = "border-teal-500";

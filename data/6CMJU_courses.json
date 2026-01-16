@@ -10,15 +10,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -34,15 +37,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -58,15 +64,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -82,15 +91,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -106,15 +118,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -130,15 +145,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -154,15 +172,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -178,16 +199,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -203,24 +232,36 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       },
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -235,15 +276,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -259,41 +303,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          3
-        ]
-      }
-    ]
-  },
-  {
-    "code": "TATA54",
-    "name": "Number Theory",
-    "credits": 6,
-    "level": "G2F",
-    "link": "https://studieinfo.liu.se/en/kurs/TATA54",
-    "ecv": "E",
-    "program": [
-      "6CMJU"
-    ],
-    "mastersPrograms": [],
-    "slots": [
-      {
-        "year": 2027,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -309,16 +336,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -336,16 +371,24 @@
     "mastersPrograms": [
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -361,17 +404,22 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          0,
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -387,15 +435,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -411,15 +462,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -437,15 +491,31 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -463,15 +533,18 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -487,15 +560,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -513,16 +589,33 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2,
-          4
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
         ]
       }
     ]
@@ -541,17 +634,24 @@
       "DAIM",
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -571,15 +671,57 @@
       "DMEI",
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -597,16 +739,24 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -624,16 +774,33 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2,
-          4
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
         ]
       }
     ]
@@ -651,15 +818,31 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -675,15 +858,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -699,15 +885,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -726,15 +915,44 @@
       "DIND",
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -752,15 +970,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -778,15 +1012,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -802,15 +1052,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -828,25 +1081,44 @@
     "mastersPrograms": [
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -862,15 +1134,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -889,15 +1164,44 @@
       "DAIM",
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -916,15 +1220,44 @@
       "DAIM",
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -942,15 +1275,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -968,15 +1317,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -992,15 +1357,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1016,15 +1384,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1042,41 +1413,62 @@
     "mastersPrograms": [
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1096,15 +1488,57 @@
       "DMEI",
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1122,27 +1556,43 @@
     "mastersPrograms": [
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1160,15 +1610,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1184,15 +1650,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1208,15 +1677,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1236,25 +1708,70 @@
       "DSMU",
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1272,25 +1789,44 @@
     "mastersPrograms": [
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1308,15 +1844,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1332,15 +1884,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1355,15 +1913,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1379,16 +1940,19 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "VT",
+        "semester": 2,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              2,
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1398,39 +1962,27 @@
     "name": "Professionalism for Engineers, Part 2",
     "credits": 1,
     "level": "G1F",
-    "link": "https://studieinfo.liu.se/en/kurs/TDDD79/vt-2024",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD79/vt-2026",
     "ecv": "C",
     "program": [
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
-      {
-        "year": 2024,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": []
-      },
-      {
-        "year": 2025,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": []
-      },
+    "occasions": [
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1445,17 +1997,25 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "VT",
+        "semester": 2,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          3,
-          4
+          {
+            "period": 1,
+            "blocks": [
+              3,
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1471,15 +2031,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1494,15 +2060,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "VT",
+        "semester": 2,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1518,17 +2087,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "HT",
+        "semester": 3,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1544,15 +2120,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1568,15 +2147,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1591,16 +2176,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1616,24 +2209,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "VT",
+        "semester": 2,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
-      },
-      {
-        "year": 2025,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1651,17 +2241,24 @@
       "DAIM",
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          4
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1677,18 +2274,26 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2,
-          3,
-          4
+          {
+            "period": 1,
+            "blocks": [
+              2,
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1706,15 +2311,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -1724,30 +2345,27 @@
     "name": "Professionalism for Engineers, Part 6",
     "credits": 1,
     "level": "G1F",
-    "link": "https://studieinfo.liu.se/en/kurs/TDDD98/vt-2024",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD98/vt-2025",
     "ecv": "C",
     "program": [
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
-      {
-        "year": 2024,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": []
-      },
+    "occasions": [
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -1765,25 +2383,44 @@
       "DAIM",
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1803,15 +2440,57 @@
       "DSMU",
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1829,16 +2508,24 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -1856,15 +2543,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1882,15 +2585,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1908,15 +2627,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1934,15 +2669,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -1960,15 +2711,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -1986,16 +2753,24 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2013,16 +2788,24 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2040,16 +2823,24 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2065,17 +2856,22 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          0,
-          1,
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2091,15 +2887,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2115,16 +2914,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2023,
-        "semester": "HT",
+        "semester": 1,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2143,15 +2950,44 @@
       "DAIM",
       "DMEI"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2170,15 +3006,44 @@
       "DPAL",
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2194,16 +3059,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2221,15 +3094,31 @@
     "mastersPrograms": [
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2247,15 +3136,31 @@
     "mastersPrograms": [
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2271,16 +3176,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2298,16 +3211,24 @@
     "mastersPrograms": [
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2326,16 +3247,24 @@
       "DPAL",
       "DSMU"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2353,15 +3282,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2379,17 +3324,24 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          2
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2408,15 +3360,44 @@
       "DMEI",
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2434,16 +3415,24 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2461,15 +3450,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2487,15 +3492,31 @@
     "mastersPrograms": [
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2513,25 +3534,57 @@
     "mastersPrograms": [
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2547,15 +3600,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "VT",
+        "semester": 4,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2573,15 +3629,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2599,15 +3671,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2625,15 +3713,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2649,15 +3753,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2675,15 +3782,31 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2699,15 +3822,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2723,42 +3849,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
-        ]
-      }
-    ]
-  },
-  {
-    "code": "TDTS21",
-    "name": "Advanced Networking",
-    "credits": 6,
-    "level": "A1N",
-    "link": "https://studieinfo.liu.se/en/kurs/TDTS21",
-    "ecv": "E",
-    "program": [
-      "6CMJU"
-    ],
-    "mastersPrograms": [
-      "DSEC"
-    ],
-    "slots": [
-      {
-        "year": 2027,
-        "semester": "VT",
-        "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2776,16 +3878,44 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2801,15 +3931,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -2825,15 +3958,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2851,15 +3987,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2875,15 +4027,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -2901,15 +4056,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2927,15 +4098,31 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -2951,15 +4138,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -2977,15 +4167,31 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3003,15 +4209,31 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3027,15 +4249,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3053,17 +4278,24 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3081,39 +4313,31 @@
     "mastersPrograms": [
       "DIND"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
-      }
-    ]
-  },
-  {
-    "code": "TEIO94",
-    "name": "Entrepreneurship and Idea Development",
-    "credits": 6,
-    "level": "G2F",
-    "link": "https://studieinfo.liu.se/en/kurs/TEIO94",
-    "ecv": "E",
-    "program": [
-      "6CMJU"
-    ],
-    "mastersPrograms": [],
-    "slots": [
+      },
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3129,15 +4353,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2025,
-        "semester": "HT",
+        "semester": 5,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3153,15 +4380,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3177,15 +4407,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3201,15 +4434,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3225,15 +4461,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3249,15 +4488,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3275,17 +4517,24 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          2
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3301,27 +4550,43 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3337,22 +4602,28 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
       },
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -3367,15 +4638,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -3390,15 +4667,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3414,15 +4694,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3438,15 +4721,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3464,15 +4750,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3490,15 +4792,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3514,15 +4832,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3540,15 +4861,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3564,15 +4901,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3588,15 +4928,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3612,15 +4955,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3636,14 +4982,17 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": []
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -3658,15 +5007,21 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2028,
-        "semester": "VT",
+        "semester": 10,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": []
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
       }
     ]
   },
@@ -3683,17 +5038,24 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          2,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3711,15 +5073,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3737,15 +5115,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -3761,15 +5155,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3787,16 +5184,24 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -3812,15 +5217,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3836,15 +5244,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3862,16 +5273,24 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3889,17 +5308,24 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3915,15 +5341,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -3939,17 +5368,24 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2024,
-        "semester": "VT",
+        "semester": 2,
+        "ht_or_vt": "VT",
         "periods": [
-          1,
-          2
-        ],
-        "blocks": [
-          1,
-          3
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -3967,41 +5403,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
-      }
-    ]
-  },
-  {
-    "code": "TSFS22",
-    "name": "Fault detection and diagnosis of technical systems",
-    "credits": 6,
-    "level": "A1N",
-    "link": "https://studieinfo.liu.se/en/kurs/TSFS22",
-    "ecv": "E",
-    "program": [
-      "6CMJU"
-    ],
-    "mastersPrograms": [
-      "DAIM"
-    ],
-    "slots": [
+      },
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -4017,15 +5443,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -4043,15 +5472,31 @@
     "mastersPrograms": [
       "DSPE"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -4071,15 +5516,57 @@
       "DPAL",
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -4098,25 +5585,57 @@
       "DPAL",
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       },
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -4132,15 +5651,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -4158,15 +5680,31 @@
     "mastersPrograms": [
       "DSEC"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -4182,15 +5720,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          1
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
@@ -4209,15 +5750,44 @@
       "DAIM",
       "DPAL"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          2
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -4233,15 +5803,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "HT",
+        "semester": 7,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          4
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
         ]
       }
     ]
@@ -4259,15 +5832,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          2
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
         ]
       }
     ]
@@ -4285,15 +5874,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "VT",
+        "semester": 8,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          3
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -4311,15 +5916,31 @@
     "mastersPrograms": [
       "DAIM"
     ],
-    "slots": [
+    "occasions": [
       {
         "year": 2027,
-        "semester": "HT",
+        "semester": 9,
+        "ht_or_vt": "HT",
         "periods": [
-          1
-        ],
-        "blocks": [
-          3
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
         ]
       }
     ]
@@ -4335,15 +5956,18 @@
       "6CMJU"
     ],
     "mastersPrograms": [],
-    "slots": [
+    "occasions": [
       {
         "year": 2026,
-        "semester": "VT",
+        "semester": 6,
+        "ht_or_vt": "VT",
         "periods": [
-          2
-        ],
-        "blocks": [
-          1
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
         ]
       }
     ]
