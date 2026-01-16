@@ -3,6 +3,8 @@ model CourseOccasionPeriod {
   courseOccasionId Int
   period           Int
 
+  blocks CourseOccasionBlock[]
+
   courseOccasion CourseOccasion @relation(fields: [courseOccasionId], references: [id], onDelete: Cascade)
 
   @@unique([courseOccasionId, period])

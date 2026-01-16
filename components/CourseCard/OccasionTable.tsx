@@ -8,7 +8,7 @@ import {
 } from "../ui/table";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
 import { Course, CourseOccasion } from "@/app/(main)/page";
 import { useScheduleStore } from "@/app/atoms/scheduleStore";
@@ -59,14 +59,20 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course }) => {
       ),
     [occasion.semester, occasion.year, startingYear]
   );
+  const periods = occasion.periods.map((p) => p.period);
+  console.log("periods", periods);
+  const blocks = Array.from(
+    new Set(occasion.periods.flatMap((p) => p.blocks))
+  );
+
 
   return (
     <TableRow>
       <TableCell>
         {relativeSemester + 1} ({occasion.semester} {occasion.year})
       </TableCell>
-      <TableCell>{occasion.periods.join(", ")}</TableCell>
-      <TableCell>{occasion.blocks.join(", ")}</TableCell>
+      <TableCell>{periods.length > 0 ? periods.join(", ") : "-"}</TableCell>
+      <TableCell>{blocks.length > 0 ? blocks.join(", ") : "-"}</TableCell>
       <TableCell className="flex justify-end">
         <p
           onClick={() => mutators.addCourse({ course, occasion })}

@@ -64,12 +64,14 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       startingYear,
       overData.semesterNumber
     );
-
+    //TODO check that this works as intended
     const relevantOccasion = activeCourse.CourseOccasion.find(
       (occ) =>
         occ.semester === semester &&
-        occ.periods.includes(overData.periodNumber + 1) &&
-        occ.blocks.includes(overData.blockNumber + 1)
+        occ.periods.map((p) => 
+          p.period === overData.periodNumber + 1  &&
+          p.blocks.includes(overData.blockNumber + 1)
+          ).length > 0
     );
 
     if (!relevantOccasion) return;

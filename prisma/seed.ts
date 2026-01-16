@@ -3,7 +3,6 @@ import path from "node:path";
 import { prisma } from "../lib/prisma";
 import { CoursesType, CreditType, Scale, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
-import type { MasterRequirement } from "@/app/(main)/(mastersRequirementsBar)/types";
 
 function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
@@ -40,8 +39,8 @@ async function seedCoursesData() {
   const courseDetails = JSON.parse(fs.readFileSync(courseDetailsFilePath, "utf8"));
 
   // DEV ONLY: clear existing data (children first)
-  await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasionBlock.deleteMany();
+  await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasion.deleteMany();
   await prisma.examination.deleteMany();
   await prisma.courseMaster.deleteMany();
@@ -123,35 +122,36 @@ async function seedCoursesData() {
       });
     }
 
-    for (const slot of c.slots ?? []) {
-      const occ = await prisma.courseOccasion.create({
+
+    for (const occasion of c.occasions) {
+      // Create CourseOccasion
+      const dbOccasion = await prisma.courseOccasion.create({
         data: {
-          year: Number(slot.year),
-          semester: parseSemester(slot.semester),
+          year: Number(occasion.year),
+          semester: parseSemester(occasion.ht_or_vt),
           courseCode: c.code,
         },
       });
-
-      if (Array.isArray(slot.periods) && slot.periods.length) {
-        await prisma.courseOccasionPeriod.createMany({
-          data: slot.periods.map((p: string) => ({
-            courseOccasionId: occ.id,
-            period: Number(p),
-          })),
+      // Create periods
+      for (const period of occasion.periods) {
+        const dbPeriod = await prisma.courseOccasionPeriod.create({
+          data: {
+            courseOccasionId: dbOccasion.id,
+            period: Number(period.period),
+          },
         });
-      }
-
-      if (Array.isArray(slot.blocks) && slot.blocks.length) {
-        await prisma.courseOccasionBlock.createMany({
-          data: slot.blocks.map((b: string) => ({
-            courseOccasionId: occ.id,
-            block: Number(b),
-          })),
-        });
+        // Create blocks
+        for (const block of period.blocks) {
+          await prisma.courseOccasionBlock.create({
+            data: {
+              coursePeriodId: dbPeriod.id,
+              block: Number(block)
+            },
+          });
+        }
       }
     }
   }
-
   console.log(`Seeded ${courses.length} courses`);
 }
 
@@ -161,7 +161,7 @@ async function seedMasterRequirementsData() {
   );
   const masterRequirements = JSON.parse(
     fs.readFileSync(masterRequirementsPath, "utf8")
-  ) as Record<string, MasterRequirement[]>;
+  );
 
   // DEV ONLY: clear existing data (children first)
   await prisma.coursesRequirement.deleteMany();

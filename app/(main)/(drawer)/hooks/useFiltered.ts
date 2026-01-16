@@ -20,6 +20,8 @@ const useFiltered = (courses: Course[]) => {
         return false;
       }
     }
+    return true; // TEMPORARY OVERRIDE
+
     const relativeSemester = yearAndSemesterToRelativeSemester(
       startingYear,
       course.CourseOccasion[0].year,

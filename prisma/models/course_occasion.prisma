@@ -10,7 +10,7 @@ model CourseOccasion {
   courseCode String
   
   periods CourseOccasionPeriod[]
-  blocks CourseOccasionBlock[]
+  
 
   Course     Course @relation(fields: [courseCode], references: [code])
 }

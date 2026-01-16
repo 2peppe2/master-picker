@@ -61,10 +61,10 @@ export const useScheduleStore = (): ScheduleStore => {
             occasion.year,
             occasion.semester
           );
-
+          console.log(occasion.periods.map((p) => ({period: p.period, blocks: p.blocks.join(", ")})));
           for (const period of occasion.periods) {
-            for (const block of occasion.blocks) {
-              draft[relativeYear][period - 1][block - 1] = course;
+            for (const block of period.blocks) {
+              draft[relativeYear][period.period - 1][block - 1] = course;
             }
           }
           return draft;

@@ -1,9 +1,9 @@
 model CourseOccasionBlock {
   id               Int @id @default(autoincrement())
-  courseOccasionId Int
+  coursePeriodId   Int
   block            Int
 
-  courseOccasion CourseOccasion @relation(fields: [courseOccasionId], references: [id], onDelete: Cascade)
+  coursePeriod CourseOccasionPeriod @relation(fields: [coursePeriodId], references: [id], onDelete: Cascade)
 
-  @@unique([courseOccasionId, block])
+  @@unique([coursePeriodId, block])
 }
