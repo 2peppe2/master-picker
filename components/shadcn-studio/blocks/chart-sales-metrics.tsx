@@ -8,7 +8,7 @@ import {
   ShoppingBagIcon,
   TrendingUpIcon
 } from 'lucide-react'
-
+import Image from 'next/image'
 import { Bar, BarChart, Label, Pie, PieChart } from 'recharts'
 
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
@@ -96,7 +96,7 @@ const SalesMetricsCard = ({ className }: { className?: string }) => {
           <div className='flex flex-col gap-7 lg:col-span-3'>
             <span className='text-lg font-semibold'>Sales metrics</span>
             <div className='flex items-center gap-3'>
-              <img
+              <Image
                 src='https://cdn.shadcnstudio.com/ss-assets/logo/logo-square.png'
                 className='size-10.5 rounded-lg'
                 alt='logo'

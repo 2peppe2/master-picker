@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Plus, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState } from "react";
 import { CourseDialog } from "./courseDialog/Dialog";
 import { MasterBadge } from "@/components/MasterBadge";
