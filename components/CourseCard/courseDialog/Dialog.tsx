@@ -51,7 +51,10 @@ export const CourseDialog = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl no-drag">
+      <DialogContent className="sm:max-w-xl no-drag"
+          onPointerDownCapture={(e) => e.stopPropagation()}
+          onMouseDownCapture={(e) => e.stopPropagation()}
+          onTouchStartCapture={(e) => e.stopPropagation()}>
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
