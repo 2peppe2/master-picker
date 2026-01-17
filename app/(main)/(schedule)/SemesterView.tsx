@@ -18,7 +18,6 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
   const {
     state: { shownSemesters },
     getters: { getSlotPeriods },
-    mutators: { toggleShownSemester },
   } = useScheduleStore();
   const periods = getSlotPeriods({ semester: semesterNumber });
 
@@ -26,7 +25,6 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
     <Card className="w-full p-4 ">
       <Collapsible
         open={shownSemesters.has(semesterNumber + 1)}
-        onClick={() => toggleShownSemester({ semester: semesterNumber + 1 })}
       >
         <Header periods={periods} semester={semesterNumber} />
         <CollapsibleContent>
@@ -71,8 +69,10 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     [semester, startingYear],
   );
 
+  const { mutators: { toggleShownSemester } } = useScheduleStore()
+
   return (
-    <CollapsibleTrigger asChild>
+    <CollapsibleTrigger asChild onClick={() => toggleShownSemester({ semester: semester + 1 })}>
       <CardTitle className="flex gap-3">
         Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
         {credits} / 30
