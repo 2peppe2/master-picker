@@ -1,4 +1,4 @@
-import { useScheduleStore } from "../../atoms/scheduleStore";
+import { useScheduleStore } from "../../atoms/schedule/scheduleStore";
 import { SemesterView } from "./SemesterView";
 import { range } from "lodash";
 
