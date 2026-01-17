@@ -1,55 +1,36 @@
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-import { useAtomValue } from "jotai";
-import { range } from "lodash";
+import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Slot, useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronRightIcon } from "lucide-react";
 import { PeriodView } from "./PeriodView";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { CollapsibleTrigger } from "@/components/ui/collapsible";
-import { FC } from "react";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
+import { useAtomValue } from "jotai";
+import { FC, useMemo } from "react";
+import { range } from "lodash";
 
 interface SemesterViewProps {
   semesterNumber: number;
 }
+
 export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
-  const { state } = useScheduleStore();
-
-  const schedules = state.schedules;
-  const periods = schedules[semesterNumber];
-  const ht_or_vt = semesterNumber % 2 === 0 ? "HT" : "VT";
-  const { startingYear } = useAtomValue(userPreferencesAtom);
-
-  const getCredits = () => {
-    const semester = schedules[semesterNumber];
-    const coursesInSemester = new Set(
-      semester.flat().filter((block) => block !== null)
-    );
-    let totalCredits = 0;
-    coursesInSemester.forEach((course) => {
-      totalCredits += course.credits;
-    });
-    return totalCredits;
-  };
-
-  const PERIODS = range(0, periods.length);
+  const {
+    state: { shownSemesters },
+    getters: { getSlotPeriods },
+  } = useScheduleStore();
+  const periods = getSlotPeriods({ semester: semesterNumber });
 
   return (
     <Card className="w-full p-4 ">
-      <Collapsible defaultOpen>
-        <CollapsibleTrigger asChild>
-          <CardTitle className="flex gap-3">
-            Semester {semesterNumber + 1}, {ht_or_vt}{" "}
-            {relativeSemesterToYear(startingYear, semesterNumber)} - Credits:{" "}
-            {getCredits()} / 30
-            <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
-          </CardTitle>
-        </CollapsibleTrigger>
+      <Collapsible
+        open={shownSemesters.has(semesterNumber + 1)}
+      >
+        <Header periods={periods} semester={semesterNumber} />
         <CollapsibleContent>
           <CardContent>
             <div className="flex flex-col gap-4 pt-5">
-              {PERIODS.map((index) => (
+              {range(0, periods.length).map((index) => (
                 <PeriodView
                   key={index}
                   periodNumber={index}
@@ -61,5 +42,42 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
         </CollapsibleContent>
       </Collapsible>
     </Card>
+  );
+};
+
+interface HeaderProps {
+  periods: Slot[][];
+  semester: number;
+}
+
+const Header: FC<HeaderProps> = ({ periods, semester }) => {
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
+
+  const credits = useMemo(() => {
+    const coursesInSemester = new Set(
+      periods.flat().filter((block) => block !== null),
+    );
+    return [...coursesInSemester].reduce(
+      (acc, curr) => (acc += curr.credits),
+      0,
+    );
+  }, [periods]);
+
+  const relativeSemester = useMemo(
+    () => relativeSemesterToYear(startingYear, semester),
+    [semester, startingYear],
+  );
+
+  const { mutators: { toggleShownSemester } } = useScheduleStore()
+
+  return (
+    <CollapsibleTrigger asChild onClick={() => toggleShownSemester({ semester: semester + 1 })}>
+      <CardTitle className="flex gap-3">
+        Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
+        {credits} / 30
+        <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
+      </CardTitle>
+    </CollapsibleTrigger>
   );
 };
