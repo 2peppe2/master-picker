@@ -11,7 +11,7 @@ import { CourseDialog } from "./courseDialog/Dialog";
 import { MasterBadge } from "@/components/MasterBadge";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/(main)/page";
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import CourseAddButton from "./CourseAddButton";
 
 interface CourseCardProps {

@@ -4,9 +4,9 @@ import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import { useAtomValue } from "jotai";
 import { FC } from "react";
 import SearchInput from "./components/SearchInput";
-import useFiltered from "./hooks/useFiltered";
 import { Course } from "../page";
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { useFiltered } from "@/app/atoms/filter/filterStore";
 
 interface DrawerProps {
   courses: Course[];

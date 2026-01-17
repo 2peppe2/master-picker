@@ -1,12 +1,11 @@
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
-import { useSetAtom } from "jotai";
-import { SearchIcon } from "lucide-react";
-import CourseCard from "@/components/CourseCard";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { useFilterStore } from "@/app/atoms/filter/filterStore";
 import { Draggable } from "@/components/CourseCard/Draggable";
+import { SemesterOption } from "@/app/atoms/filter/types";
 import { Droppable } from "@/components/Droppable";
-import { FC } from "react";
-import { filterAtom } from "@/app/atoms/FilterAtom";
-import { produce } from "immer";
+import CourseCard from "@/components/CourseCard";
+import { FC, useCallback, useMemo } from "react";
+import { SearchIcon } from "lucide-react";
 import { Course } from "../page";
 
 interface BlockViewProps {
@@ -20,62 +19,64 @@ export const BlockView: FC<BlockViewProps> = ({
   periodNumber,
   blockNumber,
 }) => {
-  const { state } = useScheduleStore();
+  const {
+    getters: { getSlotCourse },
+  } = useScheduleStore();
+  const {
+    mutators: { selectBlocks, selectPeriods, selectSemester },
+  } = useFilterStore();
 
-  const setFilter = useSetAtom(filterAtom);
-  const courseSlot: Course | null =
-    state.schedules[semesterNumber][periodNumber][blockNumber];
+  const data = useMemo(
+    () => ({
+      semesterNumber,
+      periodNumber,
+      blockNumber,
+    }),
+    [blockNumber, periodNumber, semesterNumber],
+  );
 
-  function onClickFilter() {
-    unCheckOtherTimeSlots();
-    setFilter(
-      produce((draft) => {
-        draft.semester[semesterNumber] = true;
-        draft.period[periodNumber] = true;
-        draft.block[blockNumber] = true;
-      })
-    );
-  }
-  function unCheckOtherTimeSlots() {
-    setFilter(
-      produce((draft) => {
-        draft.semester = draft.semester.map(() => false);
-        draft.period = draft.period.map(() => false);
-        draft.block = draft.block.map(() => false);
-      })
-    );
-  }
+  const courseSlot: Course | null = getSlotCourse({
+    semester: semesterNumber,
+    period: periodNumber + 1,
+    block: blockNumber + 1,
+  });
+
+  const handleChangeFilter = useCallback(() => {
+    selectSemester((semesterNumber + 1) as SemesterOption);
+    selectPeriods([periodNumber + 1]);
+    selectBlocks([blockNumber + 1]);
+  }, [
+    blockNumber,
+    periodNumber,
+    selectBlocks,
+    selectPeriods,
+    selectSemester,
+    semesterNumber,
+  ]);
 
   if (!courseSlot) {
     return (
       <Droppable
+        data={data}
         key={blockNumber}
         id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
-        data={{
-          semesterNumber: semesterNumber,
-          periodNumber: periodNumber,
-          blockNumber: blockNumber,
-        }}
       >
         <div className="flex flex-col items-center">
           <SearchIcon
+            onClick={handleChangeFilter}
             className="text-zinc-500 hover:text-foreground size-12"
-            onClick={onClickFilter}
           />
           <span className="text-zinc-500">Block {blockNumber + 1}</span>
         </div>
       </Droppable>
     );
   }
+
   return (
     <Droppable
+      data={data}
       key={blockNumber}
       id={`semester-${semesterNumber}-period${periodNumber}-block-${blockNumber}`}
-      data={{
-        semesterNumber: semesterNumber,
-        periodNumber: periodNumber,
-        blockNumber: blockNumber,
-      }}
     >
       <Draggable key={courseSlot.code} id={courseSlot.code} data={courseSlot}>
         <CourseCard course={courseSlot} dropped={true} />

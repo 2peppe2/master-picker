@@ -1,42 +1,52 @@
-import { produce } from "immer";
-import { Course, CourseOccasion } from "../(main)/page";
-import { atom, useAtom, useAtomValue } from "jotai";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "./UserPreferences";
+import { userPreferencesAtom } from "../UserPreferences";
+import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
+import { Course } from "../../(main)/page";
+import { produce } from "immer";
+import {
+  AddCourseArgs,
+  GetSlotBlocksArgs,
+  GetSlotCourseArgs,
+  GetSlotPeriodsArgs,
+  RemoveCourseArgs,
+  ToggleShownSemesterArgs,
+} from "./types";
 
-type Cell = Course | null;
-type ScheduleGrid = Cell[][][]; // [semester][period][block]
-
-interface AddCourseArgs {
-  course: Course;
-  occasion: CourseOccasion;
-}
-
-interface RemoveCourseArgs {
-  courseCode: string;
-}
+export type Slot = Course | null;
+export type ScheduleGrid = Slot[][][]; // [semester][period][block]
 
 interface ScheduleStore {
   state: {
     schedules: ScheduleGrid;
+    shownSemesters: Set<number>;
     selectedCourses: Course[];
   };
 
   mutators: {
     addCourse: (args: AddCourseArgs) => void;
     removeCourse: (args: RemoveCourseArgs) => void;
+    toggleShownSemester: (args: ToggleShownSemesterArgs) => void;
+  };
+
+  getters: {
+    getSlotCourse: (args: GetSlotCourseArgs) => Slot;
+    getSlotBlocks: (args: GetSlotBlocksArgs) => Slot[];
+    getSlotPeriods: (args: GetSlotPeriodsArgs) => Slot[][];
   };
 }
 
 const schedulesAtom = atom<ScheduleGrid>(
   Array.from({ length: 9 }, () =>
-    Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null))
-  )
+    Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null)),
+  ),
 );
+
+const shownSemestersAtom = atom<Set<number>>(new Set([7, 8, 9]));
 
 export const useScheduleStore = (): ScheduleStore => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
+  const [shownSemesters, setShownSemesters] = useAtom(shownSemestersAtom);
   const [schedules, setSchedules] = useAtom(schedulesAtom);
 
   const selectedCourses = useMemo(() => {
@@ -52,6 +62,21 @@ export const useScheduleStore = (): ScheduleStore => {
     return Array.from(uniqueMap.values());
   }, [schedules]);
 
+  const toggleShownSemester = useCallback(
+    ({ semester }: ToggleShownSemesterArgs) => {
+      setShownSemesters((prev) => {
+        const next = new Set(prev);
+        if (next.has(semester)) {
+          next.delete(semester);
+        } else {
+          next.add(semester);
+        }
+        return next;
+      });
+    },
+    [setShownSemesters],
+  );
+
   const addCourse = useCallback(
     ({ course, occasion }: AddCourseArgs) => {
       setSchedules((prev) =>
@@ -59,19 +84,18 @@ export const useScheduleStore = (): ScheduleStore => {
           const relativeYear = yearAndSemesterToRelativeSemester(
             startingYear,
             occasion.year,
-            occasion.semester
+            occasion.semester,
           );
-          console.log(occasion.periods.map((p) => ({period: p.period, blocks: p.blocks.join(", ")})));
           for (const period of occasion.periods) {
             for (const block of period.blocks) {
               draft[relativeYear][period.period - 1][block - 1] = course;
             }
           }
           return draft;
-        })
+        }),
       );
     },
-    [setSchedules, startingYear]
+    [setSchedules, startingYear],
   );
 
   const removeCourse = useCallback(
@@ -87,20 +111,44 @@ export const useScheduleStore = (): ScheduleStore => {
               });
             });
           });
-        })
+        }),
       );
     },
-    [setSchedules]
+    [setSchedules],
+  );
+
+  const getSlotCourse = useCallback(
+    ({ block, period, semester }: GetSlotCourseArgs) =>
+      schedules[semester][period - 1][block - 1],
+    [schedules],
+  );
+
+  const getSlotBlocks = useCallback(
+    ({ semester, period }: GetSlotBlocksArgs) =>
+      schedules[semester][period - 1],
+    [schedules],
+  );
+
+  const getSlotPeriods = useCallback(
+    ({ semester }: GetSlotPeriodsArgs) => schedules[semester],
+    [schedules],
   );
 
   return {
     state: {
       schedules,
+      shownSemesters,
       selectedCourses,
     },
     mutators: {
       addCourse,
       removeCourse,
+      toggleShownSemester,
+    },
+    getters: {
+      getSlotBlocks,
+      getSlotPeriods,
+      getSlotCourse,
     },
   };
 };

@@ -11,8 +11,8 @@ import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
 import { Course, CourseOccasion } from "@/app/(main)/page";
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
 import { MasterBadge } from "../MasterBadge";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 
 interface OccasionTableProps {
   course: Course;
@@ -65,9 +65,9 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course, showRec
       yearAndSemesterToRelativeSemester(
         startingYear,
         occasion.year,
-        occasion.semester
+        occasion.semester,
       ),
-    [occasion.semester, occasion.year, startingYear]
+    [occasion.semester, occasion.year, startingYear],
   );
   const periods = occasion.periods.map((p) => p.period);
   const blocks = Array.from(

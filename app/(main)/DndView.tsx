@@ -17,7 +17,7 @@ import { MastersRequirementsBar } from "./(mastersRequirementsBar)/MastersRequir
 import { Drawer } from "./(drawer)/Drawer";
 import CourseCard from "@/components/CourseCard";
 import { useAtom, useAtomValue } from "jotai";
-import { useScheduleStore } from "../atoms/scheduleStore";
+import { useScheduleStore } from "../atoms/schedule/scheduleStore";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { FC } from "react";
@@ -45,7 +45,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       // makes sure dragging only activates after moving a few pixels
       activationConstraint: { distance: 6 },
     }),
-    useSensor(KeyboardSensor)
+    useSensor(KeyboardSensor),
   );
 
   const onDragStart = (event: DragStartEvent) => {
@@ -62,7 +62,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
-      overData.semesterNumber
+      overData.semesterNumber,
     );
     const relevantOccasion = activeCourse.CourseOccasion.find(
       (occ) => {

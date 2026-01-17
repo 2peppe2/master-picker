@@ -1,4 +1,4 @@
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { range } from "lodash";
 import { BlockView } from "./BlockView";
 import { FC } from "react";
@@ -12,12 +12,17 @@ export const PeriodView: FC<PeriodViewProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
-  const { state } = useScheduleStore();
-  const blocks = state.schedules[semesterNumber][periodNumber];
-  const BLOCKS = range(0, blocks.length);
+  const {
+    getters: { getSlotBlocks },
+  } = useScheduleStore();
+  const blocks = getSlotBlocks({
+    semester: semesterNumber,
+    period: periodNumber + 1,
+  });
+
   return (
     <div className="flex justify-around gap-5">
-      {BLOCKS.map((index: number) => (
+      {range(0, blocks.length).map((index: number) => (
         <BlockView
           key={index}
           semesterNumber={semesterNumber}

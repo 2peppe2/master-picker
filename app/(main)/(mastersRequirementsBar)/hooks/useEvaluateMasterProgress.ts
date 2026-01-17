@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import _ from "lodash";
 
-import { useScheduleStore } from "@/app/atoms/scheduleStore";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { Course, RequirementsUnion } from "../../page";
 
 interface MasterProgress {
@@ -25,7 +25,7 @@ export const useEvaluateMasterProgress = () => {
       for (const requirement of requirements) {
         const progress = getProgressForRequirement(
           requirement,
-          state.selectedCourses
+          state.selectedCourses,
         );
 
         totalPercentage += percentagePerReq * progress;
@@ -40,7 +40,7 @@ export const useEvaluateMasterProgress = () => {
         progress: Math.floor(totalPercentage),
       };
     },
-    [state.selectedCourses]
+    [state.selectedCourses],
   );
 };
 
@@ -49,12 +49,12 @@ export const useEvaluateMasterProgress = () => {
  */
 const getProgressForRequirement = (
   req: RequirementsUnion,
-  courses: Course[]
+  courses: Course[],
 ): number => {
   switch (req.type) {
     case "COURSES_OR": {
       const isFulfilled = courses.some((c) =>
-        req.courses.map((c) => c.code).includes(c.code)
+        req.courses.map((c) => c.code).includes(c.code),
       );
       return isFulfilled ? 1 : 0;
     }
@@ -86,7 +86,7 @@ const calculateTotalCredits = (courses: Course[]): number =>
 const calculateLevelCredits = (courses: Course[], level: "A" | "G"): number => {
   return courses
     .filter(
-      (c) => !c.CourseMaster.some((master) => master.courseCode === c.code)
+      (c) => !c.CourseMaster.some((master) => master.courseCode === c.code),
     )
     .filter((c) => c.level.includes(level))
     .reduce((sum, c) => sum + c.credits, 0);
