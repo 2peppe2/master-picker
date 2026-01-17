@@ -25,7 +25,7 @@ export const useEvaluateMasterProgress = () => {
       for (const requirement of requirements) {
         const progress = getProgressForRequirement(
           requirement,
-          state.selectedCourses,
+          state.selectedMasterCourses,
         );
 
         totalPercentage += percentagePerReq * progress;
@@ -40,7 +40,7 @@ export const useEvaluateMasterProgress = () => {
         progress: Math.floor(totalPercentage),
       };
     },
-    [state.selectedCourses],
+    [state.selectedMasterCourses],
   );
 };
 
