@@ -22,6 +22,7 @@ interface ScheduleStore {
     schedules: ScheduleGrid;
     shownSemesters: Set<number>;
     selectedCourses: Course[];
+    selectedMasterCourses: Course[];
   };
 
   mutators: {
@@ -47,7 +48,7 @@ const schedulesAtom = atom<ScheduleGrid>(
 const shownSemestersAtom = atom<Set<number>>(new Set([7, 8, 9]));
 
 export const useScheduleStore = (): ScheduleStore => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { startingYear, masterPeriod } = useAtomValue(userPreferencesAtom);
   const [shownSemesters, setShownSemesters] = useAtom(shownSemestersAtom);
   const [schedules, setSchedules] = useAtom(schedulesAtom);
 
@@ -63,6 +64,23 @@ export const useScheduleStore = (): ScheduleStore => {
     }
     return Array.from(uniqueMap.values());
   }, [schedules]);
+
+  const selectedMasterCourses = useMemo(() => {
+    const uniqueMap = new Map<string, Course>();
+
+    for (
+      let semester = masterPeriod.start - 1;
+      semester < masterPeriod.end - 1;
+      ++semester
+    ) {
+      for (const period of schedules[semester]) {
+        for (const block of period) {
+          if (block) uniqueMap.set(block.code, block);
+        }
+      }
+    }
+    return Array.from(uniqueMap.values());
+  }, [masterPeriod, schedules]);
 
   const toggleShownSemester = useCallback(
     ({ semester }: ToggleShownSemesterArgs) => {
@@ -165,6 +183,7 @@ export const useScheduleStore = (): ScheduleStore => {
       schedules,
       shownSemesters,
       selectedCourses,
+      selectedMasterCourses,
     },
     mutators: {
       addCourse,
