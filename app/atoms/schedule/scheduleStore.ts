@@ -9,6 +9,7 @@ import {
   GetSlotBlocksArgs,
   GetSlotCourseArgs,
   GetSlotPeriodsArgs,
+  GetOccasionCollisionsArgs,
   RemoveCourseArgs,
   ToggleShownSemesterArgs,
 } from "./types";
@@ -33,6 +34,7 @@ interface ScheduleStore {
     getSlotCourse: (args: GetSlotCourseArgs) => Slot;
     getSlotBlocks: (args: GetSlotBlocksArgs) => Slot[];
     getSlotPeriods: (args: GetSlotPeriodsArgs) => Slot[][];
+    getOccasionCollisions: (args: GetOccasionCollisionsArgs) => Course[];
   };
 }
 
@@ -133,6 +135,30 @@ export const useScheduleStore = (): ScheduleStore => {
     ({ semester }: GetSlotPeriodsArgs) => schedules[semester],
     [schedules],
   );
+  const getOccasionCollisions = useCallback(
+    ({ occasion }: GetOccasionCollisionsArgs) => {
+      const collisions: Course[] = [];
+      const relativeYear = yearAndSemesterToRelativeSemester(
+        startingYear,
+        occasion.year,
+        occasion.semester,
+      );
+      for (const period of occasion.periods) {
+        for (const block of period.blocks) {
+          const slot = getSlotCourse({
+            semester: relativeYear,
+            period: period.period,
+            block: block,
+          });
+          if (slot) {
+            collisions.push(slot);
+          }
+        }
+      }
+      return collisions;
+    },
+    [getSlotCourse, startingYear],
+  );
 
   return {
     state: {
@@ -149,6 +175,7 @@ export const useScheduleStore = (): ScheduleStore => {
       getSlotBlocks,
       getSlotPeriods,
       getSlotCourse,
+      getOccasionCollisions,
     },
   };
 };

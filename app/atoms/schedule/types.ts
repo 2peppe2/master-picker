@@ -24,6 +24,10 @@ export interface GetSlotPeriodsArgs {
   semester: number;
 }
 
+export interface GetOccasionCollisionsArgs {
+  occasion: CourseOccasion;
+}
+
 export interface ToggleShownSemesterArgs {
   semester: number;
 }
