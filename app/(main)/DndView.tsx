@@ -24,6 +24,7 @@ import { FC, Suspense } from "react";
 import { Course } from "./page";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
+import AddAlert from "@/components/AddAlert";
 
 interface DndViewProps {
   courses: Course[];
@@ -32,7 +33,7 @@ interface DndViewProps {
 const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators } = useScheduleStore();
+  const { mutators, getters } = useScheduleStore();
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -75,6 +76,12 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     if (!relevantOccasion) return;
 
+    const slot = getters.getSlotCourse({
+      semester: overData.semesterNumber,
+      period: overData.periodNumber + 1,
+      block: overData.blockNumber + 1,
+    });
+    
     mutators.addCourse({
       course: activeCourse,
       occasion: relevantOccasion,
