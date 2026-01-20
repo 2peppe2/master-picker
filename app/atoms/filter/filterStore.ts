@@ -145,9 +145,9 @@ export const useFiltered = (courses: Course[]) => {
     [startingYear],
   );
 
-  const filterOutByPeriods = useCallback(
-    (periods: number[], course: Course) => {
-      if (!periods) return false;
+  const filterOutByPeriodsAndBlocks = useCallback(
+    (periods: number[], blocks: number[], course: Course) => {
+      if (!periods || !blocks) return false;
 
       const occasionPeriods = course.CourseOccasion.flatMap(
         (occasion) => occasion.periods,
@@ -155,22 +155,15 @@ export const useFiltered = (courses: Course[]) => {
 
       if (occasionPeriods.length === 0) return false;
 
-      return !occasionPeriods.some(({ period }) => periods.includes(period));
+      // Check if any selected period contains any selected block
+      return !occasionPeriods.some(
+        ({ period, blocks: periodBlocks }) =>
+          periods.includes(period) &&
+          periodBlocks.some((block) => blocks.includes(block)),
+      );
     },
     [],
   );
-
-  const filterOutByBlocks = useCallback((blocks: number[], course: Course) => {
-    if (!blocks) return false;
-
-    const occasionBlocks = course.CourseOccasion.flatMap((occasion) =>
-      occasion.periods.flatMap((period) => period.blocks),
-    );
-
-    if (occasionBlocks.length === 0) return false;
-
-    return !occasionBlocks.some((block) => blocks.includes(block));
-  }, []);
 
   const filterOutBySlots = useCallback(
     (excludeSlotConflicts: boolean, course: Course) => {
@@ -205,11 +198,7 @@ export const useFiltered = (courses: Course[]) => {
           return false;
         }
 
-        if (filterOutByPeriods(periods, course)) {
-          return false;
-        }
-
-        if (filterOutByBlocks(blocks, course)) {
+        if (filterOutByPeriodsAndBlocks(periods, blocks, course)) {
           return false;
         }
 
@@ -229,9 +218,8 @@ export const useFiltered = (courses: Course[]) => {
       semester,
       filterOutByMaster,
       master,
-      filterOutByPeriods,
+      filterOutByPeriodsAndBlocks,
       periods,
-      filterOutByBlocks,
       blocks,
       filterOutByTerm,
       defferedSearch,
