@@ -2,10 +2,12 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { Course } from "@/app/(main)/page";
+import { Course, CourseOccasion } from "@/app/(main)/page";
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
+import AddAlert from "../AddAlert";
+import { useState } from "react";
 
 type CourseAddButtonProps = {
   course: Course;
@@ -13,36 +15,55 @@ type CourseAddButtonProps = {
 
 const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   const isMultiOccasion = course.CourseOccasion.length > 1;
-  const { mutators } = useScheduleStore();
-  if (!isMultiOccasion) {
-    return (
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() =>
-          mutators.addCourse({ course, occasion: course.CourseOccasion[0] })
-        }
-        className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
-      >
-        <Plus className="h-4 w-4" />
-      </Button>
-    );
-  }
+  const { mutators, getters } = useScheduleStore();
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
+    course.CourseOccasion[0],
+  );
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
+  const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
+    if (getters.getOccasionCollisions({ occasion: occasion }).length > 0) {
+      setAlertOpen(true);
+    } else {
+      mutators.addCourse({ course, occasion: occasion });
+    }
+  };
+
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
-        >
-          <Plus className="h-4 w-4" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent side="left" align="start" sideOffset={10}>
-        <MultiCourseDropdown course={course} />
-      </PopoverContent>
-    </Popover>
+    <>
+      <AddAlert
+        course={course}
+        primaryAction={() =>
+          mutators.addCourse({ course, occasion: selectedOccasion })
+        }
+        open={alertOpen}
+        setOpen={setAlertOpen}
+        collisions={getters.getOccasionCollisions({
+          occasion: selectedOccasion,
+        })}
+      />
+
+      <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+        <PopoverTrigger asChild>
+          <AddButton
+            onClick={
+              isMultiOccasion
+                ? () => setPopoverOpen(true)
+                : () => checkCollisionBeforeAdd(selectedOccasion)
+            }
+          />
+        </PopoverTrigger>
+
+        <PopoverContent side="left" align="start" sideOffset={10}>
+          <MultiCourseDropdown
+            course={course}
+            checkCollisionBeforeAdd={checkCollisionBeforeAdd}
+            setSelectedOccasion={setSelectedOccasion}
+          />
+        </PopoverContent>
+      </Popover>
+    </>
   );
 };
 
@@ -50,10 +71,15 @@ export default CourseAddButton;
 
 type MultiCourseDropdownProps = {
   course: Course;
+  checkCollisionBeforeAdd: (occasion: CourseOccasion) => void;
+  setSelectedOccasion: (occasion: CourseOccasion) => void;
 };
 
-const MultiCourseDropdown = ({ course }: MultiCourseDropdownProps) => {
-  const { mutators } = useScheduleStore();
+const MultiCourseDropdown = ({
+  course,
+  checkCollisionBeforeAdd,
+  setSelectedOccasion,
+}: MultiCourseDropdownProps) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   return (
     <div className="flex flex-col gap-2">
@@ -62,10 +88,12 @@ const MultiCourseDropdown = ({ course }: MultiCourseDropdownProps) => {
           key={occasion.id}
           variant="outline"
           size="sm"
-          onClick={() => mutators.addCourse({ course, occasion })}
+          onClick={() => {
+            checkCollisionBeforeAdd(occasion);
+            setSelectedOccasion(occasion);
+          }}
         >
-          Add to{" "}
-          {`Semester ${
+          {`Add to Semester ${
             yearAndSemesterToRelativeSemester(
               startingYear,
               occasion.year,
@@ -77,3 +105,14 @@ const MultiCourseDropdown = ({ course }: MultiCourseDropdownProps) => {
     </div>
   );
 };
+
+const AddButton = (props: React.ComponentPropsWithRef<typeof Button>) => (
+  <Button
+    {...props}
+    variant="ghost"
+    size="icon"
+    className={`absolute top-2 right-2 text-muted-foreground hover:text-foreground ${props.className ?? ""}`}
+  >
+    <Plus className="h-4 w-4" />
+  </Button>
+);

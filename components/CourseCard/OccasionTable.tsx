@@ -9,44 +9,67 @@ import {
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue } from "jotai";
-import { FC, useMemo } from "react";
+import { FC, useMemo, useState } from "react";
 import { Course, CourseOccasion } from "@/app/(main)/page";
 import { MasterBadge } from "../MasterBadge";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import AddAlert from "../AddAlert";
 
 interface OccasionTableProps {
   course: Course;
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
-
+  const [alertOpen, setAlertOpen] = useState(false);
+  const { mutators, getters } = useScheduleStore();
+  const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
+    course.CourseOccasion[0],
+  );
   const hasRecommendedMaster = course.CourseOccasion.some(
-    (occasion) => occasion.recommendedMaster.length > 0);
+    (occasion) => occasion.recommendedMaster.length > 0,
+  );
 
-  return(
-  <Table>
-    <TableHeader>
-      <TableRow>
-        <TableHead>Semester</TableHead>
-        <TableHead>Period</TableHead>
-        <TableHead>Block</TableHead>
-        {hasRecommendedMaster && <TableHead>Recommended for master</TableHead>}
-        <TableHead className="text-right">Add to schedule</TableHead>
-      </TableRow>
-    </TableHeader>
-    <TableBody>
-      {course.CourseOccasion.map((occasion) => (
-        <OccasionTableRow
-          key={occasion.id}
-          occasion={occasion}
-          course={course}
-          showRecommendedMaster={hasRecommendedMaster}
-        />
-      ))}
-    </TableBody>
-  </Table>
-);
-}
+  return (
+    <>
+      <AddAlert
+        course={course}
+        primaryAction={() =>
+          mutators.addCourse({ course, occasion: selectedOccasion })
+        }
+        open={alertOpen}
+        setOpen={setAlertOpen}
+        collisions={getters.getOccasionCollisions({
+          occasion: selectedOccasion,
+        })}
+      />
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Semester</TableHead>
+            <TableHead>Period</TableHead>
+            <TableHead>Block</TableHead>
+            {hasRecommendedMaster && (
+              <TableHead>Recommended for master</TableHead>
+            )}
+            <TableHead className="text-right">Add to schedule</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {course.CourseOccasion.map((occasion) => (
+            <OccasionTableRow
+              key={occasion.id}
+              occasion={occasion}
+              course={course}
+              showRecommendedMaster={hasRecommendedMaster}
+              setAlertOpen={setAlertOpen}
+              setSelectedOccasion={setSelectedOccasion}
+            />
+          ))}
+        </TableBody>
+      </Table>
+    </>
+  );
+};
 
 export default OccasionTable;
 
@@ -54,11 +77,19 @@ interface OccasionTableRowProps {
   occasion: CourseOccasion;
   course: Course;
   showRecommendedMaster: boolean;
+  setAlertOpen: (open: boolean) => void;
+  setSelectedOccasion: (occasion: CourseOccasion) => void;
 }
 
-const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course, showRecommendedMaster }) => {
+const OccasionTableRow: FC<OccasionTableRowProps> = ({
+  occasion,
+  course,
+  showRecommendedMaster,
+  setAlertOpen,
+  setSelectedOccasion,
+}) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators } = useScheduleStore();
+  const { mutators, getters } = useScheduleStore();
 
   const relativeSemester = useMemo(
     () =>
@@ -70,10 +101,15 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course, showRec
     [occasion.semester, occasion.year, startingYear],
   );
   const periods = occasion.periods.map((p) => p.period);
-  const blocks = Array.from(
-    new Set(occasion.periods.flatMap((p) => p.blocks))
-  );
-
+  const blocks = Array.from(new Set(occasion.periods.flatMap((p) => p.blocks)));
+  const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
+    if (getters.getOccasionCollisions({ occasion: occasion }).length > 0) {
+      setSelectedOccasion(occasion);
+      setAlertOpen(true);
+    } else {
+      mutators.addCourse({ course, occasion: occasion });
+    }
+  };
 
   return (
     <TableRow>
@@ -82,15 +118,18 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course, showRec
       </TableCell>
       <TableCell>{periods.length > 0 ? periods.join(", ") : "-"}</TableCell>
       <TableCell>{blocks.length > 0 ? blocks.join(", ") : "-"}</TableCell>
-      {showRecommendedMaster &&
-      <TableCell align="center">
-        {occasion.recommendedMaster.length > 0
-          ? occasion.recommendedMaster.map((m) => <MasterBadge key={m.master} name={m.master}/>)
-          : "-"}
-      </TableCell>}
+      {showRecommendedMaster && (
+        <TableCell align="center">
+          {occasion.recommendedMaster.length > 0
+            ? occasion.recommendedMaster.map((m) => (
+                <MasterBadge key={m.master} name={m.master} />
+              ))
+            : "-"}
+        </TableCell>
+      )}
       <TableCell className="flex justify-end">
         <p
-          onClick={() => mutators.addCourse({ course, occasion })}
+          onClick={() => checkCollisionBeforeAdd(occasion)}
           className="cursor-pointer hover:underline underline-offset-2 text-left"
         >
           Add course
@@ -99,5 +138,3 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({ occasion, course, showRec
     </TableRow>
   );
 };
-
-

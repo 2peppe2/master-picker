@@ -20,10 +20,11 @@ import { useAtom, useAtomValue } from "jotai";
 import { useScheduleStore } from "../atoms/schedule/scheduleStore";
 import Schedule from "./(schedule)/Schedule";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
-import { FC, Suspense } from "react";
-import { Course } from "./page";
+import { FC, Suspense, useState } from "react";
+import { Course, CourseOccasion } from "./page";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
+import AddAlert from "@/components/AddAlert";
 
 interface DndViewProps {
   courses: Course[];
@@ -32,7 +33,11 @@ interface DndViewProps {
 const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators } = useScheduleStore();
+  const { mutators, getters } = useScheduleStore();
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertCourse, setAlertCourse] = useState<Course | null>(null);
+  const [selectedOccasion, setSelectedOccasion] =
+    useState<CourseOccasion | null>(null);
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -50,13 +55,17 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
   const onDragStart = (event: DragStartEvent) => {
     setActiveCourse(event.active.data.current as Course);
+    setAlertOpen(false);
+    setAlertCourse(null);
+    setSelectedOccasion(null);
   };
 
   const onDragEnd = (event: DragEndEvent) => {
+    const droppedCourse = activeCourse;
     setActiveCourse(null);
 
     if (!event.over) return;
-    if (!activeCourse) return;
+    if (!droppedCourse) return;
 
     const overData = event.over.data.current as PeriodNodeData;
 
@@ -64,7 +73,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       startingYear,
       overData.semesterNumber,
     );
-    const relevantOccasion = activeCourse.CourseOccasion.find((occ) => {
+    const relevantOccasion = droppedCourse.CourseOccasion.find((occ) => {
       if (occ.year !== year || occ.semester !== semester) return false;
       for (const period of occ.periods) {
         if (period.period !== overData.periodNumber + 1) continue;
@@ -74,11 +83,22 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     });
 
     if (!relevantOccasion) return;
-
-    mutators.addCourse({
-      course: activeCourse,
-      occasion: relevantOccasion,
+    const slot = getters.getSlotCourse({
+      semester: overData.semesterNumber,
+      period: overData.periodNumber + 1,
+      block: overData.blockNumber + 1,
     });
+    console.log(slot);
+    if (slot) {
+      setSelectedOccasion(relevantOccasion);
+      setAlertCourse(droppedCourse);
+      setAlertOpen(true);
+    } else {
+      mutators.addCourse({
+        course: droppedCourse,
+        occasion: relevantOccasion,
+      });
+    }
   };
 
   return (
@@ -88,6 +108,22 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
+        {alertOpen && alertCourse && selectedOccasion && (
+          <AddAlert
+            course={alertCourse}
+            primaryAction={() =>
+              mutators.addCourse({
+                course: alertCourse,
+                occasion: selectedOccasion,
+              })
+            }
+            open={alertOpen}
+            setOpen={setAlertOpen}
+            collisions={getters.getOccasionCollisions({
+              occasion: selectedOccasion,
+            })}
+          />
+        )}
         <Drawer courses={courses} />
         <div className="flex flex-col  gap-4 px-8">
           <Suspense fallback={<div>Loading....</div>}>
