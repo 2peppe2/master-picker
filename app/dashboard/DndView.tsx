@@ -125,7 +125,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
           />
         )}
         <Drawer courses={courses} />
-        <div className="flex flex-col  gap-4 px-8">
+        <div className="flex flex-col gap-4 px-8 min-w-0">
           <Suspense fallback={<div>Loading....</div>}>
             <MastersRequirementsBar />
           </Suspense>

@@ -22,7 +22,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
   const periods = getSlotPeriods({ semester: semesterNumber });
 
   return (
-    <Card className="w-full p-4 ">
+    <Card className="w-full p-4">
       <Collapsible
         open={shownSemesters.has(semesterNumber + 1)}
       >

@@ -60,7 +60,7 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
   return (
     <div
       ref={setNodeRef}
-      className={`w-40 h-40 flex items-center justify-center ${overStyles} border-4 border-dashed rounded-2xl`}
+      className={`w-40 h-40 shrink-0 flex items-center justify-center ${overStyles} border-4 border-dashed rounded-2xl`}
     >
       {children}
     </div>
