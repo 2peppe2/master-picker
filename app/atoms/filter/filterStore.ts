@@ -172,6 +172,33 @@ export const useFiltered = (courses: Course[]) => {
     return !occasionBlocks.some((block) => blocks.includes(block));
   }, []);
 
+  const filterOutByPeriodsAndBlocks = useCallback(
+    (periods: number[], blocks: number[], course: Course) => {
+      if (!periods && blocks) {
+        return filterOutByBlocks(blocks, course);
+      } else if (periods && !blocks) {
+        return filterOutByPeriods(periods, course);
+      }
+
+      if (!periods && !blocks) {
+        return false;
+      }
+
+      const hasMatchingOccasion = course.CourseOccasion.some((occasion) => {
+        return occasion.periods.some((occPeriod) => {
+          const isCorrectPeriod = periods.includes(occPeriod.period);
+          const isCorrectBlock = occPeriod.blocks.some((block) =>
+            blocks.includes(block),
+          );
+          return isCorrectPeriod && isCorrectBlock;
+        });
+      });
+
+      return !hasMatchingOccasion;
+    },
+    [filterOutByBlocks, filterOutByPeriods],
+  );
+
   const filterOutBySlots = useCallback(
     (excludeSlotConflicts: boolean, course: Course) => {
       if (!excludeSlotConflicts) return;
@@ -205,11 +232,7 @@ export const useFiltered = (courses: Course[]) => {
           return false;
         }
 
-        if (filterOutByPeriods(periods, course)) {
-          return false;
-        }
-
-        if (filterOutByBlocks(blocks, course)) {
+        if (filterOutByPeriodsAndBlocks(periods, blocks, course)) {
           return false;
         }
 
@@ -229,9 +252,8 @@ export const useFiltered = (courses: Course[]) => {
       semester,
       filterOutByMaster,
       master,
-      filterOutByPeriods,
+      filterOutByPeriodsAndBlocks,
       periods,
-      filterOutByBlocks,
       blocks,
       filterOutByTerm,
       defferedSearch,
