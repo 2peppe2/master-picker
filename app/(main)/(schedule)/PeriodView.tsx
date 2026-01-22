@@ -3,6 +3,7 @@ import { range } from "lodash";
 import { BlockView } from "./BlockView";
 import { FC } from "react";
 import { Plus } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -31,12 +32,15 @@ export const PeriodView: FC<PeriodViewProps> = ({
           blockNumber={index}
         />
       ))}
-      <div className="flex items-center justify-center p-2 border-5 border-dashed rounded-md h-40 w-40 shrink-0 border-zinc-500">
-        <Plus className="text-zinc-500 hover:text-foreground size-12" />
+      <div>
+        <Separator orientation="vertical" className="h-full" />
       </div>
-      <div className="flex items-center justify-center p-2 border-5 border-dashed rounded-md h-40 w-40 shrink-0 border-zinc-500">
+      
+      <div className="flex items-center justify-center p-2 border-2 rounded-md h-20 w-20 shrink-0 border-zinc-500">
         <Plus className="text-zinc-500 hover:text-foreground size-12" />
+        Add Block
       </div>
+      
     </div>
   );
 };
