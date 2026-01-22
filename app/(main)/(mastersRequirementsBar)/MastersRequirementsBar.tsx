@@ -51,7 +51,7 @@ const MastersRequirementsBar = () => {
 };
 
 const MastersRequirementsSkeleton = () => (
-  <MastersRequirementsContainer>
+  <MastersRequirementsContainer className="animation-pulse">
     {range(0, 8).map((i) => (
       <div
         key={`master-sekeleton-${i}`}
@@ -62,12 +62,14 @@ const MastersRequirementsSkeleton = () => (
 );
 interface MastersRequirementsContainerProps {
   children: ReactNode;
+  className?: string;
 }
 
 const MastersRequirementsContainer: FC<MastersRequirementsContainerProps> = ({
   children,
+  className,
 }) => (
-  <Card className="p-4 mb-4">
+  <Card className={`p-4 mb-4 ${className}`}>
     <CardTitle className={`flex flex-wrap gap-4 text-lg items-center`}>
       Master Requirements:
       {children}
