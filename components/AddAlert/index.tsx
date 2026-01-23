@@ -1,6 +1,6 @@
 "use client";
 
-import { Course } from "@/app/(main)/page";
+import { Course } from "@/app/dashboard/page";
 import {
     AlertDialog,
     AlertDialogContent,

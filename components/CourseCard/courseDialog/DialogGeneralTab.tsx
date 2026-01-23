@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import OccasionTable from "../OccasionTable";
-import { Course } from "@/app/(main)/page";
+import { Course } from "@/app/dashboard/page";
 import DialogTimeChart from "./DialogTimeChart";
 
 type DialogGeneralTabProps = {

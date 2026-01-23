@@ -1,4 +1,4 @@
-import { Course } from "@/app/(main)/page";
+import { Course } from "@/app/dashboard/page";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import React, { FC, ReactNode, CSSProperties } from "react";

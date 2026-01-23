@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Course } from "@/app/(main)/page";
+import { Course } from "@/app/dashboard/page";
 
 import ExaminationTable from "./ExaminationTable";
 import DialogTabs from "./DialogTabs";

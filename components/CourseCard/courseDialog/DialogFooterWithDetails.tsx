@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { DialogFooter } from "@/components/ui/dialog";
-import { Course } from "@/app/(main)/page";
+import { Course } from "@/app/dashboard/page";
 
 type DialogFooterProps = {
     course: Course;

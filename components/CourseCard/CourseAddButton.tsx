@@ -2,7 +2,7 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { Course, CourseOccasion } from "@/app/(main)/page";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";

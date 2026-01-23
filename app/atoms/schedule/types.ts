@@ -1,4 +1,4 @@
-import { Course, CourseOccasion } from "../../(main)/page";
+import { Course, CourseOccasion } from "../../dashboard/page";
 
 export interface AddCourseArgs {
   course: Course;

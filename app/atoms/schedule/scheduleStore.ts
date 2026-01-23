@@ -2,7 +2,7 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { userPreferencesAtom } from "../UserPreferences";
 import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
-import { Course } from "../../(main)/page";
+import { Course } from "../../dashboard/page";
 import { produce } from "immer";
 import {
   AddCourseArgs,
