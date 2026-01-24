@@ -1,4 +1,7 @@
 model Program {
     program String   @id
-    Courses Course[]
+    name    String
+    shortname  String
+
+    programCourses ProgramCourse[]
 }

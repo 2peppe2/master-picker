@@ -10,11 +10,14 @@ model Course {
   scheduledHours      Int
   selfStudyHours     Int
   updatedAt DateTime @default(now())
+  programCourseID Int
 
   // Relationship mappings.
-  Program             Program[]
   Examination         Examination[]
   CourseMaster        CourseMaster[]
   CourseOccasion      CourseOccasion[]
   CoursesRequirements CoursesRequirement[]
+
+  ProgramCourse ProgramCourse @relation (fields: [programCourseID], references: [id], onDelete: Cascade)
+
 }

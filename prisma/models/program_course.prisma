@@ -1,0 +1,9 @@
+model ProgramCourse {
+    id          Int     @id
+    program     String
+    startYear   Int
+
+    Program     Program  @relation(fields: [program], references: [program], onDelete: Cascade)
+
+    courses Course[]
+}
