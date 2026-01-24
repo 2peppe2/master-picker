@@ -1,6 +1,6 @@
 "use server";
 import { prisma } from "@/lib/prisma";
-import { RequirementsUnion } from "../(main)/page";
+import { RequirementsUnion } from "../dashboard/page";
 
 export async function getMasters() {
   const masters = await prisma.master.findMany();

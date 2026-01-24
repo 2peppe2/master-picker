@@ -4,7 +4,7 @@ import { useCallback, useDeferredValue, useMemo } from "react";
 import { useScheduleStore } from "../schedule/scheduleStore";
 import { userPreferencesAtom } from "../UserPreferences";
 import { atomWithReset, RESET } from "jotai/utils";
-import { Course } from "../../(main)/page";
+import { Course } from "../../dashboard/page";
 import { SemesterOption } from "./types";
 
 type ResettableAtom<T> = WritableAtom<T, [T | typeof RESET], void>;

@@ -10,7 +10,7 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue } from "jotai";
 import { FC, useMemo, useState } from "react";
-import { Course, CourseOccasion } from "@/app/(main)/page";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { MasterBadge } from "../MasterBadge";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import AddAlert from "../AddAlert";
