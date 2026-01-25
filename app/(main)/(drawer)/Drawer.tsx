@@ -21,7 +21,7 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
   const activeCourse = useAtomValue(activeCourseAtom);
 
   return (
-    <div className="border p-4 rounded-r-lg shadow-lg max-h-[calc(100dvh-1rem)] w-[22.5rem] max-w-full overflow-y-auto sticky top-4">
+    <div className="border p-4 rounded-r-lg shadow-lg max-h-[calc(100dvh-1rem)] w-full max-w-full overflow-y-auto sticky top-4">
       <SearchInput />
       <div className="grid grid-cols-2 2xl:grid-cols-3 justify-items-center gap-4 mt-5">
         {Object.values(COURSES)

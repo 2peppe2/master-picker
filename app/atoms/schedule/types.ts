@@ -28,6 +28,10 @@ export interface GetOccasionCollisionsArgs {
   occasion: CourseOccasion;
 }
 
+export interface AddBlockToSemesterArgs {
+  semester: number;
+}
+
 export interface ToggleShownSemesterArgs {
   semester: number;
 }
