@@ -4,11 +4,14 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Slot, useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, Ellipsis } from "lucide-react";
 import { PeriodView } from "./PeriodView";
 import { useAtomValue } from "jotai";
-import { FC, useMemo } from "react";
+import { FC, useMemo, useState } from "react";
 import { range } from "lodash";
+import { Popover, PopoverContent } from "@/components/ui/popover";
+import { PopoverTrigger } from "@radix-ui/react-popover";
+import { Button } from "@/components/ui/button";
 
 interface SemesterViewProps {
   semesterNumber: number;
@@ -23,9 +26,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
 
   return (
     <Card className="w-full p-4">
-      <Collapsible
-        open={shownSemesters.has(semesterNumber + 1)}
-      >
+      <Collapsible open={shownSemesters.has(semesterNumber + 1)}>
         <Header periods={periods} semester={semesterNumber} />
         <CollapsibleContent>
           <CardContent>
@@ -52,6 +53,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ periods, semester }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
+  const [popoverOpen, setPopoverOpen] = useState(false);
   const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
 
   const credits = useMemo(() => {
@@ -69,15 +71,53 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     [semester, startingYear],
   );
 
-  const { mutators: { toggleShownSemester } } = useScheduleStore()
+  const {
+    mutators: { toggleShownSemester, addBlockToSemester },
+  } = useScheduleStore();
 
   return (
-    <CollapsibleTrigger asChild onClick={() => toggleShownSemester({ semester: semester + 1 })}>
-      <CardTitle className="flex gap-3">
-        Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
-        {credits} / 30
-        <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
-      </CardTitle>
-    </CollapsibleTrigger>
+    <div className="flex">
+      <CollapsibleTrigger
+        asChild
+        onClick={() => toggleShownSemester({ semester: semester + 1 })}
+      >
+        <CardTitle className="flex gap-3">
+          Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
+          {credits} / 30
+          <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
+        </CardTitle>
+      </CollapsibleTrigger>
+
+      <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="ml-auto h-8 w-8"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <Ellipsis className="size-4" />
+          </Button>
+        </PopoverTrigger>
+
+        <PopoverContent align="end" className="w-48 p-2">
+          <div className="grid gap-1">
+            <div className="px-2 py-1.5 text-sm font-semibold">Options</div>
+            <Button
+              onClick={() => {
+                addBlockToSemester({ semester });
+                setPopoverOpen(false);
+              }}
+              variant="ghost"
+              className="h-8 justify-start text-sm font-normal"
+            >
+              Add extra block
+            </Button>
+          </div>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 };

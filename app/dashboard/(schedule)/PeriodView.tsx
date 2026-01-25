@@ -1,9 +1,7 @@
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import { range } from "lodash";
+import { Separator } from "@/components/ui/separator";
 import { BlockView } from "./BlockView";
 import { FC } from "react";
-import { Plus } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -17,30 +15,33 @@ export const PeriodView: FC<PeriodViewProps> = ({
   const {
     getters: { getSlotBlocks },
   } = useScheduleStore();
+
   const blocks = getSlotBlocks({
     semester: semesterNumber,
     period: periodNumber + 1,
   });
 
   return (
-    <div className="flex w-full max-w-full gap-5 overflow-x-auto pb-4 justify-around">
-      {range(0, blocks.length).map((index: number) => (
-        <BlockView
-          key={index}
-          semesterNumber={semesterNumber}
-          periodNumber={periodNumber}
-          blockNumber={index}
-        />
+    <div className="flex w-full max-w-full gap-5 overflow-x-auto pb-4">
+      {blocks.map((_block, index) => (
+        <div key={index} className="flex items-center">
+          {index === 4 && (
+            <div className="flex h-full items-center mr-auto ml-auto">
+              <Separator orientation="vertical" className="w-[2px] mr-5" />
+            </div>
+          )}
+
+          <div
+            className={`border p-2 rounded-md bg-secondary/20 ${index >= 4 && "ml-auto"}`}
+          >
+            <BlockView
+              semesterNumber={semesterNumber}
+              periodNumber={periodNumber}
+              blockNumber={index}
+            />
+          </div>
+        </div>
       ))}
-      <div>
-        <Separator orientation="vertical" className="h-full" />
-      </div>
-      
-      <div className="flex items-center justify-center p-2 border-2 rounded-md h-20 w-20 shrink-0 border-zinc-500">
-        <Plus className="text-zinc-500 hover:text-foreground size-12" />
-        Add Block
-      </div>
-      
     </div>
   );
 };

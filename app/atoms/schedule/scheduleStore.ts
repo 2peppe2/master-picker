@@ -12,6 +12,7 @@ import {
   GetOccasionCollisionsArgs,
   RemoveCourseArgs,
   ToggleShownSemesterArgs,
+  AddBlockToSemesterArgs,
 } from "./types";
 
 export type Slot = Course | null;
@@ -28,6 +29,7 @@ interface ScheduleStore {
   mutators: {
     addCourse: (args: AddCourseArgs) => void;
     removeCourse: (args: RemoveCourseArgs) => void;
+    addBlockToSemester: (args: AddBlockToSemesterArgs) => void;
     toggleShownSemester: (args: ToggleShownSemesterArgs) => void;
   };
 
@@ -95,6 +97,19 @@ export const useScheduleStore = (): ScheduleStore => {
       });
     },
     [setShownSemesters],
+  );
+
+  const addBlockToSemester = useCallback(
+    ({ semester }: AddBlockToSemesterArgs) => {
+      setSchedules((prev) =>
+        produce(prev, (draft) => {
+          draft[semester].forEach((period) => {
+            period.push(null);
+          });
+        }),
+      );
+    },
+    [setSchedules],
   );
 
   const addCourse = useCallback(
@@ -188,6 +203,7 @@ export const useScheduleStore = (): ScheduleStore => {
     mutators: {
       addCourse,
       removeCourse,
+      addBlockToSemester,
       toggleShownSemester,
     },
     getters: {
