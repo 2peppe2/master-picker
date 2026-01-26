@@ -3,7 +3,7 @@ model CreditRequirement {
   type    CreditType
   credits Int
 
-  requirement   Requirement @relation(fields: [requirementId], references: [id])
+  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
   requirementId Int
 }
 
