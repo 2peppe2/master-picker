@@ -1,14 +1,16 @@
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
+import { SearchIcon } from "lucide-react";
 import { BlockViewProps } from "./Block";
 import { FC } from "react";
 
-const WildcardBlock: FC<BlockViewProps> = ({
+const StandardBlock: FC<BlockViewProps> = ({
   courseSlot,
   data,
   blockId,
   onFilterChange,
+  displayNumber,
 }) => {
   if (courseSlot) {
     return (
@@ -23,18 +25,16 @@ const WildcardBlock: FC<BlockViewProps> = ({
   return (
     <Droppable data={data} id={blockId}>
       <div
-        className="flex flex-col items-center justify-center h-full w-full group cursor-pointer opacity-70 hover:opacity-100 transition-opacity"
+        className="flex flex-col items-center justify-center h-full w-full group cursor-pointer"
         onClick={onFilterChange}
       >
-        <div className="text-zinc-500 group-hover:text-foreground text-5xl font-light h-12 flex items-center select-none">
-          *
-        </div>
-        <span className="text-zinc-500 text-xs uppercase tracking-wider mt-1 select-none">
-          Wildcard
+        <SearchIcon className="text-zinc-500 group-hover:text-foreground size-8 mb-2 transition-colors" />
+        <span className="text-zinc-500 font-medium select-none">
+          Block {displayNumber}
         </span>
       </div>
     </Droppable>
   );
 };
 
-export default WildcardBlock
+export default StandardBlock;
