@@ -1,7 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { prisma } from "../lib/prisma";
-import { CoursesType, CreditType, Scale, Semester } from "./generated/client/enums";
+import {
+  CoursesType,
+  CreditType,
+  Scale,
+  Semester,
+} from "./generated/client/enums";
 import { entries } from "lodash";
 
 function parseSemester(s: string): Semester {
@@ -19,6 +24,7 @@ function mapReqTypeToCreditType(t: string): CreditType | null {
 }
 
 async function main() {
+  await seedProgramsData();
   await seedCoursesData();
   await seedMastersData();
   await seedMasterRequirementsData();
@@ -31,12 +37,42 @@ main()
   })
   .finally(async () => prisma.$disconnect());
 
+async function seedProgramsData() {
+  const programsFilePath = path.resolve("./data/programs.json");
+  const programs = JSON.parse(fs.readFileSync(programsFilePath, "utf8"));
+  for (const p of programs) {
+    const program = await prisma.program.upsert({
+      where: { program: p.code },
+      update: { name: p.name, shortname: p.shortname },
+      create: { program: p.code, name: p.name, shortname: p.shortname },
+    });
+    for (const year of p.years) {
+      await prisma.programCourse.upsert({
+        where: {
+          id: year.id,
+        },
+        update: {
+          program: program.program,
+        },
+        create: {
+          id: year.id,
+          startYear: year.year,
+          program: program.program,
+        },
+      });
+    }
+  }
+}
 async function seedCoursesData() {
   const courseFilePath = path.resolve("./data/6CMJU_courses.json");
   const courses = JSON.parse(fs.readFileSync(courseFilePath, "utf8"));
 
-  const courseDetailsFilePath = path.resolve("./data/6CMJU_detailed_courses.json");
-  const courseDetails = JSON.parse(fs.readFileSync(courseDetailsFilePath, "utf8"));
+  const courseDetailsFilePath = path.resolve(
+    "./data/6CMJU_detailed_courses.json",
+  );
+  const courseDetails = JSON.parse(
+    fs.readFileSync(courseDetailsFilePath, "utf8"),
+  );
 
   // DEV ONLY: clear existing data (children first)
   await prisma.courseOccasionBlock.deleteMany();
@@ -76,10 +112,18 @@ async function seedCoursesData() {
       },
     });
 
-    if (Array.isArray(detailedInfo?.examinations) && detailedInfo.examinations.length) {
+    if (
+      Array.isArray(detailedInfo?.examinations) &&
+      detailedInfo.examinations.length
+    ) {
       await prisma.examination.createMany({
         data: detailedInfo.examinations.map(
-          (exam: { credits: number; module: string; name: string; scale?: string }) => ({
+          (exam: {
+            credits: number;
+            module: string;
+            name: string;
+            scale?: string;
+          }) => ({
             courseCode: c.code,
             credits: Number(exam.credits),
             module: exam.module,
@@ -88,7 +132,7 @@ async function seedCoursesData() {
               exam.scale === "U_THREE_FOUR_FIVE"
                 ? Scale.U_THREE_FOUR_FIVE
                 : Scale.G_OR_U,
-          })
+          }),
         ),
       });
     }
@@ -122,7 +166,6 @@ async function seedCoursesData() {
       });
     }
 
-
     for (const occasion of c.occasions) {
       // Create CourseOccasion
       const masters = Array.isArray(occasion.recommended_masters)
@@ -135,7 +178,11 @@ async function seedCoursesData() {
           semester: parseSemester(occasion.ht_or_vt),
           courseCode: c.code,
           ...(masters.length
-            ? { recommendedMaster: { connect: masters.map((master) => ({ master })) } }
+            ? {
+                recommendedMaster: {
+                  connect: masters.map((master) => ({ master })),
+                },
+              }
             : {}),
         },
       });
@@ -152,7 +199,7 @@ async function seedCoursesData() {
           await prisma.courseOccasionBlock.create({
             data: {
               coursePeriodId: dbPeriod.id,
-              block: Number(block)
+              block: Number(block),
             },
           });
         }
@@ -164,10 +211,10 @@ async function seedCoursesData() {
 
 async function seedMasterRequirementsData() {
   const masterRequirementsPath = path.resolve(
-    "./data/6CMJU_master_requirements.json"
+    "./data/6CMJU_master_requirements.json",
   );
   const masterRequirements = JSON.parse(
-    fs.readFileSync(masterRequirementsPath, "utf8")
+    fs.readFileSync(masterRequirementsPath, "utf8"),
   );
 
   // DEV ONLY: clear existing data (children first)
@@ -226,7 +273,7 @@ interface MasterInfo {
 async function seedMastersData() {
   const mastersFilePath = path.resolve("./data/6CMJU_master_names.json");
   const mastersInfo = JSON.parse(
-    fs.readFileSync(mastersFilePath, "utf8")
+    fs.readFileSync(mastersFilePath, "utf8"),
   ) as MasterInfo[];
   for (const info of mastersInfo) {
     await prisma.master.upsert({
