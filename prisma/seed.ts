@@ -65,6 +65,7 @@ async function seedData() {
       await seedCourseProgramData(year, p);
       await seedCoursesData(p.id, year.id);
       await seedMasterRequirementsData(p.id, year.id);
+      await seedMastersData(p.id, year.id);
     }
   }
 }
