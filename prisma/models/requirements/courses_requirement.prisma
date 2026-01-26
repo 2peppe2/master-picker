@@ -4,7 +4,7 @@ model CoursesRequirement {
   type          CoursesType
   courses       CourseRequirementCourse[]
   requirementId Int
-  requirement   Requirement @relation(fields: [requirementId], references: [id])
+  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
 }
 
 enum CoursesType {
