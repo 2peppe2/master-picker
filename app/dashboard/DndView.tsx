@@ -33,7 +33,10 @@ interface DndViewProps {
 const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators, getters } = useScheduleStore();
+  const {
+    mutators: { addCourse },
+    getters: { findMatchingOccasion, getSlotCourse, getOccasionCollisions },
+  } = useScheduleStore();
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCourse, setAlertCourse] = useState<Course | null>(null);
   const [selectedOccasion, setSelectedOccasion] =
@@ -73,28 +76,29 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       startingYear,
       overData.semesterNumber,
     );
-    const relevantOccasion = droppedCourse.CourseOccasion.find((occ) => {
-      if (occ.year !== year || occ.semester !== semester) return false;
-      for (const period of occ.periods) {
-        if (period.period !== overData.periodNumber + 1) continue;
-        if (period.blocks.includes(overData.blockNumber + 1)) return true;
-      }
-      return false;
+
+    const relevantOccasion = findMatchingOccasion({
+      course: droppedCourse,
+      block: overData.blockNumber + 1,
+      period: overData.periodNumber + 1,
+      year,
+      semester,
     });
 
     if (!relevantOccasion) return;
-    const slot = getters.getSlotCourse({
+
+    const slot = getSlotCourse({
       semester: overData.semesterNumber,
       period: overData.periodNumber + 1,
       block: overData.blockNumber + 1,
     });
-    console.log(slot);
+
     if (slot) {
       setSelectedOccasion(relevantOccasion);
       setAlertCourse(droppedCourse);
       setAlertOpen(true);
     } else {
-      mutators.addCourse({
+      addCourse({
         course: droppedCourse,
         occasion: relevantOccasion,
       });
@@ -112,14 +116,14 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
           <AddAlert
             course={alertCourse}
             primaryAction={() =>
-              mutators.addCourse({
+              addCourse({
                 course: alertCourse,
                 occasion: selectedOccasion,
               })
             }
             open={alertOpen}
             setOpen={setAlertOpen}
-            collisions={getters.getOccasionCollisions({
+            collisions={getOccasionCollisions({
               occasion: selectedOccasion,
             })}
           />

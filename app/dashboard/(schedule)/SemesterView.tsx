@@ -76,7 +76,7 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
   } = useScheduleStore();
 
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <CollapsibleTrigger
         asChild
         onClick={() => toggleShownSemester({ semester: semester + 1 })}

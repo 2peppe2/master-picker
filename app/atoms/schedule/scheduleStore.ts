@@ -2,7 +2,7 @@ import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslation
 import { userPreferencesAtom } from "../UserPreferences";
 import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
-import { Course } from "../../dashboard/page";
+import { Course, CourseOccasion } from "../../dashboard/page";
 import { produce } from "immer";
 import {
   AddCourseArgs,
@@ -14,12 +14,13 @@ import {
   ToggleShownSemesterArgs,
   AddBlockToSemesterArgs,
   HasMatchingOccasionArgs,
+  FindMatchingOccasionArgs,
 } from "./types";
 
 export type Slot = Course | null;
 export type ScheduleGrid = Slot[][][]; // [semester][period][block]
 
-const WILDCARD_BLOCK_START = 4;
+export const WILDCARD_BLOCK_START = 4;
 
 interface ScheduleStore {
   state: {
@@ -37,6 +38,9 @@ interface ScheduleStore {
   };
 
   getters: {
+    findMatchingOccasion: (
+      args: FindMatchingOccasionArgs,
+    ) => CourseOccasion | null;
     hasMatchingOccasion: (args: HasMatchingOccasionArgs) => boolean;
     getSlotCourse: (args: GetSlotCourseArgs) => Slot;
     getSlotBlocks: (args: GetSlotBlocksArgs) => Slot[];
@@ -88,7 +92,6 @@ export const useScheduleStore = (): ScheduleStore => {
     return Array.from(uniqueMap.values());
   }, [masterPeriod, schedules]);
 
-  // TODO: Improve checker here
   const hasMatchingOccasion = ({
     blocks,
     course,
@@ -97,7 +100,6 @@ export const useScheduleStore = (): ScheduleStore => {
     return course.CourseOccasion.some((occasion) => {
       return occasion.periods.some((occPeriod) => {
         const isWildcardCourse = occPeriod.blocks.length === 0;
-        // blocks.some((b) => b > WILDCARD_BLOCK_START);
         const isCorrectPeriod = periods.includes(occPeriod.period);
         const isCorrectBlock = occPeriod.blocks.some((block) =>
           blocks.includes(block),
@@ -137,36 +139,57 @@ export const useScheduleStore = (): ScheduleStore => {
 
   const addCourse = useCallback(
     ({ course, occasion }: AddCourseArgs) => {
-      setSchedules((prev) =>
-        produce(prev, (draft) => {
-          const relativeYear = yearAndSemesterToRelativeSemester(
+      setSchedules(
+        produce((draft) => {
+          const semesterIndex = yearAndSemesterToRelativeSemester(
             startingYear,
             occasion.year,
             occasion.semester,
           );
 
-          for (const period of occasion.periods) {
-            if (period.period === 0) continue;
-            const isWildcardCourse = period.blocks.length === 0;
-            const availableBlocks = draft[relativeYear][period.period - 1];
-            if (isWildcardCourse) {
-              for (
-                let block = WILDCARD_BLOCK_START;
-                block < availableBlocks.length;
-                ++block
-              ) {
-                if (availableBlocks[block] !== null) continue;
-                draft[relativeYear][period.period - 1][block] = course;
-                break;
-              }
-              continue;
-            }
+          if (!draft[semesterIndex]) {
+            console.warn(
+              `Semester index ${semesterIndex} not found in schedule.`,
+            );
+            return;
+          }
 
-            for (const block of period.blocks) {
-              draft[relativeYear][period.period - 1][block - 1] = course;
+          for (const period of occasion.periods) {
+            if (period.period < 1) continue;
+
+            const periodIndex = period.period - 1;
+            const periodBlocks = draft[semesterIndex][periodIndex];
+
+            if (!periodBlocks) continue;
+
+            const isWildcardCourse = period.blocks.length === 0;
+
+            if (isWildcardCourse) {
+              let placed = false;
+
+              for (let i = WILDCARD_BLOCK_START; i < periodBlocks.length; i++) {
+                if (periodBlocks[i] === null) {
+                  periodBlocks[i] = course;
+                  placed = true;
+                  break;
+                }
+              }
+
+              if (!placed) {
+                periodBlocks.push(course);
+              }
+            } else {
+              for (const block of period.blocks) {
+                const blockIndex = block - 1;
+
+                if (periodBlocks[blockIndex] !== undefined) {
+                  periodBlocks[blockIndex] = course;
+                } else {
+                  periodBlocks[blockIndex] = course;
+                }
+              }
             }
           }
-          return draft;
         }),
       );
     },
@@ -208,6 +231,36 @@ export const useScheduleStore = (): ScheduleStore => {
     ({ semester }: GetSlotPeriodsArgs) => schedules[semester],
     [schedules],
   );
+
+  const findMatchingOccasion = ({
+    course,
+    year,
+    semester,
+    period,
+    block,
+  }: FindMatchingOccasionArgs): CourseOccasion | null => {
+    const occasion = course.CourseOccasion.find((occ) => {
+      if (occ.year !== year || occ.semester !== semester) return false;
+
+      return occ.periods.some((p) => {
+        if (p.period !== period) return false;
+
+        // Standard course
+        if (p.blocks.length > 0) {
+          return p.blocks.includes(block);
+        }
+
+        // Wildcard course
+        if (p.blocks.length === 0) {
+          return block > WILDCARD_BLOCK_START;
+        }
+
+        return false;
+      });
+    });
+
+    return occasion ?? null;
+  };
 
   // TODO: Handle block collisions here and suggest a new block if they are full already
   //       with a popup.
@@ -251,6 +304,7 @@ export const useScheduleStore = (): ScheduleStore => {
     },
     getters: {
       hasMatchingOccasion,
+      findMatchingOccasion,
       getSlotBlocks,
       getSlotPeriods,
       getSlotCourse,

@@ -23,10 +23,10 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
-    if (getters.getOccasionCollisions({ occasion: occasion }).length > 0) {
+    if (getters.getOccasionCollisions({ occasion }).length > 0) {
       setAlertOpen(true);
     } else {
-      mutators.addCourse({ course, occasion: occasion });
+      mutators.addCourse({ course, occasion });
     }
   };
 

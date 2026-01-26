@@ -36,6 +36,14 @@ export interface ToggleShownSemesterArgs {
   semester: number;
 }
 
+export interface FindMatchingOccasionArgs {
+  course: Course;
+  year: number;
+  semester: string;
+  period: number;
+  block: number;
+}
+
 export interface HasMatchingOccasionArgs {
   course: Course;
   periods: number[];

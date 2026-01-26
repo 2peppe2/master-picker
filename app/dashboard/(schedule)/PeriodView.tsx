@@ -45,4 +45,3 @@ export const PeriodView: FC<PeriodViewProps> = ({
     </div>
   );
 };
-
