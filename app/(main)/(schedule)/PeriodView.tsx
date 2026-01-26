@@ -22,7 +22,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
   });
 
   return (
-    <div className="flex w-full max-w-full gap-5 overflow-x-auto pb-4">
+    <div className="flex w-full max-w-full gap-5 overflow-x-auto pb-4 justify-between">
       {blocks.map((_block, index) => (
         <div key={index} className="flex items-center">
           {index === 4 && (
@@ -45,3 +45,4 @@ export const PeriodView: FC<PeriodViewProps> = ({
     </div>
   );
 };
+
