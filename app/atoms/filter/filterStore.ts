@@ -91,7 +91,7 @@ export const useFiltered = (courses: Course[]) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const { atoms } = useFilterStore();
   const {
-    getters: { getSlotCourse },
+    getters: { getSlotCourse, hasMatchingOccasion },
   } = useScheduleStore();
 
   const search = useAtomValue(atoms.searchAtom);
@@ -184,19 +184,13 @@ export const useFiltered = (courses: Course[]) => {
         return false;
       }
 
-      const hasMatchingOccasion = course.CourseOccasion.some((occasion) => {
-        return occasion.periods.some((occPeriod) => {
-          const isCorrectPeriod = periods.includes(occPeriod.period);
-          const isCorrectBlock = occPeriod.blocks.some((block) =>
-            blocks.includes(block),
-          );
-          return isCorrectPeriod && isCorrectBlock;
-        });
+      return !hasMatchingOccasion({
+        blocks,
+        periods,
+        course,
       });
-
-      return !hasMatchingOccasion;
     },
-    [filterOutByBlocks, filterOutByPeriods],
+    [filterOutByBlocks, filterOutByPeriods, hasMatchingOccasion],
   );
 
   const filterOutBySlots = useCallback(

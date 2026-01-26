@@ -4,6 +4,7 @@ import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import React, { FC, ReactNode } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 
 export type PeriodNodeData = {
   semesterNumber: number;
@@ -29,6 +30,9 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     startingYear,
     semesterNumber,
   );
+  const {
+    getters: { hasMatchingOccasion },
+  } = useScheduleStore();
 
   let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
   if (activeCourse !== null) {
@@ -40,15 +44,13 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
       (occ) => occ.semester,
     ).includes(semester);
 
-    const hasMatchingOccasion = activeCourse.CourseOccasion.some((occasion) => {
-      return occasion.periods.some((occPeriod) => {
-        const isCorrectPeriod = occPeriod.period === periodNumber + 1;
-        const isCorrectBlock = occPeriod.blocks.includes(blockNumber + 1);
-        return isCorrectPeriod && isCorrectBlock;
-      });
+    const isMatchingOccasion = hasMatchingOccasion({
+      course: activeCourse,
+      blocks: [blockNumber + 1],
+      periods: [periodNumber + 1],
     });
 
-    if (isSameYear && isSameSemester && hasMatchingOccasion) {
+    if (isSameYear && isSameSemester && isMatchingOccasion) {
       if (isOver) {
         overStyles = "border-teal-500 animate-wiggle";
       } else {

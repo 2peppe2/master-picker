@@ -13,10 +13,13 @@ import {
   RemoveCourseArgs,
   ToggleShownSemesterArgs,
   AddBlockToSemesterArgs,
+  HasMatchingOccasionArgs,
 } from "./types";
 
 export type Slot = Course | null;
 export type ScheduleGrid = Slot[][][]; // [semester][period][block]
+
+const WILDCARD_BLOCK_START = 4;
 
 interface ScheduleStore {
   state: {
@@ -34,6 +37,7 @@ interface ScheduleStore {
   };
 
   getters: {
+    hasMatchingOccasion: (args: HasMatchingOccasionArgs) => boolean;
     getSlotCourse: (args: GetSlotCourseArgs) => Slot;
     getSlotBlocks: (args: GetSlotBlocksArgs) => Slot[];
     getSlotPeriods: (args: GetSlotPeriodsArgs) => Slot[][];
@@ -84,6 +88,25 @@ export const useScheduleStore = (): ScheduleStore => {
     return Array.from(uniqueMap.values());
   }, [masterPeriod, schedules]);
 
+  // TODO: Improve checker here
+  const hasMatchingOccasion = ({
+    blocks,
+    course,
+    periods,
+  }: HasMatchingOccasionArgs) => {
+    return course.CourseOccasion.some((occasion) => {
+      return occasion.periods.some((occPeriod) => {
+        const isWildcardCourse = occPeriod.blocks.length === 0;
+        // blocks.some((b) => b > WILDCARD_BLOCK_START);
+        const isCorrectPeriod = periods.includes(occPeriod.period);
+        const isCorrectBlock = occPeriod.blocks.some((block) =>
+          blocks.includes(block),
+        );
+        return isCorrectPeriod && (isCorrectBlock || isWildcardCourse);
+      });
+    });
+  };
+
   const toggleShownSemester = useCallback(
     ({ semester }: ToggleShownSemesterArgs) => {
       setShownSemesters((prev) => {
@@ -121,7 +144,24 @@ export const useScheduleStore = (): ScheduleStore => {
             occasion.year,
             occasion.semester,
           );
+
           for (const period of occasion.periods) {
+            if (period.period === 0) continue;
+            const isWildcardCourse = period.blocks.length === 0;
+            const availableBlocks = draft[relativeYear][period.period - 1];
+            if (isWildcardCourse) {
+              for (
+                let block = WILDCARD_BLOCK_START;
+                block < availableBlocks.length;
+                ++block
+              ) {
+                if (availableBlocks[block] !== null) continue;
+                draft[relativeYear][period.period - 1][block] = course;
+                break;
+              }
+              continue;
+            }
+
             for (const block of period.blocks) {
               draft[relativeYear][period.period - 1][block - 1] = course;
             }
@@ -168,6 +208,9 @@ export const useScheduleStore = (): ScheduleStore => {
     ({ semester }: GetSlotPeriodsArgs) => schedules[semester],
     [schedules],
   );
+
+  // TODO: Handle block collisions here and suggest a new block if they are full already
+  //       with a popup.
   const getOccasionCollisions = useCallback(
     ({ occasion }: GetOccasionCollisionsArgs) => {
       const collisions: Course[] = [];
@@ -207,6 +250,7 @@ export const useScheduleStore = (): ScheduleStore => {
       toggleShownSemester,
     },
     getters: {
+      hasMatchingOccasion,
       getSlotBlocks,
       getSlotPeriods,
       getSlotCourse,

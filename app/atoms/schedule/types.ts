@@ -35,3 +35,9 @@ export interface AddBlockToSemesterArgs {
 export interface ToggleShownSemesterArgs {
   semester: number;
 }
+
+export interface HasMatchingOccasionArgs {
+  course: Course;
+  periods: number[];
+  blocks: number[];
+}
