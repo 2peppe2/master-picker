@@ -3,8 +3,8 @@ model CourseRequirementCourse {
   courseCode           String
   programCourseID      Int
 
-  coursesRequirement CoursesRequirement @relation(fields: [coursesRequirementId], references: [id])
-  course             Course             @relation(fields: [courseCode, programCourseID], references: [code, programCourseID])
+  coursesRequirement CoursesRequirement @relation(fields: [coursesRequirementId], references: [id], onDelete: Cascade)
+  course             Course             @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 
   @@id([coursesRequirementId, courseCode, programCourseID])
 }
