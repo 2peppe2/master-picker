@@ -1,5 +1,6 @@
 model Course {
-  code      String   @id
+  code      String
+  programCourseID Int
   credits   Float
   level     String
   name      String
@@ -10,14 +11,14 @@ model Course {
   scheduledHours      Int
   selfStudyHours     Int
   updatedAt DateTime @default(now())
-  programCourseID Int
-
+  
   // Relationship mappings.
   Examination         Examination[]
   CourseMaster        CourseMaster[]
   CourseOccasion      CourseOccasion[]
-  CoursesRequirements CoursesRequirement[]
+  CoursesRequirements CourseRequirementCourse[]
 
   ProgramCourse ProgramCourse @relation (fields: [programCourseID], references: [id], onDelete: Cascade)
 
+  @@id([code, programCourseID])
 }

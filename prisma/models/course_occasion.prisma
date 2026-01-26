@@ -8,9 +8,10 @@ model CourseOccasion {
   year     Int
   semester Semester
   courseCode String
+  programCourseID Int
   
   periods CourseOccasionPeriod[]
   recommendedMaster Master[]
   
-  Course     Course @relation(fields: [courseCode], references: [code])
+  Course     Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 }
