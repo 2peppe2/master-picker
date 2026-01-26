@@ -1,10 +1,13 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useMemo } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import {
+  useScheduleStore,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/scheduleStore";
 
 export type PeriodNodeData = {
   semesterNumber: number;
@@ -26,36 +29,84 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
   });
   const activeCourse = useAtomValue(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { year, semester } = relativeSemesterToYearAndSemester(
+  const { semester } = relativeSemesterToYearAndSemester(
     startingYear,
     semesterNumber,
   );
   const {
-    getters: { hasMatchingOccasion },
+    getters: { hasMatchingOccasion, findMatchingOccasion },
   } = useScheduleStore();
 
-  let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
-  if (activeCourse !== null) {
-    const isSameYear = activeCourse.CourseOccasion.map(
-      (occ) => occ.year,
-    ).includes(year);
+  const isValidDropTarget = useMemo(() => {
+    if (!activeCourse) return false;
 
-    const isSameSemester = activeCourse.CourseOccasion.map(
-      (occ) => occ.semester,
-    ).includes(semester);
-
-    const isMatchingOccasion = hasMatchingOccasion({
+    const matchingOccasion = findMatchingOccasion({
       course: activeCourse,
-      blocks: [blockNumber + 1],
-      periods: [periodNumber + 1],
+      block: blockNumber + 1,
+      period: periodNumber + 1,
+      year: startingYear,
+      semester,
     });
 
-    if (isSameYear && isSameSemester && isMatchingOccasion) {
-      if (isOver) {
-        overStyles = "border-teal-500 animate-wiggle";
-      } else {
-        overStyles = "border-cyan-500 animate-wiggle";
+    if (!matchingOccasion) return false;
+
+    const targetBlock = blockNumber + 1;
+    const targetPeriod = periodNumber + 1;
+
+    const isCorrectBlock = matchingOccasion.periods.some((p) => {
+      if (p.period !== targetPeriod) return false;
+
+      // If normal course
+      if (p.blocks.length > 0) {
+        return p.blocks.includes(targetBlock);
       }
+
+      // If wildcard course
+      if (p.blocks.length === 0) {
+        return targetBlock > WILDCARD_BLOCK_START;
+      }
+
+      return false;
+    });
+
+    const hasMatching = hasMatchingOccasion({
+      course: activeCourse,
+      blocks: [targetBlock],
+      periods: [targetPeriod],
+    });
+
+    if (!isCorrectBlock) {
+      return false;
+    }
+
+    // If normal course
+    if (hasMatching) {
+      return true;
+    }
+
+    // If wildcard course
+    if (targetBlock > WILDCARD_BLOCK_START) {
+      return true;
+    }
+
+    return false;
+  }, [
+    activeCourse,
+    findMatchingOccasion,
+    blockNumber,
+    periodNumber,
+    startingYear,
+    semester,
+    hasMatchingOccasion,
+  ]);
+
+  let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
+
+  if (isValidDropTarget) {
+    if (isOver) {
+      overStyles = "border-teal-500 animate-wiggle";
+    } else {
+      overStyles = "border-cyan-500 animate-wiggle";
     }
   }
 
