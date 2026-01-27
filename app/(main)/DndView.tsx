@@ -1,6 +1,21 @@
 "use client";
 
+import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import {
+  useScheduleStore,
+  WILDCARD_BLOCK_START,
+} from "../atoms/schedule/scheduleStore";
+import { userPreferencesAtom } from "../atoms/UserPreferences";
+import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { PeriodNodeData } from "@/components/Droppable";
+import CourseCard from "@/components/CourseCard";
+import { Course, CourseOccasion } from "./page";
+import { useAtom, useAtomValue } from "jotai";
+import Schedule from "./(schedule)/Schedule";
+import AddAlert from "@/components/AddAlert";
+import { Drawer } from "./(drawer)/Drawer";
+import { FC, useState } from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -12,21 +27,6 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "../atoms/schedule/scheduleStore";
-import { userPreferencesAtom } from "../atoms/UserPreferences";
-import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
-import CourseCard from "@/components/CourseCard";
-import { Course, CourseOccasion } from "./page";
-import { useAtom, useAtomValue } from "jotai";
-import Schedule from "./(schedule)/Schedule";
-import AddAlert from "@/components/AddAlert";
-import { Drawer } from "./(drawer)/Drawer";
-import { FC, useState } from "react";
 
 interface DndViewProps {
   courses: Course[];
@@ -37,12 +37,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
     mutators: { addCourseByDrop, addBlockToSemester },
-    getters: {
-      findMatchingOccasion,
-      getSlotCourse,
-      getOccasionCollisions,
-      checkWildcardExpansion,
-    },
+    getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
   } = useScheduleStore();
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCourse, setAlertCourse] = useState<Course | null>(null);
@@ -92,21 +87,32 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       overData.semesterNumber,
     );
 
-    const relevantOccasion = findMatchingOccasion({
-      course: droppedCourse,
-      block: targetBlock,
-      period: targetPeriod,
-      year,
-      semester,
-    });
+    const relevantOccasion = droppedCourse.CourseOccasion.find(
+      (occ) => occ.year === year && occ.semester === semester,
+    );
 
     if (!relevantOccasion) return;
 
-    // 1. Check if we dropped into the wildcard zone (Block > 4)
+    const relevantPeriod = relevantOccasion.periods.find(
+      (p) => p.period === targetPeriod,
+    );
+
+    if (!relevantPeriod) return;
+
     const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
 
-    // 2. If so, convert the occasion to a wildcard occasion (remove fixed block constraints)
-    //    This ensures all periods of this course are treated as wildcard periods.
+    const isValidDrop =
+      isWildcardDrop || relevantPeriod.blocks.includes(targetBlock);
+
+    if (!isValidDrop) return;
+
+    const currentBlocks = getSlotBlocks({
+      semester: overData.semesterNumber,
+      period: targetPeriod,
+    });
+
+    const isGhostDrop = overData.blockNumber >= currentBlocks.length;
+
     let finalOccasion = relevantOccasion;
     if (isWildcardDrop) {
       finalOccasion = {
@@ -115,20 +121,15 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       };
     }
 
-    // 3. Check for expansion using the (potentially wildcard) occasion
-    const isGhostDrop = checkWildcardExpansion({ occasion: finalOccasion });
-
     if (isGhostDrop) {
       addBlockToSemester({ semester: overData.semesterNumber });
 
-      setTimeout(() => {
-        addCourseByDrop({
-          course: droppedCourse,
-          occasion: finalOccasion,
-          period: targetPeriod,
-          block: targetBlock,
-        });
-      }, 0);
+      addCourseByDrop({
+        course: droppedCourse,
+        occasion: finalOccasion,
+        period: targetPeriod,
+        block: targetBlock,
+      });
 
       return;
     }
