@@ -16,6 +16,7 @@ import {
   HasMatchingOccasionArgs,
   FindMatchingOccasionArgs,
   CheckWildcardExpansionArgs,
+  DeleteBlockFromSemesterArgs,
 } from "./types";
 
 export type Slot = Course | null;
@@ -34,6 +35,7 @@ interface ScheduleStore {
   mutators: {
     addCourse: (args: AddCourseArgs) => void;
     removeCourse: (args: RemoveCourseArgs) => void;
+    deleteBlockFromSemester: (args: DeleteBlockFromSemesterArgs) => void;
     addBlockToSemester: (args: AddBlockToSemesterArgs) => void;
     toggleShownSemester: (args: ToggleShownSemesterArgs) => void;
   };
@@ -139,8 +141,21 @@ export const useScheduleStore = (): ScheduleStore => {
     [setSchedules],
   );
 
+  const deleteBlockFromSemester = useCallback(
+    ({ semester }: DeleteBlockFromSemesterArgs) => {
+      setSchedules((prev) =>
+        produce(prev, (draft) => {
+          delete draft[semester];
+        }),
+      );
+    },
+    [setSchedules],
+  );
+
+  // TODO: Find a good way to delegate the function better currently it handles way
+  // too much things at once.
   const addCourse = useCallback(
-    ({ course, occasion }: AddCourseArgs) => {
+    ({ course, occasion, action }: AddCourseArgs) => {
       setSchedules(
         produce((draft) => {
           const semesterIndex = yearAndSemesterToRelativeSemester(
@@ -170,7 +185,9 @@ export const useScheduleStore = (): ScheduleStore => {
 
             // TODO: Make this account for all courses any course can be placed in
             //       a wildcard course block. However, the actual block it exist in
-            //       shall be prefered.
+            //       shall be prefered. The action shall be one who decides where something maybe
+            //       finally placed "dropped" shall be dropped and added to the specific place as to where "default"
+            //       is supposed to add it to the first spot it can be added to.
             if (isWildcardCourse) {
               let placed = false;
 
@@ -202,6 +219,10 @@ export const useScheduleStore = (): ScheduleStore => {
     },
     [setSchedules, startingYear],
   );
+
+  const addCourseByButton = useCallback(() => {}, []);
+
+  const addCourseByDrop = useCallback(() => {}, []);
 
   const removeCourse = useCallback(
     ({ courseCode }: RemoveCourseArgs) => {
@@ -334,6 +355,7 @@ export const useScheduleStore = (): ScheduleStore => {
       removeCourse,
       addBlockToSemester,
       toggleShownSemester,
+      deleteBlockFromSemester,
     },
     getters: {
       checkWildcardExpansion,

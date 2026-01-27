@@ -48,9 +48,17 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         occasion.semester,
       );
       mutators.addBlockToSemester({ semester: relativeSemester });
-      mutators.addCourse({ course, occasion });
+      mutators.addCourse({
+        course,
+        occasion,
+        action: "default",
+      });
     } else {
-      mutators.addCourse({ course, occasion });
+      mutators.addCourse({
+        course,
+        occasion,
+        action: "default",
+      });
     }
   };
 
@@ -63,14 +71,22 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         setExpansionAlertOpen(true);
         return;
       }
-      mutators.addCourse({ course, occasion });
+      mutators.addCourse({
+        course,
+        occasion,
+        action: "default",
+      });
       return;
     }
 
     if (getOccasionCollisions({ occasion }).length > 0) {
       setCollisionAlertOpen(true);
     } else {
-      mutators.addCourse({ course, occasion });
+      mutators.addCourse({
+        course,
+        occasion,
+        action: "default",
+      });
     }
   };
 
@@ -79,7 +95,11 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
       <AddAlert
         course={course}
         primaryAction={() =>
-          mutators.addCourse({ course, occasion: selectedOccasion })
+          mutators.addCourse({
+            course,
+            occasion: selectedOccasion,
+            action: "default",
+          })
         }
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}
