@@ -12,19 +12,18 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { Drawer } from "./(drawer)/Drawer";
-import CourseCard from "@/components/CourseCard";
-import { useAtom, useAtomValue } from "jotai";
-import { useScheduleStore } from "../atoms/schedule/scheduleStore";
-import Schedule from "./(schedule)/Schedule";
-import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
-import { FC, Suspense, useState } from "react";
-import { Course, CourseOccasion } from "./page";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleStore } from "../atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
+import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
+import CourseCard from "@/components/CourseCard";
+import { Course, CourseOccasion } from "./page";
+import { useAtom, useAtomValue } from "jotai";
+import Schedule from "./(schedule)/Schedule";
 import AddAlert from "@/components/AddAlert";
+import { Drawer } from "./(drawer)/Drawer";
+import { FC, useState } from "react";
 
 interface DndViewProps {
   courses: Course[];
@@ -34,8 +33,13 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
-    mutators: { addCourse },
-    getters: { findMatchingOccasion, getSlotCourse, getOccasionCollisions },
+    mutators: { addCourse, addBlockToSemester },
+    getters: {
+      findMatchingOccasion,
+      getSlotCourse,
+      getOccasionCollisions,
+      checkWildcardExpansion,
+    },
   } = useScheduleStore();
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCourse, setAlertCourse] = useState<Course | null>(null);
@@ -87,6 +91,26 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     if (!relevantOccasion) return;
 
+    const isGhostDrop = checkWildcardExpansion({ occasion: relevantOccasion });
+
+    if (isGhostDrop) {
+      addBlockToSemester({ semester: overData.semesterNumber });
+
+      const wildcardOccasion = {
+        ...relevantOccasion,
+        periods: relevantOccasion.periods.map((p) => ({ ...p, blocks: [] })),
+      };
+
+      setTimeout(() => {
+        addCourse({
+          course: droppedCourse,
+          occasion: wildcardOccasion,
+        });
+      }, 0);
+
+      return;
+    }
+
     const slot = getSlotCourse({
       semester: overData.semesterNumber,
       period: overData.periodNumber + 1,
@@ -130,9 +154,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         )}
         <Drawer courses={courses} />
         <div className="flex flex-col gap-4 px-8 min-w-0">
-          <Suspense fallback={<div>Loading....</div>}>
-            <MastersRequirementsBar />
-          </Suspense>
+          <MastersRequirementsBar />
 
           <Schedule />
         </div>

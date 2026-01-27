@@ -3,6 +3,16 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
@@ -15,16 +25,50 @@ type CourseAddButtonProps = {
 
 const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   const isMultiOccasion = course.CourseOccasion.length > 1;
-  const { mutators, getters } = useScheduleStore();
-  const [alertOpen, setAlertOpen] = useState(false);
+  const {
+    mutators,
+    getters: { getOccasionCollisions, checkWildcardExpansion },
+  } = useScheduleStore();
+
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+
+  const [collisionAlertOpen, setCollisionAlertOpen] = useState(false);
+  const [expansionAlertOpen, setExpansionAlertOpen] = useState(false);
+
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
   const [popoverOpen, setPopoverOpen] = useState(false);
 
+  const handleAdd = (occasion: CourseOccasion) => {
+    if (checkWildcardExpansion({ occasion })) {
+      const relativeSemester = yearAndSemesterToRelativeSemester(
+        startingYear,
+        occasion.year,
+        occasion.semester,
+      );
+      mutators.addBlockToSemester({ semester: relativeSemester });
+      mutators.addCourse({ course, occasion });
+    } else {
+      mutators.addCourse({ course, occasion });
+    }
+  };
+
   const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
-    if (getters.getOccasionCollisions({ occasion }).length > 0) {
-      setAlertOpen(true);
+    const isWildcard = occasion.periods.some((p) => p.blocks.length === 0);
+
+    if (isWildcard) {
+      const needsExpansion = checkWildcardExpansion({ occasion });
+      if (needsExpansion) {
+        setExpansionAlertOpen(true);
+        return;
+      }
+      mutators.addCourse({ course, occasion });
+      return;
+    }
+
+    if (getOccasionCollisions({ occasion }).length > 0) {
+      setCollisionAlertOpen(true);
     } else {
       mutators.addCourse({ course, occasion });
     }
@@ -37,12 +81,39 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         primaryAction={() =>
           mutators.addCourse({ course, occasion: selectedOccasion })
         }
-        open={alertOpen}
-        setOpen={setAlertOpen}
-        collisions={getters.getOccasionCollisions({
+        open={collisionAlertOpen}
+        setOpen={setCollisionAlertOpen}
+        collisions={getOccasionCollisions({
           occasion: selectedOccasion,
         })}
       />
+
+      <AlertDialog
+        open={expansionAlertOpen}
+        onOpenChange={setExpansionAlertOpen}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Expand Schedule?</AlertDialogTitle>
+            <AlertDialogDescription>
+              There are no empty wildcard slots available in this semester.
+              Adding this course will create a new block row for the entire
+              semester.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => {
+                handleAdd(selectedOccasion);
+                setExpansionAlertOpen(false);
+              }}
+            >
+              Add New Block & Course
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
         <PopoverTrigger asChild>
@@ -69,11 +140,11 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
 
 export default CourseAddButton;
 
-type MultiCourseDropdownProps = {
+interface MultiCourseDropdownProps {
   course: Course;
   checkCollisionBeforeAdd: (occasion: CourseOccasion) => void;
   setSelectedOccasion: (occasion: CourseOccasion) => void;
-};
+}
 
 const MultiCourseDropdown = ({
   course,
@@ -81,6 +152,7 @@ const MultiCourseDropdown = ({
   setSelectedOccasion,
 }: MultiCourseDropdownProps) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
+
   return (
     <div className="flex flex-col gap-2">
       {course.CourseOccasion.map((occasion) => (
@@ -89,8 +161,8 @@ const MultiCourseDropdown = ({
           variant="outline"
           size="sm"
           onClick={() => {
-            checkCollisionBeforeAdd(occasion);
             setSelectedOccasion(occasion);
+            checkCollisionBeforeAdd(occasion);
           }}
         >
           {`Add to Semester ${

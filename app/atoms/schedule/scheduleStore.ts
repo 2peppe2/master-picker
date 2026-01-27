@@ -1,8 +1,8 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { Course, CourseOccasion } from "../../dashboard/page";
 import { userPreferencesAtom } from "../UserPreferences";
 import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
-import { Course, CourseOccasion } from "../../dashboard/page";
 import { produce } from "immer";
 import {
   AddCourseArgs,
@@ -15,6 +15,7 @@ import {
   AddBlockToSemesterArgs,
   HasMatchingOccasionArgs,
   FindMatchingOccasionArgs,
+  CheckWildcardExpansionArgs,
 } from "./types";
 
 export type Slot = Course | null;
@@ -25,9 +26,9 @@ export const WILDCARD_BLOCK_START = 4;
 interface ScheduleStore {
   state: {
     schedules: ScheduleGrid;
-    shownSemesters: Set<number>;
     selectedCourses: Course[];
     selectedMasterCourses: Course[];
+    shownSemesters: Set<number>;
   };
 
   mutators: {
@@ -42,6 +43,7 @@ interface ScheduleStore {
       args: FindMatchingOccasionArgs,
     ) => CourseOccasion | null;
     hasMatchingOccasion: (args: HasMatchingOccasionArgs) => boolean;
+    checkWildcardExpansion: (args: CheckWildcardExpansionArgs) => boolean;
     getSlotCourse: (args: GetSlotCourseArgs) => Slot;
     getSlotBlocks: (args: GetSlotBlocksArgs) => Slot[];
     getSlotPeriods: (args: GetSlotPeriodsArgs) => Slot[][];
@@ -262,8 +264,6 @@ export const useScheduleStore = (): ScheduleStore => {
     return occasion ?? null;
   };
 
-  // TODO: Handle block collisions here and suggest a new block if they are full already
-  //       with a popup.
   const getOccasionCollisions = useCallback(
     ({ occasion }: GetOccasionCollisionsArgs) => {
       const collisions: Course[] = [];
@@ -289,6 +289,34 @@ export const useScheduleStore = (): ScheduleStore => {
     [getSlotCourse, startingYear],
   );
 
+  const checkWildcardExpansion = useCallback(
+    ({ occasion }: CheckWildcardExpansionArgs) => {
+      const semesterIndex = yearAndSemesterToRelativeSemester(
+        startingYear,
+        occasion.year,
+        occasion.semester,
+      );
+
+      return occasion.periods.some((period) => {
+        if (period.period === 0) return false;
+        const periodIndex = period.period - 1;
+        const periodBlocks = schedules[semesterIndex]?.[periodIndex];
+
+        if (!periodBlocks) return false;
+        if (period.blocks.length !== 0) return false;
+
+        for (let i = WILDCARD_BLOCK_START; i < periodBlocks.length; i++) {
+          if (periodBlocks[i] === null) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+    },
+    [schedules, startingYear],
+  );
+
   return {
     state: {
       schedules,
@@ -303,6 +331,7 @@ export const useScheduleStore = (): ScheduleStore => {
       toggleShownSemester,
     },
     getters: {
+      checkWildcardExpansion,
       hasMatchingOccasion,
       findMatchingOccasion,
       getSlotBlocks,

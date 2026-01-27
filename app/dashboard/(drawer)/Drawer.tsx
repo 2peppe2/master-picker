@@ -24,10 +24,10 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
     <div
       className="border p-4 rounded-r-lg shadow-lg 
         max-h-[calc(100dvh-1rem)] overflow-y-auto sticky top-4 shrink-0
-        xl:w-[550px] xl:min-w-[550px] w-[400px] min-w-[430px]"
+        2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px]"
     >
       <SearchInput />
-      <div className="grid xl:grid-cols-3 grid-cols-2 justify-items-center gap-4 mt-5">
+      <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4 mt-5">
         {Object.values(COURSES)
           .filter(notInDropped)
           .filter((course) => course.code !== activeCourse?.code)

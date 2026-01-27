@@ -30,11 +30,11 @@ const WildcardBlock: FC<BlockViewProps> = ({
           *
         </div>
         <span className="text-zinc-500 text-xs uppercase tracking-wider mt-1 select-none">
-          Wildcard
+          Extra
         </span>
       </div>
     </Droppable>
   );
 };
 
-export default WildcardBlock
+export default WildcardBlock;

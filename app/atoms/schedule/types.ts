@@ -36,6 +36,10 @@ export interface ToggleShownSemesterArgs {
   semester: number;
 }
 
+export interface CheckWildcardExpansionArgs {
+  occasion: CourseOccasion;
+}
+
 export interface FindMatchingOccasionArgs {
   course: Course;
   year: number;
