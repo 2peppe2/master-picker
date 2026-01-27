@@ -1,3 +1,5 @@
+"use client";
+
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
@@ -48,41 +50,47 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         occasion.semester,
       );
       addBlockToSemester({ semester: relativeSemester });
-      addCourseByButton({
-        course,
-        occasion,
-      });
+      addCourseByButton({ course, occasion });
     } else {
-      addCourseByButton({
-        course,
-        occasion,
-      });
+      addCourseByButton({ course, occasion });
     }
+  };
+
+  const handleAddAsExtra = (occasion: CourseOccasion) => {
+    const relativeSemester = yearAndSemesterToRelativeSemester(
+      startingYear,
+      occasion.year,
+      occasion.semester,
+    );
+
+    addBlockToSemester({ semester: relativeSemester });
+
+    const wildcardOccasion = {
+      ...occasion,
+      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
+    };
+
+    addCourseByButton({
+      course,
+      occasion: wildcardOccasion,
+    });
   };
 
   const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
     const isWildcard = occasion.periods.some((p) => p.blocks.length === 0);
-
     if (isWildcard) {
-      const needsExpansion = checkWildcardExpansion({ occasion });
-      if (needsExpansion) {
+      if (checkWildcardExpansion({ occasion })) {
         setExpansionAlertOpen(true);
         return;
       }
-      addCourseByButton({
-        course,
-        occasion,
-      });
+      addCourseByButton({ course, occasion });
       return;
     }
 
     if (getOccasionCollisions({ occasion }).length > 0) {
       setCollisionAlertOpen(true);
     } else {
-      addCourseByButton({
-        course,
-        occasion,
-      });
+      addCourseByButton({ course, occasion });
     }
   };
 
@@ -90,17 +98,15 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
     <>
       <AddAlert
         course={course}
-        primaryAction={() =>
-          addCourseByButton({
-            course,
-            occasion: selectedOccasion,
-          })
-        }
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}
-        collisions={getOccasionCollisions({
-          occasion: selectedOccasion,
-        })}
+        collisions={getOccasionCollisions({ occasion: selectedOccasion })}
+        onReplace={() => {
+          addCourseByButton({ course, occasion: selectedOccasion });
+        }}
+        onAddAsExtra={() => {
+          handleAddAsExtra(selectedOccasion);
+        }}
       />
 
       <AlertDialog
@@ -111,8 +117,8 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
           <AlertDialogHeader>
             <AlertDialogTitle>Add block to semester</AlertDialogTitle>
             <AlertDialogDescription>
-              There are no empty block available in this semester. Adding this
-              course will create a new extra block, and add it to this block.
+              There are no empty blocks available in this semester. Adding this
+              course will create a new extra block.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
