@@ -103,6 +103,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
       setTimeout(() => {
         addCourse({
+          action: "dropped",
           course: droppedCourse,
           occasion: wildcardOccasion,
         });
@@ -123,6 +124,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       setAlertOpen(true);
     } else {
       addCourse({
+        action: "dropped",
         course: droppedCourse,
         occasion: relevantOccasion,
       });
@@ -141,6 +143,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
             course={alertCourse}
             primaryAction={() =>
               addCourse({
+                action: "default",
                 course: alertCourse,
                 occasion: selectedOccasion,
               })

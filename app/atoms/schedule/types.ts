@@ -1,8 +1,11 @@
 import { Course, CourseOccasion } from "../../dashboard/page";
 
+export type AddCourseAction = "dropped" | "default";
+
 export interface AddCourseArgs {
   course: Course;
   occasion: CourseOccasion;
+  action: AddCourseAction;
 }
 
 export interface RemoveCourseArgs {
@@ -29,6 +32,10 @@ export interface GetOccasionCollisionsArgs {
 }
 
 export interface AddBlockToSemesterArgs {
+  semester: number;
+}
+
+export interface DeleteBlockFromSemesterArgs {
   semester: number;
 }
 
