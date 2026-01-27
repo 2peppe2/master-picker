@@ -1,13 +1,10 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import React, { FC, ReactNode, useMemo } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "@/app/atoms/schedule/scheduleStore";
 
 export type PeriodNodeData = {
   semesterNumber: number;
@@ -34,64 +31,35 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     startingYear,
     semesterNumber,
   );
-  const {
-    getters: { hasMatchingOccasion, findMatchingOccasion },
-  } = useScheduleStore();
 
   const isWildcard = blockNumber >= WILDCARD_BLOCK_START;
 
   const isValidDropTarget = useMemo(() => {
     if (!activeCourse) return false;
 
-    const matchingOccasion = findMatchingOccasion({
-      course: activeCourse,
-      block: blockNumber + 1,
-      period: periodNumber + 1,
-      year,
-      semester,
-    });
+    const targetPeriod = periodNumber + 1;
+    const targetBlock = blockNumber + 1;
+
+    const matchingOccasion = activeCourse.CourseOccasion.find(
+      (occ) => occ.year === year && occ.semester === semester,
+    );
 
     if (!matchingOccasion) return false;
 
-    const targetBlock = blockNumber + 1;
-    const targetPeriod = periodNumber + 1;
+    const matchingPeriod = matchingOccasion.periods.find(
+      (p) => p.period === targetPeriod,
+    );
 
-    const isCorrectBlock = matchingOccasion.periods.some((p) => {
-      if (p.period !== targetPeriod) return false;
+    if (!matchingPeriod) return false;
 
-      // Is standard course?
-      if (p.blocks.length > 0) {
-        return p.blocks.includes(targetBlock);
-      }
+    if (isWildcard) return true;
 
-      // Is wildcard course?
-      if (p.blocks.length === 0) {
-        return targetBlock > WILDCARD_BLOCK_START;
-      }
-
-      return false;
-    });
-
-    if (!isCorrectBlock) return false;
-
-    if (targetBlock > WILDCARD_BLOCK_START) {
-      return true;
+    if (matchingPeriod.blocks.length > 0) {
+      return matchingPeriod.blocks.includes(targetBlock);
     }
 
-    return hasMatchingOccasion({
-      course: activeCourse,
-      blocks: [targetBlock],
-      periods: [targetPeriod],
-    });
-  }, [
-    activeCourse,
-    findMatchingOccasion,
-    blockNumber,
-    periodNumber,
-    year,
-    semester,
-    hasMatchingOccasion,
-  ]);
+    return false;
+  }, [activeCourse, blockNumber, periodNumber, year, semester, isWildcard]);
 
   const baseStyles =
     "relative w-40 h-40 shrink-0 flex items-center justify-center border-4 border-dashed rounded-2xl transition-all duration-200";

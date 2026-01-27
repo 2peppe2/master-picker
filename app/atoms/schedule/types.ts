@@ -2,10 +2,16 @@ import { Course, CourseOccasion } from "../../dashboard/page";
 
 export type AddCourseAction = "dropped" | "default";
 
-export interface AddCourseArgs {
+export interface AddCourseByButtonArgs {
   course: Course;
   occasion: CourseOccasion;
-  action: AddCourseAction;
+}
+
+export interface AddCourseByDropArgs {
+  course: Course;
+  occasion: CourseOccasion;
+  period: number; 
+  block: number; 
 }
 
 export interface RemoveCourseArgs {

@@ -14,7 +14,10 @@ import {
 } from "@dnd-kit/core";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleStore } from "../atoms/schedule/scheduleStore";
+import {
+  useScheduleStore,
+  WILDCARD_BLOCK_START,
+} from "../atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import CourseCard from "@/components/CourseCard";
@@ -33,7 +36,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
-    mutators: { addCourse, addBlockToSemester },
+    mutators: { addCourseByDrop, addBlockToSemester },
     getters: {
       findMatchingOccasion,
       getSlotCourse,
@@ -43,6 +46,11 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   } = useScheduleStore();
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCourse, setAlertCourse] = useState<Course | null>(null);
+
+  const [dropTarget, setDropTarget] = useState<{
+    block: number;
+    period: number;
+  } | null>(null);
   const [selectedOccasion, setSelectedOccasion] =
     useState<CourseOccasion | null>(null);
 
@@ -65,6 +73,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     setAlertOpen(false);
     setAlertCourse(null);
     setSelectedOccasion(null);
+    setDropTarget(null);
   };
 
   const onDragEnd = (event: DragEndEvent) => {
@@ -75,6 +84,8 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     if (!droppedCourse) return;
 
     const overData = event.over.data.current as PeriodNodeData;
+    const targetPeriod = overData.periodNumber + 1;
+    const targetBlock = overData.blockNumber + 1;
 
     const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
@@ -83,29 +94,39 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     const relevantOccasion = findMatchingOccasion({
       course: droppedCourse,
-      block: overData.blockNumber + 1,
-      period: overData.periodNumber + 1,
+      block: targetBlock,
+      period: targetPeriod,
       year,
       semester,
     });
 
     if (!relevantOccasion) return;
 
-    const isGhostDrop = checkWildcardExpansion({ occasion: relevantOccasion });
+    // 1. Check if we dropped into the wildcard zone (Block > 4)
+    const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
+
+    // 2. If so, convert the occasion to a wildcard occasion (remove fixed block constraints)
+    //    This ensures all periods of this course are treated as wildcard periods.
+    let finalOccasion = relevantOccasion;
+    if (isWildcardDrop) {
+      finalOccasion = {
+        ...relevantOccasion,
+        periods: relevantOccasion.periods.map((p) => ({ ...p, blocks: [] })),
+      };
+    }
+
+    // 3. Check for expansion using the (potentially wildcard) occasion
+    const isGhostDrop = checkWildcardExpansion({ occasion: finalOccasion });
 
     if (isGhostDrop) {
       addBlockToSemester({ semester: overData.semesterNumber });
 
-      const wildcardOccasion = {
-        ...relevantOccasion,
-        periods: relevantOccasion.periods.map((p) => ({ ...p, blocks: [] })),
-      };
-
       setTimeout(() => {
-        addCourse({
-          action: "dropped",
+        addCourseByDrop({
           course: droppedCourse,
-          occasion: wildcardOccasion,
+          occasion: finalOccasion,
+          period: targetPeriod,
+          block: targetBlock,
         });
       }, 0);
 
@@ -114,19 +135,21 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
     const slot = getSlotCourse({
       semester: overData.semesterNumber,
-      period: overData.periodNumber + 1,
-      block: overData.blockNumber + 1,
+      period: targetPeriod,
+      block: targetBlock,
     });
 
     if (slot) {
-      setSelectedOccasion(relevantOccasion);
+      setSelectedOccasion(finalOccasion);
       setAlertCourse(droppedCourse);
+      setDropTarget({ block: targetBlock, period: targetPeriod });
       setAlertOpen(true);
     } else {
-      addCourse({
-        action: "dropped",
+      addCourseByDrop({
         course: droppedCourse,
-        occasion: relevantOccasion,
+        occasion: finalOccasion,
+        period: targetPeriod,
+        block: targetBlock,
       });
     }
   };
@@ -138,14 +161,15 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
-        {alertOpen && alertCourse && selectedOccasion && (
+        {alertOpen && alertCourse && selectedOccasion && dropTarget && (
           <AddAlert
             course={alertCourse}
             primaryAction={() =>
-              addCourse({
-                action: "default",
+              addCourseByDrop({
                 course: alertCourse,
                 occasion: selectedOccasion,
+                block: dropTarget.block,
+                period: dropTarget.period,
               })
             }
             open={alertOpen}
