@@ -29,7 +29,7 @@ export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
       <Collapsible open={shownSemesters.has(semesterNumber + 1)}>
         <Header periods={periods} semester={semesterNumber} />
         <CollapsibleContent>
-          <CardContent>
+          <CardContent className="p-0">
             <div className="flex flex-col gap-4 pt-5">
               {range(0, periods.length).map((index) => (
                 <PeriodView
