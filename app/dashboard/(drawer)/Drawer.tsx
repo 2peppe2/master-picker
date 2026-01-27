@@ -27,7 +27,7 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
         xl:w-[550px] xl:min-w-[550px] w-[400px] min-w-[430px]"
     >
       <SearchInput />
-      <div className="grid grid-cols-2 2xl:grid-cols-3 justify-items-center gap-4 mt-5">
+      <div className="grid xl:grid-cols-3 grid-cols-2 justify-items-center gap-4 mt-5">
         {Object.values(COURSES)
           .filter(notInDropped)
           .filter((course) => course.code !== activeCourse?.code)
