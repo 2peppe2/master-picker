@@ -7,6 +7,11 @@ export interface AddCourseByButtonArgs {
   occasion: CourseOccasion;
 }
 
+export interface DeleteBlockFromSemesterArgs {
+  semester: number;
+  blockIndex: number;
+}
+
 export interface AddCourseByDropArgs {
   course: Course;
   occasion: CourseOccasion;
