@@ -35,7 +35,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
           size="icon"
           variant="ghost"
           onClick={() => mutators.removeCourse({ courseCode: course.code })}
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
+          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
         >
           <X className="h-4 w-4" />
         </Button>

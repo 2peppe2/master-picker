@@ -5,6 +5,8 @@ import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
 import { produce } from "immer";
 import {
+  AddCourseByButtonArgs,
+  AddCourseByDropArgs,
   GetSlotBlocksArgs,
   GetSlotCourseArgs,
   GetSlotPeriodsArgs,
@@ -16,8 +18,6 @@ import {
   FindMatchingOccasionArgs,
   CheckWildcardExpansionArgs,
   DeleteBlockFromSemesterArgs,
-  AddCourseByButtonArgs,
-  AddCourseByDropArgs,
 } from "./types";
 
 export type Slot = Course | null;
@@ -144,10 +144,16 @@ export const useScheduleStore = (): ScheduleStore => {
   );
 
   const deleteBlockFromSemester = useCallback(
-    ({ semester }: DeleteBlockFromSemesterArgs) => {
+    ({ semester, blockIndex }: DeleteBlockFromSemesterArgs) => {
       setSchedules((prev) =>
         produce(prev, (draft) => {
-          delete draft[semester];
+          if (blockIndex < WILDCARD_BLOCK_START) return;
+
+          draft[semester]?.forEach((periodBlocks) => {
+            if (blockIndex < periodBlocks.length) {
+              periodBlocks.splice(blockIndex, 1);
+            }
+          });
         }),
       );
     },
@@ -392,8 +398,8 @@ export const useScheduleStore = (): ScheduleStore => {
       addCourseByDrop,
       removeCourse,
       addBlockToSemester,
-      toggleShownSemester,
       deleteBlockFromSemester,
+      toggleShownSemester,
     },
     getters: {
       checkWildcardExpansion,
