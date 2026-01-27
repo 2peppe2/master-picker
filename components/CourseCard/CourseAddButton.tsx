@@ -94,11 +94,10 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Expand Schedule?</AlertDialogTitle>
+            <AlertDialogTitle>Add block to semester</AlertDialogTitle>
             <AlertDialogDescription>
-              There are no empty wildcard slots available in this semester.
-              Adding this course will create a new block row for the entire
-              semester.
+              There are no empty block available in this semester. Adding this
+              course will create a new extra block, and add it to this block.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -109,7 +108,7 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
                 setExpansionAlertOpen(false);
               }}
             >
-              Add New Block & Course
+              Add {course.code}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
