@@ -22,23 +22,48 @@ interface OccasionTableProps {
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const {
-    mutators: { addCourseByButton },
+    mutators: { addCourseByButton, addBlockToSemester },
     getters,
   } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+
   const hasRecommendedMaster = course.CourseOccasion.some(
     (occasion) => occasion.recommendedMaster.length > 0,
   );
+
+  const handleAddAsExtra = (occasion: CourseOccasion) => {
+    const relativeSemester = yearAndSemesterToRelativeSemester(
+      startingYear,
+      occasion.year,
+      occasion.semester,
+    );
+
+    addBlockToSemester({ semester: relativeSemester });
+
+    const wildcardOccasion = {
+      ...occasion,
+      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
+    };
+
+    addCourseByButton({
+      course,
+      occasion: wildcardOccasion,
+    });
+  };
 
   return (
     <>
       <AddAlert
         course={course}
-        primaryAction={() =>
+        onReplace={() =>
           addCourseByButton({ course, occasion: selectedOccasion })
         }
+        onAddAsExtra={() => {
+          handleAddAsExtra(selectedOccasion);
+        }}
         open={alertOpen}
         setOpen={setAlertOpen}
         collisions={getters.getOccasionCollisions({

@@ -2,72 +2,95 @@
 
 import { Course } from "@/app/dashboard/page";
 import {
-    AlertDialog,
-    AlertDialogContent,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogCancel,
-    AlertDialogAction,
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+import { FC } from "react";
 
-type AddAlertProps = {
-    course: Course
-    primaryAction: () => void;
-    secondaryAction?: () => void; //To be used later for multiple courses in the same block
-    open: boolean;
-    setOpen: (open: boolean) => void;
-    collisions: Course[];
-};
+interface AddAlertProps {
+  course: Course;
+  onReplace: () => void;
+  onAddAsExtra: () => void;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  collisions: Course[];
+}
 
-const AddAlert = ({ course, primaryAction, secondaryAction, open, setOpen, collisions }: AddAlertProps) => {
-    if (collisions.length === 0) {
-        return null;
-    }
-    const collisionsText = collisions.length > 1 ? `${collisions.length} courses` : `${collisions[0].code}`
-    return (
-        <AlertDialog open={open} onOpenChange={setOpen} >
-            <AlertDialogContent
-                onPointerDownCapture={(e) => e.stopPropagation()}
-                onMouseDownCapture={(e) => e.stopPropagation()}
-                onTouchStartCapture={(e) => e.stopPropagation()}>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>Slot already occupied</AlertDialogTitle>
-                </AlertDialogHeader>
-                <AlertDialogDescription>
-                    The selected time slot for this course is already occupied by the following {collisions.length > 1 ? 'courses' : 'course'}:
-                </AlertDialogDescription>
-                <div className="text-sm mt-4 text-muted-foreground">
-                    <ul className="my-4">
-                        {collisions.map((course) => (
-                            <li key={course.code}>
-                                {course.code} - {course.name}
-                            </li>
-                        ))}
-                        <br />
+const AddAlert: FC<AddAlertProps> = ({
+  course,
+  onReplace,
+  onAddAsExtra,
+  open,
+  setOpen,
+  collisions,
+}) => {
+  if (collisions.length === 0) {
+    return null;
+  }
 
+  return (
+    <AlertDialog open={open} onOpenChange={setOpen}>
+      <AlertDialogContent
+        onPointerDownCapture={(e) => e.stopPropagation()}
+        onMouseDownCapture={(e) => e.stopPropagation()}
+        onTouchStartCapture={(e) => e.stopPropagation()}
+        className="sm:max-w-[500px]"
+      >
+        <AlertDialogHeader>
+          <AlertDialogTitle>Block already occupied</AlertDialogTitle>
+        </AlertDialogHeader>
+        <AlertDialogDescription>
+          The selected block for <strong>{course.code}</strong> is already
+          occupied by:
+        </AlertDialogDescription>
 
-                    </ul>
-                    What would you like to do?
-                </div>
+        <div className="text-sm mt-2 mb-4 text-muted-foreground bg-muted/50 p-3 rounded-md">
+          <ul className="list-disc pl-4 space-y-1">
+            {collisions.map((c) => (
+              <li key={c.code}>
+                <span className="font-semibold">{c.code}</span> - {c.name}
+              </li>
+            ))}
+          </ul>
+        </div>
 
+        <p className="text-sm text-muted-foreground mb-4">
+          How would you like to proceed?
+        </p>
 
-                <AlertDialogFooter>
-                    <AlertDialogCancel>Keep {collisionsText}</AlertDialogCancel>
-                    {secondaryAction &&
-                        <Button variant="secondary" onClick={secondaryAction}>
-                            Add to wildcard
-                        </Button>}
+        <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-2">
+          <AlertDialogCancel className="mt-0">Cancel</AlertDialogCancel>
 
-                    <AlertDialogAction onClick={primaryAction}>
-                        Add {course.code} anyway
-                    </AlertDialogAction>
-                </AlertDialogFooter>
-            </AlertDialogContent>
-        </AlertDialog>
-    );
+          <Button
+            variant="outline"
+            onClick={(e) => {
+              e.preventDefault();
+              onAddAsExtra();
+              setOpen(false);
+            }}
+          >
+            Add to new block
+          </Button>
+
+          <AlertDialogAction
+            onClick={(e) => {
+              e.preventDefault();
+              onReplace();
+              setOpen(false);
+            }}
+          >
+            Replace
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
 };
 
 export default AddAlert;

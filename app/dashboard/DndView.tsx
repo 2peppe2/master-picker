@@ -1,7 +1,10 @@
 "use client";
 
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import {
+  relativeSemesterToYearAndSemester,
+  yearAndSemesterToRelativeSemester,
+} from "@/lib/semesterYearTranslations";
 import {
   useScheduleStore,
   WILDCARD_BLOCK_START,
@@ -155,6 +158,36 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     }
   };
 
+  const handleAddAsExtra = (occasion: CourseOccasion) => {
+    const relativeSemester = yearAndSemesterToRelativeSemester(
+      startingYear,
+      occasion.year,
+      occasion.semester,
+    );
+
+    addBlockToSemester({ semester: relativeSemester });
+
+    const wildcardOccasion = {
+      ...occasion,
+      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
+    };
+
+    if (!dropTarget) {
+      return;
+    }
+
+    if (!alertCourse) {
+      return;
+    }
+
+    addCourseByDrop({
+      course: alertCourse,
+      occasion: wildcardOccasion,
+      block: dropTarget.block,
+      period: dropTarget.period,
+    });
+  };
+
   return (
     <DndContext
       onDragStart={onDragStart}
@@ -165,7 +198,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         {alertOpen && alertCourse && selectedOccasion && dropTarget && (
           <AddAlert
             course={alertCourse}
-            primaryAction={() =>
+            onReplace={() =>
               addCourseByDrop({
                 course: alertCourse,
                 occasion: selectedOccasion,
@@ -173,6 +206,9 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
                 period: dropTarget.period,
               })
             }
+            onAddAsExtra={() => {
+              handleAddAsExtra(selectedOccasion);
+            }}
             open={alertOpen}
             setOpen={setAlertOpen}
             collisions={getOccasionCollisions({

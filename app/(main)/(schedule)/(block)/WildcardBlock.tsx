@@ -1,10 +1,10 @@
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import { BlockViewProps } from "./Block";
-import { FC } from "react";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { X } from "lucide-react";
+import { FC } from "react";
 
 const WildcardBlock: FC<BlockViewProps> = ({
   courseSlot,
@@ -13,7 +13,7 @@ const WildcardBlock: FC<BlockViewProps> = ({
   onFilterChange,
 }) => {
   const {
-    mutators: { deleteBlockFromSemester, removeCourse },
+    mutators: { deleteBlockFromSemester },
   } = useScheduleStore();
 
   const handleRemoveSlot = (e: React.MouseEvent) => {
@@ -24,41 +24,16 @@ const WildcardBlock: FC<BlockViewProps> = ({
     });
   };
 
-  const handleRemoveCourse = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (courseSlot) {
-      removeCourse({ courseCode: courseSlot.code });
-    }
-  };
-
-  // OCCUPIED STATE
   if (courseSlot) {
     return (
       <Droppable data={data} id={blockId}>
-        <div className="relative w-full h-full group">
-          <Draggable id={courseSlot.code} data={courseSlot}>
-            <CourseCard course={courseSlot} dropped={true} />
-          </Draggable>
-
-          {/* Remove Course Button */}
-          <button
-            onPointerDown={(e) => e.stopPropagation()}
-            onClick={handleRemoveCourse}
-            className="absolute top-2 right-2 z-50 p-1 
-              text-zinc-400 hover:text-zinc-100 
-              hover:bg-red-500
-              rounded-full transition-all duration-200 
-              opacity-0 group-hover:opacity-100 cursor-pointer"
-            title="Remove Course"
-          >
-            <X size={14} />
-          </button>
-        </div>
+        <Draggable id={courseSlot.code} data={courseSlot}>
+          <CourseCard course={courseSlot} dropped={true} />
+        </Draggable>
       </Droppable>
     );
   }
 
-  // EMPTY STATE
   return (
     <Droppable data={data} id={blockId}>
       <div
