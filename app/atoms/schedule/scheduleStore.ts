@@ -157,15 +157,20 @@ export const useScheduleStore = (): ScheduleStore => {
           }
 
           for (const period of occasion.periods) {
+            // There exists no period below 1, however data includes this idea.
             if (period.period < 1) continue;
 
             const periodIndex = period.period - 1;
             const periodBlocks = draft[semesterIndex][periodIndex];
 
+            // There exists no blocks in this period.
             if (!periodBlocks) continue;
 
             const isWildcardCourse = period.blocks.length === 0;
 
+            // TODO: Make this account for all courses any course can be placed in
+            //       a wildcard course block. However, the actual block it exist in
+            //       shall be prefered.
             if (isWildcardCourse) {
               let placed = false;
 

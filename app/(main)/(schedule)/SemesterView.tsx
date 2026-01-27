@@ -81,7 +81,7 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
         asChild
         onClick={() => toggleShownSemester({ semester: semester + 1 })}
       >
-        <CardTitle className="flex gap-3">
+        <CardTitle className="flex gap-3 w-full">
           Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
           {credits} / 30
           <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
