@@ -4,7 +4,6 @@ import { Draggable } from "@/components/CourseCard/Draggable";
 import { useFiltered } from "@/app/atoms/filter/filterStore";
 import SearchInput from "./components/SearchInput";
 import CourseCard from "@/components/CourseCard";
-import useMeasure from "react-use-measure";
 import { useAtomValue } from "jotai";
 import { Course } from "../page";
 import { FC } from "react";
@@ -23,9 +22,9 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className={` border p-4 rounded-r-lg shadow-lg 
+      className="border p-4 rounded-r-lg shadow-lg 
         max-h-[calc(100dvh-1rem)] overflow-y-auto sticky top-4 shrink-0
-        w-[400px] min-w-[430px] xl:w-[550px] xl:min-w-[550px]`}
+        xl:w-[550px] xl:min-w-[550px] w-[400px] min-w-[430px]"
     >
       <SearchInput />
       <div className="grid grid-cols-2 2xl:grid-cols-3 justify-items-center gap-4 mt-5">
