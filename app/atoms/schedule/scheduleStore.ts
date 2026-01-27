@@ -5,7 +5,6 @@ import { atom, useAtom, useAtomValue } from "jotai";
 import { useCallback, useMemo } from "react";
 import { produce } from "immer";
 import {
-  AddCourseArgs,
   GetSlotBlocksArgs,
   GetSlotCourseArgs,
   GetSlotPeriodsArgs,
@@ -17,6 +16,8 @@ import {
   FindMatchingOccasionArgs,
   CheckWildcardExpansionArgs,
   DeleteBlockFromSemesterArgs,
+  AddCourseByButtonArgs,
+  AddCourseByDropArgs,
 } from "./types";
 
 export type Slot = Course | null;
@@ -33,7 +34,8 @@ interface ScheduleStore {
   };
 
   mutators: {
-    addCourse: (args: AddCourseArgs) => void;
+    addCourseByButton: (args: AddCourseByButtonArgs) => void;
+    addCourseByDrop: (args: AddCourseByDropArgs) => void;
     removeCourse: (args: RemoveCourseArgs) => void;
     deleteBlockFromSemester: (args: DeleteBlockFromSemesterArgs) => void;
     addBlockToSemester: (args: AddBlockToSemesterArgs) => void;
@@ -152,10 +154,8 @@ export const useScheduleStore = (): ScheduleStore => {
     [setSchedules],
   );
 
-  // TODO: Find a good way to delegate the function better currently it handles way
-  // too much things at once.
-  const addCourse = useCallback(
-    ({ course, occasion, action }: AddCourseArgs) => {
+  const addCourseByButton = useCallback(
+    ({ course, occasion }: AddCourseByButtonArgs) => {
       setSchedules(
         produce((draft) => {
           const semesterIndex = yearAndSemesterToRelativeSemester(
@@ -164,33 +164,18 @@ export const useScheduleStore = (): ScheduleStore => {
             occasion.semester,
           );
 
-          if (!draft[semesterIndex]) {
-            console.warn(
-              `Semester index ${semesterIndex} not found in schedule.`,
-            );
-            return;
-          }
+          if (!draft[semesterIndex]) return;
 
           for (const period of occasion.periods) {
-            // There exists no period below 1, however data includes this idea.
             if (period.period < 1) continue;
-
             const periodIndex = period.period - 1;
             const periodBlocks = draft[semesterIndex][periodIndex];
-
-            // There exists no blocks in this period.
             if (!periodBlocks) continue;
 
             const isWildcardCourse = period.blocks.length === 0;
 
-            // TODO: Make this account for all courses any course can be placed in
-            //       a wildcard course block. However, the actual block it exist in
-            //       shall be prefered. The action shall be one who decides where something maybe
-            //       finally placed "dropped" shall be dropped and added to the specific place as to where "default"
-            //       is supposed to add it to the first spot it can be added to.
             if (isWildcardCourse) {
               let placed = false;
-
               for (let i = WILDCARD_BLOCK_START; i < periodBlocks.length; i++) {
                 if (periodBlocks[i] === null) {
                   periodBlocks[i] = course;
@@ -205,12 +190,7 @@ export const useScheduleStore = (): ScheduleStore => {
             } else {
               for (const block of period.blocks) {
                 const blockIndex = block - 1;
-
-                if (periodBlocks[blockIndex] !== undefined) {
-                  periodBlocks[blockIndex] = course;
-                } else {
-                  periodBlocks[blockIndex] = course;
-                }
+                periodBlocks[blockIndex] = course;
               }
             }
           }
@@ -220,9 +200,66 @@ export const useScheduleStore = (): ScheduleStore => {
     [setSchedules, startingYear],
   );
 
-  const addCourseByButton = useCallback(() => {}, []);
+  const addCourseByDrop = useCallback(
+    ({
+      course,
+      occasion,
+      period: droppedPeriod,
+      block: droppedBlock,
+    }: AddCourseByDropArgs) => {
+      setSchedules(
+        produce((draft) => {
+          const semesterIndex = yearAndSemesterToRelativeSemester(
+            startingYear,
+            occasion.year,
+            occasion.semester,
+          );
 
-  const addCourseByDrop = useCallback(() => {}, []);
+          if (!draft[semesterIndex]) return;
+
+          for (const period of occasion.periods) {
+            if (period.period < 1) continue;
+            const periodIndex = period.period - 1;
+            const periodBlocks = draft[semesterIndex][periodIndex];
+            if (!periodBlocks) continue;
+
+            const isTargetPeriod = period.period === droppedPeriod;
+
+            if (isTargetPeriod) {
+              const targetBlockIndex = droppedBlock - 1;
+
+              while (periodBlocks.length <= targetBlockIndex) {
+                periodBlocks.push(null);
+              }
+
+              periodBlocks[targetBlockIndex] = course;
+            } else {
+              if (period.blocks.length === 0) {
+                let placed = false;
+                for (
+                  let i = WILDCARD_BLOCK_START;
+                  i < periodBlocks.length;
+                  i++
+                ) {
+                  if (periodBlocks[i] === null) {
+                    periodBlocks[i] = course;
+                    placed = true;
+                    break;
+                  }
+                }
+                if (!placed) periodBlocks.push(course);
+              } else {
+                for (const block of period.blocks) {
+                  periodBlocks[block - 1] = course;
+                }
+              }
+            }
+          }
+        }),
+      );
+    },
+    [setSchedules, startingYear],
+  );
 
   const removeCourse = useCallback(
     ({ courseCode }: RemoveCourseArgs) => {
@@ -351,7 +388,8 @@ export const useScheduleStore = (): ScheduleStore => {
       selectedMasterCourses,
     },
     mutators: {
-      addCourse,
+      addCourseByButton,
+      addCourseByDrop,
       removeCourse,
       addBlockToSemester,
       toggleShownSemester,

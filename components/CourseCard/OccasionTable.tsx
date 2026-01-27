@@ -21,7 +21,10 @@ interface OccasionTableProps {
 
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   const [alertOpen, setAlertOpen] = useState(false);
-  const { mutators, getters } = useScheduleStore();
+  const {
+    mutators: { addCourseByButton },
+    getters,
+  } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
@@ -34,7 +37,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
       <AddAlert
         course={course}
         primaryAction={() =>
-          mutators.addCourse({ course, occasion: selectedOccasion })
+          addCourseByButton({ course, occasion: selectedOccasion })
         }
         open={alertOpen}
         setOpen={setAlertOpen}
@@ -89,7 +92,10 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   setSelectedOccasion,
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators, getters } = useScheduleStore();
+  const {
+    mutators: { addCourseByButton },
+    getters,
+  } = useScheduleStore();
 
   const relativeSemester = useMemo(
     () =>
@@ -107,7 +113,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       setSelectedOccasion(occasion);
       setAlertOpen(true);
     } else {
-      mutators.addCourse({ course, occasion: occasion });
+      addCourseByButton({ course, occasion: occasion });
     }
   };
 
