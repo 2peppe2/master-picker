@@ -59,7 +59,9 @@ export const PeriodView: FC<PeriodViewProps> = ({
   }, [activeCourse, blocks, semesterNumber, periodNumber, startingYear]);
 
   return (
-    <div className="flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
+    <div className="flex flex-col">
+      <p className="text-muted-foreground">{`Period ${periodNumber + 1}`}</p>
+    <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
       {range(0, blocks.length).map((index) => {
         const isWildcardStart = index === WILDCARD_BLOCK_START;
 
@@ -105,6 +107,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
           blockNumber={blocks.length}
         />
       </div>
+    </div>
     </div>
   );
 };
