@@ -19,7 +19,7 @@ import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
 import AddAlert from "../AddAlert";
-import { useState } from "react";
+import { FC, useState } from "react";
 
 type CourseAddButtonProps = {
   course: Course;
@@ -166,34 +166,71 @@ interface MultiCourseDropdownProps {
   setSelectedOccasion: (occasion: CourseOccasion) => void;
 }
 
-const MultiCourseDropdown = ({
+const formatPeriods = (periods: { period: number }[]) => {
+  if (!periods || periods.length === 0) return "Unknown Period";
+  const sorted = [...periods].sort((a, b) => a.period - b.period);
+  const pNums = sorted.map((p) => p.period);
+
+  return pNums.map((p) => `Period ${p}`).join(", ");
+};
+
+const formatBlocks = (periods: { blocks: number[] }[]) => {
+  const allBlocks = Array.from(new Set(periods.flatMap((p) => p.blocks))).sort(
+    (a, b) => a - b,
+  );
+
+  if (allBlocks.length === 0) return "No Block";
+  return `Block ${allBlocks.join(", ")}`;
+};
+
+const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
   course,
   checkCollisionBeforeAdd,
   setSelectedOccasion,
-}: MultiCourseDropdownProps) => {
+}) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
 
   return (
-    <div className="flex flex-col gap-2">
-      {course.CourseOccasion.map((occasion) => (
-        <Button
-          key={occasion.id}
-          variant="outline"
-          size="sm"
-          onClick={() => {
-            setSelectedOccasion(occasion);
-            checkCollisionBeforeAdd(occasion);
-          }}
-        >
-          {`Add to Semester ${
+    <div className="flex flex-col gap-1">
+      <div className="max-h-[300px] overflow-y-auto p-1 flex flex-col gap-1">
+        {course.CourseOccasion.map((occasion) => {
+          const relativeSemester =
             yearAndSemesterToRelativeSemester(
               startingYear,
               occasion.year,
               occasion.semester,
-            ) + 1
-          }`}
-        </Button>
-      ))}
+            ) + 1;
+
+          const periodLabel = formatPeriods(occasion.periods);
+          const blockLabel = formatBlocks(occasion.periods);
+
+          return (
+            <Button
+              key={occasion.id}
+              variant="ghost"
+              className="h-auto w-full justify-start whitespace-normal px-3 py-3 hover:bg-accent border border-transparent hover:border-border"
+              onClick={() => {
+                setSelectedOccasion(occasion);
+                checkCollisionBeforeAdd(occasion);
+              }}
+            >
+              <div className="flex flex-col items-start gap-1.5 w-full">
+                <div className="flex w-full justify-between items-center">
+                  <span className="font-semibold text-foreground">
+                    Semester {relativeSemester}
+                  </span>
+                </div>
+
+                <div className="text-xs text-muted-foreground flex flex-col items-center gap-2">
+                  <span className={blockLabel === "No Block" ? "italic" : ""}>
+                    {periodLabel} &bull; {blockLabel}
+                  </span>
+                </div>
+              </div>
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };
