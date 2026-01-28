@@ -60,54 +60,54 @@ export const PeriodView: FC<PeriodViewProps> = ({
 
   return (
     <div className="flex flex-col">
-      <p className="text-muted-foreground">{`Period ${periodNumber + 1}`}</p>
-    <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
-      {range(0, blocks.length).map((index) => {
-        const isWildcardStart = index === WILDCARD_BLOCK_START;
+      <p className="text-muted-foreground text-sm">{`Period ${periodNumber + 1}`}</p>
+      <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
+        {range(0, blocks.length).map((index) => {
+          const isWildcardStart = index === WILDCARD_BLOCK_START;
 
-        return (
-          <div key={index} className="flex items-center shrink-0">
-            {isWildcardStart && (
-              <div className="flex h-full items-center px-4">
-                <Separator
-                  orientation="vertical"
-                  className="w-[1px] h-full bg-zinc-600"
-                />
-              </div>
-            )}
+          return (
+            <div key={index} className="flex items-center shrink-0">
+              {isWildcardStart && (
+                <div className="flex h-full items-center px-4">
+                  <Separator
+                    orientation="vertical"
+                    className="w-[1px] h-full bg-zinc-600"
+                  />
+                </div>
+              )}
 
-            <Block
-              semesterNumber={semesterNumber}
-              periodNumber={periodNumber}
-              blockNumber={index}
-            />
-          </div>
-        );
-      })}
+              <Block
+                semesterNumber={semesterNumber}
+                periodNumber={periodNumber}
+                blockNumber={index}
+              />
+            </div>
+          );
+        })}
 
-      <div
-        className={`flex items-center shrink-0 transition-all duration-200 ease-in-out ${
-          showGhost
-            ? "w-auto opacity-100 translate-x-0"
-            : "w-0 opacity-0 -translate-x-4 overflow-hidden pointer-events-none"
-        }`}
-      >
-        {blocks.length === WILDCARD_BLOCK_START && (
-          <div className="flex h-full items-center px-4">
-            <Separator
-              orientation="vertical"
-              className="w-[1px] h-full bg-zinc-600"
-            />
-          </div>
-        )}
+        <div
+          className={`flex items-center shrink-0 transition-all duration-200 ease-in-out ${
+            showGhost
+              ? "w-auto opacity-100 translate-x-0"
+              : "w-0 opacity-0 -translate-x-4 overflow-hidden pointer-events-none"
+          }`}
+        >
+          {blocks.length === WILDCARD_BLOCK_START && (
+            <div className="flex h-full items-center px-4">
+              <Separator
+                orientation="vertical"
+                className="w-[1px] h-full bg-zinc-600"
+              />
+            </div>
+          )}
 
-        <GhostBlock
-          semesterNumber={semesterNumber}
-          periodNumber={periodNumber}
-          blockNumber={blocks.length}
-        />
+          <GhostBlock
+            semesterNumber={semesterNumber}
+            periodNumber={periodNumber}
+            blockNumber={blocks.length}
+          />
+        </div>
       </div>
-    </div>
     </div>
   );
 };

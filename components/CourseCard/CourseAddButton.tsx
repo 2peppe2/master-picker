@@ -77,21 +77,20 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   };
 
   const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
-    const isWildcard = occasion.periods.some((p) => p.blocks.length === 0);
-    if (isWildcard) {
-      if (checkWildcardExpansion({ occasion })) {
-        setExpansionAlertOpen(true);
-        return;
-      }
-      addCourseByButton({ course, occasion });
+    const collisions = getOccasionCollisions({ occasion });
+
+    if (collisions.length > 0) {
+      setSelectedOccasion(occasion);
+      setCollisionAlertOpen(true);
       return;
     }
 
-    if (getOccasionCollisions({ occasion }).length > 0) {
-      setCollisionAlertOpen(true);
-    } else {
-      addCourseByButton({ course, occasion });
+    if (checkWildcardExpansion({ occasion })) {
+      setExpansionAlertOpen(true);
+      return;
     }
+
+    addCourseByButton({ course, occasion });
   };
 
   return (

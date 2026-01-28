@@ -119,7 +119,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
     mutators: { addCourseByButton },
-    getters,
+    getters: { getOccasionCollisions },
   } = useScheduleStore();
 
   const relativeSemester = useMemo(
@@ -134,7 +134,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   const periods = occasion.periods.map((p) => p.period);
   const blocks = Array.from(new Set(occasion.periods.flatMap((p) => p.blocks)));
   const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
-    if (getters.getOccasionCollisions({ occasion: occasion }).length > 0) {
+    if (getOccasionCollisions({ occasion }).length > 0) {
       setSelectedOccasion(occasion);
       setAlertOpen(true);
     } else {

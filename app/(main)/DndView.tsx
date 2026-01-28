@@ -51,6 +51,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   } | null>(null);
   const [selectedOccasion, setSelectedOccasion] =
     useState<CourseOccasion | null>(null);
+  const [collisions, setCollisions] = useState<Course[]>([]);
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -137,14 +138,21 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       return;
     }
 
+    const currentCollisions = getOccasionCollisions({
+      occasion: finalOccasion,
+    });
+
+    setSelectedOccasion(finalOccasion);
+    setCollisions(currentCollisions);
+
     const slot = getSlotCourse({
       semester: overData.semesterNumber,
       period: targetPeriod,
       block: targetBlock,
     });
 
-    if (slot) {
-      setSelectedOccasion(finalOccasion);
+    if (slot || currentCollisions.length > 0) {
+      // Check both specific slot and partials
       setAlertCourse(droppedCourse);
       setDropTarget({ block: targetBlock, period: targetPeriod });
       setAlertOpen(true);
@@ -211,9 +219,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
             }}
             open={alertOpen}
             setOpen={setAlertOpen}
-            collisions={getOccasionCollisions({
-              occasion: selectedOccasion,
-            })}
+            collisions={collisions}
           />
         )}
         <Drawer courses={courses} />

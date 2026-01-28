@@ -333,7 +333,6 @@ export const useScheduleStore = (): ScheduleStore => {
     return occasion ?? null;
   };
 
-  // TODO: Handle partial collisions tooo here.
   const getOccasionCollisions = useCallback(
     ({ occasion }: GetOccasionCollisionsArgs) => {
       const collisions: Course[] = [];
