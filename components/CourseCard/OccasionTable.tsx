@@ -30,7 +30,7 @@ interface OccasionTableProps {
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const {
-    mutators: { addCourseByButton, addBlockToSemester },
+    mutators: { addCourseByButton, addBlockToSemester, removeCourse },
     getters: { checkWildcardExpansion, getOccasionCollisions },
   } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
@@ -64,22 +64,27 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
     });
   };
 
+  const collisions = getOccasionCollisions({
+    occasion: selectedOccasion,
+  });
+
   return (
     <>
       <AddAlert
         occasion={selectedOccasion}
         course={course}
-        onReplace={() =>
-          addCourseByButton({ course, occasion: selectedOccasion })
-        }
+        onReplace={() => {
+          collisions.forEach((collision) =>
+            removeCourse({ courseCode: collision.code }),
+          );
+          addCourseByButton({ course, occasion: selectedOccasion });
+        }}
         onAddAsExtra={() => {
           handleAddAsExtra(selectedOccasion);
         }}
         open={alertOpen}
         setOpen={setAlertOpen}
-        collisions={getOccasionCollisions({
-          occasion: selectedOccasion,
-        })}
+        collisions={collisions}
       />
       <Table>
         <TableHeader>
