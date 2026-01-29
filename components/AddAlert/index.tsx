@@ -70,18 +70,16 @@ const AddAlert: FC<AddAlertProps> = ({
         <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-2">
           <AlertDialogCancel className="mt-0">Cancel</AlertDialogCancel>
 
-          {occasion.periods.length > 1 && (
-            <Button
-              variant="outline"
-              onClick={(e) => {
-                e.preventDefault();
-                onAddAsExtra();
-                setOpen(false);
-              }}
-            >
-              Add to new block
-            </Button>
-          )}
+          <Button
+            variant="outline"
+            onClick={(e) => {
+              e.preventDefault();
+              onAddAsExtra();
+              setOpen(false);
+            }}
+          >
+            Add to new block
+          </Button>
 
           <AlertDialogAction
             onClick={(e) => {
