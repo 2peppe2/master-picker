@@ -1,6 +1,7 @@
 "use client";
 
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
@@ -18,21 +19,19 @@ import {
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
-import AddAlert from "../AddAlert";
 import { FC, useState } from "react";
+import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 
-type CourseAddButtonProps = {
+interface CourseAddButtonProps {
   course: Course;
-};
+}
 
 const CourseAddButton = ({ course }: CourseAddButtonProps) => {
-  const isMultiOccasion = course.CourseOccasion.length > 1;
   const {
-    mutators: { addCourseByButton, addBlockToSemester, removeCourse },
     getters: { getOccasionCollisions, checkWildcardExpansion },
   } = useScheduleStore();
 
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { executeAdd } = useCourseContlictResolver();
 
   const [collisionAlertOpen, setCollisionAlertOpen] = useState(false);
   const [expansionAlertOpen, setExpansionAlertOpen] = useState(false);
@@ -42,45 +41,10 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   );
   const [popoverOpen, setPopoverOpen] = useState(false);
 
-  const handleAdd = (occasion: CourseOccasion) => {
-    if (checkWildcardExpansion({ occasion })) {
-      const relativeSemester = yearAndSemesterToRelativeSemester(
-        startingYear,
-        occasion.year,
-        occasion.semester,
-      );
-      addBlockToSemester({ semester: relativeSemester });
-      addCourseByButton({ course, occasion });
-    } else {
-      addCourseByButton({ course, occasion });
-    }
-  };
+  const isMultiOccasion = course.CourseOccasion.length > 1;
 
-  const handleAddAsExtra = (occasion: CourseOccasion) => {
-    const relativeSemester = yearAndSemesterToRelativeSemester(
-      startingYear,
-      occasion.year,
-      occasion.semester,
-    );
-
-    if (checkWildcardExpansion({ occasion })) {
-      addBlockToSemester({ semester: relativeSemester });
-    }
-
-    const wildcardOccasion = {
-      ...occasion,
-      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
-    };
-
-    addCourseByButton({
-      course,
-      occasion: wildcardOccasion,
-    });
-  };
-
-  const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
+  const handleAddAttempt = (occasion: CourseOccasion) => {
     const collisions = getOccasionCollisions({ occasion });
-
     if (collisions.length > 0) {
       setSelectedOccasion(occasion);
       setCollisionAlertOpen(true);
@@ -88,32 +52,27 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
     }
 
     if (checkWildcardExpansion({ occasion })) {
+      setSelectedOccasion(occasion);
       setExpansionAlertOpen(true);
       return;
     }
 
-    addCourseByButton({ course, occasion });
+    executeAdd({ course, occasion, startegy: "button" });
   };
 
-  const collisions = getOccasionCollisions({ occasion: selectedOccasion });
+  const currentCollisions = getOccasionCollisions({
+    occasion: selectedOccasion,
+  });
 
   return (
     <>
-      <AddAlert
-        occasion={selectedOccasion}
-        course={course}
+      <ConflictResolverModal
+        strategy="button"
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}
-        collisions={collisions}
-        onReplace={() => {
-          collisions.forEach((collision) =>
-            removeCourse({ courseCode: collision.code }),
-          );
-          addCourseByButton({ course, occasion: selectedOccasion });
-        }}
-        onAddAsExtra={() => {
-          handleAddAsExtra(selectedOccasion);
-        }}
+        course={course}
+        occasion={selectedOccasion}
+        collisions={currentCollisions}
       />
 
       <AlertDialog
@@ -132,7 +91,11 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => {
-                handleAdd(selectedOccasion);
+                executeAdd({
+                  course,
+                  occasion: selectedOccasion,
+                  startegy: "button",
+                });
                 setExpansionAlertOpen(false);
               }}
             >
@@ -148,7 +111,7 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
             onClick={
               isMultiOccasion
                 ? () => setPopoverOpen(true)
-                : () => checkCollisionBeforeAdd(selectedOccasion)
+                : () => handleAddAttempt(selectedOccasion)
             }
           />
         </PopoverTrigger>
@@ -156,7 +119,7 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         <PopoverContent side="left" align="start" sideOffset={10}>
           <MultiCourseDropdown
             course={course}
-            checkCollisionBeforeAdd={checkCollisionBeforeAdd}
+            onAddAttempt={handleAddAttempt}
             setSelectedOccasion={setSelectedOccasion}
           />
         </PopoverContent>
@@ -169,30 +132,13 @@ export default CourseAddButton;
 
 interface MultiCourseDropdownProps {
   course: Course;
-  checkCollisionBeforeAdd: (occasion: CourseOccasion) => void;
+  onAddAttempt: (occasion: CourseOccasion) => void;
   setSelectedOccasion: (occasion: CourseOccasion) => void;
 }
 
-const formatPeriods = (periods: { period: number }[]) => {
-  if (!periods || periods.length === 0) return "Unknown Period";
-  const sorted = [...periods].sort((a, b) => a.period - b.period);
-  const pNums = sorted.map((p) => p.period);
-
-  return pNums.map((p) => `Period ${p}`).join(", ");
-};
-
-const formatBlocks = (periods: { blocks: number[] }[]) => {
-  const allBlocks = Array.from(new Set(periods.flatMap((p) => p.blocks))).sort(
-    (a, b) => a - b,
-  );
-
-  if (allBlocks.length === 0) return "No Block";
-  return `Block ${allBlocks.join(", ")}`;
-};
-
 const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
   course,
-  checkCollisionBeforeAdd,
+  onAddAttempt,
   setSelectedOccasion,
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
@@ -208,8 +154,18 @@ const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
               occasion.semester,
             ) + 1;
 
-          const periodLabel = formatPeriods(occasion.periods);
-          const blockLabel = formatBlocks(occasion.periods);
+          const pLabel =
+            occasion.periods.length > 0
+              ? `Period ${occasion.periods
+                  .map((p) => p.period)
+                  .sort()
+                  .join(", ")}`
+              : "Unknown Period";
+          const allBlocks = Array.from(
+            new Set(occasion.periods.flatMap((p) => p.blocks)),
+          ).sort();
+          const bLabel =
+            allBlocks.length > 0 ? `Block ${allBlocks.join(", ")}` : "No Block";
 
           return (
             <Button
@@ -218,7 +174,7 @@ const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
               className="h-auto w-full justify-start whitespace-normal px-3 py-3 hover:bg-accent border border-transparent hover:border-border"
               onClick={() => {
                 setSelectedOccasion(occasion);
-                checkCollisionBeforeAdd(occasion);
+                onAddAttempt(occasion);
               }}
             >
               <div className="flex flex-col items-start gap-1.5 w-full">
@@ -227,10 +183,9 @@ const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
                     Semester {relativeSemester}
                   </span>
                 </div>
-
                 <div className="text-xs text-muted-foreground flex flex-col items-center gap-2">
-                  <span className={blockLabel === "No Block" ? "italic" : ""}>
-                    {periodLabel} &bull; {blockLabel}
+                  <span className={bLabel === "No Block" ? "italic" : ""}>
+                    {pLabel} &bull; {bLabel}
                   </span>
                 </div>
               </div>
@@ -247,7 +202,9 @@ const AddButton = (props: React.ComponentPropsWithRef<typeof Button>) => (
     {...props}
     variant="ghost"
     size="icon"
-    className={`absolute top-2 right-2 text-muted-foreground hover:text-foreground ${props.className ?? ""}`}
+    className={`absolute top-2 right-2 text-muted-foreground hover:text-foreground ${
+      props.className ?? ""
+    }`}
   >
     <Plus className="h-4 w-4" />
   </Button>

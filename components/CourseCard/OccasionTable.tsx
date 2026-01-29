@@ -1,11 +1,14 @@
+"use client";
+
+import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/(main)/page";
 import { FC, useMemo, useState } from "react";
 import { MasterBadge } from "../MasterBadge";
 import { useAtomValue } from "jotai";
-import AddAlert from "../AddAlert";
 import {
   Table,
   TableBody,
@@ -28,64 +31,32 @@ interface OccasionTableProps {
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
-  const [alertOpen, setAlertOpen] = useState(false);
-  const {
-    mutators: { addCourseByButton, addBlockToSemester, removeCourse },
-    getters: { checkWildcardExpansion, getOccasionCollisions },
-  } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const [alertOpen, setAlertOpen] = useState(false);
+
+  const {
+    getters: { getOccasionCollisions },
+  } = useScheduleStore();
 
   const hasRecommendedMaster = course.CourseOccasion.some(
     (occasion) => occasion.recommendedMaster.length > 0,
   );
 
-  const handleAddAsExtra = (occasion: CourseOccasion) => {
-    const relativeSemester = yearAndSemesterToRelativeSemester(
-      startingYear,
-      occasion.year,
-      occasion.semester,
-    );
-
-    if (checkWildcardExpansion({ occasion })) {
-      addBlockToSemester({ semester: relativeSemester });
-    }
-
-    const wildcardOccasion = {
-      ...occasion,
-      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
-    };
-
-    addCourseByButton({
-      course,
-      occasion: wildcardOccasion,
-    });
-  };
-
-  const collisions = getOccasionCollisions({
-    occasion: selectedOccasion,
-  });
+  const collisions = getOccasionCollisions({ occasion: selectedOccasion });
 
   return (
     <>
-      <AddAlert
-        occasion={selectedOccasion}
-        course={course}
-        onReplace={() => {
-          collisions.forEach((collision) =>
-            removeCourse({ courseCode: collision.code }),
-          );
-          addCourseByButton({ course, occasion: selectedOccasion });
-        }}
-        onAddAsExtra={() => {
-          handleAddAsExtra(selectedOccasion);
-        }}
+      <ConflictResolverModal
+        strategy="button"
         open={alertOpen}
         setOpen={setAlertOpen}
+        course={course}
+        occasion={selectedOccasion}
         collisions={collisions}
       />
+
       <Table>
         <TableHeader>
           <TableRow>
@@ -134,9 +105,9 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
-    mutators: { addCourseByButton },
     getters: { getOccasionCollisions },
   } = useScheduleStore();
+  const { executeAdd } = useCourseContlictResolver();
 
   const relativeSemester = useMemo(
     () =>
@@ -147,14 +118,16 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       ),
     [occasion.semester, occasion.year, startingYear],
   );
+
   const periods = occasion.periods.map((p) => p.period);
   const blocks = Array.from(new Set(occasion.periods.flatMap((p) => p.blocks)));
-  const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
+
+  const handleAddClick = () => {
     if (getOccasionCollisions({ occasion }).length > 0) {
       setSelectedOccasion(occasion);
       setAlertOpen(true);
     } else {
-      addCourseByButton({ course, occasion: occasion });
+      executeAdd({ course, occasion, startegy: "button" });
     }
   };
 
@@ -176,7 +149,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       )}
       <TableCell className="flex justify-end">
         <p
-          onClick={() => checkCollisionBeforeAdd(occasion)}
+          onClick={handleAddClick}
           className="cursor-pointer hover:underline underline-offset-2 text-left"
         >
           Add course

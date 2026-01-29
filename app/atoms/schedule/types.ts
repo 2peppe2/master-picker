@@ -15,8 +15,6 @@ export interface DeleteBlockFromSemesterArgs {
 export interface AddCourseByDropArgs {
   course: Course;
   occasion: CourseOccasion;
-  period: number; 
-  block: number; 
 }
 
 export interface RemoveCourseArgs {
