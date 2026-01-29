@@ -207,12 +207,7 @@ export const useScheduleStore = (): ScheduleStore => {
   );
 
   const addCourseByDrop = useCallback(
-    ({
-      course,
-      occasion,
-      period: droppedPeriod,
-      block: droppedBlock,
-    }: AddCourseByDropArgs) => {
+    ({ course, occasion }: AddCourseByDropArgs) => {
       setSchedules(
         produce((draft) => {
           const semesterIndex = yearAndSemesterToRelativeSemester(

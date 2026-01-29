@@ -1,14 +1,9 @@
 "use client";
 
+import { useCourseContlictResolver } from "@/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import {
-  relativeSemesterToYearAndSemester,
-  yearAndSemesterToRelativeSemester,
-} from "@/lib/semesterYearTranslations";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "../atoms/schedule/scheduleStore";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
 import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { PeriodNodeData } from "@/components/Droppable";
@@ -16,8 +11,11 @@ import CourseCard from "@/components/CourseCard";
 import { Course, CourseOccasion } from "./page";
 import { useAtom, useAtomValue } from "jotai";
 import Schedule from "./(schedule)/Schedule";
-import AddAlert from "@/components/AddAlert";
 import { Drawer } from "./(drawer)/Drawer";
+import {
+  useScheduleStore,
+  WILDCARD_BLOCK_START,
+} from "../atoms/schedule/scheduleStore";
 import { FC, useState } from "react";
 import {
   DndContext,
@@ -38,25 +36,20 @@ interface DndViewProps {
 const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const {
-    mutators: { addCourseByDrop, addBlockToSemester, removeCourse },
-    getters: {
-      getSlotCourse,
-      getOccasionCollisions,
-      getSlotBlocks,
-      checkWildcardExpansion,
-    },
-  } = useScheduleStore();
-  const [alertOpen, setAlertOpen] = useState(false);
-  const [alertCourse, setAlertCourse] = useState<Course | null>(null);
 
-  const [dropTarget, setDropTarget] = useState<{
-    block: number;
-    period: number;
+  const { executeAdd } = useCourseContlictResolver();
+  const {
+    mutators: { addCourseByDrop, addBlockToSemester },
+    getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
+  } = useScheduleStore();
+
+  const [alertData, setAlertData] = useState<{
+    course: Course;
+    occasion: CourseOccasion;
+    collisions: Course[];
+    dropSlot: { block: number; period: number };
   } | null>(null);
-  const [selectedOccasion, setSelectedOccasion] =
-    useState<CourseOccasion | null>(null);
-  const [collisions, setCollisions] = useState<Course[]>([]);
+  const [alertOpen, setAlertOpen] = useState(false);
 
   const sensors = useSensors(
     useSensor(TouchSensor, {
@@ -75,9 +68,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const onDragStart = (event: DragStartEvent) => {
     setActiveCourse(event.active.data.current as Course);
     setAlertOpen(false);
-    setAlertCourse(null);
-    setSelectedOccasion(null);
-    setDropTarget(null);
+    setAlertData(null);
   };
 
   const onDragEnd = (event: DragEndEvent) => {
@@ -136,8 +127,6 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       addCourseByDrop({
         course: droppedCourse,
         occasion: finalOccasion,
-        period: targetPeriod,
-        block: targetBlock,
       });
 
       return;
@@ -147,9 +136,6 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       occasion: finalOccasion,
     });
 
-    setSelectedOccasion(finalOccasion);
-    setCollisions(currentCollisions);
-
     const slot = getSlotCourse({
       semester: overData.semesterNumber,
       period: targetPeriod,
@@ -157,50 +143,20 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     });
 
     if (slot || currentCollisions.length > 0) {
-      // Check both specific slot and partials
-      setAlertCourse(droppedCourse);
-      setDropTarget({ block: targetBlock, period: targetPeriod });
-      setAlertOpen(true);
-    } else {
-      addCourseByDrop({
+      setAlertData({
         course: droppedCourse,
         occasion: finalOccasion,
-        period: targetPeriod,
-        block: targetBlock,
+        collisions: currentCollisions,
+        dropSlot: { block: targetBlock, period: targetPeriod },
+      });
+      setAlertOpen(true);
+    } else {
+      executeAdd({
+        course: droppedCourse,
+        occasion: finalOccasion,
+        startegy: "dropped",
       });
     }
-  };
-
-  const handleAddAsExtra = (occasion: CourseOccasion) => {
-    const relativeSemester = yearAndSemesterToRelativeSemester(
-      startingYear,
-      occasion.year,
-      occasion.semester,
-    );
-
-    if (checkWildcardExpansion({ occasion })) {
-      addBlockToSemester({ semester: relativeSemester });
-    }
-
-    const wildcardOccasion = {
-      ...occasion,
-      periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
-    };
-
-    if (!dropTarget) {
-      return;
-    }
-
-    if (!alertCourse) {
-      return;
-    }
-
-    addCourseByDrop({
-      course: alertCourse,
-      occasion: wildcardOccasion,
-      block: dropTarget.block,
-      period: dropTarget.period,
-    });
   };
 
   return (
@@ -210,27 +166,12 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       sensors={sensors}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
-        {alertOpen && alertCourse && selectedOccasion && dropTarget && (
-          <AddAlert
-            occasion={selectedOccasion}
-            course={alertCourse}
-            onReplace={() => {
-              collisions.forEach((collision) => {
-                removeCourse({ courseCode: collision.code });
-              });
-              addCourseByDrop({
-                course: alertCourse,
-                occasion: selectedOccasion,
-                block: dropTarget.block,
-                period: dropTarget.period,
-              });
-            }}
-            onAddAsExtra={() => {
-              handleAddAsExtra(selectedOccasion);
-            }}
+        {alertOpen && alertData && (
+          <ConflictResolverModal
+            strategy="dropped"
             open={alertOpen}
             setOpen={setAlertOpen}
-            collisions={collisions}
+            {...alertData}
           />
         )}
         <Drawer courses={courses} />
