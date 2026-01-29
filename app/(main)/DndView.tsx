@@ -205,6 +205,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
         {alertOpen && alertCourse && selectedOccasion && dropTarget && (
           <AddAlert
+            occasion={selectedOccasion}
             course={alertCourse}
             onReplace={() =>
               addCourseByDrop({

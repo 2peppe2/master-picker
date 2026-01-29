@@ -56,7 +56,7 @@ interface ScheduleStore {
 }
 
 const schedulesAtom = atom<ScheduleGrid>(
-  Array.from({ length: 9 }, () =>
+  Array.from({ length: 10 }, () =>
     Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null)),
   ),
 );
@@ -229,35 +229,19 @@ export const useScheduleStore = (): ScheduleStore => {
             const periodBlocks = draft[semesterIndex][periodIndex];
             if (!periodBlocks) continue;
 
-            const isTargetPeriod = period.period === droppedPeriod;
-
-            if (isTargetPeriod) {
-              const targetBlockIndex = droppedBlock - 1;
-
-              while (periodBlocks.length <= targetBlockIndex) {
-                periodBlocks.push(null);
+            if (period.blocks.length === 0) {
+              let placed = false;
+              for (let i = WILDCARD_BLOCK_START; i < periodBlocks.length; i++) {
+                if (periodBlocks[i] === null) {
+                  periodBlocks[i] = course;
+                  placed = true;
+                  break;
+                }
               }
-
-              periodBlocks[targetBlockIndex] = course;
+              if (!placed) periodBlocks.push(course);
             } else {
-              if (period.blocks.length === 0) {
-                let placed = false;
-                for (
-                  let i = WILDCARD_BLOCK_START;
-                  i < periodBlocks.length;
-                  i++
-                ) {
-                  if (periodBlocks[i] === null) {
-                    periodBlocks[i] = course;
-                    placed = true;
-                    break;
-                  }
-                }
-                if (!placed) periodBlocks.push(course);
-              } else {
-                for (const block of period.blocks) {
-                  periodBlocks[block - 1] = course;
-                }
+              for (const block of period.blocks) {
+                periodBlocks[block - 1] = course;
               }
             }
           }

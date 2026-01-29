@@ -96,6 +96,7 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   return (
     <>
       <AddAlert
+        occasion={selectedOccasion}
         course={course}
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}

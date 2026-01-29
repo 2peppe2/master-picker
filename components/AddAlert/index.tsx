@@ -1,7 +1,7 @@
 "use client";
 
+import { Course, CourseOccasion } from "@/app/(main)/page";
 import { Button } from "@/components/ui/button";
-import { Course } from "@/app/(main)/page";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -16,6 +16,7 @@ import { FC } from "react";
 
 interface AddAlertProps {
   course: Course;
+  occasion: CourseOccasion;
   onReplace: () => void;
   onAddAsExtra: () => void;
   open: boolean;
@@ -25,6 +26,7 @@ interface AddAlertProps {
 
 const AddAlert: FC<AddAlertProps> = ({
   course,
+  occasion,
   onReplace,
   onAddAsExtra,
   open,
@@ -68,16 +70,18 @@ const AddAlert: FC<AddAlertProps> = ({
         <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-2">
           <AlertDialogCancel className="mt-0">Cancel</AlertDialogCancel>
 
-          <Button
-            variant="outline"
-            onClick={(e) => {
-              e.preventDefault();
-              onAddAsExtra();
-              setOpen(false);
-            }}
-          >
-            Add to new block
-          </Button>
+          {occasion.periods.length > 1 && (
+            <Button
+              variant="outline"
+              onClick={(e) => {
+                e.preventDefault();
+                onAddAsExtra();
+                setOpen(false);
+              }}
+            >
+              Add to new block
+            </Button>
+          )}
 
           <AlertDialogAction
             onClick={(e) => {
