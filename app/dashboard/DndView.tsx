@@ -40,7 +40,12 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
     mutators: { addCourseByDrop, addBlockToSemester },
-    getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
+    getters: {
+      getSlotCourse,
+      getOccasionCollisions,
+      getSlotBlocks,
+      checkWildcardExpansion,
+    },
   } = useScheduleStore();
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCourse, setAlertCourse] = useState<Course | null>(null);
@@ -173,7 +178,11 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       occasion.semester,
     );
 
-    addBlockToSemester({ semester: relativeSemester });
+    if (checkWildcardExpansion({ occasion })) {
+      addBlockToSemester({ semester: relativeSemester });
+    }
+
+    console.log(checkWildcardExpansion({ occasion }), occasion);
 
     const wildcardOccasion = {
       ...occasion,
