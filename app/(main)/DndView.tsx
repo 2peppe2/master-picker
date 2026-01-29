@@ -39,7 +39,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const {
-    mutators: { addCourseByDrop, addBlockToSemester },
+    mutators: { addCourseByDrop, addBlockToSemester, removeCourse },
     getters: {
       getSlotCourse,
       getOccasionCollisions,
@@ -182,8 +182,6 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       addBlockToSemester({ semester: relativeSemester });
     }
 
-    console.log(checkWildcardExpansion({ occasion }), occasion);
-
     const wildcardOccasion = {
       ...occasion,
       periods: occasion.periods.map((p) => ({ ...p, blocks: [] })),
@@ -216,14 +214,17 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
           <AddAlert
             occasion={selectedOccasion}
             course={alertCourse}
-            onReplace={() =>
+            onReplace={() => {
+              collisions.forEach((collision) => {
+                removeCourse({ courseCode: collision.code });
+              });
               addCourseByDrop({
                 course: alertCourse,
                 occasion: selectedOccasion,
                 block: dropTarget.block,
                 period: dropTarget.period,
-              })
-            }
+              });
+            }}
             onAddAsExtra={() => {
               handleAddAsExtra(selectedOccasion);
             }}

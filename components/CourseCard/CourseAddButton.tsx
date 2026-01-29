@@ -28,7 +28,7 @@ type CourseAddButtonProps = {
 const CourseAddButton = ({ course }: CourseAddButtonProps) => {
   const isMultiOccasion = course.CourseOccasion.length > 1;
   const {
-    mutators: { addCourseByButton, addBlockToSemester },
+    mutators: { addCourseByButton, addBlockToSemester, removeCourse },
     getters: { getOccasionCollisions, checkWildcardExpansion },
   } = useScheduleStore();
 
@@ -95,6 +95,8 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
     addCourseByButton({ course, occasion });
   };
 
+  const collisions = getOccasionCollisions({ occasion: selectedOccasion });
+
   return (
     <>
       <AddAlert
@@ -102,8 +104,11 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         course={course}
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}
-        collisions={getOccasionCollisions({ occasion: selectedOccasion })}
+        collisions={collisions}
         onReplace={() => {
+          collisions.forEach((collision) =>
+            removeCourse({ courseCode: collision.code }),
+          );
           addCourseByButton({ course, occasion: selectedOccasion });
         }}
         onAddAsExtra={() => {
