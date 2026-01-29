@@ -57,6 +57,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   return (
     <>
       <AddAlert
+        occasion={selectedOccasion}
         course={course}
         onReplace={() =>
           addCourseByButton({ course, occasion: selectedOccasion })
