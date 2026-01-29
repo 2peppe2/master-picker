@@ -1,3 +1,11 @@
+import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Course, CourseOccasion } from "@/app/(main)/page";
+import { FC, useMemo, useState } from "react";
+import { MasterBadge } from "../MasterBadge";
+import { useAtomValue } from "jotai";
+import AddAlert from "../AddAlert";
 import {
   Table,
   TableBody,
@@ -6,14 +14,6 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { useAtomValue } from "jotai";
-import { FC, useMemo, useState } from "react";
-import { Course, CourseOccasion } from "@/app/(main)/page";
-import { MasterBadge } from "../MasterBadge";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import AddAlert from "../AddAlert";
 
 interface OccasionTableProps {
   course: Course;
@@ -23,7 +23,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const {
     mutators: { addCourseByButton, addBlockToSemester },
-    getters,
+    getters: { checkWildcardExpansion, getOccasionCollisions },
   } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
@@ -41,7 +41,9 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
       occasion.semester,
     );
 
-    addBlockToSemester({ semester: relativeSemester });
+    if (checkWildcardExpansion({ occasion })) {
+      addBlockToSemester({ semester: relativeSemester });
+    }
 
     const wildcardOccasion = {
       ...occasion,
@@ -67,7 +69,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
         }}
         open={alertOpen}
         setOpen={setAlertOpen}
-        collisions={getters.getOccasionCollisions({
+        collisions={getOccasionCollisions({
           occasion: selectedOccasion,
         })}
       />

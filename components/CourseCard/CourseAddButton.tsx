@@ -63,7 +63,9 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
       occasion.semester,
     );
 
-    addBlockToSemester({ semester: relativeSemester });
+    if (checkWildcardExpansion({ occasion })) {
+      addBlockToSemester({ semester: relativeSemester });
+    }
 
     const wildcardOccasion = {
       ...occasion,
