@@ -1,6 +1,6 @@
 model Course {
   code      String   @id
-  credits   Int
+  credits   Float
   level     String
   name      String
   link      String
