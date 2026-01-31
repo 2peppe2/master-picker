@@ -1,5 +1,5 @@
 model Examination {
-  credits    Int
+  credits    Float
   module     String
   courseCode String
   name       String
