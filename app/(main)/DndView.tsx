@@ -5,41 +5,34 @@ import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequiremen
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
-import { activeCourseAtom } from "../atoms/ActiveCourseAtom";
 import { PeriodNodeData } from "@/components/Droppable";
+import {
+  DndProvider,
+  OnDragEndArgs,
+  OnDragStartArgs,
+} from "@/components/DndProvider";
 import CourseCard from "@/components/CourseCard";
 import { Course, CourseOccasion } from "./page";
-import { useAtom, useAtomValue } from "jotai";
 import Schedule from "./(schedule)/Schedule";
 import { Drawer } from "./(drawer)/Drawer";
 import {
   useScheduleStore,
   WILDCARD_BLOCK_START,
 } from "../atoms/schedule/scheduleStore";
+import { useAtomValue } from "jotai";
 import { FC, useState } from "react";
-import {
-  DndContext,
-  DragEndEvent,
-  DragOverlay,
-  DragStartEvent,
-  KeyboardSensor,
-  PointerSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
 
 interface DndViewProps {
   courses: Course[];
 }
 
 const DndView: FC<DndViewProps> = ({ courses }) => {
-  const [activeCourse, setActiveCourse] = useAtom(activeCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
 
   const { executeAdd } = useCourseContlictResolver();
   const {
-    mutators: { addCourseByDrop, addBlockToSemester },
+    state: { draggedCourse },
+    mutators: { addCourseByDrop, addBlockToSemester, setDraggedCourse },
     getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
   } = useScheduleStore();
 
@@ -51,29 +44,9 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   } | null>(null);
   const [alertOpen, setAlertOpen] = useState(false);
 
-  const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 250,
-        tolerance: 5,
-      },
-    }),
-    useSensor(PointerSensor, {
-      // makes sure dragging only activates after moving a few pixels
-      activationConstraint: { distance: 6 },
-    }),
-    useSensor(KeyboardSensor),
-  );
-
-  const onDragStart = (event: DragStartEvent) => {
-    setActiveCourse(event.active.data.current as Course);
-    setAlertOpen(false);
-    setAlertData(null);
-  };
-
-  const onDragEnd = (event: DragEndEvent) => {
-    const droppedCourse = activeCourse;
-    setActiveCourse(null);
+  const onDragEnd = (event: OnDragEndArgs) => {
+    const droppedCourse = draggedCourse;
+    setDraggedCourse(null);
 
     if (!event.over) return;
     if (!droppedCourse) return;
@@ -160,10 +133,14 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   };
 
   return (
-    <DndContext
-      onDragStart={onDragStart}
+    <DndProvider<Course>
       onDragEnd={onDragEnd}
-      sensors={sensors}
+      onDragStart={(event: OnDragStartArgs<Course>) =>
+        setDraggedCourse(event.active)
+      }
+      renderDragged={({ active }) => (
+        <CourseCard dropped={false} course={active} />
+      )}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
         {alertOpen && alertData && (
@@ -175,17 +152,18 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
           />
         )}
         <Drawer courses={courses} />
-        <div className="flex flex-col gap-4 px-8 min-w-0">
-          <MastersRequirementsBar />
-
-          <Schedule />
-        </div>
+        <MainSection />
       </div>
-      <DragOverlay>
-        {activeCourse && <CourseCard dropped={false} course={activeCourse} />}
-      </DragOverlay>
-    </DndContext>
+    </DndProvider>
   );
 };
 
 export default DndView;
+
+const MainSection = () => (
+  <main className="flex flex-col gap-4 px-8 min-w-0">
+    <MastersRequirementsBar />
+
+    <Schedule />
+  </main>
+);

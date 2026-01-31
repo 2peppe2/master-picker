@@ -27,6 +27,7 @@ export const WILDCARD_BLOCK_START = 4;
 
 interface ScheduleStore {
   state: {
+    draggedCourse: Course | null;
     schedules: ScheduleGrid;
     selectedCourses: Course[];
     selectedMasterCourses: Course[];
@@ -34,6 +35,7 @@ interface ScheduleStore {
   };
 
   mutators: {
+    setDraggedCourse: (draggedCourse: Course | null) => void;
     addCourseByButton: (args: AddCourseByButtonArgs) => void;
     addCourseByDrop: (args: AddCourseByDropArgs) => void;
     removeCourse: (args: RemoveCourseArgs) => void;
@@ -63,10 +65,13 @@ const schedulesAtom = atom<ScheduleGrid>(
 
 const shownSemestersAtom = atom<Set<number>>(new Set([7, 8, 9]));
 
+const draggedCourseAtom = atom<Course | null>(null);
+
 export const useScheduleStore = (): ScheduleStore => {
   const { startingYear, masterPeriod } = useAtomValue(userPreferencesAtom);
   const [shownSemesters, setShownSemesters] = useAtom(shownSemestersAtom);
   const [schedules, setSchedules] = useAtom(schedulesAtom);
+  const [draggedCourse, setDraggedCourse] = useAtom(draggedCourseAtom);
 
   const selectedCourses = useMemo(() => {
     const uniqueMap = new Map<string, Course>();
@@ -371,6 +376,7 @@ export const useScheduleStore = (): ScheduleStore => {
       shownSemesters,
       selectedCourses,
       selectedMasterCourses,
+      draggedCourse,
     },
     mutators: {
       addCourseByButton,
@@ -379,6 +385,7 @@ export const useScheduleStore = (): ScheduleStore => {
       addBlockToSemester,
       deleteBlockFromSemester,
       toggleShownSemester,
+      setDraggedCourse,
     },
     getters: {
       checkWildcardExpansion,

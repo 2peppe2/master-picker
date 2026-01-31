@@ -1,32 +1,23 @@
 "use client";
 
+import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/(main)/page";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
-import { Plus } from "lucide-react";
 import { FC, useState } from "react";
-import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { Plus } from "lucide-react";
 
 interface CourseAddButtonProps {
   course: Course;
 }
 
-const CourseAddButton = ({ course }: CourseAddButtonProps) => {
+const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
   const {
     getters: { getOccasionCollisions, checkWildcardExpansion },
   } = useScheduleStore();
@@ -75,35 +66,18 @@ const CourseAddButton = ({ course }: CourseAddButtonProps) => {
         collisions={currentCollisions}
       />
 
-      <AlertDialog
+      <WildcardExpansionDialog
         open={expansionAlertOpen}
-        onOpenChange={setExpansionAlertOpen}
-      >
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Add block to semester</AlertDialogTitle>
-            <AlertDialogDescription>
-              There are no empty blocks available in this semester. Adding this
-              course will create a new extra block.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={() => {
-                executeAdd({
-                  course,
-                  occasion: selectedOccasion,
-                  startegy: "button",
-                });
-                setExpansionAlertOpen(false);
-              }}
-            >
-              Add {course.code}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+        setOpen={setExpansionAlertOpen}
+        courseCode={course.code}
+        onConfirm={() =>
+          executeAdd({
+            course,
+            occasion: selectedOccasion,
+            startegy: "button",
+          })
+        }
+      />
 
       <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
         <PopoverTrigger asChild>
