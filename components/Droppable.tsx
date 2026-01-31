@@ -1,7 +1,9 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/scheduleStore";
+import {
+  useScheduleStore,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import React, { FC, ReactNode, useMemo } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
@@ -25,7 +27,9 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     data,
   });
 
-  const activeCourse = useAtomValue(activeCourseAtom);
+  const {
+    state: { draggedCourse },
+  } = useScheduleStore();
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const { semester, year } = relativeSemesterToYearAndSemester(
     startingYear,
@@ -35,12 +39,12 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
   const isWildcard = blockNumber >= WILDCARD_BLOCK_START;
 
   const isValidDropTarget = useMemo(() => {
-    if (!activeCourse) return false;
+    if (!draggedCourse) return false;
 
     const targetPeriod = periodNumber + 1;
     const targetBlock = blockNumber + 1;
 
-    const matchingOccasion = activeCourse.CourseOccasion.find(
+    const matchingOccasion = draggedCourse.CourseOccasion.find(
       (occ) => occ.year === year && occ.semester === semester,
     );
 
@@ -59,7 +63,7 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     }
 
     return false;
-  }, [activeCourse, blockNumber, periodNumber, year, semester, isWildcard]);
+  }, [draggedCourse, blockNumber, periodNumber, year, semester, isWildcard]);
 
   const baseStyles =
     "relative w-40 h-40 shrink-0 flex items-center justify-center border-4 border-dashed rounded-2xl transition-all duration-200";

@@ -1,10 +1,8 @@
 import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { useFiltered } from "@/app/atoms/filter/filterStore";
 import SearchInput from "./components/SearchInput";
 import CourseCard from "@/components/CourseCard";
-import { useAtomValue } from "jotai";
 import { Course } from "../page";
 import { FC } from "react";
 
@@ -13,12 +11,12 @@ interface DrawerProps {
 }
 
 export const Drawer: FC<DrawerProps> = ({ courses }) => {
-  const { state } = useScheduleStore();
+  const {
+    state: { draggedCourse, schedules },
+  } = useScheduleStore();
 
-  const notInDropped = (course: Course) =>
-    !state.schedules.flat(3).includes(course);
+  const notInDropped = (course: Course) => !schedules.flat(3).includes(course);
   const COURSES = useFiltered(courses);
-  const activeCourse = useAtomValue(activeCourseAtom);
 
   return (
     <div
@@ -30,7 +28,7 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
       <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4 mt-5">
         {Object.values(COURSES)
           .filter(notInDropped)
-          .filter((course) => course.code !== activeCourse?.code)
+          .filter((course) => course.code !== draggedCourse?.code)
           .map((course) => (
             <Draggable key={course.code} id={course.code} data={course}>
               <CourseCard course={course} dropped={false} />

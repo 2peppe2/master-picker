@@ -1,6 +1,5 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
 import { Separator } from "@/components/ui/separator";
 import GhostBlock from "./(block)/GhostBlock";
 import {
@@ -22,11 +21,11 @@ export const PeriodView: FC<PeriodViewProps> = ({
   periodNumber,
 }) => {
   const {
+    state: { draggedCourse },
     getters: { getSlotBlocks },
   } = useScheduleStore();
 
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const activeCourse = useAtomValue(activeCourseAtom);
 
   const blocks = getSlotBlocks({
     semester: semesterNumber,
@@ -34,14 +33,14 @@ export const PeriodView: FC<PeriodViewProps> = ({
   });
 
   const showGhost = useMemo(() => {
-    if (!activeCourse) return false;
+    if (!draggedCourse) return false;
 
     const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
       semesterNumber,
     );
 
-    const hasWildcardOption = activeCourse.CourseOccasion.some(
+    const hasWildcardOption = draggedCourse.CourseOccasion.some(
       (occ) =>
         occ.year === year &&
         occ.semester === semester &&
@@ -56,7 +55,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
     const isFull = wildcardSlots.every((slot) => slot !== null);
 
     return isFull;
-  }, [activeCourse, blocks, semesterNumber, periodNumber, startingYear]);
+  }, [draggedCourse, blocks, semesterNumber, periodNumber, startingYear]);
 
   return (
     <div className="flex flex-col">
