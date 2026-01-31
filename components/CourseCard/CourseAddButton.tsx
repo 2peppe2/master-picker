@@ -58,22 +58,24 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
       return;
     }
 
-    executeAdd({ course, occasion, startegy: "button" });
+    executeAdd({ course, occasion, strategy: "button" });
   };
 
-  const currentCollisions = getOccasionCollisions({
+  const collisions = getOccasionCollisions({
     occasion: selectedOccasion,
   });
 
   return (
     <>
       <ConflictResolverModal
-        strategy="button"
         open={collisionAlertOpen}
         setOpen={setCollisionAlertOpen}
-        course={course}
-        occasion={selectedOccasion}
-        collisions={currentCollisions}
+        conflictData={{
+          strategy: "button",
+          occasion: selectedOccasion,
+          collisions,
+          course,
+        }}
       />
 
       <WildcardExpansionDialog
@@ -84,7 +86,7 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
           executeAdd({
             course,
             occasion: selectedOccasion,
-            startegy: "button",
+            strategy: "button",
           })
         }
       />
@@ -186,7 +188,7 @@ const AddButton = (props: React.ComponentPropsWithRef<typeof Button>) => (
     {...props}
     variant="ghost"
     size="icon"
-    className={`absolute top-2 right-2 text-muted-foreground hover:text-foreground ${
+    className={`cursor-pointer absolute top-2 right-2 text-muted-foreground hover:text-foreground ${
       props.className ?? ""
     }`}
   >

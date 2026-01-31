@@ -3,6 +3,10 @@
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "@/components/ui/button";
 import {
+  StrategyType,
+  useCourseContlictResolver,
+} from "./hooks/useCourseContlictResolver";
+import {
   AlertDialog,
   AlertDialogContent,
   AlertDialogHeader,
@@ -13,38 +17,38 @@ import {
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
 import { FC } from "react";
-import {
-  StrategyType,
-  useCourseContlictResolver,
-} from "./hooks/useCourseContlictResolver";
 
-interface ConflictResolverModalProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
+export interface ConflictData {
   course: Course;
   occasion: CourseOccasion;
   collisions: Course[];
   strategy: StrategyType;
 }
 
+interface ConflictResolverModalProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  conflictData: ConflictData;
+}
+
 export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
   open,
   setOpen,
-  course,
-  occasion,
-  collisions,
-  strategy,
+  conflictData,
 }) => {
   const { resolveConflict } = useCourseContlictResolver();
 
-  if (collisions.length === 0) {
+  if (conflictData.collisions.length === 0) {
     return null;
   }
 
   const handleResolution =
     (type: "replace" | "extra") => (e: React.MouseEvent) => {
       e.preventDefault();
-      resolveConflict(type, course, occasion, collisions, strategy);
+      resolveConflict({
+        ...conflictData,
+        type,
+      });
       setOpen(false);
     };
 
@@ -59,14 +63,14 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         <AlertDialogHeader>
           <AlertDialogTitle>Block already occupied</AlertDialogTitle>
           <AlertDialogDescription>
-            The selected block for <strong>{course.code}</strong> is already
-            occupied by:
+            The selected block for <strong>{conflictData.course.code}</strong>{" "}
+            is already occupied by:
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <div className="text-sm mt-2 mb-4 text-muted-foreground bg-muted/50 p-3 rounded-md">
           <ul className="list-disc pl-4 space-y-1">
-            {collisions.map((c) => (
+            {conflictData.collisions.map((c) => (
               <li key={c.code}>
                 <span className="font-semibold">{c.code}</span> - {c.name}
               </li>

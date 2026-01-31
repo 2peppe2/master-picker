@@ -11,6 +11,7 @@ import {
   KeyboardSensor,
   DragStartEvent,
   DragEndEvent,
+  Over,
 } from "@dnd-kit/core";
 
 interface RenderDraggedArgs<T> {
@@ -22,7 +23,7 @@ export interface OnDragStartArgs<T> {
 }
 
 export interface OnDragEndArgs {
-  over: any;
+  over: Over | null;
 }
 
 interface DndProviderProps<T> {
@@ -33,7 +34,7 @@ interface DndProviderProps<T> {
 }
 
 export const DndProvider = <T,>({
-  renderDragged: Dragged,
+  renderDragged: DraggedItem,
   onDragEnd,
   onDragStart,
   children,
@@ -82,7 +83,7 @@ export const DndProvider = <T,>({
           easing: "cubic-bezier(0.18, 0.67, 0.6, 1.22)",
         }}
       >
-        {activeItem ? <Dragged active={activeItem} /> : null}
+        {activeItem ? <DraggedItem active={activeItem} /> : null}
       </DragOverlay>
     </DndContext>
   );
