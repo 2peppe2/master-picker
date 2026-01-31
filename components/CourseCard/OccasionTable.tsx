@@ -41,12 +41,14 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   return (
     <>
       <ConflictResolverModal
-        strategy="button"
         open={alertOpen}
         setOpen={setAlertOpen}
-        course={course}
-        occasion={selectedOccasion}
-        collisions={collisions}
+        conflictData={{
+          strategy: "button",
+          collisions,
+          course,
+          occasion: selectedOccasion,
+        }}
       />
 
       <Table>
@@ -119,7 +121,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       setSelectedOccasion(occasion);
       setAlertOpen(true);
     } else {
-      executeAdd({ course, occasion, startegy: "button" });
+      executeAdd({ course, occasion, strategy: "button" });
     }
   };
 

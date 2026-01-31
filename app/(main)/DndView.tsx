@@ -3,24 +3,27 @@
 import { useCourseContlictResolver } from "@/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { ConflictResolverModal } from "@/components/ConflictResolverModal";
+import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
 import { userPreferencesAtom } from "../atoms/UserPreferences";
 import { PeriodNodeData } from "@/components/Droppable";
-import {
-  DndProvider,
-  OnDragEndArgs,
-  OnDragStartArgs,
-} from "@/components/DndProvider";
-import CourseCard from "@/components/CourseCard";
-import { Course, CourseOccasion } from "./page";
 import Schedule from "./(schedule)/Schedule";
 import { Drawer } from "./(drawer)/Drawer";
+import {
+  ConflictData,
+  ConflictResolverModal,
+} from "@/components/ConflictResolverModal";
 import {
   useScheduleStore,
   WILDCARD_BLOCK_START,
 } from "../atoms/schedule/scheduleStore";
 import { useAtomValue } from "jotai";
 import { FC, useState } from "react";
+import {
+  DndProvider,
+  OnDragEndArgs,
+  OnDragStartArgs,
+} from "@/components/DndProvider";
+import { Course } from "./page";
 
 interface DndViewProps {
   courses: Course[];
@@ -36,13 +39,8 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
   } = useScheduleStore();
 
-  const [alertData, setAlertData] = useState<{
-    course: Course;
-    occasion: CourseOccasion;
-    collisions: Course[];
-    dropSlot: { block: number; period: number };
-  } | null>(null);
-  const [alertOpen, setAlertOpen] = useState(false);
+  const [conflictData, setConflictData] = useState<ConflictData | null>(null);
+  const [conflictOpen, setConflictOpen] = useState(false);
 
   const onDragEnd = (event: OnDragEndArgs) => {
     const droppedCourse = draggedCourse;
@@ -116,18 +114,18 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     });
 
     if (slot || currentCollisions.length > 0) {
-      setAlertData({
+      setConflictData({
         course: droppedCourse,
         occasion: finalOccasion,
         collisions: currentCollisions,
-        dropSlot: { block: targetBlock, period: targetPeriod },
+        strategy: "dropped",
       });
-      setAlertOpen(true);
+      setConflictOpen(true);
     } else {
       executeAdd({
         course: droppedCourse,
         occasion: finalOccasion,
-        startegy: "dropped",
+        strategy: "dropped",
       });
     }
   };
@@ -138,17 +136,14 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       onDragStart={(event: OnDragStartArgs<Course>) =>
         setDraggedCourse(event.active)
       }
-      renderDragged={({ active }) => (
-        <CourseCard dropped={false} course={active} />
-      )}
+      renderDragged={({ active }) => <GhostCourseCard course={active} />}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
-        {alertOpen && alertData && (
+        {conflictOpen && conflictData && (
           <ConflictResolverModal
-            strategy="dropped"
-            open={alertOpen}
-            setOpen={setAlertOpen}
-            {...alertData}
+            open={conflictOpen}
+            setOpen={setConflictOpen}
+            conflictData={conflictData}
           />
         )}
         <Drawer courses={courses} />
