@@ -7,8 +7,7 @@ import {
   Scale,
   Semester,
 } from "./generated/client/enums";
-import { entries } from "lodash";
-import { Course, CourseDetail, CourseDetails, MasterName, MasterRequirement, MasterRequirements, Program, ProgramYear } from "./json_types";
+import { Course, CourseDetail, CourseDetails, MasterName, MasterRequirements, Program, ProgramYear } from "./json_types";
 
 function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
@@ -25,7 +24,7 @@ function mapReqTypeToCreditType(t: string): CreditType | null {
 }
 
 async function main() {
-  await delateAllData();
+  //await delateAllData();
   await seedData();
   //await seedMastersData();
   //await seedMasterRequirementsData();
