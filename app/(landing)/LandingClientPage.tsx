@@ -23,7 +23,7 @@ interface LandingClientPageProps {
 }
 
 const LandingClientPage = ({ programs }: LandingClientPageProps) => {
-    const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const router = useRouter();
 
@@ -45,12 +45,14 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           LiU Master
         </h1>
         <p className="mb-8 max-w-xl text-center text-lg text-muted-foreground">
-            Helping students plan their master&apos;s degree with ease
+          Drop the crazy excel sheets.
+          <br />
+          Embrace effortless course planning.
         </p>
 
         <div className="flex flex-col items-center gap-8">
           <Combobox
-            items={programs.map((p) => `${p.shortname} - ${p.name}`)}
+            items={programs.map((p) => p.program)} // value you want stored
             value={selectedProgram}
             onValueChange={setSelectedProgram}
           >
@@ -61,11 +63,17 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             <ComboboxContent>
               <ComboboxEmpty>No programs found.</ComboboxEmpty>
               <ComboboxList>
-                {(item) => (
-                  <ComboboxItem key={item} value={item}>
-                    {item}
-                  </ComboboxItem>
-                )}
+                {(item) => {
+                  const program = programs.find((p) => p.program === item);
+                  const label = program
+                    ? `${program.shortname} - ${program.name}`
+                    : item;
+                  return (
+                    <ComboboxItem key={item} value={item}>
+                      {label}
+                    </ComboboxItem>
+                  );
+                }}
               </ComboboxList>
             </ComboboxContent>
           </Combobox>
@@ -73,9 +81,9 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           <Combobox
             items={
               selectedProgram
-                ? programs
+                ? (programs
                     .find((p) => p.program === selectedProgram)
-                    ?.programCourses.map((c) => c.startYear.toString()) ?? []
+                    ?.programCourses.map((c) => c.startYear.toString()) ?? [])
                 : []
             }
             value={selectedYear}
