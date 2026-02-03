@@ -1,6 +1,7 @@
 "use client";
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictManager";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -29,12 +30,11 @@ interface CourseAddButtonProps {
 
 const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
   const {
-    getters: { getOccasionCollisions, checkWildcardExpansion },
+    getters: { checkWildcardExpansion },
   } = useScheduleStore();
 
   const { executeAdd } = useCourseContlictResolver();
 
-  const [collisionAlertOpen, setCollisionAlertOpen] = useState(false);
   const [expansionAlertOpen, setExpansionAlertOpen] = useState(false);
 
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
@@ -42,13 +42,13 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
   );
   const [popoverOpen, setPopoverOpen] = useState(false);
 
+  const { conflictData, conflictOpen, setConflictOpen, showConflictIfNeeded } =
+    useConflictManager();
+
   const isMultiOccasion = course.CourseOccasion.length > 1;
 
   const handleAddAttempt = (occasion: CourseOccasion) => {
-    const collisions = getOccasionCollisions({ occasion });
-    if (collisions.length > 0) {
-      setSelectedOccasion(occasion);
-      setCollisionAlertOpen(true);
+    if (showConflictIfNeeded({ course, occasion, strategy: "button" })) {
       return;
     }
 
@@ -61,22 +61,15 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
     executeAdd({ course, occasion, strategy: "button" });
   };
 
-  const collisions = getOccasionCollisions({
-    occasion: selectedOccasion,
-  });
-
   return (
     <>
-      <ConflictResolverModal
-        open={collisionAlertOpen}
-        setOpen={setCollisionAlertOpen}
-        conflictData={{
-          strategy: "button",
-          occasion: selectedOccasion,
-          collisions,
-          course,
-        }}
-      />
+      {conflictOpen && conflictData && (
+        <ConflictResolverModal
+          open={conflictOpen}
+          setOpen={setConflictOpen}
+          conflictData={conflictData}
+        />
+      )}
 
       <WildcardExpansionDialog
         open={expansionAlertOpen}

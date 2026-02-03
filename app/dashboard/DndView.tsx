@@ -1,133 +1,45 @@
 "use client";
 
-import { useCourseContlictResolver } from "@/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { useCourseDropHandler } from "./(dndView)/hooks/useCourseDropHandler";
+import { ConflictResolverModal } from "@/components/ConflictResolverModal";
+import { useConflictManager } from "../../components/ConflictResolverModal/hooks/useConflictManager";
 import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
-import { userPreferencesAtom } from "../atoms/UserPreferences";
+import { useScheduleStore } from "../atoms/schedule/scheduleStore";
 import { PeriodNodeData } from "@/components/Droppable";
 import Schedule from "./(schedule)/Schedule";
 import { Drawer } from "./(drawer)/Drawer";
-import {
-  ConflictData,
-  ConflictResolverModal,
-} from "@/components/ConflictResolverModal";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "../atoms/schedule/scheduleStore";
-import { useAtomValue } from "jotai";
-import { FC, useState } from "react";
 import {
   DndProvider,
   OnDragEndArgs,
   OnDragStartArgs,
 } from "@/components/DndProvider";
 import { Course } from "./page";
+import { FC } from "react";
 
 interface DndViewProps {
   courses: Course[];
 }
 
 const DndView: FC<DndViewProps> = ({ courses }) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
-
-  const { executeAdd } = useCourseContlictResolver();
   const {
     state: { draggedCourse },
-    mutators: { addCourseByDrop, addBlockToSemester, setDraggedCourse },
-    getters: { getSlotCourse, getOccasionCollisions, getSlotBlocks },
+    mutators: { setDraggedCourse },
   } = useScheduleStore();
 
-  const [conflictData, setConflictData] = useState<ConflictData | null>(null);
-  const [conflictOpen, setConflictOpen] = useState(false);
+  const { conflictData, conflictOpen, setConflictOpen } = useConflictManager();
+  const { handleDrop } = useCourseDropHandler();
 
   const onDragEnd = (event: OnDragEndArgs) => {
     const droppedCourse = draggedCourse;
     setDraggedCourse(null);
 
-    if (!event.over) return;
-    if (!droppedCourse) return;
+    if (!event.over || !droppedCourse) return;
 
-    const overData = event.over.data.current as PeriodNodeData;
-    const targetPeriod = overData.periodNumber + 1;
-    const targetBlock = overData.blockNumber + 1;
-
-    const { year, semester } = relativeSemesterToYearAndSemester(
-      startingYear,
-      overData.semesterNumber,
-    );
-
-    const relevantOccasion = droppedCourse.CourseOccasion.find(
-      (occ) => occ.year === year && occ.semester === semester,
-    );
-
-    if (!relevantOccasion) return;
-
-    const relevantPeriod = relevantOccasion.periods.find(
-      (p) => p.period === targetPeriod,
-    );
-
-    if (!relevantPeriod) return;
-
-    const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
-
-    const isValidDrop =
-      isWildcardDrop || relevantPeriod.blocks.includes(targetBlock);
-
-    if (!isValidDrop) return;
-
-    const currentBlocks = getSlotBlocks({
-      semester: overData.semesterNumber,
-      period: targetPeriod,
+    handleDrop({
+      course: droppedCourse,
+      overData: event.over.data.current as PeriodNodeData,
     });
-
-    const isGhostDrop = overData.blockNumber >= currentBlocks.length;
-
-    let finalOccasion = relevantOccasion;
-    if (isWildcardDrop) {
-      finalOccasion = {
-        ...relevantOccasion,
-        periods: relevantOccasion.periods.map((p) => ({ ...p, blocks: [] })),
-      };
-    }
-
-    if (isGhostDrop) {
-      addBlockToSemester({ semester: overData.semesterNumber });
-
-      addCourseByDrop({
-        course: droppedCourse,
-        occasion: finalOccasion,
-      });
-
-      return;
-    }
-
-    const currentCollisions = getOccasionCollisions({
-      occasion: finalOccasion,
-    });
-
-    const slot = getSlotCourse({
-      semester: overData.semesterNumber,
-      period: targetPeriod,
-      block: targetBlock,
-    });
-
-    if (slot || currentCollisions.length > 0) {
-      setConflictData({
-        course: droppedCourse,
-        occasion: finalOccasion,
-        collisions: currentCollisions,
-        strategy: "dropped",
-      });
-      setConflictOpen(true);
-    } else {
-      executeAdd({
-        course: droppedCourse,
-        occasion: finalOccasion,
-        strategy: "dropped",
-      });
-    }
   };
 
   return (
