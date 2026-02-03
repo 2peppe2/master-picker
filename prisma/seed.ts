@@ -24,7 +24,7 @@ function mapReqTypeToCreditType(t: string): CreditType | null {
 }
 
 async function main() {
-  //await delateAllData();
+  await delateAllData();
   await seedData();
   //await seedMastersData();
   //await seedMasterRequirementsData();
@@ -114,7 +114,7 @@ async function seedCoursesData(program: string, id: number) {
     await seedExamination(detailedInfo, c, id);
 
     for (const m of c.mastersPrograms ?? []) {
-      await seedMaster(m);
+      await seedMaster(m, program);
       await seedMasterCourse(m, c, id);
     }
     for (const occasion of c.occasions) {
@@ -173,11 +173,11 @@ async function seedMasterCourse(m: string, c: Course, id: number) {
   });
 }
 
-async function seedMaster(m: string) {
+async function seedMaster(m: string, program: string) {
   await prisma.master.upsert({
     where: { master: m },
     update: {},
-    create: { master: m },
+    create: { master: m, masterProgram: program },
   });
 }
 
@@ -245,7 +245,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
   ) as MasterRequirements;
 
   for (const [master, requirements] of Object.entries(masterRequirements)) {
-    await seedMaster(master);
+    await seedMaster(master, program);
 
     const requirementRow = await prisma.requirement.create({
       data: { masterProgram: master },
@@ -315,12 +315,14 @@ async function seedMastersData(program: string, id: number) {
         name: info.name,
         icon: info.icon,
         style: info.style,
+        masterProgram: program,
       },
       create: {
         master: info.id,
         name: info.name,
         icon: info.icon,
         style: info.style,
+        masterProgram: program,
       },
     });
   }

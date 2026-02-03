@@ -1,8 +1,8 @@
 model Program {
-    program String   @id
-    name    String
-    shortname  String
+  program   String @id
+  name      String
+  shortname String
 
-    programCourses ProgramCourse[]
-    masters Master[]
+  programCourses ProgramCourse[]
+  masters        Master[]
 }
