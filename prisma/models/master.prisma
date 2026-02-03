@@ -1,12 +1,12 @@
 model Master {
-  master       String         @id
-  name         String?
-  icon         String?
-  style        String?
+  master        String         @id
+  name          String?
+  icon          String?
+  style         String?
   masterProgram String
-  requirements Requirement[]
-  CourseMaster CourseMaster[]
+  requirements  Requirement[]
+  CourseMaster  CourseMaster[]
 
   courseOccasions CourseOccasion[]
-  program  Program       @relation(fields: [masterProgram], references: [program], onDelete: Cascade)
+  program         Program          @relation(fields: [masterProgram], references: [program], onDelete: Cascade)
 }

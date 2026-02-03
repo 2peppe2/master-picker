@@ -1,10 +1,10 @@
 model Examination {
-  credits    Float
-  module     String
-  courseCode String
+  credits         Float
+  module          String
+  courseCode      String
   programCourseID Int
-  name       String
-  scale      Scale  @default(G_OR_U)
+  name            String
+  scale           Scale  @default(G_OR_U)
 
   Course Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID])
 

@@ -1,9 +1,9 @@
 model CourseMaster {
-  master     String
-  courseCode String
+  master          String
+  courseCode      String
   programCourseID Int
-  Master     Master @relation(fields: [master], references: [master])
-  Course     Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
+  Master          Master @relation(fields: [master], references: [master])
+  Course          Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 
   @@id(name: "courseMasterId", [master, courseCode])
 }

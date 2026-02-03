@@ -1,9 +1,9 @@
 model ProgramCourse {
-    id          Int     @id
-    program     String
-    startYear   Int
+  id        Int    @id
+  program   String
+  startYear Int
 
-    Program     Program  @relation(fields: [program], references: [program], onDelete: Cascade)
+  Program Program @relation(fields: [program], references: [program], onDelete: Cascade)
 
-    courses Course[]
+  courses Course[]
 }
