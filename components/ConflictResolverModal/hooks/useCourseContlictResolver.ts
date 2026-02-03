@@ -1,8 +1,9 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/(main)/page";
 import { useAtomValue } from "jotai";
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 
 export interface DropSlot {
   block: number;
@@ -29,15 +30,13 @@ export interface ResolveConflictArgs {
 
 export const useCourseContlictResolver = () => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { checkWildcardExpansion } = useScheduleGetters();
   const {
-    mutators: {
-      addCourseByButton,
-      addCourseByDrop,
-      addBlockToSemester,
-      removeCourse,
-    },
-    getters: { checkWildcardExpansion },
-  } = useScheduleStore();
+    addCourseByButton,
+    addCourseByDrop,
+    addBlockToSemester,
+    removeCourse,
+  } = useScheduleMutators();
 
   const executeAdd = ({ course, occasion, strategy }: ExecuteAddArgs) => {
     if (strategy === "dropped") {

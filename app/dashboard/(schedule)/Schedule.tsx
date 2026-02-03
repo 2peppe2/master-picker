@@ -1,13 +1,14 @@
-import { useScheduleStore } from "../../atoms/schedule/scheduleStore";
+import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { SemesterView } from "./SemesterView";
+import { useAtomValue } from "jotai";
 import { range } from "lodash";
 
 const Schedule = () => {
-  const { state } = useScheduleStore();
+  const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
 
   return (
     <>
-      {range(0, state.schedules.length).map((index) => (
+      {range(0, schedules.length).map((index) => (
         <SemesterView key={index} semesterNumber={index} />
       ))}
     </>

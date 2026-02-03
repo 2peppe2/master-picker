@@ -1,11 +1,9 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { scheduleAtoms, WILDCARD_BLOCK_START } from "@/app/atoms/schedule/atoms";
 import { Separator } from "@/components/ui/separator";
 import GhostBlock from "./(block)/GhostBlock";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "@/app/atoms/schedule/scheduleStore";
 import { useAtomValue } from "jotai";
 import Block from "./(block)/Block";
 import { FC, useMemo } from "react";
@@ -20,12 +18,9 @@ export const PeriodView: FC<PeriodViewProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
-  const {
-    state: { draggedCourse },
-    getters: { getSlotBlocks },
-  } = useScheduleStore();
-
+  const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { getSlotBlocks } = useScheduleGetters();
 
   const blocks = getSlotBlocks({
     semester: semesterNumber,

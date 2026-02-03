@@ -1,5 +1,8 @@
 import { Course, CourseOccasion } from "../../dashboard/page";
 
+export type Slot = Course | null;
+export type ScheduleGrid = Slot[][][]; // [semester][period][block]
+
 export type AddCourseAction = "dropped" | "default";
 
 export interface AddCourseByButtonArgs {

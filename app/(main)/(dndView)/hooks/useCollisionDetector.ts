@@ -1,6 +1,6 @@
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { PeriodNodeData } from "@/components/Droppable";
 import { CourseOccasion } from "../../page";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 
 interface DetectCollisionsArgs {
   occasion: CourseOccasion;
@@ -10,7 +10,7 @@ interface DetectCollisionsArgs {
 }
 
 export const useCollisionDetector = () => {
-  const { getters } = useScheduleStore();
+  const { getOccasionCollisions, getSlotCourse } = useScheduleGetters();
 
   const detectCollisions = ({
     occasion,
@@ -18,8 +18,8 @@ export const useCollisionDetector = () => {
     targetBlock,
     targetPeriod,
   }: DetectCollisionsArgs) => {
-    const collisions = getters.getOccasionCollisions({ occasion });
-    const existingSlot = getters.getSlotCourse({
+    const collisions = getOccasionCollisions({ occasion });
+    const existingSlot = getSlotCourse({
       semester: overData.semesterNumber,
       period: targetPeriod,
       block: targetBlock,

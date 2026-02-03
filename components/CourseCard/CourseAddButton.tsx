@@ -5,7 +5,6 @@ import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictMa
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
@@ -23,16 +22,14 @@ import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { FC, useState } from "react";
 import { Plus } from "lucide-react";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 
 interface CourseAddButtonProps {
   course: Course;
 }
 
 const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
-  const {
-    getters: { checkWildcardExpansion },
-  } = useScheduleStore();
-
+  const { checkWildcardExpansion } = useScheduleGetters();
   const { executeAdd } = useCourseContlictResolver();
 
   const [expansionAlertOpen, setExpansionAlertOpen] = useState(false);

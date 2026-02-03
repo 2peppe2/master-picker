@@ -1,27 +1,29 @@
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Slot, useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Popover, PopoverContent } from "@/components/ui/popover";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
+import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { ChevronRightIcon, Ellipsis } from "lucide-react";
+import { PopoverTrigger } from "@radix-ui/react-popover";
+import { Slot } from "@/app/atoms/schedule/types";
+import { Button } from "@/components/ui/button";
+import { FC, useMemo, useState } from "react";
 import { PeriodView } from "./PeriodView";
 import { useAtomValue } from "jotai";
-import { FC, useMemo, useState } from "react";
 import { range } from "lodash";
-import { Popover, PopoverContent } from "@/components/ui/popover";
-import { PopoverTrigger } from "@radix-ui/react-popover";
-import { Button } from "@/components/ui/button";
 
 interface SemesterViewProps {
   semesterNumber: number;
 }
 
 export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
-  const {
-    state: { shownSemesters },
-    getters: { getSlotPeriods },
-  } = useScheduleStore();
+  const shownSemesters = useAtomValue(scheduleAtoms.shownSemestersAtom);
+  const { getSlotPeriods } = useScheduleGetters();
+
   const periods = getSlotPeriods({ semester: semesterNumber });
 
   return (
@@ -71,9 +73,7 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     [semester, startingYear],
   );
 
-  const {
-    mutators: { toggleShownSemester, addBlockToSemester },
-  } = useScheduleStore();
+  const { toggleShownSemester, addBlockToSemester } = useScheduleMutators();
 
   return (
     <div className="flex items-center">

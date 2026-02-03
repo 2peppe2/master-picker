@@ -1,7 +1,7 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "../schedule/hooks/useScheduleGetters";
 import { useAtomValue, useSetAtom, WritableAtom } from "jotai";
 import { useCallback, useDeferredValue, useMemo } from "react";
-import { useScheduleStore } from "../schedule/scheduleStore";
 import { userPreferencesAtom } from "../UserPreferences";
 import { atomWithReset, RESET } from "jotai/utils";
 import { Course } from "../../dashboard/page";
@@ -88,11 +88,9 @@ export const useFilterStore = (): FilterStore => {
 };
 
 export const useFiltered = (courses: Course[]) => {
+  const { getSlotCourse, hasMatchingOccasion } = useScheduleGetters();
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const { atoms } = useFilterStore();
-  const {
-    getters: { getSlotCourse, hasMatchingOccasion },
-  } = useScheduleStore();
 
   const search = useAtomValue(atoms.searchAtom);
   const master = useAtomValue(atoms.masterAtom);

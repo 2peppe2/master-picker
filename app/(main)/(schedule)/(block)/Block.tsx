@@ -1,12 +1,10 @@
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/atoms";
 import { useFilterStore } from "@/app/atoms/filter/filterStore";
 import { SemesterOption } from "@/app/atoms/filter/types";
 import { FC, useCallback, useMemo } from "react";
 import WildcardBlock from "./WildcardBlock";
 import StandardBlock from "./StandardBlock";
-import {
-  useScheduleStore,
-  WILDCARD_BLOCK_START,
-} from "@/app/atoms/schedule/scheduleStore";
 import { Course } from "../../page";
 
 export interface BlockProps {
@@ -28,9 +26,7 @@ const Block: FC<BlockProps> = ({
   periodNumber,
   blockNumber,
 }) => {
-  const {
-    getters: { getSlotCourse },
-  } = useScheduleStore();
+  const { getSlotCourse } = useScheduleGetters();
 
   const {
     mutators: { selectBlocks, selectPeriods, selectSemester },

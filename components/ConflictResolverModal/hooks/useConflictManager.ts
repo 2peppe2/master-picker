@@ -1,8 +1,8 @@
-import { Course, CourseOccasion } from "@/app/(main)/page";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { ConflictData } from "@/components/ConflictResolverModal";
-import { useCallback, useState } from "react";
+import { Course, CourseOccasion } from "@/app/(main)/page";
 import { StrategyType } from "./useCourseContlictResolver";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { useCallback, useState } from "react";
 
 interface ShowConflictIfNeededArgs {
   course: Course;
@@ -13,9 +13,7 @@ interface ShowConflictIfNeededArgs {
 export const useConflictManager = () => {
   const [conflictData, setConflictData] = useState<ConflictData | null>(null);
   const [conflictOpen, setConflictOpen] = useState(false);
-  const {
-    getters: { getOccasionCollisions },
-  } = useScheduleStore();
+  const { getOccasionCollisions } = useScheduleGetters();
 
   /**
    * Shows the conflict resolution dialog with the provided data.

@@ -1,3 +1,11 @@
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { MasterBadge } from "@/components/MasterBadge";
+import { CourseDialog } from "./courseDialog/Dialog";
+import { Button } from "@/components/ui/button";
+import CourseAddButton from "./CourseAddButton";
+import { Course } from "@/app/(main)/page";
+import { X } from "lucide-react";
+import { memo, useState } from "react";
 import {
   Card,
   CardDescription,
@@ -19,12 +27,12 @@ interface CourseCardProps {
   dropped: boolean;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
+const InnerCourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const { code, name } = course;
 
   const masterPrograms = course.CourseMaster || [];
 
-  const { mutators } = useScheduleStore();
+  const { removeCourse } = useScheduleMutators();
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -34,7 +42,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
         <Button
           size="icon"
           variant="ghost"
-          onClick={() => mutators.removeCourse({ courseCode: course.code })}
+          onClick={() => removeCourse({ courseCode: course.code })}
           className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
         >
           <X className="h-4 w-4" />
@@ -83,4 +91,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   );
 };
 
-export default CourseCard;
+const MemoizedCourseCard = memo<CourseCardProps>(
+  (props) => <InnerCourseCard {...props} />,
+  (prev, next) => prev.course.code === next.course.code,
+);
+
+export default MemoizedCourseCard;
+
+MemoizedCourseCard.displayName = "MemoizedCourseCard";

@@ -1,6 +1,6 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
 import { Course } from "../../page";
 import { useAtomValue } from "jotai";

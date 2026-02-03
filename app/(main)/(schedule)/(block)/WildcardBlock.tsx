@@ -1,4 +1,4 @@
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 import { Draggable } from "@/components/CourseCard/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
@@ -12,9 +12,7 @@ const WildcardBlock: FC<BlockViewProps> = ({
   blockId,
   onFilterChange,
 }) => {
-  const {
-    mutators: { deleteBlockFromSemester },
-  } = useScheduleStore();
+  const { deleteBlockFromSemester } = useScheduleMutators();
 
   const handleRemoveSlot = (e: React.MouseEvent) => {
     e.stopPropagation();

@@ -1,6 +1,7 @@
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { PeriodNodeData } from "@/components/Droppable";
 import { Course, CourseOccasion } from "../../page";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 
 interface HandleGhostDropArgs {
   overData: PeriodNodeData;
@@ -10,7 +11,8 @@ interface HandleGhostDropArgs {
 }
 
 export const useGhostDropHandler = () => {
-  const { mutators, getters } = useScheduleStore();
+  const { addBlockToSemester, addCourseByDrop } = useScheduleMutators();
+  const { getSlotBlocks } = useScheduleGetters();
 
   const handleGhostDrop = ({
     course,
@@ -18,7 +20,7 @@ export const useGhostDropHandler = () => {
     overData,
     targetPeriod,
   }: HandleGhostDropArgs) => {
-    const currentBlocks = getters.getSlotBlocks({
+    const currentBlocks = getSlotBlocks({
       semester: overData.semesterNumber,
       period: targetPeriod,
     });
@@ -26,8 +28,8 @@ export const useGhostDropHandler = () => {
     const isGhostDrop = overData.blockNumber >= currentBlocks.length;
 
     if (isGhostDrop) {
-      mutators.addBlockToSemester({ semester: overData.semesterNumber });
-      mutators.addCourseByDrop({ course, occasion });
+      addBlockToSemester({ semester: overData.semesterNumber });
+      addCourseByDrop({ course, occasion });
       return true;
     }
 

@@ -1,46 +1,50 @@
 "use client";
 
+import { useConflictManager } from "../../components/ConflictResolverModal/hooks/useConflictManager";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
 import { useCourseDropHandler } from "./(dndView)/hooks/useCourseDropHandler";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
-import { useConflictManager } from "../../components/ConflictResolverModal/hooks/useConflictManager";
 import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
-import { useScheduleStore } from "../atoms/schedule/scheduleStore";
 import { PeriodNodeData } from "@/components/Droppable";
+import { scheduleAtoms } from "../atoms/schedule/atoms";
 import Schedule from "./(schedule)/Schedule";
 import { Drawer } from "./(drawer)/Drawer";
+import { FC, useCallback } from "react";
 import {
   DndProvider,
   OnDragEndArgs,
   OnDragStartArgs,
 } from "@/components/DndProvider";
+import { useAtom } from "jotai";
 import { Course } from "./page";
-import { FC } from "react";
 
 interface DndViewProps {
   courses: Course[];
 }
 
 const DndView: FC<DndViewProps> = ({ courses }) => {
-  const {
-    state: { draggedCourse },
-    mutators: { setDraggedCourse },
-  } = useScheduleStore();
+  const [draggedCourse, setDraggedCourse] = useAtom(
+    scheduleAtoms.draggedCourseAtom,
+  );
 
   const { conflictData, conflictOpen, setConflictOpen } = useConflictManager();
   const { handleDrop } = useCourseDropHandler();
 
-  const onDragEnd = (event: OnDragEndArgs) => {
-    const droppedCourse = draggedCourse;
-    setDraggedCourse(null);
+  const onDragEnd = useCallback(
+    (event: OnDragEndArgs) => {
+      setDraggedCourse(null);
 
-    if (!event.over || !droppedCourse) return;
+      if (!event.over || !draggedCourse) {
+        return;
+      }
 
-    handleDrop({
-      course: droppedCourse,
-      overData: event.over.data.current as PeriodNodeData,
-    });
-  };
+      handleDrop({
+        course: draggedCourse,
+        overData: event.over.data.current as PeriodNodeData,
+      });
+    },
+    [handleDrop, draggedCourse, setDraggedCourse],
+  );
 
   return (
     <DndProvider<Course>

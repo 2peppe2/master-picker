@@ -2,7 +2,6 @@
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/(main)/page";
@@ -17,14 +16,13 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { useAtomValue } from "jotai";
 import { FC, useMemo, useState } from "react";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { MasterBadge } from "../MasterBadge";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import AddAlert from "../AddAlert";
 
 interface OccasionTableProps {
   course: Course;
@@ -36,9 +34,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
   );
   const [alertOpen, setAlertOpen] = useState(false);
 
-  const {
-    getters: { getOccasionCollisions },
-  } = useScheduleStore();
+  const { getOccasionCollisions } = useScheduleGetters();
 
   const hasRecommendedMaster = course.CourseOccasion.some(
     (occasion) => occasion.recommendedMaster.length > 0,
@@ -106,9 +102,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   setSelectedOccasion,
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const {
-    getters: { getOccasionCollisions },
-  } = useScheduleStore();
+  const { getOccasionCollisions } = useScheduleGetters();
   const { executeAdd } = useCourseContlictResolver();
 
   const relativeSemester = useMemo(
