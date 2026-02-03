@@ -33,7 +33,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       program: selectedProgram,
       year: selectedYear,
     });
-    router.push(`/dashboard?${params.toString()}`);
+    router.push(`/guide?${params.toString()}`);
   };
   return (
     <div className="min-h-screen ">
@@ -52,7 +52,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
 
         <div className="flex flex-col items-center gap-8">
           <Combobox
-            items={programs.map((p) => p.program)} // value you want stored
+            items={programs.map((p) => p.program)}
             value={selectedProgram}
             onValueChange={setSelectedProgram}
           >
@@ -74,6 +74,35 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
                     </ComboboxItem>
                   );
                 }}
+              </ComboboxList>
+            </ComboboxContent>
+          </Combobox>
+
+          <Combobox
+            items={
+              selectedProgram
+                ? (programs
+                    .find((p) => p.program === selectedProgram)
+                    ?.programCourses.map((c) => c.startYear.toString()) ?? [])
+                : []
+            }
+            value={selectedYear}
+            onValueChange={setSelectedYear}
+          >
+            <ComboboxInput
+              disabled={selectedProgram === null}
+              placeholder="Select starting year"
+              className="w-80 h-12 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg [&_[data-slot=input-group-control]]:px-4"
+            />
+
+            <ComboboxContent>
+              <ComboboxEmpty>Year not found.</ComboboxEmpty>
+              <ComboboxList>
+                {(item) => (
+                  <ComboboxItem key={item} value={item}>
+                    {item}
+                  </ComboboxItem>
+                )}
               </ComboboxList>
             </ComboboxContent>
           </Combobox>
