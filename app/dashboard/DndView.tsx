@@ -158,7 +158,6 @@ export default DndView;
 const MainSection = () => (
   <main className="flex flex-col gap-4 px-8 min-w-0">
     <MastersRequirementsBar />
-
     <Schedule />
   </main>
 );

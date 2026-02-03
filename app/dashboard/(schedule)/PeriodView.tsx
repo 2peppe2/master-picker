@@ -45,7 +45,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
         occ.year === year &&
         occ.semester === semester &&
         occ.periods.some(
-          (p) => p.period === periodNumber + 1 && p.blocks.length === 0,
+          (p) => p.period === periodNumber + 1, //&& p.blocks.length === 0,
         ),
     );
 

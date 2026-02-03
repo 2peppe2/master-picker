@@ -70,8 +70,8 @@ const draggedCourseAtom = atom<Course | null>(null);
 export const useScheduleStore = (): ScheduleStore => {
   const { startingYear, masterPeriod } = useAtomValue(userPreferencesAtom);
   const [shownSemesters, setShownSemesters] = useAtom(shownSemestersAtom);
-  const [schedules, setSchedules] = useAtom(schedulesAtom);
   const [draggedCourse, setDraggedCourse] = useAtom(draggedCourseAtom);
+  const [schedules, setSchedules] = useAtom(schedulesAtom);
 
   const selectedCourses = useMemo(() => {
     const uniqueMap = new Map<string, Course>();

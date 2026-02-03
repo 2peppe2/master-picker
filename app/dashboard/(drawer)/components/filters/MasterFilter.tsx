@@ -43,7 +43,7 @@ const MasterFilter: FC = () => {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Master Profiles</SelectLabel>
-          <SelectItem value="all">All Profiles</SelectItem>
+          <SelectItem value="all">All profiles</SelectItem>
           {options.map((option) => (
             <MasterItem
               key={option.value}
