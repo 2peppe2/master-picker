@@ -3,7 +3,7 @@
 import { mastersAtom } from "../atoms/mastersAtom";
 import { Course, Master } from "./page";
 import { useSetAtom } from "jotai";
-import DndView from "./DndView";
+import DndView from "./(dndView)";
 import { FC } from "react";
 
 interface ClientPageProps {
