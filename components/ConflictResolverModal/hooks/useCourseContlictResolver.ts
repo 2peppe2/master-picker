@@ -55,7 +55,7 @@ export const useCourseContlictResolver = () => {
         addBlockToSemester({ semester: relativeSemester });
       }
       addCourseByButton({ course, occasion });
-      dispatchScrollToCourse({ course });
+      dispatchScrollToCourse({ course, occasion });
     }
   };
 

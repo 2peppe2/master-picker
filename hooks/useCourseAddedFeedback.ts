@@ -1,33 +1,48 @@
-import { Course } from "@/app/dashboard/page";
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
+import { useAtomValue } from "jotai";
 import { useEffect } from "react";
 
 interface DispatchScrollToCourseArgs {
   course: Course;
+  occasion: CourseOccasion;
 }
 
 interface ScrollToCourseEvent {
-  courseCode: string;
+  course: Course;
+  occasion: CourseOccasion;
 }
 
-export const dispatchScrollToCourse = ({
-  course,
-}: DispatchScrollToCourseArgs) => {
+export const dispatchScrollToCourse = (args: DispatchScrollToCourseArgs) => {
   window.dispatchEvent(
     new CustomEvent<ScrollToCourseEvent>("course-added", {
-      detail: { courseCode: course.code },
+      detail: args,
     }),
   );
 };
 
 export const useScrollToCourseFeedback = () => {
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { showSemester } = useScheduleMutators();
+
   useEffect(() => {
     const handleFeedback = (event: Event) => {
       const customEvent = event as CustomEvent<ScrollToCourseEvent>;
-      const { courseCode } = customEvent.detail;
+      const { course, occasion } = customEvent.detail;
+
+      const relativeSemester = yearAndSemesterToRelativeSemester(
+        startingYear,
+        occasion.year,
+        occasion.semester,
+      );
+
+      showSemester({ semester: relativeSemester + 1 });
 
       setTimeout(() => {
         const elements = document.querySelectorAll(
-          `[data-course-code="${courseCode}"]`,
+          `[data-course-code="${course.code}"]`,
         );
 
         if (elements.length > 0) {
@@ -53,5 +68,5 @@ export const useScrollToCourseFeedback = () => {
 
     window.addEventListener("course-added", handleFeedback);
     return () => window.removeEventListener("course-added", handleFeedback);
-  }, []);
+  }, [startingYear, showSemester]);
 };
