@@ -26,6 +26,11 @@ interface LandingClientPageProps {
   }[];
 }
 
+type ComboboxItemType = {
+  label: string;
+  value: string;
+};
+
 const LandingClientPage = ({ programs }: LandingClientPageProps) => {
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
@@ -88,7 +93,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
                 value: "",
               }
             }
-            onValueChange={(item) => setSelectedProgram(item?.value || null)}
+            onValueChange={(item: ComboboxItemType) => setSelectedProgram(item?.value || null)}
           >
             <ComboboxInput
               placeholder="Select your current program"
@@ -97,7 +102,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             <ComboboxContent>
               <ComboboxEmpty>No programs found.</ComboboxEmpty>
               <ComboboxList>
-                {(item) => (
+                {(item: ComboboxItemType) => (
                   <ComboboxItem key={item.value} value={item}>
                     {item.label}
                   </ComboboxItem>
@@ -125,7 +130,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             <ComboboxContent>
               <ComboboxEmpty>Year not found.</ComboboxEmpty>
               <ComboboxList>
-                {(item) => (
+                {(item: string) => (
                   <ComboboxItem key={item} value={item}>
                     {item}
                   </ComboboxItem>
@@ -148,7 +153,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
                   value: "",
                 }
               }
-              onValueChange={(item) => setSelectedMaster(item?.value || null)}
+              onValueChange={(item: ComboboxItemType) => setSelectedMaster(item?.value || null)}
             >
               <ComboboxInput
                 disabled={selectedYear === null}
@@ -159,7 +164,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
               <ComboboxContent>
                 <ComboboxEmpty>Master not found.</ComboboxEmpty>
                 <ComboboxList>
-                  {(item) => (
+                  {(item: ComboboxItemType) => (
                     <ComboboxItem key={item.value} value={item}>
                       {item.label}
                     </ComboboxItem>
