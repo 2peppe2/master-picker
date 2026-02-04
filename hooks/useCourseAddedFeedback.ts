@@ -5,24 +5,25 @@ interface DispatchScrollToCourseArgs {
   course: Course;
 }
 
+interface ScrollToCourseEvent {
+  courseCode: string;
+}
+
 export const dispatchScrollToCourse = ({
   course,
 }: DispatchScrollToCourseArgs) => {
   window.dispatchEvent(
-    new CustomEvent("course-added", { detail: { courseCode: course.code } }),
+    new CustomEvent<ScrollToCourseEvent>("course-added", {
+      detail: { courseCode: course.code },
+    }),
   );
 };
 
-interface ScrollToCourseEvent {
-  detail: {
-    courseCode: string;
-  };
-}
-
 export const useScrollToCourseFeedback = () => {
   useEffect(() => {
-    const handleFeedback = (e: ScrollToCourseEvent) => {
-      const { courseCode } = e.detail;
+    const handleFeedback = (event: Event) => {
+      const customEvent = event as CustomEvent<ScrollToCourseEvent>;
+      const { courseCode } = customEvent.detail;
 
       setTimeout(() => {
         const elements = document.querySelectorAll(
