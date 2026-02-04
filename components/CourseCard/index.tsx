@@ -1,93 +1,40 @@
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
-import { MasterBadge } from "@/components/MasterBadge";
-import { CourseDialog } from "./courseDialog/Dialog";
-import { Button } from "@/components/ui/button";
-import CourseAddButton from "./CourseAddButton";
+import DraggedCourseCard from "./DraggedCourseCard";
+import DefaultCourseCard from "./DefaultCourseCard";
+import GhostCourseCard from "./GhostCourseCard";
 import { Course } from "@/app/dashboard/page";
-import { memo, useState } from "react";
-import { X } from "lucide-react";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { FC, memo } from "react";
 
-interface CourseCardProps {
+export type CourseCardVariant = "default" | "dropped" | "dragged" | "ghost";
+
+interface CourseCardWrapperProps {
+  variant: CourseCardVariant;
   course: Course;
-  dropped: boolean;
 }
 
-const InnerCourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
-  const { code, name } = course;
+export interface CourseCardProps {
+  course: Course;
+}
 
-  const masterPrograms = course.CourseMaster || [];
-
-  const { removeCourse } = useScheduleMutators();
-
-  const [openDialog, setOpenDialog] = useState(false);
-
-  return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
-      {dropped ? (
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={() => removeCourse({ courseCode: course.code })}
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
-        >
-          <X className="h-4 w-4" />
-        </Button>
-      ) : (
-        <CourseAddButton course={course} />
-      )}
-      <CourseDialog
-        course={course}
-        open={openDialog}
-        onOpenChange={setOpenDialog}
-      />
-      <CardHeader>
-        <CardTitle>
-          <p
-            onClick={() => setOpenDialog(true)}
-            className="cursor-pointer hover:underline underline-offset-2 text-left"
-          >
-            {code}
-          </p>
-        </CardTitle>
-        <CardDescription className="h-6">
-          <p
-            onClick={() => setOpenDialog(true)}
-            className="cursor-pointer hover:underline underline-offset-2 text-left text-sm"
-            style={{
-              display: "-webkit-box",
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {name}
-          </p>
-        </CardDescription>
-      </CardHeader>
-      <CardFooter className="mt-auto text-foreground">
-        <div className="flex justify-center gap-2 w-full">
-          {masterPrograms.map((program) => (
-            <MasterBadge name={program.master} key={program.master} />
-          ))}
-        </div>
-      </CardFooter>
-    </Card>
-  );
+const CARD_VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
+  dropped: (props) => <DefaultCourseCard dropped={true} {...props} />,
+  default: (props) => <DefaultCourseCard dropped={false} {...props} />,
+  dragged: DraggedCourseCard,
+  ghost: GhostCourseCard,
 };
 
-const MemoizedCourseCard = memo<CourseCardProps>(
-  (props) => <InnerCourseCard {...props} />,
-  (prev, next) => prev.course.code === next.course.code,
+const CourseCard = memo<CourseCardWrapperProps>(
+  ({ course, variant }) => {
+    const Component = CARD_VARIANTS[variant];
+
+    return <Component course={course} />;
+  },
+  (prev, next) => {
+    return (
+      prev.variant === next.variant && prev.course.code === next.course.code
+    );
+  },
 );
 
-export default MemoizedCourseCard;
+CourseCard.displayName = "CourseCard";
 
-MemoizedCourseCard.displayName = "MemoizedCourseCard";
+export default CourseCard;

@@ -1,8 +1,6 @@
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
 import DialogGeneralTab from "./DialogGeneralTab";
-import ExaminationTable from "./ExaminationTable";
 import { Course } from "@/app/dashboard/page";
-import DialogTabs from "./DialogTabs";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +8,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import ExaminationTable from "./ExaminationTable";
+import DialogTabs from "./DialogTabs";
 
 type CourseDialogProps = {
   open: boolean;
