@@ -7,7 +7,18 @@ import ClientPage from "./ClientPage";
 export default async function MainPage() {
   const courses = await prisma.course.findMany({
     include: {
-      Program: true,
+      ProgramCourse: {
+        include: {
+          Program: {
+            select: {
+              program: true,
+              name: true,
+              shortname: true,
+            },
+          },
+        },
+        
+      },
       CourseOccasion: {
         include: {
           periods: {
@@ -48,7 +59,17 @@ export default async function MainPage() {
 
 type CourseWithOccasion = Prisma.CourseGetPayload<{
   include: {
-    Program: true;
+    ProgramCourse: {
+      include: {
+        Program: {
+          select: {
+            program: true;
+            name: true;
+            shortname: true;
+          };
+        };
+      };
+    };
     CourseOccasion: {
       include: {
         periods: {

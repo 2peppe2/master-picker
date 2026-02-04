@@ -21,7 +21,7 @@ interface LandingClientPageProps {
     }[];
     masters: {
       master: string;
-      name: string;
+      name: string | null;
     }[];
   }[];
 }
