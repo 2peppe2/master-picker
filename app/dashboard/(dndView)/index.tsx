@@ -1,22 +1,22 @@
 "use client";
 
-import { useConflictManager } from "../../components/ConflictResolverModal/hooks/useConflictManager";
-import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { useCourseDropHandler } from "../(main)/(dndView)/hooks/useCourseDropHandler";
+import { useConflictManager } from "@/components/ConflictResolverModal/hooks/useConflictManager";
+import MastersRequirementsBar from "../(mastersRequirementsBar)/MastersRequirementsBar";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
+import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
+import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
-import { scheduleAtoms } from "../atoms/schedule/atoms";
-import Schedule from "./(schedule)/Schedule";
-import { Drawer } from "./(drawer)/Drawer";
+import Schedule from "../(schedule)/Schedule";
+import { Drawer } from "../(drawer)/Drawer";
 import { FC, useCallback } from "react";
 import {
   DndProvider,
   OnDragEndArgs,
   OnDragStartArgs,
 } from "@/components/DndProvider";
+import { Course } from "../page";
 import { useAtom } from "jotai";
-import { Course } from "./page";
 
 interface DndViewProps {
   courses: Course[];
