@@ -4,6 +4,7 @@ import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetter
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { useAtomValue } from "jotai";
+import { dispatchScrollToCourse } from "@/hooks/useCourseAddedFeedback";
 
 export interface DropSlot {
   block: number;
@@ -54,6 +55,7 @@ export const useCourseContlictResolver = () => {
         addBlockToSemester({ semester: relativeSemester });
       }
       addCourseByButton({ course, occasion });
+      dispatchScrollToCourse({ course });
     }
   };
 
