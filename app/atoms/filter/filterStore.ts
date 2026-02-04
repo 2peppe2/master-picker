@@ -1,7 +1,7 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "../schedule/hooks/useScheduleGetters";
 import { useAtomValue, useSetAtom, WritableAtom } from "jotai";
 import { useCallback, useDeferredValue, useMemo } from "react";
-import { useScheduleStore } from "../schedule/scheduleStore";
 import { userPreferencesAtom } from "../UserPreferences";
 import { atomWithReset, RESET } from "jotai/utils";
 import { Course } from "../../dashboard/page";
@@ -88,11 +88,9 @@ export const useFilterStore = (): FilterStore => {
 };
 
 export const useFiltered = (courses: Course[]) => {
+  const { getSlotCourse, hasMatchingOccasion } = useScheduleGetters();
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const { atoms } = useFilterStore();
-  const {
-    getters: { getSlotCourse },
-  } = useScheduleStore();
 
   const search = useAtomValue(atoms.searchAtom);
   const master = useAtomValue(atoms.masterAtom);
@@ -184,19 +182,13 @@ export const useFiltered = (courses: Course[]) => {
         return false;
       }
 
-      const hasMatchingOccasion = course.CourseOccasion.some((occasion) => {
-        return occasion.periods.some((occPeriod) => {
-          const isCorrectPeriod = periods.includes(occPeriod.period);
-          const isCorrectBlock = occPeriod.blocks.some((block) =>
-            blocks.includes(block),
-          );
-          return isCorrectPeriod && isCorrectBlock;
-        });
+      return !hasMatchingOccasion({
+        blocks,
+        periods,
+        course,
       });
-
-      return !hasMatchingOccasion;
     },
-    [filterOutByBlocks, filterOutByPeriods],
+    [filterOutByBlocks, filterOutByPeriods, hasMatchingOccasion],
   );
 
   const filterOutBySlots = useCallback(

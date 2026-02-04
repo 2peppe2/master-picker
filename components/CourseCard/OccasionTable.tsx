@@ -1,3 +1,14 @@
+"use client";
+
+import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { ConflictResolverModal } from "../ConflictResolverModal";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
+import { FC, useMemo, useState } from "react";
+import { MasterBadge } from "../MasterBadge";
+import { useAtomValue } from "jotai";
 import {
   Table,
   TableBody,
@@ -6,42 +17,38 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { useAtomValue } from "jotai";
-import { FC, useMemo, useState } from "react";
-import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { MasterBadge } from "../MasterBadge";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import AddAlert from "../AddAlert";
 
 interface OccasionTableProps {
   course: Course;
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
-  const [alertOpen, setAlertOpen] = useState(false);
-  const { mutators, getters } = useScheduleStore();
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
+  const [alertOpen, setAlertOpen] = useState(false);
+
+  const { getOccasionCollisions } = useScheduleGetters();
+
   const hasRecommendedMaster = course.CourseOccasion.some(
     (occasion) => occasion.recommendedMaster.length > 0,
   );
 
+  const collisions = getOccasionCollisions({ occasion: selectedOccasion });
+
   return (
     <>
-      <AddAlert
-        course={course}
-        primaryAction={() =>
-          mutators.addCourse({ course, occasion: selectedOccasion })
-        }
+      <ConflictResolverModal
         open={alertOpen}
         setOpen={setAlertOpen}
-        collisions={getters.getOccasionCollisions({
+        conflictData={{
+          strategy: "button",
+          collisions,
+          course,
           occasion: selectedOccasion,
-        })}
+        }}
       />
+
       <Table>
         <TableHeader>
           <TableRow>
@@ -89,7 +96,8 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   setSelectedOccasion,
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { mutators, getters } = useScheduleStore();
+  const { getOccasionCollisions } = useScheduleGetters();
+  const { executeAdd } = useCourseContlictResolver();
 
   const relativeSemester = useMemo(
     () =>
@@ -100,14 +108,16 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       ),
     [occasion.semester, occasion.year, startingYear],
   );
+
   const periods = occasion.periods.map((p) => p.period);
   const blocks = Array.from(new Set(occasion.periods.flatMap((p) => p.blocks)));
-  const checkCollisionBeforeAdd = (occasion: CourseOccasion) => {
-    if (getters.getOccasionCollisions({ occasion: occasion }).length > 0) {
+
+  const handleAddClick = () => {
+    if (getOccasionCollisions({ occasion }).length > 0) {
       setSelectedOccasion(occasion);
       setAlertOpen(true);
     } else {
-      mutators.addCourse({ course, occasion: occasion });
+      executeAdd({ course, occasion, strategy: "button" });
     }
   };
 
@@ -129,7 +139,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       )}
       <TableCell className="flex justify-end">
         <p
-          onClick={() => checkCollisionBeforeAdd(occasion)}
+          onClick={handleAddClick}
           className="cursor-pointer hover:underline underline-offset-2 text-left"
         >
           Add course

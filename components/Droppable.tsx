@@ -1,9 +1,12 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { activeCourseAtom } from "@/app/atoms/ActiveCourseAtom";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useMemo } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
+import {
+  scheduleAtoms,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/atoms";
 
 export type PeriodNodeData = {
   semesterNumber: number;
@@ -23,46 +26,81 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     id,
     data,
   });
-  const activeCourse = useAtomValue(activeCourseAtom);
+
+  const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { year, semester } = relativeSemesterToYearAndSemester(
+  const { semester, year } = relativeSemesterToYearAndSemester(
     startingYear,
     semesterNumber,
   );
 
-  let overStyles: string = isOver ? "border-red-500" : "border-zinc-500";
-  if (activeCourse !== null) {
-    const isSameYear = activeCourse.CourseOccasion.map(
-      (occ) => occ.year,
-    ).includes(year);
+  const isWildcard = blockNumber >= WILDCARD_BLOCK_START;
 
-    const isSameSemester = activeCourse.CourseOccasion.map(
-      (occ) => occ.semester,
-    ).includes(semester);
+  const isValidDropTarget = useMemo(() => {
+    if (!draggedCourse) return false;
 
-    const hasMatchingOccasion = activeCourse.CourseOccasion.some((occasion) => {
-      return occasion.periods.some((occPeriod) => {
-        const isCorrectPeriod = occPeriod.period === periodNumber + 1;
-        const isCorrectBlock = occPeriod.blocks.includes(blockNumber + 1);
-        return isCorrectPeriod && isCorrectBlock;
-      });
-    });
+    const targetPeriod = periodNumber + 1;
+    const targetBlock = blockNumber + 1;
 
-    if (isSameYear && isSameSemester && hasMatchingOccasion) {
-      if (isOver) {
-        overStyles = "border-teal-500 animate-wiggle";
-      } else {
-        overStyles = "border-cyan-500 animate-wiggle";
-      }
+    const matchingOccasion = draggedCourse.CourseOccasion.find(
+      (occ) => occ.year === year && occ.semester === semester,
+    );
+
+    if (!matchingOccasion) return false;
+
+    const matchingPeriod = matchingOccasion.periods.find(
+      (p) => p.period === targetPeriod,
+    );
+
+    if (!matchingPeriod) return false;
+
+    if (isWildcard) return true;
+
+    if (matchingPeriod.blocks.length > 0) {
+      return matchingPeriod.blocks.includes(targetBlock);
+    }
+
+    return false;
+  }, [draggedCourse, blockNumber, periodNumber, year, semester, isWildcard]);
+
+  const baseStyles =
+    "relative w-40 h-40 shrink-0 flex items-center justify-center border-4 border-dashed rounded-2xl transition-all duration-200";
+
+  let stateStyles = "";
+  let feedbackOverlay = null;
+
+  if (isValidDropTarget) {
+    if (isOver) {
+      stateStyles =
+        "border-teal-500 z-10 animate-wiggle shadow-lg shadow-teal-500/20";
+      feedbackOverlay = (
+        <div className="absolute inset-0 bg-teal-500/20 rounded-xl pointer-events-none" />
+      );
+    } else {
+      stateStyles = "border-cyan-500 animate-wiggle";
+      feedbackOverlay = (
+        <div className="absolute inset-0 bg-cyan-500/10 rounded-xl pointer-events-none" />
+      );
+    }
+  } else if (isOver) {
+    stateStyles = "border-red-500";
+    feedbackOverlay = (
+      <div className="absolute inset-0 bg-red-500/10 rounded-xl pointer-events-none" />
+    );
+  } else {
+    if (isWildcard) {
+      stateStyles =
+        "border-sky-500/20 bg-sky-500/5 hover:border-sky-500/40 hover:bg-sky-500/10";
+    } else {
+      stateStyles =
+        "border-zinc-300 dark:border-zinc-700 bg-secondary/30 hover:border-zinc-400 hover:bg-secondary/50";
     }
   }
 
   return (
-    <div
-      ref={setNodeRef}
-      className={`w-40 h-40 flex items-center justify-center ${overStyles} border-4 border-dashed rounded-2xl`}
-    >
+    <div ref={setNodeRef} className={`${baseStyles} ${stateStyles}`}>
       {children}
+      {feedbackOverlay}
     </div>
   );
 };

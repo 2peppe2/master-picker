@@ -1,7 +1,16 @@
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import GhostBlock from "@/app/(main)/(schedule)/(block)/GhostBlock";
+import {
+  scheduleAtoms,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/atoms";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import Block from "@/app/(main)/(schedule)/(block)/Block";
+import { Separator } from "@/components/ui/separator";
+import { useAtomValue } from "jotai";
+import { FC, useMemo } from "react";
 import { range } from "lodash";
-import { BlockView } from "./BlockView";
-import { FC } from "react";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -12,24 +21,90 @@ export const PeriodView: FC<PeriodViewProps> = ({
   semesterNumber,
   periodNumber,
 }) => {
-  const {
-    getters: { getSlotBlocks },
-  } = useScheduleStore();
+  const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
+  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { getSlotBlocks } = useScheduleGetters();
+
   const blocks = getSlotBlocks({
     semester: semesterNumber,
     period: periodNumber + 1,
   });
 
+  const showGhost = useMemo(() => {
+    if (!draggedCourse) return false;
+
+    const { year, semester } = relativeSemesterToYearAndSemester(
+      startingYear,
+      semesterNumber,
+    );
+
+    const hasWildcardOption = draggedCourse.CourseOccasion.some(
+      (occ) =>
+        occ.year === year &&
+        occ.semester === semester &&
+        occ.periods.some(
+          (p) => p.period === periodNumber + 1, //&& p.blocks.length === 0,
+        ),
+    );
+
+    if (!hasWildcardOption) return false;
+
+    const wildcardSlots = blocks.slice(WILDCARD_BLOCK_START);
+    const isFull = wildcardSlots.every((slot) => slot !== null);
+
+    return isFull;
+  }, [draggedCourse, blocks, semesterNumber, periodNumber, startingYear]);
+
   return (
-    <div className="flex justify-around gap-5">
-      {range(0, blocks.length).map((index: number) => (
-        <BlockView
-          key={index}
-          semesterNumber={semesterNumber}
-          periodNumber={periodNumber}
-          blockNumber={index}
-        />
-      ))}
+    <div className="flex flex-col">
+      <p className="text-muted-foreground text-sm">{`Period ${periodNumber + 1}`}</p>
+      <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
+        {range(0, blocks.length).map((index) => {
+          const isWildcardStart = index === WILDCARD_BLOCK_START;
+
+          return (
+            <div key={index} className="flex items-center shrink-0">
+              {isWildcardStart && (
+                <div className="flex h-full items-center px-4">
+                  <Separator
+                    orientation="vertical"
+                    className="w-[1px] h-full bg-zinc-600"
+                  />
+                </div>
+              )}
+
+              <Block
+                semesterNumber={semesterNumber}
+                periodNumber={periodNumber}
+                blockNumber={index}
+              />
+            </div>
+          );
+        })}
+
+        <div
+          className={`flex items-center shrink-0 transition-all duration-200 ease-in-out ${
+            showGhost
+              ? "w-auto opacity-100 translate-x-0"
+              : "w-0 opacity-0 -translate-x-4 overflow-hidden pointer-events-none"
+          }`}
+        >
+          {blocks.length === WILDCARD_BLOCK_START && (
+            <div className="flex h-full items-center px-4">
+              <Separator
+                orientation="vertical"
+                className="w-[1px] h-full bg-zinc-600"
+              />
+            </div>
+          )}
+
+          <GhostBlock
+            semesterNumber={semesterNumber}
+            periodNumber={periodNumber}
+            blockNumber={blocks.length}
+          />
+        </div>
+      </div>
     </div>
   );
 };

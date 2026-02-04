@@ -1,3 +1,11 @@
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { MasterBadge } from "@/components/MasterBadge";
+import { CourseDialog } from "./courseDialog/Dialog";
+import { Button } from "@/components/ui/button";
+import CourseAddButton from "./CourseAddButton";
+import { Course } from "@/app/dashboard/page";
+import { memo, useState } from "react";
+import { X } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -5,37 +13,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { X } from "lucide-react";
-import { useState } from "react";
-import { CourseDialog } from "./courseDialog/Dialog";
-import { MasterBadge } from "@/components/MasterBadge";
-import { Button } from "@/components/ui/button";
-import { Course } from "@/app/dashboard/page";
-import { useScheduleStore } from "@/app/atoms/schedule/scheduleStore";
-import CourseAddButton from "./CourseAddButton";
 
 interface CourseCardProps {
   course: Course;
   dropped: boolean;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
+const InnerCourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   const { code, name } = course;
 
   const masterPrograms = course.CourseMaster || [];
 
-  const { mutators } = useScheduleStore();
+  const { removeCourse } = useScheduleMutators();
 
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
       {dropped ? (
         <Button
           size="icon"
           variant="ghost"
-          onClick={() => mutators.removeCourse({ courseCode: course.code })}
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
+          onClick={() => removeCourse({ courseCode: course.code })}
+          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
         >
           <X className="h-4 w-4" />
         </Button>
@@ -83,4 +83,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, dropped }) => {
   );
 };
 
-export default CourseCard;
+const MemoizedCourseCard = memo<CourseCardProps>(
+  (props) => <InnerCourseCard {...props} />,
+  (prev, next) => prev.course.code === next.course.code,
+);
+
+export default MemoizedCourseCard;
+
+MemoizedCourseCard.displayName = "MemoizedCourseCard";
