@@ -11,6 +11,12 @@ const LandingPage = async () => {
         select: {
           startYear: true
         }
+      },
+      masters: {
+        select: {
+          master: true,
+          name: true,
+        }
       } 
     },
     
