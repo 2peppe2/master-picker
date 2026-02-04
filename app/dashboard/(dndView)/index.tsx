@@ -3,10 +3,10 @@
 import { useConflictManager } from "@/components/ConflictResolverModal/hooks/useConflictManager";
 import MastersRequirementsBar from "../(mastersRequirementsBar)/MastersRequirementsBar";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
-import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
+import CourseCard from "@/components/CourseCard";
 import Schedule from "../(schedule)/Schedule";
 import { Drawer } from "../(drawer)/Drawer";
 import { FC, useCallback } from "react";
@@ -52,7 +52,9 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       onDragStart={(event: OnDragStartArgs<Course>) =>
         setDraggedCourse(event.active)
       }
-      renderDragged={({ active }) => <GhostCourseCard course={active} />}
+      renderDragged={({ active }) => (
+        <CourseCard variant="dragged" course={active} />
+      )}
     >
       <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
         {conflictOpen && conflictData && (

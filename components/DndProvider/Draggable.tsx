@@ -11,7 +11,7 @@ interface DraggableProps {
 
 const Draggable: FC<DraggableProps> = ({ id, data, children }) => {
   const { attributes, listeners, setNodeRef, transform, active } = useDraggable(
-    { id, data }
+    { id, data },
   );
 
   const isDragging = active?.id === id;

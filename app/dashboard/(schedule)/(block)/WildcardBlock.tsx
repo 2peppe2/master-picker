@@ -1,5 +1,5 @@
 import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
-import { Draggable } from "@/components/CourseCard/Draggable";
+import { Draggable } from "@/components/DndProvider/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import { BlockViewProps } from "./Block";
@@ -26,7 +26,7 @@ const WildcardBlock: FC<BlockViewProps> = ({
     return (
       <Droppable data={data} id={blockId}>
         <Draggable id={courseSlot.code} data={courseSlot}>
-          <CourseCard course={courseSlot} dropped={true} />
+          <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>
       </Droppable>
     );

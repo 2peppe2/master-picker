@@ -1,10 +1,10 @@
-import { Draggable } from "@/components/CourseCard/Draggable";
+import { Draggable } from "@/components/DndProvider/Draggable";
 import { useFiltered } from "@/app/atoms/filter/filterStore";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import SearchInput from "./components/SearchInput";
 import CourseCard from "@/components/CourseCard";
+import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
-import { FC, useMemo } from "react";
 import { Course } from "../page";
 
 interface DrawerProps {
@@ -25,12 +25,9 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
       // Filter out courses already in schedule
       if (scheduledCourses.has(course)) return false;
 
-      // Filter out currently dragged course
-      if (draggedCourse && course.code === draggedCourse.code) return false;
-
       return true;
     });
-  }, [filteredCourses, schedules, draggedCourse]);
+  }, [filteredCourses, schedules]);
 
   return (
     <div
@@ -40,11 +37,21 @@ export const Drawer: FC<DrawerProps> = ({ courses }) => {
     >
       <SearchInput />
       <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4 mt-5">
-        {availableCourses.map((course) => (
-          <Draggable key={course.code} id={course.code} data={course}>
-            <CourseCard course={course} dropped={false} />
-          </Draggable>
-        ))}
+        {availableCourses.map((course) => {
+          const isDragging = draggedCourse?.code === course.code;
+
+          return (
+            <Fragment key={course.code}>
+              {isDragging ? (
+                <CourseCard variant="ghost" course={course} />
+              ) : (
+                <Draggable id={course.code} data={course}>
+                  <CourseCard variant="default" course={course} />
+                </Draggable>
+              )}
+            </Fragment>
+          );
+        })}
       </div>
     </div>
   );
