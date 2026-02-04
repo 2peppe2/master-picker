@@ -5,26 +5,19 @@ labels: bug
 assignees: ""
 ---
 
-## Quick Summary
+## Quick summary
 
 Currently, (...)
 
-## Reproducible Steps
+## Reproducible steps
 
 1. Do (...).
 2. Do (...).
 
-## Result - What actually happend?
+## Result - What actually happened?
+
 (...)
 
-## Expected Behavior
+## Expected behavior
 
 It should (...)
-
-## Minimal Code / Repo
-
-If you have a potential place in the code where it happens or a small fix please include it here.
-
-```typescript
-// Paste minimal code here
-```
