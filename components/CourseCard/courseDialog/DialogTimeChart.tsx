@@ -1,9 +1,8 @@
 'use client'
 
-import { useEffect, useState } from "react";
-
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Label, Pie, PieChart } from "recharts";
+import { useEffect, useState } from "react";
 
 const revenueChartConfig = {
     scheduled: {

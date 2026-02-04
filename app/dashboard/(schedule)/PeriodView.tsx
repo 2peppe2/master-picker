@@ -1,11 +1,14 @@
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import GhostBlock from "@/app/(main)/(schedule)/(block)/GhostBlock";
+import {
+  scheduleAtoms,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/atoms";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { scheduleAtoms, WILDCARD_BLOCK_START } from "@/app/atoms/schedule/atoms";
+import Block from "@/app/(main)/(schedule)/(block)/Block";
 import { Separator } from "@/components/ui/separator";
-import GhostBlock from "./(block)/GhostBlock";
 import { useAtomValue } from "jotai";
-import Block from "./(block)/Block";
 import { FC, useMemo } from "react";
 import { range } from "lodash";
 

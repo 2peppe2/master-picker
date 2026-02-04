@@ -3,26 +3,16 @@
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictManager";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
 import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
 import { FC, useState } from "react";
 import { Plus } from "lucide-react";
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 
 interface CourseAddButtonProps {
   course: Course;

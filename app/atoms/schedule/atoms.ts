@@ -1,6 +1,6 @@
 import { userPreferencesAtom } from "../UserPreferences";
+import { Course } from "@/app/dashboard/page";
 import { atomWithImmer } from "jotai-immer";
-import { Course } from "@/app/(main)/page";
 import { ScheduleGrid } from "./types";
 import { atom } from "jotai";
 

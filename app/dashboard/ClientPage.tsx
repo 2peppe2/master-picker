@@ -1,11 +1,10 @@
 "use client";
 
-import { useSetAtom } from "jotai";
-import { FC } from "react";
-
 import { mastersAtom } from "../atoms/mastersAtom";
-import DndView from "./DndView";
 import { Course, Master } from "./page";
+import { useSetAtom } from "jotai";
+import DndView from "./DndView";
+import { FC } from "react";
 
 interface ClientPageProps {
   courses: Course[];

@@ -1,6 +1,6 @@
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { ConflictData } from "@/components/ConflictResolverModal";
-import { Course, CourseOccasion } from "@/app/(main)/page";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { StrategyType } from "./useCourseContlictResolver";
 import { useCallback, useState } from "react";
 

@@ -2,9 +2,10 @@
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
+import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { ConflictResolverModal } from "../ConflictResolverModal";
-import { Course, CourseOccasion } from "@/app/(main)/page";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";
 import { MasterBadge } from "../MasterBadge";
 import { useAtomValue } from "jotai";
@@ -16,13 +17,6 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { useAtomValue } from "jotai";
-import { FC, useMemo, useState } from "react";
-import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { MasterBadge } from "../MasterBadge";
 
 interface OccasionTableProps {
   course: Course;

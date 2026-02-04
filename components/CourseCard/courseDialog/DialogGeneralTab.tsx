@@ -1,7 +1,7 @@
-import { Label } from "@/components/ui/label";
-import OccasionTable from "../OccasionTable";
-import { Course } from "@/app/dashboard/page";
 import DialogTimeChart from "./DialogTimeChart";
+import { Label } from "@/components/ui/label";
+import { Course } from "@/app/dashboard/page";
+import OccasionTable from "../OccasionTable";
 
 type DialogGeneralTabProps = {
   course: Course;
@@ -33,7 +33,7 @@ const DialogGeneralTab = ({ course }: DialogGeneralTabProps) => {
 
       <OccasionTable course={course} />
     </>
-  )
-}
+  );
+};
 
 export default DialogGeneralTab;

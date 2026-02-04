@@ -1,9 +1,9 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { scheduleAtoms, WILDCARD_BLOCK_START } from "../atoms";
 import { userPreferencesAtom } from "../../UserPreferences";
+import { Course } from "@/app/dashboard/page";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback, useMemo } from "react";
-import { Course } from "@/app/(main)/page";
 import {
   AddBlockToSemesterArgs,
   AddCourseByButtonArgs,

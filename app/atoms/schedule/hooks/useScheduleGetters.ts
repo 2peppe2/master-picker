@@ -1,9 +1,9 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { scheduleAtoms, WILDCARD_BLOCK_START } from "../atoms";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { userPreferencesAtom } from "../../UserPreferences";
-import { Course, CourseOccasion } from "@/app/(main)/page";
-import { useCallback, useMemo } from "react";
 import { useAtomCallback } from "jotai/utils";
+import { useCallback, useMemo } from "react";
 import {
   CheckWildcardExpansionArgs,
   FindMatchingOccasionArgs,

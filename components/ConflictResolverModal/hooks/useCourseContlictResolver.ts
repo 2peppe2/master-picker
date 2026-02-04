@@ -1,9 +1,9 @@
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { Course, CourseOccasion } from "@/app/(main)/page";
-import { useAtomValue } from "jotai";
 import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
+import { useAtomValue } from "jotai";
 
 export interface DropSlot {
   block: number;

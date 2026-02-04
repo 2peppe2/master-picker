@@ -1,7 +1,7 @@
-import { CourseExamination } from "@/app/dashboard/page";
-import { FC } from "react";
 import { Table, TableBody,  TableCell,  TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { CourseExamination } from "@/app/dashboard/page";
 import { Scale } from "@/prisma/generated/client/enums";
+import { FC } from "react";
 
 type ExaminationTableProps = {
     examination: CourseExamination[];

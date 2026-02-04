@@ -1,5 +1,5 @@
+import { Course } from "@/app/dashboard/page";
 import { MasterBadge } from "../MasterBadge";
-import { Course } from "@/app/(main)/page";
 import {
   Card,
   CardDescription,

@@ -2,7 +2,7 @@
 
 import { useConflictManager } from "../../components/ConflictResolverModal/hooks/useConflictManager";
 import MastersRequirementsBar from "./(mastersRequirementsBar)/MastersRequirementsBar";
-import { useCourseDropHandler } from "./(dndView)/hooks/useCourseDropHandler";
+import { useCourseDropHandler } from "../(main)/(dndView)/hooks/useCourseDropHandler";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import GhostCourseCard from "@/components/CourseCard/GhostCourseCard";
 import { PeriodNodeData } from "@/components/Droppable";
