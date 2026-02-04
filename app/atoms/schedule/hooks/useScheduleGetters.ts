@@ -133,7 +133,7 @@ export const useScheduleGetters = () => {
       const schedules = get(scheduleAtoms.schedulesAtom);
       const { startingYear } = get(userPreferencesAtom);
 
-      const collisions: Course[] = [];
+      const collisions: Set<Course> = new Set();
       const relativeYear = yearAndSemesterToRelativeSemester(
         startingYear,
         occasion.year,
@@ -144,11 +144,12 @@ export const useScheduleGetters = () => {
         for (const block of period.blocks) {
           const slot = schedules[relativeYear][period.period - 1][block - 1];
           if (slot) {
-            collisions.push(slot);
+            collisions.add(slot);
           }
         }
       }
-      return collisions;
+
+      return [...collisions];
     }, []),
   );
 

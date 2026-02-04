@@ -17,6 +17,7 @@ import {
 } from "@/components/DndProvider";
 import { Course } from "../page";
 import { useAtom } from "jotai";
+import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 
 interface DndViewProps {
   courses: Course[];
@@ -29,6 +30,8 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 
   const { conflictData, conflictOpen, setConflictOpen } = useConflictManager();
   const { handleDrop } = useCourseDropHandler();
+
+  useScrollToCourseFeedback();
 
   const onDragEnd = useCallback(
     (event: OnDragEndArgs) => {

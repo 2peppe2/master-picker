@@ -10,6 +10,7 @@ import {
   AddCourseByDropArgs,
   DeleteBlockFromSemesterArgs,
   RemoveCourseArgs,
+  ShowSemesterArgs,
   ToggleShownSemesterArgs,
 } from "../types";
 
@@ -52,6 +53,16 @@ export const useScheduleMutators = () => {
         } else {
           next.add(semester);
         }
+        return next;
+      });
+    }, []),
+  );
+
+  const showSemester = useAtomCallback(
+    useCallback((get, set, { semester }: ShowSemesterArgs) => {
+      set(scheduleAtoms.shownSemestersAtom, (prev) => {
+        const next = new Set(prev);
+        next.add(semester);
         return next;
       });
     }, []),
@@ -218,6 +229,7 @@ export const useScheduleMutators = () => {
       deleteBlockFromSemester,
       toggleShownSemester,
       setDraggedCourse,
+      showSemester,
     }),
     [
       addCourseByButton,
@@ -227,6 +239,7 @@ export const useScheduleMutators = () => {
       deleteBlockFromSemester,
       toggleShownSemester,
       setDraggedCourse,
+      showSemester,
     ],
   );
 };

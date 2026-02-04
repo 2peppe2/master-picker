@@ -23,11 +23,11 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
   const { executeAdd } = useCourseContlictResolver();
 
   const [expansionAlertOpen, setExpansionAlertOpen] = useState(false);
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
-  const [popoverOpen, setPopoverOpen] = useState(false);
 
   const { conflictData, conflictOpen, setConflictOpen, showConflictIfNeeded } =
     useConflictManager();
@@ -36,16 +36,19 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
 
   const handleAddAttempt = (occasion: CourseOccasion) => {
     if (showConflictIfNeeded({ course, occasion, strategy: "button" })) {
+      setPopoverOpen(false);
       return;
     }
 
     if (checkWildcardExpansion({ occasion })) {
       setSelectedOccasion(occasion);
       setExpansionAlertOpen(true);
+      setPopoverOpen(false);
       return;
     }
 
     executeAdd({ course, occasion, strategy: "button" });
+    setPopoverOpen(false);
   };
 
   return (
@@ -71,25 +74,27 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
         }
       />
 
-      <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-        <PopoverTrigger asChild>
-          <AddButton
-            onClick={
-              isMultiOccasion
-                ? () => setPopoverOpen(true)
-                : () => handleAddAttempt(selectedOccasion)
-            }
-          />
-        </PopoverTrigger>
-
-        <PopoverContent side="left" align="start" sideOffset={10}>
-          <MultiCourseDropdown
-            course={course}
-            onAddAttempt={handleAddAttempt}
-            setSelectedOccasion={setSelectedOccasion}
-          />
-        </PopoverContent>
-      </Popover>
+      {isMultiOccasion ? (
+        <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+          <PopoverTrigger asChild>
+            <AddButton />
+          </PopoverTrigger>
+          <PopoverContent
+            side="left"
+            align="start"
+            sideOffset={10}
+            className="w-64 p-0"
+          >
+            <MultiCourseDropdown
+              course={course}
+              onAddAttempt={handleAddAttempt}
+              setSelectedOccasion={setSelectedOccasion}
+            />
+          </PopoverContent>
+        </Popover>
+      ) : (
+        <AddButton onClick={() => handleAddAttempt(course.CourseOccasion[0])} />
+      )}
     </>
   );
 };

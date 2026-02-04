@@ -26,7 +26,10 @@ const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
+    <Card
+      data-course-code={dropped ? course.code : undefined}
+      className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab"
+    >
       <CourseDialog
         course={course}
         open={openDialog}
