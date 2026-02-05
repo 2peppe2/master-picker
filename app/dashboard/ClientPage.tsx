@@ -6,7 +6,6 @@ import { useHydrateAtoms } from "jotai/utils";
 import ScheduleSync from "./(scheduleSync)";
 import { Course, Master } from "./page";
 import { FC, useMemo } from "react";
-import { useSetAtom } from "jotai";
 import DndView from "./(dndView)";
 
 interface ClientPageProps {
