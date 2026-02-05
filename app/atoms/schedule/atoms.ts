@@ -7,6 +7,8 @@ import { atom } from "jotai";
 //TODO: Make a help function to see if it is a block that is from wildstart
 export const WILDCARD_BLOCK_START = 4;
 
+
+
 export const scheduleAtoms = {
   /**
    * Main schedule grid storing all courses across semesters, periods, and blocks.
