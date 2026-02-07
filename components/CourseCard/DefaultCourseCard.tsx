@@ -16,9 +16,14 @@ import {
 
 interface DefaultCourseCardProps extends CourseCardProps {
   dropped: boolean;
+  addBtn?: boolean;
 }
 
-const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
+const DefaultCourseCard: FC<DefaultCourseCardProps> = ({
+  course,
+  dropped,
+  addBtn = true,
+}) => {
   const masterPrograms = course.CourseMaster || [];
 
   const { removeCourse } = useScheduleMutators();
@@ -32,7 +37,6 @@ const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
         open={openDialog}
         onOpenChange={setOpenDialog}
       />
-
       {dropped ? (
         <Button
           size="icon"
@@ -42,9 +46,10 @@ const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
         >
           <X className="h-4 w-4" />
         </Button>
-      ) : (
+      ) : addBtn ? (
         <CourseAddButton course={course} />
-      )}
+      ) : null}
+      
 
       <CardHeader>
         <CardTitle>
