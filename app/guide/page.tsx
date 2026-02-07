@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/prisma/generated/client/client";
 import GuideClientPage from "./GuideClientPage";
+import type { Master } from "../dashboard/page";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
   select: {
@@ -8,23 +9,66 @@ export type CourseRequirements = Prisma.RequirementGetPayload<{
       select: {
         courses: {
           select: {
-            course: true,
+            course: {
+              include: {
+                ProgramCourse: {
+                  include: {
+                    Program: {
+                      select: {
+                        program: true;
+                        name: true;
+                        shortname: true;
+                      };
+                    };
+                  };
+                };
+                CourseOccasion: {
+                  include: {
+                    periods: {
+                      select: {
+                        period: true;
+                        blocks: {
+                          select: {
+                            block: true;
+                          };
+                        };
+                      };
+                    };
+                    recommendedMaster: { select: { master: true } };
+                  };
+                };
+                CourseMaster: true;
+                Examination: {
+                  select: {
+                    credits: true;
+                    module: true;
+                    name: true;
+                    scale: true;
+                  };
+                };
+              };
+            };
           };
         };
+        type: true;
       };
     };
   };
 }>["courseRequirements"];
-  
+
+
 
 const GuidePage = async function ({
   searchParams,
 }: {
-  searchParams: { program?: string; year?: string; master?: string };
+  searchParams: Promise<{
+    program?: string ;
+    year?: string;
+    master?: string;
+  }>;
 }) {
-  const program = searchParams.program ?? null;
-  const year = searchParams.year ?? null;
-  const master = searchParams.master ?? null;
+  const { program, year, master } = await searchParams;
+
   if (!program || !year || !master) {
     return <div>Missing parameters</div>;
   }
@@ -36,11 +80,50 @@ const GuidePage = async function ({
     select: {
       courseRequirements: {
         select: {
-          courses: { 
+          courses: {
             select: {
-              course: true,
-            } 
+              course: {
+                include: {
+                  ProgramCourse: {
+                    include: {
+                      Program: {
+                        select: {
+                          program: true,
+                          name: true,
+                          shortname: true,
+                        },
+                      },
+                    },
+                  },
+                  CourseOccasion: {
+                    include: {
+                      periods: {
+                        select: {
+                          period: true,
+                          blocks: {
+                            select: {
+                              block: true,
+                            },
+                          },
+                        },
+                      },
+                      recommendedMaster: { select: { master: true } },
+                    },
+                  },
+                  CourseMaster: true,
+                  Examination: {
+                    select: {
+                      credits: true,
+                      module: true,
+                      name: true,
+                      scale: true,
+                    },
+                  },
+                },
+              },
+            },
           },
+          type: true,
         },
       },
     },
@@ -49,8 +132,23 @@ const GuidePage = async function ({
     return <div>No requirements found</div>;
   }
 
+  const masters = await prisma.master.findMany({
+    select: {
+      master: true,
+      name: true,
+      icon: true,
+      style: true,
+    },
+  });
+
   return (
-    <GuideClientPage courseRequirements={masterRequirements.courseRequirements} />
+    <GuideClientPage
+      courseRequirements={masterRequirements.courseRequirements}
+      masters={Object.fromEntries(
+        masters.map((m: Master) => [m.master, m]),
+      )}
+      selectedMaster={master}
+    />
   );
 };
 

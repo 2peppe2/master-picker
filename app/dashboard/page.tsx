@@ -3,6 +3,7 @@
 import { Prisma } from "@/prisma/generated/client/client";
 import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
+import { normalizeCourse } from "../courseNormalizer"
 
 export default async function MainPage() {
   const courses = await prisma.course.findMany({
@@ -17,7 +18,6 @@ export default async function MainPage() {
             },
           },
         },
-        
       },
       CourseOccasion: {
         include: {
@@ -26,17 +26,18 @@ export default async function MainPage() {
               period: true,
               blocks: {
                 select: {
-                  block: true
-                }
-              }
-            }
+                  block: true,
+                },
+              },
+            },
           },
-          recommendedMaster: { select: { master: true }},
-        }
+          recommendedMaster: { select: { master: true } },
+        },
       },
       CourseMaster: true,
-      Examination: { select: { credits: true, module: true, name: true, scale: true } },
-
+      Examination: {
+        select: { credits: true, module: true, name: true, scale: true },
+      },
     },
   });
 
@@ -57,86 +58,41 @@ export default async function MainPage() {
   );
 }
 
-type CourseWithOccasion = Prisma.CourseGetPayload<{
-  include: {
-    ProgramCourse: {
-      include: {
-        Program: {
-          select: {
-            program: true;
-            name: true;
-            shortname: true;
-          };
-        };
-      };
-    };
-    CourseOccasion: {
-      include: {
-        periods: {
-          select: {
-            period: true
-            blocks: {
-              select: {
-                block: true
-              }
-            }
-          };
-        }
-        recommendedMaster: { select: { master: true }}
-      };
-      
 
-    };
-    Examination: { select: { credits: true, module: true, name: true, scale: true } };
-    CourseMaster: true;
+export type Course = ReturnType<typeof normalizeCourse>;
+
+export type CourseExamination = Prisma.ExaminationGetPayload<{
+  select: {
+    credits: true;
+    module: true;
+    name: true;
+    scale: true;
   };
 }>;
 
-const normalizeCourse = (course: CourseWithOccasion) => ({
-  ...course,
-  CourseOccasion: course.CourseOccasion.map((occasion) => ({
-    ...occasion,
-    periods: occasion.periods.map((p) => ({
-      period: p.period,
-      blocks: p.blocks.map((b) => b.block),
-    })),
-  })),
-});
+export type CourseOccasion = Course["CourseOccasion"][0];
 
-  export type Course = ReturnType<typeof normalizeCourse>;
+export type Master = Prisma.MasterGetPayload<{
+  select: {
+    master: true;
+    name: true;
+    icon: true;
+    style: true;
+  };
+}>;
 
-  export type CourseExamination = Prisma.ExaminationGetPayload<{
-    select: {
-      credits: true;
-      module: true;
-      name: true;
-      scale: true;
-    };
-  }>;
+export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
+  select: {
+    type: true;
+    courses: true;
+  };
+}>;
 
-  export type CourseOccasion = Course["CourseOccasion"][0];
+export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
+  select: {
+    type: true;
+    credits: true;
+  };
+}>;
 
-  export type Master = Prisma.MasterGetPayload<{
-    select: {
-      master: true;
-      name: true;
-      icon: true;
-      style: true;
-    };
-  }>;
-
-  export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
-    select: {
-      type: true;
-      courses: true;
-    };
-  }>;
-
-  export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
-    select: {
-      type: true;
-      credits: true;
-    };
-  }>;
-
-  export type RequirementsUnion = CourseRequirements | CreditsRequirements;
+export type RequirementsUnion = CourseRequirements | CreditsRequirements;

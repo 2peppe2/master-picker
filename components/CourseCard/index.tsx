@@ -4,7 +4,7 @@ import GhostCourseCard from "./GhostCourseCard";
 import { Course } from "@/app/dashboard/page";
 import { FC, memo } from "react";
 
-export type CourseCardVariant = "default" | "dropped" | "dragged" | "ghost";
+export type CourseCardVariant = "default" | "dropped" | "dragged" | "ghost" | "noAdd";
 
 interface CourseCardWrapperProps {
   variant: CourseCardVariant;
@@ -20,6 +20,7 @@ const VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
   default: (props) => <DefaultCourseCard dropped={false} {...props} />,
   dragged: DraggedCourseCard,
   ghost: GhostCourseCard,
+  noAdd: (props) => <DefaultCourseCard dropped={true} addBtn={false} {...props} />,
 };
 
 const CourseCard = memo<CourseCardWrapperProps>(
