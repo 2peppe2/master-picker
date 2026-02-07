@@ -1,15 +1,16 @@
 "use client";
 
 import { useConflictManager } from "@/components/ConflictResolverModal/hooks/useConflictManager";
-import MastersRequirementsBar from "../(mastersRequirementsBar)/MastersRequirementsBar";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
+import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
+import MastersRequirementsBar from "../(mastersRequirementsBar)";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import Schedule from "../(schedule)/Schedule";
-import { Drawer } from "../(drawer)/Drawer";
 import { FC, useCallback } from "react";
+import Drawer from "../(drawer)";
 import {
   DndProvider,
   OnDragEndArgs,
@@ -17,7 +18,6 @@ import {
 } from "@/components/DndProvider";
 import { Course } from "../page";
 import { useAtom } from "jotai";
-import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 
 interface DndViewProps {
   courses: Course[];
@@ -59,7 +59,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         <CourseCard variant="dragged" course={active} />
       )}
     >
-      <div className="grid [grid-template-columns:auto_1fr] mt-4 relative">
+      <div className="grid [grid-template-columns:auto_1fr] mt-4 relative min-h-screen items-start">
         {conflictOpen && conflictData && (
           <ConflictResolverModal
             open={conflictOpen}
@@ -77,8 +77,13 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 export default DndView;
 
 const MainSection = () => (
-  <main className="flex flex-col gap-4 px-8 min-w-0">
-    <MastersRequirementsBar />
-    <Schedule />
+  <main className="flex flex-col h-screen">
+    <div className="px-8 z-30 flex-shrink-0 pt-4">
+      <MastersRequirementsBar />
+    </div>
+
+    <div className="flex flex-col flex-1 overflow-y-auto px-8 gap-4 pb-10">
+      <Schedule />
+    </div>
   </main>
 );

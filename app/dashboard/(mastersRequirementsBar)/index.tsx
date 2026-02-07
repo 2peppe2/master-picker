@@ -60,6 +60,7 @@ const MastersRequirementsSkeleton = () => (
     ))}
   </MastersRequirementsContainer>
 );
+
 interface MastersRequirementsContainerProps {
   children: ReactNode;
   className?: string;
