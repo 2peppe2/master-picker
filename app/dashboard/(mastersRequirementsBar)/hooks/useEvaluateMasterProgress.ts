@@ -1,7 +1,7 @@
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { Course, RequirementsUnion } from "../../page";
-import { useCallback } from "react";
 import { useAtomValue } from "jotai";
+import { useCallback } from "react";
 import _ from "lodash";
 
 interface MasterProgress {
@@ -87,9 +87,6 @@ const calculateTotalCredits = (courses: Course[]): number =>
 
 const calculateLevelCredits = (courses: Course[], level: "A" | "G"): number => {
   return courses
-    .filter(
-      (c) => !c.CourseMaster.some((master) => master.courseCode === c.code),
-    )
     .filter((c) => c.level.includes(level))
     .reduce((sum, c) => sum + c.credits, 0);
 };
