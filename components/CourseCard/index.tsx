@@ -20,7 +20,7 @@ const CARD_VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
   default: (props) => <DefaultCourseCard dropped={false} {...props} />,
   dragged: DraggedCourseCard,
   ghost: GhostCourseCard,
-  noAdd: (props) => <DefaultCourseCard dropped={true} addBtn={false} {...props} />,
+  noAdd: (props) => <DefaultCourseCard dropped={false} addBtn={false} {...props} />,
 };
 
 const CourseCard = memo<CourseCardWrapperProps>(
