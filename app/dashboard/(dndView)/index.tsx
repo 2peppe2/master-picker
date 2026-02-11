@@ -7,6 +7,7 @@ import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import MastersRequirementsBar from "../(mastersRequirementsBar)";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
+import MainSection from "./components/MainSection";
 import CourseCard from "@/components/CourseCard";
 import Schedule from "../(schedule)/Schedule";
 import { FC, useCallback } from "react";
@@ -36,10 +37,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const onDragEnd = useCallback(
     (event: OnDragEndArgs) => {
       setDraggedCourse(null);
-
-      if (!event.over || !draggedCourse) {
-        return;
-      }
+      if (!event.over || !draggedCourse) return;
 
       handleDrop({
         course: draggedCourse,
@@ -67,7 +65,11 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
             conflictData={conflictData}
           />
         )}
-        <Drawer courses={courses} />
+
+        <aside className="bg-card border-r border-primary/10 sticky top-0 h-screen overflow-hidden">
+          <Drawer courses={courses} />
+        </aside>
+
         <MainSection />
       </div>
     </DndProvider>

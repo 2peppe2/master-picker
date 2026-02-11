@@ -2,14 +2,14 @@ import { LucideCircleCheck, LucideCircleDashed } from "lucide-react";
 import { RequirementsUnion } from "../../page";
 import { FC } from "react";
 
-interface MastersBadgeTooltipProps {
+interface MasterBadgeTooltipProps {
   master: string;
   name: string;
   all: RequirementsUnion[];
   fulfilled: RequirementsUnion[];
 }
 
-export const MastersBadgeRequirementTooltip: FC<MastersBadgeTooltipProps> = ({
+export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   master,
   all,
   name,
@@ -18,7 +18,7 @@ export const MastersBadgeRequirementTooltip: FC<MastersBadgeTooltipProps> = ({
   <div className="flex flex-col gap-2 mt-2 mb-2">
     <p className="font-semibold">{name}</p>
     {all.map((requirement, i) => (
-      <MastersRequirementRowRenderer
+      <MasterRequirementRowRenderer
         key={`${master}-requirement-row-${i}`}
         requirement={requirement}
         isFulfilled={fulfilled.includes(requirement)}
@@ -49,7 +49,7 @@ const RequirementRows: RequirementComponentMap = {
   ),
 };
 
-const MastersRequirementRowRenderer = <T extends RequirementsUnion>({
+const MasterRequirementRowRenderer = <T extends RequirementsUnion>({
   requirement,
   isFulfilled,
 }: {
@@ -63,7 +63,7 @@ const MastersRequirementRowRenderer = <T extends RequirementsUnion>({
   return (
     <div className="flex items-center gap-2">
       {isFulfilled ? (
-        <LucideCircleCheck color="var(--color-emerald-500)" size={16} />
+        <LucideCircleCheck className="text-blue-600" size={16} />
       ) : (
         <LucideCircleDashed className="dark:text-background" size={16} />
       )}
