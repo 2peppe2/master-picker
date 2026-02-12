@@ -57,7 +57,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         <CourseCard variant="dragged" course={active} />
       )}
     >
-      <div className="grid [grid-template-columns:auto_1fr] mt-4 relative min-h-screen items-start">
+      <div className="grid [grid-template-columns:auto_1fr] relative min-h-screen items-start">
         {conflictOpen && conflictData && (
           <ConflictResolverModal
             open={conflictOpen}
@@ -77,15 +77,3 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 };
 
 export default DndView;
-
-const MainSection = () => (
-  <main className="flex flex-col h-screen">
-    <div className="px-8 z-30 flex-shrink-0 pt-4">
-      <MastersRequirementsBar />
-    </div>
-
-    <div className="flex flex-col flex-1 overflow-y-auto px-8 gap-4 pb-10">
-      <Schedule />
-    </div>
-  </main>
-);

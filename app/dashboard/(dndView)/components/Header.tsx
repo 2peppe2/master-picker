@@ -1,4 +1,4 @@
-import MastersRequirementsBar from "../../(mastersRequirementsBar)/MastersRequirementsBar";
+import MastersRequirementsBar from "../../(mastersRequirementsBar)";
 import SettingsModal from "./SettingsModal";
 import { FC, useState } from "react";
 
