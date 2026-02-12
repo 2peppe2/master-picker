@@ -4,12 +4,10 @@ import { useConflictManager } from "@/components/ConflictResolverModal/hooks/use
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
-import MastersRequirementsBar from "../(mastersRequirementsBar)";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
 import MainSection from "./components/MainSection";
 import CourseCard from "@/components/CourseCard";
-import Schedule from "../(schedule)/Schedule";
 import { FC, useCallback } from "react";
 import Drawer from "../(drawer)";
 import {
