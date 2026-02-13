@@ -1,5 +1,6 @@
 import { useCourseContlictResolver } from "@/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useConflictManager } from "../../../../components/ConflictResolverModal/hooks/useConflictManager";
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 import { useCollisionDetector } from "./useCollisionDetector";
 import { useGhostDropHandler } from "./useGhostDropHandler";
 import { PeriodNodeData } from "@/components/Droppable";
@@ -17,6 +18,7 @@ export const useCourseDropHandler = () => {
   const { handleGhostDrop } = useGhostDropHandler();
   const { showConflict } = useConflictManager();
   const { validateDrop } = useDropValidator();
+  const { removeCourse } = useScheduleMutators();
 
   const handleDrop = ({ course, overData }: HandleDropArgs): boolean => {
     const validatonResult = validateDrop({
@@ -24,6 +26,12 @@ export const useCourseDropHandler = () => {
       overData,
     });
     if (!validatonResult) return false;
+
+    // Make sure the course have no other occurence
+    // when being dropped to a new place.
+    removeCourse({
+      courseCode: course.code,
+    });
 
     const {
       occasion: validOccasion,
