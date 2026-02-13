@@ -15,7 +15,7 @@ export interface CourseCardProps {
   course: Course;
 }
 
-const CARD_VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
+const VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
   dropped: (props) => <DefaultCourseCard dropped={true} {...props} />,
   default: (props) => <DefaultCourseCard dropped={false} {...props} />,
   dragged: DraggedCourseCard,
@@ -24,7 +24,7 @@ const CARD_VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
 
 const CourseCard = memo<CourseCardWrapperProps>(
   ({ course, variant }) => {
-    const Component = CARD_VARIANTS[variant];
+    const Component = VARIANTS[variant];
 
     return <Component course={course} />;
   },
