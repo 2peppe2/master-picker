@@ -8,5 +8,5 @@ export const userPreferencesAtom = atom({
     start: 7,
     end: 10,
   },
-  showBachelorYears: true,
+  showBachelorYears: false,
 });

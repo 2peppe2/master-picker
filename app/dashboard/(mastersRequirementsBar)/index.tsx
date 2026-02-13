@@ -48,11 +48,9 @@ const MastersRequirementsBar = () => {
   }
 
   return (
-    <div className="flex items-baseline-last w-full h-full gap-4 min-w-0">
+    <div className="flex items-center w-full h-full gap-4 min-w-0">
       <div className="hidden lg:flex items-center gap-3 text-muted-foreground shrink-0 select-none">
-        <span className="text-sm font-medium text-zinc-400">
-          Master&apos;s progress
-        </span>
+        <span className="text-sm font-medium">Master&apos;s progress</span>
       </div>
       <div className="flex-1 overflow-x-auto no-scrollbar mask-gradient-right">
         <div className="flex items-center gap-3 pr-4 [&>*]:flex-1 [&>*]:min-w-0">
@@ -65,19 +63,22 @@ const MastersRequirementsBar = () => {
   );
 };
 
+export default MastersRequirementsBar;
+
 const MastersRequirementsSkeleton = () => (
-  <div className="flex items-center gap-4 w-full animate-pulse opacity-50">
-    <div className="h-8 w-8 rounded bg-white/10 shrink-0" />
-    <div className="h-8 w-[1px] bg-white/10 shrink-0" />
-    <div className="flex gap-2 overflow-hidden flex-1">
-      {_.range(1, 6).map((i) => (
-        <div
-          key={`master_skeleton_${i}`}
-          className="h-8 w-32 rounded border border-white/5 bg-white/5 shrink-0"
-        />
-      ))}
+  <div className="flex items-center gap-4 w-full animate-pulse">
+    <div className="lg:flex items-center gap-3 text-muted-foreground shrink-0 select-none">
+      <span className="text-sm font-medium">Master&apos;s progress</span>
+    </div>
+    <div className="flex-1 overflow-x-auto no-scrollbar mask-gradient-right">
+      <div className="flex items-center gap-3 pr-4 [&>*]:flex-1 [&>*]:min-w-0">
+        {_.range(0, 7).map((i) => (
+          <div
+            key={`master_skeleton_${i}`}
+            className="h-8 w-16 rounded-full border shrink-0"
+          />
+        ))}
+      </div>
     </div>
   </div>
 );
-
-export default MastersRequirementsBar;
