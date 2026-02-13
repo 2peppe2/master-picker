@@ -24,7 +24,7 @@ const GhostBlock: FC<GhostBlockProps> = ({
         blockNumber,
       }}
     >
-      <div className="flex h-40 w-40 items-center justify-center rounded-2xl border-2 border-dashed">
+      <div className="flex h-40 w-40 items-center justify-center">
         <div className="flex flex-col items-center gap-2">
           <Plus className="h-6 w-6" />
           <span className="text-sm font-medium">New Block</span>

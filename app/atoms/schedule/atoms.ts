@@ -42,7 +42,7 @@ export const scheduleAtoms = {
    *   return next;
    * });
    */
-  shownSemestersAtom: atom<Set<number>>(new Set([7, 8, 9])),
+  shownSemestersAtom: atom<Set<number>>(new Set([7])),
 
   /**
    * Currently dragged course during drag-and-drop operations.
