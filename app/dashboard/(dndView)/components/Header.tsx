@@ -3,7 +3,7 @@ import SettingsModal from "./SettingsModal";
 import { FC, useState } from "react";
 
 const Header: FC = ({}) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   return (
     <header className="bg-card sticky top-0 z-40 w-full border-b border-border backdrop-blur-md bg-opacity-80">
@@ -11,7 +11,10 @@ const Header: FC = ({}) => {
         <div className="flex flex-1 min-w-0 border-r h-12">
           <MastersRequirementsBar />
         </div>
-        <SettingsModal isOpen={isOpen} onOpenChange={setIsOpen} />
+        <SettingsModal
+          isOpen={isSettingsOpen}
+          onOpenChange={setIsSettingsOpen}
+        />
       </div>
     </header>
   );

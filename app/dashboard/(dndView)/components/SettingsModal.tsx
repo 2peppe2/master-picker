@@ -34,7 +34,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
         <Button
           variant="ghost"
           className="cursor-pointer ml-auto px-4 h-10 gap-2 hover:bg-accent hover:text-accent-foreground"
-          onClick={(e) => e.stopPropagation()}
         >
           <Settings className="w-4 h-4" />
           <span className="text-sm font-medium">Settings</span>

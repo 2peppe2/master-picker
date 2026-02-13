@@ -6,8 +6,9 @@ import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
-import MainSection from "./components/MainSection";
 import CourseCard from "@/components/CourseCard";
+import Schedule from "../(schedule)/Schedule";
+import Header from "./components/Header";
 import { FC, useCallback } from "react";
 import Drawer from "../(drawer)";
 import {
@@ -75,3 +76,13 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 };
 
 export default DndView;
+
+const MainSection = () => (
+  <main className="flex flex-col h-screen bg-black/50 min-w-0 w-full relative">
+    <Header />
+
+    <div className="bg-card overflow-y-auto flex flex-col flex-1 px-8 gap-4 py-8">
+      <Schedule />
+    </div>
+  </main>
+);
