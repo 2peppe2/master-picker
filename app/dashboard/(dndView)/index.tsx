@@ -4,11 +4,11 @@ import { useConflictManager } from "@/components/ConflictResolverModal/hooks/use
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
-import MastersRequirementsBar from "../(mastersRequirementsBar)";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import Schedule from "../(schedule)/Schedule";
+import Header from "./components/Header";
 import { FC, useCallback } from "react";
 import Drawer from "../(drawer)";
 import {
@@ -36,10 +36,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const onDragEnd = useCallback(
     (event: OnDragEndArgs) => {
       setDraggedCourse(null);
-
-      if (!event.over || !draggedCourse) {
-        return;
-      }
+      if (!event.over || !draggedCourse) return;
 
       handleDrop({
         course: draggedCourse,
@@ -59,7 +56,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         <CourseCard variant="dragged" course={active} />
       )}
     >
-      <div className="grid [grid-template-columns:auto_1fr] mt-4 relative min-h-screen items-start">
+      <div className="grid [grid-template-columns:auto_1fr] relative min-h-screen items-start">
         {conflictOpen && conflictData && (
           <ConflictResolverModal
             open={conflictOpen}
@@ -67,7 +64,11 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
             conflictData={conflictData}
           />
         )}
-        <Drawer courses={courses} />
+
+        <aside className="bg-card border-r border-primary/10 sticky top-0 h-screen overflow-hidden">
+          <Drawer courses={courses} />
+        </aside>
+
         <MainSection />
       </div>
     </DndProvider>
@@ -77,12 +78,10 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
 export default DndView;
 
 const MainSection = () => (
-  <main className="flex flex-col h-screen">
-    <div className="px-8 z-30 flex-shrink-0 pt-4">
-      <MastersRequirementsBar />
-    </div>
+  <main className="flex flex-col h-screen bg-black/50 min-w-0 w-full relative">
+    <Header />
 
-    <div className="flex flex-col flex-1 overflow-y-auto px-8 gap-4 pb-10">
+    <div className="bg-card overflow-y-auto flex flex-col flex-1 px-8 gap-4 py-8">
       <Schedule />
     </div>
   </main>

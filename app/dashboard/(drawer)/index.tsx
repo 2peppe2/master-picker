@@ -29,8 +29,8 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className="border rounded-r-lg shadow-lg
-        max-h-[calc(100dvh-1rem)] sticky top-4 shrink-0 flex flex-col overflow-hidden
+      className="border-l shadow-lg
+        h-full sticky shrink-0 flex flex-col overflow-hidden
         2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
     >
       <div className="p-4 shrink-0 z-10">
