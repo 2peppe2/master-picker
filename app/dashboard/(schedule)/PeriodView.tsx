@@ -2,15 +2,14 @@ import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslation
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Separator } from "@/components/ui/separator";
-import GhostBlock from "./(block)/GhostBlock";
 import { useAtomValue } from "jotai";
 import {
   scheduleAtoms,
   WILDCARD_BLOCK_START,
 } from "@/app/atoms/schedule/atoms";
-import Block from "./(block)/Block";
 import { FC, useMemo } from "react";
 import { range } from "lodash";
+import Block from "./(block)";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -33,6 +32,13 @@ export const PeriodView: FC<PeriodViewProps> = ({
   const showGhost = useMemo(() => {
     if (!draggedCourse) return false;
 
+    const isAlreadyInWildcard = blocks.some(
+      (course, index) =>
+        index >= WILDCARD_BLOCK_START && course?.code === draggedCourse.code,
+    );
+
+    if (isAlreadyInWildcard) return false;
+
     const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
       semesterNumber,
@@ -42,9 +48,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
       (occ) =>
         occ.year === year &&
         occ.semester === semester &&
-        occ.periods.some(
-          (p) => p.period === periodNumber + 1, //&& p.blocks.length === 0,
-        ),
+        occ.periods.some((p) => p.period === periodNumber + 1),
     );
 
     if (!hasWildcardOption) return false;
@@ -61,6 +65,7 @@ export const PeriodView: FC<PeriodViewProps> = ({
       <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
         {range(0, blocks.length).map((index) => {
           const isWildcardStart = index === WILDCARD_BLOCK_START;
+          const isWildcardBlock = index >= WILDCARD_BLOCK_START;
 
           return (
             <div key={index} className="flex items-center shrink-0">
@@ -74,9 +79,8 @@ export const PeriodView: FC<PeriodViewProps> = ({
               )}
 
               <Block
-                semesterNumber={semesterNumber}
-                periodNumber={periodNumber}
-                blockNumber={index}
+                variant={isWildcardBlock ? "wildcard" : "standard"}
+                data={{ semesterNumber, periodNumber, blockNumber: index }}
               />
             </div>
           );
@@ -98,10 +102,9 @@ export const PeriodView: FC<PeriodViewProps> = ({
             </div>
           )}
 
-          <GhostBlock
-            semesterNumber={semesterNumber}
-            periodNumber={periodNumber}
-            blockNumber={blocks.length}
+          <Block
+            variant="ghost"
+            data={{ semesterNumber, periodNumber, blockNumber: blocks.length }}
           />
         </div>
       </div>
