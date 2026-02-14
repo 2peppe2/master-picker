@@ -28,7 +28,7 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   return (
     <Droppable
       data={data}
-      id={`block-${data.blockNumber}-${data.periodNumber}-${data.blockNumber}`}
+      id={`block-${data.semesterNumber}-${data.periodNumber}-${data.blockNumber}`}
     >
       {hasCourseInBlock ? (
         <Draggable id={courseSlot.code} data={courseSlot}>
