@@ -4,16 +4,23 @@ import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { Popover, PopoverContent } from "@/components/ui/popover";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
-import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { ChevronRightIcon, Ellipsis } from "lucide-react";
-import { PopoverTrigger } from "@radix-ui/react-popover";
+import { ChevronRightIcon, TriangleAlert } from "lucide-react";
+import SemesterSettingsModal from "./SemesterSettingsModal";
 import { Slot } from "@/app/atoms/schedule/types";
-import { Button } from "@/components/ui/button";
 import { FC, useMemo, useState } from "react";
 import { PeriodView } from "./PeriodView";
 import { useAtomValue } from "jotai";
+import {
+  scheduleAtoms,
+  WILDCARD_BLOCK_START,
+} from "@/app/atoms/schedule/atoms";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { range } from "lodash";
 
 interface SemesterViewProps {
@@ -55,7 +62,9 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ periods, semester }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const { toggleShownSemester } = useScheduleMutators();
+
   const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
 
   const credits = useMemo(() => {
@@ -68,12 +77,24 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     );
   }, [periods]);
 
+  const hasWildcardWarning = useMemo(() => {
+    return periods.some((period) =>
+      period.some((course, index) => {
+        if (index < WILDCARD_BLOCK_START || course === null) return false;
+
+        const hasSpecificBlocks = course.CourseOccasion.some((occ) =>
+          occ.periods.some((p) => p.blocks.length > 0),
+        );
+
+        return hasSpecificBlocks;
+      }),
+    );
+  }, [periods]);
+
   const relativeSemester = useMemo(
     () => relativeSemesterToYear(startingYear, semester),
     [semester, startingYear],
   );
-
-  const { toggleShownSemester, addBlockToSemester } = useScheduleMutators();
 
   return (
     <div className="flex items-center">
@@ -81,43 +102,33 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
         asChild
         onClick={() => toggleShownSemester({ semester: semester + 1 })}
       >
-        <CardTitle className="flex gap-3 w-full">
+        <CardTitle className="flex items-center gap-3 w-full cursor-pointer">
           Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
           {credits} / 30
+          {hasWildcardWarning && (
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <TriangleAlert className="size-5 text-yellow-500" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>
+                    Potential collision: A standard course is in a wildcard
+                    slot.
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
           <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
         </CardTitle>
       </CollapsibleTrigger>
 
-      <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="ml-auto h-8 w-8"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <Ellipsis className="size-4" />
-          </Button>
-        </PopoverTrigger>
-
-        <PopoverContent align="end" className="w-48 p-2">
-          <div className="grid gap-1">
-            <div className="px-2 py-1.5 text-sm font-semibold">Options</div>
-            <Button
-              onClick={() => {
-                addBlockToSemester({ semester });
-                setPopoverOpen(false);
-              }}
-              variant="ghost"
-              className="h-8 justify-start text-sm font-normal"
-            >
-              Add extra block
-            </Button>
-          </div>
-        </PopoverContent>
-      </Popover>
+      <SemesterSettingsModal
+        semester={semester}
+        isOpen={isSettingsOpen}
+        onOpenChange={setIsSettingsOpen}
+      />
     </div>
   );
 };
