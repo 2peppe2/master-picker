@@ -34,7 +34,7 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent align="end" className="p-0 overflow-hidden w-64">
+      <PopoverContent align="end" className="p-0 overflow-hidden">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
           <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
             Semester settings
@@ -56,7 +56,7 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
               <span className="font-medium text-foreground">
                 Add extra block
               </span>
-              <span className="text-[11px] text-muted-foreground">
+              <span className="text-[11px] text-muted-foreground w-fit">
                 Extend available slots for this semester
               </span>
             </div>
