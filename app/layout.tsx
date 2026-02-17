@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MASTER PICKER 2026",
+  title: "Master Picker",
   description: "App to help you choose your master's program",
 };
 
