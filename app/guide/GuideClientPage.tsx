@@ -17,7 +17,12 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { CheckCircle2 } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { CheckCircle2, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MasterBadge } from "@/components/MasterBadge";
 
@@ -67,6 +72,8 @@ const GuideClientPage = ({
   const [selections, setSelections] = React.useState<
     Record<number, string | null>
   >({});
+  const [requiredConfirmed, setRequiredConfirmed] = React.useState(false);
+  const [requiredOpen, setRequiredOpen] = React.useState(true);
 
   const selectedCodesByGroup = React.useMemo(() => {
     const map: Record<number, string | null> = {};
@@ -85,6 +92,15 @@ const GuideClientPage = ({
 
   const isChoiceComplete =
     electiveCourses.length === 0 || completedChoiceGroups === electiveCourses.length;
+
+  const isRequiredOpen = !requiredConfirmed && requiredOpen;
+  const handleRequiredConfirm = () => {
+    setRequiredConfirmed((prev) => {
+      const next = !prev;
+      setRequiredOpen(!next);
+      return next;
+    });
+  };
 
   return (
     <div className="min-h-screen ">
@@ -146,31 +162,83 @@ const GuideClientPage = ({
 
         {compulsoryCourses.length > 0 && (
           <Card className="mt-10">
-            <CardHeader>
-              <div className="flex flex-wrap items-center gap-3">
-                <Badge className="bg-emerald-500/10 text-emerald-700">
-                  Auto-added
-                </Badge>
-                <CardTitle>Required courses</CardTitle>
-              </div>
-              <CardDescription>
-                These courses are mandatory and will be added automatically to
-                your schedule.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                {compulsoryCourses.map((req) =>
-                  req.courses.map((courseEntry) => {
-                    return (
-                      <div key={courseEntry.course.code} className="space-y-3">
-                        <CourseCard course={normalizeCourse(courseEntry.course)} variant="noAdd" />
-                      </div>
-                    );
-                  }),
-                )}
-              </div>
-            </CardContent>
+            <Collapsible
+              open={isRequiredOpen}
+              onOpenChange={(open) => {
+                if (!requiredConfirmed) {
+                  setRequiredOpen(open);
+                }
+              }}
+            >
+              <CardHeader>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Badge className="bg-emerald-500/10 text-emerald-700">
+                      Auto-added
+                    </Badge>
+                    <CardTitle>Required courses</CardTitle>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="sm"
+                      className="gap-2"
+                      variant={requiredConfirmed ? "secondary" : "default"}
+                      onClick={handleRequiredConfirm}
+                      aria-pressed={requiredConfirmed}
+                    >
+                      {requiredConfirmed ? (
+                        <>
+                          <CheckCircle2 className="h-4 w-4" />
+                          Confirmed
+                        </>
+                      ) : (
+                        "Confirm required"
+                      )}
+                    </Button>
+                    <CollapsibleTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-9 w-9"
+                        aria-label="Toggle required courses"
+                      >
+                        <ChevronDown
+                          className={cn(
+                            "h-4 w-4 transition-transform",
+                            isRequiredOpen ? "rotate-180" : "rotate-0",
+                          )}
+                        />
+                      </Button>
+                    </CollapsibleTrigger>
+                  </div>
+                </div>
+                <CardDescription>
+                  These courses are mandatory and will be added automatically to
+                  your schedule.
+                </CardDescription>
+              </CardHeader>
+              <CollapsibleContent>
+                <CardContent>
+                  <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                    {compulsoryCourses.map((req) =>
+                      req.courses.map((courseEntry) => {
+                        return (
+                          <div
+                            key={courseEntry.course.code}
+                            className="space-y-3"
+                          >
+                            <CourseCard
+                              course={normalizeCourse(courseEntry.course)}
+                              variant="noAdd"
+                            />
+                          </div>
+                        );
+                      }),
+                    )}
+                  </div>
+                </CardContent>
+              </CollapsibleContent>
+            </Collapsible>
           </Card>
         )}
 
