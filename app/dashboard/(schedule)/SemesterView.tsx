@@ -103,8 +103,6 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
         onClick={() => toggleShownSemester({ semester: semester + 1 })}
       >
         <CardTitle className="flex items-center gap-3 w-full cursor-pointer">
-          Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
-          {credits} / 30
           {hasWildcardWarning && (
             <TooltipProvider>
               <Tooltip delayDuration={200}>
@@ -120,6 +118,8 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
               </Tooltip>
             </TooltipProvider>
           )}
+          Semester {semester + 1}, {ht_or_vt} {relativeSemester} - Credits:{" "}
+          {credits} / 30
           <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
         </CardTitle>
       </CollapsibleTrigger>
