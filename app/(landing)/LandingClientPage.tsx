@@ -1,15 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxList,
-} from "@/components/ui/combobox";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { ComboboxItemType } from "./types";
+import GenericCombobox from "./GenericComboBox";
 
 interface LandingClientPageProps {
   programs: {
@@ -25,11 +19,6 @@ interface LandingClientPageProps {
     }[];
   }[];
 }
-
-type ComboboxItemType = {
-  label: string;
-  value: string;
-};
 
 const LandingClientPage = ({ programs }: LandingClientPageProps) => {
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
@@ -53,9 +42,9 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       year: selectedYear,
     });
     router.push(`/dashboard?${params.toString()}`);
-  }
+  };
 
-  const programItems = useMemo(
+  const programItems: ComboboxItemType[] = useMemo(
     () =>
       programs.map((p) => ({
         label: `${p.shortname} - ${p.name}`,
@@ -63,161 +52,106 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       })),
     [programs],
   );
-  const yearItems = useMemo(() => {
+  const yearItems: ComboboxItemType[] = useMemo(() => {
     if (!selectedProgram) return [];
     const program = programs.find((p) => p.program === selectedProgram);
     if (!program) return [];
-    return program.programCourses.map((c) => c.startYear.toString());
+    return program.programCourses.map((c) => ({
+      label: c.startYear.toString(),
+      value: c.startYear.toString(),
+    }));
   }, [programs, selectedProgram]);
 
-  const masterItems = useMemo(() => {
+  const masterItems: ComboboxItemType[] = useMemo(() => {
     if (!selectedProgram) return [];
     const program = programs.find((p) => p.program === selectedProgram);
     if (!program) return [];
     return program.masters.map((m) => ({
-      label: m.name,
+      label: m.name ?? m.master,
       value: m.master,
     }));
   }, [programs, selectedProgram]);
 
   return (
-    <div className="min-h-screen ">
-      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20">
-        <Header />
-        <div className="flex flex-col items-center gap-8">
-          <Combobox
-            items={programItems}
-            value={
-              programItems.find((item) => item.value === selectedProgram) || {
-                label: "",
-                value: "",
-              }
+    <div className="flex flex-col items-center gap-8">
+      <GenericCombobox
+        items={programItems}
+        value={
+          programItems.find((item) => item.value === selectedProgram) || {
+            label: "",
+            value: "",
+          }
+        }
+        onValueChange={(item: ComboboxItemType | null) =>
+          setSelectedProgram(item?.value || null)
+        }
+        placeholder="Select your current program"
+        noResultsText="No programs found."
+      />
+      <GenericCombobox
+        items={yearItems}
+        value={
+          yearItems.find((item) => item.value === selectedYear) || {
+            label: "",
+            value: "",
+          }
+        }
+        onValueChange={(item: ComboboxItemType | null) =>
+          setSelectedYear(item?.value || null)
+        }
+        placeholder="Select starting year"
+        noResultsText="No years found."
+        className={
+          selectedProgram
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-1 pointer-events-none"
+        }
+      />
+
+      <div
+        className={`text-sm transition-[opacity,transform] duration-200 ease-in-out ${
+          selectedYear
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-1 pointer-events-none"
+        }`}
+      >
+        <GenericCombobox
+          items={masterItems}
+          value={
+            masterItems.find((item) => item.value === selectedMaster) || {
+              label: "",
+              value: "",
             }
-            onValueChange={(item: ComboboxItemType) => setSelectedProgram(item?.value || null)}
-          >
-            <ComboboxInput
-              placeholder="Select your current program"
-              className="w-80 h-12 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg [&_[data-slot=input-group-control]]:px-4"
-            />
-            <ComboboxContent>
-              <ComboboxEmpty>No programs found.</ComboboxEmpty>
-              <ComboboxList>
-                {(item: ComboboxItemType) => (
-                  <ComboboxItem key={item.value} value={item}>
-                    {item.label}
-                  </ComboboxItem>
-                )}
-              </ComboboxList>
-            </ComboboxContent>
-          </Combobox>
+          }
+          onValueChange={(item: ComboboxItemType | null) =>
+            setSelectedMaster(item?.value || null)
+          }
+          placeholder="Select desired master"
+          noResultsText="No masters found."
+        />
+        <Button variant="link" onClick={pushToDashboard}>
+          {`Pick master later`}
+        </Button>
+      </div>
 
-          <Combobox
-            items={yearItems}
-            value={selectedYear}
-            onValueChange={setSelectedYear}
-          >
-            <ComboboxInput
-              disabled={selectedProgram === null}
-              placeholder="Select starting year"
-              aria-hidden={!selectedProgram}
-              className={`w-80 h-12 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg [&_[data-slot=input-group-control]]:px-4 transition-[opacity,transform] duration-200 ease-in-out ${
-                selectedProgram
-                  ? "opacity-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 -translate-y-1 pointer-events-none"
-              }`}
-            />
+      <Button
+        disabled={
+          selectedProgram === null ||
+          selectedYear === null ||
+          selectedMaster === null
+        }
+        onClick={pushToGuide}
+        className="w-80 h-12 text-base md:text-lg"
+      >
+        Get started
+      </Button>
 
-            <ComboboxContent>
-              <ComboboxEmpty>Year not found.</ComboboxEmpty>
-              <ComboboxList>
-                {(item: string) => (
-                  <ComboboxItem key={item} value={item}>
-                    {item}
-                  </ComboboxItem>
-                )}
-              </ComboboxList>
-            </ComboboxContent>
-          </Combobox>
-          <div
-            className={`text-sm transition-[opacity,transform] duration-200 ease-in-out ${
-              selectedYear
-                ? "opacity-100 translate-y-0 pointer-events-auto"
-                : "opacity-0 -translate-y-1 pointer-events-none"
-            }`}
-          >
-            <Combobox
-              items={masterItems}
-              value={
-                masterItems.find((item) => item.value === selectedMaster) || {
-                  label: "",
-                  value: "",
-                }
-              }
-              onValueChange={(item: ComboboxItemType) => setSelectedMaster(item?.value || null)}
-            >
-              <ComboboxInput
-                disabled={selectedYear === null}
-                placeholder="Select desired master"
-                className={`w-80 h-12 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg [&_[data-slot=input-group-control]]:px-4`}
-              />
-
-              <ComboboxContent>
-                <ComboboxEmpty>Master not found.</ComboboxEmpty>
-                <ComboboxList>
-                  {(item: ComboboxItemType) => (
-                    <ComboboxItem key={item.value} value={item}>
-                      {item.label}
-                    </ComboboxItem>
-                  )}
-                </ComboboxList>
-              </ComboboxContent>
-            </Combobox>
-
-            <Button variant="link" onClick={pushToDashboard}>
-              {`Pick master later`}
-            </Button>
-          </div>
-
-          <Button
-            disabled={
-              selectedProgram === null ||
-              selectedYear === null ||
-              selectedMaster === null
-            }
-            onClick={pushToGuide}
-            className="w-80 h-12 text-base md:text-lg"
-          >
-            Get started
-          </Button>
-
-          <Button
-            variant="link"
-            onClick={() => {}}
-            className="text-sm"
-          >
-            Learn more about the project
-          </Button>
-        </div>
-      </main>
+      <Button variant="link" onClick={() => {}} className="text-sm">
+        Learn more about the project
+      </Button>
     </div>
   );
 };
 export default LandingClientPage;
 
-const Header = () => {
-  return (
-    <header className="w-full py-6 px-4 flex flex-col items-center">
-      <h1
-        className="text-2xl md:text-6xl font-bold"
-        style={{ fontFamily: '"DM Serif Text", serif' }}
-      >
-        LiU Master
-      </h1>
-      <p className="mb-8 max-w-xl text-center text-lg text-muted-foreground">
-        Drop the crazy spreed sheets.
-        <br />
-        Embrace effortless course planning.
-      </p>
-    </header>
-  );
-};
+
