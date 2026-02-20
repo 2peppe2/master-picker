@@ -46,7 +46,7 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
       (occ) => occ.year === year && occ.semester === semester,
     );
 
-    if (!matchingOccasions) return false;
+    if (matchingOccasions.length === 0) return false;
 
     return matchingOccasions.some((matchingOccasion) => {
       const matchingPeriod = matchingOccasion.periods.find(
