@@ -8,6 +8,7 @@ import {
   ComboboxList,
 } from "@/components/ui/combobox";
 import { ComboboxItemType } from "./types";
+import { FC } from "react";
 
 interface ComboboxProps {
   items: ComboboxItemType[];
@@ -18,14 +19,14 @@ interface ComboboxProps {
   className?: string;
 }
 
-const GenericCombobox = ({
+const GenericCombobox: FC<ComboboxProps> = ({
   items,
   value,
   onValueChange,
   placeholder,
   noResultsText,
   className,
-}: ComboboxProps) => {
+}) => {
   return (
     <Combobox items={items} value={value} onValueChange={onValueChange}>
       <ComboboxInput
