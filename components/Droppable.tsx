@@ -42,25 +42,27 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     const targetPeriod = periodNumber + 1;
     const targetBlock = blockNumber + 1;
 
-    const matchingOccasion = draggedCourse.CourseOccasion.find(
+    const matchingOccasions = draggedCourse.CourseOccasion.filter(
       (occ) => occ.year === year && occ.semester === semester,
     );
 
-    if (!matchingOccasion) return false;
+    if (!matchingOccasions) return false;
 
-    const matchingPeriod = matchingOccasion.periods.find(
-      (p) => p.period === targetPeriod,
-    );
+    return matchingOccasions.some((matchingOccasion) => {
+      const matchingPeriod = matchingOccasion.periods.find(
+        (p) => p.period === targetPeriod,
+      );
 
-    if (!matchingPeriod) return false;
+      if (!matchingPeriod) return false;
 
-    if (isWildcard) return true;
+      if (isWildcard) return true;
 
-    if (matchingPeriod.blocks.length > 0) {
-      return matchingPeriod.blocks.includes(targetBlock);
-    }
+      if (matchingPeriod.blocks.length > 0) {
+        return matchingPeriod.blocks.includes(targetBlock);
+      }
 
-    return false;
+      return false;
+    });
   }, [draggedCourse, blockNumber, periodNumber, year, semester, isWildcard]);
 
   const baseStyles =
