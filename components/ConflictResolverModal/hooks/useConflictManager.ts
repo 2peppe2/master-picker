@@ -18,10 +18,13 @@ export const useConflictManager = () => {
   /**
    * Shows the conflict resolution dialog with the provided data.
    */
-  const showConflict = useCallback((data: ConflictData) => {
-    setConflictData(data);
-    setConflictOpen(true);
-  }, []);
+  const showConflict = useCallback(
+    (data: ConflictData) => {
+      setConflictData(data);
+      setConflictOpen(true);
+    },
+    [setConflictData, setConflictOpen],
+  );
 
   const closeConflict = () => {
     setConflictOpen(false);

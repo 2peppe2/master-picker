@@ -1,6 +1,5 @@
 "use client";
 
-import { useConflictManager } from "@/components/ConflictResolverModal/hooks/useConflictManager";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
@@ -28,8 +27,8 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     scheduleAtoms.draggedCourseAtom,
   );
 
-  const { conflictData, conflictOpen, setConflictOpen } = useConflictManager();
-  const { handleDrop } = useCourseDropHandler();
+  const { handleDrop, conflictData, conflictOpen, setConflictOpen } =
+    useCourseDropHandler();
 
   useScrollToCourseFeedback();
 
