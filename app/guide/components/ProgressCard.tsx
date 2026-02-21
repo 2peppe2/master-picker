@@ -122,7 +122,9 @@ const ProgressCard: FC<ProgressCardProps> = ({
           <div className="shrink-0">
             <ContinueButton
               disabled={!isComplete}
+              electiveCourses={electiveCourses}
               bachelorCourses={bachelorCourses}
+              compulsoryCourses={compulsoryCourses}
             />
           </div>
         </div>
