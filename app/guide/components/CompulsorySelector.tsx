@@ -79,8 +79,8 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
                   return (
                     <div key={courseEntry.course.code} className="space-y-3">
                       <CourseCard
-                        course={normalizeCourse(courseEntry.course)}
                         variant="default"
+                        course={normalizeCourse(courseEntry.course)}
                       />
                     </div>
                   );
