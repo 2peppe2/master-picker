@@ -27,48 +27,32 @@ const ProgressCard: FC<ProgressCardProps> = ({
   const electiveCount = Object.keys(electiveCourses).length;
   const electiveConfirmed =
     electiveCount === 0 || electedCourses.length === electiveCount;
+  const compulsoryCount = compulsoryCourses.length > 0 ? 1 : 0;
+  const totalSteps = compulsoryCount + electiveCount;
+  const completedSteps =
+    (compulsoryConfirmed ? 1 : 0) + electedCourses.length;
+  const progressPercent =
+    totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100;
   const isComplete = compulsoryConfirmed && electiveConfirmed;
     console.log("ProgressCard render", { compulsoryConfirmed, electiveConfirmed, isComplete });
 
   return (
     <div className="fixed bottom-0 w-full bg-transparent z-20">
     <div className="mx-auto w-6xl mt-6 rounded-2xl border p-4 pb-8 bg-card m-4 shadow-2xl">
-      <div className="flex w-full gap-8 justify-between items-center px-4">
+      <div className="flex w-full gap-8 justify-between  px-4">
         <div className="flex flex-col w-full">
           <div className="flex flex-col text-xs text-muted-foreground">
             <span>Selection progress</span>
           </div>
           <div className="mt-2 h-2 w-full rounded-full bg-muted">
             <div
-              className="h-full rounded-full transition-all"
+              className="h-full rounded-full bg-emerald-500 transition-all"
               style={{
-                width: `${
-                  electiveCount === 0
-                    ? 100
-                    : (electedCourses.length / electiveCount) * 100
-                }%`,
+                width: `${progressPercent}%`,
               }}
             />
           </div>
-          <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            <Badge
-              variant="outline"
-              className="rounded-full border-emerald-200 text-emerald-700"
-            >
-              {true ? "1. Confirm Required" : <Check className="h-4 w-4" />}
-            </Badge>
-            <Badge
-              variant="outline"
-              className={cn(
-                "rounded-full border px-3 py-1 font-medium",
-                electiveConfirmed
-                  ? "border-emerald-200 text-emerald-700"
-                  : "border-sky-200 bg-sky-50 text-sky-700",
-              )}
-            >
-              {true ? "2. Choose options" : <Check className="h-4 w-4" />}
-            </Badge>
-          </div>
+          <StatusBadge compulsoryConfirmed={compulsoryConfirmed} electiveConfirmed={electiveConfirmed} />
         </div>
         
         <ContinueButton disabled= {!isComplete} />
@@ -79,3 +63,51 @@ const ProgressCard: FC<ProgressCardProps> = ({
 };
 
 export default ProgressCard;
+
+interface StatusBadgeProps {
+  compulsoryConfirmed: boolean;
+  electiveConfirmed: boolean;
+}
+
+const StatusBadge: FC<StatusBadgeProps> = ({compulsoryConfirmed, electiveConfirmed}) => {
+  return (
+    <div className="mt-4 flex flex-wrap gap-2 text-xs">
+            <Badge
+              variant="outline"
+              className={cn(
+                "inline-flex items-center gap-1 rounded-full border px-3 py-1 font-medium",
+                compulsoryConfirmed
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                  : "bg-orange-500/10 text-orange-700",
+              )}
+            >
+              {compulsoryConfirmed ? (
+                <>
+                  <Check className="h-4 w-4" />
+                  1. Required confirmed
+                </>
+              ) : (
+                "1. Confirm Required"
+              )}
+            </Badge>
+            <Badge
+              variant="outline"
+              className={cn(
+                "inline-flex items-center gap-1 rounded-full border px-3 py-1 font-medium",
+                electiveConfirmed
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                  : "border-sky-200 bg-sky-50 text-sky-700",
+              )}
+            >
+              {electiveConfirmed ? (
+                <>
+                  <Check className="h-4 w-4" />
+                  2. Choose electives
+                </>
+              ) : (
+                "2. Choose electives"
+              )}
+            </Badge>
+          </div>
+  )
+};
