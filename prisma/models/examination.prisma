@@ -1,13 +1,14 @@
 model Examination {
-  credits    Float
-  module     String
-  courseCode String
-  name       String
-  scale      Scale  @default(G_OR_U)
+  credits         Float
+  module          String
+  courseCode      String
+  programCourseID Int
+  name            String
+  scale           Scale  @default(G_OR_U)
 
-  Course Course @relation(fields: [courseCode], references: [code])
+  Course Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID])
 
-  @@id([courseCode, module])
+  @@id([courseCode, programCourseID, module])
 }
 
 enum Scale {

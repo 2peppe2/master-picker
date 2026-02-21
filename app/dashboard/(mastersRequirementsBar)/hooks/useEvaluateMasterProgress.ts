@@ -56,7 +56,7 @@ const getProgressForRequirement = (
   switch (req.type) {
     case "COURSES_OR": {
       const isFulfilled = courses.some((c) =>
-        req.courses.map((c) => c.code).includes(c.code),
+        req.courses.map((c) => c.courseCode).includes(c.code),
       );
       return isFulfilled ? 1 : 0;
     }
