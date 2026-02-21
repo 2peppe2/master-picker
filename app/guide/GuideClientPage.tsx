@@ -10,9 +10,9 @@ import ElectiveSummaryCard from "./components/ElectiveSummaryCard";
 import ProgressCard from "./components/ProgressCard";
 import CompulsorySelector from "./components/CompulsorySelector";
 import ElectiveSelector from "./components/ElectiveSelector";
-import { useSetAtom } from "jotai";
 import { useScheduleMutators } from "../atoms/schedule/hooks/useScheduleMutators";
 import ScheduleSync from "../dashboard/(scheduleSync)";
+import { useHydrateAtoms } from "jotai/utils";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
@@ -27,20 +27,19 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   selectedMaster,
   bachelorCourses,
 }) => {
-  const setMasters = useSetAtom(mastersAtom);
-  setMasters(masters);
+  useHydrateAtoms([[mastersAtom, masters]]);
 
   const { addCourseByButton } = useScheduleMutators();
 
   useEffect(() => {
-    setTimeout(() => {
-
     bachelorCourses.forEach((course) => {
-      addCourseByButton({ course: course, occasion: course.CourseOccasion[0] });
+      addCourseByButton({
+        course: course,
+        occasion: course.CourseOccasion[0],
+      });
     });
-    }, 1000);
   }, [bachelorCourses, addCourseByButton]);
-  
+
   const compulsoryCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length === 1),
     [courseRequirements],
@@ -73,47 +72,47 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
 
   return (
     <>
-    <ScheduleSync/>
-    <div className="min-h-screen ">
-      <div className="mx-auto w-full max-w-6xl  pb-40 pt-24">
-        <GuideHeader selectedMaster={selectedMaster} />
+      <ScheduleSync />
+      <div className="min-h-screen ">
+        <div className="mx-auto w-full max-w-6xl  pb-40 pt-24">
+          <GuideHeader selectedMaster={selectedMaster} />
 
-        <div className="grid gap-4 sm:grid-cols-3 pt-4">
-          <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
-          <ElectiveSummaryCard electiveCourses={electiveCourses} />
-        </div>
-        <CompulsorySelector
-          compulsoryCourses={compulsoryCourses}
-          compulsoryConfirmed={requiredConfirmed}
-          onConfirmChange={() => {
-            setRequiredConfirmed((prev) => !prev);
-          }}
-        />
-
-        {electiveCourses.map((electiveCourses, index) => (
-          <ElectiveSelector
-            key={index}
-            index={index}
-            selection={selectedElectiveCourses[index]}
-            onSelectionChange={(courseCode) => {
-              if (!courseCode) {
-                return;
-              }
-              setSelections((prev) => ({
-                ...prev,
-                [index]: courseCode,
-              }));
+          <div className="grid gap-4 sm:grid-cols-3 pt-4">
+            <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
+            <ElectiveSummaryCard electiveCourses={electiveCourses} />
+          </div>
+          <CompulsorySelector
+            compulsoryCourses={compulsoryCourses}
+            compulsoryConfirmed={requiredConfirmed}
+            onConfirmChange={() => {
+              setRequiredConfirmed((prev) => !prev);
             }}
-            electiveCourses={electiveCourses}
           />
-        ))}
+
+          {electiveCourses.map((electiveCourses, index) => (
+            <ElectiveSelector
+              key={index}
+              index={index}
+              selection={selectedElectiveCourses[index]}
+              onSelectionChange={(courseCode) => {
+                if (!courseCode) {
+                  return;
+                }
+                setSelections((prev) => ({
+                  ...prev,
+                  [index]: courseCode,
+                }));
+              }}
+              electiveCourses={electiveCourses}
+            />
+          ))}
+        </div>
+        <ProgressCard
+          completedChoiceGroups={completedChoiceGroups}
+          electiveCourses={electiveCourses}
+          isChoiceComplete={isChoiceComplete}
+        />
       </div>
-      <ProgressCard
-        completedChoiceGroups={completedChoiceGroups}
-        electiveCourses={electiveCourses}
-        isChoiceComplete={isChoiceComplete}
-      />
-    </div>
     </>
   );
 };
