@@ -19,30 +19,36 @@ export const useDropValidator = () => {
       overData.semesterNumber,
     );
 
-    const occasion = course.CourseOccasion.find(
+    const matchingOccasions = course.CourseOccasion.filter(
       (occ) => occ.year === year && occ.semester === semester,
     );
 
-    if (!occasion) return null;
+    if (matchingOccasions.length === 0) return null;
 
     const targetPeriod = overData.periodNumber + 1;
-    const period = occasion.periods.find((p) => p.period === targetPeriod);
-
-    if (!period) return null;
-
     const targetBlock = overData.blockNumber + 1;
     const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
-    const isValidDrop = isWildcardDrop || period.blocks.includes(targetBlock);
 
-    if (!isValidDrop) return null;
+    for (const occasion of matchingOccasions) {
+      const period = occasion.periods.find((p) => p.period === targetPeriod);
 
-    return {
-      occasion,
-      period,
-      targetPeriod,
-      targetBlock,
-      isWildcardDrop,
-    };
+      if (period) {
+        const isValidBlock =
+          isWildcardDrop || period.blocks.includes(targetBlock);
+
+        if (isValidBlock) {
+          return {
+            occasion,
+            period,
+            targetPeriod,
+            targetBlock,
+            isWildcardDrop,
+          };
+        }
+      }
+    }
+
+    return null;
   };
 
   return { validateDrop };

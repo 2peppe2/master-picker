@@ -13,10 +13,11 @@ interface HandleDropArgs {
 }
 
 export const useCourseDropHandler = () => {
+  const { showConflict, conflictData, conflictOpen, setConflictOpen } =
+    useConflictManager();
   const { detectCollisions } = useCollisionDetector();
   const { executeAdd } = useCourseContlictResolver();
   const { handleGhostDrop } = useGhostDropHandler();
-  const { showConflict } = useConflictManager();
   const { validateDrop } = useDropValidator();
   const { removeCourse } = useScheduleMutators();
 
@@ -80,5 +81,5 @@ export const useCourseDropHandler = () => {
     return true;
   };
 
-  return { handleDrop };
+  return { handleDrop, conflictData, conflictOpen, setConflictOpen };
 };
