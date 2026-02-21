@@ -30,7 +30,6 @@ const ClientPage: FC<ClientPageProps> = ({ courses, masters }) => {
     [coursesAtom, coursesMap],
     [mastersAtom, masters],
   ]);
-
   return (
     <>
       <ScheduleSync />

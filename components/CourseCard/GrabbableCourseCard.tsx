@@ -15,7 +15,6 @@ import {
 
 const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
   const masterPrograms = course.CourseMaster || [];
-
   const [openDialog, setOpenDialog] = useState(false);
 
   return (

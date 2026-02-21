@@ -76,6 +76,7 @@ const GuidePage = async function ({
   const masterRequirements = await prisma.requirement.findFirst({
     where: {
       masterProgram: master,
+      
     },
     select: {
       courseRequirements: {
@@ -92,6 +93,7 @@ const GuidePage = async function ({
                           name: true,
                           shortname: true,
                         },
+                        
                       },
                     },
                   },
@@ -134,6 +136,9 @@ const GuidePage = async function ({
   }
 
   const masters = await prisma.master.findMany({
+    where: {
+      masterProgram: program,
+    },
     select: {
       master: true,
       name: true,

@@ -1,12 +1,23 @@
 [
     {
         "id": "6CMJU",
-        "name": "Computer Science and Software Engineering",
+        "name": "Software Engineering",
         "shortname": "U",
         "years": [
             {
                 "year": 2023,
                 "id": 5430
+            }
+        ]
+    },
+    {
+        "id": "6CDDD",
+        "name": "Data Science",
+        "shortname": "D",
+        "years": [
+            {
+                "year": 2023,
+                "id": 5440
             }
         ]
     }
