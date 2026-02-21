@@ -11,8 +11,8 @@ import ProgressCard from "./components/ProgressCard";
 import CompulsorySelector from "./components/CompulsorySelector";
 import ElectiveSelector from "./components/ElectiveSelector";
 import { useSetAtom } from "jotai";
-import { scheduleAtoms } from "../atoms/schedule/atoms";
 import { useScheduleMutators } from "../atoms/schedule/hooks/useScheduleMutators";
+import ScheduleSync from "../dashboard/(scheduleSync)";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
@@ -33,9 +33,12 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   const { addCourseByButton } = useScheduleMutators();
 
   useEffect(() => {
+    setTimeout(() => {
+
     bachelorCourses.forEach((course) => {
       addCourseByButton({ course: course, occasion: course.CourseOccasion[0] });
     });
+    }, 1000);
   }, [bachelorCourses, addCourseByButton]);
   
   const compulsoryCourses = useMemo(
@@ -69,6 +72,8 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
     completedChoiceGroups === electiveCourses.length;
 
   return (
+    <>
+    <ScheduleSync/>
     <div className="min-h-screen ">
       <div className="mx-auto w-full max-w-6xl  pb-40 pt-24">
         <GuideHeader selectedMaster={selectedMaster} />
@@ -109,6 +114,7 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
         isChoiceComplete={isChoiceComplete}
       />
     </div>
+    </>
   );
 };
 

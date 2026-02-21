@@ -8,6 +8,7 @@ import {
   compressToEncodedURIComponent,
   decompressFromEncodedURIComponent,
 } from "lz-string";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 
 export type SyncAction = "WRITE" | "READ";
 
@@ -18,15 +19,20 @@ type Entry = [number, number, number, number];
 export const scheduleSyncEffectAtom = atom(
   null,
   (get, set, action: "WRITE" | "READ") => {
+    const params = useSearchParams();
+
+    const setSearchParams = (newParams: URLSearchParams) => {
+      
+
     const courses = get(coursesAtom);
     const courseKeys = Object.keys(courses).sort();
 
     if (action === "WRITE") {
-      perfromWrite({ set, get, courseKeys });
+      performWrite({ set, get, params, courseKeys });
     }
 
     if (action === "READ") {
-      performRead({ set, get, courses, courseKeys });
+      performRead({ set, params, courses, courseKeys });
     }
   },
 );
@@ -35,9 +41,10 @@ interface PerformWriteSyncArgs {
   get: Getter;
   set: Setter;
   courseKeys: string[];
+  params: ReadonlyURLSearchParams;
 }
 
-const perfromWrite = ({ get, set, courseKeys }: PerformWriteSyncArgs) => {
+const performWrite = ({ get, set, params, courseKeys }: PerformWriteSyncArgs) => {
   const grid = get(scheduleAtoms.schedulesAtom);
   if (!grid.length) return;
 
@@ -66,8 +73,10 @@ const perfromWrite = ({ get, set, courseKeys }: PerformWriteSyncArgs) => {
   };
 
   const compressed = compressToEncodedURIComponent(JSON.stringify(payload));
+  
 
   set(locationAtom, (prev) => {
+    console.log(prev);
     const p = new URLSearchParams(prev.searchParams);
     if (p.get(PARAM_NAME) !== compressed) {
       p.set(PARAM_NAME, compressed);
@@ -78,20 +87,19 @@ const perfromWrite = ({ get, set, courseKeys }: PerformWriteSyncArgs) => {
 };
 
 interface PerformReadSyncArgs {
-  get: Getter;
   set: Setter;
   courses: Record<string, Course>;
   courseKeys: string[];
+  params: ReadonlyURLSearchParams;
 }
 
 const performRead = ({
-  get,
   set,
   courses,
   courseKeys,
+  params,
 }: PerformReadSyncArgs) => {
-  const loc = get(locationAtom);
-  const param = loc.searchParams?.get(PARAM_NAME);
+  const param = params?.get(PARAM_NAME);
 
   if (!param || courseKeys.length === 0) return;
 
