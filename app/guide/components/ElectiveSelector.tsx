@@ -44,7 +44,9 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
-              <Badge className="bg-sky-500/10 text-sky-700">Pick one</Badge>
+              <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400">
+                Pick one
+              </Badge>
               <CardTitle>Elective course {index + 1}</CardTitle>
             </div>
 

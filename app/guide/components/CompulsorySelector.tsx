@@ -46,7 +46,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
-              <Badge className="bg-orange-500/10 text-orange-700">
+              <Badge className="border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400">
                 Auto-added
               </Badge>
               <CardTitle>Required courses</CardTitle>
