@@ -61,11 +61,13 @@ const ProgressCard: FC<ProgressCardProps> = ({
           states: {
             active: {
               label: "Required confirmed",
-              style: "border-emerald-200 bg-emerald-50 text-emerald-700",
+              style:
+                "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400",
             },
             default: {
               label: "Confirm required",
-              style: "bg-orange-500/10 text-orange-700",
+              style:
+                "border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400",
             },
           },
           isDone: compulsoryConfirmed,
@@ -73,12 +75,14 @@ const ProgressCard: FC<ProgressCardProps> = ({
         {
           states: {
             active: {
-              label: "Electives chosen",
-              style: "border-emerald-200 bg-emerald-50 text-emerald-700",
+              label: "Elective chosen",
+              style:
+                "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400",
             },
             default: {
               label: "Choose electives",
-              style: "border-sky-200 bg-sky-50 text-sky-700",
+              style:
+                "border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400",
             },
           },
           isDone: electiveConfirmed,

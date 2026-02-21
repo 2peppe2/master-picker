@@ -35,8 +35,11 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         "hover:-translate-y-[1px] hover:border-foreground/20 hover:shadow-sm",
         isSelected
-          ? "border-emerald-500 bg-emerald-50/60 shadow-[0_0_0_1px_rgba(16,185,129,0.1)]"
-          : "border-muted bg-background",
+          ? [
+              "border-emerald-500 bg-emerald-50/60 shadow-[0_0_0_1px_rgba(16,185,129,0.1)]",
+              "dark:border-emerald-500/50 dark:bg-emerald-500/10 dark:shadow-[0_0_0_1px_rgba(16,185,129,0.2)]",
+            ]
+          : "border-muted bg-background hover:border-foreground/20 dark:hover:border-foreground/40",
       )}
     >
       <CourseDialog
@@ -45,19 +48,19 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         onOpenChange={setOpenDialog}
       />
 
-      <button
+      <div
         className={cn(
-          "absolute top-4 right-4 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all",
+          "absolute right-3 top-3 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all",
           isSelected
-            ? "border-emerald-600 ring-2 ring-emerald-600/20 ring-offset-0"
-            : "border-muted-foreground/40",
+            ? "border-emerald-600 ring-2 ring-emerald-600/20 dark:border-emerald-500 dark:ring-emerald-500/20"
+            : "border-muted-foreground/30 dark:border-muted-foreground/20",
         )}
         aria-hidden
       >
         {isSelected && (
-          <span className="h-3.5 w-3.5 rounded-full bg-emerald-600" />
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 dark:bg-emerald-500" />
         )}
-      </button>
+      </div>
 
       <CardHeader>
         <CardTitle>
@@ -77,7 +80,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
               e.stopPropagation();
               setOpenDialog(true);
             }}
-            className="w-[fit-content] cursor-pointer hover:underline underline-offset-2 text-left text-sm"
+            className="w-fit cursor-pointer hover:underline underline-offset-2 text-left text-sm"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: 2,
