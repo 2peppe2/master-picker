@@ -31,6 +31,7 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
 
   const { addCourseByButton } = useScheduleMutators();
 
+  //TODO: This can moved down to button if we want?
   useEffect(() => {
     bachelorCourses.forEach((course) => {
       addCourseByButton({
@@ -61,14 +62,6 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
     });
     return map;
   }, [electiveCourses, selections]);
-
-  const completedChoiceGroups = electiveCourses.reduce((count, _, index) => {
-    return selectedElectiveCourses[index] ? count + 1 : count;
-  }, 0);
-
-  const isChoiceComplete =
-    electiveCourses.length === 0 ||
-    completedChoiceGroups === electiveCourses.length;
 
   return (
     <>
@@ -108,9 +101,9 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
           ))}
         </div>
         <ProgressCard
-          completedChoiceGroups={completedChoiceGroups}
-          electiveCourses={electiveCourses}
-          isChoiceComplete={isChoiceComplete}
+          compulsoryConfirmed={requiredConfirmed}
+          compulsoryCourses={compulsoryCourses}
+          electiveCourses={selectedElectiveCourses}
         />
       </div>
     </>

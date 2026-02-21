@@ -2,24 +2,34 @@
 
 import { Badge } from "@/components/ui/badge";
 import { CourseRequirements } from "../page";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
 
 import ContinueButton from "./ContinueButton";
 import { Check } from "lucide-react";
+import { Course } from "@/app/dashboard/page";
 
 interface ProgressCardProps {
-  completedChoiceGroups: number;
-  electiveCourses: CourseRequirements;
-  isChoiceComplete: boolean;
+  compulsoryConfirmed: boolean;
+  compulsoryCourses: CourseRequirements;
+  electiveCourses: Record<number, Course | null>;
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({
-  completedChoiceGroups,
+  compulsoryConfirmed,
+  compulsoryCourses,
   electiveCourses,
-  isChoiceComplete,
 }) => {
-  
+  const electedCourses = useMemo(
+    () => Object.values(electiveCourses).filter((course) => course !== null),
+    [electiveCourses],
+  );
+  const electiveCount = Object.keys(electiveCourses).length;
+  const electiveConfirmed =
+    electiveCount === 0 || electedCourses.length === electiveCount;
+  const isComplete = compulsoryConfirmed && electiveConfirmed;
+    console.log("ProgressCard render", { compulsoryConfirmed, electiveConfirmed, isComplete });
+
   return (
     <div className="fixed bottom-0 w-full bg-transparent z-20">
     <div className="mx-auto w-6xl mt-6 rounded-2xl border p-4 pb-8 bg-card m-4 shadow-2xl">
@@ -32,7 +42,11 @@ const ProgressCard: FC<ProgressCardProps> = ({
             <div
               className="h-full rounded-full transition-all"
               style={{
-                width: `${(completedChoiceGroups / electiveCourses.length) * 100}%`,
+                width: `${
+                  electiveCount === 0
+                    ? 100
+                    : (electedCourses.length / electiveCount) * 100
+                }%`,
               }}
             />
           </div>
@@ -47,7 +61,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
               variant="outline"
               className={cn(
                 "rounded-full border px-3 py-1 font-medium",
-                isChoiceComplete
+                electiveConfirmed
                   ? "border-emerald-200 text-emerald-700"
                   : "border-sky-200 bg-sky-50 text-sky-700",
               )}
@@ -56,7 +70,8 @@ const ProgressCard: FC<ProgressCardProps> = ({
             </Badge>
           </div>
         </div>
-        <ContinueButton />
+        
+        <ContinueButton disabled= {!isComplete} />
       </div>
     </div>
     </div>
