@@ -1,5 +1,6 @@
 import { MasterBadge } from "@/components/MasterBadge";
 import { CourseDialog } from "../CourseModal/Dialog";
+import { Course } from "@/app/dashboard/page";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,7 @@ import {
 } from "@/components/ui/card";
 
 export interface SelectableCourseCardProps extends CourseCardProps {
-  onSelectionChange: (courseCode: string | null) => void;
+  onSelectionChange: (course: Course) => void;
   isSelected: boolean;
 }
 
@@ -24,8 +25,20 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   const [openDialog, setOpenDialog] = useState(false);
   const masterPrograms = course.CourseMaster || [];
 
+  //       className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <Card
+      onClick={() => onSelectionChange(course)}
+      className={cn(
+        "group relative w-full rounded-2xl border p-4 text-left transition",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        "hover:-translate-y-[1px] hover:border-foreground/20 hover:shadow-sm",
+        isSelected
+          ? "border-emerald-300 bg-emerald-50/60"
+          : "border-muted bg-background",
+      )}
+    >
       <CourseDialog
         course={course}
         open={openDialog}
@@ -33,7 +46,6 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
       />
 
       <button
-        onClick={() => onSelectionChange(course.code)}
         className={cn(
           "mt-1 flex h-5 w-5 items-center justify-center rounded-full border transition",
           isSelected ? "border-emerald-600" : "border-muted-foreground/40",

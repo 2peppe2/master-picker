@@ -2,8 +2,8 @@
 
 import type { CourseRequirements } from "./page";
 import { mastersAtom } from "../atoms/mastersAtom";
-import type { Master } from "../dashboard/page";
-import React, { FC } from "react";
+import type { Course, Master } from "../dashboard/page";
+import React, { FC, useMemo, useState } from "react";
 import GuideHeader from "./components/GuideHeader";
 import CompulsorySummaryCard from "./components/CompulsorySummaryCard";
 import ElectiveSummaryCard from "./components/ElectiveSummaryCard";
@@ -26,22 +26,22 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   const setMasters = useSetAtom(mastersAtom);
   setMasters(masters);
 
-  const compulsoryCourses = React.useMemo(
+  const compulsoryCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length === 1),
     [courseRequirements],
   );
-  const electiveCourses = React.useMemo(
+
+  const electiveCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length > 1),
     [courseRequirements],
   );
-  const [requiredConfirmed, setRequiredConfirmed] = React.useState(false);
 
-  const [selections, setSelections] = React.useState<Record<number, string>>(
-    {},
-  );
+  const [requiredConfirmed, setRequiredConfirmed] = useState(false);
 
-  const selectedElectiveCourses = React.useMemo(() => {
-    const map: Record<number, string> = {};
+  const [selections, setSelections] = useState<Record<number, Course>>({});
+
+  const selectedElectiveCourses = useMemo(() => {
+    const map: Record<number, Course | null> = {};
     electiveCourses.forEach((_, index) => {
       map[index] = selections[index] ?? null;
     });
