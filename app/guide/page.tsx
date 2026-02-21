@@ -2,6 +2,9 @@ import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/prisma/generated/client/client";
 import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
+import { get } from "lodash";
+import { getBachelorCourses } from "../actions/getBachelorCourses";
+import { normalizeCourse } from "../courseNormalizer";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
   select: {
@@ -140,6 +143,8 @@ const GuidePage = async function ({
       style: true,
     },
   });
+  
+  const bachelorCourses = await getBachelorCourses(program, parseInt(year));
 
   return (
     <GuideClientPage
@@ -148,6 +153,7 @@ const GuidePage = async function ({
         masters.map((m: Master) => [m.master, m]),
       )}
       selectedMaster={master}
+      bachelorCourses={bachelorCourses.map(normalizeCourse)}
     />
   );
 };

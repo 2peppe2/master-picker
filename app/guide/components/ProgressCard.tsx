@@ -19,6 +19,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
   electiveCourses,
   isChoiceComplete,
 }) => {
+  
   return (
     <div className="fixed bottom-0 w-full bg-transparent z-20">
     <div className="mx-auto w-6xl mt-6 rounded-2xl border p-4 pb-8 bg-card m-4 shadow-2xl">

@@ -3,7 +3,7 @@
 import type { CourseRequirements } from "./page";
 import { mastersAtom } from "../atoms/mastersAtom";
 import type { Course, Master } from "../dashboard/page";
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useMemo, useState, useEffect } from "react";
 import GuideHeader from "./components/GuideHeader";
 import CompulsorySummaryCard from "./components/CompulsorySummaryCard";
 import ElectiveSummaryCard from "./components/ElectiveSummaryCard";
@@ -11,21 +11,33 @@ import ProgressCard from "./components/ProgressCard";
 import CompulsorySelector from "./components/CompulsorySelector";
 import ElectiveSelector from "./components/ElectiveSelector";
 import { useSetAtom } from "jotai";
+import { scheduleAtoms } from "../atoms/schedule/atoms";
+import { useScheduleMutators } from "../atoms/schedule/hooks/useScheduleMutators";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
   masters: Record<string, Master>;
   selectedMaster: string;
+  bachelorCourses: Course[];
 }
 
 const GuideClientPage: FC<GuideClientPageProps> = ({
   courseRequirements,
   masters,
   selectedMaster,
+  bachelorCourses,
 }) => {
   const setMasters = useSetAtom(mastersAtom);
   setMasters(masters);
 
+  const { addCourseByButton } = useScheduleMutators();
+
+  useEffect(() => {
+    bachelorCourses.forEach((course) => {
+      addCourseByButton({ course: course, occasion: course.CourseOccasion[0] });
+    });
+  }, [bachelorCourses, addCourseByButton]);
+  
   const compulsoryCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length === 1),
     [courseRequirements],
@@ -63,9 +75,7 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
 
         <div className="grid gap-4 sm:grid-cols-3 pt-4">
           <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
-          <ElectiveSummaryCard
-            electiveCourses={electiveCourses}
-          />
+          <ElectiveSummaryCard electiveCourses={electiveCourses} />
         </div>
         <CompulsorySelector
           compulsoryCourses={compulsoryCourses}
