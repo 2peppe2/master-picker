@@ -15,7 +15,7 @@ const PARAM_NAME = "schedule";
 
 type Entry = [number, number, number, number];
 
-export const scheduleSyncEffect = atom(
+export const scheduleSyncEffectAtom = atom(
   null,
   (get, set, action: "WRITE" | "READ") => {
     const courses = get(coursesAtom);

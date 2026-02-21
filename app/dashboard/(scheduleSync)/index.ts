@@ -1,12 +1,12 @@
-import { coursesAtom } from "@/app/atoms/coursesAtom";
+import { scheduleSyncEffectAtom } from "@/app/atoms/schedule/utils";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { scheduleSyncEffect } from "@/app/atoms/schedule/utils";
+import { coursesAtom } from "@/app/atoms/coursesAtom";
 import { useAtomValue, useSetAtom } from "jotai";
 import { FC, useEffect } from "react";
 
 const ScheduleSync: FC = () => {
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
-  const sync = useSetAtom(scheduleSyncEffect);
+  const sync = useSetAtom(scheduleSyncEffectAtom);
   const courses = useAtomValue(coursesAtom);
 
   useEffect(() => {
