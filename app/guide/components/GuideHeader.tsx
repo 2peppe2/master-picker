@@ -1,15 +1,29 @@
+ "use client";
+
 import { MasterBadge } from "@/components/MasterBadge";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import { GEN_Z_TITLES } from "../titles";
 
 interface GuideHeaderProps {
   selectedMaster: string;
 }
+
+
 const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    if (GEN_Z_TITLES.length === 0) {
+      return;
+    }
+    setTitleIndex(Math.floor(Math.random() * GEN_Z_TITLES.length));
+  }, [selectedMaster]);
+
   return (
     <header className="flex flex-col gap-2">
       <MasterBadge name={selectedMaster} title={true} style="text-base" />
       <h1 className="text-3xl font-semibold tracking-tight">
-        {"Great choice! Let's set up your schedule."}
+        {GEN_Z_TITLES[titleIndex]}
       </h1>
       <div className="mt-4 max-w-2xl">
         <p className="text-base text-muted-foreground">
