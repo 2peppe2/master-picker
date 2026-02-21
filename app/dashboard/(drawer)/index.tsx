@@ -51,7 +51,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
                   <CourseCard variant="ghost" course={course} />
                 ) : (
                   <Draggable id={course.code} data={course}>
-                    <CourseCard variant="default" course={course} />
+                    <CourseCard variant="grabbable" course={course} />
                   </Draggable>
                 )}
               </Fragment>

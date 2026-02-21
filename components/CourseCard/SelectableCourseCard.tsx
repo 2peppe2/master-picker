@@ -1,11 +1,8 @@
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 import { MasterBadge } from "@/components/MasterBadge";
 import { CourseDialog } from "../CourseModal/Dialog";
-import { Button } from "@/components/ui/button";
-import CourseAddButton from "./CourseAddButton";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
-import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import {
   Card,
   CardDescription,
@@ -13,9 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
-interface SelectableCourseCardProps extends CourseCardProps {
+export interface SelectableCourseCardProps extends CourseCardProps {
   onSelectionChange: (courseCode: string | null) => void;
   isSelected: boolean;
 }
@@ -25,9 +21,8 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   isSelected,
   onSelectionChange,
 }) => {
-  const masterPrograms = course.CourseMaster || [];
-
   const [openDialog, setOpenDialog] = useState(false);
+  const masterPrograms = course.CourseMaster || [];
 
   return (
     <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
@@ -36,18 +31,19 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         open={openDialog}
         onOpenChange={setOpenDialog}
       />
-      
-        <button
-          className={cn(
-            "mt-1 flex h-5 w-5 items-center justify-center rounded-full border transition",
-            isSelected ? "border-emerald-600" : "border-muted-foreground/40",
-          )}
-          aria-hidden
-        >
-          {isSelected ? (
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-600" />
-          ) : null}
-        </button>
+
+      <button
+        onClick={() => onSelectionChange(course.code)}
+        className={cn(
+          "mt-1 flex h-5 w-5 items-center justify-center rounded-full border transition",
+          isSelected ? "border-emerald-600" : "border-muted-foreground/40",
+        )}
+        aria-hidden
+      >
+        {isSelected ? (
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-600" />
+        ) : null}
+      </button>
       {/* isSelected
             ? "border-emerald-300 bg-emerald-50/60"
             : "border-muted bg-background", */}

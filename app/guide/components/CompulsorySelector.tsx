@@ -40,7 +40,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
       <Collapsible
         open={isRequiredOpen}
         onOpenChange={(setOpen) => {
-            setRequiredOpen(setOpen);
+          setRequiredOpen(setOpen);
         }}
       >
         <CardHeader>
@@ -80,7 +80,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
                     <div key={courseEntry.course.code} className="space-y-3">
                       <CourseCard
                         course={normalizeCourse(courseEntry.course)}
-                        variant="selectable"
+                        variant="default"
                       />
                     </div>
                   );

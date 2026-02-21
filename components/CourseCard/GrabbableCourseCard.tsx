@@ -1,5 +1,8 @@
+"use client";
+
 import { MasterBadge } from "@/components/MasterBadge";
 import { CourseDialog } from "../CourseModal/Dialog";
+import CourseAddButton from "./CourseAddButton";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
 import {
@@ -10,18 +13,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
+const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
   const masterPrograms = course.CourseMaster || [];
 
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
       <CourseDialog
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
       />
+      <CourseAddButton course={course} />
 
       <CardHeader>
         <CardTitle>
@@ -60,4 +64,4 @@ const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
   );
 };
 
-export default DefaultCourseCard;
+export default GrabbableCourseCard;

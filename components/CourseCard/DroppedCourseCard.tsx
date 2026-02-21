@@ -1,7 +1,10 @@
+import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 import { MasterBadge } from "@/components/MasterBadge";
 import { CourseDialog } from "../CourseModal/Dialog";
+import { Button } from "@/components/ui/button";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
+import { X } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -10,18 +13,31 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
+const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
   const masterPrograms = course.CourseMaster || [];
+
+  const { removeCourse } = useScheduleMutators();
 
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <Card
+      data-course-code={course.code}
+      className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab"
+    >
       <CourseDialog
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
       />
+      <Button
+        size="icon"
+        variant="ghost"
+        onClick={() => removeCourse({ courseCode: course.code })}
+        className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
+      >
+        <X className="h-4 w-4" />
+      </Button>
 
       <CardHeader>
         <CardTitle>
@@ -60,4 +76,4 @@ const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
   );
 };
 
-export default DefaultCourseCard;
+export default DroppedCourseCard;

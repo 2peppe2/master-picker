@@ -131,7 +131,12 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
                         </div>
                       </div>
                     </div>
-                    <CourseCard course={course} variant="selectable" />
+                    <CourseCard
+                      course={course}
+                      variant="selectable"
+                      onSelectionChange={onSelectionChange}
+                      isSelected={selection === course.code}
+                    />
                   </button>
                 );
               })}
