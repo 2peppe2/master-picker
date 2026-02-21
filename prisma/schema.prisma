@@ -3,5 +3,5 @@ generator client {
   output = "./generated/client"
 }
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }

@@ -4,6 +4,21 @@ import { prisma } from "../lib/prisma";
 import { CoursesType, CreditType, Scale, Semester } from "./generated/client/enums";
 import { entries } from "lodash";
 
+
+interface CreditsRequirement {
+  type:  "A-level" | "G-level" | "Total";
+  credits: number;
+}
+
+
+interface CoursesRequirement {
+  type: "Courses";
+  courses: string[];
+}
+
+type MasterRequirement = CreditsRequirement | CoursesRequirement;
+
+
 function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
   if (s === "VT") return Semester.VT;
@@ -126,7 +141,7 @@ async function seedCoursesData() {
     for (const occasion of c.occasions) {
       // Create CourseOccasion
       const masters = Array.isArray(occasion.recommended_masters)
-        ? occasion.recommended_masters.map((m) => m?.trim()).filter(Boolean)
+        ? occasion.recommended_masters.map((m: string) => m?.trim()).filter(Boolean)
         : [];
 
       const dbOccasion = await prisma.courseOccasion.create({
@@ -135,8 +150,8 @@ async function seedCoursesData() {
           semester: parseSemester(occasion.ht_or_vt),
           courseCode: c.code,
           ...(masters.length
-            ? { recommendedMaster: { connect: masters.map((master) => ({ master })) } }
-            : {}),
+        ? { recommendedMaster: { connect: masters.map((master: string) => ({ master })) } }
+        : {}),
         },
       });
       // Create periods
@@ -166,7 +181,7 @@ async function seedMasterRequirementsData() {
   const masterRequirementsPath = path.resolve(
     "./data/6CMJU_master_requirements.json"
   );
-  const masterRequirements = JSON.parse(
+  const masterRequirements: Record<string, MasterRequirement[]> = JSON.parse(
     fs.readFileSync(masterRequirementsPath, "utf8")
   );
 
@@ -193,7 +208,7 @@ async function seedMasterRequirementsData() {
           data: {
             type: CoursesType.COURSES_OR,
             requirementId: requirementRow.id,
-            courses: { connect: req.courses.map((code) => ({ code })) },
+            courses: { connect: req.courses.map((code: string) => ({ code })) },
           },
         });
         continue;

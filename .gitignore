@@ -50,3 +50,4 @@ prisma/*.db-shm
 prisma/generated
 
 dev.db
+.env*.local
