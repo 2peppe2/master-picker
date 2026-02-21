@@ -1,113 +1,151 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import ContinueButton from "./ContinueButton";
+import { Course } from "@/app/dashboard/page";
 import { CourseRequirements } from "../page";
+import { Check } from "lucide-react";
 import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
 
-import ContinueButton from "./ContinueButton";
-import { Check } from "lucide-react";
-import { Course } from "@/app/dashboard/page";
+interface ProgressStep {
+  states: {
+    active: {
+      label: string;
+      style: string;
+    };
+    default: {
+      label: string;
+      style: string;
+    };
+  };
+  isDone: boolean;
+}
 
 interface ProgressCardProps {
   compulsoryConfirmed: boolean;
   compulsoryCourses: CourseRequirements;
+  bachelorCourses: Course[];
   electiveCourses: Record<number, Course | null>;
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({
   compulsoryConfirmed,
+  bachelorCourses,
   compulsoryCourses,
   electiveCourses,
 }) => {
-  const electedCourses = useMemo(
-    () => Object.values(electiveCourses).filter((course) => course !== null),
-    [electiveCourses],
+  const { electiveConfirmed, progressPercent, isComplete } = useMemo(() => {
+    const electedList = Object.values(electiveCourses).filter(Boolean);
+    const totalElectives = Object.keys(electiveCourses).length;
+    const hasCompulsory = compulsoryCourses.length > 0;
+    const electiveConfirmed =
+      totalElectives === 0 || electedList.length === totalElectives;
+
+    const totalSteps = (hasCompulsory ? 1 : 0) + totalElectives;
+    const completedSteps = (compulsoryConfirmed ? 1 : 0) + electedList.length;
+
+    return {
+      electiveConfirmed,
+      isComplete: compulsoryConfirmed && electiveConfirmed,
+      progressPercent: Math.round(
+        totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
+      ),
+    };
+  }, [electiveCourses, compulsoryCourses, compulsoryConfirmed]);
+
+  const steps = useMemo(
+    () =>
+      [
+        {
+          states: {
+            active: {
+              label: "Required confirmed",
+              style: "border-emerald-200 bg-emerald-50 text-emerald-700",
+            },
+            default: {
+              label: "Confirm required",
+              style: "bg-orange-500/10 text-orange-700",
+            },
+          },
+          isDone: compulsoryConfirmed,
+        },
+        {
+          states: {
+            active: {
+              label: "Electives chosen",
+              style: "border-emerald-200 bg-emerald-50 text-emerald-700",
+            },
+            default: {
+              label: "Choose electives",
+              style: "border-sky-200 bg-sky-50 text-sky-700",
+            },
+          },
+          isDone: electiveConfirmed,
+        },
+      ] satisfies ProgressStep[],
+    [compulsoryConfirmed, electiveConfirmed],
   );
-  const electiveCount = Object.keys(electiveCourses).length;
-  const electiveConfirmed =
-    electiveCount === 0 || electedCourses.length === electiveCount;
-  const compulsoryCount = compulsoryCourses.length > 0 ? 1 : 0;
-  const totalSteps = compulsoryCount + electiveCount;
-  const completedSteps =
-    (compulsoryConfirmed ? 1 : 0) + electedCourses.length;
-  const progressPercent =
-    totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100;
-  const isComplete = compulsoryConfirmed && electiveConfirmed;
-    console.log("ProgressCard render", { compulsoryConfirmed, electiveConfirmed, isComplete });
 
   return (
-    <div className="fixed bottom-0 w-full bg-transparent z-20">
-    <div className="mx-auto w-6xl mt-6 rounded-2xl border p-4 pb-8 bg-card m-4 shadow-2xl">
-      <div className="flex w-full gap-8 justify-between  px-4">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col text-xs text-muted-foreground">
-            <span>Selection progress</span>
+    <div className="fixed bottom-0 w-full z-20 flex justify-center p-4 bg-gradient-to-t from-background via-background/60 to-transparent">
+      <div className="w-6xl rounded-2xl border bg-card p-6 shadow-2xl ring-1 ring-foreground/5">
+        <div className="flex items-center gap-8">
+          <div className="flex flex-1 flex-col gap-3">
+            <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
+              <span>Selection Progress</span>
+              <span className="text-emerald-600">{progressPercent}%</span>
+            </div>
+
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted/50">
+              <div
+                className="h-full bg-emerald-500 transition-all duration-700 ease-in-out"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {steps.map((step, idx) => (
+                <ProgressBadge
+                  key={`step-${idx}`}
+                  id={`${idx + 1}`}
+                  {...step}
+                />
+              ))}
+            </div>
           </div>
-          <div className="mt-2 h-2 w-full rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-emerald-500 transition-all"
-              style={{
-                width: `${progressPercent}%`,
-              }}
+
+          <div className="shrink-0">
+            <ContinueButton
+              disabled={!isComplete}
+              bachelorCourses={bachelorCourses}
             />
           </div>
-          <StatusBadge compulsoryConfirmed={compulsoryConfirmed} electiveConfirmed={electiveConfirmed} />
         </div>
-        
-        <ContinueButton disabled= {!isComplete} />
       </div>
-    </div>
     </div>
   );
 };
 
 export default ProgressCard;
 
-interface StatusBadgeProps {
-  compulsoryConfirmed: boolean;
-  electiveConfirmed: boolean;
+interface ProgressBadgeProps extends ProgressStep {
+  id: string;
 }
 
-const StatusBadge: FC<StatusBadgeProps> = ({compulsoryConfirmed, electiveConfirmed}) => {
+const ProgressBadge: FC<ProgressBadgeProps> = ({ id, states, isDone }) => {
+  const state = states[isDone ? "active" : "default"];
+
   return (
-    <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            <Badge
-              variant="outline"
-              className={cn(
-                "inline-flex items-center gap-1 rounded-full border px-3 py-1 font-medium",
-                compulsoryConfirmed
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                  : "bg-orange-500/10 text-orange-700",
-              )}
-            >
-              {compulsoryConfirmed ? (
-                <>
-                  <Check className="h-4 w-4" />
-                  1. Required confirmed
-                </>
-              ) : (
-                "1. Confirm Required"
-              )}
-            </Badge>
-            <Badge
-              variant="outline"
-              className={cn(
-                "inline-flex items-center gap-1 rounded-full border px-3 py-1 font-medium",
-                electiveConfirmed
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                  : "border-sky-200 bg-sky-50 text-sky-700",
-              )}
-            >
-              {electiveConfirmed ? (
-                <>
-                  <Check className="h-4 w-4" />
-                  2. Choose electives
-                </>
-              ) : (
-                "2. Choose electives"
-              )}
-            </Badge>
-          </div>
-  )
+    <Badge
+      variant="outline"
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] transition-all duration-300",
+        state.style,
+      )}
+    >
+      {isDone && <Check className="h-3 w-3" />}
+      {`${id}. ${state.label}`}
+    </Badge>
+  );
 };

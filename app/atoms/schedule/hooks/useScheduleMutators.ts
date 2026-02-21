@@ -8,6 +8,7 @@ import {
   AddBlockToSemesterArgs,
   AddCourseByButtonArgs,
   AddCourseByDropArgs,
+  AddInitialCoursesArgs,
   DeleteBlockFromSemesterArgs,
   RemoveCourseArgs,
   ShowSemesterArgs,
@@ -220,6 +221,15 @@ export const useScheduleMutators = () => {
     }, []),
   );
 
+  const setInitialCourses = useAtomCallback(
+    useCallback(
+      (get, set, { entries }: AddInitialCoursesArgs) => {
+        entries.forEach((entry) => addCourseByButton(entry));
+      },
+      [addCourseByButton],
+    ),
+  );
+
   return useMemo(
     () => ({
       addCourseByButton,
@@ -229,6 +239,7 @@ export const useScheduleMutators = () => {
       deleteBlockFromSemester,
       toggleShownSemester,
       setDraggedCourse,
+      setInitialCourses,
       showSemester,
     }),
     [
@@ -239,6 +250,7 @@ export const useScheduleMutators = () => {
       deleteBlockFromSemester,
       toggleShownSemester,
       setDraggedCourse,
+      setInitialCourses,
       showSemester,
     ],
   );
