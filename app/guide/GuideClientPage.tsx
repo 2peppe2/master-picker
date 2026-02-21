@@ -36,12 +36,12 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   );
   const [requiredConfirmed, setRequiredConfirmed] = React.useState(false);
 
-  const [selections, setSelections] = React.useState<
-    Record<number, string | null>
-  >({});
+  const [selections, setSelections] = React.useState<Record<number, string>>(
+    {},
+  );
 
   const selectedElectiveCourses = React.useMemo(() => {
-    const map: Record<number, string | null> = {};
+    const map: Record<number, string> = {};
     electiveCourses.forEach((_, index) => {
       map[index] = selections[index] ?? null;
     });
@@ -82,6 +82,9 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
             index={index}
             selection={selectedElectiveCourses[index]}
             onSelectionChange={(courseCode) => {
+              if (!courseCode) {
+                return;
+              }
               setSelections((prev) => ({
                 ...prev,
                 [index]: courseCode,
@@ -90,14 +93,12 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
             electiveCourses={electiveCourses}
           />
         ))}
-
-        
       </div>
       <ProgressCard
-          completedChoiceGroups={completedChoiceGroups}
-          electiveCourses={electiveCourses}
-          isChoiceComplete={isChoiceComplete}
-        />
+        completedChoiceGroups={completedChoiceGroups}
+        electiveCourses={electiveCourses}
+        isChoiceComplete={isChoiceComplete}
+      />
     </div>
   );
 };

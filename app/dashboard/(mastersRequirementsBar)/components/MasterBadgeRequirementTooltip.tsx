@@ -44,7 +44,7 @@ const RequirementRows: RequirementComponentMap = {
   COURSES_OR: ({ requirement }) => (
     <>
       Have selected at least one of{" "}
-      {requirement.courses.map((course) => course.code).join(", ")}.
+      {requirement.courses.map((course) => course.courseCode).join(", ")}.
     </>
   ),
 };

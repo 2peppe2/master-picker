@@ -55,7 +55,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
             <CollapsibleTrigger asChild>
               <Button
                 size="icon"
-                className={`h-10 w-10 rounded-4xl ${compulsoryConfirmed ? "bg-red-500/10 hover:bg-red-500/20 text-red-700" : "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700"}`}
+                className={`cursor-pointer h-10 w-10 rounded-4xl ${compulsoryConfirmed ? "bg-red-500/10 hover:bg-red-500/20 text-red-700" : "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700"}`}
                 onClick={onConfirmChange}
               >
                 {compulsoryConfirmed ? (
@@ -80,7 +80,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
                     <div key={courseEntry.course.code} className="space-y-3">
                       <CourseCard
                         course={normalizeCourse(courseEntry.course)}
-                        variant="noAdd"
+                        variant="selectable"
                       />
                     </div>
                   );

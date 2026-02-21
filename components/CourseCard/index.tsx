@@ -3,12 +3,14 @@ import DefaultCourseCard from "./DefaultCourseCard";
 import GhostCourseCard from "./GhostCourseCard";
 import { Course } from "@/app/dashboard/page";
 import { FC, memo } from "react";
+import SelectableCourseCard from "./SelectableCourseCard";
 
-export type CourseCardVariant = "default" | "dropped" | "dragged" | "ghost" | "noAdd";
+export type CourseCardVariant = "default" | "dropped" | "dragged" | "ghost" | "selectable";
 
 interface CourseCardWrapperProps {
   variant: CourseCardVariant;
   course: Course;
+  props?: any;
 }
 
 export interface CourseCardProps {
@@ -20,14 +22,14 @@ const VARIANTS: Record<CourseCardVariant, FC<CourseCardProps>> = {
   default: (props) => <DefaultCourseCard dropped={false} {...props} />,
   dragged: DraggedCourseCard,
   ghost: GhostCourseCard,
-  noAdd: (props) => <DefaultCourseCard dropped={false} addBtn={false} {...props} />,
+  selectable: SelectableCourseCard,
 };
 
 const CourseCard = memo<CourseCardWrapperProps>(
-  ({ course, variant }) => {
+  ({ course, variant, props }) => {
     const Component = VARIANTS[variant];
 
-    return <Component course={course} />;
+    return <Component course={course} {...props} />;
   },
   (prev, next) => {
     return (

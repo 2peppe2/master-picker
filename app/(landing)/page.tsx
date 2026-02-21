@@ -36,13 +36,13 @@ const LandingPage = async () => {
 
 const Header = () => (
   <header className="w-full py-6 px-4 flex flex-col items-center">
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 mb-4">
       <Image
-        src="/logo/mp_logo.svg"
+        src="/logo/mp_logo_icon.svg"
         alt="LiU Master Logo"
-        width={100}
-        height={100}
-        className="mb-4"
+        width={70}
+        height={70}
+        
       />
       <h1 className={`text-2xl md:text-7xl font-bold ${playfair.className}`}>
         Master Picker

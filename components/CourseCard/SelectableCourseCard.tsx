@@ -13,40 +13,44 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
-interface DefaultCourseCardProps extends CourseCardProps {
-  dropped: boolean;
+interface SelectableCourseCardProps extends CourseCardProps {
+  onSelectionChange: (courseCode: string | null) => void;
+  isSelected: boolean;
 }
 
-const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
+const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
+  course,
+  isSelected,
+  onSelectionChange,
+}) => {
   const masterPrograms = course.CourseMaster || [];
-
-  const { removeCourse } = useScheduleMutators();
 
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card
-      data-course-code={dropped ? course.code : undefined}
-      className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab"
-    >
+    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
       <CourseDialog
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
       />
-      {dropped ? (
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={() => removeCourse({ courseCode: course.code })}
-          className="absolute top-2 right-2 text-muted-foreground hover:text-foreground cursor-pointer"
+      
+        <button
+          className={cn(
+            "mt-1 flex h-5 w-5 items-center justify-center rounded-full border transition",
+            isSelected ? "border-emerald-600" : "border-muted-foreground/40",
+          )}
+          aria-hidden
         >
-          <X className="h-4 w-4" />
-        </Button>
-      ) : (
-        <CourseAddButton course={course} />
-      )}
+          {isSelected ? (
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-600" />
+          ) : null}
+        </button>
+      {/* isSelected
+            ? "border-emerald-300 bg-emerald-50/60"
+            : "border-muted bg-background", */}
 
       <CardHeader>
         <CardTitle>
@@ -84,4 +88,4 @@ const DefaultCourseCard: FC<DefaultCourseCardProps> = ({ course, dropped }) => {
   );
 };
 
-export default DefaultCourseCard;
+export default SelectableCourseCard;
