@@ -14,7 +14,7 @@ const CompulsorySummaryCard: FC<CompulsoryCardSummaryProps> = ({
   );
 
   return (
-    <div className="rounded-2xl border p-4">
+    <div className="rounded-2xl border p-4 bg-card">
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
         Compulsory courses
       </p>

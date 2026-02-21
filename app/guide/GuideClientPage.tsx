@@ -58,13 +58,12 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
 
   return (
     <div className="min-h-screen ">
-      <div className="mx-auto w-full max-w-6xl px-6 pb-40 pt-24">
+      <div className="mx-auto w-full max-w-6xl  pb-40 pt-24">
         <GuideHeader selectedMaster={selectedMaster} />
 
         <div className="grid gap-4 sm:grid-cols-3 pt-4">
           <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
           <ElectiveSummaryCard
-            completedChoiceGroups={completedChoiceGroups}
             electiveCourses={electiveCourses}
           />
         </div>
