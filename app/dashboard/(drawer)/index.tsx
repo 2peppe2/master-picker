@@ -18,11 +18,14 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   const availableCourses = useMemo(() => {
     const scheduledCourses = new Set(
-      schedules.flat(3).filter((course): course is Course => course !== null),
+      schedules
+        .flat(3)
+        .filter((course): course is Course => course !== null)
+        .map((c) => c.code),
     );
 
     return Object.values(filteredCourses).filter((course) => {
-      if (scheduledCourses.has(course)) return false;
+      if (scheduledCourses.has(course.code)) return false;
       return true;
     });
   }, [filteredCourses, schedules]);

@@ -1,10 +1,12 @@
 "use client";
 
 import { mastersAtom } from "../atoms/mastersAtom";
+import { coursesAtom } from "../atoms/coursesAtom";
+import { useHydrateAtoms } from "jotai/utils";
+import ScheduleSync from "./(scheduleSync)";
 import { Course, Master } from "./page";
-import { useSetAtom } from "jotai";
+import { FC, useMemo } from "react";
 import DndView from "./(dndView)";
-import { FC } from "react";
 
 interface ClientPageProps {
   courses: Course[];
@@ -12,10 +14,29 @@ interface ClientPageProps {
 }
 
 const ClientPage: FC<ClientPageProps> = ({ courses, masters }) => {
-  const setMasters = useSetAtom(mastersAtom);
-  setMasters(masters);
+  const coursesMap = useMemo(
+    () =>
+      courses.reduce(
+        (acc, course) => {
+          acc[`${course.code}`] = course;
+          return acc;
+        },
+        {} as Record<string, Course>,
+      ),
+    [courses],
+  );
 
-  return <DndView courses={courses} />;
+  useHydrateAtoms([
+    [coursesAtom, coursesMap],
+    [mastersAtom, masters],
+  ]);
+
+  return (
+    <>
+      <ScheduleSync />
+      <DndView courses={courses} />
+    </>
+  );
 };
 
 export default ClientPage;
