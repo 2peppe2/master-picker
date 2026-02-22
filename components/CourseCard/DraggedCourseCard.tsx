@@ -1,13 +1,12 @@
-import { MasterBadge } from "../MasterBadge";
 import { CourseCardProps } from ".";
 import {
   Card,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { FC } from "react";
+import CourseCardFooter from "./CourseCardFooter";
 
 const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
   <Card className="w-40 h-40 border-amber-50 border-1 ease-linear cursor-grabbing">
@@ -32,13 +31,7 @@ const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
       </CardDescription>
     </CardHeader>
 
-    <CardFooter className="mt-auto text-foreground">
-      <div className="flex justify-center gap-2 w-full">
-        {(course.CourseMaster || []).map((program) => (
-          <MasterBadge name={program.master} key={program.master} />
-        ))}
-      </div>
-    </CardFooter>
+    <CourseCardFooter masterPrograms={course.CourseMaster} />
   </Card>
 );
 

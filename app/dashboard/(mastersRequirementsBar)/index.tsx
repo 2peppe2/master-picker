@@ -2,7 +2,7 @@
 
 import { useEvaluateMasterProgress } from "./hooks/useEvaluateMasterProgress";
 import MasterProgressBadge from "./components/MasterProgressBadge";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, FC } from "react";
 import { ProcessedMaster } from "./types";
 import {
   getMastersWithRequirements,
@@ -10,6 +10,8 @@ import {
 } from "@/app/actions/getMasters";
 import _ from "lodash";
 import { useSearchParams } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
 const MastersRequirementsBar = () => {
   const [mastersWithRequirements, setMastersWithRequirements] =
@@ -57,9 +59,7 @@ const MastersRequirementsBar = () => {
       </div>
       <div className="flex-1 overflow-x-auto no-scrollbar mask-gradient-right">
         <div className="flex items-center gap-3 pr-4 [&>*]:flex-1 [&>*]:min-w-0">
-          {processedMasters.map((master) => (
-            <MasterProgressBadge key={master.master} master={master} />
-          ))}
+          <MasterRequirementsBarFiltered processedMasters={processedMasters} />
         </div>
       </div>
     </div>
@@ -85,3 +85,43 @@ const MastersRequirementsSkeleton = () => (
     </div>
   </div>
 );
+
+interface MasterRequirementsBarProps {
+  processedMasters: ProcessedMaster[];
+}
+
+const MasterRequirementsBarFiltered: FC<MasterRequirementsBarProps> = ({
+  processedMasters,
+}) => {
+  if (processedMasters.length > 7) {
+    return (
+      <>
+        {processedMasters.slice(0, 7).map((master) => (
+          <MasterProgressBadge key={master.master} master={master} />
+        ))}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Badge className="h-8 w-8" variant="outline">
+          {`+${processedMasters.length - 6}`}
+          </Badge>
+          </TooltipTrigger>
+          <TooltipContent side="bottom" className="">
+            <div className="flex flex-col gap-2">
+              {processedMasters.slice(7).map((master) => (
+                <div key={master.master}>{master.name}</div>
+              ))}
+            </div>
+          </TooltipContent>
+        </Tooltip>
+        
+      </>
+    );
+  }
+  return (
+    <>
+      {processedMasters.map((master) => (
+        <MasterProgressBadge key={master.master} master={master} />
+      ))}
+    </>
+  );
+};
