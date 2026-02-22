@@ -2,61 +2,68 @@
   "DAIM": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
     { "type": "Courses", "courses": ["TGTU99"] },
     { "type": "Courses", "courses": ["TDDE01"] },
-    { "type": "Courses", "courses": ["TDDE19"] }
+    { "type": "Courses", "courses": ["TDDE19"] },
+    { "type": "Courses", "courses": ["TQXX33"] }
   ],
   "DPAL": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
      {
       "type": "Courses",
       "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
     },
     { "type": "Courses", "courses": ["TSIT02"] },
     
-    { "type": "Courses", "courses": ["TDDE52"] } 
+    { "type": "Courses", "courses": ["TDDE52"] },
+    { "type": "Courses", "courses": ["TQXX33"] } 
   ],
   "DIND": [
     { "type": "A-level", "credits": 30 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
     { "type": "Courses", "courses": ["TEAE01"] },
     { "type": "Courses", "courses": ["TEIO32"] },
     { "type": "Courses", "courses": ["TDDC34"] },
     { "type": "Courses", "courses": ["TDDE02"] },
     { "type": "Courses", "courses": ["TEIO06"] },
-    { "type": "Courses", "courses": ["TDEI74", "TEIO13"] } 
+    { "type": "Courses", "courses": ["TDEI74", "TEIO13"] },
+    { "type": "Courses", "courses": ["TQXX33"] } 
   ],
   "DMEI": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
     { "type": "Courses", "courses": ["TBME04"] },
-    { "type": "Courses", "courses": ["TBMI19"] }
+    { "type": "Courses", "courses": ["TBMI19"] },
+    { "type": "Courses", "courses": ["TQXX33"] }
   ],
   "DSPE": [
     { "type": "A-level", "credits": 30 },
     { "type": "G-level", "credits": 36 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
     { "type": "Courses", "courses": ["TDDD23"] },
     { "type": "Courses", "courses": ["TDDC73"] },
     { "type": "Courses", "courses": ["TSBK07"] },
     { "type": "Courses", "courses": ["TSBK03"] },
-    { "type": "Courses", "courses": ["TDDD57"] }
+    { "type": "Courses", "courses": ["TDDD57"] },
+    { "type": "Courses", "courses": ["TQXX33"] }
   ],
   "DSMU": [
     { "type": "A-level", "credits": 30 },
-    { "type": "Total", "credits": 90 },
-    { "type": "Courses", "courses": ["TDDE52"] }
+    { "type": "Total", "credits": 120 },
+    { "type": "Courses", "courses": ["TDDE52"] },
+    { "type": "Courses", "courses": ["TQXX33"] }
   ],
   "DSEC": [
     { "type": "G-level", "credits": 12 },
-    { "type": "Total", "credits": 90 },
+    { "type": "Total", "credits": 120 },
     { "type": "Courses", "courses": ["TSIT02"] },
     { "type": "Courses", "courses": ["TDDE62"] },
     { "type": "Courses", "courses": ["TDDC90"] },
-    { "type": "Courses", "courses": ["TDDE21", "TDDE63"] }  
+    { "type": "Courses", "courses": ["TDDE21", "TDDE63"] },
+    { "type": "Courses", "courses": ["TQXX33"] }  
   ]
 }

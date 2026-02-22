@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { MasterBadge } from "@/components/MasterBadge";
 import { FC, useEffect, useState } from "react";
@@ -8,7 +8,6 @@ interface GuideHeaderProps {
   selectedMaster: string;
 }
 
-
 const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
   const [titleIndex, setTitleIndex] = useState(0);
 
@@ -17,7 +16,7 @@ const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
       return;
     }
     setTitleIndex(Math.floor(Math.random() * GEN_Z_TITLES.length));
-  }, [selectedMaster]);
+  }, []);
 
   return (
     <header className="flex flex-col gap-2">

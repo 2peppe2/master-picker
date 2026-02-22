@@ -36,7 +36,9 @@ export type CourseRequirements = Prisma.RequirementGetPayload<{
                         };
                       };
                     };
-                    recommendedMaster: { select: { master: true } };
+                    recommendedMasters: {
+                      select: { master: true; masterProgram: true };
+                    };
                   };
                 };
                 CourseMaster: true;
@@ -76,6 +78,7 @@ const GuidePage = async function ({
   const masterRequirements = await prisma.requirement.findFirst({
     where: {
       masterProgram: master,
+      program,
     },
     select: {
       courseRequirements: {
@@ -107,7 +110,9 @@ const GuidePage = async function ({
                           },
                         },
                       },
-                      recommendedMaster: { select: { master: true } },
+                      recommendedMasters: {
+                        select: { master: true, masterProgram: true },
+                      },
                     },
                   },
                   CourseMaster: true,
@@ -128,12 +133,16 @@ const GuidePage = async function ({
       },
     },
   });
+  console.log(masterRequirements?.courseRequirements[3]);
 
   if (!masterRequirements) {
     return <div>No requirements found</div>;
   }
 
   const masters = await prisma.master.findMany({
+    where: {
+      masterProgram: program,
+    },
     select: {
       master: true,
       name: true,

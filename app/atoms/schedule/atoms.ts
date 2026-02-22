@@ -99,7 +99,7 @@ export const scheduleAtoms = {
 
     for (
       let semester = masterPeriod.start - 1;
-      semester < masterPeriod.end - 1;
+      semester < masterPeriod.end;
       ++semester
     ) {
       for (const period of schedules[semester]) {

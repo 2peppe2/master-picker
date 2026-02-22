@@ -25,7 +25,9 @@ type CourseWithOccasion = Prisma.CourseGetPayload<{
             };
           };
         };
-        recommendedMaster: { select: { master: true } };
+        recommendedMasters: {
+          select: { master: true; masterProgram: true };
+        };
       };
     };
     Examination: {
@@ -37,11 +39,17 @@ type CourseWithOccasion = Prisma.CourseGetPayload<{
 
 export const normalizeCourse = (course: CourseWithOccasion) => ({
   ...course,
-  CourseOccasion: course.CourseOccasion.map((occasion) => ({
-    ...occasion,
-    periods: occasion.periods.map((p) => ({
-      period: p.period,
-      blocks: p.blocks.map((b) => b.block),
-    })),
-  })),
+  CourseOccasion: course.CourseOccasion.map(
+    ({ recommendedMasters, ...occasion }) => ({
+      ...occasion,
+      recommendedMaster: recommendedMasters.map((master) => ({
+        master: master.master,
+        masterProgram: master.masterProgram,
+      })),
+      periods: occasion.periods.map((p) => ({
+        period: p.period,
+        blocks: p.blocks.map((b) => b.block),
+      })),
+    }),
+  ),
 });

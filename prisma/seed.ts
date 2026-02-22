@@ -40,6 +40,7 @@ main()
 async function delateAllData() {
   await prisma.courseOccasionBlock.deleteMany();
   await prisma.courseOccasionPeriod.deleteMany();
+  await prisma.courseOccasionRecommendedMaster.deleteMany();
   await prisma.courseOccasion.deleteMany();
   await prisma.examination.deleteMany();
   await prisma.courseMaster.deleteMany();
@@ -115,17 +116,28 @@ async function seedCoursesData(program: string, id: number) {
 
     for (const m of c.mastersPrograms ?? []) {
       await seedMaster(m, program);
-      await seedMasterCourse(m, c, id);
+      await seedMasterCourse(m, c, id, program);
     }
     for (const occasion of c.occasions) {
       // Create CourseOccasion
-      await seedOccasion(occasion, c, id);
+      await seedOccasion(occasion, c, id, program);
     }
   }
   console.log(`${program} - ${id} courses seeding complete`);
 }
 
-async function seedOccasion(occasion: { year: number; semester: string; ht_or_vt: string; periods: { period: number; blocks: number[]; }[]; recommended_masters: string[]; }, c: Course, id: number) {
+async function seedOccasion(
+  occasion: {
+    year: number;
+    semester: string;
+    ht_or_vt: string;
+    periods: { period: number; blocks: number[] }[];
+    recommended_masters: string[];
+  },
+  c: Course,
+  id: number,
+  program: string,
+) {
   const masters = Array.isArray(occasion.recommended_masters)
     ? occasion.recommended_masters.map((m) => m?.trim()).filter(Boolean)
     : [];
@@ -136,15 +148,17 @@ async function seedOccasion(occasion: { year: number; semester: string; ht_or_vt
       semester: parseSemester(occasion.ht_or_vt),
       courseCode: c.code,
       programCourseID: id,
-      ...(masters.length
-        ? {
-          recommendedMaster: {
-            connect: masters.map((master) => ({ master })),
-          },
-        }
-        : {}),
     },
   });
+  if (masters.length) {
+    await prisma.courseOccasionRecommendedMaster.createMany({
+      data: masters.map((master) => ({
+        courseOccasionId: dbOccasion.id,
+        master,
+        masterProgram: program,
+      }))
+    });
+  }
   // Create periods
   for (const period of occasion.periods) {
     const dbPeriod = await prisma.courseOccasionPeriod.create({
@@ -165,17 +179,27 @@ async function seedOccasion(occasion: { year: number; semester: string; ht_or_vt
   }
 }
 
-async function seedMasterCourse(m: string, c: Course, id: number) {
+async function seedMasterCourse(
+  m: string,
+  c: Course,
+  id: number,
+  program: string,
+) {
   await prisma.courseMaster.upsert({
-    where: { courseMasterId: { master: m, courseCode: c.code } },
+    where: { courseMasterId: { master: m, masterProgram: program, courseCode: c.code } },
     update: {},
-    create: { master: m, courseCode: c.code, programCourseID: id },
+    create: {
+      master: m,
+      masterProgram: program,
+      courseCode: c.code,
+      programCourseID: id,
+    },
   });
 }
 
 async function seedMaster(m: string, program: string) {
   await prisma.master.upsert({
-    where: { master: m },
+    where: { master_masterProgram: { master: m, masterProgram: program} },
     update: {},
     create: { master: m, masterProgram: program },
   });
@@ -248,7 +272,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
     await seedMaster(master, program);
 
     const requirementRow = await prisma.requirement.create({
-      data: { masterProgram: master },
+      data: { masterProgram: master, program },
     });
 
     for (const req of requirements) {
@@ -261,7 +285,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
           },
         });
         const linkedCourses = await prisma.course.findMany({
-          where: { code: { in: req.courses } },
+          where: { code: { in: req.courses }, programCourseID: id },
           select: { code: true, programCourseID: true },
         });
         const missingCourses = req.courses.filter(
@@ -310,7 +334,7 @@ async function seedMastersData(program: string, id: number) {
   ) as MasterName[];
   for (const info of mastersInfo) {
     await prisma.master.upsert({
-      where: { master: info.id },
+      where: { master_masterProgram: { master: info.id, masterProgram: program } },
       update: {
         name: info.name,
         icon: info.icon,

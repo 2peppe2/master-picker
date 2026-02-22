@@ -5,8 +5,32 @@ import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
 import { normalizeCourse } from "../courseNormalizer"
 
-export default async function MainPage() {
+export default async function MainPage({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    program?: string;
+    year?: string;
+    master?: string;
+  }>;
+}) {
+  const { program, year } = await searchParams;
+  if (!program && !year) {
+    return "redirecting";
+  }
+  const startYear = year ? Number(year) : undefined;
+  const hasValidYear = startYear !== undefined && !Number.isNaN(startYear);
+  const courseWhere =
+    program && hasValidYear
+      ? {
+          ProgramCourse: {
+            program,
+            startYear,
+          },
+        }
+      : undefined;
   const courses = await prisma.course.findMany({
+    where: courseWhere,
     include: {
       ProgramCourse: {
         include: {
@@ -16,6 +40,7 @@ export default async function MainPage() {
               name: true,
               shortname: true,
             },
+            
           },
         },
       },
@@ -31,7 +56,9 @@ export default async function MainPage() {
               },
             },
           },
-          recommendedMaster: { select: { master: true } },
+          recommendedMasters: {
+            select: { master: true, masterProgram: true },
+          },
         },
       },
       CourseMaster: true,
@@ -48,8 +75,11 @@ export default async function MainPage() {
       icon: true,
       style: true,
     },
+    where: {
+      masterProgram: program,
+    },
   });
-
+  
   return (
     <ClientPage
       courses={courses.map(normalizeCourse)}

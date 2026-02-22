@@ -1,6 +1,5 @@
 "use client";
 
-import { MasterBadge } from "@/components/MasterBadge";
 import { CourseDialog } from "../CourseModal/Dialog";
 import CourseAddButton from "./CourseAddButton";
 import { FC, useState } from "react";
@@ -8,14 +7,12 @@ import { CourseCardProps } from ".";
 import {
   Card,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import CourseCardFooter from "./CourseCardFooter";
 
 const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
-  const masterPrograms = course.CourseMaster || [];
-
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
@@ -53,13 +50,7 @@ const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
         </CardDescription>
       </CardHeader>
 
-      <CardFooter className="mt-auto text-foreground">
-        <div className="flex justify-center gap-2 w-full">
-          {masterPrograms.map((program) => (
-            <MasterBadge name={program.master} key={program.master} />
-          ))}
-        </div>
-      </CardFooter>
+      <CourseCardFooter masterPrograms={course.CourseMaster} />
     </Card>
   );
 };
