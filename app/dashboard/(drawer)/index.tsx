@@ -6,6 +6,7 @@ import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
 import { Course } from "../page";
+import { useSortedCourses } from "@/hooks/useSortedCourses";
 
 interface DrawerProps {
   courses: Course[];
@@ -15,6 +16,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
   const filteredCourses = useFiltered(courses);
+  const sortedCourses = useSortedCourses({ courses: filteredCourses });
 
   const availableCourses = useMemo(() => {
     const scheduledCourses = new Set(
@@ -24,11 +26,11 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
         .map((c) => c.code),
     );
 
-    return Object.values(filteredCourses).filter((course) => {
+    return Object.values(sortedCourses).filter((course) => {
       if (scheduledCourses.has(course.code)) return false;
       return true;
     });
-  }, [filteredCourses, schedules]);
+  }, [sortedCourses, schedules]);
 
   return (
     <div
