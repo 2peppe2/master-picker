@@ -1,65 +1,70 @@
 "use client";
 
-import { useEvaluateMasterProgress } from "./hooks/useEvaluateMasterProgress";
+import MastersRequirementsSkeleton from "./components/MastersRequirementsBarSkeleton";
+import { MasterOverflowBadge } from "./components/MasterOverflowBadge";
 import MasterProgressBadge from "./components/MasterProgressBadge";
-import { useEffect, useState, useMemo, FC } from "react";
-import { ProcessedMaster } from "./types";
-import {
-  getMastersWithRequirements,
-  MastersWithRequirements,
-} from "@/app/actions/getMasters";
-import _ from "lodash";
+import { useProcessedMasters } from "./hooks/useProcessedMasters";
+import { useBadgeOverflow } from "./hooks/useBadgeOverflow";
 import { useSearchParams } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { useMeasure } from "react-use";
+
+const GAP_SIZE = 12;
 
 const MastersRequirementsBar = () => {
-  const [mastersWithRequirements, setMastersWithRequirements] =
-    useState<MastersWithRequirements | null>(null);
-  const evaluateMasterProgress = useEvaluateMasterProgress();
   const searchParams = useSearchParams();
   const program = searchParams.get("program") ?? undefined;
 
-  useEffect(() => {
-    getMastersWithRequirements(program).then(setMastersWithRequirements);
-  }, [program]);
+  const [barRef, { width: barWidth }] = useMeasure<HTMLDivElement>();
+  const [badgeRef, { width: badgeWidth }] = useMeasure<HTMLDivElement>();
 
-  const processedMasters = useMemo(() => {
-    if (!mastersWithRequirements) return [];
+  const { processed, isLoading } = useProcessedMasters({
+    program,
+  });
 
-    return mastersWithRequirements
-      .map((master) => {
-        const requirements = master.requirements.flatMap(
-          (req) => req.requirements,
-        );
+  const { visibleItems, overflowItems } = useBadgeOverflow({
+    barWidth,
+    badgeWidth,
+    gap: GAP_SIZE,
+    masters: processed,
+  });
 
-        return {
-          requirements,
-          master: master.master,
-          name: master.name ?? "Unknown master",
-          ...evaluateMasterProgress(requirements),
-        };
-      })
-      .sort((a, b) => {
-        if (a.progress === 100 && b.progress !== 100) return -1;
-        if (b.progress === 100 && a.progress !== 100) return 1;
-        if (b.progress !== a.progress) return b.progress - a.progress;
-        return a.master.localeCompare(b.master);
-      }) satisfies ProcessedMaster[];
-  }, [mastersWithRequirements, evaluateMasterProgress]);
-
-  if (!mastersWithRequirements) {
+  if (isLoading) {
     return <MastersRequirementsSkeleton />;
   }
 
   return (
     <div className="flex items-center w-full h-full gap-4 min-w-0">
-      <div className="hidden lg:flex items-center gap-3 text-muted-foreground shrink-0 select-none">
-        <span className="text-sm font-medium">Master&apos;s progress</span>
+      <div className="absolute -top-[1000px] invisible pointer-events-none">
+        <div ref={badgeRef} className="inline-block">
+          {processed[0] && <MasterProgressBadge master={processed[0]} />}
+        </div>
       </div>
-      <div className="flex-1 overflow-x-auto no-scrollbar mask-gradient-right">
-        <div className="flex items-center gap-3 pr-4 [&>*]:flex-1 [&>*]:min-w-0">
-          <MasterRequirementsBarFiltered processedMasters={processedMasters} />
+
+      <div className="hidden lg:block text-sm font-medium text-muted-foreground shrink-0">
+        Master&apos;s progress
+      </div>
+
+      <div ref={barRef} className="flex-1 min-w-0">
+        <div className="flex items-center gap-3 w-full">
+          {visibleItems.map((master) => (
+            <div
+              key={master.master}
+              className="flex-1 min-w-0"
+              style={{ minWidth: badgeWidth }}
+            >
+              <MasterProgressBadge master={master} />
+            </div>
+          ))}
+
+          {overflowItems.length > 0 && (
+            <div className="flex-1 min-w-0" style={{ minWidth: badgeWidth }}>
+              <MasterOverflowBadge
+                minWidth={badgeWidth}
+                masters={overflowItems}
+                count={overflowItems.length}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -67,61 +72,3 @@ const MastersRequirementsBar = () => {
 };
 
 export default MastersRequirementsBar;
-
-const MastersRequirementsSkeleton = () => (
-  <div className="flex items-center gap-4 w-full animate-pulse">
-    <div className="lg:flex items-center gap-3 text-muted-foreground shrink-0 select-none">
-      <span className="text-sm font-medium">Master&apos;s progress</span>
-    </div>
-    <div className="flex-1 overflow-x-auto no-scrollbar mask-gradient-right">
-      <div className="flex items-center gap-3 pr-4 [&>*]:flex-1 [&>*]:min-w-0">
-        {_.range(0, 7).map((i) => (
-          <div
-            key={`master_skeleton_${i}`}
-            className="h-8 w-16 rounded-full border shrink-0"
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-interface MasterRequirementsBarProps {
-  processedMasters: ProcessedMaster[];
-}
-
-const MasterRequirementsBarFiltered: FC<MasterRequirementsBarProps> = ({
-  processedMasters,
-}) => {
-  if (processedMasters.length > 7) {
-    return (
-      <>
-        {processedMasters.slice(0, 7).map((master) => (
-          <MasterProgressBadge key={master.master} master={master} />
-        ))}
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Badge className="h-8 w-8" variant="outline">
-          {`+${processedMasters.length - 6}`}
-          </Badge>
-          </TooltipTrigger>
-          <TooltipContent side="bottom" className="">
-            <div className="flex flex-col gap-2">
-              {processedMasters.slice(7).map((master) => (
-                <div key={master.master}>{master.name}</div>
-              ))}
-            </div>
-          </TooltipContent>
-        </Tooltip>
-        
-      </>
-    );
-  }
-  return (
-    <>
-      {processedMasters.map((master) => (
-        <MasterProgressBadge key={master.master} master={master} />
-      ))}
-    </>
-  );
-};
