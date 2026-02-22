@@ -9,15 +9,18 @@ import {
   MastersWithRequirements,
 } from "@/app/actions/getMasters";
 import _ from "lodash";
+import { useSearchParams } from "next/navigation";
 
 const MastersRequirementsBar = () => {
   const [mastersWithRequirements, setMastersWithRequirements] =
     useState<MastersWithRequirements | null>(null);
   const evaluateMasterProgress = useEvaluateMasterProgress();
+  const searchParams = useSearchParams();
+  const program = searchParams.get("program") ?? undefined;
 
   useEffect(() => {
-    getMastersWithRequirements().then(setMastersWithRequirements);
-  }, []);
+    getMastersWithRequirements(program).then(setMastersWithRequirements);
+  }, [program]);
 
   const processedMasters = useMemo(() => {
     if (!mastersWithRequirements) return [];

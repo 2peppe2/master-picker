@@ -50,7 +50,9 @@ export const getBachelorCourses = cache(async (program: string, startYear: numbe
               },
             },
           },
-          recommendedMaster: { select: { master: true } },
+          recommendedMasters: {
+            select: { master: true, masterProgram: true },
+          },
         },
       },
       CourseMaster: true,

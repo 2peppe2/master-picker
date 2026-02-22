@@ -11,7 +11,7 @@ model CourseOccasion {
   programCourseID Int
 
   periods           CourseOccasionPeriod[]
-  recommendedMaster Master[]
+  recommendedMasters CourseOccasionRecommendedMaster[]
 
   Course Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 }

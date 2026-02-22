@@ -7,8 +7,9 @@ export async function getMasters() {
   return masters;
 }
 
-export async function getMastersWithRequirements() {
+export async function getMastersWithRequirements(program?: string) {
   const masters = await prisma.master.findMany({
+    where: program ? { masterProgram: program } : undefined,
     include: {
       requirements: {
         include: {

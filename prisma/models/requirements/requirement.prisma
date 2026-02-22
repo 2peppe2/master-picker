@@ -2,7 +2,8 @@ model Requirement {
   id Int @id @default(autoincrement())
 
   masterProgram String
-  master        Master @relation(fields: [masterProgram], references: [master], onDelete: Cascade)
+  program       String
+  master        Master @relation(fields: [masterProgram, program], references: [master, masterProgram], onDelete: Cascade)
 
   creditRequirements CreditRequirement[]
   courseRequirements CoursesRequirement[]

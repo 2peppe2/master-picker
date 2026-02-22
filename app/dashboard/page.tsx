@@ -56,7 +56,9 @@ export default async function MainPage({
               },
             },
           },
-          recommendedMaster: { select: { master: true } },
+          recommendedMasters: {
+            select: { master: true, masterProgram: true },
+          },
         },
       },
       CourseMaster: true,
@@ -73,8 +75,11 @@ export default async function MainPage({
       icon: true,
       style: true,
     },
+    where: {
+      masterProgram: program,
+    },
   });
-
+  
   return (
     <ClientPage
       courses={courses.map(normalizeCourse)}
