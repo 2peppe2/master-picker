@@ -16,6 +16,9 @@ export const getBachelorCourses = cache(async (program: string, startYear: numbe
 
   const courses = await prisma.course.findMany({
     where: {
+      ecv: {
+        contains: "C",
+      },
       ProgramCourse: {
         program,
         startYear,
