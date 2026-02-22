@@ -34,7 +34,7 @@ const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
         <Badge
           variant="outline"
           className={cn(
-            "h-8 relative mr-2 inline-flex flex-none transition-all duration-500",
+            "h-8 relative mr-2 inline-flex flex-none transition-all duration-500 cursor-default",
             masterMeta?.style,
           )}
         >
