@@ -6,11 +6,11 @@ import {
 } from "@/app/actions/getMasters";
 import { useEvaluateMasterProgress } from "./useEvaluateMasterProgress";
 
-interface UseProcessedMasters {
+interface UseProcessedMastersArgs {
   program?: string;
 }
 
-export const useProcessedMasters = ({ program }: UseProcessedMasters) => {
+export const useProcessedMasters = ({ program }: UseProcessedMastersArgs) => {
   const [mastersWithRequirements, setMastersWithRequirements] =
     useState<MastersWithRequirements | null>(null);
 
