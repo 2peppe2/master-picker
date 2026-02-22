@@ -45,7 +45,7 @@ export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
       if (aInOpenSemester && !bInOpenSemester) return -1;
       if (!aInOpenSemester && bInOpenSemester) return 1;
 
-      return a.code.localeCompare(b.code);
+      return a.name.localeCompare(b.name);
     });
   }, [courses, master, shownSemesters, startingYear]);
 };
