@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { MasterBadge } from "@/components/MasterBadge";
 import { FC, useEffect, useState } from "react";
@@ -7,7 +7,6 @@ import { GEN_Z_TITLES } from "../titles";
 interface GuideHeaderProps {
   selectedMaster: string;
 }
-
 
 const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
   const [titleIndex, setTitleIndex] = useState(0);

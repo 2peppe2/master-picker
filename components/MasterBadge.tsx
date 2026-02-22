@@ -12,23 +12,28 @@ interface TooltipFunctionArgs {
 interface MasterBadgeProps {
   name: string;
   text?: string;
-  title?: boolean
+  title?: boolean;
   style?: string;
   tooltip?: (args: TooltipFunctionArgs) => string | ReactNode;
 }
 
-export const MasterBadge: FC<MasterBadgeProps> = ({ name, text, title = false, style = "",  tooltip }) => {
+export const MasterBadge: FC<MasterBadgeProps> = ({
+  name,
+  text,
+  title = false,
+  style = "",
+  tooltip,
+}) => {
   const masters = useAtomValue(mastersAtom);
   const master = masters[name];
   const masterName = master.name ?? "";
-  text = title ? masterName : text
-
+  text = title ? masterName : text;
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge variant="outline" className={`mr-2 ${master.style} ${style}`}>
-          <MasterIcon iconName={master.icon}/> {text}
+          <MasterIcon iconName={master.icon} /> {text}
         </Badge>
       </TooltipTrigger>
       <TooltipContent side="bottom">
