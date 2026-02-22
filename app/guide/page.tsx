@@ -133,6 +133,7 @@ const GuidePage = async function ({
       },
     },
   });
+  console.log(masterRequirements?.courseRequirements[3]);
 
   if (!masterRequirements) {
     return <div>No requirements found</div>;

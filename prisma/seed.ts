@@ -199,7 +199,7 @@ async function seedMasterCourse(
 
 async function seedMaster(m: string, program: string) {
   await prisma.master.upsert({
-    where: { master_masterProgram: { master: m, masterProgram: program } },
+    where: { master_masterProgram: { master: m, masterProgram: program} },
     update: {},
     create: { master: m, masterProgram: program },
   });
@@ -285,7 +285,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
           },
         });
         const linkedCourses = await prisma.course.findMany({
-          where: { code: { in: req.courses } },
+          where: { code: { in: req.courses }, programCourseID: id },
           select: { code: true, programCourseID: true },
         });
         const missingCourses = req.courses.filter(
