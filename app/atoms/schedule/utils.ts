@@ -12,41 +12,74 @@ import {
 
 const PARAM_NAME = "schedule";
 
-type Entry = [number, number, number, number];
+/**
+ * Represents a single course placement in the grid.
+ * [semesterIndex, periodIndex, blockIndex, courseIndex]
+ */
+type ScheduleEntry = [number, number, number, number];
+
+/**
+ * The structure of the data stored in the URL.
+ * Designed for maximum compression while maintaining layout rules.
+ */
+interface SchedulePayload {
+  /** * Stands for semesters.
+   *
+   * Each number represents the block count for BOTH Period 0 and Period 1
+   * within that semester.
+   * Example: [9, 7] = Sem 0 (2x9 blocks), Sem 1 (2x7 blocks)
+   */
+  s: number[];
+
+  /** * Stands for Data.
+   *
+   * A list of entries representing only the non-empty slots in the grid.
+   */
+  d: ScheduleEntry[];
+}
+
+interface WriteScheduleToUrlAtomArgs {
+  searchParams: ReadonlyURLSearchParams;
+  setSearchParam: (name: string, value: string | null) => void;
+}
 
 export const writeScheduleToUrlAtom = atom(
   null,
-  (
-    get,
-    _set,
-    args: {
-      searchParams: ReadonlyURLSearchParams;
-      setSearchParam: (name: string, value: string | null) => void;
-    },
-  ) => {
-    const { searchParams, setSearchParam } = args;
+  (get, _set, { searchParams, setSearchParam }: WriteScheduleToUrlAtomArgs) => {
     const courses = get(coursesAtom);
     const grid = get(scheduleAtoms.schedulesAtom);
 
+    // Guard against empty state
     if (!grid.length || Object.keys(courses).length === 0) return;
 
     const courseKeys = Object.keys(courses).sort();
-    const entries: Entry[] = [];
+    const entries: ScheduleEntry[] = [];
 
-    grid.forEach((layer, l) =>
-      layer.forEach((row, r) =>
-        row.forEach((col, c) => {
-          if (col?.code) {
-            const courseIdx = courseKeys.indexOf(col.code);
-            if (courseIdx !== -1) entries.push([l, r, c, courseIdx]);
+    /**
+     * Store the "Shape" of the semesters.
+     * Since Period 0 and Period 1 always have the same block count,
+     * we only need to store the length of the first period per semester.
+     */
+    const semesterBlockCounts: number[] = grid.map(
+      (semester) => semester[0].length || 0,
+    );
+
+    grid.forEach((semester, sIdx) =>
+      semester.forEach((period, pIdx) =>
+        period.forEach((block, bIdx) => {
+          if (block?.code) {
+            const courseIdx = courseKeys.indexOf(block.code);
+            if (courseIdx !== -1) {
+              entries.push([sIdx, pIdx, bIdx, courseIdx]);
+            }
           }
         }),
       ),
     );
 
-    const payload = {
-      dims: [grid.length, grid[0].length, grid[0][0].length],
-      data: entries,
+    const payload: SchedulePayload = {
+      s: semesterBlockCounts,
+      d: entries,
     };
 
     const compressed = compressToEncodedURIComponent(JSON.stringify(payload));
@@ -70,26 +103,31 @@ export const readScheduleFromUrlAtom = atom(
       const decompressed = decompressFromEncodedURIComponent(param);
       if (!decompressed) return;
 
-      const payload = JSON.parse(decompressed);
-      const [layers, rows, cols] = payload.dims;
-      const entries = payload.data as Entry[];
+      const payload = JSON.parse(decompressed) as SchedulePayload;
+      const { s: semesterBlockCounts, d: entries } = payload;
 
-      const newGrid: ScheduleGrid = Array.from({ length: layers }, () =>
-        Array.from({ length: rows }, () =>
-          Array.from({ length: cols }, () => null),
-        ),
-      );
+      /**
+       * Reconstruct the jagged grid structure.
+       * For every semester length in 's', we create two periods of that size.
+       */
+      const newGrid: ScheduleGrid = semesterBlockCounts.map((blockCount) => [
+        Array.from({ length: blockCount }, () => null), // Period 0
+        Array.from({ length: blockCount }, () => null), // Period 1
+      ]);
 
-      entries.forEach(([l, r, c, courseIdx]) => {
-        const code = courseKeys[courseIdx];
-        if (code && courses[code]) {
-          newGrid[l][r][c] = courses[code];
+      // Populate the courses into the newly built structure
+      entries.forEach(([sIdx, pIdx, bIdx, cIdx]) => {
+        const code = courseKeys[cIdx];
+
+        // Ensure the semester and period exist before assignment to prevent crashes
+        if (code && courses[code] && newGrid[sIdx]?.[pIdx]) {
+          newGrid[sIdx][pIdx][bIdx] = courses[code];
         }
       });
 
       set(scheduleAtoms.schedulesAtom, newGrid);
     } catch (e) {
-      console.error("Failed to restore grid dimensions from URL", e);
+      console.error("Failed to restore schedule from URL payload", e);
     }
   },
 );
