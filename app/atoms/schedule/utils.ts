@@ -90,9 +90,13 @@ export const writeScheduleToUrlAtom = atom(
   },
 );
 
+interface ReadScheduleToUrlAtomArgs {
+  searchParams: ReadonlyURLSearchParams;
+}
+
 export const readScheduleFromUrlAtom = atom(
   null,
-  (get, set, searchParams: ReadonlyURLSearchParams) => {
+  (get, set, { searchParams }: ReadScheduleToUrlAtomArgs) => {
     const param = searchParams.get(PARAM_NAME);
     const courses = get(coursesAtom);
     const courseKeys = Object.keys(courses).sort();
