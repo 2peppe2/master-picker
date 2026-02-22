@@ -10,13 +10,13 @@ import { FC } from "react";
 interface MasterOverflowBadgeProps {
   count: number;
   width: number;
-  items: ProcessedMaster[];
+  masters: ProcessedMaster[];
 }
 
 export const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
   count,
   width,
-  items,
+  masters,
 }) => (
   <Tooltip>
     <TooltipTrigger asChild>
@@ -30,13 +30,15 @@ export const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
     </TooltipTrigger>
     <TooltipContent side="bottom" className="max-h-80 overflow-y-auto">
       <div className="flex flex-col gap-1 p-1">
-        {items.map((m) => (
+        {masters.map((master) => (
           <div
-            key={m.master}
+            key={master.master}
             className="text-xs py-1 border-b last:border-0 whitespace-nowrap"
           >
-            {m.name}{" "}
-            <span className="text-muted-foreground ml-2">{m.progress}%</span>
+            {master.name}{" "}
+            <span className="text-muted-foreground ml-2">
+              {master.progress}%
+            </span>
           </div>
         ))}
       </div>

@@ -25,7 +25,7 @@ const MastersRequirementsBar = () => {
     barWidth,
     badgeWidth,
     gap: GAP_SIZE,
-    items: processed,
+    masters: processed,
   });
 
   if (isLoading) {
@@ -53,7 +53,7 @@ const MastersRequirementsBar = () => {
           {overflowItems.length > 0 && (
             <MasterOverflowBadge
               width={badgeWidth}
-              items={overflowItems}
+              masters={overflowItems}
               count={overflowItems.length}
             />
           )}

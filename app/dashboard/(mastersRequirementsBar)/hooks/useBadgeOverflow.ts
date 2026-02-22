@@ -5,31 +5,31 @@ interface UseBadgeOverflowArgs {
   barWidth: number;
   badgeWidth: number;
   gap: number;
-  items: ProcessedMaster[];
+  masters: ProcessedMaster[];
 }
 
 export const useBadgeOverflow = ({
   barWidth,
   badgeWidth,
   gap,
-  items,
+  masters,
 }: UseBadgeOverflowArgs) => {
   return useMemo(() => {
-    if (!barWidth || !badgeWidth || items.length === 0) {
-      return { visibleItems: items, overflowItems: [] };
+    if (!barWidth || !badgeWidth || masters.length === 0) {
+      return { visibleItems: masters, overflowItems: [] };
     }
 
     const itemUnit = badgeWidth + gap;
     const totalSlots = Math.floor((barWidth + gap) / itemUnit);
 
-    if (items.length <= totalSlots) {
-      return { visibleItems: items, overflowItems: [] };
+    if (masters.length <= totalSlots) {
+      return { visibleItems: masters, overflowItems: [] };
     }
 
     const showCount = Math.max(1, totalSlots - 1);
     return {
-      visibleItems: items.slice(0, showCount),
-      overflowItems: items.slice(showCount),
+      visibleItems: masters.slice(0, showCount),
+      overflowItems: masters.slice(showCount),
     };
-  }, [items, barWidth, badgeWidth, gap]);
+  }, [masters, barWidth, badgeWidth, gap]);
 };
