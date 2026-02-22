@@ -44,18 +44,26 @@ const MastersRequirementsBar = () => {
         Master&apos;s progress
       </div>
 
-      <div ref={barRef} className="flex-1 overflow-hidden min-w-0">
-        <div className="flex items-center gap-3 pr-4">
+      <div ref={barRef} className="flex-1 min-w-0">
+        <div className="flex items-center gap-3 w-full">
           {visibleItems.map((master) => (
-            <MasterProgressBadge key={master.master} master={master} />
+            <div
+              key={master.master}
+              className="flex-1 min-w-0"
+              style={{ minWidth: badgeWidth }}
+            >
+              <MasterProgressBadge master={master} />
+            </div>
           ))}
 
           {overflowItems.length > 0 && (
-            <MasterOverflowBadge
-              width={badgeWidth}
-              masters={overflowItems}
-              count={overflowItems.length}
-            />
+            <div className="flex-1 min-w-0" style={{ minWidth: badgeWidth }}>
+              <MasterOverflowBadge
+                minWidth={badgeWidth}
+                masters={overflowItems}
+                count={overflowItems.length}
+              />
+            </div>
           )}
         </div>
       </div>

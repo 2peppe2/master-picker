@@ -34,23 +34,25 @@ const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
         <Badge
           variant="outline"
           className={cn(
-            "h-8 relative mr-2 inline-flex flex-none transition-all duration-500 cursor-default",
+            "h-8 w-full flex items-center justify-center relative transition-all duration-500 cursor-default overflow-hidden px-2",
             masterMeta?.style,
           )}
         >
-          <MasterIcon iconName={masterMeta.icon} />
+          <div className="flex items-center justify-center min-w-0">
+            <MasterIcon iconName={masterMeta.icon} className="shrink-0" />
 
-          {isStarted && (
-            <span className="ml-1 text-xsm font-bold">
-              {progressPercentage}%
-            </span>
-          )}
+            {isStarted && (
+              <span className="ml-1 text-[10px] font-bold whitespace-nowrap">
+                {progressPercentage}%
+              </span>
+            )}
+          </div>
 
           {!isComplete && isStarted && (
             <div
-              className={`absolute bottom-0 left-0 h-[4px] bg-current transition-all duration-500 opacity-35`}
               aria-hidden="true"
               style={{ width: `${progressPercentage}%` }}
+              className="absolute bottom-0 left-0 h-[3px] bg-current transition-all duration-500 opacity-30"
             />
           )}
         </Badge>
@@ -60,8 +62,8 @@ const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
         <MasterBadgeRequirementTooltip
           name={master.name}
           master={master.master}
-          fulfilled={master.fulfilled}
           all={master.requirements}
+          fulfilled={master.fulfilled}
         />
       </TooltipContent>
     </Tooltip>
