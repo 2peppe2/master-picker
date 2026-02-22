@@ -142,6 +142,7 @@ const GuidePage = async function ({
   const masters = await prisma.master.findMany({
     where: {
       masterProgram: program,
+      master,
     },
     select: {
       master: true,

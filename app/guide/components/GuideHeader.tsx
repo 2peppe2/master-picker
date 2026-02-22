@@ -17,7 +17,7 @@ const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
       return;
     }
     setTitleIndex(Math.floor(Math.random() * GEN_Z_TITLES.length));
-  }, [selectedMaster]);
+  }, []);
 
   return (
     <header className="flex flex-col gap-2">
