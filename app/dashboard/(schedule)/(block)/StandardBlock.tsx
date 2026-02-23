@@ -51,7 +51,7 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
       {shouldShowCourse ? (
         <Draggable
           data={courseSlot}
-          id={`${courseSlot.code}-${data.blockNumber}`}
+          id={`${courseSlot.code}-${data.periodNumber}-${data.blockNumber}`}
         >
           <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>

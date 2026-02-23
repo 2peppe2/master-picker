@@ -5,6 +5,7 @@ import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import { useAtomValue } from "jotai";
 import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { BlockProps } from ".";
 import { FC } from "react";
 
@@ -12,8 +13,8 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const { deleteBlockFromSemester } = useScheduleMutators();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
 
-  const isAlreadyOccupiedByCourse = draggedCourse?.code !== courseSlot?.code;
-  const showCourse = courseSlot && isAlreadyOccupiedByCourse;
+  const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
+  const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
 
   const handleRemoveSlot = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -23,13 +24,31 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
     });
   };
 
+  if (courseSlot && isThisCourseBeingDragged) {
+    return (
+      <div
+        className={cn(
+          "transition-opacity duration-200",
+          draggedCourse
+            ? "opacity-30 grayscale-[0.5] pointer-events-none"
+            : "opacity-100",
+        )}
+      >
+        <CourseCard variant="dropped" course={courseSlot} />
+      </div>
+    );
+  }
+
   return (
     <Droppable
       data={data}
       id={`ghost-${data.semesterNumber}-${data.periodNumber}`}
     >
-      {showCourse ? (
-        <Draggable id={courseSlot.code} data={courseSlot}>
+      {shouldShowCourse ? (
+        <Draggable
+          data={courseSlot}
+          id={`${courseSlot.code}-${data.periodNumber}-${data.blockNumber}`}
+        >
           <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>
       ) : (
