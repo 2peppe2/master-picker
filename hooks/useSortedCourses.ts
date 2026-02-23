@@ -30,7 +30,7 @@ export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
           oc.year,
           oc.semester,
         );
-        return shownSemesters.has(relativeSemester);
+        return shownSemesters.has(relativeSemester + 1);
       });
 
       const bInOpenSemester = b.CourseOccasion.some((oc) => {
@@ -39,7 +39,7 @@ export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
           oc.year,
           oc.semester,
         );
-        return shownSemesters.has(relativeSemester);
+        return shownSemesters.has(relativeSemester + 1);
       });
 
       if (aInOpenSemester && !bInOpenSemester) return -1;
