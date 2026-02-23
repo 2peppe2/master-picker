@@ -3,12 +3,17 @@ This applications sets out to help students at Linköping University (LiU) choos
 
 ![Master Picker screenshot](/screenshot.png)
 
+
+
 > **⚠️ Warning, Software under development**
 >
 >- Currently the application is under active development. Features may be incomplete or subject to change. Please report any issues or feature requests on the GitHub repository.
 >- The application is not yet optimized for mobile devices.
 >- The application currently only supports the 
 U-program at Linköping University.
+
+## License
+All rights reserved. Public for viewing only. No reuse without permission.
 
 ## Visit the Live Site
 Currently the website is not hosted live. Please run it locally by following the instructions below.
