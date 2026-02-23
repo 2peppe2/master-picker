@@ -1,17 +1,17 @@
+"use client";
+
 import { CourseDialog } from "../CourseModal/Dialog";
+import CourseCardFooter from "./CourseCardFooter";
 import { FC, useState } from "react";
-import  { CourseCardProps } from ".";
+import { CourseCardProps } from ".";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import CourseCardFooter from "./CourseCardFooter";
 
 const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
-  const masterPrograms = course.CourseMaster || [];
-
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
@@ -48,7 +48,7 @@ const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
         </CardDescription>
       </CardHeader>
 
-      <CourseCardFooter masterPrograms={masterPrograms} />
+      <CourseCardFooter masterPrograms={course.CourseMaster || []} />
     </Card>
   );
 };
