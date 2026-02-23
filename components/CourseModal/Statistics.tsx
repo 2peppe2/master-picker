@@ -166,7 +166,7 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
               <SelectValue placeholder="Select an examination" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Examinations (Aggregate)</SelectItem>
+              <SelectItem value="all">All Examinations</SelectItem>
               {courseData.modules.map((module) => (
                 <SelectItem key={`${module.moduleCode}-${module.date}`} value={`${module.moduleCode}-${module.date}`}>
                   {module.moduleCode} ({new Date(module.date).toLocaleDateString()})
