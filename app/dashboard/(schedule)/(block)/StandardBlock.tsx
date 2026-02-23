@@ -1,3 +1,5 @@
+"use client";
+
 import { useFilterStore } from "@/app/atoms/filter/filterStore";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
@@ -6,14 +8,15 @@ import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
 import { SearchIcon } from "lucide-react";
 import { useAtomValue } from "jotai";
+import { cn } from "@/lib/utils";
 import { BlockProps } from ".";
 import { FC } from "react";
 
 const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
 
-  const isAlreadyOccupiedByCourse = draggedCourse?.code !== courseSlot?.code;
-  const hasCourseInBlock = courseSlot && isAlreadyOccupiedByCourse;
+  const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
+  const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
 
   const {
     mutators: { selectBlocks, selectPeriods, selectSemester },
@@ -25,13 +28,31 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
     selectBlocks([data.blockNumber + 1]);
   };
 
+  if (courseSlot && isThisCourseBeingDragged) {
+    return (
+      <div
+        className={cn(
+          "transition-opacity duration-200",
+          draggedCourse
+            ? "opacity-30 grayscale-[0.5] pointer-events-none"
+            : "opacity-100",
+        )}
+      >
+        <CourseCard variant="dropped" course={courseSlot} />
+      </div>
+    );
+  }
+
   return (
     <Droppable
       data={data}
       id={`block-${data.semesterNumber}-${data.periodNumber}-${data.blockNumber}`}
     >
-      {hasCourseInBlock ? (
-        <Draggable id={courseSlot.code} data={courseSlot}>
+      {shouldShowCourse ? (
+        <Draggable
+          data={courseSlot}
+          id={`${courseSlot.code}-${data.blockNumber}`}
+        >
           <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>
       ) : (
