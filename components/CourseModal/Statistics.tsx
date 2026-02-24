@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import {
   Select,
   SelectContent,
@@ -42,6 +42,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
+const fetchPromiseCache = new Map<string, Promise<CourseData>>();
+
 const Statistics = ({ courseCode }: StatisticsProps) => {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [selectedModule, setSelectedModule] = useState<string>("all");
@@ -49,20 +51,27 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const isMounted = true;
     const fetchData = async () => {
       try {
         setIsLoading(true);
         setError(null);
-        const response = await fetch(
-          `https://liutentor.lukasabbe.com/api/courses/${courseCode}`
-        );
-        
-        if (!response.ok) {
-          throw new Error("Failed to fetch course data");
+
+        if(!fetchPromiseCache.has(courseCode)) {
+          const request = fetch(
+            `https://liutentor.lukasabbe.com/api/courses/${courseCode}`
+          ).then((res) => {
+            if (!res.ok) throw new Error("Failed to fetch course data");
+            return res.json();
+          });
+          
+          fetchPromiseCache.set(courseCode, request);
         }
+        const data = await fetchPromiseCache.get(courseCode);
         
-        const data = await response.json();
-        setCourseData(data);
+        if(isMounted && data) {
+          setCourseData(data);
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : "An error occurred");
       } finally {
