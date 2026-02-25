@@ -36,10 +36,7 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
       userPreferencesAtom,
       {
         numberOfSemesters: 10,
-        masterPeriod: {
-          start: 7,
-          end: 10,
-        },
+        masterPeriod: { start: 7, end: 10 },
         selectedProgram: selectedMaster,
         showBachelorYears: false,
         startingYear: year,
@@ -48,72 +45,80 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
     ],
   ]);
 
+
   const compulsoryCourses = useMemo(
-    () => courseRequirements.filter((req) => req.courses.length === 1),
+    () =>
+      courseRequirements.filter((req) => req.courses.length === 1),
     [courseRequirements],
   );
 
   const electiveCourses = useMemo(
-    () => courseRequirements.filter((req) => req.courses.length > 1),
+    () => courseRequirements.filter((req) => req.courses.length > req),
     [courseRequirements],
   );
 
   const [requiredConfirmed, setRequiredConfirmed] = useState(false);
 
-  const [selections, setSelections] = useState<Record<number, Course>>({});
+  const [selections, setSelections] = useState<Record<number, Course[]>>({});
 
-  const selectedElectiveCourses = useMemo(() => {
-    const map: Record<number, Course | null> = {};
-    electiveCourses.forEach((_, index) => {
-      map[index] = selections[index] ?? null;
+  const handleElectiveSelection = (index: number, course: Course) => {
+    setSelections((prev) => {
+      const currentSelection = prev[index] || [];
+      const isAlreadySelected = currentSelection.some(
+        (c) => c.code === course.code,
+      );
+
+      let nextSelection: Course[];
+      if (isAlreadySelected) {
+        nextSelection = currentSelection.filter((c) => c.code !== course.code);
+      } else {
+        nextSelection = [...currentSelection, course];
+      }
+
+      return {
+        ...prev,
+        [index]: nextSelection,
+      };
     });
-    return map;
-  }, [electiveCourses, selections]);
+  };
 
   return (
-    <>
-      <div className="min-h-screen ">
-        <div className="mx-auto w-full max-w-6xl  pb-40 pt-24">
-          <GuideHeader selectedMaster={selectedMaster} />
+    <div className="min-h-screen">
+      <div className="mx-auto w-full max-w-6xl pb-40 pt-24 px-4">
+        <GuideHeader selectedMaster={selectedMaster} />
 
-          <div className="grid gap-4 sm:grid-cols-3 pt-4">
-            <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
-            <ElectiveSummaryCard electiveCourses={electiveCourses} />
-          </div>
-          <CompulsorySelector
-            compulsoryCourses={compulsoryCourses}
-            compulsoryConfirmed={requiredConfirmed}
-            onConfirmChange={() => {
-              setRequiredConfirmed((prev) => !prev);
-            }}
-          />
-
-          {electiveCourses.map((electiveCourses, index) => (
-            <ElectiveSelector
-              key={index}
-              index={index}
-              selection={selectedElectiveCourses[index]}
-              onSelectionChange={(courseCode) => {
-                if (!courseCode) {
-                  return;
-                }
-                setSelections((prev) => ({
-                  ...prev,
-                  [index]: courseCode,
-                }));
-              }}
-              electiveCourses={electiveCourses}
-            />
-          ))}
+        <div className="grid gap-4 sm:grid-cols-3 pt-4">
+          <CompulsorySummaryCard compulsoryCourses={compulsoryCourses} />
+          <ElectiveSummaryCard electiveCourses={electiveCourses} />
         </div>
-        <ProgressCard
-          bachelorCourses={bachelorCourses}
-          compulsoryConfirmed={requiredConfirmed}
+
+        <CompulsorySelector
           compulsoryCourses={compulsoryCourses}
-          electiveCourses={selectedElectiveCourses}
+          compulsoryConfirmed={requiredConfirmed}
+          onConfirmChange={() => setRequiredConfirmed((prev) => !prev)}
         />
+
+        {electiveCourses.map((electiveGroup, index) => (
+          <ElectiveSelector
+            key={`elective-group-${index}`}
+            index={index}
+            // Pass the array of selections (default to empty array)
+            selection={selections[index] || []}
+            onSelectionChange={(course) =>
+              handleElectiveSelection(index, course)
+            }
+            electiveCourses={electiveGroup}
+          />
+        ))}
       </div>
-    </>
+
+      <ProgressCard
+        bachelorCourses={bachelorCourses}
+        compulsoryConfirmed={requiredConfirmed}
+        compulsoryCourses={compulsoryCourses}
+        electiveCourses={selections}
+      />
+    </div>
   );
 };
 

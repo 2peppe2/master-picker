@@ -21,7 +21,8 @@ import {
 interface ElectiveSelectorProps {
   index: number;
   electiveCourses: CourseRequirements[0];
-  selection: Course | null;
+  // Selection is now an array to support multi-select
+  selection: Course[];
   onSelectionChange: (course: Course) => void;
 }
 
@@ -33,38 +34,44 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 
+  // Use minCount from your database model, default to 1
+  const minRequired = electiveCourses.minCount ?? 1;
+  const isFulfilled = selection.length >= minRequired;
+
   return (
     <Card className="mt-8" key={`choice-group-${index}`}>
-      <Collapsible
-        open={isOpen}
-        onOpenChange={(setOpen) => {
-          setIsOpen(setOpen);
-        }}
-      >
+      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400">
-                Pick one
+                {minRequired === 1 ? "Pick one" : `Pick ${minRequired}`}
               </Badge>
-              <CardTitle>Elective course {index + 1}</CardTitle>
+              <CardTitle>Elective Group {index + 1}</CardTitle>
             </div>
 
-            <div
-              className={
-                "flex items-center gap-4 text-sm font-medium text-muted-foreground "
-              }
-            >
-              {selection ? `Selected ${selection.code}` : "Select to continue"}
+            <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
+              {isFulfilled ? (
+                <span className="text-emerald-600 dark:text-emerald-400">
+                  {selection.length} selected
+                </span>
+              ) : (
+                <span>
+                  {selection.length} of {minRequired} selected
+                </span>
+              )}
 
               <CollapsibleTrigger asChild>
                 <Button
                   size="icon"
-                  className={`cursor-pointer h-10 w-10 rounded-4xl ${isOpen ? "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700" : "bg-red-500/10 hover:bg-red-500/20 text-red-700"}`}
-                  onClick={() => setIsOpen((open) => !open)}
-                  disabled={!selection}
+                  className={`cursor-pointer h-10 w-10 rounded-full transition-colors ${
+                    isFulfilled
+                      ? "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700"
+                      : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-700"
+                  }`}
+                  disabled={!isFulfilled && isOpen}
                 >
-                  {isOpen ? (
+                  {isFulfilled ? (
                     <Check className="h-4 w-4" />
                   ) : (
                     <X className="h-4 w-4" />
@@ -74,21 +81,23 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
             </div>
           </div>
           <CardDescription>
-            This group has {electiveCourses.courses.length} options, but you
-            only need to select one.
+            This group has {electiveCourses.courses.length} options. You need to
+            select at least {minRequired}.
           </CardDescription>
         </CardHeader>
+
         <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
           <CardContent className="py-4">
-            <div className="grid gap-4 sm:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {electiveCourses.courses.map((courseEntry) => {
                 const course = normalizeCourse(courseEntry.course);
-                const courseCode = course.code;
-                const isSelected = selection?.code === courseCode;
+                const isSelected = selection.some(
+                  (s) => s.code === course.code,
+                );
 
                 return (
                   <CourseCard
-                    key={courseCode}
+                    key={course.code}
                     course={course}
                     variant="selectable"
                     isSelected={isSelected}

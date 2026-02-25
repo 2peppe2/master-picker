@@ -130,6 +130,7 @@ const GuidePage = async function ({
             },
           },
           type: true,
+          minCount: true,
         },
       },
     },
