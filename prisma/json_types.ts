@@ -32,16 +32,18 @@ interface Course {
   ecv: string;
   program: string[];
   mastersPrograms: string[];
-  occasions: {
-    year: number;
-    semester: string;
-    ht_or_vt: string;
-    periods: {
-      period: number;
-      blocks: number[];
-    }[];
-    recommended_masters: string[];
+  occasions: CourseOccasion[];
+}
+
+interface CourseOccasion {
+  year: number;
+  semester: string;
+  ht_or_vt: string;
+  periods: {
+    period: number;
+    blocks: number[];
   }[];
+  recommended_masters: string[];
 }
 
 interface MasterName {
@@ -51,21 +53,38 @@ interface MasterName {
   style: string;
 }
 
-interface CreditRequirement {
-  type: "A-level" | "G-level" | "Total";
+interface CreditsAdvancedMaster {
+  type: "CREDITS_ADVANCED_MASTER"; // 30hp A-nivå i mastern
   credits: number;
 }
 
-interface CoursesRequirement {
-  type: "Courses";
-  courses: string[];
+interface CreditsAdvancedProfile {
+  type: "CREDITS_ADVANCED_PROFILE"; // T.ex. DPAL: 30hp A-nivå i profilen
+  credits: number;
 }
 
-type MasterRequirement = CreditRequirement | CoursesRequirement;
-
-interface MasterRequirements {
-  [masterId: string]: MasterRequirement[];
+interface CreditsProfileTotal {
+  type: "CREDITS_PROFILE_TOTAL"; // T.ex. 36hp, 42hp eller 48hp i profilen
+  credits: number;
 }
+
+interface CreditsMasterTotal {
+  type: "CREDITS_MASTER_TOTAL"; // 120hp totalt i mastern
+  credits: number;
+}
+
+interface CourseSelection {
+  type: "COURSE_SELECTION"; // Obligatoriska eller valbara kurser
+  minCount: number;
+  courses: { courseCode: string }[];
+}
+
+type RequirementUnion =
+  | CreditsAdvancedMaster
+  | CreditsAdvancedProfile
+  | CreditsProfileTotal
+  | CreditsMasterTotal
+  | CourseSelection;
 
 export type {
   Program,
@@ -74,5 +93,6 @@ export type {
   CourseDetails,
   Course,
   MasterName,
-  MasterRequirements,
+  CourseOccasion,
+  RequirementUnion,
 };

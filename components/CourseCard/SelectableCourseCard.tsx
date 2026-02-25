@@ -39,13 +39,14 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
               "border-emerald-500 bg-emerald-50/60 shadow-[0_0_0_1px_rgba(16,185,129,0.1)]",
               "dark:border-emerald-500/50 dark:bg-emerald-500/10 dark:shadow-[0_0_0_1px_rgba(16,185,129,0.2)]",
             ]
-          : "border-muted bg-background hover:border-foreground/20 dark:hover:border-foreground/40",
+          : "border-muted hover:border-foreground/20 dark:hover:border-foreground/40",
       )}
     >
       <CourseDialog
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
+        showAdd={false}
       />
 
       <div
@@ -76,11 +77,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         </CardTitle>
         <CardDescription className="h-6">
           <p
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenDialog(true);
-            }}
-            className="w-fit cursor-pointer hover:underline underline-offset-2 text-left text-sm"
+            className="w-fit text-left text-sm"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: 2,

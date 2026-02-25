@@ -20,9 +20,10 @@ import {
 
 interface OccasionTableProps {
   course: Course;
+  showAdd : boolean;
 }
 
-const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
+const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
   const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
     course.CourseOccasion[0],
   );
@@ -58,7 +59,9 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
             {hasRecommendedMaster && (
               <TableHead>Recommended for master</TableHead>
             )}
+            {showAdd &&
             <TableHead className="text-right">Add to schedule</TableHead>
+            }
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -70,6 +73,7 @@ const OccasionTable: FC<OccasionTableProps> = ({ course }) => {
               showRecommendedMaster={hasRecommendedMaster}
               setAlertOpen={setAlertOpen}
               setSelectedOccasion={setSelectedOccasion}
+              showAdd={showAdd}
             />
           ))}
         </TableBody>
@@ -86,6 +90,7 @@ interface OccasionTableRowProps {
   showRecommendedMaster: boolean;
   setAlertOpen: (open: boolean) => void;
   setSelectedOccasion: (occasion: CourseOccasion) => void;
+  showAdd : boolean;
 }
 
 const OccasionTableRow: FC<OccasionTableRowProps> = ({
@@ -94,6 +99,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   showRecommendedMaster,
   setAlertOpen,
   setSelectedOccasion,
+  showAdd,
 }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const { getOccasionCollisions } = useScheduleGetters();
@@ -137,6 +143,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
             : "-"}
         </TableCell>
       )}
+      {showAdd &&
       <TableCell className="flex justify-end">
         <p
           onClick={handleAddClick}
@@ -145,6 +152,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
           Add course
         </p>
       </TableCell>
+      }
     </TableRow>
   );
 };

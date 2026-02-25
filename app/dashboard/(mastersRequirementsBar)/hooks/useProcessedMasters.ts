@@ -34,7 +34,7 @@ export const useProcessedMasters = ({ program }: UseProcessedMastersArgs) => {
           requirements,
           master: master.master,
           name: master.name ?? "Unknown master",
-          ...evaluateMasterProgress(requirements),
+          ...evaluateMasterProgress(master.master, requirements),
         };
       })
       .sort((a, b) => {

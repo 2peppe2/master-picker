@@ -16,12 +16,14 @@ type CourseDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   course: Course;
+  showAdd? : boolean;
 };
 
 export const CourseDialog = ({
   open,
   onOpenChange,
   course,
+  showAdd = true,
 }: CourseDialogProps) => {
   const tabs = [
     {
@@ -29,7 +31,7 @@ export const CourseDialog = ({
       value: "general",
       content: (
         <>
-          <DialogGeneralTab course={course} />
+          <DialogGeneralTab course={course} showAdd={showAdd} />
           <DialogFooterWithDetails course={course} />
         </>
       ),

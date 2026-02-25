@@ -4,10 +4,13 @@
         "name": "Software Engineering",
         "shortname": "U",
         "years": [
+            
             {
                 "year": 2023,
                 "id": 5430
             }
+            
+
         ]
     },
     {
@@ -15,10 +18,25 @@
         "name": "Data Science",
         "shortname": "D",
         "years": [
+            
             {
                 "year": 2023,
                 "id": 5440
             }
+            
+        ]
+    },
+    {
+        "id": "6CITE",
+        "name": "Information Technology",
+        "shortname": "IT",
+        "years": [
+            
+            {
+                "year": 2023,
+                "id": 5428
+            }
+            
         ]
     }
 ]
