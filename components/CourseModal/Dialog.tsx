@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import ExaminationTable from "./ExaminationTable";
 import DialogTabs from "./DialogTabs";
+import Statistics from "./Statistics";
 
 type CourseDialogProps = {
   open: boolean;
@@ -41,6 +42,16 @@ export const CourseDialog = ({
       content: (
         <>
           <ExaminationTable examination={course.Examination} />
+          <DialogFooterWithDetails course={course} />
+        </>
+      ),
+    },
+    {
+      name: "Statistics",
+      value: "statistics",
+      content: (
+        <>
+          <Statistics courseCode={course.code} />
           <DialogFooterWithDetails course={course} />
         </>
       ),
