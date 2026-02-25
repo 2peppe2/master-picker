@@ -60,7 +60,7 @@ async function seedData() {
     fs.readFileSync(programsFilePath, "utf8"),
   ) as Program[];
   for (const p of programs) {
-    seedProgramData(p);
+    await seedProgramData(p);
     for (const year of p.years) {
       await seedCourseProgramData(year, p);
       await seedCoursesData(p.id, year.id);
