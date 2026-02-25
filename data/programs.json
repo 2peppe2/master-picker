@@ -20,5 +20,16 @@
                 "id": 5440
             }
         ]
+    },
+    {
+        "id": "6CITE",
+        "name": "Information Technology",
+        "shortname": "IT",
+        "years": [
+            {
+                "year": 2023,
+                "id": 5428
+            }
+        ]
     }
 ]
