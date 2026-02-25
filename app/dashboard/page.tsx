@@ -1,10 +1,9 @@
 "use server";
 
 import { Prisma } from "@/prisma/generated/client/client";
+import { normalizeCourse } from "../courseNormalizer";
 import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
-import { normalizeCourse } from "../courseNormalizer";
-import { getProgramId } from "../actions/getProgramId";
 
 export default async function MainPage({
   searchParams,
@@ -19,7 +18,6 @@ export default async function MainPage({
   if (!program || !year) {
     return "redirecting";
   }
-  const programId = await getProgramId(program, parseInt(year, 10));
   const startYear = year ? Number(year) : undefined;
   const hasValidYear = startYear !== undefined && !Number.isNaN(startYear);
   const courseWhere =
@@ -85,9 +83,6 @@ export default async function MainPage({
     <ClientPage
       courses={courses.map(normalizeCourse)}
       masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
-      program={program}
-      startingYear={startYear!}
-      programId={programId}
     />
   );
 }

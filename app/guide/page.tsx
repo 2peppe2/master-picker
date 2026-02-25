@@ -4,6 +4,7 @@ import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
 import { normalizeCourse } from "../courseNormalizer";
+import { getProgramId } from "../actions/getProgramId";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
   select: {
@@ -152,8 +153,12 @@ const GuidePage = async function ({
 
   const bachelorCourses = await getBachelorCourses(program, parseInt(year));
 
+  const programId = await getProgramId(program, parseInt(year, 10));
+
   return (
     <GuideClientPage
+      programId={programId}
+      year={parseInt(year)}
       courseRequirements={masterRequirements.courseRequirements}
       masters={Object.fromEntries(masters.map((m: Master) => [m.master, m]))}
       selectedMaster={master}

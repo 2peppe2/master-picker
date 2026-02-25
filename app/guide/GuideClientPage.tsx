@@ -11,12 +11,15 @@ import ProgressCard from "./components/ProgressCard";
 import CompulsorySelector from "./components/CompulsorySelector";
 import ElectiveSelector from "./components/ElectiveSelector";
 import { useHydrateAtoms } from "jotai/utils";
+import { userPreferencesAtom } from "../atoms/UserPreferences";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
   masters: Record<string, Master>;
   selectedMaster: string;
   bachelorCourses: Course[];
+  year: number;
+  programId: number;
 }
 
 const GuideClientPage: FC<GuideClientPageProps> = ({
@@ -24,8 +27,26 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   masters,
   selectedMaster,
   bachelorCourses,
+  programId,
+  year,
 }) => {
-  useHydrateAtoms([[mastersAtom, masters]]);
+  useHydrateAtoms([
+    [mastersAtom, masters],
+    [
+      userPreferencesAtom,
+      {
+        numberOfSemesters: 10,
+        masterPeriod: {
+          start: 7,
+          end: 10,
+        },
+        selectedProgram: selectedMaster,
+        showBachelorYears: false,
+        startingYear: year,
+        programId,
+      },
+    ],
+  ]);
 
   const compulsoryCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length === 1),
