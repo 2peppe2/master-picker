@@ -1,4 +1,3 @@
-import ExcludeSlotConflictsFilter from "./filters/ExcludeSlotConflictsFilter";
 import { useFilterStore } from "@/app/atoms/filter/filterStore";
 import SemesterFilter from "./filters/SemesterFilter";
 import MasterFilter from "./filters/MasterFilter";
@@ -13,7 +12,6 @@ const FilterDropdown = () => (
     <div className="grid gap-4">
       <MasterFilter />
       <SemesterFilter />
-      <ExcludeSlotConflictsFilter />
       <PeriodFilter />
       <BlockFilter />
     </div>
