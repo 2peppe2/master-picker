@@ -313,7 +313,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
 
         const linkedCourses = await prisma.course.findMany({
           where: {
-            code: { in: req.courses.map((c) => c.courseCode) },
+            code: { in: req.courses as unknown as string[] },
             programCourseID: id,
           },
           select: { code: true, programCourseID: true },
