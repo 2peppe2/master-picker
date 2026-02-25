@@ -1,9 +1,11 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
-import { ComboboxItemType } from "./types";
 import GenericCombobox from "./GenericComboBox";
+import { useRouter } from "next/navigation";
+import { ComboboxItemType } from "./types";
+import { useMemo, useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface LandingClientPageProps {
   programs: {
@@ -24,10 +26,14 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [selectedMaster, setSelectedMaster] = useState<string | null>(null);
+  const [isLoadingDashboard, setIsLoadingDashboard] = useState(false);
+  const [isLoadingGuide, setIsLoadingGuide] = useState(false);
+
   const router = useRouter();
 
   const pushToGuide = () => {
     if (!selectedProgram || !selectedYear || !selectedMaster) return;
+    setIsLoadingGuide(true);
     const params = new URLSearchParams({
       program: selectedProgram,
       year: selectedYear,
@@ -35,8 +41,10 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
     });
     router.push(`/guide?${params.toString()}`);
   };
+
   const pushToDashboard = () => {
     if (!selectedProgram || !selectedYear) return;
+    setIsLoadingDashboard(true);
     const params = new URLSearchParams({
       program: selectedProgram,
       year: selectedYear,
@@ -52,6 +60,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       })),
     [programs],
   );
+
   const yearItems: ComboboxItemType[] = useMemo(() => {
     if (!selectedProgram) return [];
     const program = programs.find((p) => p.program === selectedProgram);
@@ -82,9 +91,11 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             value: "",
           }
         }
-        onValueChange={(item: ComboboxItemType | null) =>
-          setSelectedProgram(item?.value || null)
-        }
+        onValueChange={(item: ComboboxItemType | null) => {
+          setSelectedProgram(item?.value || null);
+          setSelectedYear(null);
+          setSelectedMaster(null);
+        }}
         placeholder="Select your current program"
         noResultsText="No programs found."
       />
@@ -96,9 +107,10 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             value: "",
           }
         }
-        onValueChange={(item: ComboboxItemType | null) =>
-          setSelectedYear(item?.value || null)
-        }
+        onValueChange={(item: ComboboxItemType | null) => {
+          setSelectedYear(item?.value || null);
+          setSelectedMaster(null);
+        }}
         placeholder="Select starting year"
         noResultsText="No years found."
         className={
@@ -109,7 +121,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       />
 
       <div
-        className={`text-sm transition-[opacity,transform] duration-200 ease-in-out ${
+        className={`flex flex-col items-center gap-2 text-sm transition-[opacity,transform] duration-200 ease-in-out ${
           selectedYear
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-1 pointer-events-none"
@@ -129,8 +141,20 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           placeholder="Select desired master"
           noResultsText="No masters found."
         />
-        <Button variant="link" onClick={pushToDashboard}>
-          {`Pick master later`}
+
+        <Button
+          variant="link"
+          onClick={pushToDashboard}
+          disabled={isLoadingDashboard}
+        >
+          {isLoadingDashboard ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Loading...
+            </>
+          ) : (
+            "Pick master later"
+          )}
         </Button>
       </div>
 
@@ -138,12 +162,20 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
         disabled={
           selectedProgram === null ||
           selectedYear === null ||
-          selectedMaster === null
+          selectedMaster === null ||
+          isLoadingGuide
         }
         onClick={pushToGuide}
         className="w-80 h-12 text-base md:text-lg"
       >
-        Get started
+        {isLoadingGuide ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Loading...
+          </>
+        ) : (
+          "Get started"
+        )}
       </Button>
 
       <Button variant="link" onClick={() => {}} className="text-sm">
@@ -152,6 +184,5 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
     </div>
   );
 };
+
 export default LandingClientPage;
-
-
