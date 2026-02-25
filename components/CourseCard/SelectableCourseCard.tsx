@@ -25,9 +25,14 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   const [openDialog, setOpenDialog] = useState(false);
   const masterPrograms = course.CourseMaster || [];
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    if(openDialog || e.defaultPrevented) return;
+    onSelectionChange(course);
+  }
+
   return (
     <Card
-      onClick={() => onSelectionChange(course)}
+      onClick={handleCardClick}
       className={cn(
         "hover:scale-[1.02] hover:shadow-md active:scale-95",
         "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg",
