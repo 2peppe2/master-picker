@@ -43,9 +43,9 @@ const AboutPage = () => {
         <h2 className="mt-12 mb-6 text-2xl font-semibold tracking-tight">
           Developers
         </h2>
-        <section className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <PetrusDeveloperCard />
-            <MikaelDeveloperCard />
+        <section className="mt-10 grid gap-6 items-stretch md:grid-cols-2 lg:grid-cols-3">
+          <PetrusDeveloperCard />
+          <MikaelDeveloperCard />
           <div className="flex flex-col gap-6">
             <HonorableMentions />
             <MoreDevelopers />
@@ -107,17 +107,14 @@ const SupportCard = () => (
       <div className="space-y-1">
         <p className="font-medium">Help out</p>
         <p className="text-muted-foreground">
-          By sending a swish payment to{" "}
-          <a href="sms:0705472993" className="font-medium text-muted-foreground hover:underline">
-            0705472993
-          </a>
-          {" "}you can help cover the hosting costs and keep the project running.
+          We would love your support to keep the project running and free for everyone.
+          You can help by sharing the project with friends, providing feedback, or contributing code if you are a developer.
         </p>
       </div>
       <div className="space-y-1">
-        <p className="font-medium">Found error?</p>
+        <p className="font-medium">Found a bug?</p>
         <p className="text-muted-foreground">
-            Make a swish payment (helps us a ton) and send us an email at{" "}
+            Send us an email at{" "}
             <a href="mailto:hej@masterpicker.se" className="font-medium text-muted-foreground hover:underline">hej@masterpicker.se</a>{" "}
                 with the details so we can fix it!
 
@@ -129,32 +126,34 @@ const SupportCard = () => (
 
 const PetrusDeveloperCard = () => {
   return (
-    <Card className='max-w-md pt-0'>
-      <CardContent className='px-0'>
-        <Image
-          src='/profile/petrus.png'
-          alt='Banner'
-          className='aspect-video h-70 rounded-t-xl object-cover'
-          width={500}
-          height={500}
-        />
+    <Card className="pt-0 h-full overflow-hidden">
+      <CardContent className="p-0">
+        <div className="relative w-full aspect-[4/3]">
+          <Image
+            src="/profile/petrus.png"
+            alt="Banner"
+            fill
+            sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       </CardContent>
       <CardHeader>
         <CardTitle>Petrus Jarl</CardTitle>
         <CardDescription>People First. God Always. Code cool stuff!.</CardDescription>
       </CardHeader>
-      <CardFooter className='gap-3 max-sm:flex-col max-sm:items-stretch mt-auto'>
+      <CardFooter className="gap-3 max-sm:flex-col max-sm:items-stretch mt-auto">
         <Button asChild>
-            <a href="https://github.com/2peppe2" target="_blank" rel="noopener noreferrer">
-            <Github className='mr-2 h-4 w-4' />
+          <a href="https://github.com/2peppe2" target="_blank" rel="noopener noreferrer">
+            <Github className="mr-2 h-4 w-4" />
             GitHub
-            </a>
+          </a>
         </Button>
-        <Button variant={'outline'}>
-            <a href="https://www.linkedin.com/in/petrus-jarl-3697b5261/" target="_blank" rel="noopener noreferrer" className="flex">
-            <Linkedin className='mr-2 h-4 w-4' />
-             LinkedIn
-            </a>
+        <Button variant="outline" asChild>
+          <a href="https://www.linkedin.com/in/petrus-jarl-3697b5261/" target="_blank" rel="noopener noreferrer" className="flex">
+            <Linkedin className="mr-2 h-4 w-4" />
+            LinkedIn
+          </a>
         </Button>
       </CardFooter>
     </Card>
@@ -163,32 +162,34 @@ const PetrusDeveloperCard = () => {
 
 const MikaelDeveloperCard = () => {
   return (
-    <Card className='max-w-md pt-0'>
-      <CardContent className='px-0'>
-        <Image
-          src='/profile/mikael.png'
-          alt='Banner'
-          className='aspect-video h-70 rounded-t-xl object-cover'
-          width={500}
-          height={500}
-        />
+    <Card className="pt-0 h-full overflow-hidden">
+      <CardContent className="p-0">
+        <div className="relative w-full aspect-[4/3]">
+          <Image
+            src="/profile/mikael.png"
+            alt="Banner"
+            fill
+            sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       </CardContent>
       <CardHeader>
         <CardTitle>Mikael Karlsson</CardTitle>
         <CardDescription>Hope you are doing good. Remember that you can learn anything :D</CardDescription>
       </CardHeader>
-      <CardFooter className='gap-3 max-sm:flex-col max-sm:items-stretch mt-auto'>
+      <CardFooter className="gap-3 max-sm:flex-col max-sm:items-stretch mt-auto">
         <Button asChild>
-            <a href="https://github.com/BakuPlayz" target="_blank" rel="noopener noreferrer">
-            <Github className='mr-2 h-4 w-4' />
+          <a href="https://github.com/BakuPlayz" target="_blank" rel="noopener noreferrer">
+            <Github className="mr-2 h-4 w-4" />
             GitHub
-            </a>
+          </a>
         </Button>
-        <Button variant={'outline'}>
-            <a href="https://www.linkedin.com/in/mikael-karlsson-8212a91b1/" target="_blank" rel="noopener noreferrer" className="flex">
-            <Linkedin className='mr-2 h-4 w-4' />
-             LinkedIn
-            </a>
+        <Button variant="outline" asChild>
+          <a href="https://www.linkedin.com/in/mikael-karlsson-8212a91b1/" target="_blank" rel="noopener noreferrer" className="flex">
+            <Linkedin className="mr-2 h-4 w-4" />
+            LinkedIn
+          </a>
         </Button>
       </CardFooter>
     </Card>
