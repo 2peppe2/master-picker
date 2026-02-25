@@ -40,6 +40,35 @@ pnpm install
 bun install
 ```
 
+Set up the database
+
+1. Create a `.env` file in the root directory with the following content:
+```env
+# Database Configuration
+DB_USER=postgres
+DB_PASSWORD=your_secure_password_here
+DB_NAME=masterpicker
+
+# Prisma Connection String
+DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/masterpicker?schema=public
+```
+
+2. Start the PostgreSQL database using Docker:
+```bash
+docker-compose up -d
+```
+
+3. Run database migrations and seed the database:
+```bash
+npm run migrate
+# or
+yarn migrate
+# or
+pnpm migrate
+# or
+bun migrate
+```
+
 Start the development server
 
 ```bash
