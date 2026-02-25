@@ -31,7 +31,6 @@ interface ProgressCardProps {
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({
-  compulsoryConfirmed,
   bachelorCourses,
   compulsoryCourses,
   electiveRequirements,
@@ -49,8 +48,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
       totalElectives === 0 || completedElectives === totalElectives;
 
     const totalSteps = (hasCompulsory ? 1 : 0) + totalElectives;
-    const completedSteps =
-      (compulsoryConfirmed ? 1 : 0) + completedElectives;
+    const completedSteps = 1 + completedElectives;
 
     return {
       electiveConfirmed,
@@ -59,12 +57,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
         totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
       ),
     };
-  }, [
-    electiveRequirements,
-    electiveSelections,
-    compulsoryCourses,
-    compulsoryConfirmed,
-  ]);
+  }, [electiveRequirements, electiveSelections, compulsoryCourses]);
 
   const steps = useMemo(
     () =>
@@ -82,7 +75,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
                 "border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400",
             },
           },
-          isDone: compulsoryConfirmed,
+          isDone: true,
         },
         {
           states: {
@@ -100,7 +93,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
           isDone: electiveConfirmed,
         },
       ] satisfies ProgressStep[],
-    [compulsoryConfirmed, electiveConfirmed],
+    [electiveConfirmed],
   );
 
   return (
