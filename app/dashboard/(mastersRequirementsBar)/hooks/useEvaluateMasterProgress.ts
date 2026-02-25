@@ -1,95 +1,112 @@
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { Course, RequirementsUnion } from "../../page";
-import { useCallback } from "react";
+import { Course, RequirementUnion } from "../../page";
 import { useAtomValue } from "jotai";
+import { useCallback } from "react";
 import _ from "lodash";
 
 interface MasterProgress {
   progress: number;
-  fulfilled: RequirementsUnion[];
+  fulfilled: RequirementUnion[];
 }
 
 export const useEvaluateMasterProgress = () => {
   const selectedMasterCourses = useAtomValue(
     scheduleAtoms.selectedMasterCoursesAtom,
   );
+  const selectedCourses = useAtomValue(scheduleAtoms.selectedCoursesAtom);
 
   return useCallback(
-    (requirements: RequirementsUnion[]): MasterProgress => {
+    (requirements: RequirementUnion[]): MasterProgress => {
       if (requirements.length === 0) {
         return { progress: 0, fulfilled: [] };
       }
 
-      const percentagePerReq = 100 / requirements.length;
-      const fulfilled: RequirementsUnion[] = [];
-      let totalPercentage = 0;
+      const fulfilled: RequirementUnion[] = [];
+      let totalProgress = 0;
 
       for (const requirement of requirements) {
         const progress = getProgressForRequirement(
           requirement,
+          selectedCourses,
           selectedMasterCourses,
         );
 
-        totalPercentage += percentagePerReq * progress;
+        totalProgress += progress;
 
-        if (progress === 1) {
+        if (progress >= 1) {
           fulfilled.push(requirement);
         }
       }
 
       return {
         fulfilled,
-        progress: Math.floor(totalPercentage),
+        progress: Math.floor((totalProgress / requirements.length) * 100),
       };
     },
-    [selectedMasterCourses],
+    [selectedCourses, selectedMasterCourses],
   );
 };
 
-/**
- * Determines the progress (0.0 to 1.0) for a single requirement.
- */
 const getProgressForRequirement = (
-  req: RequirementsUnion,
+  req: RequirementUnion,
   courses: Course[],
+  masterCourses: Course[],
 ): number => {
   switch (req.type) {
-    case "COURSES_OR": {
-      const isFulfilled = courses.some((c) =>
-        req.courses.map((c) => c.courseCode).includes(c.code),
+    case "COURSE_SELECTION": {
+      const selectedCodes = masterCourses.map((c) => c.code);
+
+      const count = req.courses.filter((code) =>
+        selectedCodes.includes(code.courseCode),
+      ).length;
+
+      return calculateMetricProgress(count, req.minCount);
+    }
+    case "CREDITS_ADVANCED_MASTER": {
+      const current = calculateCreditsByLevel(masterCourses, "A");
+      return calculateMetricProgress(current, req.credits);
+    }
+    case "CREDITS_ADVANCED_PROFILE": {
+      const current = calculateProfileCredits(masterCourses, "A");
+      return calculateMetricProgress(current, req.credits);
+    }
+    case "CREDITS_PROFILE_TOTAL": {
+      const current = calculateProfileCredits(masterCourses);
+      return calculateMetricProgress(current, req.credits);
+    }
+    case "CREDITS_MASTER_TOTAL": {
+      const current = masterCourses.reduce(
+        (sum, c) => sum + (c.credits || 0),
+        0,
       );
-      return isFulfilled ? 1 : 0;
+      return calculateMetricProgress(current, req.credits);
     }
-    case "TOTAL": {
-      const current = calculateTotalCredits(courses);
-      return calculateCreditProgress(current, req.credits);
-    }
-    case "A_LEVEL": {
-      const current = calculateLevelCredits(courses, "A");
-      return calculateCreditProgress(current, req.credits);
-    }
-    case "G_LEVEL": {
-      const current = calculateLevelCredits(courses, "G");
-      return calculateCreditProgress(current, req.credits);
+    case "CREDITS_TOTAL": {
+      const current = courses.reduce((sum, c) => sum + (c.credits || 0), 0);
+      return calculateMetricProgress(current, req.credits);
     }
     default:
       return 0;
   }
 };
 
-const calculateCreditProgress = (current: number, required: number) => {
-  if (required === 0) return 1;
+const calculateMetricProgress = (current: number, required: number) => {
+  if (required <= 0) return 1;
   return _.clamp(current / required, 0, 1);
 };
 
-const calculateTotalCredits = (courses: Course[]): number =>
-  courses.reduce((sum, c) => sum + c.credits, 0);
-
-const calculateLevelCredits = (courses: Course[], level: "A" | "G"): number => {
+const calculateProfileCredits = (courses: Course[], level?: "A" | "G") => {
   return courses
-    .filter(
-      (c) => !c.CourseMaster.some((master) => master.courseCode === c.code),
-    )
+    .filter((c) => {
+      const isProfileCourse = c.ecv === "E" || c.ecv === "V";
+      const matchesLevel = level ? c.level.includes(level) : true;
+      return isProfileCourse && matchesLevel;
+    })
+    .reduce((sum, c) => sum + (c.credits || 0), 0);
+};
+
+const calculateCreditsByLevel = (courses: Course[], level: "A" | "G") => {
+  return courses
     .filter((c) => c.level.includes(level))
-    .reduce((sum, c) => sum + c.credits, 0);
+    .reduce((sum, c) => sum + (c.credits || 0), 0);
 };

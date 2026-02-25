@@ -3,7 +3,7 @@
 import { Prisma } from "@/prisma/generated/client/client";
 import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
-import { normalizeCourse } from "../courseNormalizer"
+import { normalizeCourse } from "../courseNormalizer";
 import { getProgramId } from "../actions/getProgramId";
 
 export default async function MainPage({
@@ -42,7 +42,6 @@ export default async function MainPage({
               name: true,
               shortname: true,
             },
-            
           },
         },
       },
@@ -81,18 +80,17 @@ export default async function MainPage({
       masterProgram: program,
     },
   });
-  
+
   return (
     <ClientPage
       courses={courses.map(normalizeCourse)}
       masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
       program={program}
-      startingYear={startYear!} 
+      startingYear={startYear!}
       programId={programId}
     />
   );
 }
-
 
 export type Course = ReturnType<typeof normalizeCourse>;
 
@@ -120,6 +118,7 @@ export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
   select: {
     type: true;
     courses: true;
+    minCount: true;
   };
 }>;
 
@@ -130,4 +129,4 @@ export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
   };
 }>;
 
-export type RequirementsUnion = CourseRequirements | CreditsRequirements;
+export type RequirementUnion = CourseRequirements | CreditsRequirements;

@@ -7,37 +7,58 @@ import {
   Scale,
   Semester,
 } from "./generated/client/enums";
-import { Course, CourseDetail, CourseDetails, MasterName, MasterRequirements, Program, ProgramYear } from "./json_types";
+import {
+  Course,
+  CourseDetail,
+  CourseDetails,
+  MasterName,
+  MasterRequirements,
+  Program,
+  ProgramYear,
+} from "./json_types";
 
+/**
+ * Maps string semesters from JSON to Prisma Enums
+ */
 function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
   if (s === "VT") return Semester.VT;
   throw new Error(`Invalid semester: ${s}`);
 }
 
+/**
+ * Maps your TypeScript RequirementUnion types to Database Enums
+ */
 function mapReqTypeToCreditType(t: string): CreditType | null {
-  // input uses: "A-level" | "G-level" | "Total"
-  if (t === "A-level") return CreditType.A_LEVEL;
-  if (t === "G-level") return CreditType.G_LEVEL;
-  if (t === "Total") return CreditType.TOTAL;
-  return null;
+  const mapping: Record<string, CreditType> = {
+    CREDITS_ADVANCED_MASTER: CreditType.CREDITS_ADVANCED_MASTER,
+    CREDITS_ADVANCED_PROFILE: CreditType.CREDITS_ADVANCED_PROFILE,
+    CREDITS_PROFILE_TOTAL: CreditType.CREDITS_PROFILE_TOTAL,
+    CREDITS_MASTER_TOTAL: CreditType.CREDITS_MASTER_TOTAL,
+    CREDITS_TOTAL: CreditType.CREDITS_TOTAL,
+    // Legacy support for older JSON strings
+    "A-level": CreditType.CREDITS_ADVANCED_MASTER,
+    "G-level": CreditType.CREDITS_TOTAL,
+    Total: CreditType.CREDITS_MASTER_TOTAL,
+  };
+  return mapping[t] || null;
 }
 
 async function main() {
-  await delateAllData();
+  console.log("Starting data wipe...");
+  await deleteAllData();
+  console.log("Starting seed process...");
   await seedData();
-  //await seedMastersData();
-  //await seedMasterRequirementsData();
 }
 
 main()
   .catch((e) => {
-    console.error(e);
+    console.error("Seed failed:", e);
     process.exitCode = 1;
   })
   .finally(async () => prisma.$disconnect());
 
-async function delateAllData() {
+async function deleteAllData() {
   await prisma.courseOccasionBlock.deleteMany();
   await prisma.courseOccasionPeriod.deleteMany();
   await prisma.courseOccasionRecommendedMaster.deleteMany();
@@ -56,11 +77,14 @@ async function delateAllData() {
 
 async function seedData() {
   const programsFilePath = path.resolve("./data/programs.json");
+  if (!fs.existsSync(programsFilePath)) return;
+
   const programs = JSON.parse(
     fs.readFileSync(programsFilePath, "utf8"),
   ) as Program[];
+
   for (const p of programs) {
-    seedProgramData(p);
+    await seedProgramData(p);
     for (const year of p.years) {
       await seedCourseProgramData(year, p);
       await seedCoursesData(p.id, year.id);
@@ -78,17 +102,10 @@ async function seedProgramData(p: Program) {
   });
 }
 
-async function seedCourseProgramData(
-  year: ProgramYear,
-  program: Program,
-) {
+async function seedCourseProgramData(year: ProgramYear, program: Program) {
   await prisma.programCourse.upsert({
-    where: {
-      id: year.id,
-    },
-    update: {
-      program: program.id,
-    },
+    where: { id: year.id },
+    update: { program: program.id },
     create: {
       id: year.id,
       startYear: year.year,
@@ -99,15 +116,23 @@ async function seedCourseProgramData(
 
 async function seedCoursesData(program: string, id: number) {
   const courseFilePath = path.resolve(`./data/${program}_${id}_courses.json`);
-  const courses = JSON.parse(fs.readFileSync(courseFilePath, "utf8")) as Course[];
-  console.log(`Seeding ${courses.length} courses for program ${program} - ${id} ...`);
-
   const courseDetailsFilePath = path.resolve(
     `./data/${program}_${id}_detailed_courses.json`,
   );
+
+  if (!fs.existsSync(courseFilePath) || !fs.existsSync(courseDetailsFilePath))
+    return;
+
+  const courses = JSON.parse(
+    fs.readFileSync(courseFilePath, "utf8"),
+  ) as Course[];
   const courseDetails = JSON.parse(
     fs.readFileSync(courseDetailsFilePath, "utf8"),
   ) as CourseDetails;
+
+  console.log(
+    `Seeding ${courses.length} courses for ${program} (Year ID: ${id})...`,
+  );
 
   for (const c of courses) {
     const detailedInfo = courseDetails[c.code];
@@ -119,27 +144,19 @@ async function seedCoursesData(program: string, id: number) {
       await seedMasterCourse(m, c, id, program);
     }
     for (const occasion of c.occasions) {
-      // Create CourseOccasion
       await seedOccasion(occasion, c, id, program);
     }
   }
-  console.log(`${program} - ${id} courses seeding complete`);
 }
 
 async function seedOccasion(
-  occasion: {
-    year: number;
-    semester: string;
-    ht_or_vt: string;
-    periods: { period: number; blocks: number[] }[];
-    recommended_masters: string[];
-  },
+  occasion: any,
   c: Course,
   id: number,
   program: string,
 ) {
   const masters = Array.isArray(occasion.recommended_masters)
-    ? occasion.recommended_masters.map((m) => m?.trim()).filter(Boolean)
+    ? occasion.recommended_masters.map((m: string) => m?.trim()).filter(Boolean)
     : [];
 
   const dbOccasion = await prisma.courseOccasion.create({
@@ -150,16 +167,17 @@ async function seedOccasion(
       programCourseID: id,
     },
   });
+
   if (masters.length) {
     await prisma.courseOccasionRecommendedMaster.createMany({
-      data: masters.map((master) => ({
+      data: masters.map((master: string) => ({
         courseOccasionId: dbOccasion.id,
         master,
         masterProgram: program,
-      }))
+      })),
     });
   }
-  // Create periods
+
   for (const period of occasion.periods) {
     const dbPeriod = await prisma.courseOccasionPeriod.create({
       data: {
@@ -167,7 +185,7 @@ async function seedOccasion(
         period: Number(period.period),
       },
     });
-    // Create blocks
+
     for (const block of period.blocks) {
       await prisma.courseOccasionBlock.create({
         data: {
@@ -186,7 +204,9 @@ async function seedMasterCourse(
   program: string,
 ) {
   await prisma.courseMaster.upsert({
-    where: { courseMasterId: { master: m, masterProgram: program, courseCode: c.code } },
+    where: {
+      courseMasterId: { master: m, masterProgram: program, courseCode: c.code },
+    },
     update: {},
     create: {
       master: m,
@@ -199,33 +219,33 @@ async function seedMasterCourse(
 
 async function seedMaster(m: string, program: string) {
   await prisma.master.upsert({
-    where: { master_masterProgram: { master: m, masterProgram: program} },
+    where: { master_masterProgram: { master: m, masterProgram: program } },
     update: {},
     create: { master: m, masterProgram: program },
   });
 }
 
-async function seedExamination(detailedInfo: CourseDetail, c: Course, id: number) {
-  if (Array.isArray(detailedInfo?.examinations) &&
-    detailedInfo.examinations.length) {
+async function seedExamination(
+  detailedInfo: CourseDetail,
+  c: Course,
+  id: number,
+) {
+  if (
+    Array.isArray(detailedInfo?.examinations) &&
+    detailedInfo.examinations.length
+  ) {
     await prisma.examination.createMany({
-      data: detailedInfo.examinations.map(
-        (exam: {
-          credits: number;
-          module: string;
-          name: string;
-          scale?: string;
-        }) => ({
-          courseCode: c.code,
-          programCourseID: id,
-          credits: Number(exam.credits),
-          module: exam.module,
-          name: exam.name,
-          scale: exam.scale === "U_THREE_FOUR_FIVE"
+      data: detailedInfo.examinations.map((exam) => ({
+        courseCode: c.code,
+        programCourseID: id,
+        credits: Number(exam.credits),
+        module: exam.module,
+        name: exam.name,
+        scale:
+          exam.scale === "U_THREE_FOUR_FIVE"
             ? Scale.U_THREE_FOUR_FIVE
             : Scale.G_OR_U,
-        })
-      ),
+      })),
     });
   }
 }
@@ -240,8 +260,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       link: c.link ?? "",
       examiner: detailedInfo?.examiner ?? "",
       prerequisitesText: detailedInfo?.prerequisites ?? "",
-      scheduledHours: detailedInfo?.education_components[0] ?? 0,
-      selfStudyHours: detailedInfo?.education_components[1] ?? 0,
+      scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
+      selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
     },
     create: {
@@ -252,8 +272,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       link: c.link ?? "",
       examiner: detailedInfo?.examiner ?? "",
       prerequisitesText: detailedInfo?.prerequisites ?? "",
-      scheduledHours: detailedInfo?.education_components[0] ?? 0,
-      selfStudyHours: detailedInfo?.education_components[1] ?? 0,
+      scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
+      selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
       programCourseID: id,
     },
@@ -264,9 +284,11 @@ async function seedMasterRequirementsData(program: string, id: number) {
   const masterRequirementsPath = path.resolve(
     `./data/${program}_${id}_master_requirements.json`,
   );
+  if (!fs.existsSync(masterRequirementsPath)) return;
+
   const masterRequirements = JSON.parse(
     fs.readFileSync(masterRequirementsPath, "utf8"),
-  ) as MasterRequirements;
+  ) as Record<string, any[]>;
 
   for (const [master, requirements] of Object.entries(masterRequirements)) {
     await seedMaster(master, program);
@@ -276,26 +298,23 @@ async function seedMasterRequirementsData(program: string, id: number) {
     });
 
     for (const req of requirements) {
-      if (req.type === "Courses") {
-        if (!req.courses.length) continue;
+      // Logic for Course Selections (Mandatory or Pick X of Y)
+      if (req.type === "COURSE_SELECTION" || req.type === "Courses") {
+        if (!req.courses || !req.courses.length) continue;
+
         const courseRequirement = await prisma.coursesRequirement.create({
           data: {
-            type: CoursesType.COURSES_OR,
+            type: CoursesType.COURSE_SELECTION,
+            minCount: req.minCount ?? 1, // Supports mandatory (1) or groups (e.g., 2)
             requirementId: requirementRow.id,
           },
         });
+
         const linkedCourses = await prisma.course.findMany({
           where: { code: { in: req.courses }, programCourseID: id },
           select: { code: true, programCourseID: true },
         });
-        const missingCourses = req.courses.filter(
-          (code) => !linkedCourses.some((course) => course.code === code),
-        );
-        if (missingCourses.length) {
-          console.warn(
-            `Missing courses for requirement ${master}: ${missingCourses.join(", ")}`,
-          );
-        }
+
         if (linkedCourses.length) {
           await prisma.courseRequirementCourse.createMany({
             data: linkedCourses.map((course) => ({
@@ -308,38 +327,40 @@ async function seedMasterRequirementsData(program: string, id: number) {
         continue;
       }
 
+      // Logic for Credit-based rules
       const creditType = mapReqTypeToCreditType(req.type);
-      if (!creditType) {
-        throw new Error(`Unsupported requirement type: ${req.type}`);
+      if (creditType) {
+        await prisma.creditRequirement.create({
+          data: {
+            requirementId: requirementRow.id,
+            type: creditType,
+            credits: Number(req.credits),
+          },
+        });
       }
-
-      await prisma.creditRequirement.create({
-        data: {
-          requirementId: requirementRow.id,
-          type: creditType,
-          credits: req.credits,
-        },
-      });
     }
-
-    console.log(`Seeded requirements for master ${master}`);
   }
+  console.log(`Seeded requirements for ${program} - ${id}`);
 }
 
-
 async function seedMastersData(program: string, id: number) {
-  const mastersFilePath = path.resolve(`./data/${program}_${id}_master_names.json`);
+  const mastersFilePath = path.resolve(
+    `./data/${program}_${id}_master_names.json`,
+  );
+  if (!fs.existsSync(mastersFilePath)) return;
+
   const mastersInfo = JSON.parse(
     fs.readFileSync(mastersFilePath, "utf8"),
   ) as MasterName[];
   for (const info of mastersInfo) {
     await prisma.master.upsert({
-      where: { master_masterProgram: { master: info.id, masterProgram: program } },
+      where: {
+        master_masterProgram: { master: info.id, masterProgram: program },
+      },
       update: {
         name: info.name,
         icon: info.icon,
         style: info.style,
-        masterProgram: program,
       },
       create: {
         master: info.id,

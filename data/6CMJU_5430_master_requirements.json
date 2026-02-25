@@ -10,7 +10,6 @@
       "minCount": 1,
       "courses": ["TAOP07", "TAOP33", "TAOP88"]
     },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC17"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TGTU99"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE01"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE19"] },

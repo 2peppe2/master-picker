@@ -5,10 +5,10 @@ CREATE TYPE "Semester" AS ENUM ('HT', 'VT');
 CREATE TYPE "Scale" AS ENUM ('G_OR_U', 'U_THREE_FOUR_FIVE');
 
 -- CreateEnum
-CREATE TYPE "CoursesType" AS ENUM ('COURSES_OR');
+CREATE TYPE "CoursesType" AS ENUM ('COURSE_SELECTION');
 
 -- CreateEnum
-CREATE TYPE "CreditType" AS ENUM ('A_LEVEL', 'G_LEVEL', 'TOTAL');
+CREATE TYPE "CreditType" AS ENUM ('CREDITS_ADVANCED_MASTER', 'CREDITS_ADVANCED_PROFILE', 'CREDITS_PROFILE_TOTAL', 'CREDITS_MASTER_TOTAL', 'CREDITS_TOTAL');
 
 -- CreateTable
 CREATE TABLE "Course" (
@@ -129,7 +129,8 @@ CREATE TABLE "CourseRequirementCourse" (
 -- CreateTable
 CREATE TABLE "CoursesRequirement" (
     "id" SERIAL NOT NULL,
-    "type" "CoursesType" NOT NULL,
+    "type" "CoursesType" NOT NULL DEFAULT 'COURSE_SELECTION',
+    "minCount" INTEGER NOT NULL DEFAULT 1,
     "requirementId" INTEGER NOT NULL,
 
     CONSTRAINT "CoursesRequirement_pkey" PRIMARY KEY ("id")
