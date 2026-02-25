@@ -2,6 +2,13 @@ import { LucideCircleCheck, LucideCircleDashed } from "lucide-react";
 import { RequirementUnion } from "../../page";
 import { FC } from "react";
 
+const NUM_TO_TYPED: Record<number, string> = {
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
+};
+
 interface MasterBadgeTooltipProps {
   master: string;
   name: string;
@@ -70,18 +77,14 @@ const RequirementRows: RequirementComponentMap = {
       requirement.courses.map((c) => c.courseCode),
     );
 
-    const countName = new Intl.NumberFormat("en-US", {
-      notation: "compact",
-    }).format(requirement.minCount);
-
     return (
       <>
         {isMandatory ? (
           <>Have selected </>
         ) : (
-          <>Have selected at least {countName} of </>
+          <>Have selected at least {NUM_TO_TYPED[requirement.minCount]} of </>
         )}
-        {courseList}
+        {courseList}.
       </>
     );
   },
