@@ -11,26 +11,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Pie, PieChart } from "recharts";
-
-type Grade = {
-  grade: string;
-  gradeOrder: number;
-  quantity: number;
-};
-
-type Module = {
-  moduleCode: string;
-  date: string;
-  grades: Grade[];
-};
-
-type CourseData = {
-  courseCode: string;
-  courseNameSwe: string;
-  courseNameEng: string;
-  lastUpdatedTimestamp: string;
-  modules: Module[];
-};
+import { type CourseData, fetchCourseData } from "./courseDataCache";
 
 type StatisticsProps = {
   courseCode: string;
@@ -41,8 +22,6 @@ const chartConfig = {
     label: "Students",
   },
 } satisfies ChartConfig;
-
-const fetchPromiseCache = new Map<string, Promise<CourseData>>();
 
 const Statistics = ({ courseCode }: StatisticsProps) => {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
@@ -57,17 +36,7 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
         setIsLoading(true);
         setError(null);
 
-        if(!fetchPromiseCache.has(courseCode)) {
-          const request = fetch(
-            `https://liutentor.lukasabbe.com/api/courses/${courseCode}`
-          ).then((res) => {
-            if (!res.ok) throw new Error("Failed to fetch course data");
-            return res.json();
-          });
-          
-          fetchPromiseCache.set(courseCode, request);
-        }
-        const data = await fetchPromiseCache.get(courseCode);
+        const data = await fetchCourseData(courseCode);
         
         if(isMounted && data) {
           setCourseData(data);
