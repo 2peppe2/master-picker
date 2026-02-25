@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ComboboxItemType } from "./types";
 import { useMemo, useState } from "react";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 interface LandingClientPageProps {
   programs: {
@@ -178,8 +179,8 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
         )}
       </Button>
 
-      <Button variant="link" onClick={() => {}} className="text-sm">
-        Learn more about the project
+      <Button variant="link" className="text-sm">
+        <Link href="/about">Learn more about the project</Link>
       </Button>
     </div>
   );
