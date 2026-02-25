@@ -1,0 +1,145 @@
+{
+  "DAIM": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_PROFILE_TOTAL", "credits": 36 },
+    { "type": "CREDITS_ADVANCED_PROFILE", "credits": 30 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TGTU99"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE01"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE19"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DPAL": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_PROFILE_TOTAL", "credits": 36 },
+    { "type": "CREDITS_ADVANCED_PROFILE", "credits": 30 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSIT02"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE52"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DIND": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEAE01"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEIO32"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC34"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE02"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEIO06"] },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TDEI74", "TEIO13"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DMEI": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_PROFILE_TOTAL", "credits": 36 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBME04"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBMI19"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DSPE": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_PROFILE_TOTAL", "credits": 36 },
+    { "type": "CREDITS_ADVANCED_PROFILE", "credits": 30 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD23"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC73"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBK07"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBK03"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD57"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DSMU": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_ADVANCED_PROFILE", "credits": 30 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE52"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DSEC": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSIT02"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE62"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC90"] },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TDDE21", "TDDE63"]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 2,
+      "courses": [
+        "TSIT03",
+        "TDDE74",
+        "TDDD25",
+        "TDDD97",
+        "TDDE61",
+        "TEAE21",
+        "TEIG01",
+        "TDDE58",
+        "TSIT14"
+      ]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ]
+}
