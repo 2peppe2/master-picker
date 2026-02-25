@@ -47,7 +47,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
 
     return {
       electiveConfirmed,
-      isComplete: compulsoryConfirmed && electiveConfirmed,
+      isComplete: electiveConfirmed,
       progressPercent: Math.round(
         totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
       ),
