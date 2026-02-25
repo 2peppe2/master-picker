@@ -20,6 +20,7 @@ const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
+        showAdd={false}
       />
 
       <CardHeader>

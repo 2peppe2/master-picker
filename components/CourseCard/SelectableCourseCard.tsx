@@ -46,6 +46,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         course={course}
         open={openDialog}
         onOpenChange={setOpenDialog}
+        showAdd={false}
       />
 
       <div

@@ -5,9 +5,10 @@ import OccasionTable from "./OccasionTable";
 
 type DialogGeneralTabProps = {
   course: Course;
+  showAdd : boolean;
 };
 
-const DialogGeneralTab = ({ course }: DialogGeneralTabProps) => {
+const DialogGeneralTab = ({ course, showAdd }: DialogGeneralTabProps) => {
   return (
     <>
       <div className="grid grid-cols-2">
@@ -31,7 +32,7 @@ const DialogGeneralTab = ({ course }: DialogGeneralTabProps) => {
         />
       </div>
 
-      <OccasionTable course={course} />
+      <OccasionTable course={course} showAdd={showAdd} />
     </>
   );
 };
