@@ -1,9 +1,9 @@
 import { atom } from "jotai";
 
 export const userPreferencesAtom = atom({
-  startingYear: 2023,
+  startingYear: 2022,
   selectedProgram: "6CMJU",
-  programId : 2040,
+  programId: 2040,
   numberOfSemesters: 10,
   masterPeriod: {
     start: 7,
