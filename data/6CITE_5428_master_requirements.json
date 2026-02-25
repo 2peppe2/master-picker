@@ -8,8 +8,9 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC17"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TGTU99"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE01"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE19"] },
@@ -25,14 +26,13 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
     {
       "type": "COURSE_SELECTION",
-      "minCount": 1,
-      "courses": ["TATA64", "TDDD08", "TDDD20", "TDDE34"]
+      "minCount": 2,
+      "courses": ["TATA64", "TDDD08", "TDDD14", "TDDD20", "TDDE34"]
     },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSIT02"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE52"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
@@ -44,7 +44,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEAE01"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEIO32"] },
@@ -67,7 +67,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBME04"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBMI19"] },
@@ -83,14 +83,14 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD23"] },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC73"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD57"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBK07"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBB22"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBK03"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD57"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
   ],
   "DSMU": [
@@ -101,7 +101,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE52"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
@@ -114,11 +114,8 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TAOP07", "TAOP33", "TAOP88"]
+      "courses": ["TFYB12", "TFYA87"]
     },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSIT02"] },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE62"] },
-    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC90"] },
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
@@ -139,6 +136,22 @@
         "TSIT14"
       ]
     },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC90"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE62"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
+  ],
+  "DDAS": [
+    { "type": "CREDITS_TOTAL", "credits": 300 },
+    { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
+    { "type": "CREDITS_PROFILE_TOTAL", "credits": 48 },
+    { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": ["TFYB12", "TFYA87"]
+    },
+    { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE21"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
   ]

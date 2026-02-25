@@ -25,25 +25,32 @@ interface ProgressStep {
 interface ProgressCardProps {
   compulsoryConfirmed: boolean;
   compulsoryCourses: CourseRequirements;
+  electiveRequirements: CourseRequirements;
   bachelorCourses: Course[];
-  electiveCourses: Record<number, Course | null>;
+  electiveSelections: Record<number, Course[]>;
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({
   compulsoryConfirmed,
   bachelorCourses,
   compulsoryCourses,
-  electiveCourses,
+  electiveRequirements,
+  electiveSelections,
 }) => {
   const { electiveConfirmed, progressPercent, isComplete } = useMemo(() => {
-    const electedList = Object.values(electiveCourses).filter(Boolean);
-    const totalElectives = Object.keys(electiveCourses).length;
+    const totalElectives = electiveRequirements.length;
     const hasCompulsory = compulsoryCourses.length > 0;
+    const completedElectives = electiveRequirements.filter((group, index) => {
+      const minRequired = group.minCount ?? 1;
+      const selectedCount = electiveSelections[index]?.length ?? 0;
+      return selectedCount >= minRequired;
+    }).length;
     const electiveConfirmed =
-      totalElectives === 0 || electedList.length === totalElectives;
+      totalElectives === 0 || completedElectives === totalElectives;
 
     const totalSteps = (hasCompulsory ? 1 : 0) + totalElectives;
-    const completedSteps = (compulsoryConfirmed ? 1 : 0) + electedList.length;
+    const completedSteps =
+      (compulsoryConfirmed ? 1 : 0) + completedElectives;
 
     return {
       electiveConfirmed,
@@ -52,7 +59,12 @@ const ProgressCard: FC<ProgressCardProps> = ({
         totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
       ),
     };
-  }, [electiveCourses, compulsoryCourses, compulsoryConfirmed]);
+  }, [
+    electiveRequirements,
+    electiveSelections,
+    compulsoryCourses,
+    compulsoryConfirmed,
+  ]);
 
   const steps = useMemo(
     () =>
@@ -122,7 +134,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
           <div className="shrink-0">
             <ContinueButton
               disabled={!isComplete}
-              electiveCourses={electiveCourses}
+              electiveCourses={electiveSelections}
               bachelorCourses={bachelorCourses}
               compulsoryCourses={compulsoryCourses}
             />

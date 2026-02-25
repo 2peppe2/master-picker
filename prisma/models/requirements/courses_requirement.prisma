@@ -1,12 +1,16 @@
 model CoursesRequirement {
-  id Int @id @default(autoincrement())
+  id   Int         @id @default(autoincrement())
+  type CoursesType @default(COURSE_SELECTION)
 
-  type          CoursesType
+  // minCount: 1 + courses.length: 1 = Mandatory
+  // minCount: 2 + courses.length: 5 = Elective (pick 2 of 5)
+  minCount Int @default(1)
+
   courses       CourseRequirementCourse[]
   requirementId Int
   requirement   Requirement               @relation(fields: [requirementId], references: [id], onDelete: Cascade)
 }
 
 enum CoursesType {
-  COURSES_OR // Requires one of the courses in the list when applied to a course requirement.
+  COURSE_SELECTION
 }

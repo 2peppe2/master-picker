@@ -1,14 +1,16 @@
 model CreditRequirement {
-  id      Int        @id @default(autoincrement())
-  type    CreditType
-  credits Int
-
-  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
+  id            Int         @id @default(autoincrement())
+  type          CreditType
+  credits       Int
+  
   requirementId Int
+  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
 }
 
 enum CreditType {
-  A_LEVEL
-  G_LEVEL
-  TOTAL
+  CREDITS_ADVANCED_MASTER  // Total A-level in degree (e.g., 60 HP)
+  CREDITS_ADVANCED_PROFILE // A-level within a specific profile
+  CREDITS_PROFILE_TOTAL    // Total credits in a profile (G + A)
+  CREDITS_MASTER_TOTAL     // Total credits for the degree (120 HP)
+  CREDITS_TOTAL            // Generic total
 }
