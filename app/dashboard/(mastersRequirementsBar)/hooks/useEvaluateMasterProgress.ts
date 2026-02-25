@@ -16,7 +16,7 @@ export const useEvaluateMasterProgress = () => {
   const selectedCourses = useAtomValue(scheduleAtoms.selectedCoursesAtom);
 
   return useCallback(
-    (requirements: RequirementUnion[]): MasterProgress => {
+    (master: string, requirements: RequirementUnion[]): MasterProgress => {
       if (requirements.length === 0) {
         return { progress: 0, fulfilled: [] };
       }
@@ -25,11 +25,12 @@ export const useEvaluateMasterProgress = () => {
       let totalProgress = 0;
 
       for (const requirement of requirements) {
-        const progress = getProgressForRequirement(
+        const progress = getProgressForRequirement({
+          master,
           requirement,
-          selectedCourses,
-          selectedMasterCourses,
-        );
+          courses: selectedCourses,
+          masterCourses: selectedMasterCourses,
+        });
 
         totalProgress += progress;
 
@@ -47,11 +48,19 @@ export const useEvaluateMasterProgress = () => {
   );
 };
 
-const getProgressForRequirement = (
-  req: RequirementUnion,
-  courses: Course[],
-  masterCourses: Course[],
-): number => {
+interface GetProgressForRequirementArgs {
+  master: string;
+  requirement: RequirementUnion;
+  courses: Course[];
+  masterCourses: Course[];
+}
+
+const getProgressForRequirement = ({
+  master,
+  courses,
+  masterCourses,
+  requirement: req,
+}: GetProgressForRequirementArgs): number => {
   switch (req.type) {
     case "COURSE_SELECTION": {
       const selectedCodes = masterCourses.map((c) => c.code);
@@ -67,11 +76,11 @@ const getProgressForRequirement = (
       return calculateMetricProgress(current, req.credits);
     }
     case "CREDITS_ADVANCED_PROFILE": {
-      const current = calculateProfileCredits(masterCourses, "A");
+      const current = calculateProfileCredits(masterCourses, master, "A");
       return calculateMetricProgress(current, req.credits);
     }
     case "CREDITS_PROFILE_TOTAL": {
-      const current = calculateProfileCredits(masterCourses);
+      const current = calculateProfileCredits(masterCourses, master);
       return calculateMetricProgress(current, req.credits);
     }
     case "CREDITS_MASTER_TOTAL": {
@@ -95,10 +104,14 @@ const calculateMetricProgress = (current: number, required: number) => {
   return _.clamp(current / required, 0, 1);
 };
 
-const calculateProfileCredits = (courses: Course[], level?: "A" | "G") => {
+const calculateProfileCredits = (
+  courses: Course[],
+  master: string,
+  level?: "A" | "G",
+) => {
   return courses
     .filter((c) => {
-      const isProfileCourse = c.ecv === "E" || c.ecv === "V";
+      const isProfileCourse = c.CourseMaster.some((m) => m.master === master);
       const matchesLevel = level ? c.level.includes(level) : true;
       return isProfileCourse && matchesLevel;
     })
