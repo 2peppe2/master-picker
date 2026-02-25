@@ -13,7 +13,7 @@ interface ContinueButtonProps {
   disabled?: boolean;
   bachelorCourses: Course[];
   compulsoryCourses: CourseRequirements;
-  electiveCourses: Record<number, Course | null>;
+  electiveCourses: Record<number, Course[]>;
 }
 
 const ContinueButton: FC<ContinueButtonProps> = ({
@@ -38,17 +38,19 @@ const ContinueButton: FC<ContinueButtonProps> = ({
 
       const electiveEntries = Object.values(electiveCourses)
         .filter((c) => !!c)
-        .map((course) => ({
-          course,
-          occasion: course.CourseOccasion?.[0], // Safe access
-        }));
+        .flatMap((courses) =>
+          courses.map((course) => ({
+            course,
+            occasion: course.CourseOccasion?.[0],
+          })),
+        );
 
       const compulsoryEntries = Object.values(compulsoryCourses)
         .flatMap((course) => course.courses)
         .map(({ course }) => normalizeCourse(course))
         .map((course) => ({
           course,
-          occasion: course.CourseOccasion?.[0], // Safe access
+          occasion: course.CourseOccasion?.[0],
         }));
 
       setInitialCourses({

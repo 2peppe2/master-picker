@@ -26,7 +26,7 @@ interface ProgressCardProps {
   compulsoryConfirmed: boolean;
   compulsoryCourses: CourseRequirements;
   bachelorCourses: Course[];
-  electiveCourses: Record<number, Course | null>;
+  electiveCourses: Record<number, Course[]>;
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({

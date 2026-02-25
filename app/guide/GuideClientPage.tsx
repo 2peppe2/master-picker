@@ -45,15 +45,13 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
     ],
   ]);
 
-
   const compulsoryCourses = useMemo(
-    () =>
-      courseRequirements.filter((req) => req.courses.length === 1),
+    () => courseRequirements.filter((req) => req.courses.length === 1),
     [courseRequirements],
   );
 
   const electiveCourses = useMemo(
-    () => courseRequirements.filter((req) => req.courses.length > req),
+    () => courseRequirements.filter((req) => req.courses.length > req.minCount),
     [courseRequirements],
   );
 
@@ -102,7 +100,6 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
           <ElectiveSelector
             key={`elective-group-${index}`}
             index={index}
-            // Pass the array of selections (default to empty array)
             selection={selections[index] || []}
             onSelectionChange={(course) =>
               handleElectiveSelection(index, course)

@@ -56,6 +56,7 @@ export type CourseRequirements = Prisma.RequirementGetPayload<{
           };
         };
         type: true;
+        minCount: true;
       };
     };
   };

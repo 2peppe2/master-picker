@@ -21,10 +21,16 @@ import {
 interface ElectiveSelectorProps {
   index: number;
   electiveCourses: CourseRequirements[0];
-  // Selection is now an array to support multi-select
   selection: Course[];
   onSelectionChange: (course: Course) => void;
 }
+
+const NUM_TO_TYPED: Record<number, string> = {
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
+};
 
 const ElectiveSelector: FC<ElectiveSelectorProps> = ({
   index,
@@ -34,7 +40,6 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  // Use minCount from your database model, default to 1
   const minRequired = electiveCourses.minCount ?? 1;
   const isFulfilled = selection.length >= minRequired;
 
@@ -45,7 +50,9 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400">
-                {minRequired === 1 ? "Pick one" : `Pick ${minRequired}`}
+                {minRequired < 5
+                  ? `Pick ${NUM_TO_TYPED[minRequired]}`
+                  : `Pick ${minRequired}`}
               </Badge>
               <CardTitle>Elective Group {index + 1}</CardTitle>
             </div>
