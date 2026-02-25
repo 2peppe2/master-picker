@@ -113,7 +113,8 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
         bachelorCourses={bachelorCourses}
         compulsoryConfirmed={requiredConfirmed}
         compulsoryCourses={compulsoryCourses}
-        electiveCourses={selections}
+        electiveRequirements={electiveCourses}
+        electiveSelections={selections}
       />
     </div>
   );
