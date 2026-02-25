@@ -16,7 +16,7 @@ U-program at Linköping University.
 All rights reserved. Public for viewing only. No reuse without permission.
 
 ## Visit the Live Site
-Currently the website is not hosted live. Please run it locally by following the instructions below.
+Currently the website is hosted live at https://www.masterpicker.se/. But if you want to run it locally pleasre run the instructions below.
 
 ## Run Locally
 Clone the project
