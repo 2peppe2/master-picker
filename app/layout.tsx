@@ -1,6 +1,8 @@
 import { JotaiProvider } from "@/components/ui/JotaiProvider";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { MobileWarning } from "@/components/MobileWarning";
@@ -28,13 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <JotaiProvider>
             <MobileWarning />
             {children}
+            <Analytics />
           </JotaiProvider>
         </ThemeProvider>
       </body>
