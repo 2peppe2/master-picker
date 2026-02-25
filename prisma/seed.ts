@@ -11,10 +11,11 @@ import {
   Course,
   CourseDetail,
   CourseDetails,
+  CourseOccasion,
   MasterName,
-  MasterRequirements,
   Program,
   ProgramYear,
+  RequirementUnion,
 } from "./json_types";
 
 /**
@@ -150,7 +151,7 @@ async function seedCoursesData(program: string, id: number) {
 }
 
 async function seedOccasion(
-  occasion: any,
+  occasion: CourseOccasion,
   c: Course,
   id: number,
   program: string,
@@ -288,7 +289,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
 
   const masterRequirements = JSON.parse(
     fs.readFileSync(masterRequirementsPath, "utf8"),
-  ) as Record<string, any[]>;
+  ) as Record<string, RequirementUnion[]>;
 
   for (const [master, requirements] of Object.entries(masterRequirements)) {
     await seedMaster(master, program);
@@ -299,7 +300,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
 
     for (const req of requirements) {
       // Logic for Course Selections (Mandatory or Pick X of Y)
-      if (req.type === "COURSE_SELECTION" || req.type === "Courses") {
+      if (req.type === "COURSE_SELECTION") {
         if (!req.courses || !req.courses.length) continue;
 
         const courseRequirement = await prisma.coursesRequirement.create({
@@ -311,7 +312,10 @@ async function seedMasterRequirementsData(program: string, id: number) {
         });
 
         const linkedCourses = await prisma.course.findMany({
-          where: { code: { in: req.courses }, programCourseID: id },
+          where: {
+            code: { in: req.courses.map((c) => c.courseCode) },
+            programCourseID: id,
+          },
           select: { code: true, programCourseID: true },
         });
 
