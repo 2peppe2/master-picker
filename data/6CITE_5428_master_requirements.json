@@ -59,7 +59,7 @@
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] }
   ],
-  "DMED": [
+  "DMEI": [
     { "type": "CREDITS_TOTAL", "credits": 300 },
     { "type": "CREDITS_MASTER_TOTAL", "credits": 120 },
     { "type": "CREDITS_PROFILE_TOTAL", "credits": 36 },
