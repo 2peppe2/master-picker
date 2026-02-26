@@ -1,0 +1,14 @@
+{
+    "headerTitle": "Master Picker",
+    "headerSubtitle": "Skippa krångliga Excel-ark och upptäck en smidigare kursplanering.",
+    "selectProgramPlaceholder": "Välj ditt nuvarande program",
+    "noProgramsFound": "Inga program hittades.",
+    "selectYearPlaceholder": "Välj startår",
+    "noYearsFound": "Inga år hittades.",
+    "selectMasterPlaceholder": "Välj önskad master",
+    "noMastersFound": "Inga master hittades.",
+    "loading": "Laddar...",
+    "dashboardButton": "Välj master senare",
+    "getStartedButton": "Kom igång",
+    "aboutLink": "Läs mer om projektet"
+}
