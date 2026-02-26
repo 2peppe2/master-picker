@@ -11,6 +11,7 @@ import {
 import ExaminationTable from "./ExaminationTable";
 import DialogTabs from "./DialogTabs";
 import Statistics from "./Statistics";
+import EvaluateScore from "./EvaluateScore";
 
 type CourseDialogProps = {
   open: boolean;
@@ -52,6 +53,16 @@ export const CourseDialog = ({
       content: (
         <>
           <Statistics courseCode={course.code} />
+          <DialogFooterWithDetails course={course} />
+        </>
+      ),
+    },
+    {
+      name: "Evaluate Score",
+      value: "evaluate-score",
+      content: (
+        <>
+          <EvaluateScore courseCode={course.code} />
           <DialogFooterWithDetails course={course} />
         </>
       ),
