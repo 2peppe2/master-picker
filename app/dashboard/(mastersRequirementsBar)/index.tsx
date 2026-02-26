@@ -29,7 +29,7 @@ const MastersRequirementsBar = () => {
   });
 
   if (isLoading) {
-    return <MastersRequirementsSkeleton />;
+    return <MastersRequirementsSkeleton program={program} />;
   }
 
   return (
