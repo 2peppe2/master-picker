@@ -82,15 +82,6 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
 
   return (
     <div className="space-y-6 py-4">
-      <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">
-            Course evaluation data is provided by{" "}
-            <a href="https://admin.evaliuate.liu.se/search?lang=sv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                Liu Evaluate</a> (Liu login required).
-                Calculated from the course&apos;s overall evaluation
-        </p>
-      </div>
-
       <div className="w-full h-48">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={trendData}>
@@ -103,7 +94,7 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
               height={80}
             />
             <YAxis
-              domain={[0, 5]}
+              domain={[1, 5]}
               tick={{ fontSize: 12 }}
               label={{ value: "Average Score", angle: -90, position: "center" }}
             />
@@ -126,12 +117,20 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
               dataKey="avgScore"
               stroke="hsl(142, 76%, 36%)"
               strokeWidth={3}
-              dot={{ fill: "hsl(142, 76%, 36%)", r: 4 }}
-              activeDot={{ r: 6 }}
-            />
+              dot={{ r: 4, fill: "hsl(142, 76%, 36%)" }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
+
+      <div className="flex flex-col gap-2">
+        <p className="text-sm text-muted-foreground">
+            Course evaluation data is provided by{" "}
+            <a href="https://admin.evaliuate.liu.se/search?lang=sv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                Liu Evaliuate</a> (Liu login required).
+                Calculated from the course&apos;s overall evaluation
+        </p>
+      </div>
+
 
       <Collapsible open={reportsOpen} onOpenChange={setReportsOpen}>
         <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-md border hover:bg-accent">

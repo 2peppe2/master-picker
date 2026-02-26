@@ -30,42 +30,22 @@ export const CourseDialog = ({
     {
       name: "General",
       value: "general",
-      content: (
-        <>
-          <DialogGeneralTab course={course} showAdd={showAdd} />
-          <DialogFooterWithDetails course={course} />
-        </>
-      ),
+      content: <DialogGeneralTab course={course} showAdd={showAdd} />,
     },
     {
       name: "Examinations",
       value: "examinations",
-      content: (
-        <>
-          <ExaminationTable examination={course.Examination} />
-          <DialogFooterWithDetails course={course} />
-        </>
-      ),
+      content: <ExaminationTable examination={course.Examination} />,
     },
     {
       name: "Statistics",
       value: "statistics",
-      content: (
-        <>
-          <Statistics courseCode={course.code} />
-          <DialogFooterWithDetails course={course} />
-        </>
-      ),
+      content: <Statistics courseCode={course.code} />,
     },
     {
-      name: "Evaluate Score",
+      name: "Evaliuate Score",
       value: "evaluate-score",
-      content: (
-        <>
-          <EvaluateScore courseCode={course.code} />
-          <DialogFooterWithDetails course={course} />
-        </>
-      ),
+      content: <EvaluateScore courseCode={course.code} />,
     },
   ];
 
@@ -82,6 +62,7 @@ export const CourseDialog = ({
           <DialogDescription>{course.name}</DialogDescription>
         </DialogHeader>
         <DialogTabs tabs={tabs} />
+        <DialogFooterWithDetails course={course} />
       </DialogContent>
     </Dialog>
   );
