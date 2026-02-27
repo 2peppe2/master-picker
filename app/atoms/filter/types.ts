@@ -1,1 +1,1 @@
-export type SemesterOption = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | "all";
+export type SemesterOption = number | "all";

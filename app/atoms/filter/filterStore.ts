@@ -1,103 +1,24 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleGetters } from "../schedule/hooks/useScheduleGetters";
-import { useAtomValue, useSetAtom, WritableAtom } from "jotai";
 import { useCallback, useDeferredValue, useMemo } from "react";
 import { userPreferencesAtom } from "../UserPreferences";
-import { atomWithReset, RESET } from "jotai/utils";
 import { Course } from "../../dashboard/page";
 import { SemesterOption } from "./types";
-
-type ResettableAtom<T> = WritableAtom<T, [T | typeof RESET], void>;
-
-interface FilterStore {
-  atoms: {
-    searchAtom: ResettableAtom<string>;
-    blocksAtom: ResettableAtom<number[]>;
-    periodsAtom: ResettableAtom<number[]>;
-    semesterAtom: ResettableAtom<SemesterOption>;
-    masterAtom: ResettableAtom<string>;
-    excludeSlotConflictsAtom: ResettableAtom<boolean>;
-  };
-
-  mutators: {
-    filterByTerm: (term: string) => void;
-    selectMaster: (master: string) => void;
-    selectBlocks: (blocks: number[]) => void;
-    selectPeriods: (periods: number[]) => void;
-    selectSemester: (semester: SemesterOption) => void;
-    excludeSlotConflicts: (exclude: boolean) => void;
-
-    reset: () => void;
-  };
-}
-
-const searchAtom = atomWithReset<string>("");
-const masterAtom = atomWithReset<string>("all");
-const semesterAtom = atomWithReset<SemesterOption>("all");
-const periodsAtom = atomWithReset<number[]>([1, 2]);
-const blocksAtom = atomWithReset<number[]>([1, 2, 3, 4]);
-const excludeSlotConflictsAtom = atomWithReset<boolean>(false);
-
-export const useFilterStore = (): FilterStore => {
-  const setExcludeSlotConflicts = useSetAtom(excludeSlotConflictsAtom);
-  const setSemester = useSetAtom(semesterAtom);
-  const setPeriods = useSetAtom(periodsAtom);
-  const setBlocks = useSetAtom(blocksAtom);
-  const setMaster = useSetAtom(masterAtom);
-  const setSearch = useSetAtom(searchAtom);
-
-  const reset = useCallback(() => {
-    setSearch(RESET);
-    setMaster(RESET);
-    setBlocks(RESET);
-    setPeriods(RESET);
-    setSemester(RESET);
-    setExcludeSlotConflicts(RESET);
-  }, [
-    setBlocks,
-    setExcludeSlotConflicts,
-    setMaster,
-    setPeriods,
-    setSearch,
-    setSemester,
-  ]);
-
-  return {
-    atoms: {
-      masterAtom,
-      searchAtom,
-      blocksAtom,
-      periodsAtom,
-      semesterAtom,
-      excludeSlotConflictsAtom,
-    },
-    mutators: {
-      filterByTerm: setSearch,
-
-      selectBlocks: setBlocks,
-      selectPeriods: setPeriods,
-      selectSemester: setSemester,
-
-      selectMaster: setMaster,
-
-      excludeSlotConflicts: setExcludeSlotConflicts,
-
-      reset,
-    },
-  };
-};
+import { filterAtoms } from "./atoms";
+import { useAtomValue } from "jotai";
 
 export const useFiltered = (courses: Course[]) => {
   const { getSlotCourse, hasMatchingOccasion } = useScheduleGetters();
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { atoms } = useFilterStore();
 
-  const search = useAtomValue(atoms.searchAtom);
-  const master = useAtomValue(atoms.masterAtom);
-  const blocks = useAtomValue(atoms.blocksAtom);
-  const periods = useAtomValue(atoms.periodsAtom);
-  const semester = useAtomValue(atoms.semesterAtom);
-  const excludeSlotConflicts = useAtomValue(atoms.excludeSlotConflictsAtom);
+  const search = useAtomValue(filterAtoms.searchAtom);
+  const master = useAtomValue(filterAtoms.masterAtom);
+  const blocks = useAtomValue(filterAtoms.blocksAtom);
+  const periods = useAtomValue(filterAtoms.periodsAtom);
+  const semester = useAtomValue(filterAtoms.semesterAtom);
+  const excludeSlotConflicts = useAtomValue(
+    filterAtoms.excludeSlotConflictsAtom,
+  );
 
   const defferedSearch = useDeferredValue(search);
 

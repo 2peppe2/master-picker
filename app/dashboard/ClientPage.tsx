@@ -7,6 +7,7 @@ import ScheduleSync from "./(scheduleSync)";
 import { Course, Master } from "./page";
 import { FC, useMemo } from "react";
 import DndView from "./(dndView)";
+import FilterSync from "./(filterSync)";
 
 interface ClientPageProps {
   courses: Course[];
@@ -33,6 +34,7 @@ const ClientPage: FC<ClientPageProps> = ({ courses, masters }) => {
 
   return (
     <>
+      <FilterSync />
       <ScheduleSync />
       <DndView courses={courses} />
     </>

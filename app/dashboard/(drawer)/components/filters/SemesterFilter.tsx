@@ -1,5 +1,6 @@
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { SemesterOption } from "@/app/atoms/filter/types";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
 import {
@@ -19,18 +20,14 @@ interface Option {
 }
 
 const SemesterFilter: FC = () => {
-  const {
-    atoms: { semesterAtom },
-    mutators: { selectSemester },
-  } = useFilterStore();
-
-  const semester = useAtomValue(semesterAtom);
+  const semester = useAtomValue(filterAtoms.semesterAtom);
+  const { selectSemester } = useFilterMutators();
 
   const options = useMemo(
     () =>
       [
         { label: "All semesters", value: "all" },
-        ...range(1, 10).map((semester) => ({
+        ...range(1, 11).map((semester) => ({
           label: `Semester ${semester.toString()}`,
           value: semester as SemesterOption,
         })),

@@ -1,5 +1,6 @@
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { useSearchShortcut } from "../hooks/useSearchShortcut";
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { usePlatform } from "../hooks/usePlatform";
 import { Button } from "@/components/ui/button";
 import FilterDropdown from "./FilterDropdown";
@@ -35,13 +36,10 @@ const SearchField = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   useSearchShortcut({ inputRef });
 
-  const {
-    atoms: { searchAtom },
-    mutators: { filterByTerm },
-  } = useFilterStore();
   const { isMac } = usePlatform();
 
-  const search = useAtomValue(searchAtom);
+  const search = useAtomValue(filterAtoms.searchAtom);
+  const { filterByTerm } = useFilterMutators();
 
   return (
     <div className="relative w-full">

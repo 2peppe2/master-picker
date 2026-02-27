@@ -1,4 +1,5 @@
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { FC, Fragment, useMemo } from "react";
@@ -6,11 +7,8 @@ import { useAtomValue } from "jotai";
 import { range } from "lodash";
 
 const BlockFilter: FC = () => {
-  const {
-    atoms: { blocksAtom },
-    mutators: { selectBlocks },
-  } = useFilterStore();
-  const blocks = useAtomValue(blocksAtom);
+  const blocks = useAtomValue(filterAtoms.blocksAtom);
+  const { selectBlocks } = useFilterMutators();
 
   const options = useMemo(
     () =>

@@ -11,8 +11,6 @@ import {
   AddInitialCoursesArgs,
   DeleteBlockFromSemesterArgs,
   RemoveCourseArgs,
-  ShowSemesterArgs,
-  ToggleShownSemesterArgs,
 } from "../types";
 
 /**
@@ -38,34 +36,6 @@ export const useScheduleMutators = () => {
   const setDraggedCourse = useAtomCallback(
     useCallback((get, set, course: Course | null) => {
       set(scheduleAtoms.draggedCourseAtom, course);
-    }, []),
-  );
-
-  /**
-   * Toggles visibility of a semester in the UI.
-   * Adds the semester to shownSemesters if hidden, removes if shown.
-   */
-  const toggleShownSemester = useAtomCallback(
-    useCallback((get, set, { semester }: ToggleShownSemesterArgs) => {
-      set(scheduleAtoms.shownSemestersAtom, (prev) => {
-        const next = new Set(prev);
-        if (next.has(semester)) {
-          next.delete(semester);
-        } else {
-          next.add(semester);
-        }
-        return next;
-      });
-    }, []),
-  );
-
-  const showSemester = useAtomCallback(
-    useCallback((get, set, { semester }: ShowSemesterArgs) => {
-      set(scheduleAtoms.shownSemestersAtom, (prev) => {
-        const next = new Set(prev);
-        next.add(semester);
-        return next;
-      });
     }, []),
   );
 
@@ -237,10 +207,8 @@ export const useScheduleMutators = () => {
       removeCourse,
       addBlockToSemester,
       deleteBlockFromSemester,
-      toggleShownSemester,
       setDraggedCourse,
       setInitialCourses,
-      showSemester,
     }),
     [
       addCourseByButton,
@@ -248,10 +216,8 @@ export const useScheduleMutators = () => {
       removeCourse,
       addBlockToSemester,
       deleteBlockFromSemester,
-      toggleShownSemester,
       setDraggedCourse,
       setInitialCourses,
-      showSemester,
     ],
   );
 };
