@@ -8,17 +8,24 @@ interface UseSortedCoursesArgs {
 
 export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
   const searchParams = useSearchParams();
-  const master = searchParams.get("master") ?? undefined;
+  const master = searchParams.get("master");
 
   return useMemo(() => {
+    const matchMap = new Map(
+      courses.map((c) => [
+        c.code,
+        master ? c.CourseMaster.some((cm) => cm.master === master) : false,
+      ]),
+    );
+
     return [...courses].sort((a, b) => {
-      const aMatchesMaster = a.CourseMaster.some((cm) => cm.master === master);
-      const bMatchesMaster = b.CourseMaster.some((cm) => cm.master === master);
+      const aMatches = matchMap.get(a.code);
+      const bMatches = matchMap.get(b.code);
 
-      if (aMatchesMaster && !bMatchesMaster) return -1;
-      if (!aMatchesMaster && bMatchesMaster) return 1;
+      if (aMatches && !bMatches) return -1;
+      if (!aMatches && bMatches) return 1;
 
-      return a.name.localeCompare(b.name);
+      return a.name.localeCompare(b.name, "en");
     });
   }, [courses, master]);
 };

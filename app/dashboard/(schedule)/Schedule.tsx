@@ -1,6 +1,8 @@
+"use client";
+
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { SemesterView } from "./SemesterView";
+import SemesterView from "./SemesterView";
 import { useAtomValue } from "jotai";
 import { useMemo } from "react";
 import { range } from "lodash";

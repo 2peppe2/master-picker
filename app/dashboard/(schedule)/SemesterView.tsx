@@ -5,56 +5,58 @@ import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { WILDCARD_BLOCK_START } from "@/app/atoms/schedule/atoms";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronRightIcon, TriangleAlert } from "lucide-react";
 import SemesterSettingsModal from "./SemesterSettingsModal";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Slot } from "@/app/atoms/schedule/types";
 import { FC, useMemo, useState } from "react";
-import { useAtom, useAtomValue } from "jotai";
 import { PeriodView } from "./PeriodView";
-import {
-  scheduleAtoms,
-  WILDCARD_BLOCK_START,
-} from "@/app/atoms/schedule/atoms";
+import { useAtom, useAtomValue } from "jotai";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { range } from "lodash";
 
 interface SemesterViewProps {
   semesterNumber: number;
 }
 
-export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
-  const shownSemester = useAtomValue(scheduleAtoms.shownSemesterAtom);
+const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
+  const shownSemester = useAtomValue(filterAtoms.semesterAtom);
+  const isOpen = shownSemester === semesterNumber + 1;
   const { getSlotPeriods } = useScheduleGetters();
 
   const periods = getSlotPeriods({ semester: semesterNumber });
 
   return (
     <Card className="w-full p-4">
-      <Collapsible open={shownSemester == semesterNumber + 1}>
+      <Collapsible open={isOpen}>
         <Header periods={periods} semester={semesterNumber} />
-        <CollapsibleContent>
-          <CardContent className="p-0">
-            <div className="flex flex-col gap-4">
-              {range(0, periods.length).map((index) => (
-                <PeriodView
-                  key={index}
-                  periodNumber={index}
-                  semesterNumber={semesterNumber}
-                />
-              ))}
-            </div>
-          </CardContent>
+        <CollapsibleContent className="CollapsibleContent">
+          {isOpen && (
+            <CardContent className="p-0 pt-4">
+              <div className="flex flex-col gap-4">
+                {periods.map((_, index) => (
+                  <PeriodView
+                    key={index}
+                    periodNumber={index}
+                    semesterNumber={semesterNumber}
+                  />
+                ))}
+              </div>
+            </CardContent>
+          )}
         </CollapsibleContent>
       </Collapsible>
     </Card>
   );
 };
+
+export default SemesterView;
 
 interface HeaderProps {
   periods: Slot[][];
@@ -62,11 +64,9 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ periods, semester }) => {
+  const [shownSemester, setShownSemester] = useAtom(filterAtoms.semesterAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [shownSemester, setShownSemester] = useAtom(
-    scheduleAtoms.shownSemesterAtom,
-  );
 
   const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
 
@@ -100,18 +100,16 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
   );
 
   return (
-    <div className="flex items-center">
+    <div className={`flex items-center`}>
       <CollapsibleTrigger
         asChild
-        onClick={() => {
-          if (shownSemester === semester + 1) {
-            setShownSemester(null);
-            return;
-          }
-          setShownSemester(semester + 1);
-        }}
+        onClick={() =>
+          setShownSemester(
+            shownSemester === semester + 1 ? "all" : semester + 1,
+          )
+        }
       >
-        <CardTitle className="flex items-center gap-3 w-full cursor-pointer">
+        <CardTitle className="flex items-center gap-3 w-full cursor-pointer select-none">
           {hasWildcardWarning && (
             <TooltipProvider>
               <Tooltip delayDuration={200}>
@@ -132,7 +130,6 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
           <ChevronRightIcon className="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
         </CardTitle>
       </CollapsibleTrigger>
-
       <SemesterSettingsModal
         semester={semester}
         isOpen={isSettingsOpen}
@@ -141,3 +138,5 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     </div>
   );
 };
+
+Header.displayName = "Header";
