@@ -40,26 +40,25 @@ type RequirementComponentMap = {
 
 const RequirementRows: RequirementComponentMap = {
   CREDITS_ADVANCED_MASTER: ({ requirement }) => (
-    <>Have at least {requirement.credits} HP at Advanced level credits.</>
+    <>Have at least {requirement.credits} Advanced level credits.</>
   ),
   CREDITS_ADVANCED_PROFILE: ({ requirement }) => (
     <>
-      Have at least {requirement.credits} HP at Advanced level within your
+      Have at least {requirement.credits} Advanced level credits within your
       profile.
     </>
   ),
   CREDITS_PROFILE_TOTAL: ({ requirement }) => (
-    <>
-      Have at least {requirement.credits} HP total within your profile courses.
-    </>
+    <>Have at least {requirement.credits} total credits within your profile.</>
   ),
   CREDITS_MASTER_TOTAL: ({ requirement }) => (
     <>
-      Have at least {requirement.credits} HP total for the Master&apos;s degree.
+      Have at least {requirement.credits} total credits for the Master&apos;s
+      degree.
     </>
   ),
   CREDITS_TOTAL: ({ requirement }) => (
-    <>Have at least {requirement.credits} HP total credits.</>
+    <>Have at least {requirement.credits} total credits.</>
   ),
   COURSE_SELECTION: ({ requirement }) => {
     const isMandatory =
