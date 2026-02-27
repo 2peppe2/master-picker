@@ -58,15 +58,17 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
         return false;
       }
 
-      const relativeSemester = yearAndSemesterToRelativeSemester(
-        startingYear,
-        course.CourseOccasion[0].year,
-        course.CourseOccasion[0].semester,
-      );
+      const hasMatchingOccasion = course.CourseOccasion.some((occasion) => {
+        const relativeSemester = yearAndSemesterToRelativeSemester(
+          startingYear,
+          occasion.year,
+          occasion.semester,
+        );
 
-      if (semester != relativeSemester + 1) {
-        return true;
-      }
+        return semester === relativeSemester + 1;
+      });
+
+      return !hasMatchingOccasion;
     },
     [startingYear],
   );
