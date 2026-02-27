@@ -1,9 +1,5 @@
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { useSearchParams } from "next/navigation";
 import { Course } from "@/app/dashboard/page";
-import { useAtomValue } from "jotai";
 import { useMemo } from "react";
 
 interface UseSortedCoursesArgs {
@@ -11,8 +7,6 @@ interface UseSortedCoursesArgs {
 }
 
 export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
-  const shownSemesters = useAtomValue(scheduleAtoms.shownSemestersAtom);
   const searchParams = useSearchParams();
   const master = searchParams.get("master") ?? undefined;
 
@@ -24,28 +18,7 @@ export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
       if (aMatchesMaster && !bMatchesMaster) return -1;
       if (!aMatchesMaster && bMatchesMaster) return 1;
 
-      const aInOpenSemester = a.CourseOccasion.some((oc) => {
-        const relativeSemester = yearAndSemesterToRelativeSemester(
-          startingYear,
-          oc.year,
-          oc.semester,
-        );
-        return shownSemesters.has(relativeSemester + 1);
-      });
-
-      const bInOpenSemester = b.CourseOccasion.some((oc) => {
-        const relativeSemester = yearAndSemesterToRelativeSemester(
-          startingYear,
-          oc.year,
-          oc.semester,
-        );
-        return shownSemesters.has(relativeSemester + 1);
-      });
-
-      if (aInOpenSemester && !bInOpenSemester) return -1;
-      if (!aInOpenSemester && bInOpenSemester) return 1;
-
       return a.name.localeCompare(b.name);
     });
-  }, [courses, master, shownSemesters, startingYear]);
+  }, [courses, master]);
 };
