@@ -3,7 +3,6 @@ import { Course } from "@/app/dashboard/page";
 import { atomWithImmer } from "jotai-immer";
 import { ScheduleGrid } from "./types";
 import { atom } from "jotai";
-import { SemesterOption } from "../filter/types";
 
 //TODO: Make a help function to see if it is a block that is from wildstart
 export const WILDCARD_BLOCK_START = 4;

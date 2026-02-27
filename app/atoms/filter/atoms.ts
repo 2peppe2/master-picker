@@ -1,7 +1,6 @@
 import { atomWithReset } from "jotai/utils";
 import { SemesterOption } from "./types";
 
-// TODO: Add examples for the atoms here.
 export const filterAtoms = {
   searchAtom: atomWithReset<string>(""),
   masterAtom: atomWithReset<string>("all"),
