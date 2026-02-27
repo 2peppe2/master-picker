@@ -40,10 +40,7 @@ type RequirementComponentMap = {
 
 const RequirementRows: RequirementComponentMap = {
   CREDITS_ADVANCED_MASTER: ({ requirement }) => (
-    <>
-      Have at least {requirement.credits} HP at Advanced level within your
-      master.
-    </>
+    <>Have at least {requirement.credits} HP at Advanced level credits.</>
   ),
   CREDITS_ADVANCED_PROFILE: ({ requirement }) => (
     <>
