@@ -27,20 +27,6 @@ export const scheduleAtoms = {
   ),
 
   /**
-   * Set of semester indices that should be visible in the UI.
-   * Defaults to showing semesters 7, 8, and 9.
-   *
-   * @example
-   * // Read visibility state (no re-render on schedule changes!)
-   * const shownSemester = useAtomValue(shownSemesterAtom);
-   *
-   * // Update visibility
-   * const setShownSemester = useSetAtom(shownSemesterAtom);
-   * setShownSemester(5);
-   */
-  shownSemesterAtom: atom<number | null>(7),
-
-  /**
    * Currently dragged course during drag-and-drop operations.
    * Null when no drag is in progress.
    *

@@ -1,26 +1,33 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleGetters } from "../schedule/hooks/useScheduleGetters";
+import { useScheduleGetters } from "../../schedule/hooks/useScheduleGetters";
 import { useCallback, useDeferredValue, useMemo } from "react";
-import { userPreferencesAtom } from "../UserPreferences";
-import { Course } from "../../dashboard/page";
-import { SemesterOption } from "./types";
-import { filterAtoms } from "./atoms";
+import { userPreferencesAtom } from "../../UserPreferences";
+import { Course } from "../../../dashboard/page";
+import { SemesterOption } from "../types";
+import { filterAtoms } from "../atoms";
 import { useAtomValue } from "jotai";
 
-export const useFiltered = (courses: Course[]) => {
-  const { getSlotCourse, hasMatchingOccasion } = useScheduleGetters();
+interface UseFilteredArgs {
+  courses: Course[];
+}
+
+export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { hasMatchingOccasion } = useScheduleGetters();
 
   const search = useAtomValue(filterAtoms.searchAtom);
   const master = useAtomValue(filterAtoms.masterAtom);
   const blocks = useAtomValue(filterAtoms.blocksAtom);
   const periods = useAtomValue(filterAtoms.periodsAtom);
   const semester = useAtomValue(filterAtoms.semesterAtom);
-  const excludeSlotConflicts = useAtomValue(
-    filterAtoms.excludeSlotConflictsAtom,
-  );
 
-  const defferedSearch = useDeferredValue(search);
+  const deferredFilters = useDeferredValue({
+    search,
+    master,
+    blocks,
+    periods,
+    semester,
+  });
 
   const filterOutByTerm = useCallback((term: string, course: Course) => {
     if (!term) return false;
@@ -112,48 +119,28 @@ export const useFiltered = (courses: Course[]) => {
     [filterOutByBlocks, filterOutByPeriods, hasMatchingOccasion],
   );
 
-  const filterOutBySlots = useCallback(
-    (excludeSlotConflicts: boolean, course: Course) => {
-      if (!excludeSlotConflicts) return;
-
-      return course.CourseOccasion.some((occasion) =>
-        occasion.periods.some(({ period, blocks }) =>
-          blocks.some((block) => {
-            const relativeSemester = yearAndSemesterToRelativeSemester(
-              startingYear,
-              occasion.year,
-              occasion.semester,
-            );
-            if (getSlotCourse({ block, period, semester: relativeSemester })) {
-              return true;
-            }
-          }),
-        ),
-      );
-    },
-    [getSlotCourse, startingYear],
-  );
-
   return useMemo(
     () =>
       courses.filter((course) => {
-        if (filterOutBySemester(semester, course)) {
+        if (filterOutBySemester(deferredFilters.semester, course)) {
           return false;
         }
 
-        if (filterOutByMaster(master, course)) {
+        if (filterOutByMaster(deferredFilters.master, course)) {
           return false;
         }
 
-        if (filterOutByPeriodsAndBlocks(periods, blocks, course)) {
+        if (
+          filterOutByPeriodsAndBlocks(
+            deferredFilters.periods,
+            deferredFilters.blocks,
+            course,
+          )
+        ) {
           return false;
         }
 
-        if (filterOutByTerm(defferedSearch, course)) {
-          return false;
-        }
-
-        if (filterOutBySlots(excludeSlotConflicts, course)) {
+        if (filterOutByTerm(deferredFilters.search, course)) {
           return false;
         }
 
@@ -161,17 +148,11 @@ export const useFiltered = (courses: Course[]) => {
       }),
     [
       courses,
+      deferredFilters,
       filterOutBySemester,
-      semester,
       filterOutByMaster,
-      master,
       filterOutByPeriodsAndBlocks,
-      periods,
-      blocks,
       filterOutByTerm,
-      defferedSearch,
-      filterOutBySlots,
-      excludeSlotConflicts,
     ],
   );
 };

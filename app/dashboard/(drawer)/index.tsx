@@ -1,5 +1,5 @@
 import { Draggable } from "@/components/DndProvider/Draggable";
-import { useFiltered } from "@/app/atoms/filter/filterStore";
+import { useFiltered } from "@/app/atoms/filter/hooks/useFiltered";
 import { useSortedCourses } from "@/hooks/useSortedCourses";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import SearchInput from "./components/SearchInput";
@@ -15,7 +15,9 @@ interface DrawerProps {
 const Drawer: FC<DrawerProps> = ({ courses }) => {
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
-  const filteredCourses = useFiltered(courses);
+  const filteredCourses = useFiltered({
+    courses,
+  });
   const sortedCourses = useSortedCourses({
     courses: filteredCourses,
   });
