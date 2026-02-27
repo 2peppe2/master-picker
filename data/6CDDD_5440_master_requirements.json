@@ -8,7 +8,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC17"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE01"] },
@@ -26,7 +26,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC17"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBB08"] },
@@ -44,7 +44,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBB06"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSBB08"] },
@@ -60,7 +60,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE21"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
@@ -74,7 +74,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSEK02"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSTE86"] },
@@ -89,7 +89,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEAE01"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TEIO32"] },
@@ -114,7 +114,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBME04"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TBMI19"] },
@@ -130,7 +130,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     {
       "type": "COURSE_SELECTION",
@@ -152,7 +152,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD23"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDC73"] },
@@ -171,7 +171,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE52"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDD89"] },
@@ -185,7 +185,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDTS08"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSTE86"] },
@@ -200,7 +200,7 @@
     {
       "type": "COURSE_SELECTION",
       "minCount": 1,
-      "courses": ["TANA09", "TANA21"]
+      "courses": ["TANA21", "TANA24"]
     },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TSIT02"] },
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TDDE62"] },

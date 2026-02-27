@@ -1,4 +1,5 @@
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+"use client";
+
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
 import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
@@ -9,8 +10,8 @@ import { ChevronRightIcon, TriangleAlert } from "lucide-react";
 import SemesterSettingsModal from "./SemesterSettingsModal";
 import { Slot } from "@/app/atoms/schedule/types";
 import { FC, useMemo, useState } from "react";
+import { useAtom, useAtomValue } from "jotai";
 import { PeriodView } from "./PeriodView";
-import { useAtomValue } from "jotai";
 import {
   scheduleAtoms,
   WILDCARD_BLOCK_START,
@@ -28,14 +29,14 @@ interface SemesterViewProps {
 }
 
 export const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
-  const shownSemesters = useAtomValue(scheduleAtoms.shownSemestersAtom);
+  const shownSemester = useAtomValue(scheduleAtoms.shownSemesterAtom);
   const { getSlotPeriods } = useScheduleGetters();
 
   const periods = getSlotPeriods({ semester: semesterNumber });
 
   return (
     <Card className="w-full p-4">
-      <Collapsible open={shownSemesters.has(semesterNumber + 1)}>
+      <Collapsible open={shownSemester == semesterNumber + 1}>
         <Header periods={periods} semester={semesterNumber} />
         <CollapsibleContent>
           <CardContent className="p-0">
@@ -63,7 +64,9 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ periods, semester }) => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const { toggleShownSemester } = useScheduleMutators();
+  const [shownSemester, setShownSemester] = useAtom(
+    scheduleAtoms.shownSemesterAtom,
+  );
 
   const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
 
@@ -100,7 +103,13 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
     <div className="flex items-center">
       <CollapsibleTrigger
         asChild
-        onClick={() => toggleShownSemester({ semester: semester + 1 })}
+        onClick={() => {
+          if (shownSemester === semester + 1) {
+            setShownSemester(null);
+            return;
+          }
+          setShownSemester(semester + 1);
+        }}
       >
         <CardTitle className="flex items-center gap-3 w-full cursor-pointer">
           {hasWildcardWarning && (
