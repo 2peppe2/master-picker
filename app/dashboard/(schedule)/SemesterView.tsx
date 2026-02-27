@@ -100,7 +100,7 @@ const Header: FC<HeaderProps> = ({ periods, semester }) => {
   );
 
   return (
-    <div className={`flex items-center`}>
+    <div className="flex items-center">
       <CollapsibleTrigger
         asChild
         onClick={() =>
