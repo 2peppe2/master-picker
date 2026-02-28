@@ -10,7 +10,7 @@ This applications sets out to help students at Linköping University (LiU) choos
 >- Currently the application is under active development. Features may be incomplete or subject to change. Please report any issues or feature requests on the GitHub repository.
 >- The application is not yet optimized for mobile devices.
 >- The application currently only supports the 
-U-program at Linköping University.
+U-program, D-program and the IT-program at Linköping University.
 
 ## License
 All rights reserved. Public for viewing only. No reuse without permission.
@@ -58,7 +58,18 @@ DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/mast
 docker-compose up -d
 ```
 
-3. Run database migrations and seed the database:
+3. Run the database seed command to seed the database:
+```bash
+npm run seed
+# or
+yarn seed
+# or
+pnpm seed
+# or
+bun seed
+```
+
+4. Run database migrations:
 ```bash
 npm run migrate
 # or
