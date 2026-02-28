@@ -58,7 +58,7 @@ DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/mast
 docker-compose up -d
 ```
 
-3. Run database migrations and seed the database:
+3. Run database migrations:
 ```bash
 npm run migrate
 # or
@@ -67,6 +67,17 @@ yarn migrate
 pnpm migrate
 # or
 bun migrate
+```
+
+4. Run database seeding:
+```bash
+npm run seed
+# or
+yarn seed
+# or
+pnpm seed
+# or
+bun seed
 ```
 
 Start the development server
