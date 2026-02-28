@@ -1,0 +1,14 @@
+{
+    "headerTitle": "Master Picker",
+    "headerSubtitle": "Drop the crazy spreed sheets, embrace effortless course planning.",
+    "selectProgramPlaceholder": "Select your current program",
+    "noProgramsFound": "No programs found.",
+    "selectYearPlaceholder": "Select starting year",
+    "noYearsFound": "No years found.",
+    "selectMasterPlaceholder": "Select desired master",
+    "noMastersFound": "No masters found.",
+    "loading": "Loading...",
+    "dashboardButton": "Pick master later",
+    "getStartedButton": "Get started",
+    "aboutLink": "Learn more about the project"
+}

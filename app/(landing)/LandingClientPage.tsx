@@ -7,6 +7,8 @@ import { ComboboxItemType } from "./types";
 import { useMemo, useState } from "react";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import '@/lib/i18n';
+import { useTranslation } from "react-i18next";
 
 interface LandingClientPageProps {
   programs: {
@@ -31,6 +33,8 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
   const [isLoadingGuide, setIsLoadingGuide] = useState(false);
 
   const router = useRouter();
+
+  const { t } = useTranslation("common");
 
   const pushToGuide = () => {
     if (!selectedProgram || !selectedYear || !selectedMaster) return;
@@ -97,8 +101,8 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           setSelectedYear(null);
           setSelectedMaster(null);
         }}
-        placeholder="Select your current program"
-        noResultsText="No programs found."
+        placeholder={t("selectProgramPlaceholder")}
+        noResultsText={t("noProgramsFound")}
       />
       <GenericCombobox
         items={yearItems}
@@ -112,8 +116,8 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           setSelectedYear(item?.value || null);
           setSelectedMaster(null);
         }}
-        placeholder="Select starting year"
-        noResultsText="No years found."
+        placeholder={t("selectYearPlaceholder")}
+        noResultsText={t("noYearsFound")}
         className={
           selectedProgram
             ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -139,8 +143,8 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           onValueChange={(item: ComboboxItemType | null) =>
             setSelectedMaster(item?.value || null)
           }
-          placeholder="Select desired master"
-          noResultsText="No masters found."
+          placeholder={t("selectMasterPlaceholder")}
+          noResultsText={t("noMastersFound")}
         />
 
         <Button
@@ -151,10 +155,10 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
           {isLoadingDashboard ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Loading...
+              {t("loading")}
             </>
           ) : (
-            "Pick master later"
+            t("dashboardButton")
           )}
         </Button>
       </div>
@@ -172,15 +176,15 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
         {isLoadingGuide ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Loading...
+            {t("loading")}
           </>
         ) : (
-          "Get started"
+          t("getStartedButton")
         )}
       </Button>
 
       <Button variant="link" className="text-sm">
-        <Link href="/about">Learn more about the project</Link>
+        <Link href="/about">{t("aboutLink")}</Link>
       </Button>
     </div>
   );
