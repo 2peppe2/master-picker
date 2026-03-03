@@ -56,7 +56,11 @@ export const CourseDialog: FC<CourseDialogProps> = ({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-xl no-drag">
+        className="sm:max-w-xl no-drag"
+        onPointerDownCapture={(e) => open && e.stopPropagation()}
+        onMouseDownCapture={(e) => open && e.stopPropagation()}
+        onTouchStartCapture={(e) => open && e.stopPropagation()}
+      >
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
