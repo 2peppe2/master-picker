@@ -11,6 +11,8 @@ model Course {
   scheduledHours    Int
   selfStudyHours    Int
   updatedAt         DateTime @default(now())
+  Department        String
+  MainField         String[]
 
   // Relationship mappings.
   Examination         Examination[]

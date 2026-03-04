@@ -252,6 +252,11 @@ async function seedExamination(
 }
 
 async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
+  const department = detailedInfo?.department ?? "";
+  const mainField = Array.isArray(detailedInfo?.main_field)
+    ? detailedInfo.main_field
+    : [];
+
   await prisma.course.upsert({
     where: { code_programCourseID: { code: c.code, programCourseID: id } },
     update: {
@@ -264,6 +269,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
+      Department: department,
+      MainField: mainField,
     },
     create: {
       code: c.code,
@@ -276,6 +283,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
+      Department: department,
+      MainField: mainField,
       programCourseID: id,
     },
   });

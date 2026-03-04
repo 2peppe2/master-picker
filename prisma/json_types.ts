@@ -12,7 +12,9 @@ interface ProgramYear {
 
 interface CourseDetail {
   examiner: string;
+  department: string;
   prerequisites: string;
+  main_field: string[];
   education_components: number[];
   examinations: {
     credits: number;
