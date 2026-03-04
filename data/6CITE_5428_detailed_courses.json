@@ -1,6 +1,7 @@
 {
   "TAMS32": {
     "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -13,10 +14,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic courses in probability. Linear algebra and multivariate analysis. Transform theory is helpful, but not required."
+    "prerequisites": "Basic courses in probability. Linear algebra and multivariate analysis. Transform theory is helpful, but not required.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Electrical Engineering"
+    ]
   },
   "TAMS42": {
     "examiner": "Xiangfeng Yang",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 1.0,
@@ -35,10 +42,15 @@
       50.0,
       110.0
     ],
-    "prerequisites": "Analysis, algebra, differential and integral calculus, power series and differential equations."
+    "prerequisites": "Analysis, algebra, differential and integral calculus, power series and differential equations.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TAMS43": {
     "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 1.0,
@@ -57,10 +69,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "A first course in probability theory and statistics."
+    "prerequisites": "A first course in probability theory and statistics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TANA15": {
     "examiner": "Fredrik Berntsson",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 2.0,
@@ -79,10 +96,15 @@
       50.0,
       110.0
     ],
-    "prerequisites": "Basic courses in Calculus in one and several variables and a course in linear algebra."
+    "prerequisites": "Basic courses in Calculus in one and several variables and a course in linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TANA23": {
     "examiner": "Fredrik Berntsson",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 3.0,
@@ -107,10 +129,14 @@
       108.0,
       105.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Applied Mathematics"
+    ]
   },
   "TAOP04": {
     "examiner": "Chuan He",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -123,10 +149,15 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Calculus, linear algebra, Matlab, and an introductory course in optimization."
+    "prerequisites": "Calculus, linear algebra, Matlab, and an introductory course in optimization.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TAOP63": {
     "examiner": "Nils-Hassan Quttineh",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 4.0,
@@ -145,10 +176,15 @@
       50.0,
       110.0
     ],
-    "prerequisites": "Optimization for engineers (or similar basic course in optimization).\nprogramming in Matlab."
+    "prerequisites": "Optimization for engineers (or similar basic course in optimization).\nprogramming in Matlab.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TAOP89": {
     "examiner": "Björn Morén",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 2.0,
@@ -173,10 +209,15 @@
       68.0,
       145.0
     ],
-    "prerequisites": "Linear algebra, Discrete structures, Data structures and algorithms"
+    "prerequisites": "Linear algebra, Discrete structures, Data structures and algorithms",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA24": {
     "examiner": "Axel Hultman, Jan Snellman",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 0.0,
@@ -195,10 +236,15 @@
       108.0,
       105.0
     ],
-    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent)."
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA40": {
     "examiner": "Hans Lundmark",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 1.0,
@@ -211,10 +257,15 @@
       32.0,
       5.0
     ],
-    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent)."
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA41": {
     "examiner": "Magnus Herberthson, Mikael Langer, Fredrik Andersson, Erik Darpö",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -227,10 +278,15 @@
       60.0,
       100.0
     ],
-    "prerequisites": "Foundation Course in Mathematics"
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA53": {
     "examiner": "Jonathan Nilsson",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -243,10 +299,15 @@
       38.0,
       122.0
     ],
-    "prerequisites": "A basic course in linear algebra."
+    "prerequisites": "A basic course in linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA55": {
     "examiner": "Jesper Thorén",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -259,10 +320,15 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Mathematics corresponding to basic courses in discrete algebra and linear algebra."
+    "prerequisites": "Mathematics corresponding to basic courses in discrete algebra and linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA64": {
     "examiner": "Carl Johan Casselgren",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -275,10 +341,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Elementary courses in linear algebra and discrete mathematics."
+    "prerequisites": "Elementary courses in linear algebra and discrete mathematics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATA91": {
     "examiner": "Jesper Thorén",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 6.0,
@@ -291,10 +362,15 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Calculus in one variable 1, Linear Algebra"
+    "prerequisites": "Calculus in one variable 1, Linear Algebra",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TATB04": {
     "examiner": "David Rule",
+    "department": "Matematiska institutionen",
     "examinations": [
       {
         "credits": 4.5,
@@ -325,10 +401,15 @@
       78.0,
       82.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TBME03": {
     "examiner": "Padraig D´arcy",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -353,10 +434,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic knowledge in biology and chemistry"
+    "prerequisites": "Basic knowledge in biology and chemistry",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBME04": {
     "examiner": "Hanna Jonasson",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 0.5,
@@ -381,10 +466,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic skills from first and second academic year at LiTH."
+    "prerequisites": "Basic skills from first and second academic year at LiTH.",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMI02": {
     "examiner": "Anders Eklund",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -403,10 +492,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic Linear Algebra: bases, scalar product, least squares problem, eigenvalue problems. Basic signal processing: sampling, convolution and Fourier transform of o1D signals. Basic programming skills in Matlab and Python are recommended."
+    "prerequisites": "Basic Linear Algebra: bases, scalar product, least squares problem, eigenvalue problems. Basic signal processing: sampling, convolution and Fourier transform of o1D signals. Basic programming skills in Matlab and Python are recommended.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ]
   },
   "TBMI04": {
     "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -425,10 +519,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Three years of university studies with an engineering major. Basic knowledge in anatomy and physiology."
+    "prerequisites": "Three years of university studies with an engineering major. Basic knowledge in anatomy and physiology.",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMI19": {
     "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 1.5,
@@ -453,10 +551,14 @@
       58.0,
       102.0
     ],
-    "prerequisites": "Basic laboratory skills and computer proficiency, basic skills regarding structured and systematic problem analysis; basic knowledge of anatomy and physiology is recommended but not required"
+    "prerequisites": "Basic laboratory skills and computer proficiency, basic skills regarding structured and systematic problem analysis; basic knowledge of anatomy and physiology is recommended but not required",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMI26": {
     "examiner": "Magnus Borga",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -475,10 +577,18 @@
       54.0,
       106.0
     ],
-    "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics. Recommended: Signal theory, programming (Python)."
+    "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics. Recommended: Signal theory, programming (Python).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ]
   },
   "TBMI28": {
     "examiner": "Elin Nyman",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 12.0,
@@ -491,10 +601,18 @@
       0.0,
       320.0
     ],
-    "prerequisites": "Knowledge from “eHealth: Aims and Applications” and “eHealth: from Idea to Impact”"
+    "prerequisites": "Knowledge from “eHealth: Aims and Applications” and “eHealth: from Idea to Impact”",
+    "main_field": [
+      "Information Technology",
+      "Engineering Biology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Biomedical Engineering"
+    ]
   },
   "TBMI32": {
     "examiner": "Rolf Saager",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -513,10 +631,12 @@
       44.0,
       116.0
     ],
-    "prerequisites": "Three years of study at an engineering programme at university level. Knowledge in eHealth corresponding to TBMI04 eHealth: Aims and Applications."
+    "prerequisites": "Three years of study at an engineering programme at university level. Knowledge in eHealth corresponding to TBMI04 eHealth: Aims and Applications.",
+    "main_field": []
   },
   "TBMT09": {
     "examiner": "Tino Ebbers",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -535,10 +655,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Anatomy and Physiology"
+    "prerequisites": "Anatomy and Physiology",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMT26": {
     "examiner": "Johannes Johansson",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -563,10 +687,14 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Anatomy and Physiology"
+    "prerequisites": "Anatomy and Physiology",
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMT32": {
     "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 1.0,
@@ -585,10 +713,14 @@
       18.0,
       35.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Biomedical Engineering"
+    ]
   },
   "TBMT59": {
     "examiner": "Evren Özarslan",
+    "department": "Institutionen för medicinsk teknik",
     "examinations": [
       {
         "credits": 1.0,
@@ -613,10 +745,15 @@
       58.0,
       102.0
     ],
-    "prerequisites": "Modern Physics, Signal Theory, Anatomy and Physiology, Biomedical Signal Processing."
+    "prerequisites": "Modern Physics, Signal Theory, Anatomy and Physiology, Biomedical Signal Processing.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ]
   },
   "TDDC17": {
     "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -635,10 +772,15 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Programming in a functional, imperative or object oriented programming language. Knowledge of data structures and algorithms. Knowledge in logic and discrete mathematics is useful."
+    "prerequisites": "Programming in a functional, imperative or object oriented programming language. Knowledge of data structures and algorithms. Knowledge in logic and discrete mathematics is useful.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDC34": {
     "examiner": "Thomas Rosenfall",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -657,10 +799,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Introduction to programming datastructures and algorithms, computer science, at least 45 credits. Basic course in industrial economics.."
+    "prerequisites": "Introduction to programming datastructures and algorithms, computer science, at least 45 credits. Basic course in industrial economics..",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDC75": {
     "examiner": "Klervie Toczé",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -691,10 +839,14 @@
       82.0,
       131.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDC77": {
     "examiner": "Sahand Sadjadee",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -719,10 +871,14 @@
       110.0,
       103.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDC90": {
     "examiner": "Ulf Kargén",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -741,10 +897,16 @@
       42.0,
       118.0
     ],
-    "prerequisites": "Basic course in security. Students are expected to have knowledge of operating systems, programming languages, and software engineering. Students should be able to develop, test and debug software in Unix or Linux environments. Some experience with C-programming as well as basic knowledge of web application development are recommended."
+    "prerequisites": "Basic course in security. Students are expected to have knowledge of operating systems, programming languages, and software engineering. Students should be able to develop, test and debug software in Unix or Linux environments. Some experience with C-programming as well as basic knowledge of web application development are recommended.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD04": {
     "examiner": "Lena Buffoni",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -757,10 +919,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Programming (Java, C, C++,C#), Data Structures and Algorithms, practical experience in developing complex software."
+    "prerequisites": "Programming (Java, C, C++,C#), Data Structures and Algorithms, practical experience in developing complex software.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD07": {
     "examiner": "Simin Nadjm-Tehrani",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -779,10 +947,15 @@
       50.0,
       110.0
     ],
-    "prerequisites": "First and second programming courses. A course on concurrent programming and operating systems."
+    "prerequisites": "First and second programming courses. A course on concurrent programming and operating systems.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD08": {
     "examiner": "Victor Lagerkvist",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -801,10 +974,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic courses in discrete mathematics and logic, and a course on basic programming."
+    "prerequisites": "Basic courses in discrete mathematics and logic, and a course on basic programming.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD14": {
     "examiner": "Victor Lagerkvist",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -823,10 +1002,15 @@
       50.0,
       110.0
     ],
-    "prerequisites": "Basic mathematics, for instance given by discrete mathematics courses. Logic."
+    "prerequisites": "Basic mathematics, for instance given by discrete mathematics courses. Logic.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD20": {
     "examiner": "Peter Jonsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -839,10 +1023,16 @@
       30.0,
       130.0
     ],
-    "prerequisites": "Discrete mathematics and logic. An introductory course on data structures and algorithms. That is, the student is expected to be familiar with asymptotic notation, basic data structures, such as lists, stacks, queues, trees etc., and algorithms for fundamental problems, such as searching, sorting, etc. Basic knowledge in probability theory and optimization."
+    "prerequisites": "Discrete mathematics and logic. An introductory course on data structures and algorithms. That is, the student is expected to be familiar with asymptotic notation, basic data structures, such as lists, stacks, queues, trees etc., and algorithms for fundamental problems, such as searching, sorting, etc. Basic knowledge in probability theory and optimization.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD23": {
     "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -855,10 +1045,17 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Programming 10 credits (at least 6 credits object-oriented programming), Basic course in Usable/Interactive systems or similar."
+    "prerequisites": "Programming 10 credits (at least 6 credits object-oriented programming), Basic course in Usable/Interactive systems or similar.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Programming"
+    ]
   },
   "TDDD25": {
     "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -877,10 +1074,15 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Concurrent Programming and operating system or Real Time and Concurrent Programming"
+    "prerequisites": "Concurrent Programming and operating system or Real Time and Concurrent Programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD27": {
     "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -893,10 +1095,16 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Good programming skills and ability to work with frameworks. Good understanding of how HTML / CSS / Javascript forms the basis for system development in the browser. Good JavaScript knowledge and knowledge of asynchronous communication with server and use of ROUTS and JSON. Good understanding of the web's REST technologies, micro frameworks such as Flask and Express.js, integration of external services via REST API. Ability to build larger web-based interactive systems and to independently run software projects."
+    "prerequisites": "Good programming skills and ability to work with frameworks. Good understanding of how HTML / CSS / Javascript forms the basis for system development in the browser. Good JavaScript knowledge and knowledge of asynchronous communication with server and use of ROUTS and JSON. Good understanding of the web's REST technologies, micro frameworks such as Flask and Express.js, integration of external services via REST API. Ability to build larger web-based interactive systems and to independently run software projects.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD37": {
     "examiner": "Olaf Hartig",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -915,10 +1123,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "The course requires thorough knowledge in programming, data structures and algorithms, and mathematics preferrably directed towards discrete mathematics or logics."
+    "prerequisites": "The course requires thorough knowledge in programming, data structures and algorithms, and mathematics preferrably directed towards discrete mathematics or logics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD38": {
     "examiner": "Klas Arvidsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 0.0,
@@ -949,10 +1163,16 @@
       84.0,
       76.0
     ],
-    "prerequisites": "Strong programming experience, familiarity with composite types or object-oriented programming, and proficiency in C++."
+    "prerequisites": "Strong programming experience, familiarity with composite types or object-oriented programming, and proficiency in C++.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD39": {
     "examiner": "Ola Leifler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -983,10 +1203,14 @@
       64.0,
       149.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDD41": {
     "examiner": "Patrick Lambrix",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1005,10 +1229,16 @@
       26.0,
       134.0
     ],
-    "prerequisites": "The course requires thorough knowledge in programming, discrete mathematics, data structures and algorithms and databases."
+    "prerequisites": "The course requires thorough knowledge in programming, discrete mathematics, data structures and algorithms and databases.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD43": {
     "examiner": "Patrick Lambrix",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1027,10 +1257,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Programming, Databases."
+    "prerequisites": "Programming, Databases.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD48": {
     "examiner": "Jendrik Seipp",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1049,10 +1285,16 @@
       64.0,
       96.0
     ],
-    "prerequisites": "Basic knowledge and understanding of data structures and algorithms as well as logic and discrete mathematics. Knowledge and understanding of basic artificial intelligence techniques and concepts, including state-space search, heuristics and the A* search algorithm."
+    "prerequisites": "Basic knowledge and understanding of data structures and algorithms as well as logic and discrete mathematics. Knowledge and understanding of basic artificial intelligence techniques and concepts, including state-space search, heuristics and the A* search algorithm.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD49": {
     "examiner": "Sahand Sadjadee",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1065,10 +1307,17 @@
       40.0,
       67.0
     ],
-    "prerequisites": "Object-oriented programming"
+    "prerequisites": "Object-oriented programming",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Programming"
+    ]
   },
   "TDDD50": {
     "examiner": "Simin Nadjm-Tehrani",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1087,10 +1336,17 @@
       24.0,
       83.0
     ],
-    "prerequisites": "Basic knowledge of digital systems, computer architecture, programming, operating systems, and computer networks."
+    "prerequisites": "Basic knowledge of digital systems, computer architecture, programming, operating systems, and computer networks.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Programming"
+    ]
   },
   "TDDD53": {
     "examiner": "Johan Blomkvist",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1109,10 +1365,17 @@
       32.0,
       128.0
     ],
-    "prerequisites": "User-centred design at basic level (courses like System Usability Issues, Interaction Design, Interactive Systems, Mobile and Social Applcations, User Driven Product Development or Product Ergonomics, or Create and Understand 3D)"
+    "prerequisites": "User-centred design at basic level (courses like System Usability Issues, Interaction Design, Interactive Systems, Mobile and Social Applcations, User Driven Product Development or Product Ergonomics, or Create and Understand 3D)",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Product Development"
+    ]
   },
   "TDDD55": {
     "examiner": "Adrian Pop",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1131,10 +1394,15 @@
       32.0,
       75.0
     ],
-    "prerequisites": "Participants are expected to have knowledge of: a procedural programming language such as Pascal, internal data structures such as arrays and lists, and theory and implementation of abstract data types."
+    "prerequisites": "Participants are expected to have knowledge of: a procedural programming language such as Pascal, internal data structures such as arrays and lists, and theory and implementation of abstract data types.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering"
+    ]
   },
   "TDDD56": {
     "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1153,10 +1421,17 @@
       60.0,
       100.0
     ],
-    "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful."
+    "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TDDD57": {
     "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1175,10 +1450,17 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Excellent programming skills and ability to independently carry out a programming project."
+    "prerequisites": "Excellent programming skills and ability to independently carry out a programming project.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TDDD89": {
     "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1197,10 +1479,16 @@
       36.0,
       124.0
     ],
-    "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area."
+    "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD95": {
     "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1219,10 +1507,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Design and Analysis of Algorithms"
+    "prerequisites": "Design and Analysis of Algorithms",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDD97": {
     "examiner": "Sahand Sadjadee",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1235,10 +1528,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Good knowledge of object-oriented programming for example Python or Java. Basic familiarity with web browsers and the Internet is assumed."
+    "prerequisites": "Good knowledge of object-oriented programming for example Python or Java. Basic familiarity with web browsers and the Internet is assumed.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE01": {
     "examiner": "Oleg Sysoev",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1257,10 +1556,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Probability theory; Statistics; Mathematical analysis; Linear Algebra; Basic programming."
+    "prerequisites": "Probability theory; Statistics; Mathematical analysis; Linear Algebra; Basic programming.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE02": {
     "examiner": "Aseel Berglund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1273,10 +1578,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "The course requires that the student has advanced programming skills and good knowledge of any software-related technical field (e.g. computer networks, security, mobile and social applications, AI, signal processing, and computer graphics). The student has also experience from programming projects in teams. The student must also be able to search and organize information, and to communicate orally and in writing."
+    "prerequisites": "The course requires that the student has advanced programming skills and good knowledge of any software-related technical field (e.g. computer networks, security, mobile and social applications, AI, signal processing, and computer graphics). The student has also experience from programming projects in teams. The student must also be able to search and organize information, and to communicate orally and in writing.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE05": {
     "examiner": "Mariusz Wzorek",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1295,10 +1606,15 @@
       0.0,
       160.0
     ],
-    "prerequisites": "An introductory AI course, Object-oriented programming (preferably in C++ or Python.)"
+    "prerequisites": "An introductory AI course, Object-oriented programming (preferably in C++ or Python.)",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE07": {
     "examiner": "Bertil Wegmann",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -1317,10 +1633,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Mathematical analysis; Linear Algebra; Probability and Statistics; Machine Learning; Basic programming."
+    "prerequisites": "Mathematical analysis; Linear Algebra; Probability and Statistics; Machine Learning; Basic programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE09": {
     "examiner": "Marco Kuhlmann",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.5,
@@ -1351,10 +1672,16 @@
       42.0,
       118.0
     ],
-    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\ngood knowledge of programming, data structures, and algorithms\nmachine learning (such as TDDE01 or TBMI26)\nThe lab series for the course uses Python and the PyTorch library."
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\ngood knowledge of programming, data structures, and algorithms\nmachine learning (such as TDDE01 or TBMI26)\nThe lab series for the course uses Python and the PyTorch library.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE13": {
     "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1373,10 +1700,15 @@
       60.0,
       100.0
     ],
-    "prerequisites": "An introductory AI course, knowledge of programming, probabilities, and logic."
+    "prerequisites": "An introductory AI course, knowledge of programming, probabilities, and logic.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE15": {
     "examiner": "Jose M Pena",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -1395,10 +1727,15 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Probability theory and Statistics; Bayesian Learning; Machine Learning; Mathematical analysis; Linear Algebra; Basic programming."
+    "prerequisites": "Probability theory and Statistics; Bayesian Learning; Machine Learning; Mathematical analysis; Linear Algebra; Basic programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE16": {
     "examiner": "Marcel Bollmann",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1417,10 +1754,16 @@
       24.0,
       136.0
     ],
-    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\nprogramming, data structures and algorithms\nmachine learning\nThe lab series for the course uses Python."
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\nprogramming, data structures and algorithms\nmachine learning\nThe lab series for the course uses Python.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE18": {
     "examiner": "Klas Arvidsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1439,10 +1782,15 @@
       110.0,
       50.0
     ],
-    "prerequisites": "Skill in one imperative, object-oriented or functional programming language."
+    "prerequisites": "Skill in one imperative, object-oriented or functional programming language.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE19": {
     "examiner": "Mattias Tiger",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1455,10 +1803,15 @@
       64.0,
       96.0
     ],
-    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile \"AI and machine learning\" or the specialization \"AI and data mining\" in the area covered by the project."
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile \"AI and machine learning\" or the specialization \"AI and data mining\" in the area covered by the project.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE20": {
     "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1471,10 +1824,16 @@
       64.0,
       96.0
     ],
-    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile ”Game Programming\" or similar set of base courses for the webb and app- area covered by the project."
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile ”Game Programming\" or similar set of base courses for the webb and app- area covered by the project.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE21": {
     "examiner": "Andrei Gurtov",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1487,10 +1846,16 @@
       64.0,
       96.0
     ],
-    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in one the profiles \"Secure systems” or ”Computer systems”, or in one of the specializations ”Embedded systems” or ”Networks, distributed systems and security” in the area covered by the project."
+    "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in one the profiles \"Secure systems” or ”Computer systems”, or in one of the specializations ”Embedded systems” or ”Networks, distributed systems and security” in the area covered by the project.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE22": {
     "examiner": "Filip Strömbäck",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1515,10 +1880,15 @@
       52.0,
       108.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering"
+    ]
   },
   "TDDE31": {
     "examiner": "Huanyu Li",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1537,10 +1907,16 @@
       42.0,
       118.0
     ],
-    "prerequisites": "Basic database course. Data mining or machine learning course."
+    "prerequisites": "Basic database course. Data mining or machine learning course.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE34": {
     "examiner": "Ahmed Rezine",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1559,10 +1935,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Programming, discrete mathematics and logic"
+    "prerequisites": "Programming, discrete mathematics and logic",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE41": {
     "examiner": "Lena Buffoni",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1581,10 +1963,16 @@
       30.0,
       130.0
     ],
-    "prerequisites": "Software engineering - theory. Object-oriented programming. It is not required but good to have some experience in reading software engineering papers. Software quality. Metaprogramming."
+    "prerequisites": "Software engineering - theory. Object-oriented programming. It is not required but good to have some experience in reading software engineering papers. Software quality. Metaprogramming.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE43": {
     "examiner": "Eva Blomqvist",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -1615,10 +2003,14 @@
       112.0,
       208.0
     ],
-    "prerequisites": "Basic knowledge of computer programming and system development.\nThe course is preferably taken in parallell with the course Diversity and gender in application development, alternatively the student should have corresponding knowledge in the area of gender and diversity."
+    "prerequisites": "Basic knowledge of computer programming and system development.\nThe course is preferably taken in parallell with the course Diversity and gender in application development, alternatively the student should have corresponding knowledge in the area of gender and diversity.",
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDE45": {
     "examiner": "Adrian Pop",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1643,10 +2035,16 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Basic course in software engineering (including UML)\nAbility to program in multiple programming languages (including object-oriented programming and pointers / memory management)\nData structures\nThe student should know how to read research papers on software engineering and search information independently on new topics."
+    "prerequisites": "Basic course in software engineering (including UML)\nAbility to program in multiple programming languages (including object-oriented programming and pointers / memory management)\nData structures\nThe student should know how to read research papers on software engineering and search information independently on new topics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE47": {
     "examiner": "August Ernstsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 0.0,
@@ -1671,10 +2069,16 @@
       76.0,
       137.0
     ],
-    "prerequisites": "Programming. Data structures and algorithms. Computer hardware. Distributed version management (e.g., git)."
+    "prerequisites": "Programming. Data structures and algorithms. Computer hardware. Distributed version management (e.g., git).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE48": {
     "examiner": "Niklas Carlsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1693,10 +2097,14 @@
       26.0,
       81.0
     ],
-    "prerequisites": "Knowledge in Computer networks or Computer networks and distributed systems."
+    "prerequisites": "Knowledge in Computer networks or Computer networks and distributed systems.",
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDE50": {
     "examiner": "Ola Leifler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1721,10 +2129,12 @@
       50.0,
       110.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TDDE51": {
     "examiner": "August Ernstsson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1743,10 +2153,16 @@
       30.0,
       130.0
     ],
-    "prerequisites": "Proficient in unit-level testing and software design principles and patterns. Also have basic proficiency in source code management tools and build tools for software. Proficient in reading technical English texts."
+    "prerequisites": "Proficient in unit-level testing and software design principles and patterns. Also have basic proficiency in source code management tools and build tools for software. Proficient in reading technical English texts.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE52": {
     "examiner": "Daniel Varro",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1759,10 +2175,16 @@
       0.0,
       160.0
     ],
-    "prerequisites": "Students from the swedish programme “Civilingenjör” are expected to have acquired knowledge corresponding to courses in one of the two profiles “Large Scale Software Engineering” or “Programming and Algorithms” depending on which focus area in the course the student chooses. In particular, for the “Large Scale Software Engineering” profile it is recommended to have acquired the knowledge from Methods and tools for large distributed projects.\nStudents from the international Master's programme in Computer Science are expected to have acquired knowledge corresponding to courses in the specialization “Programming and Software Methods”."
+    "prerequisites": "Students from the swedish programme “Civilingenjör” are expected to have acquired knowledge corresponding to courses in one of the two profiles “Large Scale Software Engineering” or “Programming and Algorithms” depending on which focus area in the course the student chooses. In particular, for the “Large Scale Software Engineering” profile it is recommended to have acquired the knowledge from Methods and tools for large distributed projects.\nStudents from the international Master's programme in Computer Science are expected to have acquired knowledge corresponding to courses in the specialization “Programming and Software Methods”.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE53": {
     "examiner": "Marcus Bendtsen",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1793,10 +2215,14 @@
       240.0,
       453.0
     ],
-    "prerequisites": "Knowledge is required in basic computer science, discrete structures, computer networks, databases, mobile networks, mathematical statistics, calculus and linear algebra. In addition, courses in programming are required"
+    "prerequisites": "Knowledge is required in basic computer science, discrete structures, computer networks, databases, mobile networks, mathematical statistics, calculus and linear algebra. In addition, courses in programming are required",
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TDDE58": {
     "examiner": "Nikolaos Pappas",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 1.0,
@@ -1821,10 +2247,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Probability and Statistics.\nMathematical knowledge on basic information theoretic concepts and the time and frequency sharing ideas from for example “Signals, Information, Communication” is helpful but not a requirement."
+    "prerequisites": "Probability and Statistics.\nMathematical knowledge on basic information theoretic concepts and the time and frequency sharing ideas from for example “Signals, Information, Communication” is helpful but not a requirement.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering"
+    ]
   },
   "TDDE61": {
     "examiner": "Mikael Asplund",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 0.5,
@@ -1855,10 +2286,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic security course\nBasic networking\nEthics"
+    "prerequisites": "Basic security course\nBasic networking\nEthics",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE62": {
     "examiner": "Gurjot Singh",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -1877,10 +2314,16 @@
       46.0,
       114.0
     ],
-    "prerequisites": "Basic course in computer security. Basic understanding of operating system concepts and TCP/IP networks is recommended."
+    "prerequisites": "Basic course in computer security. Basic understanding of operating system concepts and TCP/IP networks is recommended.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE63": {
     "examiner": "Ulf Kargén",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -1893,10 +2336,16 @@
       12.0,
       148.0
     ],
-    "prerequisites": "The course “Information Security: Privacy, System and Network Security”, or equivalent. Students are expected to be able to produce written reports of high quality and be capable of independent work in project form."
+    "prerequisites": "The course “Information Security: Privacy, System and Network Security”, or equivalent. Students are expected to be able to produce written reports of high quality and be capable of independent work in project form.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE64": {
     "examiner": "Patrick Lambrix",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1915,10 +2364,15 @@
       0.0,
       160.0
     ],
-    "prerequisites": "Machine Learning an/or Data mining and/or a course in AI. A course in Statistics."
+    "prerequisites": "Machine Learning an/or Data mining and/or a course in AI. A course in Statistics.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE65": {
     "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1937,10 +2391,15 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Basic course in programming. A course in process programming  is useful but not required, since understanding the process concept is assumed. Programming skills in C/C++ are required."
+    "prerequisites": "Basic course in programming. A course in process programming  is useful but not required, since understanding the process concept is assumed. Programming skills in C/C++ are required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE66": {
     "examiner": "Adrian Pop",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -1959,10 +2418,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Data Structures and Algorithms. Formal Languages and Automata Theory, either via that course or studying selected material (check with lecturer). Some knowledge of C-based languages such as C++ is an advantage."
+    "prerequisites": "Data Structures and Algorithms. Formal Languages and Automata Theory, either via that course or studying selected material (check with lecturer). Some knowledge of C-based languages such as C++ is an advantage.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE70": {
     "examiner": "Fredrik Lindsten",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -1987,10 +2452,16 @@
       42.0,
       118.0
     ],
-    "prerequisites": "Calculus in one and several variables, linear algebra, statistics, optimization and programming. Basic machine learning (at least 6 credits) including artificial neural networks. Programming in Python and experience in programming for numerical problem solving and linear algebra (e.g. via NumPy, Matlab or Julia)."
+    "prerequisites": "Calculus in one and several variables, linear algebra, statistics, optimization and programming. Basic machine learning (at least 6 credits) including artificial neural networks. Programming in Python and experience in programming for numerical problem solving and linear algebra (e.g. via NumPy, Matlab or Julia).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE74": {
     "examiner": "Björn Johansson",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -2015,10 +2486,16 @@
       54.0,
       106.0
     ],
-    "prerequisites": "BSc in Computer Science, Computer Engineering, Information Technology or similar."
+    "prerequisites": "BSc in Computer Science, Computer Engineering, Information Technology or similar.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDDE78": {
     "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -2031,10 +2508,16 @@
       0.0,
       160.0
     ],
-    "prerequisites": "Practical skills of programming in Python. Working knowledge of deep learning, especially deep neural networks from for example “Artificial Intelligence” (TDDC17) . Understanding of common concepts in computer science and optimization."
+    "prerequisites": "Practical skills of programming in Python. Working knowledge of deep learning, especially deep neural networks from for example “Artificial Intelligence” (TDDC17) . Understanding of common concepts in computer science and optimization.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TDEI19": {
     "examiner": "Emelie Havemo",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 1.0,
@@ -2059,10 +2542,14 @@
       24.0,
       136.0
     ],
-    "prerequisites": "Basic knowledge regarding management control."
+    "prerequisites": "Basic knowledge regarding management control.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TDEI74": {
     "examiner": "Harald Brege",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 3.0,
@@ -2081,10 +2568,14 @@
       0.0,
       160.0
     ],
-    "prerequisites": "Industrial Economics, fundamental course in statistics."
+    "prerequisites": "Industrial Economics, fundamental course in statistics.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TDTS07": {
     "examiner": "Ahmed Rezine",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.5,
@@ -2103,10 +2594,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Computer Hardware and Basic Computer Architectures, Programming"
+    "prerequisites": "Computer Hardware and Basic Computer Architectures, Programming",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TDTS08": {
     "examiner": "Zebo Peng",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -2125,10 +2622,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Computer Hardware and Architecture"
+    "prerequisites": "Computer Hardware and Architecture",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TDTS11": {
     "examiner": "Andrei Gurtov",
+    "department": "Institutionen för datavetenskap",
     "examinations": [
       {
         "credits": 0.0,
@@ -2153,10 +2655,14 @@
       46.0,
       114.0
     ],
-    "prerequisites": "Perspectives on Information Technology."
+    "prerequisites": "Perspectives on Information Technology.",
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TEAE01": {
     "examiner": "Sofi Rehme, Stefan Maass",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2181,10 +2687,14 @@
       49.0,
       111.0
     ],
-    "prerequisites": "Foundation Course in Mathematics"
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEAE13": {
     "examiner": "Ingrid Thörn Berggren",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 6.0,
@@ -2197,10 +2707,12 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Basic course in industrial engineering"
+    "prerequisites": "Basic course in industrial engineering",
+    "main_field": []
   },
   "TEAE20": {
     "examiner": "Marc Stuhldreier",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 1.0,
@@ -2219,10 +2731,14 @@
       32.0,
       128.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEAE21": {
     "examiner": "Marc Stuhldreier",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2241,10 +2757,12 @@
       0.0,
       160.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TEIG01": {
     "examiner": "Andrea Fried",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2263,10 +2781,14 @@
       0.0,
       160.0
     ],
-    "prerequisites": "Achieved Bachelor level studies in Computer Science."
+    "prerequisites": "Achieved Bachelor level studies in Computer Science.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIM11": {
     "examiner": "Daniel Ellström",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 3.0,
@@ -2285,10 +2807,14 @@
       44.0,
       116.0
     ],
-    "prerequisites": "Basic course in industrial economics"
+    "prerequisites": "Basic course in industrial economics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIM13": {
     "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 1.0,
@@ -2307,10 +2833,12 @@
       52.0,
       108.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TEIO06": {
     "examiner": "Viktor Werner",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 4.0,
@@ -2329,10 +2857,14 @@
       47.0,
       113.0
     ],
-    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent."
+    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIO13": {
     "examiner": "Anna Yström",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.5,
@@ -2357,10 +2889,14 @@
       88.0,
       72.0
     ],
-    "prerequisites": "Industrial Management, Corporate Organization or corresponding relevant knowledge about general models and theories about organizations."
+    "prerequisites": "Industrial Management, Corporate Organization or corresponding relevant knowledge about general models and theories about organizations.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIO32": {
     "examiner": "Jeanette Engzell",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 1.5,
@@ -2391,10 +2927,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIO90": {
     "examiner": "Viktor Werner",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2413,10 +2953,14 @@
       80.0,
       80.0
     ],
-    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent."
+    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TEIO97": {
     "examiner": "Stefan Cavalcante Bernat Junior",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2441,10 +2985,14 @@
       48.0,
       59.0
     ],
-    "prerequisites": "At least two years of academic studies."
+    "prerequisites": "At least two years of academic studies.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ]
   },
   "TFYA87": {
     "examiner": "Mats Eriksson",
+    "department": "Institutionen för fysik, kemi och biologi",
     "examinations": [
       {
         "credits": 2.0,
@@ -2475,10 +3023,15 @@
       54.0,
       106.0
     ],
-    "prerequisites": "Introductory mathematics, calculus of one variable, linear algebra, calculus of several variables, differential equations, basic programming"
+    "prerequisites": "Introductory mathematics, calculus of one variable, linear algebra, calculus of several variables, differential equations, basic programming",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ]
   },
   "TFYB12": {
     "examiner": "Magnus Johansson",
+    "department": "Institutionen för fysik, kemi och biologi",
     "examinations": [
       {
         "credits": 4.5,
@@ -2509,10 +3062,15 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Mathematical algorithms and models, calculus in one and several variables, linear algebra, linear systems."
+    "prerequisites": "Mathematical algorithms and models, calculus in one and several variables, linear algebra, linear systems.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ]
   },
   "TGTU49": {
     "examiner": "Corinna Röver",
+    "department": "Institutionen för Tema",
     "examinations": [
       {
         "credits": 2.0,
@@ -2531,10 +3089,12 @@
       30.0,
       130.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TGTU79": {
     "examiner": "Elif Härkönen",
+    "department": "Institutionen för Tema",
     "examinations": [
       {
         "credits": 2.0,
@@ -2565,10 +3125,12 @@
       48.0,
       112.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TGTU82": {
     "examiner": "Julia Velkova",
+    "department": "Institutionen för Tema",
     "examinations": [
       {
         "credits": 3.0,
@@ -2587,10 +3149,12 @@
       26.0,
       81.0
     ],
-    "prerequisites": "One year of studies at an engineering program or similar, as well as some experience of programming and systems development. To be able to complete the examination of the course, either the student has to take the course Design and development of interactive systems in parallel, or have previous or ongoing experiences from design of graphical user interfaces, similar to what is done in Design and development of interactive systems, as well as experience of group work/projects in larger groups than 2 students (e.g., PBL group work, project work, or similar)."
+    "prerequisites": "One year of studies at an engineering program or similar, as well as some experience of programming and systems development. To be able to complete the examination of the course, either the student has to take the course Design and development of interactive systems in parallel, or have previous or ongoing experiences from design of graphical user interfaces, similar to what is done in Design and development of interactive systems, as well as experience of group work/projects in larger groups than 2 students (e.g., PBL group work, project work, or similar).",
+    "main_field": []
   },
   "TGTU91": {
     "examiner": "Victoria Pihlgren",
+    "department": "Institutionen för kultur och samhälle",
     "examinations": [
       {
         "credits": 3.0,
@@ -2609,10 +3173,12 @@
       36.0,
       124.0
     ],
-    "prerequisites": "University studies corresponding to 60 credits / one year full time studies."
+    "prerequisites": "University studies corresponding to 60 credits / one year full time studies.",
+    "main_field": []
   },
   "TGTU94": {
     "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
     "examinations": [
       {
         "credits": 1.5,
@@ -2631,10 +3197,12 @@
       30.0,
       130.0
     ],
-    "prerequisites": "Requisite general qualifications for university."
+    "prerequisites": "Requisite general qualifications for university.",
+    "main_field": []
   },
   "TGTU95": {
     "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
     "examinations": [
       {
         "credits": 1.0,
@@ -2653,10 +3221,12 @@
       30.0,
       130.0
     ],
-    "prerequisites": "At least two years studies at university."
+    "prerequisites": "At least two years studies at university.",
+    "main_field": []
   },
   "TGTU96": {
     "examiner": "Maria Eidenskog",
+    "department": "Institutionen för Tema",
     "examinations": [
       {
         "credits": 1.0,
@@ -2675,10 +3245,12 @@
       14.0,
       39.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TGTU99": {
     "examiner": "Lars Lindblom",
+    "department": "Institutionen för kultur och samhälle",
     "examinations": [
       {
         "credits": 3.0,
@@ -2697,10 +3269,16 @@
       0.0,
       160.0
     ],
-    "prerequisites": "BSc level within Computer Science, Computer Science and Engineering or Information Technology and Engineering. Completed course corresponding to 6 credits in AI, alternatively studied in parallel with course corresponding to 6 credits in AI."
+    "prerequisites": "BSc level within Computer Science, Computer Science and Engineering or Information Technology and Engineering. Completed course corresponding to 6 credits in AI, alternatively studied in parallel with course corresponding to 6 credits in AI.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "THEN18": {
     "examiner": "Mikael Svensson",
+    "department": "Institutionen för kultur och samhälle",
     "examinations": [
       {
         "credits": 3.0,
@@ -2719,10 +3297,12 @@
       48.0,
       112.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TINF01": {
     "examiner": "Ola Leifler",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2753,10 +3333,14 @@
       0.0,
       213.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "Information Technology"
+    ]
   },
   "TINT01": {
     "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 0.5,
@@ -2781,10 +3365,12 @@
       14.0,
       39.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TINT02": {
     "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 3.0,
@@ -2809,10 +3395,12 @@
       48.0,
       112.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TKMJ15": {
     "examiner": "Jonas Ammenberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 2.0,
@@ -2831,10 +3419,16 @@
       31.0,
       129.0
     ],
-    "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous."
+    "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Industrial Engineering and Management",
+      "Mechanical Engineering"
+    ]
   },
   "TKMJ24": {
     "examiner": "Annica Carlsson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 3.0,
@@ -2853,10 +3447,16 @@
       45.0,
       115.0
     ],
-    "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry."
+    "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Product Development",
+      "Mechanical Engineering"
+    ]
   },
   "TMKA11": {
     "examiner": "Christopher Jouannet",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
     "examinations": [
       {
         "credits": 3.0,
@@ -2875,10 +3475,14 @@
       60.0,
       100.0
     ],
-    "prerequisites": "The course assumes that the student meets the requirements for studies in the higher levels of the engineering programs, and has good knowledge of mathematics as well as basic programming. The course is open to students from different backgrounds, and it is assumed that the student has good knowledge of general development methodology in his/her own subject area as well as specific technical knowledge corresponding to the last semester of the respective engineering program."
+    "prerequisites": "The course assumes that the student meets the requirements for studies in the higher levels of the engineering programs, and has good knowledge of mathematics as well as basic programming. The course is open to students from different backgrounds, and it is assumed that the student has good knowledge of general development methodology in his/her own subject area as well as specific technical knowledge corresponding to the last semester of the respective engineering program.",
+    "main_field": [
+      "Mechanical Engineering"
+    ]
   },
   "TNA010": {
     "examiner": "Berkant Savas",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -2897,10 +3501,15 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB."
+    "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ]
   },
   "TNCG15": {
     "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -2913,10 +3522,16 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Computer graphics, 3D Computer Graphics and Animation"
+    "prerequisites": "Computer graphics, 3D Computer Graphics and Animation",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TNM067": {
     "examiner": "Ingrid Hotz",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -2935,10 +3550,17 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Computer Graphics, Physical modeling"
+    "prerequisites": "Computer Graphics, Physical modeling",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TNM079": {
     "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 4.0,
@@ -2957,10 +3579,16 @@
       58.0,
       102.0
     ],
-    "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables,  Programming"
+    "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables,  Programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TNM111": {
     "examiner": "Andreas Kerren",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 3.0,
@@ -2979,10 +3607,16 @@
       51.0,
       109.0
     ],
-    "prerequisites": "Programming.\nThe course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required."
+    "prerequisites": "Programming.\nThe course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TNM114": {
     "examiner": "Pierangelo Dellacqua",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 6.0,
@@ -2995,10 +3629,17 @@
       12.0,
       148.0
     ],
-    "prerequisites": "Artificial Intelligence"
+    "prerequisites": "Artificial Intelligence",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TNM116": {
     "examiner": "Karljohan Lundin Palmerius",
+    "department": "Institutionen för teknik och naturvetenskap",
     "examinations": [
       {
         "credits": 2.0,
@@ -3017,10 +3658,16 @@
       0.0,
       160.0
     ],
-    "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++"
+    "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ]
   },
   "TPTE06": {
     "examiner": "Nämndspecifikt",
+    "department": "Tekniska fakultetens kansli",
     "examinations": [
       {
         "credits": 6.0,
@@ -3033,10 +3680,12 @@
       0.0,
       160.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": []
   },
   "TQXX33": {
     "examiner": null,
+    "department": "Tekniska fakultetens kansli",
     "examinations": [
       {
         "credits": 0.5,
@@ -3061,10 +3710,14 @@
       0.0,
       800.0
     ],
-    "prerequisites": null
+    "prerequisites": null,
+    "main_field": [
+      "see special list"
+    ]
   },
   "TSBB06": {
     "examiner": "Mårten Wadenbäck",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3089,10 +3742,14 @@
       68.0,
       92.0
     ],
-    "prerequisites": "Basic Linear Algebra: vector spaces, bases, scalar product, least squares problems, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended."
+    "prerequisites": "Basic Linear Algebra: vector spaces, bases, scalar product, least squares problems, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended.",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSBB08": {
     "examiner": "Maria Magnusson",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3111,10 +3768,15 @@
       60.0,
       100.0
     ],
-    "prerequisites": "From any of the courses Signals and Systems, Linear systems, Signals and Images, Multidimensional Signal and Image Analysis: Deterministic signals, linear systems, convolution, 1D continuous Fourier transform and its theorems, basic filters (low-pass, high-pass, and band-pass), discrete Fourier transform (desirable but not necessary), sampling and reconstruction (desirable but not necessary).\nFrom course Linear algebra: vector, matrix, determinant, scalar product, bases, the least square method.\nOne- and multidimensional calculus.\nProgramming in one of the following languages: C, C++, Java, Ada, Python or Matlab."
+    "prerequisites": "From any of the courses Signals and Systems, Linear systems, Signals and Images, Multidimensional Signal and Image Analysis: Deterministic signals, linear systems, convolution, 1D continuous Fourier transform and its theorems, basic filters (low-pass, high-pass, and band-pass), discrete Fourier transform (desirable but not necessary), sampling and reconstruction (desirable but not necessary).\nFrom course Linear algebra: vector, matrix, determinant, scalar product, bases, the least square method.\nOne- and multidimensional calculus.\nProgramming in one of the following languages: C, C++, Java, Ada, Python or Matlab.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSBB19": {
     "examiner": "Per-Erik Forssén",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3133,10 +3795,14 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Basic image processing: thresholding, segmentation, edge detection from for example Signals, Information and Images or Digital Image Processing.\nUse of Python or Matlab.\nProbability Theory and Statistics."
+    "prerequisites": "Basic image processing: thresholding, segmentation, edge detection from for example Signals, Information and Images or Digital Image Processing.\nUse of Python or Matlab.\nProbability Theory and Statistics.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ]
   },
   "TSBB21": {
     "examiner": "Maria Magnusson",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3155,10 +3821,14 @@
       50.0,
       110.0
     ],
-    "prerequisites": "Linear algebra: points, lines and planes in two and three dimensions, vector spaces and linear maps. Basic optics (secondary school): light spectrum and light refraction in lenses. Basic use of Matlab. 1-D signal processing: linear systems, convolution, the continuous Fourier transform and its theorems, sampling and reconstruction. Digital image processing: 2-D Fourier transform, 2-D convolution on digital images, 2-D interpolation (desirable but not necessary)."
+    "prerequisites": "Linear algebra: points, lines and planes in two and three dimensions, vector spaces and linear maps. Basic optics (secondary school): light spectrum and light refraction in lenses. Basic use of Matlab. 1-D signal processing: linear systems, convolution, the continuous Fourier transform and its theorems, sampling and reconstruction. Digital image processing: 2-D Fourier transform, 2-D convolution on digital images, 2-D interpolation (desirable but not necessary).",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSBB22": {
     "examiner": "Yonghao Xu",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 12.0,
@@ -3171,10 +3841,16 @@
       52.0,
       268.0
     ],
-    "prerequisites": "Digital image processing, machine learning, computer vision, linear algebra, statistics, and programming. Knowledge from the course computer graphics is beneficial."
+    "prerequisites": "Digital image processing, machine learning, computer vision, linear algebra, statistics, and programming. Knowledge from the course computer graphics is beneficial.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSBB32": {
     "examiner": "Lasse Alfredsson",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3205,10 +3881,16 @@
       56.0,
       157.0
     ],
-    "prerequisites": "Calculus and linear algebra. Fundamental knowledge in some programming language, for example Matlab, for generating simple graphs."
+    "prerequisites": "Calculus and linear algebra. Fundamental knowledge in some programming language, for example Matlab, for generating simple graphs.",
+    "main_field": [
+      "Information Technology",
+      "Applied Mathematics",
+      "Electrical Engineering"
+    ]
   },
   "TSBB33": {
     "examiner": "Per-Erik Forssén",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3233,10 +3915,15 @@
       101.0,
       59.0
     ],
-    "prerequisites": "Probability theory, estimation theory, the least squares method. From e.g. Multi-dimensional signal analysis: Projective spaces, homogeneous representations of 2D and 3D geometry, perspective projection, camera calibration, and epipolar geometry.\nBasic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended."
+    "prerequisites": "Probability theory, estimation theory, the least squares method. From e.g. Multi-dimensional signal analysis: Projective spaces, homogeneous representations of 2D and 3D geometry, perspective projection, camera calibration, and epipolar geometry.\nBasic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSBB34": {
     "examiner": "Michael Felsberg",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3255,10 +3942,15 @@
       100.0,
       60.0
     ],
-    "prerequisites": "Probability theory, estimation theory, the least squares method, partial differential equations, 1D & 2D linear system theory (deterministic and stochastic). Basic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended."
+    "prerequisites": "Probability theory, estimation theory, the least squares method, partial differential equations, 1D & 2D linear system theory (deterministic and stochastic). Basic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSBK03": {
     "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3277,10 +3969,17 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics."
+    "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ]
   },
   "TSBK07": {
     "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3305,10 +4004,16 @@
       48.0,
       112.0
     ],
-    "prerequisites": "Linear algebra. Programming knowledge."
+    "prerequisites": "Linear algebra. Programming knowledge.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSBK38": {
     "examiner": "Harald Nautsch",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -3327,10 +4032,15 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Probability theory, basic signal processing, basic transform theory."
+    "prerequisites": "Probability theory, basic signal processing, basic transform theory.",
+    "main_field": [
+      "Electrical Engineering",
+      "Media Technology and Engineering"
+    ]
   },
   "TSDT14": {
     "examiner": "Danyo Danev",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3349,10 +4059,14 @@
       56.0,
       104.0
     ],
-    "prerequisites": "From Calculus: Derivatives and integrals. From Probability theory: Most, but with focus on binary distributions, rectangular distributions and Gaussian distributions. From Signals and systems or Linear Systems: Fourier transforms, LTI systems, convolution, amplitude modulation, sampling and pulse amplitude modulation. (all of it deterministic)"
+    "prerequisites": "From Calculus: Derivatives and integrals. From Probability theory: Most, but with focus on binary distributions, rectangular distributions and Gaussian distributions. From Signals and systems or Linear Systems: Fourier transforms, LTI systems, convolution, amplitude modulation, sampling and pulse amplitude modulation. (all of it deterministic)",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSEA77": {
     "examiner": "Michael Josefsson",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -3365,10 +4079,14 @@
       34.0,
       73.0
     ],
-    "prerequisites": "To fully appreciate the course you should have previous knowledge of any high level language."
+    "prerequisites": "To fully appreciate the course you should have previous knowledge of any high level language.",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSFS02": {
     "examiner": "Jan Åslund",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3387,10 +4105,15 @@
       56.0,
       104.0
     ],
-    "prerequisites": "Automatic Control, Engineering Mechanics, and familiarity with Matlab."
+    "prerequisites": "Automatic Control, Engineering Mechanics, and familiarity with Matlab.",
+    "main_field": [
+      "Electrical Engineering",
+      "Mechanical Engineering"
+    ]
   },
   "TSFS12": {
     "examiner": "Erik Frisk",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 0.0,
@@ -3415,10 +4138,15 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Automatic control, introductory courses in mechanics and programming"
+    "prerequisites": "Automatic control, introductory courses in mechanics and programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   },
   "TSIN01": {
     "examiner": "Khac-Hoang Ngo",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3437,10 +4165,16 @@
       36.0,
       124.0
     ],
-    "prerequisites": "Basic knowledge of Probability theory."
+    "prerequisites": "Basic knowledge of Probability theory.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TSIN02": {
     "examiner": "Harald Nautsch",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 1.5,
@@ -3459,10 +4193,16 @@
       38.0,
       122.0
     ],
-    "prerequisites": "Basic knowledge in computer science"
+    "prerequisites": "Basic knowledge in computer science",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TSIT03": {
     "examiner": "Guilherme B. Xavier",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3481,10 +4221,16 @@
       32.0,
       128.0
     ],
-    "prerequisites": "Probability theory"
+    "prerequisites": "Probability theory",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TSIT11": {
     "examiner": "Joakim Argillander",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.5,
@@ -3503,10 +4249,16 @@
       32.0,
       128.0
     ],
-    "prerequisites": "Linear Algebra"
+    "prerequisites": "Linear Algebra",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering",
+      "Applied Physics"
+    ]
   },
   "TSIT14": {
     "examiner": "Shizhen Chang",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -3525,10 +4277,16 @@
       40.0,
       120.0
     ],
-    "prerequisites": "Computer networks, Ethical hacking"
+    "prerequisites": "Computer networks, Ethical hacking",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ]
   },
   "TSKS33": {
     "examiner": "Danyo Danev",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.0,
@@ -3547,10 +4305,17 @@
       54.0,
       106.0
     ],
-    "prerequisites": "Linear algebra. Basic knowledge and understanding of probability theory/statistics. Programming skills in Python and Matlab."
+    "prerequisites": "Linear algebra. Basic knowledge and understanding of probability theory/statistics. Programming skills in Python and Matlab.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Electrical Engineering"
+    ]
   },
   "TSKS37": {
     "examiner": "Karl-Ludwig Besser",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3563,10 +4328,14 @@
       14.0,
       39.0
     ],
-    "prerequisites": "Linear algebra (can be studied in parallel), Programming"
+    "prerequisites": "Linear algebra (can be studied in parallel), Programming",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT04": {
     "examiner": "Håkan Johansson, Mikael Olofsson, Danyo Danev",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3579,10 +4348,12 @@
       16.0,
       37.0
     ],
-    "prerequisites": "Linear algebra (can be studied in parallel), Programming"
+    "prerequisites": "Linear algebra (can be studied in parallel), Programming",
+    "main_field": []
   },
   "TSRT07": {
     "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3601,10 +4372,14 @@
       52.0,
       108.0
     ],
-    "prerequisites": "Automatic control"
+    "prerequisites": "Automatic control",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT08": {
     "examiner": "Anders Hansson",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3623,10 +4398,14 @@
       56.0,
       104.0
     ],
-    "prerequisites": "Automatic Control, Basic course in optimization"
+    "prerequisites": "Automatic Control, Basic course in optimization",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT09": {
     "examiner": "Claudio Altafini",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 1.5,
@@ -3645,10 +4424,14 @@
       60.0,
       100.0
     ],
-    "prerequisites": "Automatic control, Statistics"
+    "prerequisites": "Automatic control, Statistics",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT14": {
     "examiner": "Gustaf Hendeby",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 3.0,
@@ -3667,10 +4450,14 @@
       41.0,
       119.0
     ],
-    "prerequisites": "A introductory course in statistics, as well as a course discussing signals and systems, for example Automatic Control or Signals and Systems."
+    "prerequisites": "A introductory course in statistics, as well as a course discussing signals and systems, for example Automatic Control or Signals and Systems.",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT19": {
     "examiner": "Johan Löfberg",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 1.5,
@@ -3689,10 +4476,14 @@
       64.0,
       96.0
     ],
-    "prerequisites": "Calculus, one variable, Calculus, several variables, Linear Algebra"
+    "prerequisites": "Calculus, one variable, Calculus, several variables, Linear Algebra",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT28": {
     "examiner": "Daniel Axehill",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 12.0,
@@ -3705,10 +4496,14 @@
       26.0,
       294.0
     ],
-    "prerequisites": "Automatic control and Control theory. Knowledge from the courses Industrial Control systems, Modelling and Learning for Dynamical Systems and/or Sensor Fusion is beneficial."
+    "prerequisites": "Automatic control and Control theory. Knowledge from the courses Industrial Control systems, Modelling and Learning for Dynamical Systems and/or Sensor Fusion is beneficial.",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSRT92": {
     "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 4.5,
@@ -3727,10 +4522,14 @@
       58.0,
       102.0
     ],
-    "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics"
+    "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics",
+    "main_field": [
+      "Electrical Engineering"
+    ]
   },
   "TSTE12": {
     "examiner": "Kent Palmkvist",
+    "department": "Institutionen för systemteknik",
     "examinations": [
       {
         "credits": 2.0,
@@ -3749,6 +4548,10 @@
       44.0,
       116.0
     ],
-    "prerequisites": "Basic courses in digital circuits. Basic courses in programming."
+    "prerequisites": "Basic courses in digital circuits. Basic courses in programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ]
   }
 }
