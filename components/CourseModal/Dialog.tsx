@@ -5,6 +5,7 @@ import { Course } from "@/app/dashboard/page";
 import EvaluateScore from "./EvaluateScore";
 import DialogTabs from "./DialogTabs";
 import Statistics from "./Statistics";
+import { FC, useMemo } from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +13,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FC, useMemo } from "react";
 
 interface CourseDialogProps {
   open: boolean;
@@ -21,7 +21,7 @@ interface CourseDialogProps {
   showAdd?: boolean;
 }
 
-export const CourseDialog: FC<CourseDialogProps> = ({
+const CourseDialog: FC<CourseDialogProps> = ({
   open,
   onOpenChange,
   course,
@@ -55,12 +55,7 @@ export const CourseDialog: FC<CourseDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="sm:max-w-xl no-drag"
-        onPointerDownCapture={(e) => open && e.stopPropagation()}
-        onMouseDownCapture={(e) => open && e.stopPropagation()}
-        onTouchStartCapture={(e) => open && e.stopPropagation()}
-      >
+      <DialogContent className="sm:max-w-xl" data-no-drag="true">
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
@@ -71,3 +66,5 @@ export const CourseDialog: FC<CourseDialogProps> = ({
     </Dialog>
   );
 };
+
+export default CourseDialog;
