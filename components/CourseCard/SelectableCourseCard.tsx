@@ -1,5 +1,5 @@
 import { MasterBadge } from "@/components/MasterBadge";
-import { CourseDialog } from "../CourseModal/Dialog";
+import CourseDialog from "../CourseModal/Dialog";
 import { Course } from "@/app/dashboard/page";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
@@ -26,9 +26,9 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   const masterPrograms = course.CourseMaster || [];
 
   const handleCardClick = (e: React.MouseEvent) => {
-    if(openDialog || e.defaultPrevented) return;
+    if (openDialog || e.defaultPrevented) return;
     onSelectionChange(course);
-  }
+  };
 
   return (
     <Card

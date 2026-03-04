@@ -1,5 +1,5 @@
 import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
-import { CourseDialog } from "../CourseModal/Dialog";
+import CourseDialog from "../CourseModal/Dialog";
 import { Button } from "@/components/ui/button";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
