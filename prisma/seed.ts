@@ -269,8 +269,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
-      Department: department,
-      MainField: mainField,
+      department: department,
+      mainField: mainField,
     },
     create: {
       code: c.code,
@@ -283,8 +283,8 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       scheduledHours: detailedInfo?.education_components?.[0] ?? 0,
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
-      Department: department,
-      MainField: mainField,
+      department: department,
+      mainField: mainField,
       programCourseID: id,
     },
   });
