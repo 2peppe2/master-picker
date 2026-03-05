@@ -17,7 +17,7 @@ export const useCopyToClipboard = (resetInterval = 2000) => {
         setCopied(true);
         setTimeout(() => setCopied(false), resetInterval);
       } else {
-        console.error("Kunde inte kopiera länken i denna webbläsare.");
+        console.error("Could not copy the link.");
       }
 
       return success;
@@ -44,8 +44,10 @@ const ShareButton: FC = () => {
         await navigator.share(shareData);
         return;
       } catch (err) {
-        if ((err as Error).name === "AbortError") return;
-        console.error("Native share failed, falling back to copy:", err);
+        if ((err as Error).name === "AbortError") {
+          return;
+        }
+        console.error("Native share failed, falling back to copy: ", err);
       }
     }
 
