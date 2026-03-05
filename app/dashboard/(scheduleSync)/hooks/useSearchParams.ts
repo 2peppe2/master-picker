@@ -20,7 +20,7 @@ export const useSearchParams = () => {
         params.set(name, value);
       }
 
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     },
     [searchParams, pathname, router],
   );
