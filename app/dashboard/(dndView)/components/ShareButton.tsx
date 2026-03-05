@@ -51,7 +51,7 @@ const ShareButton: FC = () => {
       }
     }
 
-    await copy(url);
+    copy(url);
   };
 
   return (
