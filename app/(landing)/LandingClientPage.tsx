@@ -1,11 +1,14 @@
 "use client";
 
+import { scheduleAtoms } from "../atoms/schedule/atoms";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import GenericCombobox from "./GenericComboBox";
 import { useRouter } from "next/navigation";
 import { ComboboxItemType } from "./types";
-import { useMemo, useState } from "react";
 import { Loader2 } from "lucide-react";
+import { RESET } from "jotai/utils";
+import { useSetAtom } from "jotai";
 import Link from "next/link";
 
 interface LandingClientPageProps {
@@ -29,6 +32,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
   const [selectedMaster, setSelectedMaster] = useState<string | null>(null);
   const [isLoadingDashboard, setIsLoadingDashboard] = useState(false);
   const [isLoadingGuide, setIsLoadingGuide] = useState(false);
+  const setSchedule = useSetAtom(scheduleAtoms.schedulesAtom);
 
   const router = useRouter();
 
@@ -81,6 +85,10 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
       value: m.master,
     }));
   }, [programs, selectedProgram]);
+
+  useEffect(() => {
+    setSchedule(RESET);
+  }, [setSchedule]);
 
   return (
     <div className="flex flex-col items-center gap-8">
