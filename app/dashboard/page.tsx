@@ -1,7 +1,7 @@
 "use server";
 
 import { Prisma } from "@/prisma/generated/client/client";
-import { normalizeCourse } from "../courseNormalizer";
+import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
 
@@ -31,41 +31,10 @@ export default async function MainPage({
       : undefined;
   const courses = await prisma.course.findMany({
     where: courseWhere,
-    include: {
-      ProgramCourse: {
-        include: {
-          Program: {
-            select: {
-              program: true,
-              name: true,
-              shortname: true,
-            },
-          },
-        },
-      },
-      CourseOccasion: {
-        include: {
-          periods: {
-            select: {
-              period: true,
-              blocks: {
-                select: {
-                  block: true,
-                },
-              },
-            },
-          },
-          recommendedMasters: {
-            select: { master: true, masterProgram: true },
-          },
-        },
-      },
-      CourseMaster: true,
-      Examination: {
-        select: { credits: true, module: true, name: true, scale: true },
-      },
-    },
+    ...courseWithDetailsArgs,
   });
+
+  
 
   const masters = await prisma.master.findMany({
     select: {

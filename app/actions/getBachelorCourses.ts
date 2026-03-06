@@ -2,6 +2,7 @@
 import { prisma } from "@/lib/prisma";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import { Semester } from "@/prisma/generated/client/enums";
+import { courseWithDetailsArgs } from "../courseNormalizer";
 import { cache } from "react";
 
 export const getBachelorCourses = cache(async (program: string, startYear: number) => {
@@ -29,40 +30,7 @@ export const getBachelorCourses = cache(async (program: string, startYear: numbe
         },
       },
     },
-    include: {
-      ProgramCourse: {
-        include: {
-          Program: {
-            select: {
-              program: true,
-              name: true,
-              shortname: true,
-            },
-          },
-        },
-      },
-      CourseOccasion: {
-        include: {
-          periods: {
-            select: {
-              period: true,
-              blocks: {
-                select: {
-                  block: true,
-                },
-              },
-            },
-          },
-          recommendedMasters: {
-            select: { master: true, masterProgram: true },
-          },
-        },
-      },
-      CourseMaster: true,
-      Examination: {
-        select: { credits: true, module: true, name: true, scale: true },
-      },
-    },
+    ...courseWithDetailsArgs,
   });
   return courses;
 });
