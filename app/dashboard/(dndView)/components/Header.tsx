@@ -1,7 +1,8 @@
 import MastersRequirementsBar from "../../(mastersRequirementsBar)";
 import SettingsModal from "./SettingsModal";
-import { FC, useState } from "react";
+import ShareButton from "./ShareButton";
 import Disclaimer from "./Disclaimer";
+import { FC, useState } from "react";
 
 const Header: FC = ({}) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -13,6 +14,7 @@ const Header: FC = ({}) => {
           <MastersRequirementsBar />
           <Disclaimer />
         </div>
+        <ShareButton />
         <SettingsModal
           isOpen={isSettingsOpen}
           onOpenChange={setIsSettingsOpen}
