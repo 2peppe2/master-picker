@@ -1,10 +1,9 @@
 import { userPreferencesAtom } from "../UserPreferences";
 import { Course } from "@/app/dashboard/page";
-import { atomWithImmer } from "jotai-immer";
+import { atomWithReset } from "jotai/utils";
 import { ScheduleGrid } from "./types";
 import { atom } from "jotai";
 
-//TODO: Make a help function to see if it is a block that is from wildstart
 export const WILDCARD_BLOCK_START = 4;
 
 export const scheduleAtoms = {
@@ -20,7 +19,7 @@ export const scheduleAtoms = {
    * // Or update directly (not recommended - use mutators instead)
    * const setSchedules = useSetAtom(schedulesAtom);
    */
-  schedulesAtom: atomWithImmer<ScheduleGrid>(
+  schedulesAtom: atomWithReset<ScheduleGrid>(
     Array.from({ length: 10 }, () =>
       Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null)),
     ),
