@@ -1,6 +1,6 @@
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
-import DialogGeneralTab from "./DialogGeneralTab";
 import ExaminationTable from "./ExaminationTable";
+import DialogGeneralTab from "./DialogGeneralTab";
 import { Course } from "@/app/dashboard/page";
 import EvaluateScore from "./EvaluateScore";
 import DialogTabs from "./DialogTabs";
@@ -55,7 +55,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl" data-no-drag="true">
+      <DialogContent className="sm:max-w-[39rem]" data-no-drag="true">
         <DialogHeader>
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
