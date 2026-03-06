@@ -35,7 +35,17 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
     const searchTerm = term.toLowerCase();
     const courseName = course.name.toLowerCase();
     const courseCode = course.code.toLowerCase();
-    return !courseName.includes(searchTerm) && !courseCode.includes(searchTerm);
+    const examiner = course.examiner.toLowerCase();
+    const department = course.department.toLowerCase();
+    const mainFields = course.mainField.join(" ").toLowerCase();
+
+    return (
+      !courseName.includes(searchTerm) &&
+      !courseCode.includes(searchTerm) &&
+      !department.includes(searchTerm) &&
+      !mainFields.includes(searchTerm) &&
+      !examiner.includes(searchTerm)
+    );
   }, []);
 
   const filterOutByMaster = useCallback((master: string, course: Course) => {

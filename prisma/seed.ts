@@ -140,7 +140,17 @@ async function seedCoursesData(program: string, id: number) {
     await seedCourse(c, id, detailedInfo);
     await seedExamination(detailedInfo, c, id);
 
-    for (const m of c.mastersPrograms ?? []) {
+    const masterPrograms = Array.isArray(c.mastersPrograms)
+      ? [
+          ...new Set(
+            c.mastersPrograms
+              .map((m) => m?.trim())
+              .filter((m): m is string => Boolean(m)),
+          ),
+        ]
+      : [];
+
+    for (const m of masterPrograms) {
       await seedMaster(m, program);
       await seedMasterCourse(m, c, id, program);
     }
@@ -206,7 +216,12 @@ async function seedMasterCourse(
 ) {
   await prisma.courseMaster.upsert({
     where: {
-      courseMasterId: { master: m, masterProgram: program, courseCode: c.code },
+      courseMasterId: {
+        master: m,
+        masterProgram: program,
+        courseCode: c.code,
+        programCourseID: id,
+      },
     },
     update: {},
     create: {

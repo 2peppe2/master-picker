@@ -6,5 +6,5 @@ model CourseMaster {
   Master          Master @relation(fields: [master, masterProgram], references: [master, masterProgram])
   Course          Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 
-  @@id(name: "courseMasterId", [master, masterProgram, courseCode])
+  @@id(name: "courseMasterId", [master, masterProgram, courseCode, programCourseID])
 }
