@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 
 const revenueChartConfig = {
     scheduled: {
-        label: 'Scheduled Hours:',
-        color: '#dbeafe'
+        label: 'Scheduled Hours',
+        color: 'var(--chart-2)'
     },
     selfStudy: {
-        label: 'Self-study Hours:',
-        color: '#bfdbfe'
+        label: 'Self-study Hours',
+        color: 'var(--chart-1)'
     }
 } satisfies ChartConfig
 
@@ -36,7 +36,7 @@ const DialogTimeChart = ({ scheduledHours, selfStudyHours } : DialogTimeChartPro
         return () => cancelAnimationFrame(frame);
     }, [scheduledHours, selfStudyHours]);
     return (
-        <ChartContainer config={revenueChartConfig} className="h-40 w-40">
+        <ChartContainer config={revenueChartConfig} className="h-30 w-30">
             <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
                 <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
                 <Pie
@@ -46,9 +46,9 @@ const DialogTimeChart = ({ scheduledHours, selfStudyHours } : DialogTimeChartPro
                     nameKey="name"
                     startAngle={90}
                     endAngle={360 + 90}
-                    innerRadius={53}
-                    outerRadius={75}
-                    paddingAngle={data.find(data => data.hours == 0) ? 0 : 3}
+                    innerRadius={33}
+                    outerRadius={50}
+                    paddingAngle={data.find(data => data.hours == 0) ? 0 : 2}
                     isAnimationActive
                     animationBegin={120}
                     animationDuration={700}
@@ -59,11 +59,11 @@ const DialogTimeChart = ({ scheduledHours, selfStudyHours } : DialogTimeChartPro
                             if (!viewBox || !("cx" in viewBox) || !("cy" in viewBox)) return null
                             return (
                                 <text x={viewBox.cx} y={viewBox.cy} textAnchor="middle" dominantBaseline="middle">
-                                    <tspan className="fill-foreground text-base font-medium" x={viewBox.cx} y={viewBox.cy}>
+                                    <tspan className="fill-foreground text-sm font-medium" x={viewBox.cx} y={viewBox.cy}>
                                         {totalHours} h
                                     </tspan>
-                                    <tspan className="fill-muted-foreground text-xs" x={viewBox.cx} y={(viewBox.cy || 0) + 16}>
-                                        Total Study Time
+                                    <tspan className="fill-muted-foreground text-[10px]" x={viewBox.cx} y={(viewBox.cy || 0) + 13}>
+                                        Total
                                     </tspan>
                                 </text>
                             )
