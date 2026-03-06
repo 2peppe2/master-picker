@@ -24,7 +24,7 @@ const LandingPage = async () => {
   });
   return (
     <div className="min-h-screen ">
-      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20">
+      <main className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
         <Header />
         <LandingClientPage programs={programs} />
       </main>
