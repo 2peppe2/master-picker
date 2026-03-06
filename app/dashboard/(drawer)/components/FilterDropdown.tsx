@@ -1,4 +1,4 @@
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import SemesterFilter from "./filters/SemesterFilter";
 import MasterFilter from "./filters/MasterFilter";
 import PeriodFilter from "./filters/PeriodFilter";
@@ -20,15 +20,13 @@ const FilterDropdown = () => (
 export default FilterDropdown;
 
 const Header: FC = () => {
-  const {
-    mutators: { reset },
-  } = useFilterStore();
+  const { resetFilter } = useFilterMutators();
 
   return (
     <div className="flex justify-between items-baseline w-full space-y-2">
       <h4 className="leading-none font-medium">Filters</h4>
 
-      <Button variant="outline" onClick={() => reset()}>
+      <Button variant="outline" onClick={() => resetFilter()}>
         Reset Filters
       </Button>
     </div>

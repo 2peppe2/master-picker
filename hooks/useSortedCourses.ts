@@ -1,9 +1,5 @@
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
-import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { useSearchParams } from "next/navigation";
 import { Course } from "@/app/dashboard/page";
-import { useAtomValue } from "jotai";
 import { useMemo } from "react";
 
 interface UseSortedCoursesArgs {
@@ -11,41 +7,25 @@ interface UseSortedCoursesArgs {
 }
 
 export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
-  const shownSemesters = useAtomValue(scheduleAtoms.shownSemestersAtom);
   const searchParams = useSearchParams();
-  const master = searchParams.get("master") ?? undefined;
+  const master = searchParams.get("master");
 
   return useMemo(() => {
+    const matchMap = new Map(
+      courses.map((c) => [
+        c.code,
+        master ? c.CourseMaster.some((cm) => cm.master === master) : false,
+      ]),
+    );
+
     return [...courses].sort((a, b) => {
-      const aMatchesMaster = a.CourseMaster.some((cm) => cm.master === master);
-      const bMatchesMaster = b.CourseMaster.some((cm) => cm.master === master);
+      const aMatches = matchMap.get(a.code);
+      const bMatches = matchMap.get(b.code);
 
-      if (aMatchesMaster && !bMatchesMaster) return -1;
-      if (!aMatchesMaster && bMatchesMaster) return 1;
+      if (aMatches && !bMatches) return -1;
+      if (!aMatches && bMatches) return 1;
 
-      const aInOpenSemester = a.CourseOccasion.some((oc) => {
-        const relativeSemester = yearAndSemesterToRelativeSemester(
-          startingYear,
-          oc.year,
-          oc.semester,
-        );
-        return shownSemesters.has(relativeSemester + 1);
-      });
-
-      const bInOpenSemester = b.CourseOccasion.some((oc) => {
-        const relativeSemester = yearAndSemesterToRelativeSemester(
-          startingYear,
-          oc.year,
-          oc.semester,
-        );
-        return shownSemesters.has(relativeSemester + 1);
-      });
-
-      if (aInOpenSemester && !bInOpenSemester) return -1;
-      if (!aInOpenSemester && bInOpenSemester) return 1;
-
-      return a.name.localeCompare(b.name);
+      return a.name.localeCompare(b.name, "en");
     });
-  }, [courses, master, shownSemesters, startingYear]);
+  }, [courses, master]);
 };

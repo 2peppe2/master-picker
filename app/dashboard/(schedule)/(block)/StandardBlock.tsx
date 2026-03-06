@@ -1,6 +1,6 @@
 "use client";
 
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { SemesterOption } from "@/app/atoms/filter/types";
@@ -18,9 +18,7 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
   const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
 
-  const {
-    mutators: { selectBlocks, selectPeriods, selectSemester },
-  } = useFilterStore();
+  const { selectBlocks, selectPeriods, selectSemester } = useFilterMutators();
 
   const handleFilterChange = () => {
     selectSemester((data.semesterNumber + 1) as SemesterOption);

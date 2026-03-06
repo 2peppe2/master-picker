@@ -23,15 +23,14 @@ type ScheduleEntry = [number, number, number, number];
  * Designed for maximum compression while maintaining layout rules.
  */
 interface SchedulePayload {
-  /** * Stands for semesters.
-   *
+  /**
    * Each number represents the block count for BOTH Period 0 and Period 1
    * within that semester.
    * Example: [9, 7] = Sem 0 (2x9 blocks), Sem 1 (2x7 blocks)
    */
   s: number[];
 
-  /** * Stands for Data.
+  /**
    *
    * A list of entries representing only the non-empty slots in the grid.
    */
@@ -49,7 +48,6 @@ export const writeScheduleToUrlAtom = atom(
     const courses = get(coursesAtom);
     const grid = get(scheduleAtoms.schedulesAtom);
 
-    // Guard against empty state
     if (!grid.length || Object.keys(courses).length === 0) return;
 
     const courseKeys = Object.keys(courses).sort();

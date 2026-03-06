@@ -1,8 +1,10 @@
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+"use client";
+
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { useAtomValue } from "jotai";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
+import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect } from "react";
 
 interface DispatchScrollToCourseArgs {
@@ -25,7 +27,7 @@ export const dispatchScrollToCourse = (args: DispatchScrollToCourseArgs) => {
 
 export const useScrollToCourseFeedback = () => {
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const { showSemester } = useScheduleMutators();
+  const showSemester = useSetAtom(filterAtoms.semesterAtom);
 
   useEffect(() => {
     const handleFeedback = (event: Event) => {
@@ -38,7 +40,7 @@ export const useScrollToCourseFeedback = () => {
         occasion.semester,
       );
 
-      showSemester({ semester: relativeSemester + 1 });
+      showSemester(relativeSemester + 1);
 
       setTimeout(() => {
         const elements = document.querySelectorAll(

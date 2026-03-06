@@ -32,6 +32,7 @@
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "copy-to-clipboard": "^3.3.3",
     "dotenv": "^17.3.1",
     "framer-motion": "^12.23.24",
     "immer": "^10.2.0",
