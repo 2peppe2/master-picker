@@ -150,10 +150,26 @@ async function seedCoursesData(program: string, id: number) {
         ]
       : [];
 
-    for (const m of masterPrograms) {
-      await seedMaster(m, program);
-      await seedMasterCourse(m, c, id, program);
+    if (masterPrograms.length) {
+      await prisma.master.createMany({
+        data: masterPrograms.map((master) => ({
+          master,
+          masterProgram: program,
+        })),
+        skipDuplicates: true,
+      });
+
+      await prisma.courseMaster.createMany({
+        data: masterPrograms.map((master) => ({
+          master,
+          masterProgram: program,
+          courseCode: c.code,
+          programCourseID: id,
+        })),
+        skipDuplicates: true,
+      });
     }
+
     for (const occasion of c.occasions) {
       await seedOccasion(occasion, c, id, program);
     }
@@ -206,31 +222,6 @@ async function seedOccasion(
       });
     }
   }
-}
-
-async function seedMasterCourse(
-  m: string,
-  c: Course,
-  id: number,
-  program: string,
-) {
-  await prisma.courseMaster.upsert({
-    where: {
-      courseMasterId: {
-        master: m,
-        masterProgram: program,
-        courseCode: c.code,
-        programCourseID: id,
-      },
-    },
-    update: {},
-    create: {
-      master: m,
-      masterProgram: program,
-      courseCode: c.code,
-      programCourseID: id,
-    },
-  });
 }
 
 async function seedMaster(m: string, program: string) {
