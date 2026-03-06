@@ -3,15 +3,20 @@ This applications sets out to help students at Linköping University (LiU) choos
 
 ![Master Picker screenshot](/screenshot.png)
 
+
+
 > **⚠️ Warning, Software under development**
 >
 >- Currently the application is under active development. Features may be incomplete or subject to change. Please report any issues or feature requests on the GitHub repository.
 >- The application is not yet optimized for mobile devices.
 >- The application currently only supports the 
-U-program at Linköping University.
+U-program, D-program and the IT-program at Linköping University.
+
+## License
+All rights reserved. Public for viewing only. No reuse without permission.
 
 ## Visit the Live Site
-Currently the website is not hosted live. Please run it locally by following the instructions below.
+Currently the website is hosted live at https://www.masterpicker.se/. But if you want to run it locally pleasre run the instructions below.
 
 ## Run Locally
 Clone the project
@@ -33,6 +38,46 @@ yarn install
 pnpm install
 # or
 bun install
+```
+
+Set up the database
+
+1. Create a `.env` file in the root directory with the following content:
+```env
+# Database Configuration
+DB_USER=postgres
+DB_PASSWORD=your_secure_password_here
+DB_NAME=masterpicker
+
+# Prisma Connection String
+DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/masterpicker?schema=public
+```
+
+2. Start the PostgreSQL database using Docker:
+```bash
+docker-compose up -d
+```
+
+3. Run the database seed command to seed the database:
+```bash
+npm run seed
+# or
+yarn seed
+# or
+pnpm seed
+# or
+bun seed
+```
+
+4. Run database migrations:
+```bash
+npm run migrate
+# or
+yarn migrate
+# or
+pnpm migrate
+# or
+bun migrate
 ```
 
 Start the development server
