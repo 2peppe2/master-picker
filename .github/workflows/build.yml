@@ -4,6 +4,12 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  DB_USER: user_test
+  DB_PASSWORD: password_test
+  DB_NAME: db_test
+  DATABASE_URL: postgresql://user_test:password_test@localhost:5432/db_test
+
 jobs:
   npm-build:
     runs-on: ubuntu-latest
@@ -18,8 +24,28 @@ jobs:
           node-version: '20' 
           cache: 'npm'       
 
+      - name: Start Database
+        run: docker compose up -d postgres-db
+
       - name: Install dependencies
         run: npm ci
 
+      - name: Wait for Database to be ready
+        run: |
+          # This waits until the healthcheck defined in your docker-compose returns 'healthy'
+          attempt=0
+          until [ $(docker inspect --format='{{.State.Health.Status}}' local_postgres) == "healthy" ] || [ $attempt -gt 15 ]; do
+            echo "Waiting for Postgres..."
+            sleep 2
+            attempt=$((attempt+1))
+          done
+
+      - name: Run Migrations
+        run: npm run migrate
+
       - name: Build project
         run: npm run build
+
+      - name: Stop Database
+        if: always()
+        run: docker compose down
