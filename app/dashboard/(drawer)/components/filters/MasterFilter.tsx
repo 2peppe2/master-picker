@@ -1,5 +1,6 @@
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { MasterBadge } from "@/components/MasterBadge";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { mastersAtom } from "@/app/atoms/mastersAtom";
 import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
@@ -19,12 +20,9 @@ interface Option {
 }
 
 const MasterFilter: FC = () => {
-  const {
-    atoms: { masterAtom },
-    mutators: { selectMaster },
-  } = useFilterStore();
-  const master = useAtomValue(masterAtom);
+  const master = useAtomValue(filterAtoms.masterAtom);
   const masters = useAtomValue(mastersAtom);
+  const { selectMaster } = useFilterMutators();
 
   const options = useMemo<Option[]>(
     () =>

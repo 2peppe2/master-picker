@@ -48,7 +48,7 @@ const DialogTimeChart = ({ scheduledHours, selfStudyHours } : DialogTimeChartPro
                     endAngle={360 + 90}
                     innerRadius={53}
                     outerRadius={75}
-                    paddingAngle={3}
+                    paddingAngle={data.find(data => data.hours == 0) ? 0 : 3}
                     isAnimationActive
                     animationBegin={120}
                     animationDuration={700}

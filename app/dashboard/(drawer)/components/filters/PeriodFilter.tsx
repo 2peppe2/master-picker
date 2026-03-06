@@ -1,4 +1,7 @@
-import { useFilterStore } from "@/app/atoms/filter/filterStore";
+"use client";
+
+import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { FC, Fragment, useMemo } from "react";
@@ -6,11 +9,8 @@ import { useAtomValue } from "jotai";
 import { range } from "lodash";
 
 const PeriodFilter: FC = () => {
-  const {
-    atoms: { periodsAtom },
-    mutators: { selectPeriods },
-  } = useFilterStore();
-  const periods = useAtomValue(periodsAtom);
+  const periods = useAtomValue(filterAtoms.periodsAtom);
+  const { selectPeriods } = useFilterMutators();
 
   const options = useMemo(
     () =>

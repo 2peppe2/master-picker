@@ -1,0 +1,5555 @@
+[
+  {
+    "code": "TAMS32",
+    "name": "Stochastic Processes",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS32",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TAMS42",
+    "name": "Probability and Statistics, First Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS42/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS43",
+    "name": "Probability Theory and Bayesian Networks",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS43",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TANA15",
+    "name": "Numerical Linear Algebra",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TANA15",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TANA23",
+    "name": "Mathematical algorithms and models",
+    "credits": 8,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TANA23/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP04",
+    "name": "Mathematical Optimization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP04",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TAOP63",
+    "name": "Optimization of complex systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP63",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TAOP89",
+    "name": "Optimisation for IT",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP89/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA24",
+    "name": "Linear Algebra",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA24/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA40",
+    "name": "Perspectives on Mathematics",
+    "credits": 1,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA40/ht-2025",
+    "ecv": "V",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      },
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA41",
+    "name": "Calculus in One Variable 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA41/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TATA53",
+    "name": "Linear Algebra, Honours Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA53",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA55",
+    "name": "Abstract Algebra",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA55",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA64",
+    "name": "Graph Theory",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA64",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DPAL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA91",
+    "name": "Calculus in One and Several Variables",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA91/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TATB04",
+    "name": "Introductory Course in Calculus",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB04/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TBME03",
+    "name": "Biochemistry and Cell Biology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBME03",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBME04",
+    "name": "Anatomy and Physiology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBME04",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI02",
+    "name": "Medical Image Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI02",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TBMI04",
+    "name": "eHealth: Aims and Applications",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI04",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI19",
+    "name": "Medical Information Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI19",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM",
+          "DMEI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI26",
+    "name": "Neural Networks and Learning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI26",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI",
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI",
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI28",
+    "name": "eHealth Project",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI28",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DMEI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI32",
+    "name": "eHealth: from Idea to Impact",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI32",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT09",
+    "name": "Physiological Pressures and Flows",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT09",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TBMT26",
+    "name": "Technology in Intensive Care and Surgery",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT26",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT32",
+    "name": "Perspectives on Biomedical Engineering",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT32",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT59",
+    "name": "Medical image formation",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT59",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDC17",
+    "name": "Artificial Intelligence",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC17",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI",
+      "DPAL",
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI",
+          "DPAL",
+          "DSPE"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC34",
+    "name": "Technical, Economic and Societal Evaluation of IT-products",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC34",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND",
+          "DSMU"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC75",
+    "name": "Discrete Structures",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC75/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC77",
+    "name": "Object Oriented Programming",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC77/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC90",
+    "name": "Software Security",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC90",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD04",
+    "name": "Software Testing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD04",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSMU"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD07",
+    "name": "Real Time Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD07",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD08",
+    "name": "Logic Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD08",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD14",
+    "name": "Formal Languages and Automata Theory",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD14",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD20",
+    "name": "Design and Analysis of Algorithms",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD20",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD23",
+    "name": "Design and Programming of Computer Games",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD23",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD25",
+    "name": "Distributed Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD25",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD27",
+    "name": "Advanced Web Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD27",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD37",
+    "name": "Database Technology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD37/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD38",
+    "name": "Advanced Programming in C++",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD38",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DDAS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSMU"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD39",
+    "name": "Perspectives on Information Technology",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD39/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD41",
+    "name": "Data Mining - Clustering and Association Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD41",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD43",
+    "name": "Advanced Data Models and Databases",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD43",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DDAS",
+          "DMEI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD48",
+    "name": "Automated Planning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD48",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD49",
+    "name": "Programming in C# and .NET Framework",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD49",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD50",
+    "name": "Green Computing",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD50",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD53",
+    "name": "Advanced Interaction Design",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD53",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI",
+      "DSMU",
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI",
+          "DSPE"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSMU"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD55",
+    "name": "Compilers and Interpreters",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD55",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD56",
+    "name": "Multicore and GPU Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD56",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DPAL"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD57",
+    "name": "Physical Interaction and Game Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD57",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD89",
+    "name": "Scientific Method",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD89",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDD95",
+    "name": "Algorithmic Problem Solving",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD95",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DAIM",
+          "DPAL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD97",
+    "name": "Web Programming",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD97",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE01",
+    "name": "Machine Learning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE01",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE02",
+    "name": "Software Entrepreneurship",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE02",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND",
+      "DSMU",
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND",
+          "DSMU",
+          "DSPE"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDE05",
+    "name": "AI Robotics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE05",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DAIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE07",
+    "name": "Bayesian Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE07",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE09",
+    "name": "Natural Language Processing",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE09",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE13",
+    "name": "Multi Agent Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE13",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE15",
+    "name": "Advanced Machine Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE15",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE16",
+    "name": "Text Mining",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE16",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE18",
+    "name": "Programming C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE18",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE19",
+    "name": "Advanced Project Course - AI and Machine Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE19",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE20",
+    "name": "Advanced Project Course - Game, App and Web Development",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE20",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE21",
+    "name": "Advanced Project Course: Secure Distributed and Embedded Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE21",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DDAS",
+          "DSEC"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE22",
+    "name": "Data Structures and Algorithms",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE22/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDE31",
+    "name": "Big Data Analytics",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE31",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DMEI"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DMEI"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE34",
+    "name": "Software Verification",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE34",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL",
+          "DSMU"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE41",
+    "name": "Software Architectures",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE41",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSMU"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE43",
+    "name": "Design and Development of Interactive Systems",
+    "credits": 12,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE43/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE45",
+    "name": "Software Design and Construction",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE45",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSMU"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDE47",
+    "name": "Concurrent Programming and Operating Systems",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE47/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDE48",
+    "name": "Mobile Networks",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE48/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDDE50",
+    "name": "Megagame - Design for Sustainable Development in the light of Climate Change",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE50",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE51",
+    "name": "Methods and Tools for Large Distributed Projects",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE51",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSMU"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE52",
+    "name": "Programming Project with Open Source Code",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE52",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DPAL",
+      "DSMU"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DPAL",
+          "DSMU"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE53",
+    "name": "Secure Systems: Project Semester including Bachelor Thesis Project",
+    "credits": 26,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE53",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3,
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE58",
+    "name": "Wireless Connectivity",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE58",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE61",
+    "name": "Ethical hacking",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE61",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSEC"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE62",
+    "name": "Information Security: Privacy, System and Network Security",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE62",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DMEI",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DMEI",
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE63",
+    "name": "Advanced Project Course: Information Security",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE63",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSEC"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE64",
+    "name": "Sports Analytics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE64",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE65",
+    "name": "Programming of Parallel Computers - Methods and Tools",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE65",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE66",
+    "name": "Compiler Construction",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE66",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE70",
+    "name": "Deep Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE70",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE74",
+    "name": "Humans in Cybersecurity",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE74",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE78",
+    "name": "Reinforcement Learning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE78",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI19",
+    "name": "Management Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI19",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TDEI74",
+    "name": "Business Analytics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI74",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDTS07",
+    "name": "System Design and Methodology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDTS07",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDTS08",
+    "name": "Advanced Computer Architecture",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDTS08",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDTS11",
+    "name": "Computer Networks and Internet Protocols",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDTS11/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TEAE01",
+    "name": "Industrial Economics, Basic Course",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE01",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TEAE13",
+    "name": "Civil and Commercial Law",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE13",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TEAE20",
+    "name": "Intellectual Property Rights",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE20",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TEAE21",
+    "name": "Cybersecurity Law",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE21",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIG01",
+    "name": "Organizing for Cybersecurity",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIG01",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM11",
+    "name": "Industrial Marketing",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM11",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM13",
+    "name": "Intercultural Communication",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM13",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TEIO06",
+    "name": "Innovative Entrepreneurship",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO06",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO13",
+    "name": "Leadership and Organizational Change",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO13",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO32",
+    "name": "Project Management and Organization",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO32",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DIND"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO90",
+    "name": "Innovation Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO90",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DIND"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DIND"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO97",
+    "name": "Leadership",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO97",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TFYA87",
+    "name": "Physics and Mechanics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA87",
+    "ecv": "C/E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TFYB12",
+    "name": "Physics for information technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYB12",
+    "ecv": "C/E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU49",
+    "name": "History of Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU49",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU79",
+    "name": "Law for IT and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU79/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU82",
+    "name": "Diversity and Gender in Application Development",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU82/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU91",
+    "name": "Oral and Written Communication",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU91",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU95",
+    "name": "Philosophy of Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU95",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TGTU96",
+    "name": "Sustainable study situation",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU96/vt-2025",
+    "ecv": "V",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU99",
+    "name": "Ethical Issues in AI",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU99",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "THEN18",
+    "name": "English",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/THEN18",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINF01",
+    "name": "IT for sustainability",
+    "credits": 8,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINF01/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT01",
+    "name": "Introduction to Intercultural Competence",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT01",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ15",
+    "name": "Environmental Management Strategies",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ15",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TKMJ24",
+    "name": "Environmental Engineering",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ24",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TMKA11",
+    "name": "Model-based System-of-Systems Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA11",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TNA010",
+    "name": "Matrix Methods for AI",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA010",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNCG15",
+    "name": "Advanced Global Illumination and Rendering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNCG15",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM067",
+    "name": "Scientific Visualization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM067",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TNM079",
+    "name": "Modelling and Animation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM079",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM111",
+    "name": "Information Visualization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM111",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TNM114",
+    "name": "Artificial Intelligence for Interactive Media, Project",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM114",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TNM116",
+    "name": "eXtended Reality (XR) - Principles and Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM116",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB06",
+    "name": "Multidimensional Signal Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB06",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DAIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB08",
+    "name": "Digital Image Processing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB08",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB19",
+    "name": "Machine Learning for Computer Vision",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB19",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB21",
+    "name": "Computational Photography",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB21",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSBB22",
+    "name": "Project Course in Images and Graphics",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB22",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB32",
+    "name": "Linear Systems",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB32/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB33",
+    "name": "3D Computer Vision",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB33",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSBB34",
+    "name": "Computer Vision for Video Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB34",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSBK03",
+    "name": "Advanced Game Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBK03",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "DSPE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBK07",
+    "name": "Computer Graphics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBK07",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "DSPE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBK38",
+    "name": "Image and Audio Compression",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBK38",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSDT14",
+    "name": "Signal Theory",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSDT14",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSEA77",
+    "name": "Computer Hardware and Architecture",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA77/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSFS02",
+    "name": "Vehicle Dynamics and Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS02",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSFS12",
+    "name": "Autonomous Vehicles - Planning, Control, and Learning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS12",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIN01",
+    "name": "Information Networks",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIN01",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSIN02",
+    "name": "Internetworking",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIN02",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DSPE"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DSPE"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIT03",
+    "name": "Cryptology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIT03",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DDAS",
+      "DPAL",
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DPAL",
+          "DSEC"
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIT11",
+    "name": "Quantum Algorithms and Quantum Information",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIT11",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSIT14",
+    "name": "Digital Forensics and Incident Response",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIT14",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DSEC"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DSEC"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSKS33",
+    "name": "Complex Networks and Big Data",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSKS33",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM",
+      "DDAS",
+      "DPAL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM",
+          "DDAS",
+          "DPAL"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSKS37",
+    "name": "Engineering Computations in Python",
+    "credits": 2,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSKS37",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSRT07",
+    "name": "Industrial Control Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT07",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT08",
+    "name": "Optimal Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT08",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSRT09",
+    "name": "Control Theory",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT09",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSRT14",
+    "name": "Sensor Fusion",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT14",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT19",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT19/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  },
+  {
+    "code": "TSRT28",
+    "name": "Project Course in Automatic Control",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT28",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT92",
+    "name": "Modelling and Learning for Dynamical Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT92",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [
+      "DAIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": [
+          "DAIM"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSTE12",
+    "name": "Design of Digital Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSTE12",
+    "ecv": "E",
+    "program": [
+      "6CITE"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ],
+        "recommended_masters": []
+      }
+    ]
+  }
+]

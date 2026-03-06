@@ -4,13 +4,14 @@ enum Semester {
 }
 
 model CourseOccasion {
-  id Int @id @default(autoincrement())
-  year     Int
-  semester Semester
-  courseCode String
-  
-  periods CourseOccasionPeriod[]
-  recommendedMaster Master[]
-  
-  Course     Course @relation(fields: [courseCode], references: [code])
+  id              Int      @id @default(autoincrement())
+  year            Int
+  semester        Semester
+  courseCode      String
+  programCourseID Int
+
+  periods           CourseOccasionPeriod[]
+  recommendedMasters CourseOccasionRecommendedMaster[]
+
+  Course Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)
 }

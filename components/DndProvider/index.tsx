@@ -1,13 +1,12 @@
 "use client";
 
 import { ReactNode, useCallback, useState } from "react";
+import { PointerSensor, TouchSensor } from "./utils";
 import {
   DndContext,
   DragOverlay,
   useSensor,
   useSensors,
-  TouchSensor,
-  PointerSensor,
   KeyboardSensor,
   DragStartEvent,
   DragEndEvent,
@@ -45,7 +44,9 @@ export const DndProvider = <T,>({
     useSensor(TouchSensor, {
       activationConstraint: { delay: 250, tolerance: 5 },
     }),
-    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 6 },
+    }),
     useSensor(KeyboardSensor),
   );
 

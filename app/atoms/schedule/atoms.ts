@@ -1,13 +1,10 @@
 import { userPreferencesAtom } from "../UserPreferences";
 import { Course } from "@/app/dashboard/page";
-import { atomWithImmer } from "jotai-immer";
+import { atomWithReset } from "jotai/utils";
 import { ScheduleGrid } from "./types";
 import { atom } from "jotai";
 
-//TODO: Make a help function to see if it is a block that is from wildstart
 export const WILDCARD_BLOCK_START = 4;
-
-
 
 export const scheduleAtoms = {
   /**
@@ -22,29 +19,11 @@ export const scheduleAtoms = {
    * // Or update directly (not recommended - use mutators instead)
    * const setSchedules = useSetAtom(schedulesAtom);
    */
-  schedulesAtom: atomWithImmer<ScheduleGrid>(
+  schedulesAtom: atomWithReset<ScheduleGrid>(
     Array.from({ length: 10 }, () =>
       Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null)),
     ),
   ),
-
-  /**
-   * Set of semester indices that should be visible in the UI.
-   * Defaults to showing semesters 7, 8, and 9.
-   *
-   * @example
-   * // Read visibility state (no re-render on schedule changes!)
-   * const shownSemesters = useAtomValue(shownSemestersAtom);
-   *
-   * // Update visibility
-   * const setShownSemesters = useSetAtom(shownSemestersAtom);
-   * setShownSemesters(prev => {
-   *   const next = new Set(prev);
-   *   next.add(5);
-   *   return next;
-   * });
-   */
-  shownSemestersAtom: atom<Set<number>>(new Set([7])),
 
   /**
    * Currently dragged course during drag-and-drop operations.
@@ -99,7 +78,7 @@ export const scheduleAtoms = {
 
     for (
       let semester = masterPeriod.start - 1;
-      semester < masterPeriod.end - 1;
+      semester < masterPeriod.end;
       ++semester
     ) {
       for (const period of schedules[semester]) {

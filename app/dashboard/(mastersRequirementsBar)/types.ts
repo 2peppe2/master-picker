@@ -1,9 +1,9 @@
-import { RequirementsUnion } from "../page";
+import { RequirementUnion } from "../page";
 
 export interface ProcessedMaster {
   name: string;
   master: string;
   progress: number;
-  fulfilled: RequirementsUnion[];
-  requirements: RequirementsUnion[];
+  fulfilled: RequirementUnion[];
+  requirements: RequirementUnion[];
 }

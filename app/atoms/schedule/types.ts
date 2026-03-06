@@ -24,6 +24,15 @@ export interface RemoveCourseArgs {
   courseCode: string;
 }
 
+interface CourseEntry {
+  course: Course;
+  occasion: CourseOccasion;
+}
+
+export interface AddInitialCoursesArgs {
+  entries: CourseEntry[];
+}
+
 export interface GetSlotCourseArgs {
   semester: number;
   period: number;
@@ -48,14 +57,6 @@ export interface AddBlockToSemesterArgs {
 }
 
 export interface DeleteBlockFromSemesterArgs {
-  semester: number;
-}
-
-export interface ToggleShownSemesterArgs {
-  semester: number;
-}
-
-export interface ShowSemesterArgs {
   semester: number;
 }
 
