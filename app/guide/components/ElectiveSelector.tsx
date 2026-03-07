@@ -72,13 +72,17 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
                 <Button
                   size="icon"
                   className={`cursor-pointer h-10 w-10 rounded-full transition-colors ${
-                    isFulfilled
-                      ? "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700"
-                      : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-700"
+                    !isOpen
+                      ? "bg-red-500/10 hover:bg-red-500/20 text-red-700"
+                      : isFulfilled
+                        ? "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700"
+                        : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-700"
                   }`}
                   disabled={!isFulfilled && isOpen}
                 >
-                  {isFulfilled ? (
+                  {!isOpen ? (
+                    <X className="h-4 w-4" />
+                  ) : isFulfilled ? (
                     <Check className="h-4 w-4" />
                   ) : (
                     <X className="h-4 w-4" />
