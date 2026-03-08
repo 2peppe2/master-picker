@@ -10,7 +10,7 @@ model CourseOccasion {
   courseCode      String
   programCourseID Int
 
-  periods           CourseOccasionPeriod[]
+  periods            CourseOccasionPeriod[]
   recommendedMasters CourseOccasionRecommendedMaster[]
 
   Course Course @relation(fields: [courseCode, programCourseID], references: [code, programCourseID], onDelete: Cascade)

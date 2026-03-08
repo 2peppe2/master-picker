@@ -37,9 +37,6 @@ function mapReqTypeToCreditType(t: string): CreditType | null {
     CREDITS_PROFILE_TOTAL: CreditType.CREDITS_PROFILE_TOTAL,
     CREDITS_MASTER_TOTAL: CreditType.CREDITS_MASTER_TOTAL,
     CREDITS_TOTAL: CreditType.CREDITS_TOTAL,
-    // Legacy support for older JSON strings
-    "A-level": CreditType.CREDITS_ADVANCED_MASTER,
-    "G-level": CreditType.CREDITS_TOTAL,
     Total: CreditType.CREDITS_MASTER_TOTAL,
   };
   return mapping[t] || null;
@@ -300,28 +297,46 @@ async function seedMasterRequirementsData(program: string, id: number) {
   const masterRequirementsPath = path.resolve(
     `./data/${program}_${id}_master_requirements.json`,
   );
-  if (!fs.existsSync(masterRequirementsPath)) return;
 
-  const masterRequirements = JSON.parse(
+  if (!fs.existsSync(masterRequirementsPath)) {
+    console.warn(`File not found: ${masterRequirementsPath}`);
+    return;
+  }
+
+  const fileData = JSON.parse(
     fs.readFileSync(masterRequirementsPath, "utf8"),
   ) as Record<string, RequirementUnion[]>;
 
-  for (const [master, requirements] of Object.entries(masterRequirements)) {
-    await seedMaster(master, program);
+  const commonBase = fileData["COMMON_BASE"] || [];
+
+  for (const [masterKey, specificReqs] of Object.entries(fileData)) {
+    // Skip metadata and the base template itself
+    if (masterKey === "$schema" || masterKey === "COMMON_BASE") continue;
+
+    const requirements = [
+      ...commonBase,
+      ...(specificReqs as RequirementUnion[]),
+    ];
+
+    console.log(`Processing profile: ${masterKey} for ${program}`);
+
+    await seedMaster(masterKey, program);
 
     const requirementRow = await prisma.requirement.create({
-      data: { masterProgram: master, program },
+      data: {
+        masterProgram: masterKey,
+        program,
+      },
     });
 
     for (const req of requirements) {
-      // Logic for Course Selections (Mandatory or Pick X of Y)
       if (req.type === "COURSE_SELECTION") {
         if (!req.courses || !req.courses.length) continue;
 
         const courseRequirement = await prisma.coursesRequirement.create({
           data: {
             type: CoursesType.COURSE_SELECTION,
-            minCount: req.minCount ?? 1, // Supports mandatory (1) or groups (e.g., 2)
+            minCount: req.minCount ?? 1,
             requirementId: requirementRow.id,
           },
         });
@@ -346,7 +361,18 @@ async function seedMasterRequirementsData(program: string, id: number) {
         continue;
       }
 
-      // Logic for Credit-based rules
+      if (req.type === "CREDITS_MAIN_FIELD_TOTAL") {
+        await prisma.mainFieldRequirement.create({
+          data: {
+            type: "CREDITS_MAIN_FIELD_TOTAL",
+            requirementId: requirementRow.id,
+            credits: Number(req.credits),
+            fields: req.fields as string[],
+          },
+        });
+        continue;
+      }
+
       const creditType = mapReqTypeToCreditType(req.type);
       if (creditType) {
         await prisma.creditRequirement.create({
@@ -359,7 +385,8 @@ async function seedMasterRequirementsData(program: string, id: number) {
       }
     }
   }
-  console.log(`Seeded requirements for ${program} - ${id}`);
+
+  console.log(`Successfully seeded requirements for ${program} (ID: ${id})`);
 }
 
 async function seedMastersData(program: string, id: number) {

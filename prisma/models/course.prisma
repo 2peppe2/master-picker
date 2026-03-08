@@ -12,7 +12,7 @@ model Course {
   selfStudyHours    Int
   updatedAt         DateTime @default(now())
   department        String
-  mainField         String[] 
+  mainField         String[]
 
   // Relationship mappings.
   Examination         Examination[]

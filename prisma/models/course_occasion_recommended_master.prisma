@@ -4,7 +4,7 @@ model CourseOccasionRecommendedMaster {
   masterProgram    String
 
   courseOccasion CourseOccasion @relation(fields: [courseOccasionId], references: [id], onDelete: Cascade)
-  Master          Master         @relation(fields: [master, masterProgram], references: [master, masterProgram], onDelete: Cascade)
+  Master         Master         @relation(fields: [master, masterProgram], references: [master, masterProgram], onDelete: Cascade)
 
   @@id([courseOccasionId, master, masterProgram])
   @@index([master, masterProgram])

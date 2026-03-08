@@ -62,13 +62,20 @@ const getProgressForRequirement = ({
   requirement: req,
 }: GetProgressForRequirementArgs): number => {
   switch (req.type) {
+    case "CREDITS_MAIN_FIELD_TOTAL": {
+      const current = masterCourses
+        .filter((c) => {
+          return c.mainField?.some((field) => req.fields.includes(field));
+        })
+        .reduce((sum, c) => sum + (c.credits || 0), 0);
+      return calculateMetricProgress(current, req.credits);
+    }
+
     case "COURSE_SELECTION": {
       const selectedCodes = masterCourses.map((c) => c.code);
-
       const count = req.courses.filter((code) =>
         selectedCodes.includes(code.courseCode),
       ).length;
-
       return calculateMetricProgress(count, req.minCount);
     }
     case "CREDITS_ADVANCED_MASTER": {

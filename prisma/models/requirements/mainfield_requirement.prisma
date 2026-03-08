@@ -1,0 +1,13 @@
+model MainFieldRequirement {
+  id      Int      @id @default(autoincrement())
+  credits Int
+  type    MainFieldType
+  fields  String[]
+
+  requirementId Int
+  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
+}
+
+enum MainFieldType {
+  CREDITS_MAIN_FIELD_TOTAL // Total credits in mainfield
+}

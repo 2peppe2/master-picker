@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MasterRequirements",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" }
+  },
+  "additionalProperties": {
+    "type": "array",
+    "items": { "$ref": "#/$defs/requirement" }
+  },
+  "$defs": {
+    "requirement": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": ["type", "credits"],
+          "properties": {
+            "type": {
+              "enum": [
+                "CREDITS_TOTAL",
+                "CREDITS_MASTER_TOTAL",
+                "CREDITS_PROFILE_TOTAL",
+                "CREDITS_ADVANCED_PROFILE",
+                "CREDITS_ADVANCED_MASTER"
+              ]
+            },
+            "credits": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["type", "credits", "fields"],
+          "properties": {
+            "type": { "const": "CREDITS_MAIN_FIELD_TOTAL" },
+            "credits": { "type": "integer", "minimum": 0 },
+            "fields": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["type", "minCount", "courses"],
+          "properties": {
+            "type": { "const": "COURSE_SELECTION" },
+            "minCount": { "type": "integer", "minimum": 1 },
+            "courses": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^[A-Z]{4}\\d{2}$" },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

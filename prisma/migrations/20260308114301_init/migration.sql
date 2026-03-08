@@ -10,6 +10,9 @@ CREATE TYPE "CoursesType" AS ENUM ('COURSE_SELECTION');
 -- CreateEnum
 CREATE TYPE "CreditType" AS ENUM ('CREDITS_ADVANCED_MASTER', 'CREDITS_ADVANCED_PROFILE', 'CREDITS_PROFILE_TOTAL', 'CREDITS_MASTER_TOTAL', 'CREDITS_TOTAL');
 
+-- CreateEnum
+CREATE TYPE "MainFieldType" AS ENUM ('CREDITS_MAIN_FIELD_TOTAL');
+
 -- CreateTable
 CREATE TABLE "Course" (
     "code" TEXT NOT NULL,
@@ -24,6 +27,8 @@ CREATE TABLE "Course" (
     "scheduledHours" INTEGER NOT NULL,
     "selfStudyHours" INTEGER NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "department" TEXT NOT NULL,
+    "mainField" TEXT[],
 
     CONSTRAINT "Course_pkey" PRIMARY KEY ("code","programCourseID")
 );
@@ -35,7 +40,7 @@ CREATE TABLE "CourseMaster" (
     "courseCode" TEXT NOT NULL,
     "programCourseID" INTEGER NOT NULL,
 
-    CONSTRAINT "CourseMaster_pkey" PRIMARY KEY ("master","masterProgram","courseCode")
+    CONSTRAINT "CourseMaster_pkey" PRIMARY KEY ("master","masterProgram","courseCode","programCourseID")
 );
 
 -- CreateTable
@@ -147,6 +152,17 @@ CREATE TABLE "CreditRequirement" (
 );
 
 -- CreateTable
+CREATE TABLE "MainFieldRequirement" (
+    "id" SERIAL NOT NULL,
+    "credits" INTEGER NOT NULL,
+    "type" "MainFieldType" NOT NULL,
+    "fields" TEXT[],
+    "requirementId" INTEGER NOT NULL,
+
+    CONSTRAINT "MainFieldRequirement_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Requirement" (
     "id" SERIAL NOT NULL,
     "masterProgram" TEXT NOT NULL,
@@ -208,6 +224,9 @@ ALTER TABLE "CoursesRequirement" ADD CONSTRAINT "CoursesRequirement_requirementI
 
 -- AddForeignKey
 ALTER TABLE "CreditRequirement" ADD CONSTRAINT "CreditRequirement_requirementId_fkey" FOREIGN KEY ("requirementId") REFERENCES "Requirement"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "MainFieldRequirement" ADD CONSTRAINT "MainFieldRequirement_requirementId_fkey" FOREIGN KEY ("requirementId") REFERENCES "Requirement"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Requirement" ADD CONSTRAINT "Requirement_masterProgram_program_fkey" FOREIGN KEY ("masterProgram", "program") REFERENCES "Master"("master", "masterProgram") ON DELETE CASCADE ON UPDATE CASCADE;

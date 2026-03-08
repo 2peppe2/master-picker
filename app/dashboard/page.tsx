@@ -34,8 +34,6 @@ export default async function MainPage({
     ...courseWithDetailsArgs,
   });
 
-  
-
   const masters = await prisma.master.findMany({
     select: {
       master: true,
@@ -78,7 +76,7 @@ export type Master = Prisma.MasterGetPayload<{
   };
 }>;
 
-export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
+export type CourseRequirement = Prisma.CoursesRequirementGetPayload<{
   select: {
     type: true;
     courses: true;
@@ -86,11 +84,22 @@ export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
   };
 }>;
 
-export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
+export type CreditsRequirement = Prisma.CreditRequirementGetPayload<{
   select: {
     type: true;
     credits: true;
   };
 }>;
 
-export type RequirementUnion = CourseRequirements | CreditsRequirements;
+export type MainFieldRequirement = Prisma.MainFieldRequirementGetPayload<{
+  select: {
+    type: true;
+    credits: true;
+    fields: true;
+  };
+}>;
+
+export type RequirementUnion =
+  | CourseRequirement
+  | CreditsRequirement
+  | MainFieldRequirement;

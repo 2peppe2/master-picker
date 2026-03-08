@@ -81,12 +81,19 @@ interface CourseSelection {
   courses: { courseCode: string }[];
 }
 
+interface CreditsMainFieldTotal {
+  type: "CREDITS_MAIN_FIELD_TOTAL"; // Totalt inom huvudområdet
+  credits: number;
+  fields: string[];
+}
+
 type RequirementUnion =
   | CreditsAdvancedMaster
   | CreditsAdvancedProfile
   | CreditsProfileTotal
   | CreditsMasterTotal
-  | CourseSelection;
+  | CourseSelection
+  | CreditsMainFieldTotal;
 
 export type {
   Program,
