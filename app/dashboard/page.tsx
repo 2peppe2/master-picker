@@ -89,7 +89,9 @@ export type CreditsRequirement = Prisma.CreditRequirementGetPayload<{
     type: true;
     credits: true;
   };
-}>;
+}> & {
+  current?: number;
+};
 
 export type MainFieldRequirement = Prisma.MainFieldRequirementGetPayload<{
   select: {
@@ -97,7 +99,9 @@ export type MainFieldRequirement = Prisma.MainFieldRequirementGetPayload<{
     credits: true;
     fields: true;
   };
-}>;
+}> & {
+  fieldProgress?: Record<string, number>;
+};
 
 export type RequirementUnion =
   | CourseRequirement

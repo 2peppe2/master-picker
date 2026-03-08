@@ -154,14 +154,21 @@ const RequirementRowContent: FC<RowContentProps> = ({ requirement }) => {
       return <CourseSelectionRow requirement={requirement} />;
 
     case "CREDITS_MAIN_FIELD_TOTAL":
-      return <MainFieldRow requirement={requirement} />;
+      return (
+        <MainFieldRow
+          requirement={requirement}
+          fieldProgress={requirement.fieldProgress}
+        />
+      );
 
     case "CREDITS_TOTAL":
     case "CREDITS_MASTER_TOTAL":
     case "CREDITS_PROFILE_TOTAL":
     case "CREDITS_ADVANCED_PROFILE":
     case "CREDITS_ADVANCED_MASTER":
-      return <CreditRow requirement={requirement} />;
+      return (
+        <CreditRow requirement={requirement} current={requirement.current} />
+      );
 
     default:
       throw new Error(

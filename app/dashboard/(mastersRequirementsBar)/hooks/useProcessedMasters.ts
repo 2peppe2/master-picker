@@ -27,20 +27,32 @@ export const useProcessedMasters = ({ program }: UseProcessedMastersArgs) => {
 
     return mastersWithRequirements
       .map((master) => {
-        const requirements = master.requirements.flatMap(
+        const rawRequirements = master.requirements.flatMap(
           (req) => req.requirements,
         );
+
+        const evaluation = evaluateMasterProgress(
+          master.master,
+          rawRequirements,
+        );
+
         return {
-          requirements,
           master: master.master,
           name: master.name ?? "Unknown master",
-          ...evaluateMasterProgress(master.master, requirements),
+          requirements: evaluation.allRequirementsWithProgress,
+          fulfilled: evaluation.fulfilled,
+          progress: evaluation.progress,
         };
       })
       .sort((a, b) => {
+        // Prioritize completed masters (100%)
         if (a.progress === 100 && b.progress !== 100) return -1;
         if (b.progress === 100 && a.progress !== 100) return 1;
+
+        // Sort by highest progress percentage
         if (b.progress !== a.progress) return b.progress - a.progress;
+
+        // Alphabetical fallback
         return a.master.localeCompare(b.master);
       }) satisfies ProcessedMaster[];
   }, [mastersWithRequirements, evaluateMasterProgress]);
