@@ -17,6 +17,7 @@ const MainFieldRow: FC<MainFieldRowProps> = ({ requirement }) => {
 
   return (
     <span className="leading-snug">
+      At least{" "}
       <b className="text-foreground font-semibold">{requirement.credits} HP</b>{" "}
       within the fields:{" "}
       <i className="text-muted-foreground not-italic font-medium">

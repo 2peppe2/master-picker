@@ -92,7 +92,7 @@ const Section: FC<SectionProps> = ({ title, icon, items, fulfilled }) => {
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-        <span className="p-1 rounded bg-secondary/50 text-primary">{icon}</span>
+        <span className="p-1 rounded bg-secondary text-primary">{icon}</span>
         {title}
       </div>
       <div className="grid gap-2 ml-1">
@@ -119,7 +119,7 @@ const RowRenderer: FC<RowRendererProps> = ({ requirement, isFulfilled }) => (
   <div
     className={cn(
       "flex items-start gap-3 text-[12px] transition-all",
-      isFulfilled ? "opacity-100" : "opacity-50",
+      isFulfilled ? "opacity-100" : "opacity-90",
     )}
   >
     <div className="mt-0.5 shrink-0">
