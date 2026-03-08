@@ -7,35 +7,35 @@ export const useFilterMutators = () => {
   const setExcludeSlotConflicts = useSetAtom(
     filterAtoms.excludeSlotConflictsAtom,
   );
-  const setSemester = useSetAtom(filterAtoms.semesterAtom);
+  const setSemesters = useSetAtom(filterAtoms.semestersAtom);
   const setPeriods = useSetAtom(filterAtoms.periodsAtom);
   const setBlocks = useSetAtom(filterAtoms.blocksAtom);
-  const setMaster = useSetAtom(filterAtoms.masterAtom);
+  const setMasters = useSetAtom(filterAtoms.mastersAtom);
   const setSearch = useSetAtom(filterAtoms.searchAtom);
 
   const resetFilter = useCallback(() => {
     setSearch(RESET);
-    setMaster(RESET);
+    setMasters(RESET);
     setBlocks(RESET);
     setPeriods(RESET);
-    setSemester(RESET);
+    setSemesters(RESET);
     setExcludeSlotConflicts(RESET);
   }, [
     setBlocks,
     setExcludeSlotConflicts,
-    setMaster,
+    setMasters,
     setPeriods,
     setSearch,
-    setSemester,
+    setSemesters,
   ]);
 
   return useMemo(
     () => ({
       resetFilter,
       filterByTerm: setSearch,
-      selectMaster: setMaster,
+      selectMasters: setMasters,
       selectBlocks: setBlocks,
-      selectSemester: setSemester,
+      selectSemesters: setSemesters,
       selectPeriods: setPeriods,
       excludeSlotConflicts: setExcludeSlotConflicts,
     }),
@@ -43,10 +43,10 @@ export const useFilterMutators = () => {
       resetFilter,
       setBlocks,
       setExcludeSlotConflicts,
-      setMaster,
+      setMasters,
       setPeriods,
       setSearch,
-      setSemester,
+      setSemesters,
     ],
   );
 };

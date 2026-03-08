@@ -32,6 +32,7 @@
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
     "copy-to-clipboard": "^3.3.3",
     "dotenv": "^17.3.1",
     "framer-motion": "^12.23.24",
@@ -53,7 +54,7 @@
     "react-use-measure": "^2.1.7",
     "reactflow": "^11.11.4",
     "recharts": "^2.15.4",
-    "tailwind-merge": "^3.3.1",
+    "tailwind-merge": "^3.5.0",
     "tailwind-variants": "^3.1.1",
     "tsx": "^4.21.0"
   },

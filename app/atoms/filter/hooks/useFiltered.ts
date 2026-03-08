@@ -1,9 +1,10 @@
+"use client";
+
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleGetters } from "../../schedule/hooks/useScheduleGetters";
 import { useCallback, useDeferredValue, useMemo } from "react";
 import { userPreferencesAtom } from "../../UserPreferences";
 import { Course } from "../../../dashboard/page";
-import { SemesterOption } from "../types";
 import { filterAtoms } from "../atoms";
 import { useAtomValue } from "jotai";
 
@@ -16,66 +17,74 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const { hasMatchingOccasion } = useScheduleGetters();
 
   const search = useAtomValue(filterAtoms.searchAtom);
-  const master = useAtomValue(filterAtoms.masterAtom);
+  const masters = useAtomValue(filterAtoms.mastersAtom);
   const blocks = useAtomValue(filterAtoms.blocksAtom);
   const periods = useAtomValue(filterAtoms.periodsAtom);
-  const semester = useAtomValue(filterAtoms.semesterAtom);
+  const semesters = useAtomValue(filterAtoms.semestersAtom);
 
-  const deferredFilters = useDeferredValue({
-    search,
-    master,
-    blocks,
-    periods,
-    semester,
-  });
+  const filterObject = useMemo(
+    () => ({
+      search,
+      masters,
+      blocks,
+      periods,
+      semesters,
+    }),
+    [search, masters, blocks, periods, semesters],
+  );
+
+  const deferredFilters = useDeferredValue(filterObject);
 
   const filterOutByTerm = useCallback((term: string, course: Course) => {
     if (!term) return false;
-
     const searchTerm = term.toLowerCase();
     const courseName = course.name.toLowerCase();
     const courseCode = course.code.toLowerCase();
     return !courseName.includes(searchTerm) && !courseCode.includes(searchTerm);
   }, []);
 
-  const filterOutByMaster = useCallback((master: string, course: Course) => {
-    // If we have all selected, this means all courses not only
-    // master courses. Might be changed in the future.
-    if (master === "all") {
-      return false;
-    }
-
-    const masters = course.CourseMaster.map(
-      (courseMaster) => courseMaster.master,
-    );
-
-    return !masters.some((courseMaster) => courseMaster.includes(master));
-  }, []);
-
-  const filterOutBySemester = useCallback(
-    (semester: SemesterOption, course: Course) => {
-      if (semester === "all") {
+  const filterOutByMasters = useCallback(
+    (selectedMasters: string[], course: Course) => {
+      if (!selectedMasters || selectedMasters.length === 0) {
         return false;
       }
 
-      const hasMatchingOccasion = course.CourseOccasion.some((occasion) => {
+      const courseMasters = course.CourseMaster.map((cm) => cm.master);
+
+      return !courseMasters.some((cm) =>
+        selectedMasters.some((selected) => cm.includes(selected)),
+      );
+    },
+    [],
+  );
+
+  const filterOutBySemesters = useCallback(
+    (selectedSemesters: number[], course: Course) => {
+      if (!selectedSemesters || selectedSemesters.length === 0) {
+        return false;
+      }
+
+      const matchesAnySemester = course.CourseOccasion.some((occasion) => {
         const relativeSemester = yearAndSemesterToRelativeSemester(
           startingYear,
           occasion.year,
           occasion.semester,
         );
 
-        return semester === relativeSemester + 1;
+        const currentCourseSemester = (relativeSemester + 1).toString();
+        return selectedSemesters.some(
+          (s) => s.toString() === currentCourseSemester,
+        );
       });
 
-      return !hasMatchingOccasion;
+      return !matchesAnySemester;
     },
     [startingYear],
   );
 
   const filterOutByPeriods = useCallback(
     (periods: number[], course: Course) => {
-      if (!periods) return false;
+      if (!periods || periods.length === 0) return false;
 
       const occasionPeriods = course.CourseOccasion.flatMap(
         (occasion) => occasion.periods,
@@ -89,7 +98,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   );
 
   const filterOutByBlocks = useCallback((blocks: number[], course: Course) => {
-    if (!blocks) return false;
+    if (!blocks || blocks.length === 0) return false;
 
     const occasionBlocks = course.CourseOccasion.flatMap((occasion) =>
       occasion.periods.flatMap((period) => period.blocks),
@@ -102,15 +111,12 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
 
   const filterOutByPeriodsAndBlocks = useCallback(
     (periods: number[], blocks: number[], course: Course) => {
-      if (!periods && blocks) {
-        return filterOutByBlocks(blocks, course);
-      } else if (periods && !blocks) {
-        return filterOutByPeriods(periods, course);
-      }
+      const hasPeriods = periods && periods.length > 0;
+      const hasBlocks = blocks && blocks.length > 0;
 
-      if (!periods && !blocks) {
-        return false;
-      }
+      if (!hasPeriods && hasBlocks) return filterOutByBlocks(blocks, course);
+      if (hasPeriods && !hasBlocks) return filterOutByPeriods(periods, course);
+      if (!hasPeriods && !hasBlocks) return false;
 
       return !hasMatchingOccasion({
         blocks,
@@ -124,35 +130,26 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   return useMemo(
     () =>
       courses.filter((course) => {
-        if (filterOutBySemester(deferredFilters.semester, course)) {
+        if (filterOutBySemesters(deferredFilters.semesters, course))
           return false;
-        }
-
-        if (filterOutByMaster(deferredFilters.master, course)) {
-          return false;
-        }
-
+        if (filterOutByMasters(deferredFilters.masters, course)) return false;
         if (
           filterOutByPeriodsAndBlocks(
             deferredFilters.periods,
             deferredFilters.blocks,
             course,
           )
-        ) {
+        )
           return false;
-        }
-
-        if (filterOutByTerm(deferredFilters.search, course)) {
-          return false;
-        }
+        if (filterOutByTerm(deferredFilters.search, course)) return false;
 
         return true;
       }),
     [
       courses,
       deferredFilters,
-      filterOutBySemester,
-      filterOutByMaster,
+      filterOutBySemesters,
+      filterOutByMasters,
       filterOutByPeriodsAndBlocks,
       filterOutByTerm,
     ],

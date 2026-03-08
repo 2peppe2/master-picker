@@ -16,9 +16,8 @@ export const useSearchShortcut = ({ inputRef }: UseSearchShortcutArgs) => {
       if (!inputRef.current) return;
 
       inputRef.current.focus();
-      inputRef.current.select();
     },
-    [inputRef]
+    [inputRef],
   );
 
   useEffect(() => {

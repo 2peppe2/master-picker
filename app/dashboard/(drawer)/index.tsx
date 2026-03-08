@@ -1,5 +1,7 @@
-import { Draggable } from "@/components/DndProvider/Draggable";
+"use client";
+
 import { useFiltered } from "@/app/atoms/filter/hooks/useFiltered";
+import { Draggable } from "@/components/DndProvider/Draggable";
 import { useSortedCourses } from "@/hooks/useSortedCourses";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import SearchInput from "./components/SearchInput";
