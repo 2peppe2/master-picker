@@ -97,7 +97,6 @@ export const MultiSelect = React.forwardRef<
         : (options as MultiSelectOption[]);
     }, [options]);
 
-    // --- SMART GROUPING ENGINE ---
     const consolidatedBadges = React.useMemo(() => {
       const groups: Record<string, string[]> = {};
       const uniqueItems: { label: string; value: string }[] = [];
@@ -191,13 +190,17 @@ export const MultiSelect = React.forwardRef<
                     key={badge.value}
                     className={cn(
                       multiSelectVariants(),
-                      // Added: Destructive hover styling for grouped tags
-                      "max-w-[400px] truncate group/badge hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-all",
+                      "cursor-default max-w-[400px] truncate transition-all flex items-center pr-1",
+                      "hover:bg-muted/80 hover:text-foreground",
+                      "has-[.clear-action:hover]:bg-destructive/10 has-[.clear-action:hover]:text-destructive has-[.clear-action:hover]:border-destructive/30",
                     )}
                   >
                     <span className="truncate">{badge.label}</span>
-                    <XCircle
-                      className="ml-2 h-3.5 w-3.5 flex-shrink-0 cursor-pointer opacity-70 group-hover/badge:opacity-100 clear-action transition-opacity"
+
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      className="ml-1 p-0.5 rounded-full hover:bg-destructive/10 transition-colors clear-action cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
@@ -207,7 +210,19 @@ export const MultiSelect = React.forwardRef<
                           toggleOption(badge.value);
                         }
                       }}
-                    />
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          if (badge.isGroup) {
+                            removeGroup(badge.prefix!);
+                          } else {
+                            toggleOption(badge.value);
+                          }
+                        }
+                      }}
+                    >
+                      <XCircle className="h-3.5 w-3.5 opacity-70 group-hover/badge:opacity-100 transition-opacity" />
+                    </div>
                   </Badge>
                 ))
               ) : (
@@ -245,10 +260,9 @@ export const MultiSelect = React.forwardRef<
               value={searchValue}
               onValueChange={(val) => {
                 setSearchValue(val);
-                onSearchChange?.(val); // Trigger optimistic search on every keystroke
+                onSearchChange?.(val);
               }}
               onKeyDown={(e) => {
-                // Hitting enter commits the search tag and clears the input
                 if (e.key === "Enter" && searchValue.trim() && onCreateOption) {
                   onCreateOption(searchValue);
                   setSearchValue("");
@@ -270,19 +284,21 @@ export const MultiSelect = React.forwardRef<
                     >
                       <Plus className="mr-2 h-4 w-4" />
                       <span>
-                        Search for{" "}
-                        <b className="underline">&qoute;{searchValue}&qoute;</b>
+                        Search for <b className="underline">{searchValue}</b>
                       </span>
                     </CommandItem>
                   </CommandGroup>
                 )}
-              {(options as MultiSelectGroup[]).map((group) => (
-                <CommandGroup key={group.heading} heading={group.heading}>
-                  {group.options
-                    .filter((o) =>
-                      o.label.toLowerCase().includes(searchValue.toLowerCase()),
-                    )
-                    .map((option) => (
+              {(options as MultiSelectGroup[]).map((group) => {
+                const filteredOptions = group.options.filter((o) =>
+                  o.label.toLowerCase().includes(searchValue.toLowerCase()),
+                );
+
+                if (filteredOptions.length === 0) return null;
+
+                return (
+                  <CommandGroup key={group.heading} heading={group.heading}>
+                    {filteredOptions.map((option) => (
                       <OptionItem
                         key={option.value}
                         option={option}
@@ -290,8 +306,9 @@ export const MultiSelect = React.forwardRef<
                         onSelect={() => toggleOption(option.value)}
                       />
                     ))}
-                </CommandGroup>
-              ))}
+                  </CommandGroup>
+                );
+              })}
             </CommandList>
           </Command>
         </PopoverContent>

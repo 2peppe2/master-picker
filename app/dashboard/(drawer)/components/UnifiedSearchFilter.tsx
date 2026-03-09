@@ -1,49 +1,54 @@
 "use client";
 
-import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { MultiSelect, MultiSelectGroup } from "@/components/ui/multi-select";
 import { GraduationCap, LayoutGrid, Calendar } from "lucide-react";
+import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { MasterBadge } from "@/components/MasterBadge";
 import { mastersAtom } from "@/app/atoms/mastersAtom";
+import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
-import { useAtomValue } from "jotai";
 import { range } from "lodash";
 
 export const UnifiedSearchFilter: FC = () => {
-  const currentMasters = useAtomValue(filterAtoms.mastersAtom);
-  const mastersList = useAtomValue(mastersAtom);
-  const currentSemesters = useAtomValue(filterAtoms.semestersAtom);
-  const currentBlocks = useAtomValue(filterAtoms.blocksAtom);
-  const currentPeriods = useAtomValue(filterAtoms.periodsAtom);
-  const currentSearch = useAtomValue(filterAtoms.searchAtom);
+  const [semesters, selectSemesters] = useAtom(filterAtoms.semestersAtom);
+  const [masters, selectMasters] = useAtom(filterAtoms.mastersAtom);
+  const [periods, selectPeriods] = useAtom(filterAtoms.periodsAtom);
+  const { showBachelorYears } = useAtomValue(userPreferencesAtom);
+  const [blocks, selectBlocks] = useAtom(filterAtoms.blocksAtom);
+  const [search, searchFor] = useAtom(filterAtoms.searchAtom);
+  const allMasters = useAtomValue(mastersAtom);
 
-  const {
-    selectMasters,
-    selectSemesters,
-    selectBlocks,
-    selectPeriods,
-    filterByTerm,
-  } = useFilterMutators();
+  const semesterOptions = useMemo(() => {
+    const start = showBachelorYears ? 1 : 7;
 
-  const groupedOptions = useMemo<MultiSelectGroup[]>(
-    () => [
-      {
+    return {
+      heading: "Semesters",
+      options: range(start, 11).map((s) => ({
+        label: `Semester ${s}`,
+        value: `semester:${s}`,
+        icon: GraduationCap,
+      })),
+    } satisfies MultiSelectGroup;
+  }, [showBachelorYears]);
+
+  const masterOptions = useMemo(
+    () =>
+      ({
         heading: "Master Profiles",
-        options: Object.values(mastersList).map((m) => ({
+        options: Object.values(allMasters).map((m) => ({
           value: `master:${m.master}`,
           label: m.name ?? "Unknown",
           icon: () => <MasterBadge name={m.master} />,
         })),
-      },
-      {
-        heading: "Semesters",
-        options: range(1, 11).map((s) => ({
-          label: `Semester ${s}`,
-          value: `semester:${s}`,
-          icon: GraduationCap,
-        })),
-      },
+      }) satisfies MultiSelectGroup,
+    [allMasters],
+  );
+
+  const groupedOptions = useMemo<MultiSelectGroup[]>(
+    () => [
+      masterOptions,
+      semesterOptions,
       {
         heading: "Timeframes",
         options: [
@@ -60,28 +65,25 @@ export const UnifiedSearchFilter: FC = () => {
         ],
       },
     ],
-    [mastersList],
+    [masterOptions, semesterOptions],
   );
 
-  // Derive active selection strings
   const selectedValues = useMemo(() => {
-    const vals: string[] = [];
-    currentMasters?.forEach((m) => vals.push(`master:${m}`));
-    currentSemesters?.forEach((s) => vals.push(`semester:${s}`));
-    currentBlocks?.forEach((b) => vals.push(`block:${b}`));
-    currentPeriods?.forEach((p) => vals.push(`period:${p}`));
-    if (currentSearch) vals.push(`search:${currentSearch}`);
-    return vals;
-  }, [
-    currentMasters,
-    currentSemesters,
-    currentBlocks,
-    currentPeriods,
-    currentSearch,
-  ]);
+    const values: string[] = [];
+
+    semesters.forEach((s) => values.push(`semester:${s}`));
+    masters.forEach((m) => values.push(`master:${m}`));
+    periods.forEach((p) => values.push(`period:${p}`));
+    blocks.forEach((b) => values.push(`block:${b}`));
+
+    if (search) {
+      values.push(`search:${search}`);
+    }
+
+    return values;
+  }, [masters, semesters, blocks, periods, search]);
 
   const handleValueChange = (newValues: string[]) => {
-    // Sync all categories back to Jotai
     selectMasters(
       newValues
         .filter((v) => v.startsWith("master:"))
@@ -90,7 +92,7 @@ export const UnifiedSearchFilter: FC = () => {
     selectSemesters(
       newValues
         .filter((v) => v.startsWith("semester:"))
-        .map((v) => Number(v.split(":")[1])), // Fixed: Requires Number casting
+        .map((v) => Number(v.split(":")[1])),
     );
     selectBlocks(
       newValues
@@ -104,7 +106,9 @@ export const UnifiedSearchFilter: FC = () => {
     );
 
     // Clear search if the badge is removed
-    if (!newValues.some((v) => v.startsWith("search:"))) filterByTerm("");
+    if (!newValues.some((v) => v.startsWith("search:"))) {
+      searchFor("");
+    }
   };
 
   return (
@@ -113,8 +117,8 @@ export const UnifiedSearchFilter: FC = () => {
         options={groupedOptions}
         defaultValue={selectedValues}
         onValueChange={handleValueChange}
-        onSearchChange={filterByTerm} // <-- Hooked up to fire on keystrokes
-        onCreateOption={filterByTerm}
+        onCreateOption={searchFor}
+        onSearchChange={searchFor}
         placeholder="Filter by master, semester, block, or type anything..."
       />
     </div>

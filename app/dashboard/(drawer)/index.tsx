@@ -1,10 +1,10 @@
 "use client";
 
 import { useFiltered } from "@/app/atoms/filter/hooks/useFiltered";
+import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { useSortedCourses } from "@/hooks/useSortedCourses";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import SearchInput from "./components/SearchInput";
 import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
@@ -45,7 +45,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
         2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
     >
       <div className="p-4 shrink-0 z-10">
-        <SearchInput />
+        <UnifiedSearchFilter />
       </div>
 
       <div className="overflow-y-auto flex-1 p-4 pt-1">
