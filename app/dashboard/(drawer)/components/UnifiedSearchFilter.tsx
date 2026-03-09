@@ -10,6 +10,13 @@ import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
 import { range } from "lodash";
 
+const CATEGORY_LABELS: Record<string, string> = {
+  master: "Profiles",
+  semester: "Semesters",
+  block: "Blocks",
+  period: "Periods",
+};
+
 export const UnifiedSearchFilter: FC = () => {
   const [semesters, selectSemesters] = useAtom(filterAtoms.semestersAtom);
   const [masters, selectMasters] = useAtom(filterAtoms.mastersAtom);
@@ -119,6 +126,7 @@ export const UnifiedSearchFilter: FC = () => {
         onValueChange={handleValueChange}
         onCreateOption={searchFor}
         onSearchChange={searchFor}
+        categoryLabels={CATEGORY_LABELS}
         placeholder="Filter by master, semester, block, or type anything..."
       />
     </div>

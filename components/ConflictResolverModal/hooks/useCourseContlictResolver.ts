@@ -1,10 +1,10 @@
 import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { dispatchScrollToCourse } from "@/hooks/useScrollToCourseFeedback";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { useAtomValue } from "jotai";
-import { dispatchScrollToCourse } from "@/hooks/useCourseAddedFeedback";
 
 export interface DropSlot {
   block: number;

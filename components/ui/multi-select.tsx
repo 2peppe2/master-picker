@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, ChevronDown, XIcon, Plus, Target } from "lucide-react";
+import { XCircle, ChevronDown, XIcon, Plus, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cva } from "class-variance-authority";
 import { Badge } from "@/components/ui/badge";
@@ -56,14 +56,8 @@ interface MultiSelectProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   onSearchChange?: (value: string) => void;
   defaultValue?: string[];
   placeholder?: string;
+  categoryLabels: Record<string, string>;
 }
-
-const CATEGORY_LABELS: Record<string, string> = {
-  master: "Profiles",
-  semester: "Semesters",
-  block: "Blocks",
-  period: "Periods",
-};
 
 export const MultiSelect = React.forwardRef<
   HTMLButtonElement,
@@ -75,6 +69,7 @@ export const MultiSelect = React.forwardRef<
       onValueChange,
       onCreateOption,
       onSearchChange,
+      categoryLabels,
       defaultValue = [],
       placeholder = "Search...",
       className,
@@ -108,7 +103,7 @@ export const MultiSelect = React.forwardRef<
           const opt = allOptionsFlat.find((o) => o.value === val);
 
           let displayLabel = opt?.label || content;
-          const categoryName = CATEGORY_LABELS[prefix]?.slice(0, -1);
+          const categoryName = categoryLabels[prefix]?.slice(0, -1);
 
           if (categoryName && displayLabel.startsWith(categoryName)) {
             displayLabel = displayLabel.replace(categoryName, "").trim();
@@ -130,7 +125,7 @@ export const MultiSelect = React.forwardRef<
 
       Object.entries(groups).forEach(([prefix, items]) => {
         const title =
-          CATEGORY_LABELS[prefix] ||
+          categoryLabels[prefix] ||
           prefix.charAt(0).toUpperCase() + prefix.slice(1);
         badges.push({
           label: `${title}: ${items.join(", ")}`,
@@ -145,7 +140,7 @@ export const MultiSelect = React.forwardRef<
       });
 
       return badges;
-    }, [selectedValues, allOptionsFlat]);
+    }, [selectedValues, allOptionsFlat, categoryLabels]);
 
     const toggleOption = (value: string) => {
       const next = selectedValues.includes(value)
@@ -188,6 +183,10 @@ export const MultiSelect = React.forwardRef<
                 consolidatedBadges.map((badge) => (
                   <Badge
                     key={badge.value}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                     className={cn(
                       multiSelectVariants(),
                       "cursor-default max-w-[400px] truncate transition-all flex items-center pr-1",
@@ -332,21 +331,19 @@ const OptionItem: React.FC<OptionItemProps> = ({
     onSelect={onSelect}
     className="cursor-pointer group flex items-center py-2 px-3"
   >
-    <div
-      className={cn(
-        "mr-3 flex h-5 w-5 items-center justify-center rounded-full border transition-all duration-200",
-        isSelected
-          ? "bg-cyan-500 border-cyan-600 shadow-[0_0_12px_rgba(6,182,212,0.6)]"
-          : "opacity-40 border-slate-300 group-hover:opacity-100 group-hover:border-primary",
-      )}
-    >
-      {isSelected && (
-        <Target className="h-3 w-3 text-white fill-white animate-in zoom-in-50" />
+    <div className="mr-3 flex h-4 w-4 items-center justify-center flex-shrink-0">
+      {isSelected ? (
+        <CircleCheck
+          className="text-green-500 animate-in zoom-in-50"
+          size={16}
+        />
+      ) : (
+        <div className="h-4 w-4 rounded-full border-2 border-slate-300 opacity-40 group-hover:opacity-100 group-hover:border-primary transition-all" />
       )}
     </div>
     {option.icon && (
       <div className="mr-2 flex-shrink-0">
-        <option.icon />
+        <option.icon className="h-4 w-4" />
       </div>
     )}
     <span

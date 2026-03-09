@@ -26,8 +26,8 @@ export const dispatchScrollToCourse = (args: DispatchScrollToCourseArgs) => {
 };
 
 export const useScrollToCourseFeedback = () => {
+  const showSemesters = useSetAtom(filterAtoms.semestersAtom);
   const { startingYear } = useAtomValue(userPreferencesAtom);
-  const showSemester = useSetAtom(filterAtoms.semesterAtom);
 
   useEffect(() => {
     const handleFeedback = (event: Event) => {
@@ -40,7 +40,14 @@ export const useScrollToCourseFeedback = () => {
         occasion.semester,
       );
 
-      showSemester(relativeSemester + 1);
+      showSemesters((prev) => {
+        const semester = relativeSemester + 1;
+        if (prev.includes(semester)) {
+          return [...prev.filter((p) => p !== semester)];
+        } else {
+          return [...prev, semester];
+        }
+      });
 
       setTimeout(() => {
         const elements = document.querySelectorAll(
@@ -70,5 +77,5 @@ export const useScrollToCourseFeedback = () => {
 
     window.addEventListener("course-added", handleFeedback);
     return () => window.removeEventListener("course-added", handleFeedback);
-  }, [startingYear, showSemester]);
+  }, [startingYear, showSemesters]);
 };
