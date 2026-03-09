@@ -19,8 +19,10 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
 
   const selectBlocks = useSetAtom(filterAtoms.blocksAtom);
   const selectPeriods = useSetAtom(filterAtoms.periodsAtom);
+  const selectSemesters = useSetAtom(filterAtoms.semestersAtom);
 
   const handleFilterChange = () => {
+    selectSemesters([data.semesterNumber + 1]);
     selectPeriods([data.periodNumber + 1]);
     selectBlocks([data.blockNumber + 1]);
   };
