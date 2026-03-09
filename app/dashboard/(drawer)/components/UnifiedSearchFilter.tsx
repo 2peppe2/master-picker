@@ -28,16 +28,51 @@ export const UnifiedSearchFilter: FC = () => {
 
   const semesterOptions = useMemo(() => {
     const start = showBachelorYears ? 1 : 7;
-
     return {
       heading: "Semesters",
       options: range(start, 11).map((s) => ({
-        label: `Semester ${s}`,
+        label: `${s}`, 
+        dropdownLabel: (
+          <div className="flex items-center gap-2 truncate">
+            <GraduationCap className="h-4 w-4 opacity-70" />
+            <span className="truncate">Semester {s}</span>
+          </div>
+        ),
+        searchKey: `Semester ${s}`,
         value: `semester:${s}`,
-        icon: GraduationCap,
       })),
     } satisfies MultiSelectGroup;
   }, [showBachelorYears]);
+
+  const blockOptions = useMemo(() => ({
+    heading: "Blocks",
+    options: range(1, 5).map((b) => ({
+      label: `${b}`,
+      dropdownLabel: (
+        <div className="flex items-center gap-2 truncate">
+          <LayoutGrid className="h-4 w-4 opacity-70" />
+          <span className="truncate">Block {b}</span>
+        </div>
+      ),
+      searchKey: `Block ${b}`,
+      value: `block:${b}`,
+    })),
+  }), []);
+
+  const periodOptions = useMemo(() => ({
+    heading: "Periods",
+    options: range(1, 3).map((p) => ({
+      label: `${p}`,
+      dropdownLabel: (
+        <div className="flex items-center gap-2 truncate">
+          <Calendar className="h-4 w-4 opacity-70" />
+          <span className="truncate">Period {p}</span>
+        </div>
+      ),
+      searchKey: `Period ${p}`,
+      value: `period:${p}`,
+    })),
+  }), []);
 
   const masterOptions = useMemo(
     () =>
@@ -45,8 +80,14 @@ export const UnifiedSearchFilter: FC = () => {
         heading: "Master Profiles",
         options: Object.values(allMasters).map((m) => ({
           value: `master:${m.master}`,
-          label: m.name ?? "Unknown",
-          icon: () => <MasterBadge name={m.master} />,
+          label: <MasterBadge name={m.master} />,
+          dropdownLabel: (
+            <div className="flex items-center gap-2 truncate w-full">
+              <MasterBadge name={m.master} />
+              <span className="truncate font-medium">{m.name ?? m.master}</span>
+            </div>
+          ),
+          searchKey: m.name ?? m.master,
         })),
       }) satisfies MultiSelectGroup,
     [allMasters],
@@ -54,65 +95,30 @@ export const UnifiedSearchFilter: FC = () => {
 
   const groupedOptions = useMemo<MultiSelectGroup[]>(
     () => [
-      masterOptions,
       semesterOptions,
-      {
-        heading: "Timeframes",
-        options: [
-          ...range(1, 5).map((b) => ({
-            label: `Block ${b}`,
-            value: `block:${b}`,
-            icon: LayoutGrid,
-          })),
-          ...range(1, 3).map((p) => ({
-            label: `Period ${p}`,
-            value: `period:${p}`,
-            icon: Calendar,
-          })),
-        ],
-      },
+      blockOptions,
+      periodOptions,
+      masterOptions,
     ],
-    [masterOptions, semesterOptions],
+    [semesterOptions, blockOptions, periodOptions, masterOptions],
   );
 
   const selectedValues = useMemo(() => {
     const values: string[] = [];
-
     semesters.forEach((s) => values.push(`semester:${s}`));
-    masters.forEach((m) => values.push(`master:${m}`));
-    periods.forEach((p) => values.push(`period:${p}`));
     blocks.forEach((b) => values.push(`block:${b}`));
-
-    if (search) {
-      values.push(`search:${search}`);
-    }
-
+    periods.forEach((p) => values.push(`period:${p}`));
+    masters.forEach((m) => values.push(`master:${m}`));
+    if (search) values.push(`search:${search}`);
     return values;
   }, [masters, semesters, blocks, periods, search]);
 
   const handleValueChange = (newValues: string[]) => {
-    selectMasters(
-      newValues
-        .filter((v) => v.startsWith("master:"))
-        .map((v) => v.split(":")[1]),
-    );
-    selectSemesters(
-      newValues
-        .filter((v) => v.startsWith("semester:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
-    selectBlocks(
-      newValues
-        .filter((v) => v.startsWith("block:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
-    selectPeriods(
-      newValues
-        .filter((v) => v.startsWith("period:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
+    selectMasters(newValues.filter((v) => v.startsWith("master:")).map((v) => v.split(":")[1]));
+    selectSemesters(newValues.filter((v) => v.startsWith("semester:")).map((v) => Number(v.split(":")[1])));
+    selectBlocks(newValues.filter((v) => v.startsWith("block:")).map((v) => Number(v.split(":")[1])));
+    selectPeriods(newValues.filter((v) => v.startsWith("period:")).map((v) => Number(v.split(":")[1])));
 
-    // Clear search if the badge is removed
     if (!newValues.some((v) => v.startsWith("search:"))) {
       searchFor("");
     }
@@ -127,7 +133,7 @@ export const UnifiedSearchFilter: FC = () => {
         onCreateOption={searchFor}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
-        placeholder="Filter by master, semester, block, or type anything..."
+        placeholder="Filter courses..."
       />
     </div>
   );
