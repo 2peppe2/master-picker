@@ -84,13 +84,11 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     },
     ref,
   ) => {
-    const [selectedValues, setSelectedValues] =
-      useState<string[]>(defaultValue);
+    const [selected, setSelected] = useState<string[]>(defaultValue);
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     const [searchValue, setSearchValue] = useState("");
     const inputRef = useRef<HTMLInputElement>(null);
 
-    // Keyboard Shortcut: Cmd/Ctrl + K
     useEffect(() => {
       const down = (e: KeyboardEvent) => {
         if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -106,7 +104,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     }, [isPopoverOpen]);
 
     useEffect(() => {
-      setSelectedValues(defaultValue);
+      setSelected(defaultValue);
     }, [defaultValue]);
 
     const allOptionsFlat = useMemo(() => {
@@ -126,19 +124,23 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     }, [allOptionsFlat, searchValue, onCreateOption]);
 
     const toggleOption = (value: string) => {
-      const next = selectedValues.includes(value)
-        ? selectedValues.filter((v) => v !== value)
-        : [...selectedValues, value];
-      setSelectedValues(next);
+      const next = selected.includes(value)
+        ? selected.filter((v) => v !== value)
+        : [...selected, value];
+      setSelected(next);
       onValueChange(next);
       setSearchValue("");
       inputRef.current?.focus();
     };
 
     const removeGroup = (prefix: string) => {
-      const next = selectedValues.filter((v) => !v.startsWith(`${prefix}:`));
-      if (prefix === "search") setSearchValue("");
-      setSelectedValues(next);
+      const next = selected.filter((v) => !v.startsWith(`${prefix}:`));
+
+      if (prefix === "search") {
+        setSearchValue("");
+      }
+
+      setSelected(next);
       onValueChange(next);
     };
 
@@ -149,13 +151,9 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-      if (
-        e.key === "Backspace" &&
-        searchValue === "" &&
-        selectedValues.length > 0
-      ) {
+      if (e.key === "Backspace" && searchValue === "" && selected.length > 0) {
         // Deletes the most recently added tag (or last in visual array)
-        const lastValue = selectedValues[selectedValues.length - 1];
+        const lastValue = selected[selected.length - 1];
         if (lastValue.includes(":")) {
           const [prefix] = lastValue.split(":");
           removeGroup(prefix);
@@ -172,7 +170,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       > = {};
       const uniqueItems: { label: React.ReactNode; value: string }[] = [];
 
-      selectedValues.forEach((val) => {
+      selected.forEach((val) => {
         if (val.startsWith("search:")) {
           const content = val.replace("search:", "");
           if (content !== searchValue) {
@@ -246,7 +244,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       });
 
       return badges;
-    }, [selectedValues, allOptionsFlat, categoryLabels, searchValue]);
+    }, [selected, allOptionsFlat, categoryLabels, searchValue]);
 
     return (
       <Command
@@ -275,17 +273,14 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
               {...props}
             >
               <div className="flex flex-wrap items-center gap-1.5 overflow-hidden ml-1 flex-1 relative min-h-[28px]">
-                {/* Persistent Search Icon */}
                 <Search className="h-4 w-4 text-muted-foreground opacity-50 shrink-0" />
 
-                {/* Absolute Placeholder */}
-                {selectedValues.length === 0 && !searchValue && (
+                {selected.length === 0 && !searchValue && (
                   <div className="absolute left-6 flex items-center text-sm text-muted-foreground pointer-events-none w-[calc(100%-24px)]">
                     <span>{placeholder}</span>
                   </div>
                 )}
 
-                {/* Selected Badges */}
                 {consolidatedBadges.map((badge) => (
                   <MultiSelectBadge
                     key={badge.value}
@@ -298,7 +293,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                   />
                 ))}
 
-                {/* Live Badge Input */}
                 <div
                   className={cn(
                     "flex items-center transition-all h-7 z-10",
@@ -331,9 +325,8 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 </div>
               </div>
 
-              {/* Right side controls */}
               <div className="flex items-center flex-shrink-0 ml-2 z-10">
-                {selectedValues.length > 0 && (
+                {selected.length > 0 && (
                   <GlobalClearButton onClear={clearAll} />
                 )}
                 <div className="p-1 cursor-pointer">
@@ -353,7 +346,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
             <CommandList className="max-h-[400px] w-full relative">
-              {/* Fallback search entry */}
               <SearchFallbackItem
                 searchValue={searchValue}
                 onCreateOption={onCreateOption}
@@ -364,7 +356,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 }}
               />
 
-              {/* Mapped standard options */}
               {(options as MultiSelectGroup[]).map((group) => {
                 const filteredOptions = group.options.filter((o) =>
                   o.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
@@ -378,7 +369,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                       <OptionItem
                         key={option.value}
                         option={option}
-                        isSelected={selectedValues.includes(option.value)}
+                        isSelected={selected.includes(option.value)}
                         onSelect={() => toggleOption(option.value)}
                       />
                     ))}
@@ -392,11 +383,10 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     );
   },
 );
+
 MultiSelect.displayName = "MultiSelect";
 
-// --- Sub Components ---
-
-export interface MultiSelectBadgeProps {
+interface MultiSelectBadgeProps {
   badge: BadgeData;
   onRemove: () => void;
 }
@@ -427,7 +417,7 @@ const MultiSelectBadge: React.FC<MultiSelectBadgeProps> = ({
   </Badge>
 );
 
-export interface GlobalClearButtonProps {
+interface GlobalClearButtonProps {
   onClear: () => void;
 }
 
@@ -446,7 +436,7 @@ const GlobalClearButton: React.FC<GlobalClearButtonProps> = ({ onClear }) => (
   </button>
 );
 
-export interface SearchFallbackItemProps {
+interface SearchFallbackItemProps {
   searchValue: string;
   onCreateOption?: (value: string) => void;
   onSelect: () => void;
@@ -477,7 +467,7 @@ const SearchFallbackItem: React.FC<SearchFallbackItemProps> = ({
   );
 };
 
-export interface OptionItemProps {
+interface OptionItemProps {
   option: MultiSelectOption;
   isSelected: boolean;
   onSelect: () => void;

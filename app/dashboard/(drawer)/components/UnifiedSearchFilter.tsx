@@ -150,7 +150,7 @@ export const UnifiedSearchFilter: FC = () => {
         onCreateOption={searchFor}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
-        placeholder="Filter courses..."
+        placeholder="Filter by master, semester, block, or type anything..."
       />
     </div>
   );

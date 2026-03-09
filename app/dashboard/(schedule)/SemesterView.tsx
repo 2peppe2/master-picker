@@ -12,7 +12,7 @@ import SemesterSettingsModal from "./SemesterSettingsModal";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Slot } from "@/app/atoms/schedule/types";
 import { useAtomValue, useSetAtom } from "jotai";
-import { FC, useMemo, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import { PeriodView } from "./PeriodView";
 import {
   Tooltip,
@@ -34,6 +34,10 @@ const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
 
   const { getSlotPeriods } = useScheduleGetters();
   const periods = getSlotPeriods({ semester: semesterNumber });
+
+  useEffect(() => {
+    setIsOpen(shownSemesters.includes(target));
+  }, [shownSemesters, target]);
 
   return (
     <Card className="w-full p-4 h-min-content border-border/50 shadow-sm transition-shadow hover:shadow-md">
