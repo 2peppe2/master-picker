@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, ChevronDown, XIcon, CircleCheck, Search } from "lucide-react";
+import { XCircle, ChevronDown, CircleCheck, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
@@ -49,7 +49,14 @@ export interface MultiSelectGroup {
   options: MultiSelectOption[];
 }
 
-interface MultiSelectProps extends Omit<
+export interface BadgeData {
+  label: React.ReactNode;
+  value: string;
+  isGroup: boolean;
+  prefix?: string;
+}
+
+export interface MultiSelectProps extends Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "defaultValue"
 > {
@@ -135,6 +142,12 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       onValueChange(next);
     };
 
+    const clearAll = () => {
+      setSearchValue("");
+      onSearchChange?.("");
+      onValueChange([]);
+    };
+
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (
         e.key === "Backspace" &&
@@ -184,17 +197,11 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
         }
       });
 
-      const badges: {
-        label: React.ReactNode;
-        value: string;
-        isGroup: boolean;
-        prefix?: string;
-      }[] = [];
-
+      const badges: BadgeData[] = [];
       const order = ["semester", "block", "period", "master"];
-      const sortedEntries = Object.entries(groups).sort((a, b) => {
-        return order.indexOf(a[0]) - order.indexOf(b[0]);
-      });
+      const sortedEntries = Object.entries(groups).sort(
+        (a, b) => order.indexOf(a[0]) - order.indexOf(b[0]),
+      );
 
       sortedEntries.forEach(([prefix, items]) => {
         const isProfile = prefix === "master";
@@ -205,7 +212,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
 
         badges.push({
           label: (
-            // Removed vertical wrapping gaps to enforce strict single-line h-7 fit
             <div className="flex items-center gap-x-1 max-w-full">
               <span className="font-bold text-[10px] uppercase tracking-tighter opacity-50 whitespace-nowrap">
                 {title}:
@@ -272,45 +278,27 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 {/* Persistent Search Icon */}
                 <Search className="h-4 w-4 text-muted-foreground opacity-50 shrink-0" />
 
-                {/* Absolute Placeholder (Stays out of the way of the flex layout) */}
+                {/* Absolute Placeholder */}
                 {selectedValues.length === 0 && !searchValue && (
                   <div className="absolute left-6 flex items-center text-sm text-muted-foreground pointer-events-none w-[calc(100%-24px)]">
                     <span>{placeholder}</span>
                   </div>
                 )}
 
-                {/* Consolidated Badges */}
+                {/* Selected Badges */}
                 {consolidatedBadges.map((badge) => (
-                  <Badge
+                  <MultiSelectBadge
                     key={badge.value}
-                    className={cn(
-                      multiSelectVariants(),
-                      "rounded-md border-foreground/5 transition-all flex items-center pr-1 max-w-full whitespace-normal hover:bg-muted/80 hover:text-foreground cursor-default has-[.clear-action:hover]:bg-destructive/10 has-[.clear-action:hover]:text-destructive has-[.clear-action:hover]:border-destructive/30",
-                    )}
-                  >
-                    <div className="flex-1 min-w-0 flex items-center">
-                      {badge.label}
-                    </div>
-                    <div
-                      role="button"
-                      tabIndex={0}
-                      className="ml-1 p-0.5 rounded-full hover:bg-destructive/20 transition-colors clear-action cursor-pointer flex-shrink-0"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (badge.isGroup) {
-                          removeGroup(badge.prefix!);
-                        } else {
-                          toggleOption(badge.value);
-                        }
-                      }}
-                    >
-                      <XCircle className="h-3.5 w-3.5 opacity-40 hover:opacity-100" />
-                    </div>
-                  </Badge>
+                    badge={badge}
+                    onRemove={() =>
+                      badge.isGroup
+                        ? removeGroup(badge.prefix!)
+                        : toggleOption(badge.value)
+                    }
+                  />
                 ))}
 
-                {/* Live Badge Input (Moved back to the end of the flex container) */}
+                {/* Live Badge Input */}
                 <div
                   className={cn(
                     "flex items-center transition-all h-7 z-10",
@@ -346,22 +334,11 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
               {/* Right side controls */}
               <div className="flex items-center flex-shrink-0 ml-2 z-10">
                 {selectedValues.length > 0 && (
-                  <button
-                    type="button"
-                    tabIndex={0}
-                    className="clear-action p-2 mr-1 rounded-md hover:bg-muted cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setSearchValue("");
-                      onSearchChange?.("");
-                      onValueChange([]);
-                    }}
-                  >
-                    <XIcon className="h-4 w-4 text-muted-foreground hover:text-foreground" />
-                  </button>
+                  <GlobalClearButton onClear={clearAll} />
                 )}
-                <ChevronDown className="h-4 mr-3 text-muted-foreground" />
+                <div className="p-1 cursor-pointer">
+                  <ChevronDown className="h-4 mr-[3] text-muted-foreground hover:text-foreground" />
+                </div>
               </div>
             </div>
           </PopoverTrigger>
@@ -376,6 +353,18 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
             <CommandList className="max-h-[400px] w-full relative">
+              {/* Fallback search entry */}
+              <SearchFallbackItem
+                searchValue={searchValue}
+                onCreateOption={onCreateOption}
+                onSelect={() => {
+                  onCreateOption?.(searchValue);
+                  setSearchValue("");
+                  setIsPopoverOpen(false);
+                }}
+              />
+
+              {/* Mapped standard options */}
               {(options as MultiSelectGroup[]).map((group) => {
                 const filteredOptions = group.options.filter((o) =>
                   o.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
@@ -396,28 +385,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                   </CommandGroup>
                 );
               })}
-
-              {searchValue.trim() && onCreateOption && (
-                <CommandGroup heading="Search">
-                  <CommandItem
-                    value={`search:${searchValue}`}
-                    onSelect={() => {
-                      onCreateOption(searchValue);
-                      setSearchValue("");
-                      setIsPopoverOpen(false);
-                    }}
-                    className="cursor-pointer group flex items-center py-2.5 px-3 w-full"
-                  >
-                    <div className="mr-3 flex h-4 w-4 items-center justify-center flex-shrink-0">
-                      <Search className="h-4 w-4 opacity-50" />
-                    </div>
-                    <div className="truncate flex items-center gap-2 flex-1 min-w-0 text-sm">
-                      Search for{" "}
-                      <span className="font-semibold">{searchValue}</span>
-                    </div>
-                  </CommandItem>
-                </CommandGroup>
-              )}
             </CommandList>
           </PopoverContent>
         </Popover>
@@ -425,8 +392,92 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     );
   },
 );
+MultiSelect.displayName = "MultiSelect";
 
-interface OptionItemProps {
+// --- Sub Components ---
+
+export interface MultiSelectBadgeProps {
+  badge: BadgeData;
+  onRemove: () => void;
+}
+
+const MultiSelectBadge: React.FC<MultiSelectBadgeProps> = ({
+  badge,
+  onRemove,
+}) => (
+  <Badge
+    className={cn(
+      multiSelectVariants(),
+      "rounded-md border-foreground/5 transition-all flex items-center pr-1 max-w-full whitespace-normal hover:bg-muted/80 hover:text-foreground cursor-default has-[.clear-action:hover]:bg-destructive/10 has-[.clear-action:hover]:text-destructive has-[.clear-action:hover]:border-destructive/30",
+    )}
+  >
+    <div className="flex-1 min-w-0 flex items-center">{badge.label}</div>
+    <div
+      role="button"
+      tabIndex={0}
+      className="group ml-1 p-0.5 rounded-full hover:bg-destructive/20 transition-colors clear-action cursor-pointer flex-shrink-0"
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onRemove();
+      }}
+    >
+      <XCircle className="h-3.5 w-3.5 opacity-40 group-hover:opacity-100 transition-opacity" />
+    </div>
+  </Badge>
+);
+
+export interface GlobalClearButtonProps {
+  onClear: () => void;
+}
+
+const GlobalClearButton: React.FC<GlobalClearButtonProps> = ({ onClear }) => (
+  <button
+    type="button"
+    tabIndex={0}
+    className="group transition-colors clear-action flex items-center justify-center p-1 mr-1 rounded-md cursor-pointer text-muted-foreground hover:text-destructive hover:bg-destructive/10 border border-transparent hover:border-destructive/30"
+    onClick={(e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onClear();
+    }}
+  >
+    <XCircle className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+  </button>
+);
+
+export interface SearchFallbackItemProps {
+  searchValue: string;
+  onCreateOption?: (value: string) => void;
+  onSelect: () => void;
+}
+
+const SearchFallbackItem: React.FC<SearchFallbackItemProps> = ({
+  searchValue,
+  onCreateOption,
+  onSelect,
+}) => {
+  if (!searchValue.trim() || !onCreateOption) return null;
+
+  return (
+    <CommandGroup heading="Search">
+      <CommandItem
+        value={`search:${searchValue}`}
+        onSelect={onSelect}
+        className="cursor-pointer group flex items-center py-2.5 px-3 w-full"
+      >
+        <div className="mr-3 flex h-4 w-4 items-center justify-center flex-shrink-0">
+          <Search className="h-4 w-4 opacity-50" />
+        </div>
+        <div className="truncate flex items-center gap-2 flex-1 min-w-0 text-sm">
+          Search for <span className="font-semibold">{searchValue}</span>
+        </div>
+      </CommandItem>
+    </CommandGroup>
+  );
+};
+
+export interface OptionItemProps {
   option: MultiSelectOption;
   isSelected: boolean;
   onSelect: () => void;
@@ -462,5 +513,3 @@ const OptionItem: React.FC<OptionItemProps> = ({
     </div>
   </CommandItem>
 );
-
-MultiSelect.displayName = "MultiSelect";
