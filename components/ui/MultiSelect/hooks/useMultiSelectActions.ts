@@ -95,10 +95,11 @@ export const useMultiSelectActions = ({
   }, [onSearchChange, onValueChange, setSearchValue]);
 
   const commitSearchTerm = useCallback(() => {
-    // FIX: Just tell the popover to close. We DO NOT clear the search text here.
-    // If we clear it now, the dropdown repopulates while closing, causing a visual glitch.
     setIsPopoverOpen(false);
-  }, [setIsPopoverOpen]);
+    setTimeout(() => {
+      setSearchValue("");
+    }, 100);
+  }, [setIsPopoverOpen, setSearchValue]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
