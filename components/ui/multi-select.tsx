@@ -18,7 +18,6 @@ import {
 import { Command as CommandPrimitive } from "cmdk";
 import React, { forwardRef, useEffect, useMemo, useState, useRef } from "react";
 
-// Enforce a strict h-7 (28px) height and centered items so all badges match perfectly
 const multiSelectVariants = cva(
   "m-0.5 transition-colors duration-200 font-medium select-none h-7 flex items-center px-2.5",
   {
@@ -56,10 +55,8 @@ export interface BadgeData {
   prefix?: string;
 }
 
-export interface MultiSelectProps extends Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  "defaultValue"
-> {
+export interface MultiSelectProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "defaultValue"> {
   options: MultiSelectOption[] | MultiSelectGroup[];
   onValueChange: (value: string[]) => void;
   onCreateOption?: (value: string) => void;
@@ -114,14 +111,24 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
         : (options as MultiSelectOption[]);
     }, [options]);
 
+    const exactMatch = useMemo(() => {
+      const searchLower = searchValue.trim().toLowerCase();
+      if (!searchLower) return false;
+      return allOptionsFlat.some(
+        (o) =>
+          o.searchKey.toLowerCase() === searchLower ||
+          o.label?.toString().toLowerCase() === searchLower ||
+          o.value.toLowerCase() === searchLower,
+      );
+    }, [allOptionsFlat, searchValue]);
+
     const hasMatchingOptions = useMemo(() => {
       const hasMatches = allOptionsFlat.some((o) =>
         o.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
       );
-      const hasSearchFallback =
-        searchValue.trim() && onCreateOption !== undefined;
+      const hasSearchFallback = searchValue.trim() && !exactMatch;
       return hasMatches || hasSearchFallback;
-    }, [allOptionsFlat, searchValue, onCreateOption]);
+    }, [allOptionsFlat, searchValue, exactMatch]);
 
     const toggleOption = (value: string) => {
       const next = selected.includes(value)
@@ -129,7 +136,10 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
         : [...selected, value];
       setSelected(next);
       onValueChange(next);
+
       setSearchValue("");
+      onSearchChange?.("");
+
       inputRef.current?.focus();
     };
 
@@ -138,6 +148,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
 
       if (prefix === "search") {
         setSearchValue("");
+        onSearchChange?.("");
       }
 
       setSelected(next);
@@ -150,11 +161,29 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       onValueChange([]);
     };
 
+    const commitSearchTerm = (term: string) => {
+      if (onCreateOption) {
+        onCreateOption(term);
+      } else {
+        const searchVal = `search:${term}`;
+        if (!selected.includes(searchVal)) {
+          const next = [...selected, searchVal];
+          setSelected(next);
+          onValueChange(next);
+        }
+      }
+      setSearchValue("");
+      onSearchChange?.("");
+    };
+
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      // We removed the manual Enter override here so cmdk can handle it natively.
+      
       if (e.key === "Backspace" && searchValue === "" && selected.length > 0) {
-        // Deletes the most recently added tag (or last in visual array)
         const lastValue = selected[selected.length - 1];
-        if (lastValue.includes(":")) {
+        if (lastValue.startsWith("search:")) {
+          toggleOption(lastValue);
+        } else if (lastValue.includes(":")) {
           const [prefix] = lastValue.split(":");
           removeGroup(prefix);
         } else {
@@ -253,7 +282,13 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       >
         <Popover
           open={isPopoverOpen}
-          onOpenChange={setIsPopoverOpen}
+          onOpenChange={(open) => {
+            setIsPopoverOpen(open);
+            if (!open) {
+              setSearchValue("");
+              onSearchChange?.("");
+            }
+          }}
           modal={false}
         >
           <PopoverTrigger asChild>
@@ -276,8 +311,8 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 <Search className="h-4 w-4 text-muted-foreground opacity-50 shrink-0" />
 
                 {selected.length === 0 && !searchValue && (
-                  <div className="absolute left-6 flex items-center text-sm text-muted-foreground pointer-events-none w-[calc(100%-24px)]">
-                    <span>{placeholder}</span>
+                  <div className="absolute left-6 right-10 flex items-center text-sm text-muted-foreground pointer-events-none">
+                    <span className="truncate">{placeholder}</span>
                   </div>
                 )}
 
@@ -346,16 +381,6 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
             <CommandList className="max-h-[400px] w-full relative">
-              <SearchFallbackItem
-                searchValue={searchValue}
-                onCreateOption={onCreateOption}
-                onSelect={() => {
-                  onCreateOption?.(searchValue);
-                  setSearchValue("");
-                  setIsPopoverOpen(false);
-                }}
-              />
-
               {(options as MultiSelectGroup[]).map((group) => {
                 const filteredOptions = group.options.filter((o) =>
                   o.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
@@ -376,6 +401,15 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                   </CommandGroup>
                 );
               })}
+
+              <SearchFallbackItem
+                searchValue={searchValue}
+                exactMatch={exactMatch}
+                onSelect={() => {
+                  commitSearchTerm(searchValue.trim());
+                  setIsPopoverOpen(false);
+                }}
+              />
             </CommandList>
           </PopoverContent>
         </Popover>
@@ -438,22 +472,26 @@ const GlobalClearButton: React.FC<GlobalClearButtonProps> = ({ onClear }) => (
 
 interface SearchFallbackItemProps {
   searchValue: string;
-  onCreateOption?: (value: string) => void;
+  exactMatch: boolean;
   onSelect: () => void;
 }
 
 const SearchFallbackItem: React.FC<SearchFallbackItemProps> = ({
   searchValue,
-  onCreateOption,
+  exactMatch,
   onSelect,
 }) => {
-  if (!searchValue.trim() || !onCreateOption) return null;
+  if (!searchValue.trim() || exactMatch) return null;
 
   return (
     <CommandGroup heading="Search">
       <CommandItem
         value={`search:${searchValue}`}
         onSelect={onSelect}
+        onMouseDown={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
         className="cursor-pointer group flex items-center py-2.5 px-3 w-full"
       >
         <div className="mr-3 flex h-4 w-4 items-center justify-center flex-shrink-0">
@@ -481,6 +519,10 @@ const OptionItem: React.FC<OptionItemProps> = ({
   <CommandItem
     value={option.value}
     onSelect={onSelect}
+    onMouseDown={(e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    }}
     className="cursor-pointer group flex items-center py-2.5 px-3 w-full"
   >
     <div className="mr-3 flex h-4 w-4 items-center justify-center flex-shrink-0">

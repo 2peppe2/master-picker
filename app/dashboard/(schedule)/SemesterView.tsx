@@ -35,10 +35,6 @@ const SemesterView: FC<SemesterViewProps> = ({ semesterNumber }) => {
   const { getSlotPeriods } = useScheduleGetters();
   const periods = getSlotPeriods({ semester: semesterNumber });
 
-  useEffect(() => {
-    setIsOpen(shownSemesters.includes(target));
-  }, [shownSemesters, target]);
-
   return (
     <Card className="w-full p-4 h-min-content border-border/50 shadow-sm transition-shadow hover:shadow-md">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
