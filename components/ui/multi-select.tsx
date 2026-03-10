@@ -16,10 +16,11 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { Command as CommandPrimitive } from "cmdk";
+import { useHotkey } from "@tanstack/react-hotkeys";
 import React, { forwardRef, useEffect, useMemo, useState, useRef } from "react";
 
 const multiSelectVariants = cva(
-  "m-0.5 transition-colors duration-200 font-medium select-none h-7 flex items-center px-2.5",
+  "m-0.5 transition-colors duration-200 font-medium select-none min-h-7 h-auto py-1 flex items-center px-2.5",
   {
     variants: {
       variant: {
@@ -55,8 +56,10 @@ export interface BadgeData {
   prefix?: string;
 }
 
-export interface MultiSelectProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "defaultValue"> {
+export interface MultiSelectProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "defaultValue"
+> {
   options: MultiSelectOption[] | MultiSelectGroup[];
   onValueChange: (value: string[]) => void;
   onCreateOption?: (value: string) => void;
@@ -84,21 +87,19 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     const [selected, setSelected] = useState<string[]>(defaultValue);
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     const [searchValue, setSearchValue] = useState("");
+    const [activeValue, setActiveValue] = useState("");
     const inputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-      const down = (e: KeyboardEvent) => {
-        if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-          e.preventDefault();
-          setIsPopoverOpen((open) => !open);
-          if (!isPopoverOpen) {
-            inputRef.current?.focus();
-          }
+    useHotkey("Mod+K", (e) => {
+      e.preventDefault();
+      setIsPopoverOpen((open) => {
+        const next = !open;
+        if (next) {
+          setTimeout(() => inputRef.current?.focus(), 0);
         }
-      };
-      document.addEventListener("keydown", down);
-      return () => document.removeEventListener("keydown", down);
-    }, [isPopoverOpen]);
+        return next;
+      });
+    });
 
     useEffect(() => {
       setSelected(defaultValue);
@@ -137,9 +138,11 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       setSelected(next);
       onValueChange(next);
 
+      // When picking a non-search option, reset the typed search
       setSearchValue("");
       onSearchChange?.("");
 
+      setActiveValue(value);
       inputRef.current?.focus();
     };
 
@@ -161,24 +164,14 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       onValueChange([]);
     };
 
-    const commitSearchTerm = (term: string) => {
-      if (onCreateOption) {
-        onCreateOption(term);
-      } else {
-        const searchVal = `search:${term}`;
-        if (!selected.includes(searchVal)) {
-          const next = [...selected, searchVal];
-          setSelected(next);
-          onValueChange(next);
-        }
-      }
+    const commitSearchTerm = () => {
+      // It is already piped into the filter state on keystroke!
+      // Simply clearing searchValue tells our component to render it as a completed badge.
       setSearchValue("");
-      onSearchChange?.("");
+      setIsPopoverOpen(false);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-      // We removed the manual Enter override here so cmdk can handle it natively.
-      
       if (e.key === "Backspace" && searchValue === "" && selected.length > 0) {
         const lastValue = selected[selected.length - 1];
         if (lastValue.startsWith("search:")) {
@@ -202,6 +195,8 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
       selected.forEach((val) => {
         if (val.startsWith("search:")) {
           const content = val.replace("search:", "");
+          // MAGIC TRICK: We don't render the badge if it matches what the user is currently typing.
+          // This allows us to sync global state without a double-rendered UI.
           if (content !== searchValue) {
             uniqueItems.push({ label: `"${content}"`, value: val });
           }
@@ -239,14 +234,14 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
 
         badges.push({
           label: (
-            <div className="flex items-center gap-x-1 max-w-full">
+            <div className="flex flex-wrap items-center gap-x-1 max-w-full">
               <span className="font-bold text-[10px] uppercase tracking-tighter opacity-50 whitespace-nowrap">
                 {title}:
               </span>
               <div
                 className={cn(
-                  "flex items-center",
-                  isProfile ? "gap-0.5" : "gap-1",
+                  "flex flex-wrap items-center gap-y-1 my-0.5",
+                  isProfile ? "gap-x-0.5" : "gap-x-1",
                 )}
               >
                 {sortedItems.map((item, idx) => (
@@ -278,6 +273,8 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
     return (
       <Command
         shouldFilter={false}
+        value={activeValue}
+        onValueChange={setActiveValue}
         className="w-full overflow-visible bg-transparent border-none shadow-none"
       >
         <Popover
@@ -285,8 +282,10 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
           onOpenChange={(open) => {
             setIsPopoverOpen(open);
             if (!open) {
+              // When clicking outside, just clear the internal text box.
+              // We intentionally DO NOT clear the global `onSearchChange` here.
+              // This instantly converts whatever they were typing into a committed badge!
               setSearchValue("");
-              onSearchChange?.("");
             }
           }}
           modal={false}
@@ -307,7 +306,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
               }}
               {...props}
             >
-              <div className="flex flex-wrap items-center gap-1.5 overflow-hidden ml-1 flex-1 relative min-h-[28px]">
+              <div className="flex flex-wrap items-center gap-1.5 ml-1 flex-1 relative min-h-[28px]">
                 <Search className="h-4 w-4 text-muted-foreground opacity-50 shrink-0" />
 
                 {selected.length === 0 && !searchValue && (
@@ -330,7 +329,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
 
                 <div
                   className={cn(
-                    "flex items-center transition-all h-7 z-10",
+                    "flex items-center transition-all min-h-7 z-10",
                     searchValue
                       ? "bg-primary/10 border border-primary/20 rounded-md px-2 m-0.5"
                       : "",
@@ -346,8 +345,22 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                     value={searchValue}
                     onValueChange={(val) => {
                       setSearchValue(val);
-                      onSearchChange?.(val);
-                      if (!isPopoverOpen) setIsPopoverOpen(true);
+                      onSearchChange?.(val); // <--- Triggers global active filtering
+                      setActiveValue("");
+                      if (val && !isPopoverOpen) setIsPopoverOpen(true);
+
+                      // Safely push the active search to the parent array to keep everything aligned
+                      const filteredSelected = selected.filter(
+                        (v) => !v.startsWith("search:"),
+                      );
+                      if (val) {
+                        const next = [...filteredSelected, `search:${val}`];
+                        setSelected(next);
+                        onValueChange(next);
+                      } else {
+                        setSelected(filteredSelected);
+                        onValueChange(filteredSelected);
+                      }
                     }}
                     onKeyDown={handleKeyDown}
                     className="bg-transparent outline-none text-sm min-w-[2px] w-auto placeholder:text-transparent"
@@ -360,7 +373,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 </div>
               </div>
 
-              <div className="flex items-center flex-shrink-0 ml-2 z-10">
+              <div className="flex items-center flex-shrink-0 ml-2 z-10 self-start mt-1">
                 {selected.length > 0 && (
                   <GlobalClearButton onClear={clearAll} />
                 )}
@@ -405,10 +418,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
               <SearchFallbackItem
                 searchValue={searchValue}
                 exactMatch={exactMatch}
-                onSelect={() => {
-                  commitSearchTerm(searchValue.trim());
-                  setIsPopoverOpen(false);
-                }}
+                onSelect={commitSearchTerm}
               />
             </CommandList>
           </PopoverContent>

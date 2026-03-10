@@ -12,7 +12,7 @@ import SemesterSettingsModal from "./SemesterSettingsModal";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Slot } from "@/app/atoms/schedule/types";
 import { useAtomValue, useSetAtom } from "jotai";
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { PeriodView } from "./PeriodView";
 import {
   Tooltip,

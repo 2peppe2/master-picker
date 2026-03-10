@@ -148,7 +148,7 @@ export const UnifiedSearchFilter: FC = () => {
         defaultValue={selectedValues}
         onValueChange={handleValueChange}
         onCreateOption={searchFor}
-        onSearchChange={searchFor}
+        onSearchChange={searchFor} 
         categoryLabels={CATEGORY_LABELS}
         placeholder="Filter by master, semester, block, or type anything..."
       />
