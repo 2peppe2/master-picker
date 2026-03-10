@@ -3,6 +3,7 @@
 import { useFiltered } from "@/app/atoms/filter/hooks/useFiltered";
 import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
 import { Draggable } from "@/components/DndProvider/Draggable";
+import EmptyCourseState from "./components/EmptyCourseState";
 import { useSortedCourses } from "@/hooks/useSortedCourses";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import CourseCard from "@/components/CourseCard";
@@ -49,23 +50,30 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
       </div>
 
       <div className="overflow-y-auto flex-1 p-4 pt-1">
-        <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">
-          {availableCourses.map((course) => {
-            const isDragging = draggedCourse?.code === course.code;
+        {availableCourses.length === 0 ? (
+          <EmptyCourseState
+            title="No courses found"
+            description="Try adjusting your filters or search terms."
+          />
+        ) : (
+          <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">
+            {availableCourses.map((course) => {
+              const isDragging = draggedCourse?.code === course.code;
 
-            return (
-              <Fragment key={course.code}>
-                {isDragging ? (
-                  <CourseCard variant="ghost" course={course} />
-                ) : (
-                  <Draggable id={course.code} data={course}>
-                    <CourseCard variant="grabbable" course={course} />
-                  </Draggable>
-                )}
-              </Fragment>
-            );
-          })}
-        </div>
+              return (
+                <Fragment key={course.code}>
+                  {isDragging ? (
+                    <CourseCard variant="ghost" course={course} />
+                  ) : (
+                    <Draggable id={course.code} data={course}>
+                      <CourseCard variant="grabbable" course={course} />
+                    </Draggable>
+                  )}
+                </Fragment>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
