@@ -1,11 +1,12 @@
 "use client";
 
-import { MultiSelect, MultiSelectGroup } from "@/components/ui/multi-select";
+import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { GraduationCap, LayoutGrid, Calendar } from "lucide-react";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { MasterBadge } from "@/components/MasterBadge";
 import { mastersAtom } from "@/app/atoms/mastersAtom";
+import MultiSelect from "@/components/ui/MultiSelect";
 import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
 import { range } from "lodash";
@@ -17,7 +18,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   period: "Periods",
 };
 
-export const UnifiedSearchFilter: FC = () => {
+const UnifiedSearchFilter: FC = () => {
   const [semesters, selectSemesters] = useAtom(filterAtoms.semestersAtom);
   const [masters, selectMasters] = useAtom(filterAtoms.mastersAtom);
   const [periods, selectPeriods] = useAtom(filterAtoms.periodsAtom);
@@ -41,7 +42,7 @@ export const UnifiedSearchFilter: FC = () => {
         searchKey: `Semester ${s}`,
         value: `semester:${s}`,
       })),
-    } satisfies MultiSelectGroup;
+    };
   }, [showBachelorYears]);
 
   const blockOptions = useMemo(
@@ -81,21 +82,20 @@ export const UnifiedSearchFilter: FC = () => {
   );
 
   const masterOptions = useMemo(
-    () =>
-      ({
-        heading: "Master Profiles",
-        options: Object.values(allMasters).map((m) => ({
-          value: `master:${m.master}`,
-          label: <MasterBadge name={m.master} />,
-          dropdownLabel: (
-            <div className="flex items-center gap-2 truncate w-full">
-              <MasterBadge name={m.master} />
-              <span className="truncate font-medium">{m.name ?? m.master}</span>
-            </div>
-          ),
-          searchKey: m.name ?? m.master,
-        })),
-      }) satisfies MultiSelectGroup,
+    () => ({
+      heading: "Master Profiles",
+      options: Object.values(allMasters).map((m) => ({
+        value: `master:${m.master}`,
+        label: <MasterBadge name={m.master} />,
+        dropdownLabel: (
+          <div className="flex items-center gap-2 truncate w-full">
+            <MasterBadge name={m.master} />
+            <span className="truncate font-medium">{m.name ?? m.master}</span>
+          </div>
+        ),
+        searchKey: m.name ?? m.master,
+      })),
+    }),
     [allMasters],
   );
 
@@ -106,11 +106,16 @@ export const UnifiedSearchFilter: FC = () => {
 
   const selectedValues = useMemo(() => {
     const values: string[] = [];
+
     semesters.forEach((s) => values.push(`semester:${s}`));
     blocks.forEach((b) => values.push(`block:${b}`));
     periods.forEach((p) => values.push(`period:${p}`));
     masters.forEach((m) => values.push(`master:${m}`));
-    if (search) values.push(`search:${search}`);
+
+    if (search) {
+      values.push(`search:${search}`);
+    }
+
     return values;
   }, [masters, semesters, blocks, periods, search]);
 
@@ -147,8 +152,7 @@ export const UnifiedSearchFilter: FC = () => {
         options={groupedOptions}
         defaultValue={selectedValues}
         onValueChange={handleValueChange}
-        onCreateOption={searchFor}
-        onSearchChange={searchFor} 
+        onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
         placeholder="Filter by master, semester, block, or type anything..."
       />
