@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 const DrawerHeader: FC = () => (
-  <div className="pl-1 pt-4 flex items-center gap-3 shrink-0 w-full justify-between">
+  <div className="pl-5 pr-4 pt-4 flex items-center gap-3 shrink-0 w-full justify-between">
     <Link href="/" className="group flex items-center gap-3 transition-colors">
       <ChevronLeft className="absolute size-4 text-[#00C8B3] transition-all duration-300 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-1" />
       <Image
