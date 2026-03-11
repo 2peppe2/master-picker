@@ -1,12 +1,13 @@
+"use client";
+
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
 import DialogGeneralTab from "./DialogGeneralTab";
 import DialogDetailsTab from "./DialogDetailsTab";
 import { Course } from "@/app/dashboard/page";
+import { Badge } from "@/components/ui/badge";
 import EvaluateScore from "./EvaluateScore";
 import DialogTabs from "./DialogTabs";
 import Statistics from "./Statistics";
-import { Badge } from "@/components/ui/badge";
-import { GraduationCap, NotebookText, CalendarClock, CircleStar } from "lucide-react";
 import { FC, useMemo } from "react";
 import {
   Dialog,
@@ -15,6 +16,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  GraduationCap,
+  NotebookText,
+  CalendarClock,
+  CircleStar,
+} from "lucide-react";
 
 interface CourseDialogProps {
   open: boolean;
@@ -60,7 +67,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="flex !h-[min(38rem,92vh)] w-full flex-col overflow-hidden sm:max-w-[39rem]"
+        className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]"
         data-no-drag="true"
       >
         <DialogHeader className="shrink-0">

@@ -20,7 +20,7 @@ const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
     className="flex h-full min-h-0 flex-1 flex-col overflow-hidden"
   >
     <TabsList
-      className="bg-background grid w-full shrink-0 rounded-none border-b p-0"
+      className="bg-background grid w-full shrink-0 rounded-none p-0"
       style={{ gridTemplateColumns: `repeat(${tabs.length}, minmax(0, 1fr))` }}
     >
       {tabs.map((tab) => (
