@@ -6,5 +6,6 @@ export const filterAtoms = {
   semestersAtom: atomWithReset<number[]>([7]),
   periodsAtom: atomWithReset<number[]>([]),
   blocksAtom: atomWithReset<number[]>([]),
+  levelsAtom: atomWithReset<string[]>([]),
   excludeSlotConflictsAtom: atomWithReset<boolean>(false),
 };
