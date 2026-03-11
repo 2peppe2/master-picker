@@ -42,11 +42,12 @@ export const useScrollToCourseFeedback = () => {
 
       showSemesters((prev) => {
         const semester = relativeSemester + 1;
+
         if (prev.includes(semester)) {
-          return [...prev.filter((p) => p !== semester)];
-        } else {
-          return [...prev, semester];
+          return prev;
         }
+
+        return [...prev, semester];
       });
 
       setTimeout(() => {
