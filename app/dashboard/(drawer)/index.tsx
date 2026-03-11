@@ -6,6 +6,7 @@ import { Draggable } from "@/components/DndProvider/Draggable";
 import EmptyCourseState from "./components/EmptyCourseState";
 import { useSortedCourses } from "@/hooks/useSortedCourses";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
+import DrawerHeader from "./components/DrawerHeader";
 import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
@@ -41,10 +42,14 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className="border-l shadow-lg
+      className="border-l shadow-sm 
         h-full sticky shrink-0 flex flex-col overflow-hidden
         2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
     >
+      <div className="px-4 pt-4 flex items-center gap-3 shrink-0">
+        <DrawerHeader />
+      </div>
+
       <div className="p-4 shrink-0 z-10">
         <UnifiedSearchFilter />
       </div>
