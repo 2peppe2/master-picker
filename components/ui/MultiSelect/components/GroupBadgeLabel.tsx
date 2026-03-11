@@ -14,22 +14,22 @@ const GroupBadgeLabel: FC<GroupBadgeLabelProps> = ({
   isProfile,
 }) => (
   <div className="flex flex-wrap items-center gap-x-1 max-w-full">
-    <span className="font-bold text-[10px] uppercase tracking-tighter opacity-50 whitespace-nowrap">
+    <span className="font-bold text-xsm uppercase tracking-tighter opacity-50 whitespace-nowrap">
       {title}:
     </span>
     <div
-      className={`flex flex-wrap items-center gap-y-1 my-0.5 ${
+      className={`flex flex-wrap items-center gap-y-1 ${
         isProfile ? "gap-x-0.5" : "gap-x-1"
       }`}
     >
       {items.map((item, idx) => (
         <span
           key={idx}
-          className="inline-flex items-center scale-[0.95] origin-left"
+          className="inline-flex items-center text-xsm origin-left"
         >
           {item.node}
           {idx < items.length - 1 && !isProfile && (
-            <span className="opacity-30 text-[10px] ml-1">,</span>
+            <span className="opacity-30 text-xsm ml-1">,</span>
           )}
         </span>
       ))}
