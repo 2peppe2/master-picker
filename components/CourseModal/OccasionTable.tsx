@@ -8,7 +8,9 @@ import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";
 import { MasterBadge } from "../MasterBadge";
+import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
+import { Plus } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -20,7 +22,7 @@ import {
 
 interface OccasionTableProps {
   course: Course;
-  showAdd : boolean;
+  showAdd: boolean;
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
@@ -59,9 +61,9 @@ const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
             {hasRecommendedMaster && (
               <TableHead>Recommended for master</TableHead>
             )}
-            {showAdd &&
-            <TableHead className="text-right">Add to schedule</TableHead>
-            }
+            {showAdd && (
+              <TableHead className="text-right">Add to schedule</TableHead>
+            )}
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -90,7 +92,7 @@ interface OccasionTableRowProps {
   showRecommendedMaster: boolean;
   setAlertOpen: (open: boolean) => void;
   setSelectedOccasion: (occasion: CourseOccasion) => void;
-  showAdd : boolean;
+  showAdd: boolean;
 }
 
 const OccasionTableRow: FC<OccasionTableRowProps> = ({
@@ -128,7 +130,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   };
 
   return (
-    <TableRow>
+    <TableRow className="transition-colors hover:bg-muted/25">
       <TableCell>
         {relativeSemester + 1} ({occasion.semester} {occasion.year})
       </TableCell>
@@ -143,16 +145,20 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
             : "-"}
         </TableCell>
       )}
-      {showAdd &&
-      <TableCell className="flex justify-end">
-        <p
-          onClick={handleAddClick}
-          className="cursor-pointer hover:underline underline-offset-2 text-left"
-        >
-          Add course
-        </p>
-      </TableCell>
-      }
+      {showAdd && (
+        <TableCell className="text-right">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={handleAddClick}
+            className="cursor-pointer h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
+          >
+            <Plus className="size-3.5" />
+            Add course
+          </Button>
+        </TableCell>
+      )}
     </TableRow>
   );
 };

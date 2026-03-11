@@ -1,6 +1,7 @@
 "use server";
-import { prisma } from "@/lib/prisma";
+
 import { RequirementUnion } from "../dashboard/page";
+import { prisma } from "@/lib/prisma";
 
 export async function getMasters() {
   const masters = await prisma.master.findMany();
@@ -17,11 +18,14 @@ export async function getMastersWithRequirements(program?: string) {
           courseRequirements: {
             select: { courses: true, type: true, minCount: true },
           },
+          mainFieldRequirements: {
+            select: { credits: true, type: true, fields: true },
+          },
         },
       },
     },
   });
-
+  
   return masters.map((master) => ({
     ...master,
     requirements: master.requirements.map((requirement) => {
@@ -32,6 +36,10 @@ export async function getMastersWithRequirements(program?: string) {
       );
 
       requirement.creditRequirements.forEach((requirement) => {
+        requirements.push(requirement);
+      });
+
+      requirement.mainFieldRequirements.forEach((requirement) => {
         requirements.push(requirement);
       });
 

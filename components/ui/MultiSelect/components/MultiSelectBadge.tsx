@@ -33,7 +33,7 @@ const MultiSelectBadge: FC<MultiSelectBadgeProps> = ({ badge, onRemove }) => (
   <Badge
     className={cn(
       multiSelectVariants(),
-      "rounded-md border-foreground/5 transition-all flex items-center pr-1 max-w-full whitespace-normal hover:bg-muted/80 hover:text-foreground cursor-default has-[.clear-action:hover]:bg-destructive/10 has-[.clear-action:hover]:text-destructive has-[.clear-action:hover]:border-destructive/30",
+      "rounded-md border-foreground/5 transition-all flex items-center pr-1 max-w-full whitespace-normal hover:bg-muted/80 hover:text-foreground cursor-default dark:has-[.clear-action:hover]:bg-destructive/20 has-[.clear-action:hover]:bg-destructive/10 has-[.clear-action:hover]:text-destructive has-[.clear-action:hover]:border-destructive/30",
     )}
   >
     <div className="flex-1 min-w-0 flex items-center">{badge.label}</div>

@@ -58,7 +58,10 @@ const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
         </Badge>
       </TooltipTrigger>
 
-      <TooltipContent side="bottom">
+      <TooltipContent
+        side="bottom"
+        className="p-0 border-none bg-transparent shadow-none"
+      >
         <MasterBadgeRequirementTooltip
           name={master.name}
           master={master.master}

@@ -7,6 +7,7 @@ import _ from "lodash";
 interface MasterProgress {
   progress: number;
   fulfilled: RequirementUnion[];
+  allRequirementsWithProgress: RequirementUnion[];
 }
 
 export const useEvaluateMasterProgress = () => {
@@ -17,85 +18,147 @@ export const useEvaluateMasterProgress = () => {
 
   return useCallback(
     (master: string, requirements: RequirementUnion[]): MasterProgress => {
-      if (requirements.length === 0) {
-        return { progress: 0, fulfilled: [] };
+      if (!requirements || requirements.length === 0) {
+        return { progress: 0, fulfilled: [], allRequirementsWithProgress: [] };
       }
 
-      const fulfilled: RequirementUnion[] = [];
-      let totalProgress = 0;
+      let totalProgressPoints = 0;
 
-      for (const requirement of requirements) {
-        const progress = getProgressForRequirement({
+      const allRequirementsWithProgress = requirements.map((req) => {
+        const stats = getProgressStats({
           master,
-          requirement,
+          requirement: req,
           courses: selectedCourses,
           masterCourses: selectedMasterCourses,
         });
 
-        totalProgress += progress;
+        totalProgressPoints += stats.percent;
 
-        if (progress >= 1) {
-          fulfilled.push(requirement);
-        }
-      }
+        return {
+          ...req,
+          current: stats.current,
+          isFulfilled: stats.percent >= 1,
+          fieldProgress: stats.fieldProgress,
+        };
+      });
+
+      const fulfilled = allRequirementsWithProgress.filter(
+        (r) => r.isFulfilled,
+      );
+
+      const overallProgress = Math.floor(
+        (totalProgressPoints / requirements.length) * 100,
+      );
 
       return {
+        progress: overallProgress,
         fulfilled,
-        progress: Math.floor((totalProgress / requirements.length) * 100),
+        allRequirementsWithProgress,
       };
     },
     [selectedCourses, selectedMasterCourses],
   );
 };
 
-interface GetProgressForRequirementArgs {
+interface GetProgressStatsArgs {
   master: string;
   requirement: RequirementUnion;
   courses: Course[];
   masterCourses: Course[];
 }
 
-const getProgressForRequirement = ({
+interface RequirementStats {
+  current: number;
+  percent: number;
+  fieldProgress?: Record<string, number>;
+}
+
+const getProgressStats = ({
   master,
   courses,
   masterCourses,
   requirement: req,
-}: GetProgressForRequirementArgs): number => {
+}: GetProgressStatsArgs): RequirementStats => {
   switch (req.type) {
+    case "CREDITS_MAIN_FIELD_TOTAL": {
+      const fieldProgress: Record<string, number> = {};
+
+      // Calculate individual HP for each field in the list
+      req.fields.forEach((field) => {
+        fieldProgress[field] = masterCourses
+          .filter((c) => c.mainField?.includes(field))
+          .reduce((sum, c) => sum + (c.credits || 0), 0);
+      });
+
+      // Overall requirement progress is the sum of all valid main field credits
+      const totalInMainFields = masterCourses
+        .filter((c) => c.mainField?.some((f) => req.fields.includes(f)))
+        .reduce((sum, c) => sum + (c.credits || 0), 0);
+
+      return {
+        current: totalInMainFields,
+        percent: calculateMetricProgress(totalInMainFields, req.credits),
+        fieldProgress,
+      };
+    }
+
     case "COURSE_SELECTION": {
       const selectedCodes = masterCourses.map((c) => c.code);
-
       const count = req.courses.filter((code) =>
         selectedCodes.includes(code.courseCode),
       ).length;
 
-      return calculateMetricProgress(count, req.minCount);
+      return {
+        current: count,
+        percent: calculateMetricProgress(count, req.minCount),
+      };
     }
+
     case "CREDITS_ADVANCED_MASTER": {
       const current = calculateCreditsByLevel(masterCourses, "A");
-      return calculateMetricProgress(current, req.credits);
+      return {
+        current,
+        percent: calculateMetricProgress(current, req.credits),
+      };
     }
+
     case "CREDITS_ADVANCED_PROFILE": {
       const current = calculateProfileCredits(masterCourses, master, "A");
-      return calculateMetricProgress(current, req.credits);
+      return {
+        current,
+        percent: calculateMetricProgress(current, req.credits),
+      };
     }
+
     case "CREDITS_PROFILE_TOTAL": {
       const current = calculateProfileCredits(masterCourses, master);
-      return calculateMetricProgress(current, req.credits);
+      return {
+        current,
+        percent: calculateMetricProgress(current, req.credits),
+      };
     }
+
     case "CREDITS_MASTER_TOTAL": {
       const current = masterCourses.reduce(
         (sum, c) => sum + (c.credits || 0),
         0,
       );
-      return calculateMetricProgress(current, req.credits);
+      return {
+        current,
+        percent: calculateMetricProgress(current, req.credits),
+      };
     }
+
     case "CREDITS_TOTAL": {
       const current = courses.reduce((sum, c) => sum + (c.credits || 0), 0);
-      return calculateMetricProgress(current, req.credits);
+      return {
+        current,
+        percent: calculateMetricProgress(current, req.credits),
+      };
     }
+
     default:
-      return 0;
+      return { current: 0, percent: 0 };
   }
 };
 

@@ -8,7 +8,7 @@ model Master {
   CourseMaster  CourseMaster[]
 
   courseOccasionRecommendations CourseOccasionRecommendedMaster[]
-  program         Program          @relation(fields: [masterProgram], references: [program], onDelete: Cascade)
+  program                       Program                           @relation(fields: [masterProgram], references: [program], onDelete: Cascade)
 
   @@id([master, masterProgram])
 }

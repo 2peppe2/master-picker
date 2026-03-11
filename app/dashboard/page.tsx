@@ -1,7 +1,7 @@
 "use server";
 
 import { Prisma } from "@/prisma/generated/client/client";
-import { normalizeCourse } from "../courseNormalizer";
+import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { prisma } from "@/lib/prisma";
 import ClientPage from "./ClientPage";
 
@@ -31,40 +31,7 @@ export default async function MainPage({
       : undefined;
   const courses = await prisma.course.findMany({
     where: courseWhere,
-    include: {
-      ProgramCourse: {
-        include: {
-          Program: {
-            select: {
-              program: true,
-              name: true,
-              shortname: true,
-            },
-          },
-        },
-      },
-      CourseOccasion: {
-        include: {
-          periods: {
-            select: {
-              period: true,
-              blocks: {
-                select: {
-                  block: true,
-                },
-              },
-            },
-          },
-          recommendedMasters: {
-            select: { master: true, masterProgram: true },
-          },
-        },
-      },
-      CourseMaster: true,
-      Examination: {
-        select: { credits: true, module: true, name: true, scale: true },
-      },
-    },
+    ...courseWithDetailsArgs,
   });
 
   const masters = await prisma.master.findMany({
@@ -109,7 +76,7 @@ export type Master = Prisma.MasterGetPayload<{
   };
 }>;
 
-export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
+export type CourseRequirement = Prisma.CoursesRequirementGetPayload<{
   select: {
     type: true;
     courses: true;
@@ -117,11 +84,26 @@ export type CourseRequirements = Prisma.CoursesRequirementGetPayload<{
   };
 }>;
 
-export type CreditsRequirements = Prisma.CreditRequirementGetPayload<{
+export type CreditsRequirement = Prisma.CreditRequirementGetPayload<{
   select: {
     type: true;
     credits: true;
   };
-}>;
+}> & {
+  current?: number;
+};
 
-export type RequirementUnion = CourseRequirements | CreditsRequirements;
+export type MainFieldRequirement = Prisma.MainFieldRequirementGetPayload<{
+  select: {
+    type: true;
+    credits: true;
+    fields: true;
+  };
+}> & {
+  fieldProgress?: Record<string, number>;
+};
+
+export type RequirementUnion =
+  | CourseRequirement
+  | CreditsRequirement
+  | MainFieldRequirement;

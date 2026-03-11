@@ -11,7 +11,7 @@ const GlobalClearButton: FC<GlobalClearButtonProps> = ({ onClear }) => (
   <button
     type="button"
     tabIndex={0}
-    className="group transition-colors clear-action flex items-center justify-center p-1 mr-1 rounded-md cursor-pointer text-muted-foreground hover:text-destructive hover:bg-destructive/10 border border-transparent hover:border-destructive/30"
+    className="group transition-colors clear-action flex items-center justify-center p-1 mr-1 rounded-full cursor-pointer text-muted-foreground hover:text-destructive hover:bg-destructive/10 border border-transparent hover:border-destructive/30"
     onClick={(e) => {
       e.preventDefault();
       e.stopPropagation();

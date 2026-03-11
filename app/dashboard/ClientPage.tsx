@@ -25,7 +25,6 @@ const ClientPage: FC<ClientPageProps> = ({ courses, masters }) => {
       ),
     [courses],
   );
-
   useHydrateAtoms([
     [coursesAtom, coursesMap],
     [mastersAtom, masters],

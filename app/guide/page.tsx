@@ -3,7 +3,7 @@ import { Prisma } from "@/prisma/generated/client/client";
 import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
-import { normalizeCourse } from "../courseNormalizer";
+import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { getProgramId } from "../actions/getProgramId";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
@@ -12,47 +12,7 @@ export type CourseRequirements = Prisma.RequirementGetPayload<{
       select: {
         courses: {
           select: {
-            course: {
-              include: {
-                ProgramCourse: {
-                  include: {
-                    Program: {
-                      select: {
-                        program: true;
-                        name: true;
-                        shortname: true;
-                      };
-                    };
-                  };
-                };
-                CourseOccasion: {
-                  include: {
-                    periods: {
-                      select: {
-                        period: true;
-                        blocks: {
-                          select: {
-                            block: true;
-                          };
-                        };
-                      };
-                    };
-                    recommendedMasters: {
-                      select: { master: true; masterProgram: true };
-                    };
-                  };
-                };
-                CourseMaster: true;
-                Examination: {
-                  select: {
-                    credits: true;
-                    module: true;
-                    name: true;
-                    scale: true;
-                  };
-                };
-              };
-            };
+            course: typeof courseWithDetailsArgs;
           };
         };
         type: true;
@@ -87,47 +47,7 @@ const GuidePage = async function ({
         select: {
           courses: {
             select: {
-              course: {
-                include: {
-                  ProgramCourse: {
-                    include: {
-                      Program: {
-                        select: {
-                          program: true,
-                          name: true,
-                          shortname: true,
-                        },
-                      },
-                    },
-                  },
-                  CourseOccasion: {
-                    include: {
-                      periods: {
-                        select: {
-                          period: true,
-                          blocks: {
-                            select: {
-                              block: true,
-                            },
-                          },
-                        },
-                      },
-                      recommendedMasters: {
-                        select: { master: true, masterProgram: true },
-                      },
-                    },
-                  },
-                  CourseMaster: true,
-                  Examination: {
-                    select: {
-                      credits: true,
-                      module: true,
-                      name: true,
-                      scale: true,
-                    },
-                  },
-                },
-              },
+              course: courseWithDetailsArgs,
             },
           },
           type: true,

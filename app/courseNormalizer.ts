@@ -1,44 +1,50 @@
 import { Prisma } from "@/prisma/generated/client/client";
 
-type CourseWithOccasion = Prisma.CourseGetPayload<{
+export const courseWithDetailsArgs = {
   include: {
     ProgramCourse: {
       include: {
         Program: {
           select: {
-            program: true;
-            name: true;
-            shortname: true;
-          };
-        };
-      };
-    };
+            program: true,
+            name: true,
+            shortname: true,
+          },
+        },
+      },
+    },
     CourseOccasion: {
       include: {
         periods: {
           select: {
-            period: true;
+            period: true,
             blocks: {
               select: {
-                block: true;
-              };
-            };
-          };
-        };
+                block: true,
+              },
+            },
+          },
+        },
         recommendedMasters: {
-          select: { master: true; masterProgram: true };
-        };
-      };
-    };
+          select: { master: true, masterProgram: true },
+        },
+      },
+    },
     Examination: {
-      select: { credits: true; module: true; name: true; scale: true };
-    };
-    CourseMaster: true;
-  };
-}>;
+      select: { credits: true, module: true, name: true, scale: true },
+    },
+    CourseMaster: true,
+  },
+} satisfies Prisma.CourseDefaultArgs;
+
+type CourseWithOccasion = Prisma.CourseGetPayload<
+  typeof courseWithDetailsArgs
+>;
 
 export const normalizeCourse = (course: CourseWithOccasion) => ({
   ...course,
+  department: course.department ?? "",
+  mainField: Array.isArray(course.mainField) ? course.mainField : [],
   CourseOccasion: course.CourseOccasion.map(
     ({ recommendedMasters, ...occasion }) => ({
       ...occasion,

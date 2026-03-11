@@ -1,8 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { type CourseData, fetchCourseData } from "./courseDataCache";
 
@@ -34,27 +46,35 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
   }, [courseCode]);
 
   const getTrendData = () => {
-    if (!courseData || !courseData.evaluationReports || courseData.evaluationReports.length === 0) {
+    if (
+      !courseData ||
+      !courseData.evaluationReports ||
+      courseData.evaluationReports.length === 0
+    ) {
       return [];
     }
 
     return courseData.evaluationReports
-      .sort((a, b) => new Date(a.reportDate).getTime() - new Date(b.reportDate).getTime())
+      .sort(
+        (a, b) =>
+          new Date(a.reportDate).getTime() - new Date(b.reportDate).getTime(),
+      )
       .map((report) => {
         let averageScore = 0;
         let totalWeight = 0;
 
         for (const key in report.scores) {
-            const scoreAmount = report.scores[key];
-            const scoreValue = parseFloat(key);
-            
-            if (!isNaN(scoreValue) && scoreValue >= 0) {
-                averageScore += scoreValue * scoreAmount;
-                totalWeight += scoreAmount;
-            }
+          const scoreAmount = report.scores[key];
+          const scoreValue = parseFloat(key);
+
+          if (!isNaN(scoreValue) && scoreValue >= 0) {
+            averageScore += scoreValue * scoreAmount;
+            totalWeight += scoreAmount;
+          }
         }
 
-        const avgScore = totalWeight > 0 ? (averageScore / totalWeight).toFixed(2) : "0.00";
+        const avgScore =
+          totalWeight > 0 ? (averageScore / totalWeight).toFixed(2) : "0.00";
 
         return {
           date: new Date(report.reportDate).toLocaleDateString(),
@@ -66,7 +86,13 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
 
   const trendData = getTrendData();
 
-  if (isLoading || error || (!courseData || !courseData.evaluationReports || courseData.evaluationReports.length === 0)) {
+  if (
+    isLoading ||
+    error ||
+    !courseData ||
+    !courseData.evaluationReports ||
+    courseData.evaluationReports.length === 0
+  ) {
     return (
       <div className="flex items-center justify-center py-8">
         {isLoading ? (
@@ -117,48 +143,70 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
               dataKey="avgScore"
               stroke="hsl(142, 76%, 36%)"
               strokeWidth={3}
-              dot={{ r: 4, fill: "hsl(142, 76%, 36%)" }} />
+              dot={{ r: 4, fill: "hsl(142, 76%, 36%)" }}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>
 
       <div className="flex flex-col gap-2">
         <p className="text-sm text-muted-foreground">
-            Course evaluation data is provided by{" "}
-            <a href="https://admin.evaliuate.liu.se/search?lang=sv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                Liu Evaliuate</a> (Liu login required).
-                Calculated from the course&apos;s overall evaluation
+          Course evaluation data is provided by{" "}
+          <a
+            href="https://admin.evaliuate.liu.se/search?lang=sv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            Liu Evaliuate
+          </a>{" "}
+          (Liu login required). Calculated from the course&apos;s overall
+          evaluation
         </p>
       </div>
 
-
       <Collapsible open={reportsOpen} onOpenChange={setReportsOpen}>
-        <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-md border hover:bg-accent">
+        <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-md border hover:bg-accent cursor-pointer">
           <div className="flex flex-col gap-1">
-            <h3 className="text-sm font-semibold text-left">Reports ({courseData.evaluationReports.length})</h3>
+            <h3 className="text-sm font-semibold text-left">
+              Reports ({courseData.evaluationReports.length})
+            </h3>
             <p className="text-xs text-muted-foreground">Liu login required</p>
           </div>
-          <ChevronDown 
-            className="h-4 w-4 transition-transform duration-200" 
-            style={{ transform: reportsOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+          <ChevronDown
+            className="h-4 w-4 transition-transform duration-200"
+            style={{
+              transform: reportsOpen ? "rotate(180deg)" : "rotate(0deg)",
+            }}
           />
         </CollapsibleTrigger>
         <CollapsibleContent className="space-y-2 mt-2">
-          {courseData && courseData.evaluationReports && courseData.evaluationReports
-            .sort((a, b) => new Date(b.reportDate).getTime() - new Date(a.reportDate).getTime())
-            .map((report) => (
-              <div key={report.reportId} className="flex items-center justify-between p-2 rounded-md border">
-                <span className="text-sm">{new Date(report.reportDate).toLocaleDateString()}</span>
-                <a
-                  href={`https://admin.evaliuate.liu.se/ReportFile/report/${report.reportId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary hover:underline"
+          {courseData &&
+            courseData.evaluationReports &&
+            courseData.evaluationReports
+              .sort(
+                (a, b) =>
+                  new Date(b.reportDate).getTime() -
+                  new Date(a.reportDate).getTime(),
+              )
+              .map((report) => (
+                <div
+                  key={report.reportId}
+                  className="flex items-center justify-between p-2 rounded-md border"
                 >
-                  View Report
-                </a>
-              </div>
-            ))}
+                  <span className="text-sm">
+                    {new Date(report.reportDate).toLocaleDateString()}
+                  </span>
+                  <a
+                    href={`https://admin.evaliuate.liu.se/ReportFile/report/${report.reportId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline"
+                  >
+                    View Report
+                  </a>
+                </div>
+              ))}
         </CollapsibleContent>
       </Collapsible>
     </div>

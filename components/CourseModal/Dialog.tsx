@@ -1,7 +1,10 @@
+"use client";
+
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
 import DialogGeneralTab from "./DialogGeneralTab";
-import ExaminationTable from "./ExaminationTable";
+import DialogDetailsTab from "./DialogDetailsTab";
 import { Course } from "@/app/dashboard/page";
+import { Badge } from "@/components/ui/badge";
 import EvaluateScore from "./EvaluateScore";
 import DialogTabs from "./DialogTabs";
 import Statistics from "./Statistics";
@@ -13,6 +16,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  GraduationCap,
+  NotebookText,
+  CalendarClock,
+  CircleStar,
+} from "lucide-react";
 
 interface CourseDialogProps {
   open: boolean;
@@ -27,17 +36,19 @@ const CourseDialog: FC<CourseDialogProps> = ({
   course,
   showAdd = true,
 }) => {
+  const level = course.level.trim() === "" ? "N/A" : course.level;
+
   const tabs = useMemo(
     () => [
       {
-        name: "General",
-        value: "general",
+        name: "Overview",
+        value: "overview",
         content: <DialogGeneralTab course={course} showAdd={showAdd} />,
       },
       {
-        name: "Examinations",
-        value: "examinations",
-        content: <ExaminationTable examination={course.Examination} />,
+        name: "Examination",
+        value: "examination",
+        content: <DialogDetailsTab course={course} />,
       },
       {
         name: "Statistics",
@@ -46,7 +57,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
       },
       {
         name: "Evaliuate Score",
-        value: "evaluate-score",
+        value: "evaliuate-score",
         content: <EvaluateScore courseCode={course.code} />,
       },
     ],
@@ -55,10 +66,43 @@ const CourseDialog: FC<CourseDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl" data-no-drag="true">
-        <DialogHeader>
+      <DialogContent
+        className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]"
+        data-no-drag="true"
+      >
+        <DialogHeader className="shrink-0">
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
+          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+            <Badge
+              variant="secondary"
+              className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
+            >
+              <GraduationCap className="size-3" />
+              {course.credits} ECTS
+            </Badge>
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
+            >
+              <CircleStar className="size-3" />
+              Level {level}
+            </Badge>
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
+            >
+              <NotebookText className="size-3" />
+              {course.Examination.length} modules
+            </Badge>
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
+            >
+              <CalendarClock className="size-3" />
+              {course.CourseOccasion.length} occasions
+            </Badge>
+          </div>
         </DialogHeader>
         <DialogTabs tabs={tabs} />
         <DialogFooterWithDetails course={course} />
