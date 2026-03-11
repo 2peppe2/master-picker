@@ -1,7 +1,7 @@
 "use client";
 
-import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { GraduationCap, LayoutGrid, Calendar, CircleStar } from "lucide-react";
+import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { MasterBadge } from "@/components/MasterBadge";
