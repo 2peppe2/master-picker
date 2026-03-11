@@ -1,13 +1,12 @@
 "use client";
 
-import { useFilterMutators } from "@/app/atoms/filter/hooks/useFilterMutators";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
-import { SemesterOption } from "@/app/atoms/filter/types";
+import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { Droppable } from "@/components/Droppable";
+import { useAtomValue, useSetAtom } from "jotai";
 import CourseCard from "@/components/CourseCard";
 import { SearchIcon } from "lucide-react";
-import { useAtomValue } from "jotai";
 import { cn } from "@/lib/utils";
 import { BlockProps } from ".";
 import { FC } from "react";
@@ -18,10 +17,12 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
   const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
 
-  const { selectBlocks, selectPeriods, selectSemester } = useFilterMutators();
+  const selectBlocks = useSetAtom(filterAtoms.blocksAtom);
+  const selectPeriods = useSetAtom(filterAtoms.periodsAtom);
+  const selectSemesters = useSetAtom(filterAtoms.semestersAtom);
 
   const handleFilterChange = () => {
-    selectSemester((data.semesterNumber + 1) as SemesterOption);
+    selectSemesters([data.semesterNumber + 1]);
     selectPeriods([data.periodNumber + 1]);
     selectBlocks([data.blockNumber + 1]);
   };

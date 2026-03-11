@@ -1,7 +1,7 @@
 "use client";
 
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
-import { useScrollToCourseFeedback } from "@/hooks/useCourseAddedFeedback";
+import { useScrollToCourseFeedback } from "@/hooks/useScrollToCourseFeedback";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";

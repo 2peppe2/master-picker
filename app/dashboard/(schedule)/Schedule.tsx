@@ -8,8 +8,8 @@ import { useMemo } from "react";
 import { range } from "lodash";
 
 const Schedule = () => {
-  const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
   const { showBachelorYears, masterPeriod } = useAtomValue(userPreferencesAtom);
+  const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
 
   const semesters = useMemo(() => {
     if (showBachelorYears) {
