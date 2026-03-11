@@ -46,9 +46,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
         h-full sticky shrink-0 flex flex-col overflow-hidden
         2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
     >
-      <div className="px-4 pt-4 flex items-center gap-3 shrink-0">
-        <DrawerHeader />
-      </div>
+      <DrawerHeader />
 
       <div className="p-4 shrink-0 z-10">
         <UnifiedSearchFilter />
