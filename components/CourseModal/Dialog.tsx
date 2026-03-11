@@ -65,8 +65,11 @@ const CourseDialog: FC<CourseDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[39rem]" data-no-drag="true">
-        <DialogHeader>
+      <DialogContent
+        className="flex !h-[min(38rem,92vh)] w-full flex-col overflow-hidden sm:max-w-[39rem]"
+        data-no-drag="true"
+      >
+        <DialogHeader className="shrink-0">
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
           <div className="flex flex-wrap items-center gap-1.5 pt-1">

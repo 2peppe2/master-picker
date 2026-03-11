@@ -15,15 +15,21 @@ interface DialogTabsProps {
 }
 
 const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
-  <Tabs defaultValue={tabs[0]?.value ?? ""} className="flex flex-col h-[420px]">
-    <TabsList className="bg-background rounded-none border-b p-0 justify-start shrink-0 overflow-x-auto">
+  <Tabs
+    defaultValue={tabs[0]?.value ?? ""}
+    className="flex h-full min-h-0 flex-1 flex-col overflow-hidden"
+  >
+    <TabsList
+      className="bg-background grid w-full shrink-0 rounded-none border-b p-0"
+      style={{ gridTemplateColumns: `repeat(${tabs.length}, minmax(0, 1fr))` }}
+    >
       {tabs.map((tab) => (
         <TabsTrigger
           key={tab.value}
           value={tab.value}
-          className="bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 rounded-none border-0 border-b-2 border-transparent data-[state=active]:shadow-none transition-colors whitespace-nowrap"
+          className="bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 min-w-0 rounded-none border-0 border-b-2 border-transparent px-2 text-xs data-[state=active]:shadow-none transition-colors sm:text-sm"
         >
-          {tab.name}
+          <span className="truncate">{tab.name}</span>
         </TabsTrigger>
       ))}
     </TabsList>
@@ -33,10 +39,10 @@ const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
         key={tab.value}
         value={tab.value}
         className={cn(
-          "h-full mt-0 focus-visible:outline-none overflow-y-auto overflow-x-hidden data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-bottom-1 data-[state=active]:duration-200",
+          "mt-0 h-0 flex-1 min-h-0 focus-visible:outline-none overflow-y-scroll overflow-x-hidden",
         )}
       >
-        <div className="text-muted-foreground text-sm w-full">
+        <div className="text-muted-foreground text-sm w-full min-h-full">
           {tab.content}
         </div>
       </TabsContent>
