@@ -12,7 +12,7 @@ interface DialogFooterProps {
 const DialogFooterWithDetails: FC<DialogFooterProps> = ({ course }) => (
   <DialogFooter className="w-full shrink-0 justify-end sm:justify-end">
     <a href={course.link} target="_blank" rel="noopener noreferrer">
-      <Button type="button" variant="link">
+      <Button className="cursor-pointer" type="button" variant="link">
         More Info
       </Button>
     </a>

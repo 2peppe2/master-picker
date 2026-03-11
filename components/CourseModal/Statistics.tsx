@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,7 +9,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import {
+  type ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 import { Pie, PieChart } from "recharts";
 import { type CourseData, fetchCourseData } from "./courseDataCache";
 
@@ -37,8 +42,8 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
         setError(null);
 
         const data = await fetchCourseData(courseCode);
-        
-        if(isMounted && data) {
+
+        if (isMounted && data) {
           setCourseData(data);
         }
       } catch (err) {
@@ -61,17 +66,20 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
         return "hsl(142, 76%, 36%)"; // Default to green if only one grade
       }
       const ratio = (gradeOrder - 1) / (maxOrder - 1);
-      
-      const hue = 142 - (ratio * 142); // From 142 (green) to 0 (red)
-      const saturation = 76 + (ratio * 8); // From 76% to 84%
-      const lightness = 36 + (ratio * 24); // From 36% to 60%
-      
+
+      const hue = 142 - ratio * 142; // From 142 (green) to 0 (red)
+      const saturation = 76 + ratio * 8; // From 76% to 84%
+      const lightness = 36 + ratio * 24; // From 36% to 60%
+
       return `hsl(${Math.round(hue)}, ${Math.round(saturation)}%, ${Math.round(lightness)}%)`;
     };
 
     if (selectedModule === "all") {
       // Aggregate all grades from all modules
-      const gradeMap = new Map<string, { quantity: number; gradeOrder: number }>();
+      const gradeMap = new Map<
+        string,
+        { quantity: number; gradeOrder: number }
+      >();
 
       courseData.modules.forEach((module) => {
         module.grades.forEach((grade) => {
@@ -104,13 +112,15 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
     } else {
       // Show specific module grades by matching moduleCode-date combination
       const selectedModuleData = courseData.modules.find(
-        (module) => `${module.moduleCode}-${module.date}` === selectedModule
+        (module) => `${module.moduleCode}-${module.date}` === selectedModule,
       );
-      
+
       if (!selectedModuleData) return [];
-      
-      const maxOrder = Math.max(...selectedModuleData.grades.map((g) => g.gradeOrder));
-      
+
+      const maxOrder = Math.max(
+        ...selectedModuleData.grades.map((g) => g.gradeOrder),
+      );
+
       return selectedModuleData.grades
         .map((grade) => ({
           grade: grade.grade,
@@ -124,12 +134,22 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
 
   const chartData = getChartData();
 
-  if(isLoading || error || (!courseData || !courseData.modules || courseData.modules.length === 0)) {
+  if (
+    isLoading ||
+    error ||
+    !courseData ||
+    !courseData.modules ||
+    courseData.modules.length === 0
+  ) {
     return (
       <div className="flex items-center justify-center py-8">
-        {isLoading && <p className="text-muted-foreground">Loading statistics...</p>}
+        {isLoading && (
+          <p className="text-muted-foreground">Loading statistics...</p>
+        )}
         {error && <p className="text-destructive">Error: {error}</p>}
-        {!isLoading && !error && <p className="text-muted-foreground">No statistics available</p>}
+        {!isLoading && !error && (
+          <p className="text-muted-foreground">No statistics available</p>
+        )}
       </div>
     );
   }
@@ -140,25 +160,33 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
         <div>
           <Label>Select Examination</Label>
           <Select value={selectedModule} onValueChange={setSelectedModule}>
-            <SelectTrigger className="w-full mt-2">
+            <SelectTrigger className="cursor-pointer w-full mt-2">
               <SelectValue placeholder="Select an examination" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Examinations</SelectItem>
               {courseData.modules.map((module) => (
-                <SelectItem key={`${module.moduleCode}-${module.date}`} value={`${module.moduleCode}-${module.date}`}>
-                  {module.moduleCode} ({new Date(module.date).toLocaleDateString()})
+                <SelectItem
+                  className="cursor-pointer"
+                  key={`${module.moduleCode}-${module.date}`}
+                  value={`${module.moduleCode}-${module.date}`}
+                >
+                  {module.moduleCode} (
+                  {new Date(module.date).toLocaleDateString()})
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
-        
+
         <div className="mt-4">
           <Label>Grade Distribution</Label>
           <div className="mt-2 space-y-2">
             {chartData.map((item) => (
-              <div key={item.grade} className="flex items-center justify-between">
+              <div
+                key={item.grade}
+                className="flex items-center justify-between"
+              >
                 <div className="flex items-center gap-2">
                   <div
                     className="w-4 h-4 rounded"
@@ -166,7 +194,9 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
                   />
                   <span className="text-sm">Grade {item.grade}</span>
                 </div>
-                <span className="text-sm font-medium">{item.quantity} students</span>
+                <span className="text-sm font-medium">
+                  {item.quantity} students
+                </span>
               </div>
             ))}
           </div>
@@ -177,7 +207,10 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
         {chartData.length > 0 ? (
           <ChartContainer config={chartConfig} className="h-64 w-full">
             <PieChart>
-              <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+              <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent hideLabel />}
+              />
               <Pie
                 data={chartData}
                 dataKey="quantity"

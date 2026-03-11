@@ -22,7 +22,7 @@ import {
 
 interface OccasionTableProps {
   course: Course;
-  showAdd : boolean;
+  showAdd: boolean;
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
@@ -61,9 +61,9 @@ const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
             {hasRecommendedMaster && (
               <TableHead>Recommended for master</TableHead>
             )}
-            {showAdd &&
-            <TableHead className="text-right">Add to schedule</TableHead>
-            }
+            {showAdd && (
+              <TableHead className="text-right">Add to schedule</TableHead>
+            )}
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -92,7 +92,7 @@ interface OccasionTableRowProps {
   showRecommendedMaster: boolean;
   setAlertOpen: (open: boolean) => void;
   setSelectedOccasion: (occasion: CourseOccasion) => void;
-  showAdd : boolean;
+  showAdd: boolean;
 }
 
 const OccasionTableRow: FC<OccasionTableRowProps> = ({
@@ -145,20 +145,20 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
             : "-"}
         </TableCell>
       )}
-      {showAdd &&
-      <TableCell className="text-right">
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={handleAddClick}
-          className="h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
-        >
-          <Plus className="size-3.5" />
-          Add course
-        </Button>
-      </TableCell>
-      }
+      {showAdd && (
+        <TableCell className="text-right">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={handleAddClick}
+            className="cursor-pointer h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
+          >
+            <Plus className="size-3.5" />
+            Add course
+          </Button>
+        </TableCell>
+      )}
     </TableRow>
   );
 };

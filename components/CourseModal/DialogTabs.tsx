@@ -27,7 +27,7 @@ const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
         <TabsTrigger
           key={tab.value}
           value={tab.value}
-          className="bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 min-w-0 rounded-none border-0 border-b-2 border-transparent px-2 text-xs data-[state=active]:shadow-none transition-colors sm:text-sm"
+          className="cursor-pointer bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 min-w-0 rounded-none border-0 border-b-2 border-transparent px-2 text-xs data-[state=active]:shadow-none transition-colors sm:text-sm"
         >
           <span className="truncate">{tab.name}</span>
         </TabsTrigger>
