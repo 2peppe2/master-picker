@@ -1,5 +1,9 @@
 import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { scheduleAtoms, WILDCARD_BLOCK_START } from "../atoms";
+import {
+  scheduleAtoms,
+  SHARE_BUTTON_LOADING_MS,
+  WILDCARD_BLOCK_START,
+} from "../atoms";
 import { userPreferencesAtom } from "../../UserPreferences";
 import { Course } from "@/app/dashboard/page";
 import { useAtomCallback } from "jotai/utils";
@@ -88,6 +92,10 @@ export const useScheduleMutators = () => {
    */
   const addCourseByButton = useAtomCallback(
     useCallback((get, set, { course, occasion }: AddCourseByButtonArgs) => {
+      set(
+        scheduleAtoms.shareButtonLoadingUntilAtom,
+        Date.now() + SHARE_BUTTON_LOADING_MS,
+      );
       const startingYear = get(userPreferencesAtom).startingYear;
 
       set(scheduleAtoms.schedulesAtom, (prev) =>
@@ -142,6 +150,10 @@ export const useScheduleMutators = () => {
    */
   const addCourseByDrop = useAtomCallback(
     useCallback((get, set, { course, occasion }: AddCourseByDropArgs) => {
+      set(
+        scheduleAtoms.shareButtonLoadingUntilAtom,
+        Date.now() + SHARE_BUTTON_LOADING_MS,
+      );
       const startingYear = get(userPreferencesAtom).startingYear;
 
       set(scheduleAtoms.schedulesAtom, (prev) =>

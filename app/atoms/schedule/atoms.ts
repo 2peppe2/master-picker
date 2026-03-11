@@ -5,6 +5,7 @@ import { ScheduleGrid } from "./types";
 import { atom } from "jotai";
 
 export const WILDCARD_BLOCK_START = 4;
+export const SHARE_BUTTON_LOADING_MS = 600;
 
 export const scheduleAtoms = {
   /**
@@ -38,6 +39,12 @@ export const scheduleAtoms = {
    * setDraggedCourse(course);
    */
   draggedCourseAtom: atom<Course | null>(null),
+
+  /**
+   * Timestamp (ms since epoch) until which the share button should show
+   * a temporary loading state after add-course operations.
+   */
+  shareButtonLoadingUntilAtom: atom<number>(0),
 
   /**
    * Derived atom: Computes all unique courses currently in the schedule.
