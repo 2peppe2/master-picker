@@ -8,12 +8,18 @@ import { Course } from "../../../dashboard/page";
 import { filterAtoms } from "../atoms";
 import { useAtomValue } from "jotai";
 
+interface MasterPeriod {
+  start: number;
+  end: number;
+}
+
 interface UseFilteredArgs {
   courses: Course[];
 }
 
 export const useFiltered = ({ courses }: UseFilteredArgs) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const { startingYear, showBachelorYears, masterPeriod } =
+    useAtomValue(userPreferencesAtom);
   const { hasMatchingOccasion } = useScheduleGetters();
 
   const search = useAtomValue(filterAtoms.searchAtom);
@@ -148,6 +154,31 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
     );
   }, []);
 
+  const filterOutBachelors = useCallback(
+    (
+      showBachelorYears: boolean,
+      masterPeriod: MasterPeriod,
+      course: Course,
+    ) => {
+      const minPeriod = showBachelorYears ? 0 : masterPeriod.start - 1;
+      const maxPeriod = masterPeriod.end;
+
+      const matchesAnySemester = course.CourseOccasion.some((occasion) => {
+        const relativeSemester = yearAndSemesterToRelativeSemester(
+          startingYear,
+          occasion.year,
+          occasion.semester,
+        );
+
+        const currentPeriod = relativeSemester + 1;
+        return currentPeriod >= minPeriod && currentPeriod < maxPeriod;
+      });
+
+      return !matchesAnySemester;
+    },
+    [startingYear],
+  );
+
   return useMemo(
     () =>
       courses.filter((course) => {
@@ -160,6 +191,10 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
         }
 
         if (filterOutByMasters(deferredFilters.masters, course)) {
+          return false;
+        }
+
+        if (filterOutBachelors(showBachelorYears, masterPeriod, course)) {
           return false;
         }
 
@@ -181,12 +216,15 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       }),
     [
       courses,
-      deferredFilters,
       filterOutBySemesters,
+      deferredFilters,
+      filterOutByLevels,
       filterOutByMasters,
+      filterOutBachelors,
+      showBachelorYears,
+      masterPeriod,
       filterOutByPeriodsAndBlocks,
       filterOutByTerm,
-      filterOutByLevels,
     ],
   );
 };
