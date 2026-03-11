@@ -72,7 +72,8 @@ const DialogTimeChart = ({
           endAngle={360 + 90}
           innerRadius={33}
           outerRadius={50}
-          paddingAngle={data.find((item) => item.hours === 0) ? 0 : 2}
+          paddingAngle={data.find((item) => item.hours === 0) ? 0 : 4}
+          cornerRadius={4}
           isAnimationActive
           animationBegin={80}
           animationDuration={520}

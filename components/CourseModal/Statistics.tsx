@@ -220,6 +220,7 @@ const Statistics = ({ courseCode }: StatisticsProps) => {
                 innerRadius={60}
                 outerRadius={80}
                 paddingAngle={chartData.length > 1 ? 5 : 0}
+                cornerRadius={6}
               />
             </PieChart>
           </ChartContainer>
