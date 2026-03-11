@@ -39,7 +39,7 @@ const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
         key={tab.value}
         value={tab.value}
         className={cn(
-          "mt-0 h-0 flex-1 min-h-0 focus-visible:outline-none overflow-y-scroll overflow-x-hidden",
+          "mt-0 h-0 flex-1 min-h-0 focus-visible:outline-none overflow-y-auto overflow-x-hidden",
         )}
       >
         <div className="text-muted-foreground text-sm w-full min-h-full">

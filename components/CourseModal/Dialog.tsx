@@ -79,7 +79,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <GraduationCap className="size-3" />
-              {course.credits} ECTS
+              {course.credits} HP
             </Badge>
             <Badge
               variant="outline"
