@@ -7,7 +7,7 @@ import { FC } from "react";
 
 const DrawerHeader: FC = () => (
   <Link href="/" className="group flex items-center gap-3 transition-colors">
-    <ChevronLeft className="absolute size-4 text-[#00C8B3] transition-all duration-300 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" />
+    <ChevronLeft className="absolute size-4 text-[#00C8B3] transition-all duration-300 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-1" />
     <Image
       src="/logo/mp_logo_icon.svg"
       alt="Logo"
