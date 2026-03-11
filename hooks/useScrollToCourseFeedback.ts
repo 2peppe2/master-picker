@@ -1,6 +1,5 @@
 "use client";
 
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
@@ -32,22 +31,7 @@ export const useScrollToCourseFeedback = () => {
   useEffect(() => {
     const handleFeedback = (event: Event) => {
       const customEvent = event as CustomEvent<ScrollToCourseEvent>;
-      const { course, occasion } = customEvent.detail;
-
-      const relativeSemester = yearAndSemesterToRelativeSemester(
-        startingYear,
-        occasion.year,
-        occasion.semester,
-      );
-
-      showSemesters((prev) => {
-        const semester = relativeSemester + 1;
-        if (prev.includes(semester)) {
-          return [...prev.filter((p) => p !== semester)];
-        } else {
-          return [...prev, semester];
-        }
-      });
+      const { course } = customEvent.detail;
 
       setTimeout(() => {
         const elements = document.querySelectorAll(
