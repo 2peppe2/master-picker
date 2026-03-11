@@ -154,7 +154,7 @@ const UnifiedSearchFilter: FC = () => {
         onValueChange={handleValueChange}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
-        placeholder="Filter by master, semester, block, or type anything..."
+        placeholder="Filter by master, block, or type..."
       />
     </div>
   );

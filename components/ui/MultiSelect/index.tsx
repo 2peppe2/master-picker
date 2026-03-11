@@ -141,7 +141,7 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                       }
                     }}
                     onKeyDown={actions.handleKeyDown}
-                    className="bg-transparent outline-none text-sm min-w-[2px] w-auto placeholder:text-transparent"
+                    className="text-[12px] bg-transparent outline-none text-sm min-w-[2px] w-auto placeholder:text-transparent"
                     style={{
                       width: state.searchValue
                         ? `${state.searchValue.length + 1}ch`

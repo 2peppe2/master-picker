@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 
 const multiSelectVariants = cva(
-  "m-0.5 transition-colors duration-200 font-medium select-none min-h-7 h-auto py-1 flex items-center px-2.5",
+  "m-0.5 transition-all duration-200 font-medium select-none min-h-7 h-auto py-1 flex items-center px-2.5",
   {
     variants: {
       variant: {
         default:
-          "border-foreground/10 text-foreground bg-card hover:bg-card/80",
+          "bg-background border-border shadow-sm text-foreground hover:bg-muted/50 dark:bg-card dark:hover:bg-card/80",
         secondary:
-          "border-foreground/10 bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
       },
     },
     defaultVariants: {
