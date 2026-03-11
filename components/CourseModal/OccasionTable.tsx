@@ -8,7 +8,9 @@ import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";
 import { MasterBadge } from "../MasterBadge";
+import { Button } from "../ui/button";
 import { useAtomValue } from "jotai";
+import { Plus } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -128,7 +130,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   };
 
   return (
-    <TableRow>
+    <TableRow className="transition-colors hover:bg-muted/25">
       <TableCell>
         {relativeSemester + 1} ({occasion.semester} {occasion.year})
       </TableCell>
@@ -144,13 +146,17 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
         </TableCell>
       )}
       {showAdd &&
-      <TableCell className="flex justify-end">
-        <p
+      <TableCell className="text-right">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
           onClick={handleAddClick}
-          className="cursor-pointer hover:underline underline-offset-2 text-left"
+          className="h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
         >
+          <Plus className="size-3.5" />
           Add course
-        </p>
+        </Button>
       </TableCell>
       }
     </TableRow>

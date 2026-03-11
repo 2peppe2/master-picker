@@ -16,12 +16,12 @@ interface DialogTabsProps {
 
 const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
   <Tabs defaultValue={tabs[0]?.value ?? ""} className="flex flex-col h-[420px]">
-    <TabsList className="bg-background rounded-none border-b p-0 justify-start shrink-0">
+    <TabsList className="bg-background rounded-none border-b p-0 justify-start shrink-0 overflow-x-auto">
       {tabs.map((tab) => (
         <TabsTrigger
           key={tab.value}
           value={tab.value}
-          className="bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 rounded-none border-0 border-b-2 border-transparent data-[state=active]:shadow-none transition-all"
+          className="bg-background data-[state=active]:border-primary data-[state=active]:text-foreground text-muted-foreground hover:text-foreground hover:border-muted-foreground/30 h-10 rounded-none border-0 border-b-2 border-transparent data-[state=active]:shadow-none transition-colors whitespace-nowrap"
         >
           {tab.name}
         </TabsTrigger>
@@ -33,7 +33,7 @@ const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
         key={tab.value}
         value={tab.value}
         className={cn(
-          "h-full mt-0 focus-visible:outline-none overflow-y-auto overflow-x-hidden",
+          "h-full mt-0 focus-visible:outline-none overflow-y-auto overflow-x-hidden data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:slide-in-from-bottom-1 data-[state=active]:duration-200",
         )}
       >
         <div className="text-muted-foreground text-sm w-full">

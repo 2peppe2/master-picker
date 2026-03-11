@@ -4,14 +4,19 @@ import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } f
 import { Label, Pie, PieChart } from "recharts";
 import { useEffect, useState } from "react";
 
+export const WORKLOAD_COLORS = {
+    scheduled: "oklch(0.64 0.11 245)",
+    selfStudy: "oklch(0.74 0.1 80)",
+} as const;
+
 const revenueChartConfig = {
     scheduled: {
         label: 'Scheduled Hours',
-        color: 'var(--chart-2)'
+        color: WORKLOAD_COLORS.scheduled
     },
     selfStudy: {
         label: 'Self-study Hours',
-        color: 'var(--chart-1)'
+        color: WORKLOAD_COLORS.selfStudy
     }
 } satisfies ChartConfig
 
@@ -48,10 +53,10 @@ const DialogTimeChart = ({ scheduledHours, selfStudyHours } : DialogTimeChartPro
                     endAngle={360 + 90}
                     innerRadius={33}
                     outerRadius={50}
-                    paddingAngle={data.find(data => data.hours == 0) ? 0 : 2}
+                    paddingAngle={data.find((item) => item.hours === 0) ? 0 : 2}
                     isAnimationActive
-                    animationBegin={120}
-                    animationDuration={700}
+                    animationBegin={80}
+                    animationDuration={520}
                     animationEasing="ease-out"
                 >
                     <Label
