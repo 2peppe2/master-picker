@@ -21,6 +21,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const blocks = useAtomValue(filterAtoms.blocksAtom);
   const periods = useAtomValue(filterAtoms.periodsAtom);
   const semesters = useAtomValue(filterAtoms.semestersAtom);
+  const levels = useAtomValue(filterAtoms.levelsAtom);
 
   const filterObject = useMemo(
     () => ({
@@ -29,8 +30,9 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       blocks,
       periods,
       semesters,
+      levels,
     }),
-    [search, masters, blocks, periods, semesters],
+    [search, masters, blocks, periods, semesters, levels],
   );
 
   const deferredFilters = useDeferredValue(filterObject);
@@ -134,21 +136,42 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
     [filterOutByBlocks, filterOutByPeriods, hasMatchingOccasion],
   );
 
+  const filterOutByLevels = useCallback((levels: string[], course: Course) => {
+    if (!levels || levels.length === 0) return false;
+
+    return !levels.some((level) =>
+      course.level.toLowerCase().includes(level.toLowerCase()),
+    );
+  }, []);
+
   return useMemo(
     () =>
       courses.filter((course) => {
-        if (filterOutBySemesters(deferredFilters.semesters, course))
+        if (filterOutBySemesters(deferredFilters.semesters, course)) {
           return false;
-        if (filterOutByMasters(deferredFilters.masters, course)) return false;
+        }
+
+        if (filterOutByLevels(deferredFilters.levels, course)) {
+          return false;
+        }
+
+        if (filterOutByMasters(deferredFilters.masters, course)) {
+          return false;
+        }
+
         if (
           filterOutByPeriodsAndBlocks(
             deferredFilters.periods,
             deferredFilters.blocks,
             course,
           )
-        )
+        ) {
           return false;
-        if (filterOutByTerm(deferredFilters.search, course)) return false;
+        }
+
+        if (filterOutByTerm(deferredFilters.search, course)) {
+          return false;
+        }
 
         return true;
       }),
@@ -159,6 +182,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       filterOutByMasters,
       filterOutByPeriodsAndBlocks,
       filterOutByTerm,
+      filterOutByLevels,
     ],
   );
 };

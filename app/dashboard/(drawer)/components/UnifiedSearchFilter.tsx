@@ -1,7 +1,7 @@
 "use client";
 
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
-import { GraduationCap, LayoutGrid, Calendar } from "lucide-react";
+import { GraduationCap, LayoutGrid, Calendar, CircleStar } from "lucide-react";
 import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { filterAtoms } from "@/app/atoms/filter/atoms";
 import { MasterBadge } from "@/components/MasterBadge";
@@ -16,6 +16,12 @@ const CATEGORY_LABELS: Record<string, string> = {
   semester: "Semesters",
   block: "Blocks",
   period: "Periods",
+  level: "Levels",
+};
+
+const LEVELS: Record<string, string> = {
+  G: "Basic",
+  A: "Advanced",
 };
 
 const UnifiedSearchFilter: FC = () => {
@@ -24,6 +30,7 @@ const UnifiedSearchFilter: FC = () => {
   const [periods, selectPeriods] = useAtom(filterAtoms.periodsAtom);
   const { showBachelorYears } = useAtomValue(userPreferencesAtom);
   const [blocks, selectBlocks] = useAtom(filterAtoms.blocksAtom);
+  const [levels, selectLevels] = useAtom(filterAtoms.levelsAtom);
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
   const allMasters = useAtomValue(mastersAtom);
 
@@ -99,9 +106,33 @@ const UnifiedSearchFilter: FC = () => {
     [allMasters],
   );
 
+  const levelOptions = useMemo(
+    () => ({
+      heading: "Levels",
+      options: Object.keys(LEVELS).map((level) => ({
+        value: `level:${level}`,
+        label: LEVELS[level],
+        dropdownLabel: (
+          <div className="flex items-center gap-2 truncate">
+            <CircleStar className="h-4 w-4 opacity-70" />
+            <span className="truncate">{LEVELS[level]}</span>
+          </div>
+        ),
+        searchKey: LEVELS[level],
+      })),
+    }),
+    [],
+  );
+
   const groupedOptions = useMemo<MultiSelectGroup[]>(
-    () => [semesterOptions, blockOptions, periodOptions, masterOptions],
-    [semesterOptions, blockOptions, periodOptions, masterOptions],
+    () => [
+      semesterOptions,
+      blockOptions,
+      periodOptions,
+      levelOptions,
+      masterOptions,
+    ],
+    [semesterOptions, blockOptions, periodOptions, masterOptions, levelOptions],
   );
 
   const selectedValues = useMemo(() => {
@@ -111,13 +142,14 @@ const UnifiedSearchFilter: FC = () => {
     blocks.forEach((b) => values.push(`block:${b}`));
     periods.forEach((p) => values.push(`period:${p}`));
     masters.forEach((m) => values.push(`master:${m}`));
+    levels.forEach((l) => values.push(`level:${l}`));
 
     if (search) {
       values.push(`search:${search}`);
     }
 
     return values;
-  }, [masters, semesters, blocks, periods, search]);
+  }, [masters, semesters, blocks, periods, levels, search]);
 
   const handleValueChange = (newValues: string[]) => {
     selectMasters(
@@ -139,6 +171,11 @@ const UnifiedSearchFilter: FC = () => {
       newValues
         .filter((v) => v.startsWith("period:"))
         .map((v) => Number(v.split(":")[1])),
+    );
+    selectLevels(
+      newValues
+        .filter((v) => v.startsWith("level:"))
+        .map((v) => v.split(":")[1]),
     );
 
     if (!newValues.some((v) => v.startsWith("search:"))) {
