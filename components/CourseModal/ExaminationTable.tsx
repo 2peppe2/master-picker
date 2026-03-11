@@ -17,7 +17,7 @@ interface ExaminationTableProps {
 
 const ExaminationTable: FC<ExaminationTableProps> = ({ examination }) => {
   return (
-    <div className="space-y-3 py-2 text-foreground">
+    <div className="space-y-3 text-foreground">
       <section>
         <div className="mb-2 flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-wide text-foreground">

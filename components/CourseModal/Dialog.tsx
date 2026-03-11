@@ -1,5 +1,4 @@
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
-import ExaminationTable from "./ExaminationTable";
 import DialogGeneralTab from "./DialogGeneralTab";
 import DialogDetailsTab from "./DialogDetailsTab";
 import { Course } from "@/app/dashboard/page";
@@ -35,19 +34,14 @@ const CourseDialog: FC<CourseDialogProps> = ({
   const tabs = useMemo(
     () => [
       {
-        name: "Plan",
-        value: "plan",
+        name: "Overview",
+        value: "overview",
         content: <DialogGeneralTab course={course} showAdd={showAdd} />,
       },
       {
-        name: "Workload",
-        value: "details",
+        name: "Examination",
+        value: "examination",
         content: <DialogDetailsTab course={course} />,
-      },
-      {
-        name: "Examinations",
-        value: "examinations",
-        content: <ExaminationTable examination={course.Examination} />,
       },
       {
         name: "Statistics",
@@ -55,8 +49,8 @@ const CourseDialog: FC<CourseDialogProps> = ({
         content: <Statistics courseCode={course.code} />,
       },
       {
-        name: "Evaluate Score",
-        value: "evaluate-score",
+        name: "Evaliuate Score",
+        value: "evaliuate-score",
         content: <EvaluateScore courseCode={course.code} />,
       },
     ],

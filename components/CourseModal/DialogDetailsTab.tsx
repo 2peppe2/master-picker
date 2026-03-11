@@ -1,5 +1,7 @@
 import DialogTimeChart, { WORKLOAD_COLORS } from "./DialogTimeChart";
+import ExaminationTable from "./ExaminationTable";
 import { Course } from "@/app/dashboard/page";
+import { BookOpen, Clock3 } from "lucide-react";
 
 type DialogDetailsTabProps = {
   course: Course;
@@ -30,6 +32,7 @@ const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
                   style={{ backgroundColor: WORKLOAD_COLORS.scheduled }}
                 />
                 Scheduled
+                <Clock3 aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
                 {course.scheduledHours} h ({scheduledShare}%)
@@ -43,6 +46,7 @@ const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
                   style={{ backgroundColor: WORKLOAD_COLORS.selfStudy }}
                 />
                 Self-study
+                <BookOpen aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
                 {course.selfStudyHours} h ({selfStudyShare}%)
@@ -51,6 +55,7 @@ const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
           </div>
         </div>
       </section>
+      <ExaminationTable examination={course.Examination} />
     </div>
   );
 };
