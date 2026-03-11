@@ -37,10 +37,17 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
 
   const filterOutByTerm = useCallback((term: string, course: Course) => {
     if (!term) return false;
+
     const searchTerm = term.toLowerCase();
     const courseName = course.name.toLowerCase();
     const courseCode = course.code.toLowerCase();
-    return !courseName.includes(searchTerm) && !courseCode.includes(searchTerm);
+    const examiner = course.examiner.toLowerCase();
+
+    return (
+      !courseName.includes(searchTerm) &&
+      !courseCode.includes(searchTerm) &&
+      !examiner.includes(searchTerm)
+    );
   }, []);
 
   const filterOutByMasters = useCallback(
