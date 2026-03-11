@@ -1,82 +1,35 @@
 [
-    {
-        "id": "6CMJU",
-        "name": "Software Engineering",
-        "shortname": "U",
-        "years": [
-            {
-                "year": 2022,
-                "id": 5144
-            },
-            
-            {
-                "year": 2023,
-                "id": 5430
-            },
-            
-            {
-                "year": 2024,
-                "id": 5713
-            },
-            
-            {
-                "year": 2025,
-                "id": 6011
-            }
-            
-
-        ]
-    },
-    {
-        "id": "6CDDD",
-        "name": "Data Science",
-        "shortname": "D",
-        "years": [
-            {
-                "year": 2022,
-                "id": 5155
-            },
-            
-            {
-                "year": 2023,
-                "id": 5440
-            },
-            {
-                "year": 2024,
-                "id": 5723
-            },
-            
-            {
-                "year": 2025,
-                "id": 6016
-            }
-            
-        ]
-    },
-    {
-        "id": "6CITE",
-        "name": "Information Technology",
-        "shortname": "IT",
-        "years": [
-            {
-                "year": 2022,
-                "id": 5142
-            },
-            
-            {
-                "year": 2023,
-                "id": 5428
-            },
-            {
-                "year": 2024,
-                "id": 5711
-            },
-            
-            {
-                "year": 2025,
-                "id": 6009
-            }
-            
-        ]
-    }
+  {
+    "id": "6CMJU",
+    "name": "Software Engineering",
+    "shortname": "U",
+    "years": [
+      {
+        "year": 2023,
+        "id": 5430
+      }
+    ]
+  },
+  {
+    "id": "6CDDD",
+    "name": "Data Science",
+    "shortname": "D",
+    "years": [
+      {
+        "year": 2023,
+        "id": 5440
+      }
+    ]
+  },
+  {
+    "id": "6CITE",
+    "name": "Information Technology",
+    "shortname": "IT",
+    "years": [
+      {
+        "year": 2023,
+        "id": 5428
+      }
+    ]
+  }
 ]
