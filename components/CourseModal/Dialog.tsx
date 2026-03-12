@@ -68,7 +68,6 @@ const CourseDialog: FC<CourseDialogProps> = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]"
-        data-no-drag="true"
       >
         <DialogHeader className="shrink-0">
           <DialogTitle>{course.code}</DialogTitle>
