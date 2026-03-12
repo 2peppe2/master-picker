@@ -160,7 +160,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       masterPeriod: MasterPeriod,
       course: Course,
     ) => {
-      const minPeriod = showBachelorYears ? 0 : masterPeriod.start - 1;
+      const minPeriod = showBachelorYears ? 1 : masterPeriod.start;
       const maxPeriod = masterPeriod.end;
 
       const matchesAnySemester = course.CourseOccasion.some((occasion) => {
@@ -170,8 +170,8 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
           occasion.semester,
         );
 
-        const currentPeriod = relativeSemester + 1;
-        return currentPeriod >= minPeriod && currentPeriod <= maxPeriod;
+        const currentSemester = relativeSemester + 1;
+        return currentSemester >= minPeriod && currentSemester <= maxPeriod;
       });
 
       return !matchesAnySemester;
