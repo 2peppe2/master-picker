@@ -171,7 +171,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
         );
 
         const currentPeriod = relativeSemester + 1;
-        return currentPeriod >= minPeriod && currentPeriod < maxPeriod;
+        return currentPeriod >= minPeriod && currentPeriod <= maxPeriod;
       });
 
       return !matchesAnySemester;

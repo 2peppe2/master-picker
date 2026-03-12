@@ -1,7 +1,12 @@
+"use client";
+
 import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
+import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
+import CourseCardFooter from "./CourseCardFooter";
 import CourseDialog from "../CourseModal/Dialog";
 import { Button } from "@/components/ui/button";
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
+import { useAtomValue } from "jotai";
 import { CourseCardProps } from ".";
 import { X } from "lucide-react";
 import {
@@ -10,10 +15,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import CourseCardFooter from "./CourseCardFooter";
 
 const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
   const { removeCourse } = useScheduleMutators();
+  const schedule = useAtomValue(scheduleAtoms.schedulesAtom);
+
+  const canBeAdded = useMemo(
+    () =>
+      !schedule
+        .flatMap((s) => s.flatMap((c) => c.flatMap((d) => d?.code ?? "")))
+        .some((c) => c === course.code),
+    [course.code, schedule],
+  );
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -25,8 +38,10 @@ const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
       <CourseDialog
         course={course}
         open={openDialog}
+        showAdd={canBeAdded}
         onOpenChange={setOpenDialog}
       />
+
       <Button
         size="icon"
         variant="ghost"
