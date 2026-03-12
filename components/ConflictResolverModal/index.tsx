@@ -59,7 +59,6 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         onMouseDownCapture={(e) => e.stopPropagation()}
         onTouchStartCapture={(e) => e.stopPropagation()}
         className="sm:max-w-[500px]"
-        data-no-drag="true"
       >
         <AlertDialogHeader>
           <AlertDialogTitle>Block already occupied</AlertDialogTitle>
