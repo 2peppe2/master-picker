@@ -7,10 +7,10 @@ import {
   DragOverlay,
   useSensor,
   useSensors,
-  KeyboardSensor,
   DragStartEvent,
   DragEndEvent,
   Over,
+  DragCancelEvent,
 } from "@dnd-kit/core";
 
 interface RenderDraggedArgs<T> {
@@ -25,9 +25,14 @@ export interface OnDragEndArgs {
   over: Over | null;
 }
 
+export interface OnDragCancelArgs {
+  over: Over | null;
+}
+
 interface DndProviderProps<T> {
   children: ReactNode;
   onDragEnd: (args: OnDragEndArgs) => void;
+  onDragCancel: (args: OnDragCancelArgs) => void;
   onDragStart: (args: OnDragStartArgs<T>) => void;
   renderDragged: (args: RenderDraggedArgs<T>) => ReactNode;
 }
@@ -36,6 +41,7 @@ export const DndProvider = <T,>({
   renderDragged: DraggedItem,
   onDragEnd,
   onDragStart,
+  onDragCancel,
   children,
 }: DndProviderProps<T>) => {
   const [activeItem, setActiveItem] = useState<T | null>(null);
@@ -47,7 +53,6 @@ export const DndProvider = <T,>({
     useSensor(PointerSensor, {
       activationConstraint: { distance: 6 },
     }),
-    useSensor(KeyboardSensor),
   );
 
   const handleDragStart = useCallback(
@@ -70,11 +75,20 @@ export const DndProvider = <T,>({
     [onDragEnd],
   );
 
+  const handleDragCancel = useCallback(
+    (event: DragCancelEvent) => {
+      setActiveItem(null);
+      onDragCancel({ over: event.over });
+    },
+    [onDragCancel],
+  );
+
   return (
     <DndContext
       sensors={sensors}
       onDragEnd={handleDragEnd}
       onDragStart={handleDragStart}
+      onDragCancel={handleDragCancel}
     >
       {children}
 

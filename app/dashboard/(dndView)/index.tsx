@@ -1,7 +1,7 @@
 "use client";
 
-import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useScrollToCourseFeedback } from "@/hooks/useScrollToCourseFeedback";
+import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
@@ -9,12 +9,12 @@ import CourseCard from "@/components/CourseCard";
 import Schedule from "../(schedule)/Schedule";
 import Header from "./components/Header";
 import { FC, useCallback } from "react";
-import Drawer from "../(drawer)";
 import {
   DndProvider,
   OnDragEndArgs,
   OnDragStartArgs,
 } from "@/components/DndProvider";
+import Drawer from "../(drawer)";
 import { Course } from "../page";
 import { useAtom } from "jotai";
 
@@ -51,6 +51,9 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       onDragStart={(event: OnDragStartArgs<Course>) =>
         setDraggedCourse(event.active)
       }
+      onDragCancel={() => {
+        setDraggedCourse(null);
+      }}
       renderDragged={({ active }) => (
         <CourseCard variant="dragged" course={active} />
       )}
