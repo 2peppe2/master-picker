@@ -16,7 +16,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Pie, PieChart } from "recharts";
-import { type CourseData, fetchCourseData } from "./courseDataCache";
+import { fetchCourseData } from "./courseDataCache";
+import { DataCourseStatistic } from "liu-tentor-package"
 
 type StatisticsProps = {
   courseCode: string;
@@ -29,7 +30,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const Statistics = ({ courseCode }: StatisticsProps) => {
-  const [courseData, setCourseData] = useState<CourseData | null>(null);
+  const [courseData, setCourseData] = useState<DataCourseStatistic | null>(null);
   const [selectedModule, setSelectedModule] = useState<string>("all");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

@@ -16,14 +16,15 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
-import { type CourseData, fetchCourseData } from "./courseDataCache";
+import { fetchCourseData } from "./courseDataCache";
+import { DataCourseStatistic } from "liu-tentor-package";
 
 type EvaluateScoreProps = {
   courseCode: string;
 };
 
 const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
-  const [courseData, setCourseData] = useState<CourseData | null>(null);
+  const [courseData, setCourseData] = useState<DataCourseStatistic | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [reportsOpen, setReportsOpen] = useState(false);
@@ -54,7 +55,7 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
       return [];
     }
 
-    return courseData.evaluationReports
+    return [...courseData.evaluationReports]
       .sort(
         (a, b) =>
           new Date(a.reportDate).getTime() - new Date(b.reportDate).getTime(),
@@ -63,11 +64,11 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
         let averageScore = 0;
         let totalWeight = 0;
 
-        for (const key in report.scores) {
-          const scoreAmount = report.scores[key];
+        for (const [key, value] of Object.entries(report.scores)) {
+          const scoreAmount = Number(value); 
           const scoreValue = parseFloat(key);
 
-          if (!isNaN(scoreValue) && scoreValue >= 0) {
+          if (!isNaN(scoreValue) && scoreValue > 0) {
             averageScore += scoreValue * scoreAmount;
             totalWeight += scoreAmount;
           }
@@ -183,7 +184,7 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
         <CollapsibleContent className="space-y-2 mt-2">
           {courseData &&
             courseData.evaluationReports &&
-            courseData.evaluationReports
+            [...courseData.evaluationReports]
               .sort(
                 (a, b) =>
                   new Date(b.reportDate).getTime() -
