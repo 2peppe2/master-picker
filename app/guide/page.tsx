@@ -3,6 +3,8 @@
 import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
 import { Prisma } from "@/prisma/generated/client/client";
+import { getProgramId } from "../actions/getProgramId";
+import { normalizeCourse } from "../courseNormalizer";
 import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
 import { prisma } from "@/lib/prisma";
@@ -24,15 +26,15 @@ export type CourseRequirements = Prisma.RequirementGetPayload<{
   };
 }>["courseRequirements"];
 
-const GuidePage = async function ({
-  searchParams,
-}: {
+interface GuidePageProps {
   searchParams: Promise<{
     program?: string;
     year?: string;
     master?: string;
   }>;
-}) {
+}
+
+const GuidePage: FC<GuidePageProps> = async function ({ searchParams }) {
   const { program, year, master } = await searchParams;
 
   if (!program || !year || !master) {

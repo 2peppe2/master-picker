@@ -2,8 +2,8 @@
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
-import { dispatchScrollToCourse } from "@/hooks/useScrollToCourseFeedback";
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { dispatchScrollToCourse } from "@/common/hooks/useCourseAddedFeedback";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 
 export interface DropSlot {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useScrollToCourseFeedback } from "@/hooks/useScrollToCourseFeedback";
+import { useScrollToCourseFeedback } from "@/common/hooks/useCourseAddedFeedback";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";

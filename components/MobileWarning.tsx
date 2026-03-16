@@ -1,11 +1,14 @@
 "use client";
 
-import { useIsMobile } from "../hooks/useMobile";
+import { useIsMobile } from "@/common/hooks/useIsMobile";
+import { FC } from "react";
 
-export const MobileWarning = () => {
+const MobileWarning: FC = () => {
   const isMobile = useIsMobile();
 
-  if (!isMobile) return;
+  if (!isMobile) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
@@ -22,3 +25,5 @@ export const MobileWarning = () => {
     </div>
   );
 };
+
+export default MobileWarning;

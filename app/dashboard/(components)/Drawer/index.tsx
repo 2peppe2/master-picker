@@ -1,11 +1,11 @@
 "use client";
 
 import { useFiltered } from "../../(store)/filter/hooks/useFiltered";
+import { useSortedCourses } from "@/common/hooks/useSortedCourses";
 import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import EmptyCourseState from "./components/EmptyCourseState";
-import { useSortedCourses } from "@/hooks/useSortedCourses";
 import DrawerHeader from "./components/DrawerHeader";
 import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";

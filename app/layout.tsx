@@ -1,9 +1,9 @@
-import { ThemeProvider } from "@/components/ui/ThemeProvider";
-import { MobileWarning } from "@/components/MobileWarning";
+import { ThemeProvider } from "@/components/ui/providers/ThemeProvider";
+import MobileWarning from "@/components/MobileWarning";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { FC, ReactNode } from "react";
 import type { Metadata } from "next";
-import { FC } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Master Picker",
   description: "App to help you choose your master's program",
-};
+} satisfies Metadata;
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => (

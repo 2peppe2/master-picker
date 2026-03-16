@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use server";
+
 import { Playfair_Display } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({ weight: "600", subsets: ["latin"] });
 
@@ -18,7 +20,7 @@ const Header = () => (
     </div>
 
     <p className="mb-8 max-w-xl text-center text-lg text-muted-foreground">
-      Drop the crazy spreed sheets, embrace effortless course planning.
+      Drop the crazy spreadsheets, embrace effortless course planning.
     </p>
   </header>
 );

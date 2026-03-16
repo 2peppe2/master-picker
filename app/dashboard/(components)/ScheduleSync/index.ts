@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "../../../../hooks/useSearchParams";
+import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import { coursesAtom } from "../../(store)/store";
 import { useAtomValue, useSetAtom } from "jotai";
