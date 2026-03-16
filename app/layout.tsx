@@ -1,11 +1,10 @@
-import { JotaiProvider } from "@/components/ui/JotaiProvider";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
-import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { MobileWarning } from "@/components/MobileWarning";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+import { FC } from "react";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,24 +21,20 @@ export const metadata: Metadata = {
   description: "App to help you choose your master's program",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <JotaiProvider>
-            <MobileWarning />
-            {children}
-            <Analytics />
-          </JotaiProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
 }
+
+const RootLayout: FC<RootLayoutProps> = ({ children }) => (
+  <html lang="en" suppressHydrationWarning>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <MobileWarning />
+        {children}
+        <Analytics />
+      </ThemeProvider>
+    </body>
+  </html>
+);
+
+export default RootLayout;

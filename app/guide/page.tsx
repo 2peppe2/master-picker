@@ -1,10 +1,12 @@
-import { prisma } from "@/lib/prisma";
+"use server";
+
+import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
+import { getBachelorCourses } from "../actions/getBachelorCourses";
 import { Prisma } from "@/prisma/generated/client/client";
 import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
-import { getBachelorCourses } from "../actions/getBachelorCourses";
-import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
-import { getProgramId } from "../actions/getProgramId";
+import { prisma } from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
   select: {
@@ -34,13 +36,26 @@ const GuidePage = async function ({
   const { program, year, master } = await searchParams;
 
   if (!program || !year || !master) {
-    return <div>Missing parameters</div>;
+    redirect("/");
+  }
+
+  const programCourse = await prisma.programCourse.findFirst({
+    where: {
+      program: program,
+      startYear: parseInt(year),
+    },
+    select: { id: true },
+  });
+
+  if (!programCourse) {
+    redirect("/");
   }
 
   const masterRequirements = await prisma.requirement.findFirst({
     where: {
       masterProgram: master,
       program,
+      programCourseID: programCourse.id,
     },
     select: {
       courseRequirements: {
@@ -58,7 +73,7 @@ const GuidePage = async function ({
   });
 
   if (!masterRequirements) {
-    return <div>No requirements found</div>;
+    redirect("/");
   }
 
   const masters = await prisma.master.findMany({
@@ -75,12 +90,8 @@ const GuidePage = async function ({
 
   const bachelorCourses = await getBachelorCourses(program, parseInt(year));
 
-  const programId = await getProgramId(program, parseInt(year, 10));
-
   return (
     <GuideClientPage
-      programId={programId}
-      year={parseInt(year)}
       courseRequirements={masterRequirements.courseRequirements}
       masters={Object.fromEntries(masters.map((m: Master) => [m.master, m]))}
       selectedMaster={master}

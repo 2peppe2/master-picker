@@ -1,9 +1,9 @@
 "use client";
 
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
+import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { filterAtoms } from "@/app/atoms/filter/atoms";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useSetAtom } from "jotai";
 import { useEffect } from "react";
 
 interface DispatchScrollToCourseArgs {
@@ -26,7 +26,7 @@ export const dispatchScrollToCourse = (args: DispatchScrollToCourseArgs) => {
 
 export const useScrollToCourseFeedback = () => {
   const showSemesters = useSetAtom(filterAtoms.semestersAtom);
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const startingYear = useStartingYear();
 
   useEffect(() => {
     const handleFeedback = (event: Event) => {

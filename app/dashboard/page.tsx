@@ -3,7 +3,8 @@
 import { Prisma } from "@/prisma/generated/client/client";
 import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { prisma } from "@/lib/prisma";
-import ClientPage from "./ClientPage";
+import DashboardClientPage from "./DashboardClientPage";
+import { redirect } from "next/navigation";
 
 export default async function MainPage({
   searchParams,
@@ -15,9 +16,11 @@ export default async function MainPage({
   }>;
 }) {
   const { program, year } = await searchParams;
+
   if (!program || !year) {
-    return "redirecting";
+    redirect("/");
   }
+
   const startYear = year ? Number(year) : undefined;
   const hasValidYear = startYear !== undefined && !Number.isNaN(startYear);
   const courseWhere =
@@ -47,7 +50,7 @@ export default async function MainPage({
   });
 
   return (
-    <ClientPage
+    <DashboardClientPage
       courses={courses.map(normalizeCourse)}
       masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
     />

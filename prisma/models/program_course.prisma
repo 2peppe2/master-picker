@@ -5,5 +5,6 @@ model ProgramCourse {
 
   Program Program @relation(fields: [program], references: [program], onDelete: Cascade)
 
-  courses Course[]
+  courses      Course[]
+  requirements Requirement[]
 }

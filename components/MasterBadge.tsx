@@ -1,8 +1,9 @@
+"use client";
+
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { mastersAtom } from "@/app/atoms/mastersAtom";
+import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
 import { MasterIcon } from "./MasterIcon";
 import { FC, ReactNode } from "react";
-import { useAtomValue } from "jotai";
 import { Badge } from "./ui/badge";
 
 interface TooltipFunctionArgs {
@@ -17,14 +18,14 @@ interface MasterBadgeProps {
   tooltip?: (args: TooltipFunctionArgs) => string | ReactNode;
 }
 
-export const MasterBadge: FC<MasterBadgeProps> = ({
+const MasterBadge: FC<MasterBadgeProps> = ({
   name,
   text,
   title = false,
   style = "",
   tooltip,
 }) => {
-  const masters = useAtomValue(mastersAtom);
+  const masters = useMasterAtom();
   const master = masters[name];
   const masterName = master.name ?? "";
   text = title ? masterName : text;
@@ -42,3 +43,5 @@ export const MasterBadge: FC<MasterBadgeProps> = ({
     </Tooltip>
   );
 };
+
+export default MasterBadge;

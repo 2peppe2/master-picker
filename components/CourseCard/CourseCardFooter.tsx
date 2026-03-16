@@ -1,10 +1,9 @@
 "use client";
 
 import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
-import { mastersAtom } from "@/app/atoms/mastersAtom";
-import { MasterBadge } from "../MasterBadge";
+import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import MasterBadge from "../MasterBadge";
 import { CardFooter } from "../ui/card";
-import { useAtomValue } from "jotai";
 import { Badge } from "../ui/badge";
 import { FC } from "react";
 
@@ -19,11 +18,10 @@ interface CourseCardFooterProps {
   masterPrograms: MasterProgram[];
 }
 
-// TODO: Make this more response and make it align with the text above it
 const CourseCardFooter: FC<CourseCardFooterProps> = ({ masterPrograms }) => {
   const moreThanThree = masterPrograms.length > 3;
   const moreThanFour = masterPrograms.length > 4;
-  const masters = useAtomValue(mastersAtom);
+  const masters = useMasterAtom();
 
   return (
     <CardFooter className="mt-auto text-foreground">

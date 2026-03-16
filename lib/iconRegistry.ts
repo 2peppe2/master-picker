@@ -13,6 +13,8 @@ import {
   CircuitBoard,
   Microchip,
   type LucideIcon,
+  Zap,
+  Layers,
 } from "lucide-react";
 
 export const ICONS: Record<string, LucideIcon> = {
@@ -29,6 +31,8 @@ export const ICONS: Record<string, LucideIcon> = {
   Cpu,
   CircuitBoard,
   Microchip,
+  Zap,
+  Layers,
 };
 
 export function getLucideIcon(name: string | null): LucideIcon {

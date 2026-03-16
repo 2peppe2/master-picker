@@ -1,40 +1,41 @@
 "use client";
 
-import { scheduleAtoms } from "../atoms/schedule/atoms";
-import { useEffect, useMemo, useState } from "react";
+import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
+import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
+import { getBachelorCourses } from "../actions/getBachelorCourses";
+import { normalizeCourse } from "@/app/courseNormalizer";
 import { Button } from "@/components/ui/button";
 import GenericCombobox from "./GenericComboBox";
+import { FC, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ComboboxItemType } from "./types";
 import { Loader2 } from "lucide-react";
-import { RESET } from "jotai/utils";
-import { useSetAtom } from "jotai";
 import Link from "next/link";
 
 interface LandingClientPageProps {
   programs: {
-    program: string;
+    id: string;
     name: string;
     shortname: string;
-    programCourses: {
-      startYear: number;
-    }[];
-    masters: {
-      master: string;
-      name: string | null;
+    years: {
+      year: number;
+      masters: {
+        id: string;
+        name: string | null;
+      }[];
     }[];
   }[];
 }
 
-const LandingClientPage = ({ programs }: LandingClientPageProps) => {
+const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [selectedMaster, setSelectedMaster] = useState<string | null>(null);
   const [isLoadingDashboard, setIsLoadingDashboard] = useState(false);
   const [isLoadingGuide, setIsLoadingGuide] = useState(false);
-  const setSchedule = useSetAtom(scheduleAtoms.schedulesAtom);
 
   const router = useRouter();
+  const generateGrid = useGeneratePrefilledSchedule();
 
   const pushToGuide = () => {
     if (!selectedProgram || !selectedYear || !selectedMaster) return;
@@ -47,48 +48,76 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
     router.push(`/guide?${params.toString()}`);
   };
 
-  const pushToDashboard = () => {
+  const pushToDashboard = async () => {
     if (!selectedProgram || !selectedYear) return;
     setIsLoadingDashboard(true);
-    const params = new URLSearchParams({
-      program: selectedProgram,
-      year: selectedYear,
-    });
-    router.push(`/dashboard?${params.toString()}`);
+
+    try {
+      const bachelorCourses = (
+        await getBachelorCourses(selectedProgram, parseInt(selectedYear))
+      ).map((c) => normalizeCourse(c));
+
+      const coursesMap = Object.fromEntries(
+        bachelorCourses.map((c) => [c.code, c]),
+      );
+
+      const newGrid = generateGrid({ courses: bachelorCourses });
+      const compressed = serializeSchedule(coursesMap, newGrid);
+
+      const params = new URLSearchParams({
+        program: selectedProgram,
+        year: selectedYear,
+      });
+
+      if (compressed) {
+        params.set("schedule", compressed);
+      }
+
+      router.push(`/dashboard?${params.toString()}`);
+    } catch (error) {
+      console.error("Failed to prefill bachelor schedule:", error);
+      router.push(`/dashboard?program=${selectedProgram}&year=${selectedYear}`);
+    } finally {
+      setIsLoadingDashboard(false);
+    }
   };
 
   const programItems: ComboboxItemType[] = useMemo(
     () =>
       programs.map((p) => ({
         label: `${p.shortname} - ${p.name}`,
-        value: p.program,
+        value: p.id,
       })),
     [programs],
   );
 
   const yearItems: ComboboxItemType[] = useMemo(() => {
     if (!selectedProgram) return [];
-    const program = programs.find((p) => p.program === selectedProgram);
+    const program = programs.find((p) => p.id === selectedProgram);
     if (!program) return [];
-    return program.programCourses.map((c) => ({
-      label: c.startYear.toString(),
-      value: c.startYear.toString(),
+
+    return program.years.map((y) => ({
+      label: y.year.toString(),
+      value: y.year.toString(),
     }));
   }, [programs, selectedProgram]);
 
   const masterItems: ComboboxItemType[] = useMemo(() => {
-    if (!selectedProgram) return [];
-    const program = programs.find((p) => p.program === selectedProgram);
-    if (!program) return [];
-    return program.masters.map((m) => ({
-      label: m.name ?? m.master,
-      value: m.master,
-    }));
-  }, [programs, selectedProgram]);
+    if (!selectedProgram || !selectedYear) return [];
 
-  useEffect(() => {
-    setSchedule(RESET);
-  }, [setSchedule]);
+    const program = programs.find((p) => p.id === selectedProgram);
+    if (!program) return [];
+
+    const yearData = program.years.find(
+      (y) => y.year.toString() === selectedYear,
+    );
+    if (!yearData) return [];
+
+    return yearData.masters.map((m) => ({
+      label: m.name ?? m.id,
+      value: m.id,
+    }));
+  }, [programs, selectedProgram, selectedYear]);
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -108,6 +137,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
         placeholder="Select your current program"
         noResultsText="No programs found."
       />
+
       <GenericCombobox
         items={yearItems}
         value={
@@ -148,7 +178,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             setSelectedMaster(item?.value || null)
           }
           placeholder="Select desired master"
-          noResultsText="No masters found."
+          noResultsText="No masters found for this year."
         />
 
         <Button

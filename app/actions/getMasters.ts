@@ -8,11 +8,34 @@ export async function getMasters() {
   return masters;
 }
 
-export async function getMastersWithRequirements(program?: string) {
+export async function getMastersWithRequirements(
+  year: number,
+  program: string,
+) {
+  const programCourse = await prisma.programCourse.findFirst({
+    where: {
+      program: program,
+      startYear: year,
+    },
+    select: { id: true },
+  });
+
+  if (!programCourse) return [];
+
   const masters = await prisma.master.findMany({
-    where: program ? { masterProgram: program } : undefined,
+    where: {
+      masterProgram: program,
+      requirements: {
+        some: {
+          programCourseID: programCourse.id,
+        },
+      },
+    },
     include: {
       requirements: {
+        where: {
+          programCourseID: programCourse.id,
+        },
         include: {
           creditRequirements: { select: { credits: true, type: true } },
           courseRequirements: {
@@ -25,22 +48,20 @@ export async function getMastersWithRequirements(program?: string) {
       },
     },
   });
-  
+
   return masters.map((master) => ({
     ...master,
     requirements: master.requirements.map((requirement) => {
       const requirements: RequirementUnion[] = [];
 
-      requirement.courseRequirements.forEach((requirement) =>
-        requirements.push(requirement),
-      );
+      requirement.courseRequirements.forEach((req) => requirements.push(req));
 
-      requirement.creditRequirements.forEach((requirement) => {
-        requirements.push(requirement);
+      requirement.creditRequirements.forEach((req) => {
+        requirements.push(req);
       });
 
-      requirement.mainFieldRequirements.forEach((requirement) => {
-        requirements.push(requirement);
+      requirement.mainFieldRequirements.forEach((req) => {
+        requirements.push(req);
       });
 
       return {

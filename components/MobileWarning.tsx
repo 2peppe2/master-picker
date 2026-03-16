@@ -1,5 +1,6 @@
 "use client";
-import { useIsMobile } from "@/hooks/useMobile";
+
+import { useIsMobile } from "../hooks/useMobile";
 
 export const MobileWarning = () => {
   const isMobile = useIsMobile();
