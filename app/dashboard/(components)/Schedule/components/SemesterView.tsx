@@ -123,7 +123,7 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
           return prev.filter((s) => s.toString() !== targetSemester.toString());
         }
       });
-    }, 300);
+    }, 500);
   };
 
   return (
