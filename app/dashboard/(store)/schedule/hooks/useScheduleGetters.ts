@@ -1,6 +1,6 @@
 "use client";
 
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { scheduleAtoms, WILDCARD_BLOCK_START } from "../atoms";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { useAtomCallback } from "jotai/utils";

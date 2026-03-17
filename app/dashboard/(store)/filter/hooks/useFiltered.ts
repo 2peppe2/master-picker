@@ -1,7 +1,7 @@
 "use client";
 
 import { useScheduleGetters } from "../../schedule/hooks/useScheduleGetters";
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { useCallback, useDeferredValue, useMemo } from "react";
 import { preferenceAtoms } from "../../preferences/atoms";
 import { Course } from "@/app/dashboard/page";

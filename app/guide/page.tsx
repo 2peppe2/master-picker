@@ -1,14 +1,14 @@
 "use server";
 
-import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
+import { courseWithDetailsArgs } from "../courseNormalizer";
 import { Prisma } from "@/prisma/generated/client/client";
-import { getProgramId } from "../actions/getProgramId";
-import { normalizeCourse } from "../courseNormalizer";
+import { normalizeCourse } from "@/app/courseNormalizer";
 import GuideClientPage from "./GuideClientPage";
 import type { Master } from "../dashboard/page";
-import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+import { FC } from "react";
 
 export type CourseRequirements = Prisma.RequirementGetPayload<{
   select: {

@@ -2,8 +2,8 @@
 
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
+import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useEffect, useMemo, useState } from "react";
-import { LandingPageProgram } from "../queries";
 
 const DISPLAY_STATES = {
   placeholder: "Select program",

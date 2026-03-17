@@ -2,7 +2,7 @@
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Course } from "@/app/dashboard/page";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback, useMemo } from "react";

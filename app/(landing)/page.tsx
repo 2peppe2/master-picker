@@ -11,25 +11,25 @@ const LandingPage = async () => {
   });
 
   const formattedPrograms = programs.map((p) => ({
-    id: p.program,
+    program: p.program,
     name: p.name,
     shortname: p.shortname,
-    years: p.programCourses.map((pc) => ({
-      year: pc.startYear,
-      masters: pc.requirements.map((r) => ({
-        id: r.masterProgram,
-        name: r.master.name,
-      })),
-    })),
+    years: p.programCourses
+      .map((pc) => ({
+        year: pc.startYear,
+        masters: pc.requirements.map((r) => ({
+          program: r.masterProgram,
+          name: r.master.name,
+        })),
+      }))
+      .sort((a, b) => a.year - b.year),
   }));
 
   return (
-    <div className="min-h-">
-      <main className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
-        <Header />
-        <LandingClientPage programs={formattedPrograms} />
-      </main>
-    </div>
+    <main className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
+      <Header />
+      <LandingClientPage programs={formattedPrograms} />
+    </main>
   );
 };
 

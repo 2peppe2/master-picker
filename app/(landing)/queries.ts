@@ -21,7 +21,3 @@ export const landingPageProgramSelect = {
     orderBy: { startYear: "desc" },
   },
 } satisfies Prisma.ProgramSelect;
-
-export type LandingPageProgram = Prisma.ProgramGetPayload<{
-  select: typeof landingPageProgramSelect;
-}>;

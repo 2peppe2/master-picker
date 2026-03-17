@@ -1,123 +1,112 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
+import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { getBachelorCourses } from "../actions/getBachelorCourses";
+import { useRouter, useSearchParams } from "next/navigation";
+import ProgramSelector from "./components/ProgramSelector";
+import { normalizeCourse } from "@/app/courseNormalizer";
+import MasterSelector from "./components/MasterSelector";
+import YearSelector from "./components/YearSelector";
+import LoadingDots from "./components/LoadingDots";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
-interface LandingClientPageProps {
-  programs: {
-    program: string;
-    name: string;
-    shortname: string;
-    programCourses: {
-      startYear: number;
-    }[];
+export interface LandingPageProgram {
+  program: string;
+  name: string;
+  shortname: string;
+  years: {
+    year: number;
     masters: {
-      master: string;
+      program: string;
       name: string | null;
     }[];
   }[];
 }
 
-const LandingClientPage = ({ programs }: LandingClientPageProps) => {
-  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
-  const [selectedYear, setSelectedYear] = useState<string | null>(null);
-  const [selectedMaster, setSelectedMaster] = useState<string | null>(null);
+interface LandingClientPageProps {
+  programs: LandingPageProgram[];
+}
+
+const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
+  const generateGrid = useGeneratePrefilledSchedule();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const [program, setProgram] = useState(searchParams.get("program"));
+  const [master, setMaster] = useState(searchParams.get("master"));
+  const [year, setYear] = useState(searchParams.get("year"));
+
   const [isLoadingDashboard, setIsLoadingDashboard] = useState(false);
   const [isLoadingGuide, setIsLoadingGuide] = useState(false);
 
-  const router = useRouter();
+  useEffect(() => {
+    setProgram(searchParams.get("program"));
+    setMaster(searchParams.get("master"));
+    setYear(searchParams.get("year"));
+  }, [searchParams]);
 
-  const pushToGuide = () => {
-    if (!selectedProgram || !selectedYear || !selectedMaster) return;
-    setIsLoadingGuide(true);
-    const params = new URLSearchParams({
-      program: selectedProgram,
-      year: selectedYear,
-      master: selectedMaster,
-    });
-    router.push(`/guide?${params.toString()}`);
-  };
-
-  const pushToDashboard = () => {
-    if (!selectedProgram || !selectedYear) return;
-    setIsLoadingDashboard(true);
-    const params = new URLSearchParams({
-      program: selectedProgram,
-      year: selectedYear,
-    });
-    router.push(`/dashboard?${params.toString()}`);
-  };
-
-  const programItems: ComboboxItemType[] = useMemo(
-    () =>
-      programs.map((p) => ({
-        label: `${p.shortname} - ${p.name}`,
-        value: p.program,
-      })),
-    [programs],
+  const activeProgram = useMemo(
+    () => programs.find((p) => p.program === program) ?? null,
+    [programs, program],
   );
 
-  const yearItems: ComboboxItemType[] = useMemo(() => {
-    if (!selectedProgram) return [];
-    const program = programs.find((p) => p.program === selectedProgram);
-    if (!program) return [];
-    return program.programCourses.map((c) => ({
-      label: c.startYear.toString(),
-      value: c.startYear.toString(),
-    }));
-  }, [programs, selectedProgram]);
+  const handleOnPickLater = useCallback(async () => {
+    if (!program || !year) {
+      return;
+    }
 
-  const masterItems: ComboboxItemType[] = useMemo(() => {
-    if (!selectedProgram) return [];
-    const program = programs.find((p) => p.program === selectedProgram);
-    if (!program) return [];
-    return program.masters.map((m) => ({
-      label: m.name ?? m.master,
-      value: m.master,
-    }));
-  }, [programs, selectedProgram]);
+    setIsLoadingDashboard(true);
+
+    try {
+      const bachelorCourses = (
+        await getBachelorCourses(program, parseInt(year))
+      ).map((c) => normalizeCourse(c));
+
+      const coursesMap = Object.fromEntries(
+        bachelorCourses.map((c) => [c.code, c]),
+      );
+      const newGrid = generateGrid({ courses: bachelorCourses });
+
+      const compressed = serializeSchedule(coursesMap, newGrid);
+
+      const params = new URLSearchParams({ program, year });
+      if (compressed) {
+        params.set("schedule", compressed);
+      }
+
+      router.push(`/dashboard?${params.toString()}`);
+    } catch (error) {
+      console.error("Prefill failed:", error);
+      router.push(`/dashboard?program=${program}&year=${year}`);
+    }
+  }, [program, year, router, generateGrid]);
+
+  const handleOnGetStarted = useCallback(() => {
+    setIsLoadingGuide(true);
+    router.push(`/guide?program=${program}&year=${year}&master=${master}`);
+  }, [master, program, router, year]);
+
+  if (!programs) {
+    return <>No programs found.</>;
+  }
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <GenericCombobox
-        items={programItems}
-        value={
-          programItems.find((item) => item.value === selectedProgram) || {
-            label: "",
-            value: "",
-          }
-        }
-        onValueChange={(item: ComboboxItemType | null) => {
-          setSelectedProgram(item?.value || null);
-          setSelectedYear(null);
-          setSelectedMaster(null);
-        }}
-        placeholder="Select your current program"
-        noResultsText="No programs found."
-      />
-      <GenericCombobox
-        items={yearItems}
-        value={
-          yearItems.find((item) => item.value === selectedYear) || {
-            label: "",
-            value: "",
-          }
-        }
-        onValueChange={(item: ComboboxItemType | null) => {
-          setSelectedYear(item?.value || null);
-          setSelectedMaster(null);
-        }}
-        placeholder="Select starting year"
-        noResultsText="No years found."
-        className={
-          selectedProgram
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-1 pointer-events-none"
-        }
-      />
+      <ProgramSelector programs={programs} />
+
+      <div
+        className={`transition-all duration-300 ease-in-out ${
+          program
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <YearSelector activeProgram={activeProgram} />
+      </div>
 
       <div
         className={`flex flex-col items-center gap-2 transition-all duration-300 ease-in-out ${
@@ -126,35 +115,11 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
             : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <GenericCombobox
-          items={masterItems}
-          value={
-            masterItems.find((item) => item.value === selectedMaster) || {
-              label: "",
-              value: "",
-            }
-          }
-          onValueChange={(item: ComboboxItemType | null) =>
-            setSelectedMaster(item?.value || null)
-          }
-          placeholder="Select desired master"
-          noResultsText="No masters found."
+        <MasterSelector
+          activeProgram={activeProgram}
+          isLoading={isLoadingDashboard}
+          onPickLater={handleOnPickLater}
         />
-
-        <Button
-          variant="link"
-          onClick={pushToDashboard}
-          disabled={isLoadingDashboard}
-        >
-          {isLoadingDashboard ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Loading...
-            </>
-          ) : (
-            "Pick master later"
-          )}
-        </Button>
       </div>
 
       <Button
@@ -170,7 +135,7 @@ const LandingClientPage = ({ programs }: LandingClientPageProps) => {
         )}
       </Button>
 
-      <Button variant="link">
+      <Button variant="link" asChild>
         <Link href="/about">Learn more about the project</Link>
       </Button>
     </div>

@@ -2,8 +2,8 @@
 
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
+import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useEffect, useMemo, useState } from "react";
-import { LandingPageProgram } from "../queries";
 
 const DISPLAY_STATES = {
   placeholder: "Select starting year",
@@ -22,14 +22,14 @@ const YearSelector: FC<YearSelectorProps> = ({ activeProgram }) => {
     setLocal(searchParams.get("year"));
   }, [searchParams]);
 
-  const items = useMemo(
-    () =>
-      activeProgram?.programCourses.map((c) => ({
-        label: String(c.startYear),
-        value: String(c.startYear),
-      })) ?? [],
-    [activeProgram],
-  );
+  const items = useMemo(() => {
+    if (!activeProgram?.years) return [];
+
+    return activeProgram.years.map((y) => ({
+      label: String(y.year),
+      value: String(y.year),
+    }));
+  }, [activeProgram]);
 
   return (
     <GenericCombobox

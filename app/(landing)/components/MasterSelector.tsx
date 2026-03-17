@@ -2,9 +2,9 @@
 
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
+import { LandingPageProgram } from "../LandingClientPage"; // Ensure this matches the new { years: [...] } type
 import { FC, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { LandingPageProgram } from "../queries";
 import { Loader2 } from "lucide-react";
 import LoadingDots from "./LoadingDots";
 
@@ -25,20 +25,29 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   isLoading,
 }) => {
   const { searchParams, setSearchParams } = useSearchParams();
-  const [local, setLocal] = useState(searchParams.get("master"));
+  const masterParam = searchParams.get("master");
+  const yearParam = searchParams.get("year");
+
+  const [local, setLocal] = useState(masterParam);
 
   useEffect(() => {
     setLocal(searchParams.get("master"));
   }, [searchParams]);
 
-  const items = useMemo(
-    () =>
-      activeProgram?.masters.map((m) => ({
-        label: m.name ?? m.master,
-        value: m.master,
-      })) ?? [],
-    [activeProgram],
-  );
+  const items = useMemo(() => {
+    if (!activeProgram || !yearParam) return [];
+
+    const selectedYearData = activeProgram.years.find(
+      (y) => String(y.year) === yearParam,
+    );
+
+    if (!selectedYearData) return [];
+
+    return selectedYearData.masters.map((m) => ({
+      label: m.name ?? "Unknown master",
+      value: m.program,
+    }));
+  }, [activeProgram, yearParam]);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -52,8 +61,12 @@ const MasterSelector: FC<MasterSelectorProps> = ({
         }}
         displayStates={DISPLAY_STATES}
       />
-      <Button variant="link" onClick={onPickLater} disabled={isLoading}>
-        {isLoading && <Loader2 className="animate-spin h-4 w-4" />}
+      <Button
+        variant="link"
+        onClick={onPickLater}
+        disabled={isLoading || !yearParam}
+      >
+        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoading ? (
           <LoadingDots text="Loading dashboard" />
         ) : (

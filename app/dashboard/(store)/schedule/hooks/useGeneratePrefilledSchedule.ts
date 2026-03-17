@@ -1,6 +1,6 @@
 "use client";
 
-import { useToRelativeSemester } from "@/hooks/useToRelativeSemester";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { ScheduleGrid } from "@/app/dashboard/(store)/schedule/types";
 import { WILDCARD_BLOCK_START } from "../atoms";
 import { Course } from "@/app/dashboard/page";
