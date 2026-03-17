@@ -35,7 +35,9 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
   const onDragEnd = useCallback(
     (event: OnDragEndArgs) => {
       setDraggedCourse(null);
-      if (!event.over || !draggedCourse) return;
+      if (!event.over || !draggedCourse) {
+        return;
+      }
 
       handleDrop({
         course: draggedCourse,

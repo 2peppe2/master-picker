@@ -65,6 +65,10 @@ export const useCourseContlictResolver = () => {
     strategy,
     type,
   }: ResolveConflictArgs) => {
+    if (strategy === "dropped") {
+      removeCourse({ courseCode: course.code });
+    }
+
     if (type === "replace") {
       collisions.forEach((c) => removeCourse({ courseCode: c.code }));
       executeAdd({ course, occasion, strategy });
