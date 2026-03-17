@@ -1,4 +1,6 @@
-import { MasterBadge } from "@/components/MasterBadge";
+"use client";
+
+import CourseCardFooter from "./CourseCardFooter";
 import CourseDialog from "../CourseModal/Dialog";
 import { Course } from "@/app/dashboard/page";
 import { FC, useState } from "react";
@@ -7,7 +9,6 @@ import { cn } from "@/lib/utils";
 import {
   Card,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -23,7 +24,6 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   onSelectionChange,
 }) => {
   const [openDialog, setOpenDialog] = useState(false);
-  const masterPrograms = course.CourseMaster || [];
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (openDialog || e.defaultPrevented) return;
@@ -61,7 +61,6 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
             ? "border-emerald-600 ring-2 ring-emerald-600/20 dark:border-emerald-500 dark:ring-emerald-500/20"
             : "border-muted-foreground/30 dark:border-muted-foreground/20",
         )}
-        aria-hidden
       >
         {isSelected && (
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 dark:bg-emerald-500" />
@@ -70,7 +69,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
 
       <CardHeader>
         <CardTitle>
-          <p
+          <span
             onClick={(e) => {
               e.stopPropagation();
               setOpenDialog(true);
@@ -78,31 +77,33 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
             className="w-fit cursor-pointer hover:underline underline-offset-2 text-left"
           >
             {course.code}
-          </p>
+          </span>
         </CardTitle>
-        <CardDescription className="h-6">
-          <p
-            className="w-fit text-left text-sm"
+
+        <CardDescription className="p-0 m-0 max-w-full">
+          <div
+            className="line-clamp-2 text-left"
             style={{
               display: "-webkit-box",
-              WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
               overflow: "hidden",
-              textOverflow: "ellipsis",
             }}
           >
-            {course.name}
-          </p>
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenDialog(true);
+              }}
+              className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
+            >
+              {course.name}
+            </span>
+          </div>
         </CardDescription>
       </CardHeader>
 
-      <CardFooter className="mt-auto">
-        <div className="flex flex-wrap justify-start gap-1 w-full">
-          {masterPrograms.map((program) => (
-            <MasterBadge name={program.master} key={program.master} />
-          ))}
-        </div>
-      </CardFooter>
+      <CourseCardFooter masterPrograms={course.CourseMaster} />
     </Card>
   );
 };
