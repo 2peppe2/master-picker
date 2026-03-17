@@ -1,5 +1,6 @@
 "use client";
 
+import CourseCardFooter from "./CourseCardFooter";
 import CourseDialog from "../CourseModal/Dialog";
 import CourseAddButton from "./CourseAddButton";
 import { FC, useState } from "react";
@@ -10,7 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import CourseCardFooter from "./CourseCardFooter";
 
 const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -26,27 +26,30 @@ const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
 
       <CardHeader>
         <CardTitle>
-          <p
+          <span
             onClick={() => setOpenDialog(true)}
             className="cursor-pointer hover:underline underline-offset-2 text-left"
           >
             {course.code}
-          </p>
+          </span>
         </CardTitle>
-        <CardDescription className="h-6">
-          <p
-            onClick={() => setOpenDialog(true)}
-            className="cursor-pointer hover:underline underline-offset-2 text-left text-sm"
+        <CardDescription className="p-0 m-0 max-w-full">
+          <div
+            className="line-clamp-2 text-left"
             style={{
               display: "-webkit-box",
-              WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
               overflow: "hidden",
-              textOverflow: "ellipsis",
             }}
           >
-            {course.name}
-          </p>
+            <span
+              onClick={() => setOpenDialog(true)}
+              className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
+            >
+              {course.name}
+            </span>
+          </div>
         </CardDescription>
       </CardHeader>
 

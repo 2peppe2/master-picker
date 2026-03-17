@@ -1,3 +1,6 @@
+"use client";
+
+import CourseCardFooter from "./CourseCardFooter";
 import { CourseCardProps } from ".";
 import {
   Card,
@@ -6,28 +9,30 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FC } from "react";
-import CourseCardFooter from "./CourseCardFooter";
 
 const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
   <Card className="w-40 h-40 border-amber-50 border-1 ease-linear cursor-grabbing">
     <CardHeader>
       <CardTitle>
-        <p className="text-left">{course.code}</p>
+        <span className="cursor-pointer hover:underline underline-offset-2 text-left">
+          {course.code}
+        </span>
       </CardTitle>
 
-      <CardDescription className="h-6">
-        <p
-          className="text-left text-sm"
+      <CardDescription className="p-0 m-0 max-w-full">
+        <div
+          className="line-clamp-2 text-left"
           style={{
             display: "-webkit-box",
-            WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 2,
             overflow: "hidden",
-            textOverflow: "ellipsis",
           }}
         >
-          {course.name}
-        </p>
+          <span className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline">
+            {course.name}
+          </span>
+        </div>
       </CardDescription>
     </CardHeader>
 
