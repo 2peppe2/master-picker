@@ -24,11 +24,12 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const { hasMatchingOccasion } = useScheduleGetters();
 
   const search = useAtomValue(filterAtoms.searchAtom);
-  const masters = useAtomValue(filterAtoms.mastersAtom);
+  const levels = useAtomValue(filterAtoms.levelsAtom);
   const blocks = useAtomValue(filterAtoms.blocksAtom);
   const periods = useAtomValue(filterAtoms.periodsAtom);
+  const masters = useAtomValue(filterAtoms.mastersAtom);
   const semesters = useAtomValue(filterAtoms.semestersAtom);
-  const levels = useAtomValue(filterAtoms.levelsAtom);
+  const mainFields = useAtomValue(filterAtoms.mainFieldsAtom);
 
   const filterObject = useMemo(
     () => ({
@@ -38,8 +39,9 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       periods,
       semesters,
       levels,
+      mainFields,
     }),
-    [search, masters, blocks, periods, semesters, levels],
+    [search, masters, blocks, periods, semesters, levels, mainFields],
   );
 
   const deferredFilters = useDeferredValue(filterObject);
@@ -74,6 +76,17 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       return !courseMasters.some((cm) =>
         selectedMasters.some((selected) => cm.includes(selected)),
       );
+    },
+    [],
+  );
+
+  const filterOutByMainFields = useCallback(
+    (selectedFields: string[], course: Course) => {
+      if (!selectedFields || selectedFields.length === 0) {
+        return false;
+      }
+
+      return !course.mainField.some((field) => selectedFields.includes(field));
     },
     [],
   );
@@ -193,6 +206,10 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
           return false;
         }
 
+        if (filterOutByMainFields(deferredFilters.mainFields, course)) {
+          return false;
+        }
+
         if (filterOutBachelors(showBachelorYears, masterPeriod, course)) {
           return false;
         }
@@ -219,6 +236,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       deferredFilters,
       filterOutByLevels,
       filterOutByMasters,
+      filterOutByMainFields,
       filterOutBachelors,
       showBachelorYears,
       masterPeriod,
