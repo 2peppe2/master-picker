@@ -29,7 +29,7 @@ const GroupBadgeLabel: FC<GroupBadgeLabelProps> = ({
         >
           {item.node}
           {idx < items.length - 1 && !isProfile && (
-            <span className="opacity-30 text-xsm ml-1">,</span>
+            <span className="opacity-30 text-xsm ml-[0.5px]">,</span>
           )}
         </span>
       ))}

@@ -1,15 +1,22 @@
 "use client";
 
-import { GraduationCap, LayoutGrid, Calendar, CircleStar } from "lucide-react";
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { coursesAtom } from "@/app/dashboard/(store)/store";
 import MultiSelect from "@/components/ui/MultiSelect";
 import MasterBadge from "@/components/MasterBadge";
 import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
-import { range } from "lodash";
+import { range, uniq } from "lodash";
+import {
+  GraduationCap,
+  LayoutGrid,
+  Calendar,
+  CircleStar,
+  Shapes,
+} from "lucide-react";
 
 const CATEGORY_LABELS: Record<string, string> = {
   master: "Profiles",
@@ -17,6 +24,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   block: "Blocks",
   period: "Periods",
   level: "Levels",
+  mainField: "Fields",
 };
 
 const LEVELS: Record<string, string> = {
@@ -26,13 +34,36 @@ const LEVELS: Record<string, string> = {
 
 const UnifiedSearchFilter: FC = () => {
   const showBachelorYears = useAtomValue(preferenceAtoms.showBachelorYearsAtom);
+  const [mainFields, selectMainFields] = useAtom(filterAtoms.mainFieldsAtom);
   const [semesters, selectSemesters] = useAtom(filterAtoms.semestersAtom);
   const [masters, selectMasters] = useAtom(filterAtoms.mastersAtom);
   const [periods, selectPeriods] = useAtom(filterAtoms.periodsAtom);
   const [blocks, selectBlocks] = useAtom(filterAtoms.blocksAtom);
   const [levels, selectLevels] = useAtom(filterAtoms.levelsAtom);
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
-  const allMasters = useMasterAtom();
+  const allCourses = useAtomValue(coursesAtom);
+  const allMasters = useMasterAtom()
+
+  const mainFieldOptions = useMemo(() => {
+    const uniqueFields = uniq(
+      Object.values(allCourses).flatMap((c) => c.mainField || []),
+    ).sort();
+
+    return {
+      heading: "Main Fields",
+      options: uniqueFields.map((field) => ({
+        label: field,
+        dropdownLabel: (
+          <div className="flex items-center gap-2 truncate">
+            <Shapes className="h-4 w-4 opacity-70" />
+            <span className="truncate">{field}</span>
+          </div>
+        ),
+        searchKey: field,
+        value: `mainField:${field}`,
+      })),
+    };
+  }, [allCourses]);
 
   const semesterOptions = useMemo(() => {
     const start = showBachelorYears ? 1 : 7;
@@ -63,7 +94,7 @@ const UnifiedSearchFilter: FC = () => {
             <span className="truncate">Block {b}</span>
           </div>
         ),
-        searchKey: `Block ${b}`,
+        searchKey: `Block {b}`,
         value: `block:${b}`,
       })),
     }),
@@ -131,8 +162,16 @@ const UnifiedSearchFilter: FC = () => {
       periodOptions,
       levelOptions,
       masterOptions,
+      mainFieldOptions,
     ],
-    [semesterOptions, blockOptions, periodOptions, masterOptions, levelOptions],
+    [
+      semesterOptions,
+      blockOptions,
+      periodOptions,
+      masterOptions,
+      levelOptions,
+      mainFieldOptions,
+    ],
   );
 
   const selectedValues = useMemo(() => {
@@ -143,13 +182,14 @@ const UnifiedSearchFilter: FC = () => {
     periods.forEach((p) => values.push(`period:${p}`));
     masters.forEach((m) => values.push(`master:${m}`));
     levels.forEach((l) => values.push(`level:${l}`));
+    mainFields.forEach((f) => values.push(`mainField:${f}`));
 
     if (search) {
       values.push(`search:${search}`);
     }
 
     return values;
-  }, [masters, semesters, blocks, periods, levels, search]);
+  }, [masters, semesters, blocks, periods, levels, search, mainFields]);
 
   const handleValueChange = (newValues: string[]) => {
     selectMasters(
@@ -177,6 +217,11 @@ const UnifiedSearchFilter: FC = () => {
         .filter((v) => v.startsWith("level:"))
         .map((v) => v.split(":")[1]),
     );
+    selectMainFields(
+      newValues
+        .filter((v) => v.startsWith("mainField:"))
+        .map((v) => v.split(":")[1]),
+    );
 
     if (!newValues.some((v) => v.startsWith("search:"))) {
       searchFor("");
@@ -191,7 +236,7 @@ const UnifiedSearchFilter: FC = () => {
         onValueChange={handleValueChange}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
-        placeholder="Filter by master, block, or type..."
+        placeholder="Filter by master, field, or type..."
       />
     </div>
   );

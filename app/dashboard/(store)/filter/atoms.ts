@@ -7,5 +7,6 @@ export const filterAtoms = {
   periodsAtom: atomWithReset<number[]>([]),
   blocksAtom: atomWithReset<number[]>([]),
   levelsAtom: atomWithReset<string[]>([]),
+  mainFieldsAtom: atomWithReset<string[]>([]),
   excludeSlotConflictsAtom: atomWithReset<boolean>(false),
 };
