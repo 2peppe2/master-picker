@@ -11,12 +11,12 @@ interface ExamSelectItemProps {
 
 const ExamSelectItem: FC<ExamSelectItemProps> = ({ moduleData }) => (
   <SelectItem
-    className="w-full "
+    className="w-full cursor-pointer"
     value={`${moduleData.moduleCode}-${moduleData.date}`}
   >
-    <div className="flex items-center w-full cursor-pointer">
+    <div className="flex items-center w-full">
       <span>{moduleData.displayDate}</span>
-      <div className="ml-auto">
+      <div className="ml-auto flex items-center">
         <ExamBadge
           moduleCode={moduleData.moduleCode}
           isOriginal={moduleData.isOriginal}
