@@ -27,21 +27,6 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
     selectBlocks([data.blockNumber + 1]);
   };
 
-  if (courseSlot && isThisCourseBeingDragged) {
-    return (
-      <div
-        className={cn(
-          "transition-opacity duration-200",
-          draggedCourse
-            ? "opacity-30 grayscale-[0.5] pointer-events-none"
-            : "opacity-100",
-        )}
-      >
-        <CourseCard variant="dropped" course={courseSlot} />
-      </div>
-    );
-  }
-
   return (
     <Droppable
       data={data}
@@ -54,6 +39,17 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
         >
           <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>
+      ) : courseSlot && isThisCourseBeingDragged ? (
+        <div
+          className={cn(
+            "transition-opacity duration-200",
+            draggedCourse
+              ? "opacity-30 grayscale-[0.5] pointer-events-none"
+              : "opacity-100",
+          )}
+        >
+          <CourseCard variant="dropped" course={courseSlot} />
+        </div>
       ) : (
         <div
           onClick={handleFilterChange}

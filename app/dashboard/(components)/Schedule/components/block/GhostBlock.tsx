@@ -1,3 +1,5 @@
+"use client";
+
 import { Droppable } from "@/components/Droppable";
 import { Plus } from "lucide-react";
 import { BlockProps } from ".";
