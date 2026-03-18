@@ -1,8 +1,8 @@
 "use client";
 
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { PeriodNodeData } from "@/components/Droppable";
-import { Course, CourseOccasion } from "../../page";
 
 interface DetectCollisionsArgs {
   course?: Course;
@@ -26,14 +26,15 @@ export const useCollisionDetector = () => {
     if (course) {
       collisions = collisions.filter((c) => c.code !== course.code);
     }
-    
+
     const existingSlot = getSlotCourse({
       semester: overData.semesterNumber,
       period: targetPeriod,
       block: targetBlock,
     });
 
-    const actualExistingSlot = existingSlot?.code === course?.code ? null : existingSlot;
+    const actualExistingSlot =
+      existingSlot?.code === course?.code ? null : existingSlot;
 
     return {
       collisions,
