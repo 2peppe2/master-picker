@@ -70,5 +70,17 @@
     "name": "Secure Systems",
     "icon": "Shield",
     "style": "bg-rose-100 text-rose-800 border-rose-300 dark:bg-rose-900/20 dark:text-rose-300"
+  },
+  {
+    "id": "DSOC",
+    "name": "System-On-Chip",
+    "icon": "Layers",
+    "style": "bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900/20 dark:text-orange-300"
+  },
+  {
+    "id": "DELK",
+    "name": "Electronics",
+    "icon": "Zap",
+    "style": "bg-yellow-100 text-yellow-800 border-yellow-300 dark:bg-yellow-900/20 dark:text-yellow-300"
   }
 ]

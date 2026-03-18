@@ -11,6 +11,7 @@ import {
   UserRound,
   type LucideIcon,
 } from "lucide-react";
+import { FC } from "react";
 
 type DialogGeneralTabProps = {
   course: Course;
@@ -33,7 +34,7 @@ const DetailRow = ({ label, value, icon: Icon }: DetailRowProps) => (
   </div>
 );
 
-const DialogGeneralTab = ({ course, showAdd }: DialogGeneralTabProps) => {
+const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
   const examiner = course.examiner.trim() === "" ? "N/A" : course.examiner;
   const department = LIU_DEPARTMENTS[course.department] ?? "N/A";
   const level = course.level.trim() === "" ? "N/A" : course.level;

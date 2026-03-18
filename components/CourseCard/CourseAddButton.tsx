@@ -1,16 +1,14 @@
 "use client";
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictManager";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "../ui/button";
-import { useAtomValue } from "jotai";
 import { FC, useState } from "react";
 import { Plus } from "lucide-react";
 
@@ -112,18 +110,17 @@ const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
   onAddAttempt,
   setSelectedOccasion,
 }) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const yearAndSemesterToRelativeSemester = useToRelativeSemester();
 
   return (
     <div className="flex flex-col gap-1">
       <div className="max-h-[300px] overflow-y-auto p-1 flex flex-col gap-1">
         {course.CourseOccasion.map((occasion) => {
           const relativeSemester =
-            yearAndSemesterToRelativeSemester(
-              startingYear,
-              occasion.year,
-              occasion.semester,
-            ) + 1;
+            yearAndSemesterToRelativeSemester({
+              year: occasion.year,
+              semester: occasion.semester,
+            }) + 1;
 
           const pLabel =
             occasion.periods.length > 0

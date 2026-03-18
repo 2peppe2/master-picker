@@ -1,8 +1,9 @@
 "use server";
-import { prisma } from "@/lib/prisma";
+
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { Semester } from "@/prisma/generated/client/enums";
 import { courseWithDetailsArgs } from "../courseNormalizer";
+import { Semester } from "@/prisma/generated/client/enums";
+import { prisma } from "@/lib/prisma";
 import { cache } from "react";
 
 export const getBachelorCourses = cache(async (program: string, startYear: number) => {

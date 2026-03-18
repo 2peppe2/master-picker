@@ -1,15 +1,13 @@
 "use client";
 
 import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { ConflictResolverModal } from "../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";
-import { MasterBadge } from "../MasterBadge";
+import MasterBadge from "../MasterBadge";
 import { Button } from "../ui/button";
-import { useAtomValue } from "jotai";
 import { Plus } from "lucide-react";
 import {
   Table,
@@ -103,18 +101,17 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
   setSelectedOccasion,
   showAdd,
 }) => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const yearAndSemesterToRelativeSemester = useToRelativeSemester();
   const { getOccasionCollisions } = useScheduleGetters();
   const { executeAdd } = useCourseContlictResolver();
 
   const relativeSemester = useMemo(
     () =>
-      yearAndSemesterToRelativeSemester(
-        startingYear,
-        occasion.year,
-        occasion.semester,
-      ),
-    [occasion.semester, occasion.year, startingYear],
+      yearAndSemesterToRelativeSemester({
+        year: occasion.year,
+        semester: occasion.semester,
+      }),
+    [occasion.semester, occasion.year, yearAndSemesterToRelativeSemester],
   );
 
   const periods = occasion.periods.map((p) => p.period);

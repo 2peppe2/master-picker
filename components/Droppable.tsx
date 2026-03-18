@@ -1,12 +1,14 @@
+"use client";
+
+import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
 import React, { FC, ReactNode, useMemo } from "react";
-import { useDroppable } from "@dnd-kit/core";
-import { useAtomValue } from "jotai";
 import {
   scheduleAtoms,
   WILDCARD_BLOCK_START,
-} from "@/app/atoms/schedule/atoms";
+} from "@/app/dashboard/(store)/schedule/atoms";
+import { useDroppable } from "@dnd-kit/core";
+import { useAtomValue } from "jotai";
 
 export type PeriodNodeData = {
   semesterNumber: number;
@@ -27,8 +29,8 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
     data,
   });
 
+  const startingYear = useStartingYear();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
-  const { startingYear } = useAtomValue(userPreferencesAtom);
   const { semester, year } = relativeSemesterToYearAndSemester(
     startingYear,
     semesterNumber,

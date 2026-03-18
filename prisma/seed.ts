@@ -310,7 +310,6 @@ async function seedMasterRequirementsData(program: string, id: number) {
   const commonBase = fileData["COMMON_BASE"] || [];
 
   for (const [masterKey, specificReqs] of Object.entries(fileData)) {
-    // Skip metadata and the base template itself
     if (masterKey === "$schema" || masterKey === "COMMON_BASE") continue;
 
     const requirements = [
@@ -318,7 +317,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
       ...(specificReqs as RequirementUnion[]),
     ];
 
-    console.log(`Processing profile: ${masterKey} for ${program}`);
+    console.log(`Seeding requirements for ${masterKey} - Year ID: ${id}`);
 
     await seedMaster(masterKey, program);
 
@@ -326,6 +325,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
       data: {
         masterProgram: masterKey,
         program,
+        programCourseID: id,
       },
     });
 
@@ -333,6 +333,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
       if (req.type === "COURSE_SELECTION") {
         if (!req.courses || !req.courses.length) continue;
 
+        // Create the requirement group
         const courseRequirement = await prisma.coursesRequirement.create({
           data: {
             type: CoursesType.COURSE_SELECTION,
@@ -341,38 +342,33 @@ async function seedMasterRequirementsData(program: string, id: number) {
           },
         });
 
+        // Find the courses that belong to THIS year
         const linkedCourses = await prisma.course.findMany({
           where: {
             code: { in: req.courses as unknown as string[] },
-            programCourseID: id,
+            programCourseID: id, // Ensuring we link the correct year's course row
           },
-          select: { code: true, programCourseID: true },
         });
+
+        if (linkedCourses.length === 0) {
+          console.warn(
+            `⚠️ No courses found for requirement in ${masterKey} (Year: ${id}). Expected: ${req.courses.join(", ")}`,
+          );
+        }
 
         if (linkedCourses.length) {
           await prisma.courseRequirementCourse.createMany({
             data: linkedCourses.map((course) => ({
               coursesRequirementId: courseRequirement.id,
               courseCode: course.code,
-              programCourseID: course.programCourseID,
+              programCourseID: id,
             })),
           });
         }
         continue;
       }
 
-      if (req.type === "CREDITS_MAIN_FIELD_TOTAL") {
-        await prisma.mainFieldRequirement.create({
-          data: {
-            type: "CREDITS_MAIN_FIELD_TOTAL",
-            requirementId: requirementRow.id,
-            credits: Number(req.credits),
-            fields: req.fields as string[],
-          },
-        });
-        continue;
-      }
-
+      // Handle Credit Requirements
       const creditType = mapReqTypeToCreditType(req.type);
       if (creditType) {
         await prisma.creditRequirement.create({
@@ -380,6 +376,18 @@ async function seedMasterRequirementsData(program: string, id: number) {
             requirementId: requirementRow.id,
             type: creditType,
             credits: Number(req.credits),
+          },
+        });
+      }
+
+      // Handle Main Field Requirements
+      if (req.type === "CREDITS_MAIN_FIELD_TOTAL") {
+        await prisma.mainFieldRequirement.create({
+          data: {
+            type: "CREDITS_MAIN_FIELD_TOTAL",
+            requirementId: requirementRow.id,
+            credits: Number(req.credits),
+            fields: req.fields as string[],
           },
         });
       }

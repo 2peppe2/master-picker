@@ -1,7 +1,7 @@
 "use client";
 
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
-import { scheduleAtoms } from "@/app/atoms/schedule/atoms";
+import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import CourseCardFooter from "./CourseCardFooter";
 import CourseDialog from "../CourseModal/Dialog";
 import { Button } from "@/components/ui/button";

@@ -1,49 +1,33 @@
 "use client";
 
-import type { CourseRequirements } from "./page";
-import { mastersAtom } from "../atoms/mastersAtom";
+import CompulsorySummaryCard from "./(components)/CompulsorySummaryCard";
+import ElectiveSummaryCard from "./(components)/ElectiveSummaryCard";
+import CompulsorySelector from "./(components)/CompulsorySelector";
+import ElectiveSelector from "./(components)/ElectiveSelector";
 import type { Course, Master } from "../dashboard/page";
-import React, { FC, useMemo, useState } from "react";
-import GuideHeader from "./components/GuideHeader";
-import CompulsorySummaryCard from "./components/CompulsorySummaryCard";
-import ElectiveSummaryCard from "./components/ElectiveSummaryCard";
-import ProgressCard from "./components/ProgressCard";
-import CompulsorySelector from "./components/CompulsorySelector";
-import ElectiveSelector from "./components/ElectiveSelector";
+import MasterProvider from "../store/MasterAtomContext";
+import ProgressCard from "./(components)/ProgressCard";
+import GuideHeader from "./(components)/GuideHeader";
+import { Provider as JotaiProvider } from "jotai";
+import type { CourseRequirements } from "./page";
+import { FC, useMemo, useState } from "react";
 import { useHydrateAtoms } from "jotai/utils";
-import { userPreferencesAtom } from "../atoms/UserPreferences";
+import { mastersAtom } from "./(store)/store";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
   masters: Record<string, Master>;
   selectedMaster: string;
   bachelorCourses: Course[];
-  year: number;
-  programId: number;
 }
 
-const GuideClientPage: FC<GuideClientPageProps> = ({
+const GuideContent: FC<GuideClientPageProps> = ({
   courseRequirements,
   masters,
   selectedMaster,
   bachelorCourses,
-  programId,
-  year,
 }) => {
-  useHydrateAtoms([
-    [mastersAtom, masters],
-    [
-      userPreferencesAtom,
-      {
-        numberOfSemesters: 10,
-        masterPeriod: { start: 7, end: 10 },
-        selectedProgram: selectedMaster,
-        showBachelorYears: false,
-        startingYear: year,
-        programId,
-      },
-    ],
-  ]);
+  useHydrateAtoms([[mastersAtom, masters]], { dangerouslyForceHydrate: true });
 
   const compulsoryCourses = useMemo(
     () => courseRequirements.filter((req) => req.courses.length === 1),
@@ -56,7 +40,6 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
   );
 
   const [requiredConfirmed, setRequiredConfirmed] = useState(false);
-
   const [selections, setSelections] = useState<Record<number, Course[]>>({});
 
   const handleElectiveSelection = (index: number, course: Course) => {
@@ -65,18 +48,11 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
       const isAlreadySelected = currentSelection.some(
         (c) => c.code === course.code,
       );
+      const nextSelection = isAlreadySelected
+        ? currentSelection.filter((c) => c.code !== course.code)
+        : [...currentSelection, course];
 
-      let nextSelection: Course[];
-      if (isAlreadySelected) {
-        nextSelection = currentSelection.filter((c) => c.code !== course.code);
-      } else {
-        nextSelection = [...currentSelection, course];
-      }
-
-      return {
-        ...prev,
-        [index]: nextSelection,
-      };
+      return { ...prev, [index]: nextSelection };
     });
   };
 
@@ -119,5 +95,13 @@ const GuideClientPage: FC<GuideClientPageProps> = ({
     </div>
   );
 };
+
+const GuideClientPage: FC<GuideClientPageProps> = (props) => (
+  <JotaiProvider>
+    <MasterProvider atom={mastersAtom}>
+      <GuideContent {...props} />
+    </MasterProvider>
+  </JotaiProvider>
+);
 
 export default GuideClientPage;

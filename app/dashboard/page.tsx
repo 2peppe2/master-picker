@@ -1,23 +1,27 @@
 "use server";
 
-import { Prisma } from "@/prisma/generated/client/client";
 import { courseWithDetailsArgs, normalizeCourse } from "../courseNormalizer";
+import { Prisma } from "@/prisma/generated/client/client";
+import DashboardClientPage from "./DashboardClientPage";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import ClientPage from "./ClientPage";
+import { FC } from "react";
 
-export default async function MainPage({
-  searchParams,
-}: {
+interface DashboardPageProps {
   searchParams: Promise<{
     program?: string;
     year?: string;
     master?: string;
   }>;
-}) {
+}
+
+const DashboardPage: FC<DashboardPageProps> = async ({ searchParams }) => {
   const { program, year } = await searchParams;
+
   if (!program || !year) {
-    return "redirecting";
+    redirect("/");
   }
+
   const startYear = year ? Number(year) : undefined;
   const hasValidYear = startYear !== undefined && !Number.isNaN(startYear);
   const courseWhere =
@@ -29,6 +33,7 @@ export default async function MainPage({
           },
         }
       : undefined;
+
   const courses = await prisma.course.findMany({
     where: courseWhere,
     ...courseWithDetailsArgs,
@@ -47,12 +52,14 @@ export default async function MainPage({
   });
 
   return (
-    <ClientPage
+    <DashboardClientPage
       courses={courses.map(normalizeCourse)}
       masters={Object.fromEntries(masters.map((m) => [m.master, m]))}
     />
   );
-}
+};
+
+export default DashboardPage;
 
 export type Course = ReturnType<typeof normalizeCourse>;
 

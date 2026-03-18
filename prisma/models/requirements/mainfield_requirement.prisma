@@ -1,5 +1,5 @@
 model MainFieldRequirement {
-  id      Int      @id @default(autoincrement())
+  id      Int           @id @default(autoincrement())
   credits Int
   type    MainFieldType
   fields  String[]

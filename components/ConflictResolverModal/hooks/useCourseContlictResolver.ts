@@ -1,10 +1,10 @@
-import { useScheduleMutators } from "@/app/atoms/schedule/hooks/useScheduleMutators";
-import { yearAndSemesterToRelativeSemester } from "@/lib/semesterYearTranslations";
-import { useScheduleGetters } from "@/app/atoms/schedule/hooks/useScheduleGetters";
-import { dispatchScrollToCourse } from "@/hooks/useScrollToCourseFeedback";
-import { userPreferencesAtom } from "@/app/atoms/UserPreferences";
+"use client";
+
+import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
+import { dispatchScrollToCourse } from "@/common/hooks/useCourseAddedFeedback";
+import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { useAtomValue } from "jotai";
 
 export interface DropSlot {
   block: number;
@@ -30,7 +30,7 @@ export interface ResolveConflictArgs {
 }
 
 export const useCourseContlictResolver = () => {
-  const { startingYear } = useAtomValue(userPreferencesAtom);
+  const yearAndSemesterToRelativeSemester = useToRelativeSemester();
   const { checkWildcardExpansion } = useScheduleGetters();
   const {
     addCourseByButton,
@@ -47,11 +47,10 @@ export const useCourseContlictResolver = () => {
       });
     } else {
       if (checkWildcardExpansion({ occasion })) {
-        const relativeSemester = yearAndSemesterToRelativeSemester(
-          startingYear,
-          occasion.year,
-          occasion.semester,
-        );
+        const relativeSemester = yearAndSemesterToRelativeSemester({
+          year: occasion.year,
+          semester: occasion.semester,
+        });
         addBlockToSemester({ semester: relativeSemester });
       }
       addCourseByButton({ course, occasion });
@@ -70,11 +69,10 @@ export const useCourseContlictResolver = () => {
       collisions.forEach((c) => removeCourse({ courseCode: c.code }));
       executeAdd({ course, occasion, strategy });
     } else {
-      const relativeSemester = yearAndSemesterToRelativeSemester(
-        startingYear,
-        occasion.year,
-        occasion.semester,
-      );
+      const relativeSemester = yearAndSemesterToRelativeSemester({
+        year: occasion.year,
+        semester: occasion.semester,
+      });
 
       addBlockToSemester({ semester: relativeSemester });
 

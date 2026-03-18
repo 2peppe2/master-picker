@@ -1,4 +1,4 @@
-const GEN_Z_TITLES = [
+export const GEN_Z_TITLES = [
   "Big W. Time to set up your schedule.",
   "Solid pick, let's map this out.",
   "You cooked. Let's build your schedule.",
@@ -12,7 +12,5 @@ const GEN_Z_TITLES = [
   "Bro chose peak. Deploying schedule now.",
   "That pick goes hard. Let's assemble the timeline.",
   "Main-character decision. Let's queue up your schedule.",
-  "NPCs are impressed. Let's configure your daily quest log."
-]
-
-export { GEN_Z_TITLES };
+  "NPCs are impressed. Let's configure your daily quest log.",
+];
