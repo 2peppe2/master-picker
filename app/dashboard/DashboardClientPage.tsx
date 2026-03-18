@@ -28,7 +28,6 @@ const DashboardContent: FC<ClientPageProps> = ({ courses, masters }) => {
     setReady(true);
   }, [store, coursesMap, masters]);
 
-  // TODO: Add skeleton here as well.
   if (!ready) {
     return null;
   }

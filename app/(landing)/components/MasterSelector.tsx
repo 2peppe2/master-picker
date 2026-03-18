@@ -2,7 +2,7 @@
 
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
-import { LandingPageProgram } from "../LandingClientPage"; // Ensure this matches the new { years: [...] } type
+import { LandingPageProgram } from "../LandingClientPage"; 
 import { FC, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
