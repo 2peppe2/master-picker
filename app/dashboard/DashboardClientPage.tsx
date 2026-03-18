@@ -1,5 +1,6 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { FC, useMemo, useState, useLayoutEffect } from "react";
 import { MasterAtomContext } from "../store/MasterAtomContext";
 import { Provider as JotaiProvider, useStore } from "jotai";
@@ -40,12 +41,16 @@ const DashboardContent: FC<ClientPageProps> = ({ courses, masters }) => {
   );
 };
 
+const client = new QueryClient();
+
 const DashboardClientPage: FC<ClientPageProps> = (props) => (
-  <JotaiProvider>
-    <MasterAtomContext value={mastersAtom}>
-      <DashboardContent {...props} />
-    </MasterAtomContext>
-  </JotaiProvider>
+  <QueryClientProvider client={client}>
+    <JotaiProvider>
+      <MasterAtomContext value={mastersAtom}>
+        <DashboardContent {...props} />
+      </MasterAtomContext>
+    </JotaiProvider>
+  </QueryClientProvider>
 );
 
 export default DashboardClientPage;

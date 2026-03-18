@@ -1,7 +1,7 @@
 "use client";
 
 import { Label, Pie, PieChart } from "recharts";
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import {
   type ChartConfig,
   ChartContainer,
@@ -25,15 +25,15 @@ const revenueChartConfig = {
   },
 } satisfies ChartConfig;
 
-type DialogTimeChartProps = {
+interface DialogTimeChartProps {
   scheduledHours: number;
   selfStudyHours: number;
-};
+}
 
-const DialogTimeChart = ({
+const DialogTimeChart: FC<DialogTimeChartProps> = ({
   scheduledHours,
   selfStudyHours,
-}: DialogTimeChartProps) => {
+}) => {
   const totalHours = scheduledHours + selfStudyHours;
   const data = [
     {
@@ -56,6 +56,7 @@ const DialogTimeChart = ({
 
     return () => cancelAnimationFrame(frame);
   }, [scheduledHours, selfStudyHours]);
+
   return (
     <ChartContainer config={revenueChartConfig} className="h-30 w-30">
       <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>

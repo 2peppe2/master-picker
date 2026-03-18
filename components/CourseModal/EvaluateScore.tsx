@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ChevronDown, Loader2, FileText, AlertCircle } from "lucide-react";
+import { useCourseData } from "./hooks/useCourseData";
+import { useMemo, useState, FC } from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   LineChart,
   Line,
@@ -10,50 +17,17 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { ChevronDown } from "lucide-react";
-import { fetchCourseData } from "./courseDataCache";
-import { DataCourseStatistic } from "liu-tentor-package";
 
-type EvaluateScoreProps = {
+interface EvaluateScoreProps {
   courseCode: string;
-};
+}
 
-const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
-  const [courseData, setCourseData] = useState<DataCourseStatistic | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
+  const { data: courseData, isLoading, error } = useCourseData(courseCode);
   const [reportsOpen, setReportsOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
-        const data = await fetchCourseData(courseCode);
-        setCourseData(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [courseCode]);
-
-  const getTrendData = () => {
-    if (
-      !courseData ||
-      !courseData.evaluationReports ||
-      courseData.evaluationReports.length === 0
-    ) {
-      return [];
-    }
+  const trendData = useMemo(() => {
+    if (!courseData?.evaluationReports?.length) return [];
 
     return [...courseData.evaluationReports]
       .sort(
@@ -61,48 +35,59 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
           new Date(a.reportDate).getTime() - new Date(b.reportDate).getTime(),
       )
       .map((report) => {
-        let averageScore = 0;
-        let totalWeight = 0;
+        let totalScoreSum = 0;
+        let totalRespondents = 0;
 
         for (const [key, value] of Object.entries(report.scores)) {
-          const scoreAmount = Number(value); 
-          const scoreValue = parseFloat(key);
+          const count = Number(value);
+          const scoreWeight = parseFloat(key);
 
-          if (!isNaN(scoreValue) && scoreValue > 0) {
-            averageScore += scoreValue * scoreAmount;
-            totalWeight += scoreAmount;
+          if (!isNaN(scoreWeight) && scoreWeight > 0) {
+            totalScoreSum += scoreWeight * count;
+            totalRespondents += count;
           }
         }
 
         const avgScore =
-          totalWeight > 0 ? (averageScore / totalWeight).toFixed(2) : "0.00";
+          totalRespondents > 0
+            ? (totalScoreSum / totalRespondents).toFixed(2)
+            : "0.00";
 
         return {
-          date: new Date(report.reportDate).toLocaleDateString(),
+          date: new Date(report.reportDate).toLocaleDateString(undefined, {
+            year: "2-digit",
+            month: "short",
+          }),
           avgScore: parseFloat(avgScore),
           reportId: report.reportId,
         };
       });
-  };
+  }, [courseData]);
 
-  const trendData = getTrendData();
-
-  if (
-    isLoading ||
-    error ||
-    !courseData ||
-    !courseData.evaluationReports ||
-    courseData.evaluationReports.length === 0
-  ) {
+  if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-8">
-        {isLoading ? (
-          <p className="text-muted-foreground">Loading evaluation data...</p>
-        ) : error ? (
-          <p className="text-destructive">Error: {error}</p>
-        ) : (
-          <p className="text-muted-foreground">No evaluation data available</p>
-        )}
+      <div className="flex flex-col items-center justify-center min-h-[300px] h-full gap-4 text-muted-foreground w-full">
+        <Loader2 className="h-8 w-8 animate-spin" />
+        <p className="text-sm font-medium">Loading evaluation reports...</p>
+      </div>
+    );
+  }
+
+  if (error || !courseData?.evaluationReports?.length) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[300px] h-full gap-4 text-muted-foreground w-full">
+        <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+          {error ? (
+            <AlertCircle className="h-6 w-6 opacity-50" />
+          ) : (
+            <FileText className="h-6 w-6 opacity-50" />
+          )}
+        </div>
+        <p className="text-sm font-medium">
+          {error
+            ? "Error loading evaluation data."
+            : "No evaluation data available for this course."}
+        </p>
       </div>
     );
   }
@@ -151,63 +136,65 @@ const EvaluateScore = ({ courseCode }: EvaluateScoreProps) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">
-          Course evaluation data is provided by{" "}
+        <p className="text-[11px] leading-relaxed text-muted-foreground italic">
+          Data via{" "}
           <a
-            href="https://admin.evaliuate.liu.se/search?lang=sv"
+            href="https://admin.evaliuate.liu.se/search"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className="text-primary hover:underline font-medium"
           >
-            Liu Evaliuate
-          </a>{" "}
-          (Liu login required). Calculated from the course&apos;s overall
-          evaluation
+            LiU Evaliuate
+          </a>
+          . Scores represent the weighted average of student feedback for this
+          course instance.
         </p>
       </div>
 
       <Collapsible open={reportsOpen} onOpenChange={setReportsOpen}>
-        <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-md border hover:bg-accent cursor-pointer">
-          <div className="flex flex-col gap-1">
-            <h3 className="text-sm font-semibold text-left">
-              Reports ({courseData.evaluationReports.length})
+        <CollapsibleTrigger className="flex items-center justify-between w-full p-3 rounded-xl border bg-card/50 hover:bg-accent transition-colors">
+          <div className="flex flex-col items-start gap-0.5">
+            <h3 className="text-sm font-semibold">
+              Archived Reports ({courseData.evaluationReports.length})
             </h3>
-            <p className="text-xs text-muted-foreground">Liu login required</p>
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              LiU Login Required
+            </p>
           </div>
           <ChevronDown
-            className="h-4 w-4 transition-transform duration-200"
-            style={{
-              transform: reportsOpen ? "rotate(180deg)" : "rotate(0deg)",
-            }}
+            className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
+              reportsOpen ? "rotate-180" : ""
+            }`}
           />
         </CollapsibleTrigger>
         <CollapsibleContent className="space-y-2 mt-2">
-          {courseData &&
-            courseData.evaluationReports &&
-            [...courseData.evaluationReports]
-              .sort(
-                (a, b) =>
-                  new Date(b.reportDate).getTime() -
-                  new Date(a.reportDate).getTime(),
-              )
-              .map((report) => (
-                <div
-                  key={report.reportId}
-                  className="flex items-center justify-between p-2 rounded-md border"
+          {[...courseData.evaluationReports]
+            .sort(
+              (a, b) =>
+                new Date(b.reportDate).getTime() -
+                new Date(a.reportDate).getTime(),
+            )
+            .map((report) => (
+              <div
+                key={report.reportId}
+                className="flex items-center justify-between p-3 rounded-lg border bg-background"
+              >
+                <span className="text-sm font-medium">
+                  {new Date(report.reportDate).toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                  })}
+                </span>
+                <a
+                  href={`https://admin.evaliuate.liu.se/ReportFile/report/${report.reportId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
                 >
-                  <span className="text-sm">
-                    {new Date(report.reportDate).toLocaleDateString()}
-                  </span>
-                  <a
-                    href={`https://admin.evaliuate.liu.se/ReportFile/report/${report.reportId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-primary hover:underline"
-                  >
-                    View Report
-                  </a>
-                </div>
-              ))}
+                  View PDF
+                </a>
+              </div>
+            ))}
         </CollapsibleContent>
       </Collapsible>
     </div>

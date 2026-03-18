@@ -1,8 +1,11 @@
-import { Course } from "@/app/dashboard/page";
-import OccasionTable from "./OccasionTable";
+"use client";
+
 import { LIU_DEPARTMENTS } from "@/lib/departmentShortName";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Course } from "@/app/dashboard/page";
+import { Badge } from "@/components/ui/badge";
+import OccasionTable from "./OccasionTable";
+import { FC } from "react";
 import {
   BookOpen,
   Building2,
@@ -11,20 +14,19 @@ import {
   UserRound,
   type LucideIcon,
 } from "lucide-react";
-import { FC } from "react";
 
-type DialogGeneralTabProps = {
+interface DialogGeneralTabProps {
   course: Course;
   showAdd: boolean;
-};
+}
 
-type DetailRowProps = {
+interface DetailRowProps {
   label: string;
   value: string;
   icon: LucideIcon;
-};
+}
 
-const DetailRow = ({ label, value, icon: Icon }: DetailRowProps) => (
+const DetailRow: FC<DetailRowProps> = ({ label, value, icon: Icon }) => (
   <div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-3 py-2.5 text-sm">
     <p className="text-muted-foreground inline-flex items-center gap-1.5">
       <Icon className="size-3.5" />
