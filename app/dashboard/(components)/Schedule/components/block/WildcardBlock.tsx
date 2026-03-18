@@ -26,25 +26,10 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
     });
   };
 
-  if (courseSlot && isThisCourseBeingDragged) {
-    return (
-      <div
-        className={cn(
-          "transition-opacity duration-200",
-          draggedCourse
-            ? "opacity-30 grayscale-[0.5] pointer-events-none"
-            : "opacity-100",
-        )}
-      >
-        <CourseCard variant="dropped" course={courseSlot} />
-      </div>
-    );
-  }
-
   return (
     <Droppable
       data={data}
-      id={`ghost-${data.semesterNumber}-${data.periodNumber}`}
+      id={`ghost-${data.semesterNumber}-${data.periodNumber}-${data.blockNumber}`}
     >
       {shouldShowCourse ? (
         <Draggable
@@ -53,11 +38,19 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
         >
           <CourseCard variant="dropped" course={courseSlot} />
         </Draggable>
-      ) : (
+      ) : courseSlot && isThisCourseBeingDragged ? (
         <div
-          className="relative flex flex-col items-center justify-center h-full w-full group transition-all duration-200
-        opacity-70 hover:opacity-100 hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50"
+          className={cn(
+            "transition-opacity duration-200",
+            draggedCourse
+              ? "opacity-30 grayscale-[0.5] pointer-events-none"
+              : "opacity-100",
+          )}
         >
+          <CourseCard variant="dropped" course={courseSlot} />
+        </div>
+      ) : (
+        <div className="relative flex flex-col items-center justify-center h-full w-full group transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50">
           <span className="text-zinc-500 text-xs uppercase tracking-wider select-none">
             Extra
           </span>

@@ -89,8 +89,8 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
         <div
           className={`flex items-center shrink-0 transition-all duration-200 ease-in-out ${
             showGhost
-              ? "w-auto opacity-100 translate-x-0"
-              : "w-0 opacity-0 -translate-x-4 overflow-hidden pointer-events-none"
+              ? "w-auto block translate-x-0"
+              : "w-0 hidden -translate-x-4 overflow-hidden pointer-events-none"
           }`}
         >
           {blocks.length === WILDCARD_BLOCK_START && (

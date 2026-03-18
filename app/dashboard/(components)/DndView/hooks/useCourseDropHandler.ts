@@ -30,12 +30,6 @@ export const useCourseDropHandler = () => {
     });
     if (!validatonResult) return false;
 
-    // Make sure the course have no other occurence
-    // when being dropped to a new place.
-    removeCourse({
-      courseCode: course.code,
-    });
-
     const {
       occasion: validOccasion,
       targetPeriod,
@@ -59,6 +53,7 @@ export const useCourseDropHandler = () => {
     if (wasGhostDrop) return true;
 
     const { collisions, hasConflict } = detectCollisions({
+      course,
       overData,
       targetPeriod,
       targetBlock,
@@ -73,6 +68,7 @@ export const useCourseDropHandler = () => {
         strategy: "dropped",
       });
     } else {
+      removeCourse({ courseCode: course.code });
       executeAdd({
         course,
         occasion,

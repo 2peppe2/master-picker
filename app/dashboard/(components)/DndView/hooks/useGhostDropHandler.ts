@@ -2,8 +2,8 @@
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
+import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { PeriodNodeData } from "@/components/Droppable";
-import { Course, CourseOccasion } from "../../../page";
 
 interface HandleGhostDropArgs {
   overData: PeriodNodeData;
@@ -13,7 +13,8 @@ interface HandleGhostDropArgs {
 }
 
 export const useGhostDropHandler = () => {
-  const { addBlockToSemester, addCourseByDrop } = useScheduleMutators();
+  const { addBlockToSemester, addCourseByDrop, removeCourse } =
+    useScheduleMutators();
   const { getSlotBlocks } = useScheduleGetters();
 
   const handleGhostDrop = ({
@@ -31,6 +32,7 @@ export const useGhostDropHandler = () => {
 
     if (isGhostDrop) {
       addBlockToSemester({ semester: overData.semesterNumber });
+      removeCourse({ courseCode: course.code });
       addCourseByDrop({ course, occasion });
       return true;
     }

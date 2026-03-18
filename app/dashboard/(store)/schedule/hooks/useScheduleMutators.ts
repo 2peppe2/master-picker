@@ -134,7 +134,13 @@ export const useScheduleMutators = () => {
                 }
 
                 if (!placed) {
-                  periodBlocks.push(course);
+                  draft[semesterIndex].forEach((p, idx) => {
+                    if (idx === periodIndex) {
+                      p.push(course);
+                    } else {
+                      p.push(null);
+                    }
+                  });
                 }
               } else {
                 // Place in specified blocks
@@ -195,8 +201,16 @@ export const useScheduleMutators = () => {
                     break;
                   }
                 }
-                // If no null slot was found, append it to the end
-                if (!placed) periodBlocks.push(course);
+                // If no null slot was found, append to all periods in the semester
+                if (!placed) {
+                  draft[semesterIndex].forEach((p, idx) => {
+                    if (idx === periodIndex) {
+                      p.push(course);
+                    } else {
+                      p.push(null);
+                    }
+                  });
+                }
               } else {
                 // Standard course - place in specific block indices
                 for (const block of period.blocks) {
