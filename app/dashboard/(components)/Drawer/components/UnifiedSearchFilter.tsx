@@ -1,12 +1,12 @@
 "use client";
 
-import { GraduationCap, LayoutGrid, Calendar, CircleStar } from "lucide-react";
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { coursesAtom } from "@/app/dashboard/(store)/store";
 import MultiSelect from "@/components/ui/MultiSelect";
-import { coursesAtom } from "@/app/atoms/coursesAtom";
+import MasterBadge from "@/components/MasterBadge";
 import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
 import { range, uniq } from "lodash";
@@ -41,8 +41,8 @@ const UnifiedSearchFilter: FC = () => {
   const [blocks, selectBlocks] = useAtom(filterAtoms.blocksAtom);
   const [levels, selectLevels] = useAtom(filterAtoms.levelsAtom);
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
-  const allMasters = useAtomValue(mastersAtom);
   const allCourses = useAtomValue(coursesAtom);
+  const allMasters = useMasterAtom()
 
   const mainFieldOptions = useMemo(() => {
     const uniqueFields = uniq(
