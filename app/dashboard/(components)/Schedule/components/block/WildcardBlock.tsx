@@ -29,7 +29,7 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   return (
     <Droppable
       data={data}
-      id={`ghost-${data.semesterNumber}-${data.periodNumber}`}
+      id={`ghost-${data.semesterNumber}-${data.periodNumber}-${data.blockNumber}`}
     >
       {shouldShowCourse ? (
         <Draggable
