@@ -12,11 +12,15 @@ interface Tab {
 
 interface DialogTabsProps {
   tabs: Tab[];
+  value?: string;
+  onValueChange?: (value: string) => void;
 }
 
-const DialogTabs: FC<DialogTabsProps> = ({ tabs }) => (
+const DialogTabs: FC<DialogTabsProps> = ({ tabs, value, onValueChange }) => (
   <Tabs
     defaultValue={tabs[0]?.value ?? ""}
+    value={value}
+    onValueChange={onValueChange}
     className="flex h-full min-h-0 flex-1 flex-col overflow-hidden"
   >
     <TabsList

@@ -1,13 +1,20 @@
+"use client";
+
 import DialogTimeChart, { WORKLOAD_COLORS } from "./DialogTimeChart";
 import ExaminationTable from "./ExaminationTable";
-import { Course } from "@/app/dashboard/page";
 import { BookOpen, Clock3 } from "lucide-react";
+import { Course } from "@/app/dashboard/page";
+import { FC } from "react";
 
-type DialogDetailsTabProps = {
+interface DialogDetailsTabProps {
   course: Course;
-};
+  onNavigateToStatistics?: (modCode?: string) => void;
+}
 
-const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
+const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
+  course,
+  onNavigateToStatistics,
+}) => {
   const totalHours = course.scheduledHours + course.selfStudyHours;
   const scheduledShare = totalHours
     ? Math.round((course.scheduledHours / totalHours) * 100)
@@ -17,7 +24,9 @@ const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
   return (
     <div className="space-y-3 py-2 text-foreground">
       <section className="rounded-md border p-3">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide">Workload</p>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide">
+          Workload
+        </p>
         <div className="grid items-center gap-3 sm:grid-cols-[auto_minmax(0,1fr)]">
           <DialogTimeChart
             scheduledHours={course.scheduledHours}
@@ -55,7 +64,11 @@ const DialogDetailsTab = ({ course }: DialogDetailsTabProps) => {
           </div>
         </div>
       </section>
-      <ExaminationTable examination={course.Examination} />
+      <ExaminationTable
+        courseCode={course.code}
+        examination={course.Examination}
+        onNavigateToStatistics={onNavigateToStatistics}
+      />
     </div>
   );
 };

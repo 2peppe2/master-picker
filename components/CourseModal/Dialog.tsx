@@ -1,14 +1,14 @@
 "use client";
 
 import DialogFooterWithDetails from "./DialogFooterWithDetails";
+import { FC, useMemo, useState, useEffect } from "react";
 import DialogGeneralTab from "./DialogGeneralTab";
 import DialogDetailsTab from "./DialogDetailsTab";
 import { Course } from "@/app/dashboard/page";
 import { Badge } from "@/components/ui/badge";
 import EvaluateScore from "./EvaluateScore";
 import DialogTabs from "./DialogTabs";
-import Statistics from "./Statistics";
-import { FC, useMemo } from "react";
+import Statistics from "./statistics";
 import {
   Dialog,
   DialogContent,
@@ -37,6 +37,17 @@ const CourseDialog: FC<CourseDialogProps> = ({
   showAdd = true,
 }) => {
   const level = course.level.trim() === "" ? "N/A" : course.level;
+  const [activeTab, setActiveTab] = useState("overview");
+  const [initialStatModule, setInitialStatModule] = useState<
+    string | undefined
+  >();
+
+  useEffect(() => {
+    if (open) {
+      setActiveTab("overview");
+      setInitialStatModule(undefined);
+    }
+  }, [open, course.code]);
 
   const tabs = useMemo(
     () => [
@@ -48,12 +59,22 @@ const CourseDialog: FC<CourseDialogProps> = ({
       {
         name: "Examination",
         value: "examination",
-        content: <DialogDetailsTab course={course} />,
+        content: (
+          <DialogDetailsTab
+            course={course}
+            onNavigateToStatistics={(modCode?: string) => {
+              setInitialStatModule(modCode);
+              setActiveTab("statistics");
+            }}
+          />
+        ),
       },
       {
         name: "Statistics",
         value: "statistics",
-        content: <Statistics courseCode={course.code} />,
+        content: (
+          <Statistics course={course} initialStatModule={initialStatModule} />
+        ),
       },
       {
         name: "Evaliuate Score",
@@ -61,14 +82,12 @@ const CourseDialog: FC<CourseDialogProps> = ({
         content: <EvaluateScore courseCode={course.code} />,
       },
     ],
-    [course, showAdd],
+    [course, showAdd, initialStatModule],
   );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]"
-      >
+      <DialogContent className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]">
         <DialogHeader className="shrink-0">
           <DialogTitle>{course.code}</DialogTitle>
           <DialogDescription>{course.name}</DialogDescription>
@@ -92,18 +111,27 @@ const CourseDialog: FC<CourseDialogProps> = ({
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <NotebookText className="size-3" />
-              {course.Examination.length} modules
+              {course.Examination.length}{" "}
+              {course.CourseOccasion.length > 1 ? "modules" : "module"}
             </Badge>
             <Badge
               variant="outline"
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <CalendarClock className="size-3" />
-              {course.CourseOccasion.length} occasions
+              {course.CourseOccasion.length}{" "}
+              {course.CourseOccasion.length > 1 ? "occasions" : "occasion"}
             </Badge>
           </div>
         </DialogHeader>
-        <DialogTabs tabs={tabs} />
+        <DialogTabs
+          tabs={tabs}
+          value={activeTab}
+          onValueChange={(val) => {
+            setActiveTab(val);
+            if (val !== "statistics") setInitialStatModule(undefined);
+          }}
+        />
         <DialogFooterWithDetails course={course} />
       </DialogContent>
     </Dialog>

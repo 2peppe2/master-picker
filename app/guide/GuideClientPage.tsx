@@ -1,5 +1,6 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import CompulsorySummaryCard from "./(components)/CompulsorySummaryCard";
 import ElectiveSummaryCard from "./(components)/ElectiveSummaryCard";
 import CompulsorySelector from "./(components)/CompulsorySelector";
@@ -96,12 +97,16 @@ const GuideContent: FC<GuideClientPageProps> = ({
   );
 };
 
+const client = new QueryClient();
+
 const GuideClientPage: FC<GuideClientPageProps> = (props) => (
-  <JotaiProvider>
-    <MasterProvider atom={mastersAtom}>
-      <GuideContent {...props} />
-    </MasterProvider>
-  </JotaiProvider>
+  <QueryClientProvider client={client}>
+    <JotaiProvider>
+      <MasterProvider atom={mastersAtom}>
+        <GuideContent {...props} />
+      </MasterProvider>
+    </JotaiProvider>
+  </QueryClientProvider>
 );
 
 export default GuideClientPage;
