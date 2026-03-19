@@ -111,14 +111,16 @@ const CourseDialog: FC<CourseDialogProps> = ({
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <NotebookText className="size-3" />
-              {course.Examination.length} modules
+              {course.Examination.length}{" "}
+              {course.CourseOccasion.length > 1 ? "modules" : "module"}
             </Badge>
             <Badge
               variant="outline"
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <CalendarClock className="size-3" />
-              {course.CourseOccasion.length} occasions
+              {course.CourseOccasion.length}{" "}
+              {course.CourseOccasion.length > 1 ? "occasions" : "occasion"}
             </Badge>
           </div>
         </DialogHeader>

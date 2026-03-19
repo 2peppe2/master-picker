@@ -86,7 +86,8 @@ const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
           </p>
           <span className="text-muted-foreground inline-flex items-center gap-1.5 text-xs">
             <CalendarClock className="size-3.5" />
-            {course.CourseOccasion.length} options
+            {course.CourseOccasion.length}{" "}
+            {course.CourseOccasion.length > 1 ? "options" : "option"}
           </span>
         </div>
         <div className="rounded-md border">
