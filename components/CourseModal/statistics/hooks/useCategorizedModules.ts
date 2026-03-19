@@ -33,6 +33,7 @@ export const useCategorizedModules = ({
         const isExamType =
           code.startsWith("TEN") ||
           code.startsWith("DAT") ||
+          code.startsWith("DIT") ||
           code.startsWith("PRA");
         const isLabType =
           code.startsWith("LAB") ||
