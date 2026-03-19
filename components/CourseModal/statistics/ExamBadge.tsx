@@ -10,6 +10,7 @@ interface ExamBadgeProps {
 const ExamBadge: FC<ExamBadgeProps> = ({ moduleCode, isOriginal }) => {
   if (
     !moduleCode.startsWith("TEN") &&
+    !moduleCode.startsWith("DIT") &&
     !moduleCode.startsWith("DAT") &&
     !moduleCode.startsWith("PRA")
   ) {
