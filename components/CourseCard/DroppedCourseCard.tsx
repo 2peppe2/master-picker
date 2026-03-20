@@ -3,9 +3,9 @@
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import CourseCardFooter from "./CourseCardFooter";
-import CourseDialog from "../CourseModal/Dialog";
 import { Button } from "@/components/ui/button";
 import { FC, useMemo, useState } from "react";
+import CourseDialog from "../CourseDialog";
 import { useAtomValue } from "jotai";
 import { CourseCardProps } from ".";
 import { X } from "lucide-react";

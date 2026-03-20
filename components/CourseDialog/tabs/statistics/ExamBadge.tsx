@@ -1,5 +1,6 @@
 "use client";
 
+import { EXAM_MODULE_CODES } from "./constants";
 import { FC } from "react";
 
 interface ExamBadgeProps {
@@ -8,12 +9,7 @@ interface ExamBadgeProps {
 }
 
 const ExamBadge: FC<ExamBadgeProps> = ({ moduleCode, isOriginal }) => {
-  if (
-    !moduleCode.startsWith("TEN") &&
-    !moduleCode.startsWith("DIT") &&
-    !moduleCode.startsWith("DAT") &&
-    !moduleCode.startsWith("PRA")
-  ) {
+  if (!EXAM_MODULE_CODES.some((code) => moduleCode.startsWith(code))) {
     return null;
   }
 

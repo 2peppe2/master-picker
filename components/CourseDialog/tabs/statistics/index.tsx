@@ -2,7 +2,7 @@
 
 import { useDefaultModuleSelection } from "./hooks/useDefaultModuleSelection";
 import { useCategorizedModules } from "./hooks/useCategorizedModules";
-import { useCourseData } from "../hooks/useCourseData";
+import { useCourseData } from "../../hooks/useCourseData";
 import ChartDistribution from "./ChartDistribution";
 import { useChartData } from "./hooks/useChartData";
 import DistributionList from "./DistributionList";
@@ -14,9 +14,18 @@ import { FC, useMemo } from "react";
 interface StatisticsProps {
   course: Course;
   initialStatModule?: string;
+  selectedModule: string;
+  setSelectedModule: (mod: string) => void;
+  onInitialStatConsumed?: () => void;
 }
 
-const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
+const Statistics: FC<StatisticsProps> = ({
+  course,
+  initialStatModule,
+  selectedModule,
+  setSelectedModule,
+  onInitialStatConsumed,
+}) => {
   const { data: courseData, isLoading, error } = useCourseData(course.code);
 
   const { categorizedModules, allProcessedModules } = useCategorizedModules({
@@ -24,10 +33,13 @@ const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
     course,
   });
 
-  const { selectedModule, setSelectedModule } = useDefaultModuleSelection({
+  useDefaultModuleSelection({
     course,
     allProcessedModules,
     initialStatModule,
+    selectedModule,
+    setSelectedModule,
+    onInitialStatConsumed,
   });
 
   const selectedItem = useMemo(
