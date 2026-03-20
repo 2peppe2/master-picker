@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Course } from "@/app/dashboard/page";
 import { Check, X } from "lucide-react";
-import { useState, FC } from "react";
+import { useState, FC, useMemo } from "react";
+import type { Conflict } from "../GuideClientPage";
 import {
   Card,
   CardContent,
@@ -23,6 +24,9 @@ interface ElectiveSelectorProps {
   electiveCourses: CourseRequirements[0];
   selection: Course[];
   onSelectionChange: (course: Course) => void;
+  conflicts: Conflict[];
+  selectedOccasions: Record<string, number>;
+  onOccasionChange: (code: string, index: number) => void;
 }
 
 const NUM_TO_TYPED: Record<number, string> = {
@@ -37,8 +41,16 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
   electiveCourses,
   selection,
   onSelectionChange,
+  conflicts,
+  selectedOccasions,
+  onOccasionChange,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const normalizedCourses = useMemo(
+    () => electiveCourses.courses.map((c) => normalizeCourse(c.course)),
+    [electiveCourses.courses],
+  );
 
   const minRequired = electiveCourses.minCount ?? 1;
   const isFulfilled = selection.length >= minRequired;
@@ -100,11 +112,27 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
         <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
           <CardContent className="py-4">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {electiveCourses.courses.map((courseEntry) => {
-                const course = normalizeCourse(courseEntry.course);
+              {normalizedCourses.map((course) => {
                 const isSelected = selection.some(
                   (s) => s.code === course.code,
                 );
+
+                const courseConflicts = conflicts.filter(
+                  (c) =>
+                    c.courseA.code === course.code ||
+                    c.courseB.code === course.code,
+                );
+
+                const isConflicting = courseConflicts.length > 0;
+                const conflictingWith = courseConflicts.map((c) => ({
+                  code:
+                    c.courseA.code === course.code
+                      ? c.courseB.code
+                      : c.courseA.code,
+                  semester: c.semester,
+                  period: c.period,
+                  block: c.block,
+                }));
 
                 return (
                   <CourseCard
@@ -112,6 +140,10 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
                     course={course}
                     variant="selectable"
                     isSelected={isSelected}
+                    isConflicting={isConflicting}
+                    conflictingWith={conflictingWith}
+                    selectedOccasionIndex={selectedOccasions[course.code] ?? 0}
+                    onOccasionChange={(idx) => onOccasionChange(course.code, idx)}
                     onSelectionChange={onSelectionChange}
                   />
                 );

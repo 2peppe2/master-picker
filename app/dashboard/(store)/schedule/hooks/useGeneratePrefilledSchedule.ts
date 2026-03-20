@@ -9,20 +9,22 @@ import { produce } from "immer";
 
 interface GeneratePrefilledScheduleArgs {
   courses: Course[];
+  selectedOccasions?: Record<string, number>;
 }
 
 export const useGeneratePrefilledSchedule = () => {
   const yearAndSemesterToRelativeSemester = useToRelativeSemester();
 
   return useCallback(
-    ({ courses }: GeneratePrefilledScheduleArgs) => {
+    ({ courses, selectedOccasions }: GeneratePrefilledScheduleArgs) => {
       const initialGrid: ScheduleGrid = Array.from({ length: 10 }, () =>
         Array.from({ length: 2 }, () => Array.from({ length: 4 }, () => null)),
       );
 
       const newGrid = produce(initialGrid, (draft) => {
         courses.forEach((course) => {
-          const occasion = course.CourseOccasion?.[0];
+          const occIndex = selectedOccasions?.[course.code] ?? 0;
+          const occasion = course.CourseOccasion?.[occIndex];
 
           if (!occasion || !occasion.periods) return;
 
@@ -60,7 +62,12 @@ export const useGeneratePrefilledSchedule = () => {
               // Place in specified blocks
               for (const block of period.blocks) {
                 const blockIndex = block - 1;
-                periodBlocks[blockIndex] = course;
+                if (periodBlocks[blockIndex] === null) {
+                  periodBlocks[blockIndex] = course;
+                } else if (periodBlocks[blockIndex]?.code !== course.code) {
+                  // Conflict! Add to the end of the periodBlocks to avoid silent overwrite
+                  periodBlocks.push(course);
+                }
               }
             }
           }
