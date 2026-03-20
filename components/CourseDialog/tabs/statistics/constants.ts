@@ -4,6 +4,10 @@ export const chartConfig = {
   quantity: { label: "Students" },
 };
 
+export const EXAM_MODULE_CODES = ["TEN", "DIT", "DAT", "PRA"];
+
+export const LAB_MODULE_CODES = ["LAB", "UPG", "KTR"];
+
 /**
  * Returns a constant color mapped to each grade.
  * - Grade 5: Emerald Green

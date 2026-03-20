@@ -1,5 +1,7 @@
 "use client";
 
+import { getExpectedExamMonths } from "../../examination/hooks/useLatestOriginalStats";
+import { EXAM_MODULE_CODES, LAB_MODULE_CODES } from "../constants";
 import { ProcessedModule, CourseData } from "../types";
 import { Course } from "@/app/dashboard/page";
 import { Module } from "liu-tentor-package";
@@ -17,6 +19,9 @@ export const useCategorizedModules = ({
   const categorizedModules = useMemo(() => {
     if (!courseData?.modules) return [];
 
+    // Derive expected original months from course occasions
+    const expectedMonths = getExpectedExamMonths(course.CourseOccasion);
+
     const rawGroups = courseData.modules.reduce(
       (acc: Record<string, Module[]>, module: Module) => {
         const code = module.moduleCode;
@@ -30,15 +35,12 @@ export const useCategorizedModules = ({
     return Object.entries(rawGroups)
       .map(([code, unknownModules]) => {
         const modules = unknownModules as Module[];
-        const isExamType =
-          code.startsWith("TEN") ||
-          code.startsWith("DAT") ||
-          code.startsWith("DIT") ||
-          code.startsWith("PRA");
-        const isLabType =
-          code.startsWith("LAB") ||
-          code.startsWith("UPG") ||
-          code.startsWith("KTR");
+        const isExamType = EXAM_MODULE_CODES.some((examCode) =>
+          code.startsWith(examCode),
+        );
+        const isLabType = LAB_MODULE_CODES.some((labCode) =>
+          code.startsWith(labCode),
+        );
 
         if (isLabType) {
           const yearGroups: Record<string, ProcessedModule> = {};
@@ -95,34 +97,31 @@ export const useCategorizedModules = ({
 
           const aggregatedModules = Object.values(monthYearGroups);
 
-          const monthTally: Record<number, number> = {};
-          aggregatedModules.forEach((m: ProcessedModule) => {
-            const month = new Date(m.date).getMonth();
-            const count = m.grades.reduce(
-              (sum: number, g) => sum + g.quantity,
-              0,
-            );
-            monthTally[month] = (monthTally[month] || 0) + count;
-          });
-
-          const sortedMonths = Object.entries(monthTally)
-            .sort((a, b) => b[1] - a[1])
-            .map((entry) => parseInt(entry[0]));
-
-          const primaryMonth = sortedMonths[0];
-
           const processed = aggregatedModules.map((m: ProcessedModule) => {
-            const totalInSession = m.grades.reduce(
-              (sum: number, g) => sum + g.quantity,
-              0,
-            );
-            const isOriginal =
-              new Date(m.date).getMonth() === primaryMonth ||
-              totalInSession > 150;
-            return {
-              ...m,
-              isOriginal,
-            };
+            const month = new Date(m.date).getMonth();
+            let isOriginal: boolean;
+
+            if (expectedMonths.size > 0) {
+              // Use occasion-derived months
+              isOriginal = expectedMonths.has(month);
+            } else {
+              // Fallback: month with the most students
+              const monthTally: Record<number, number> = {};
+              aggregatedModules.forEach((am: ProcessedModule) => {
+                const am_month = new Date(am.date).getMonth();
+                const count = am.grades.reduce(
+                  (sum: number, g) => sum + g.quantity,
+                  0,
+                );
+                monthTally[am_month] = (monthTally[am_month] || 0) + count;
+              });
+              const primaryMonth = Object.entries(monthTally)
+                .sort((a, b) => b[1] - a[1])
+                .map((entry) => parseInt(entry[0]))[0];
+              isOriginal = month === primaryMonth;
+            }
+
+            return { ...m, isOriginal };
           });
           return [code, processed] as const;
         }
@@ -153,7 +152,7 @@ export const useCategorizedModules = ({
         if (pA !== pB) return pA - pB;
         return (codeA as string).localeCompare(codeB as string);
       });
-  }, [courseData, course.Examination]);
+  }, [courseData, course.Examination, course.CourseOccasion]);
 
   const allProcessedModules = useMemo(
     () =>

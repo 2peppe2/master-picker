@@ -27,53 +27,75 @@ const ModuleSelector: FC<ModuleSelectorProps> = ({
   setSelectedModule,
   categorizedModules,
   selectedItem,
-}) => (
-  <div className="space-y-2">
-    <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
-      Examination History
-    </Label>
-    <Select
-      value={selectedModule}
-      onValueChange={(val) => {
-        if (!val.startsWith("show-more-")) {
-          setSelectedModule(val);
-        }
-      }}
-    >
-      <SelectTrigger className="w-full overflow-hidden cursor-pointer">
-        <div className="flex items-center justify-between w-full pr-4">
-          <span className="truncate">
-            {selectedModule === "all"
-              ? "Summary (All Years)"
-              : `${selectedItem?.moduleCode}: ${selectedItem?.displayDate}`}
-          </span>
-          {selectedItem && (
-            <ExamBadge
-              moduleCode={selectedItem.moduleCode}
-              isOriginal={selectedItem.isOriginal}
+}) => {
+  const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>(
+    {},
+  );
+
+  return (
+    <div className="space-y-2">
+      <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
+        Examination History
+      </Label>
+      <Select
+        value={selectedModule}
+        onValueChange={(val) => {
+          if (!val.startsWith("show-more-")) {
+            setSelectedModule(val);
+          }
+        }}
+      >
+        <SelectTrigger className="w-full overflow-hidden cursor-pointer">
+          <div className="flex items-center justify-between w-full pr-4">
+            <span className="truncate">
+              {selectedModule === "all"
+                ? "Summary (All Years)"
+                : `${selectedItem?.moduleCode}: ${selectedItem?.displayDate}`}
+            </span>
+            {selectedItem && (
+              <ExamBadge
+                moduleCode={selectedItem.moduleCode}
+                isOriginal={selectedItem.isOriginal}
+              />
+            )}
+          </div>
+        </SelectTrigger>
+        <SelectContent className="max-h-[350px]" data-no-drag="true">
+          <SelectItem value="all" className="font-bold cursor-pointer">
+            Summary (All Years)
+          </SelectItem>
+          {categorizedModules.map(([code, modules]) => (
+            <CategoryGroup
+              key={code}
+              code={code}
+              modules={modules}
+              visibleCount={visibleCounts[code] || 5}
+              setVisibleCount={(count) =>
+                setVisibleCounts((prev) => ({ ...prev, [code]: count }))
+              }
             />
-          )}
-        </div>
-      </SelectTrigger>
-      <SelectContent className="max-h-[350px]" data-no-drag="true">
-        <SelectItem value="all" className="font-bold cursor-pointer">
-          Summary (All Years)
-        </SelectItem>
-        {categorizedModules.map(([code, modules]) => (
-          <CategoryGroup key={code} code={code} modules={modules} />
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-);
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+  );
+};
 
 export default ModuleSelector;
 
-const CategoryGroup: FC<{ code: string; modules: ProcessedModule[] }> = ({
+interface CategoryGroupProps {
+  code: string;
+  modules: ProcessedModule[];
+  visibleCount: number;
+  setVisibleCount: (count: number) => void;
+}
+
+const CategoryGroup: FC<CategoryGroupProps> = ({
   code,
   modules,
+  visibleCount,
+  setVisibleCount,
 }) => {
-  const [visibleCount, setVisibleCount] = useState(5);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const sortedModules = useMemo(
@@ -117,13 +139,13 @@ const CategoryGroup: FC<{ code: string; modules: ProcessedModule[] }> = ({
               onPointerUp={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                setVisibleCount((v) => v + 5);
+                setVisibleCount(visibleCount + 5);
               }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   e.stopPropagation();
-                  setVisibleCount((v) => v + 5);
+                  setVisibleCount(visibleCount + 5);
                 }
               }}
             >

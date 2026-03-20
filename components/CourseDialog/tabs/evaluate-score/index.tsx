@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, Loader2, FileText, AlertCircle } from "lucide-react";
-import { useCourseData } from "./hooks/useCourseData";
+import { useCourseData } from "../../hooks/useCourseData";
 import { useMemo, useState, FC } from "react";
 import {
   Collapsible,

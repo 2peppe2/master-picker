@@ -1,7 +1,7 @@
 "use client";
 
-import { Label, Pie, PieChart } from "recharts";
 import { useEffect, useState, FC } from "react";
+import { Label, Pie, PieChart } from "recharts";
 import {
   type ChartConfig,
   ChartContainer,
@@ -25,12 +25,12 @@ const revenueChartConfig = {
   },
 } satisfies ChartConfig;
 
-interface DialogTimeChartProps {
+interface WorkloadChartProps {
   scheduledHours: number;
   selfStudyHours: number;
 }
 
-const DialogTimeChart: FC<DialogTimeChartProps> = ({
+const WorkloadChart: FC<WorkloadChartProps> = ({
   scheduledHours,
   selfStudyHours,
 }) => {
@@ -114,4 +114,4 @@ const DialogTimeChart: FC<DialogTimeChartProps> = ({
     </ChartContainer>
   );
 };
-export default DialogTimeChart;
+export default WorkloadChart;

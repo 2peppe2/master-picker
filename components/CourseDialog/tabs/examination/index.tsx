@@ -1,17 +1,17 @@
 "use client";
 
-import DialogTimeChart, { WORKLOAD_COLORS } from "./DialogTimeChart";
+import WorkloadChart, { WORKLOAD_COLORS } from "./WorkloadChart";
 import ExaminationTable from "./ExaminationTable";
 import { BookOpen, Clock3 } from "lucide-react";
 import { Course } from "@/app/dashboard/page";
 import { FC } from "react";
 
-interface DialogDetailsTabProps {
+interface ExaminationTabProps {
   course: Course;
-  onNavigateToStatistics?: (modCode?: string) => void;
+  onNavigateToStatistics: (modCode?: string) => void;
 }
 
-const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
+const ExaminationTab: FC<ExaminationTabProps> = ({
   course,
   onNavigateToStatistics,
 }) => {
@@ -28,7 +28,7 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
           Workload
         </p>
         <div className="grid items-center gap-3 sm:grid-cols-[auto_minmax(0,1fr)]">
-          <DialogTimeChart
+          <WorkloadChart
             scheduledHours={course.scheduledHours}
             selfStudyHours={course.selfStudyHours}
           />
@@ -67,10 +67,11 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
       <ExaminationTable
         courseCode={course.code}
         examination={course.Examination}
+        occasions={course.CourseOccasion}
         onNavigateToStatistics={onNavigateToStatistics}
       />
     </div>
   );
 };
 
-export default DialogDetailsTab;
+export default ExaminationTab;

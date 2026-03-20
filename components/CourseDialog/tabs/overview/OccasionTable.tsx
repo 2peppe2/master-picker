@@ -1,13 +1,13 @@
 "use client";
 
-import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { useCourseContlictResolver } from "../../../ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
-import { ConflictResolverModal } from "../ConflictResolverModal";
+import { ConflictResolverModal } from "../../../ConflictResolverModal";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { FC, useMemo, useState } from "react";
-import MasterBadge from "../MasterBadge";
-import { Button } from "../ui/button";
+import MasterBadge from "../../../MasterBadge";
+import { Button } from "../../../ui/button";
 import { Plus } from "lucide-react";
 import {
   Table,
@@ -16,7 +16,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../ui/table";
+} from "../../../ui/table";
 
 interface OccasionTableProps {
   course: Course;

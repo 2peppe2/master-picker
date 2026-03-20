@@ -1,7 +1,7 @@
 "use client";
 
 import CourseCardFooter from "./CourseCardFooter";
-import CourseDialog from "../CourseModal/Dialog";
+import CourseDialog from "../CourseDialog";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
 import {

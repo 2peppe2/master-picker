@@ -15,7 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-interface DialogGeneralTabProps {
+interface OverviewTabProps {
   course: Course;
   showAdd: boolean;
 }
@@ -36,7 +36,7 @@ const DetailRow: FC<DetailRowProps> = ({ label, value, icon: Icon }) => (
   </div>
 );
 
-const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
+const OverviewTab: FC<OverviewTabProps> = ({ course, showAdd }) => {
   const examiner = course.examiner.trim() === "" ? "N/A" : course.examiner;
   const department = LIU_DEPARTMENTS[course.department] ?? "N/A";
   const level = course.level.trim() === "" ? "N/A" : course.level;
@@ -98,4 +98,4 @@ const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
   );
 };
 
-export default DialogGeneralTab;
+export default OverviewTab;
