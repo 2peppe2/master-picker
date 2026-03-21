@@ -22,6 +22,15 @@ export type CourseCardVariant =
 
 export interface CourseCardProps {
   course: Course;
+  isConflicting?: boolean;
+  conflictingWith?: {
+    code: string;
+    semester: string;
+    period: number;
+    block: number;
+  }[];
+  selectedOccasionIndex?: number;
+  onOccasionChange?: (index: number) => void;
 }
 
 type CourseCardWrapperProps =

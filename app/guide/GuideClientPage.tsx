@@ -14,12 +14,21 @@ import type { CourseRequirements } from "./page";
 import { FC, useMemo, useState } from "react";
 import { useHydrateAtoms } from "jotai/utils";
 import { mastersAtom } from "./(store)/store";
+import { normalizeCourse } from "../courseNormalizer";
 
 interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
   masters: Record<string, Master>;
   selectedMaster: string;
   bachelorCourses: Course[];
+}
+
+export interface Conflict {
+  courseA: Course;
+  courseB: Course;
+  semester: string;
+  period: number;
+  block: number;
 }
 
 const GuideContent: FC<GuideClientPageProps> = ({
@@ -42,6 +51,7 @@ const GuideContent: FC<GuideClientPageProps> = ({
 
   const [requiredConfirmed, setRequiredConfirmed] = useState(false);
   const [selections, setSelections] = useState<Record<number, Course[]>>({});
+  const [selectedOccasions, setSelectedOccasions] = useState<Record<string, number>>({});
 
   const handleElectiveSelection = (index: number, course: Course) => {
     setSelections((prev) => {
@@ -57,6 +67,50 @@ const GuideContent: FC<GuideClientPageProps> = ({
     });
   };
 
+  const conflicts = useMemo(() => {
+    const results: Conflict[] = [];
+    const compulsoryList = compulsoryCourses
+      .flatMap((req) => req.courses)
+      .map((c) => normalizeCourse(c.course));
+    const electiveList = Object.values(selections).flat();
+    const allSelectedCourses = [...electiveList, ...compulsoryList]; // Ignore bachelor courses
+
+    for (let i = 0; i < allSelectedCourses.length; i++) {
+      for (let j = i + 1; j < allSelectedCourses.length; j++) {
+        const c1 = allSelectedCourses[i];
+        const c2 = allSelectedCourses[j];
+        
+        const occIndex1 = selectedOccasions[c1.code] ?? 0;
+        const occIndex2 = selectedOccasions[c2.code] ?? 0;
+        
+        const occ1 = c1.CourseOccasion?.[occIndex1];
+        const occ2 = c2.CourseOccasion?.[occIndex2];
+
+        if (!occ1 || !occ2) continue;
+        if (occ1.year !== occ2.year || occ1.semester !== occ2.semester) continue;
+
+        for (const p1 of occ1.periods) {
+          for (const p2 of occ2.periods) {
+            if (p1.period === p2.period) {
+              for (const b1 of p1.blocks) {
+                if (p2.blocks.includes(b1)) {
+                  results.push({
+                    courseA: c1,
+                    courseB: c2,
+                    semester: occ1.semester,
+                    period: p1.period,
+                    block: b1,
+                  });
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return results;
+  }, [selections, compulsoryCourses, selectedOccasions]);
+
   return (
     <div className="min-h-screen">
       <div className="mx-auto w-full max-w-6xl pb-40 pt-24 px-4">
@@ -71,6 +125,9 @@ const GuideContent: FC<GuideClientPageProps> = ({
           compulsoryCourses={compulsoryCourses}
           compulsoryConfirmed={requiredConfirmed}
           onConfirmChange={() => setRequiredConfirmed((prev) => !prev)}
+          conflicts={conflicts}
+          selectedOccasions={selectedOccasions}
+          onOccasionChange={(code, index) => setSelectedOccasions(prev => ({ ...prev, [code]: index }))}
         />
 
         {electiveCourses.map((electiveGroup, index) => (
@@ -82,6 +139,9 @@ const GuideContent: FC<GuideClientPageProps> = ({
               handleElectiveSelection(index, course)
             }
             electiveCourses={electiveGroup}
+            conflicts={conflicts}
+            selectedOccasions={selectedOccasions}
+            onOccasionChange={(code, index) => setSelectedOccasions(prev => ({ ...prev, [code]: index }))}
           />
         ))}
       </div>
@@ -92,6 +152,8 @@ const GuideContent: FC<GuideClientPageProps> = ({
         compulsoryCourses={compulsoryCourses}
         electiveRequirements={electiveCourses}
         electiveSelections={selections}
+        conflicts={conflicts}
+        selectedOccasions={selectedOccasions}
       />
     </div>
   );

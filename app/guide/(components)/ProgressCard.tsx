@@ -4,9 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import ContinueButton from "./ContinueButton";
 import { Course } from "@/app/dashboard/page";
 import { CourseRequirements } from "../page";
-import { Check } from "lucide-react";
+import { AlertTriangle, Check } from "lucide-react";
 import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
+import type { Conflict } from "../GuideClientPage";
 
 interface ProgressStep {
   states: {
@@ -28,6 +29,8 @@ interface ProgressCardProps {
   electiveRequirements: CourseRequirements;
   bachelorCourses: Course[];
   electiveSelections: Record<number, Course[]>;
+  conflicts: Conflict[];
+  selectedOccasions: Record<string, number>;
 }
 
 const ProgressCard: FC<ProgressCardProps> = ({
@@ -35,6 +38,8 @@ const ProgressCard: FC<ProgressCardProps> = ({
   compulsoryCourses,
   electiveRequirements,
   electiveSelections,
+  conflicts,
+  selectedOccasions,
 }) => {
   const { electiveConfirmed, progressPercent, isComplete } = useMemo(() => {
     const totalElectives = electiveRequirements.length;
@@ -101,6 +106,23 @@ const ProgressCard: FC<ProgressCardProps> = ({
       <div className="w-6xl rounded-2xl border bg-card p-6 shadow-2xl ring-1 ring-foreground/5">
         <div className="flex items-center gap-8">
           <div className="flex flex-1 flex-col gap-3">
+            {conflicts.length > 0 && (
+              <div className="mb-2 flex flex-col gap-1.5 text-xs font-semibold text-amber-600 dark:text-amber-500 bg-amber-50 dark:bg-amber-500/10 w-fit px-3 py-2 rounded-lg border border-amber-200 dark:border-amber-500/20 shadow-sm">
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="h-3.5 w-3.5" />
+                  <span>
+                    {conflicts.length} scheduling conflict{conflicts.length > 1 ? "s" : ""} detected:
+                  </span>
+                </div>
+                <ul className="ml-5.5 space-y-0.5 list-disc font-medium opacity-90">
+                  {conflicts.map((c, i) => (
+                    <li key={`conflict-${i}`}>
+                      {c.courseA.code} vs {c.courseB.code} in {c.semester} P{c.period}, Block {c.block}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
               <span>Selection Progress</span>
               <span className="text-emerald-600">{progressPercent}%</span>
@@ -126,10 +148,11 @@ const ProgressCard: FC<ProgressCardProps> = ({
 
           <div className="shrink-0">
             <ContinueButton
-              disabled={!isComplete}
+              disabled={!isComplete || conflicts.length > 0}
               electiveCourses={electiveSelections}
               bachelorCourses={bachelorCourses}
               compulsoryCourses={compulsoryCourses}
+              selectedOccasions={selectedOccasions}
             />
           </div>
         </div>

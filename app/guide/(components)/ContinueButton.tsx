@@ -15,12 +15,14 @@ interface ContinueButtonProps {
   bachelorCourses: Course[];
   compulsoryCourses: CourseRequirements;
   electiveCourses: Record<number, Course[]>;
+  selectedOccasions: Record<string, number>;
 }
 
 const ContinueButton: FC<ContinueButtonProps> = ({
   bachelorCourses,
   compulsoryCourses,
   electiveCourses,
+  selectedOccasions,
   disabled,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +51,10 @@ const ContinueButton: FC<ContinueButtonProps> = ({
         allSelectedCourses.map((c) => [c.code, c]),
       );
 
-      const newGrid = generateGrid({ courses: allSelectedCourses });
+      const newGrid = generateGrid({
+        courses: allSelectedCourses,
+        selectedOccasions,
+      });
 
       const compressed = serializeSchedule(coursesMap, newGrid);
 
@@ -67,6 +72,7 @@ const ContinueButton: FC<ContinueButtonProps> = ({
     bachelorCourses,
     compulsoryCourses,
     electiveCourses,
+    selectedOccasions,
     router,
     searchParams,
     generateGrid,
