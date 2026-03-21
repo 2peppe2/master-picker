@@ -14,6 +14,7 @@ import {
   UserRound,
   type LucideIcon,
 } from "lucide-react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface DialogGeneralTabProps {
   course: Course;
@@ -37,6 +38,7 @@ const DetailRow: FC<DetailRowProps> = ({ label, value, icon: Icon }) => (
 );
 
 const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
+  const t = useCommonTranslate();
   const examiner = course.examiner.trim() === "" ? "N/A" : course.examiner;
   const department = LIU_DEPARTMENTS[course.department] ?? "N/A";
   const level = course.level.trim() === "" ? "N/A" : course.level;
@@ -46,19 +48,19 @@ const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
     <div className="space-y-3 py-2 text-foreground">
       <section className="rounded-md border p-3">
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide">
-          Course details
+          {t("_course_details")}
         </p>
         <div className="mt-1">
-          <DetailRow icon={UserRound} label="Examiner" value={examiner} />
+          <DetailRow icon={UserRound} label={t("_course_examiner")} value={examiner} />
           <Separator />
-          <DetailRow icon={Building2} label="Department" value={department} />
+          <DetailRow icon={Building2} label={t("_course_department")} value={department} />
           <Separator />
-          <DetailRow icon={GraduationCap} label="Level" value={level} />
+          <DetailRow icon={GraduationCap} label={t("_course_level")} value={level} />
           <Separator />
           <div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-3 py-2.5 text-sm">
             <p className="text-muted-foreground inline-flex items-center gap-1.5">
               <BookOpen className="size-3.5" />
-              Main fields
+              {t("_course_main_fields")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {mainFields.length > 0 ? (
@@ -82,12 +84,12 @@ const DialogGeneralTab: FC<DialogGeneralTabProps> = ({ course, showAdd }) => {
       <section>
         <div className="mb-2 flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-            Planned occasions
+            {t("_course_planned_occasions")}
           </p>
           <span className="text-muted-foreground inline-flex items-center gap-1.5 text-xs">
             <CalendarClock className="size-3.5" />
             {course.CourseOccasion.length}{" "}
-            {course.CourseOccasion.length > 1 ? "options" : "option"}
+            {course.CourseOccasion.length > 1 ? t("_course_option_plural") : t("_course_option_singular")}
           </span>
         </div>
         <div className="rounded-md border">

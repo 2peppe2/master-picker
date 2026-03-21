@@ -1,6 +1,7 @@
 "use client";
 
 import MastersRequirementsBar from "../../MastersRequirementsBar";
+import LanguageSwitcher from "@/common/components/LanguageSwitcher";
 import SettingsModal from "./SettingsModal";
 import Disclaimer from "./Disclaimer";
 import { FC, useState } from "react";
@@ -16,10 +17,13 @@ const Header: FC = ({}) => {
           <Disclaimer  />
           
         </div>
-        <SettingsModal
-          isOpen={isSettingsOpen}
-          onOpenChange={setIsSettingsOpen}
-        />
+        <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+          <SettingsModal
+            isOpen={isSettingsOpen}
+            onOpenChange={setIsSettingsOpen}
+          />
+        </div>
       </div>
     </header>
   );

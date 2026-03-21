@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -17,6 +19,7 @@ import CourseCard from "@/components/CourseCard";
 import { normalizeCourse } from "@/app/courseNormalizer";
 import { CourseRequirements } from "../page";
 import { FC, useState } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface CompulsoryCardSummaryProps {
   compulsoryCourses: CourseRequirements;
@@ -29,6 +32,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
   compulsoryConfirmed,
   onConfirmChange,
 }) => {
+  const t = useCommonTranslate();
   const [isRequiredOpen, setRequiredOpen] = useState(true);
 
   if (compulsoryCourses.length === 0) {
@@ -47,9 +51,9 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400">
-                Auto-added
+                {t("_guide_auto_added")}
               </Badge>
-              <CardTitle>Required courses</CardTitle>
+              <CardTitle>{t("_guide_required_courses")}</CardTitle>
             </div>
 
             <CollapsibleTrigger asChild>
@@ -67,8 +71,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
             </CollapsibleTrigger>
           </div>
           <CardDescription>
-            These courses are mandatory and will be added automatically to your
-            schedule.
+            {t("_guide_required_desc")}
           </CardDescription>
         </CardHeader>
         <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">

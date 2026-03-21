@@ -8,6 +8,7 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 import { FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface MasterOverflowBadgeProps {
   minWidth: number;
@@ -20,6 +21,8 @@ export const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
   masters,
   count,
 }) => {
+  const t = useCommonTranslate();
+
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -28,7 +31,7 @@ export const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
           style={{ minWidth }}
           className="h-8 w-full shrink-0 cursor-default flex items-center justify-center border-dashed"
         >
-          +{count} more
+          {t("_wildcard_more_count", { count })}
         </Badge>
       </TooltipTrigger>
       <TooltipContent side="bottom" className="max-h-80 overflow-y-auto">

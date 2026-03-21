@@ -6,11 +6,12 @@ import ElectiveSummaryCard from "./(components)/ElectiveSummaryCard";
 import CompulsorySelector from "./(components)/CompulsorySelector";
 import ElectiveSelector from "./(components)/ElectiveSelector";
 import type { Course, Master } from "../dashboard/page";
-import MasterProvider from "../store/MasterAtomContext";
+import MasterProvider from "../(store)/MasterAtomContext";
 import ProgressCard from "./(components)/ProgressCard";
 import GuideHeader from "./(components)/GuideHeader";
 import { Provider as JotaiProvider } from "jotai";
 import type { CourseRequirements } from "./page";
+import LanguageSwitcher from "@/common/components/LanguageSwitcher";
 import { FC, useMemo, useState } from "react";
 import { useHydrateAtoms } from "jotai/utils";
 import { mastersAtom } from "./(store)/store";
@@ -59,7 +60,10 @@ const GuideContent: FC<GuideClientPageProps> = ({
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto w-full max-w-6xl pb-40 pt-24 px-4">
+      <div className="mx-auto w-full max-w-6xl pb-40 pt-24 px-4 relative">
+        <div className="absolute top-8 right-4">
+          <LanguageSwitcher />
+        </div>
         <GuideHeader selectedMaster={selectedMaster} />
 
         <div className="grid gap-4 sm:grid-cols-3 pt-4">

@@ -8,6 +8,7 @@ import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import EmptyCourseState from "./components/EmptyCourseState";
 import DrawerHeader from "./components/DrawerHeader";
 import CourseCard from "@/components/CourseCard";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
 import { Course } from "../../page";
@@ -17,6 +18,7 @@ interface DrawerProps {
 }
 
 const Drawer: FC<DrawerProps> = ({ courses }) => {
+  const t = useCommonTranslate();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
   const filteredCourses = useFiltered({
@@ -55,8 +57,8 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
       <div className="overflow-y-auto flex-1 p-4 pt-1">
         {availableCourses.length === 0 ? (
           <EmptyCourseState
-            title="No courses found"
-            description="Try adjusting your filters or search terms."
+            title={t("no_courses_found")}
+            description={t("try_adjusting_your_filters_or_search_terms")}
           />
         ) : (
           <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">

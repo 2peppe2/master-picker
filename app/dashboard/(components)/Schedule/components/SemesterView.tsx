@@ -21,6 +21,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface SemesterViewProps {
   semesterNumber: number;
@@ -71,6 +72,7 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
+  const t = useCommonTranslate();
   const setShownSemesters = useSetAtom(filterAtoms.semestersAtom);
   const startingYear = useStartingYear();
 
@@ -144,15 +146,14 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>
-                    Potential collision: A standard course is in a wildcard
-                    slot.
+                    {t("_wildcard_warning_text")}
                   </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           )}
           <span className="font-bold tracking-tight">
-            Semester {targetSemester}, {ht_or_vt} {relativeSemesterYear}
+            {t("_semester_label", { s: targetSemester })}, {ht_or_vt} {relativeSemesterYear}
           </span>
 
           <span
@@ -161,7 +162,7 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
               credits > 30 ? "text-destructive" : "text-primary",
             )}
           >
-            Credits {credits} / 30 HP
+            {t("_semester_credits", { credits })}
           </span>
           <ChevronRightIcon className="size-5 text-muted-foreground transition-transform duration-300 [[data-state=open]_&]:rotate-90 group-hover/header:text-foreground" />
         </CardTitle>

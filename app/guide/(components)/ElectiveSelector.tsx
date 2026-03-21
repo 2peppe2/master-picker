@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Course } from "@/app/dashboard/page";
 import { Check, X } from "lucide-react";
-import { useState, FC } from "react";
+import { useState, FC, useMemo } from "react";
 import {
   Card,
   CardContent,
@@ -17,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface ElectiveSelectorProps {
   index: number;
@@ -25,20 +26,21 @@ interface ElectiveSelectorProps {
   onSelectionChange: (course: Course) => void;
 }
 
-const NUM_TO_TYPED: Record<number, string> = {
-  1: "one",
-  2: "two",
-  3: "three",
-  4: "four",
-};
-
 const ElectiveSelector: FC<ElectiveSelectorProps> = ({
   index,
   electiveCourses,
   selection,
   onSelectionChange,
 }) => {
+  const t = useCommonTranslate();
   const [isOpen, setIsOpen] = useState(true);
+
+  const NUM_TO_TYPED: Record<number, string> = useMemo(() => ({
+    1: t("_num_one"),
+    2: t("_num_two"),
+    3: t("_num_three"),
+    4: t("_num_four"),
+  }), [t]);
 
   const minRequired = electiveCourses.minCount ?? 1;
   const isFulfilled = selection.length >= minRequired;
@@ -49,22 +51,22 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
-              <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400">
+              <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-orange-500/10 dark:text-sky-400">
                 {minRequired < 5
-                  ? `Pick ${NUM_TO_TYPED[minRequired]}`
-                  : `Pick ${minRequired}`}
+                  ? t("_guide_pick_count", { num: NUM_TO_TYPED[minRequired] })
+                  : t("_guide_pick_count", { num: minRequired })}
               </Badge>
-              <CardTitle>Elective Group {index + 1}</CardTitle>
+              <CardTitle>{t("_guide_elective_group", { index: index + 1 })}</CardTitle>
             </div>
 
             <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
               {isFulfilled ? (
                 <span className="text-emerald-600 dark:text-emerald-400">
-                  {selection.length} selected
+                  {t("_guide_selected_count", { count: selection.length })}
                 </span>
               ) : (
                 <span>
-                  {selection.length} of {minRequired} selected
+                  {t("_guide_selected_of_count", { count: selection.length, min: minRequired })}
                 </span>
               )}
 
@@ -92,8 +94,7 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
             </div>
           </div>
           <CardDescription>
-            This group has {electiveCourses.courses.length} options. You need to
-            select at least {minRequired}.
+            {t("_guide_options_desc", { count: electiveCourses.courses.length, min: minRequired })}
           </CardDescription>
         </CardHeader>
 

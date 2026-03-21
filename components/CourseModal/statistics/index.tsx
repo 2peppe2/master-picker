@@ -10,6 +10,7 @@ import { Loader2, BarChart2 } from "lucide-react";
 import ModuleSelector from "./ModuleSelector";
 import { Course } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface StatisticsProps {
   course: Course;
@@ -17,6 +18,7 @@ interface StatisticsProps {
 }
 
 const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
+  const t = useCommonTranslate();
   const { data: courseData, isLoading, error } = useCourseData(course.code);
 
   const { categorizedModules, allProcessedModules } = useCategorizedModules({
@@ -48,7 +50,7 @@ const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[300px] h-full gap-4 text-muted-foreground w-full">
         <Loader2 className="h-8 w-8 animate-spin" />
-        <p className="text-sm font-medium">Loading statistics...</p>
+        <p className="text-sm font-medium">{t("_course_loading_stats")}</p>
       </div>
     );
   }
@@ -56,7 +58,7 @@ const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
   if (error) {
     return (
       <div className="py-10 text-center text-destructive w-full">
-        Error loading data.
+        {t("_course_stat_error")}
       </div>
     );
   }
@@ -68,7 +70,7 @@ const Statistics: FC<StatisticsProps> = ({ course, initialStatModule }) => {
           <BarChart2 className="h-6 w-6 opacity-50" />
         </div>
         <p className="text-sm font-medium">
-          No statistical data available for this course.
+          {t("_course_stat_none")}
         </p>
       </div>
     );

@@ -3,6 +3,7 @@
 import { ChevronDown, Loader2, FileText, AlertCircle } from "lucide-react";
 import { useCourseData } from "./hooks/useCourseData";
 import { useMemo, useState, FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import {
   Collapsible,
   CollapsibleContent,
@@ -23,6 +24,7 @@ interface EvaluateScoreProps {
 }
 
 const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
+  const t = useCommonTranslate();
   const { data: courseData, isLoading, error } = useCourseData(courseCode);
   const [reportsOpen, setReportsOpen] = useState(false);
 
@@ -68,7 +70,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[300px] h-full gap-4 text-muted-foreground w-full">
         <Loader2 className="h-8 w-8 animate-spin" />
-        <p className="text-sm font-medium">Loading evaluation reports...</p>
+        <p className="text-sm font-medium">{t("_course_eval_loading")}</p>
       </div>
     );
   }
@@ -85,8 +87,8 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
         </div>
         <p className="text-sm font-medium">
           {error
-            ? "Error loading evaluation data."
-            : "No evaluation data available for this course."}
+            ? t("_course_eval_error")
+            : t("_course_eval_none")}
         </p>
       </div>
     );
@@ -108,7 +110,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
             <YAxis
               domain={[1, 5]}
               tick={{ fontSize: 12 }}
-              label={{ value: "Average Score", angle: -90, position: "center" }}
+              label={{ value: t("_course_eval_avg_score"), angle: -90, position: "center" }}
             />
             <Tooltip
               contentStyle={{
@@ -118,7 +120,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
               }}
               formatter={(value) => {
                 if (typeof value === "number") {
-                  return [value, "Average Score"];
+                  return [value, t("_course_eval_avg_score")];
                 }
                 return value;
               }}
@@ -137,7 +139,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
 
       <div className="flex flex-col gap-2">
         <p className="text-[11px] leading-relaxed text-muted-foreground italic">
-          Data via{" "}
+          {t("_course_eval_data_via")}{" "}
           <a
             href="https://admin.evaliuate.liu.se/search"
             target="_blank"
@@ -146,8 +148,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
           >
             LiU Evaliuate
           </a>
-          . Scores represent the weighted average of student feedback for this
-          course instance.
+          . {t("_course_eval_desc")}
         </p>
       </div>
 
@@ -155,10 +156,10 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
         <CollapsibleTrigger className="flex items-center justify-between w-full p-3 rounded-xl border bg-card/50 hover:bg-accent transition-colors">
           <div className="flex flex-col items-start gap-0.5">
             <h3 className="text-sm font-semibold">
-              Archived Reports ({courseData.evaluationReports.length})
+              {t("_course_eval_archived_reports")} ({courseData.evaluationReports.length})
             </h3>
             <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              LiU Login Required
+              {t("_course_eval_login_required")}
             </p>
           </div>
           <ChevronDown
@@ -191,7 +192,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
                   rel="noopener noreferrer"
                   className="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
                 >
-                  View PDF
+                  {t("_view_pdf")}
                 </a>
               </div>
             ))}

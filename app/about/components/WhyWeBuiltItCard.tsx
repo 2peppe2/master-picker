@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import {
   Card,
@@ -7,28 +7,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
-const WhyWeBuiltItCard = () => (
-  <Card>
-    <CardHeader>
-      <CardTitle>Why We Built It</CardTitle>
-      <CardDescription>The story behind the project.</CardDescription>
-    </CardHeader>
-    <CardContent className="space-y-4">
-      <p className="text-muted-foreground">
-        We built Master Picker after seeing how hard it was to answer simple
-        questions like “Which courses are required?” or “What fits in my
-        schedule?” The information existed, but it was spread across many
-        places.
-      </p>
-      <p className="text-muted-foreground">
-        We believe that we have created a tool that can help students make
-        informed decisions and plan their studies without getting lost in
-        spreadsheets. We hope it can save time and reduce stress for many
-        students in the future.
-      </p>
-    </CardContent>
-  </Card>
-);
+const WhyWeBuiltItCard = () => {
+  const t = useCommonTranslate();
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{t("_about_why_title")}</CardTitle>
+        <CardDescription>{t("_about_why_description")}</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p className="text-muted-foreground">{t("_about_why_p1")}</p>
+        <p className="text-muted-foreground">{t("_about_why_p2")}</p>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default WhyWeBuiltItCard;

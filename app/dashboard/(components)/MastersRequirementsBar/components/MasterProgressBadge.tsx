@@ -1,7 +1,7 @@
 "use client";
 
 import { MasterBadgeRequirementTooltip } from "./MasterBadgeRequirementTooltip";
-import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import { MasterIcon } from "@/components/MasterIcon";
 import { Badge } from "@/components/ui/badge";
 import { ProcessedMaster } from "../types";

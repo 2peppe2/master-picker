@@ -3,15 +3,11 @@
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage"; 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { FC, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import LoadingDots from "./LoadingDots";
-
-const DISPLAY_STATES = {
-  placeholder: "Select master",
-  empty: "No masters found.",
-} satisfies ComboboxDisplay;
 
 interface MasterSelectorProps {
   activeProgram: LandingPageProgram | null;
@@ -24,7 +20,17 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   onPickLater,
   isLoading,
 }) => {
+  const t = useCommonTranslate();
   const { searchParams, setSearchParams } = useSearchParams();
+
+  const displayStates = useMemo(
+    () =>
+      ({
+        placeholder: t("select_master"),
+        empty: t("no_masters_found"),
+      }) satisfies ComboboxDisplay,
+    [t],
+  );
   const masterParam = searchParams.get("master");
   const yearParam = searchParams.get("year");
 
@@ -44,10 +50,10 @@ const MasterSelector: FC<MasterSelectorProps> = ({
     if (!selectedYearData) return [];
 
     return selectedYearData.masters.map((m) => ({
-      label: m.name ?? "Unknown master",
+      label: m.name ?? t("unknown_master"),
       value: m.program,
     }));
-  }, [activeProgram, yearParam]);
+  }, [activeProgram, yearParam, t]);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -59,7 +65,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
           setLocal(next);
           setSearchParams({ master: next });
         }}
-        displayStates={DISPLAY_STATES}
+        displayStates={displayStates}
       />
       <Button
         variant="link"
@@ -68,9 +74,9 @@ const MasterSelector: FC<MasterSelectorProps> = ({
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoading ? (
-          <LoadingDots text="Loading dashboard" />
+          <LoadingDots text={t("loading_dashboard")} />
         ) : (
-          "Pick master later"
+          t("pick_master_later")
         )}
       </Button>
     </div>

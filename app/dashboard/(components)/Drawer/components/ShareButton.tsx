@@ -7,6 +7,7 @@ import copyToClipboard from "copy-to-clipboard";
 import { Button } from "@/components/ui/button";
 import { useAtomValue } from "jotai";
 import { cn } from "@/lib/utils";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 export const useCopyToClipboard = (resetInterval = 2000) => {
   const [copied, setCopied] = useState(false);
@@ -29,6 +30,7 @@ export const useCopyToClipboard = (resetInterval = 2000) => {
 };
 
 const ShareButton: FC = () => {
+  const t = useCommonTranslate();
   const { copied, copy } = useCopyToClipboard();
   const shareButtonLoadingUntil = useAtomValue(
     scheduleAtoms.shareButtonLoadingUntilAtom,
@@ -56,7 +58,7 @@ const ShareButton: FC = () => {
     const url = window.location.href;
     const shareData = {
       title: "Master Picker",
-      text: "Check out my Master Picker schedule!",
+      text: t("_dashboard_share_text"),
       url: url,
     };
 
@@ -104,7 +106,7 @@ const ShareButton: FC = () => {
               : "text-foreground",
         )}
       >
-        {isAddCourseLoading ? "Loading" : copied ? "Copied" : "Share"}
+        {isAddCourseLoading ? t("loading") : copied ? t("_dashboard_share_copied") : t("_dashboard_share")}
       </span>
     </Button>
   );

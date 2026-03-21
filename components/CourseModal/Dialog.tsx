@@ -22,6 +22,7 @@ import {
   CalendarClock,
   CircleStar,
 } from "lucide-react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface CourseDialogProps {
   open: boolean;
@@ -36,6 +37,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
   course,
   showAdd = true,
 }) => {
+  const t = useCommonTranslate();
   const level = course.level.trim() === "" ? "N/A" : course.level;
   const [activeTab, setActiveTab] = useState("overview");
   const [initialStatModule, setInitialStatModule] = useState<
@@ -52,12 +54,12 @@ const CourseDialog: FC<CourseDialogProps> = ({
   const tabs = useMemo(
     () => [
       {
-        name: "Overview",
+        name: t("_course_tab_overview"),
         value: "overview",
         content: <DialogGeneralTab course={course} showAdd={showAdd} />,
       },
       {
-        name: "Examination",
+        name: t("_course_tab_examination"),
         value: "examination",
         content: (
           <DialogDetailsTab
@@ -70,19 +72,19 @@ const CourseDialog: FC<CourseDialogProps> = ({
         ),
       },
       {
-        name: "Statistics",
+        name: t("_course_tab_statistics"),
         value: "statistics",
         content: (
           <Statistics course={course} initialStatModule={initialStatModule} />
         ),
       },
       {
-        name: "Evaliuate Score",
+        name: t("_course_tab_evaluate"),
         value: "evaliuate-score",
         content: <EvaluateScore courseCode={course.code} />,
       },
     ],
-    [course, showAdd, initialStatModule],
+    [course, showAdd, initialStatModule, t],
   );
 
   return (
@@ -104,7 +106,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <CircleStar className="size-3" />
-              Level {level}
+              {t("_course_level")} {level}
             </Badge>
             <Badge
               variant="outline"
@@ -112,7 +114,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
             >
               <NotebookText className="size-3" />
               {course.Examination.length}{" "}
-              {course.CourseOccasion.length > 1 ? "modules" : "module"}
+              {course.Examination.length > 1 ? t("_course_module_plural") : t("_course_module_singular")}
             </Badge>
             <Badge
               variant="outline"
@@ -120,7 +122,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
             >
               <CalendarClock className="size-3" />
               {course.CourseOccasion.length}{" "}
-              {course.CourseOccasion.length > 1 ? "occasions" : "occasion"}
+              {course.CourseOccasion.length > 1 ? t("_course_occasion_plural") : t("_course_occasion_singular")}
             </Badge>
           </div>
         </DialogHeader>

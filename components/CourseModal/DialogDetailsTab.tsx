@@ -5,6 +5,7 @@ import ExaminationTable from "./ExaminationTable";
 import { BookOpen, Clock3 } from "lucide-react";
 import { Course } from "@/app/dashboard/page";
 import { FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface DialogDetailsTabProps {
   course: Course;
@@ -15,6 +16,7 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
   course,
   onNavigateToStatistics,
 }) => {
+  const t = useCommonTranslate();
   const totalHours = course.scheduledHours + course.selfStudyHours;
   const scheduledShare = totalHours
     ? Math.round((course.scheduledHours / totalHours) * 100)
@@ -25,7 +27,7 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
     <div className="space-y-3 py-2 text-foreground">
       <section className="rounded-md border p-3">
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide">
-          Workload
+          {t("_course_workload")}
         </p>
         <div className="grid items-center gap-3 sm:grid-cols-[auto_minmax(0,1fr)]">
           <DialogTimeChart
@@ -40,7 +42,7 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.scheduled }}
                 />
-                Scheduled
+                {t("_course_scheduled")}
                 <Clock3 aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
@@ -54,7 +56,7 @@ const DialogDetailsTab: FC<DialogDetailsTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.selfStudy }}
                 />
-                Self-study
+                {t("_course_self_study")}
                 <BookOpen aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">

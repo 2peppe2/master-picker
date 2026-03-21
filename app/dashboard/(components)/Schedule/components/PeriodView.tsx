@@ -12,6 +12,7 @@ import { useAtomValue } from "jotai";
 import { FC, useMemo } from "react";
 import { range } from "lodash";
 import Block from "./block";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -19,6 +20,7 @@ interface PeriodViewProps {
 }
 
 const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
+  const t = useCommonTranslate();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const startingYear = useStartingYear();
 
@@ -61,7 +63,7 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
 
   return (
     <div className="flex flex-col">
-      <p className="text-muted-foreground text-sm">{`Period ${periodNumber + 1}`}</p>
+      <p className="text-muted-foreground text-sm">{t("_period_label", { p: periodNumber + 1 })}</p>
       <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
         {range(0, blocks.length).map((index) => {
           const isWildcardStart = index === WILDCARD_BLOCK_START;

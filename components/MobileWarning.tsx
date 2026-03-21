@@ -1,29 +1,33 @@
 "use client";
 
-import { useIsMobile } from "@/common/hooks/useIsMobile";
-import { FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { Monitor } from "lucide-react";
 
-const MobileWarning: FC = () => {
-  const isMobile = useIsMobile();
-
-  if (!isMobile) {
-    return null;
-  }
+export default function MobileWarning() {
+  const t = useCommonTranslate();
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-      <div className="bg-background border rounded-lg p-6 max-w-sm text-center space-y-4">
-        <h2 className="text-xl font-semibold">Desktop Only</h2>
-        <p className="text-muted-foreground">
-          This website is optimized for desktop devices and doesn&apos;t support
-          mobile phones.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Please visit us on a desktop or laptop computer.
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background px-6 text-center lg:hidden">
+      <div className="mb-6 rounded-2xl bg-muted p-4">
+        <Monitor className="h-12 w-12 text-muted-foreground" />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <div className="inline-flex items-center justify-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+            {t("desktop_only")}
+          </p>
+        </div>
+
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          {t("mobile_warning_text")}
+        </h1>
+
+        <p className="max-w-[280px] text-sm leading-relaxed text-muted-foreground">
+          {t("mobile_warning_subtext")}
         </p>
       </div>
     </div>
   );
-};
-
-export default MobileWarning;
+}

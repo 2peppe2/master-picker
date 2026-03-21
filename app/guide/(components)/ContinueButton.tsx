@@ -9,6 +9,7 @@ import { FC, useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/app/dashboard/page";
 import { CourseRequirements } from "../page";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface ContinueButtonProps {
   disabled?: boolean;
@@ -23,6 +24,7 @@ const ContinueButton: FC<ContinueButtonProps> = ({
   electiveCourses,
   disabled,
 }) => {
+  const t = useCommonTranslate();
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -81,11 +83,11 @@ const ContinueButton: FC<ContinueButtonProps> = ({
       {isLoading ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Processing...
+          {t("_guide_processing")}
         </>
       ) : (
         <>
-          Continue
+          {t("_guide_continue")}
           <ArrowRight className="ml-2 h-4 w-4" />
         </>
       )}

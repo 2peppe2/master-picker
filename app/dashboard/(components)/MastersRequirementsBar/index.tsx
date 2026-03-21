@@ -7,10 +7,12 @@ import MasterProgressBadge from "./components/MasterProgressBadge";
 import { useProcessedMasters } from "./hooks/useProcessedMasters";
 import { useBadgeOverflow } from "./hooks/useBadgeOverflow";
 import { useMeasure } from "react-use";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 const GAP_SIZE = 12;
 
 const MastersRequirementsBar = () => {
+  const t = useCommonTranslate();
   const [barRef, { width: barWidth }] = useMeasure<HTMLDivElement>();
   const [badgeRef, { width: badgeWidth }] = useMeasure<HTMLDivElement>();
 
@@ -39,7 +41,7 @@ const MastersRequirementsBar = () => {
       </div>
 
       <div className="hidden lg:block text-sm font-medium text-muted-foreground shrink-0">
-        Master&apos;s progress
+        {t("_dashboard_master_progress")}
       </div>
 
       <div ref={barRef} className="flex-1 min-w-0">

@@ -1,132 +1,91 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CourseExamination } from "@/app/dashboard/page";
-import { Scale } from "@/prisma/generated/client/enums";
-import { NotebookText, BarChart2 } from "lucide-react";
-import { useCourseData } from "./hooks/useCourseData";
 import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { ChartNoAxesColumn } from "lucide-react";
 import { FC } from "react";
 
 interface ExaminationTableProps {
-  examination: CourseExamination[];
   courseCode: string;
-  onNavigateToStatistics?: (modCode?: string) => void;
+  examination: CourseExamination[];
+  onNavigateToStatistics?: (moduleCode?: string) => void;
 }
 
 const ExaminationTable: FC<ExaminationTableProps> = ({
   examination,
-  courseCode,
   onNavigateToStatistics,
 }) => {
-  const { data: courseData } = useCourseData(courseCode);
+  const t = useCommonTranslate();
 
-  const getLatestStats = (moduleCode: string) => {
-    if (!courseData?.modules) return null;
-    const moduleExams = courseData.modules.filter(
-      (m) => m.moduleCode === moduleCode,
-    );
-    if (!moduleExams.length) return null;
-    return [...moduleExams].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    )[0];
-  };
   return (
-    <div className="space-y-3 text-foreground">
-      <section>
-        <div className="mb-2 flex items-center justify-between">
-          <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-            Examinations
-          </p>
-          <span className="text-muted-foreground inline-flex items-center gap-1.5 text-xs">
-            <NotebookText className="size-3.5" />
-            {examination.length} modules
-          </span>
-        </div>
-        <div className="rounded-md border">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Module</TableHead>
-                <TableHead>Credits</TableHead>
-                <TableHead>Scale</TableHead>
-                <TableHead>Latest Stats</TableHead>
-                <TableHead className="w-[50px]"></TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {examination.map((exam) => {
-                const stats = getLatestStats(exam.module);
-                const getCount = (g: string) => stats?.grades?.find((x: { grade: string; quantity: number }) => x.grade === g)?.quantity || 0;
-
-                return (
-                  <TableRow
-                    key={exam.module}
-                    className="transition-colors hover:bg-muted/25"
+    <section className="rounded-md border p-3">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide">
+        {t("_course_examinations")}
+      </p>
+      <div className="rounded-md border bg-card">
+        <Table>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent bg-muted/30">
+              <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_name")}
+              </TableHead>
+              <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_module")}
+              </TableHead>
+              <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_credits")}
+              </TableHead>
+              <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_scale")}
+              </TableHead>
+              <TableHead className="text-right py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_latest_stats")}
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {examination.map((exam) => (
+              <TableRow
+                key={exam.module}
+                className="group border-border/50 transition-colors hover:bg-muted/30"
+              >
+                <TableCell className="py-2 text-xs font-medium text-foreground">
+                  {exam.name}
+                </TableCell>
+                <TableCell className="py-2 text-[11px] text-muted-foreground">
+                  {exam.module}
+                </TableCell>
+                <TableCell className="py-2">
+                  <Badge
+                    variant="secondary"
+                    className="rounded-md px-1.5 py-0 text-[10px] font-medium"
                   >
-                    <TableCell>
-                      {exam.name.length <= 25
-                        ? exam.name
-                        : exam.name.substring(0, 25) + "..."}
-                    </TableCell>
-                    <TableCell>{exam.module}</TableCell>
-                    <TableCell>{exam.credits} ECTS</TableCell>
-                    <TableCell>
-                      {exam.scale == Scale.G_OR_U ? "U, G" : "U, 3, 4, 5"}
-                    </TableCell>
-                    <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
-                      {stats ? (
-                        <div className="flex gap-2">
-                          {exam.scale == Scale.G_OR_U ? (
-                            <>
-                              <span title="Pass">
-                                G:{" "}
-                                {getCount("G") +
-                                  getCount("3") +
-                                  getCount("4") +
-                                  getCount("5")}
-                              </span>
-                              <span title="Fail">U: {getCount("U")}</span>
-                            </>
-                          ) : (
-                            <>
-                              <span title="Grade 5">5: {getCount("5")}</span>
-                              <span title="Grade 4">4: {getCount("4")}</span>
-                              <span title="Grade 3">3: {getCount("3")}</span>
-                              <span title="Fail">U: {getCount("U")}</span>
-                            </>
-                          )}
-                        </div>
-                      ) : (
-                        "-"
-                      )}
-                    </TableCell>
-                    <TableCell>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8 text-muted-foreground hover:text-primary transition-colors"
-                        onClick={() => onNavigateToStatistics?.(exam.module)}
-                      >
-                        <BarChart2 className="h-4 w-4" />
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </div>
-      </section>
-    </div>
+                    {exam.credits} HP
+                  </Badge>
+                </TableCell>
+                <TableCell className="py-2 text-[11px] text-muted-foreground">
+                  {exam.scale}
+                </TableCell>
+                <TableCell className="text-right py-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 transition-all group-hover:bg-accent group-hover:text-accent-foreground"
+                    onClick={() => onNavigateToStatistics?.(exam.module)}
+                    title={t("_course_tab_statistics")}
+                  >
+                    <ChartNoAxesColumn className="size-3.5" />
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </section>
   );
 };
 

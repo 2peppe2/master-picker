@@ -16,6 +16,8 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { Trans } from "react-i18next";
 import { FC } from "react";
 
 export interface ConflictData {
@@ -36,6 +38,7 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
   setOpen,
   conflictData,
 }) => {
+  const t = useCommonTranslate();
   const { resolveConflict } = useCourseContlictResolver();
 
   if (conflictData.collisions.length === 0) {
@@ -61,10 +64,13 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         className="sm:max-w-[500px]"
       >
         <AlertDialogHeader>
-          <AlertDialogTitle>Block already occupied</AlertDialogTitle>
+          <AlertDialogTitle>{t("block_already_occupied")}</AlertDialogTitle>
           <AlertDialogDescription>
-            The selected block for <strong>{conflictData.course.code}</strong>{" "}
-            is already occupied by:
+            <Trans
+              i18nKey="selected_block_occupied_by"
+              values={{ code: conflictData.course.code }}
+              components={{ 1: <strong /> }}
+            />
           </AlertDialogDescription>
         </AlertDialogHeader>
 
@@ -79,18 +85,18 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         </div>
 
         <p className="text-sm text-muted-foreground mb-4">
-          How would you like to proceed?
+          {t("how_to_proceed")}
         </p>
 
         <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-2">
-          <AlertDialogCancel className="mt-0">Cancel</AlertDialogCancel>
+          <AlertDialogCancel className="mt-0">{t("cancel")}</AlertDialogCancel>
 
           <Button variant="outline" onClick={handleResolution("extra")}>
-            Add to new block
+            {t("add_to_new_block")}
           </Button>
 
           <AlertDialogAction onClick={handleResolution("replace")}>
-            Replace
+            {t("replace")}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

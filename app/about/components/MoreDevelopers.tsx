@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import AnimatedGithub from "@/common/components/icons/AnimatedGithub";
 import { Button } from "@/components/ui/button";
@@ -10,17 +10,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 const MoreDevelopers = () => {
+  const t = useCommonTranslate();
+
   return (
     <Card className="max-w-md border-dashed bg-gradient-to-br from-card via-card to-muted/40">
       <CardHeader className="gap-2">
         <Badge variant="secondary" className="w-fit">
-          Contribute
+          {t("_about_contribute_title")}
         </Badge>
-        <CardTitle>And maybe you?</CardTitle>
+        <CardTitle>{t("_about_contribute_subtitle")}</CardTitle>
         <CardDescription>
-          We are a small team and always open to thoughtful contributions.
+          {t("_about_contribute_desc")}
         </CardDescription>
       </CardHeader>
 
@@ -32,11 +35,11 @@ const MoreDevelopers = () => {
             href="https://github.com/2peppe2/master-picker"
           >
             <AnimatedGithub className="mr-2 h-4 w-4" />
-            Repository
+            {t("_about_repository")}
           </a>
         </Button>
         <Button variant="outline" asChild>
-          <a href="mailto:hej@masterpicker.se">Contact</a>
+          <a href="mailto:hej@masterpicker.se">{t("_about_contact")}</a>
         </Button>
       </CardFooter>
     </Card>

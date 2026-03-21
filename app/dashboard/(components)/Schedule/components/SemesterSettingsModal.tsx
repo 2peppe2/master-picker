@@ -9,6 +9,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface SemesterSettingsModalProps {
   semester: number;
@@ -21,6 +22,7 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
   isOpen,
   onOpenChange,
 }) => {
+  const t = useCommonTranslate();
   const { addBlockToSemester } = useScheduleMutators();
 
   return (
@@ -39,7 +41,7 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
       <PopoverContent align="end" className="p-0 overflow-hidden">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
           <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            Semester settings
+            {t("_semester_settings")}
           </p>
         </div>
 
@@ -56,10 +58,10 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
             </div>
             <div className="flex flex-col items-start leading-tight">
               <span className="font-medium text-foreground">
-                Add extra block
+                {t("_semester_settings_add_block")}
               </span>
               <span className="text-[11px] text-muted-foreground w-fit">
-                Extend available slots for this semester
+                {t("_semester_settings_extend_slots")}
               </span>
             </div>
           </button>

@@ -3,19 +3,25 @@
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { FC, useEffect, useMemo, useState } from "react";
-
-const DISPLAY_STATES = {
-  placeholder: "Select starting year",
-  empty: "No years found.",
-} satisfies ComboboxDisplay;
 
 interface YearSelectorProps {
   activeProgram: LandingPageProgram | null;
 }
 
 const YearSelector: FC<YearSelectorProps> = ({ activeProgram }) => {
+  const t = useCommonTranslate();
   const { searchParams, setSearchParams } = useSearchParams();
+
+  const displayStates = useMemo(
+    () =>
+      ({
+        placeholder: t("select_starting_year"),
+        empty: t("no_years_found"),
+      }) satisfies ComboboxDisplay,
+    [t],
+  );
   const [local, setLocal] = useState(searchParams.get("year"));
 
   useEffect(() => {
@@ -40,7 +46,7 @@ const YearSelector: FC<YearSelectorProps> = ({ activeProgram }) => {
         setLocal(next);
         setSearchParams({ year: next, master: null });
       }}
-      displayStates={DISPLAY_STATES}
+      displayStates={displayStates}
     />
   );
 };

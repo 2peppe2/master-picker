@@ -13,6 +13,7 @@ import LoadingDots from "./components/LoadingDots";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 export interface LandingPageProgram {
   program: string;
@@ -32,6 +33,7 @@ interface LandingClientPageProps {
 }
 
 const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
+  const t = useCommonTranslate();
   const generateGrid = useGeneratePrefilledSchedule();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -91,11 +93,15 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
   }, [master, program, router, year]);
 
   if (!programs) {
-    return <>No programs found.</>;
+    return (
+      <>
+        {t("no_programs_found")}
+      </>
+    );
   }
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 relative">
       <ProgramSelector programs={programs} />
 
       <div
@@ -129,14 +135,16 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoadingGuide ? (
-          <LoadingDots text="Running to guide" />
+          <LoadingDots text={t("running_to_guide")} />
         ) : (
-          "Get started"
+          t("get_started")
         )}
       </Button>
 
       <Button variant="link" asChild>
-        <Link href="/about">Learn more about the project</Link>
+        <Link href="/about">
+          {t("learn_more_about_the_project")}
+        </Link>
       </Button>
     </div>
   );

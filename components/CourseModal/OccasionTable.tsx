@@ -1,22 +1,12 @@
 "use client";
 
-import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCourseContlictResolver";
-import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
-import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
-import { ConflictResolverModal } from "../ConflictResolverModal";
-import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { FC, useMemo, useState } from "react";
-import MasterBadge from "../MasterBadge";
-import { Button } from "../ui/button";
+import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Course } from "@/app/dashboard/page";
+import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../ui/table";
+import { FC } from "react";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 
 interface OccasionTableProps {
   course: Course;
@@ -24,138 +14,79 @@ interface OccasionTableProps {
 }
 
 const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
-  const [selectedOccasion, setSelectedOccasion] = useState<CourseOccasion>(
-    course.CourseOccasion[0],
-  );
-  const [alertOpen, setAlertOpen] = useState(false);
-
-  const { getOccasionCollisions } = useScheduleGetters();
-
-  const hasRecommendedMaster = course.CourseOccasion.some(
-    (occasion) => occasion.recommendedMaster.length > 0,
-  );
-
-  const collisions = getOccasionCollisions({ occasion: selectedOccasion });
+  const t = useCommonTranslate();
+  const { addCourseByButton } = useScheduleMutators();
 
   return (
-    <>
-      <ConflictResolverModal
-        open={alertOpen}
-        setOpen={setAlertOpen}
-        conflictData={{
-          strategy: "button",
-          collisions,
-          course,
-          occasion: selectedOccasion,
-        }}
-      />
-
+    <div className="rounded-md bg-card overflow-hidden">
       <Table>
         <TableHeader>
-          <TableRow>
-            <TableHead>Semester</TableHead>
-            <TableHead>Period</TableHead>
-            <TableHead>Block</TableHead>
-            {hasRecommendedMaster && (
-              <TableHead>Recommended for master</TableHead>
-            )}
+          <TableRow className="hover:bg-transparent bg-muted/30">
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              {t("_semester_label", { s: "" }).replace(" ", "")}
+            </TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              {t("_period_label", { p: "" }).replace(" ", "")}
+            </TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              {t("_block_label", { b: "" }).replace(" ", "")}
+            </TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              {t("_advanced")}
+            </TableHead>
             {showAdd && (
-              <TableHead className="text-right">Add to schedule</TableHead>
+              <TableHead className="text-right py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                {t("_course_add_to_schedule")}
+              </TableHead>
             )}
           </TableRow>
         </TableHeader>
         <TableBody>
-          {course.CourseOccasion.map((occasion) => (
-            <OccasionTableRow
-              key={occasion.id}
-              occasion={occasion}
-              course={course}
-              showRecommendedMaster={hasRecommendedMaster}
-              setAlertOpen={setAlertOpen}
-              setSelectedOccasion={setSelectedOccasion}
-              showAdd={showAdd}
-            />
+          {course.CourseOccasion.map((occ, idx) => (
+            <TableRow
+              key={`${occ.courseCode}-${occ.year}-${occ.semester}-${idx}`}
+              className="group border-border/50 transition-colors hover:bg-muted/30"
+            >
+              <TableCell className="py-2 text-[11px] font-medium text-foreground">
+                {occ.semester} {occ.year}
+              </TableCell>
+              <TableCell className="py-2 text-[11px] text-muted-foreground">
+                {occ.periods.map((p) => p.period).join(", ")}
+              </TableCell>
+              <TableCell className="py-2 text-[11px] text-muted-foreground">
+                {occ.periods.flatMap((p) => p.blocks).join(", ")}
+              </TableCell>
+              <TableCell className="py-2">
+                <div className="flex flex-wrap gap-1">
+                  {occ.recommendedMaster.map((master: { master: string; masterProgram: string }) => (
+                    <span
+                      key={master.master}
+                      className="inline-flex items-center rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium text-primary"
+                    >
+                      {master.master}
+                    </span>
+                  ))}
+                </div>
+              </TableCell>
+              {showAdd && (
+                <TableCell className="text-right py-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-7 gap-1 px-2 text-[10px] font-medium transition-all group-hover:bg-primary group-hover:text-primary-foreground"
+                    onClick={() => addCourseByButton({ course, occasion: occ })}
+                  >
+                    <Plus className="size-3" />
+                    {t("_course_add_to_schedule")}
+                  </Button>
+                </TableCell>
+              )}
+            </TableRow>
           ))}
         </TableBody>
       </Table>
-    </>
+    </div>
   );
 };
 
 export default OccasionTable;
-
-interface OccasionTableRowProps {
-  occasion: CourseOccasion;
-  course: Course;
-  showRecommendedMaster: boolean;
-  setAlertOpen: (open: boolean) => void;
-  setSelectedOccasion: (occasion: CourseOccasion) => void;
-  showAdd: boolean;
-}
-
-const OccasionTableRow: FC<OccasionTableRowProps> = ({
-  occasion,
-  course,
-  showRecommendedMaster,
-  setAlertOpen,
-  setSelectedOccasion,
-  showAdd,
-}) => {
-  const yearAndSemesterToRelativeSemester = useToRelativeSemester();
-  const { getOccasionCollisions } = useScheduleGetters();
-  const { executeAdd } = useCourseContlictResolver();
-
-  const relativeSemester = useMemo(
-    () =>
-      yearAndSemesterToRelativeSemester({
-        year: occasion.year,
-        semester: occasion.semester,
-      }),
-    [occasion.semester, occasion.year, yearAndSemesterToRelativeSemester],
-  );
-
-  const periods = occasion.periods.map((p) => p.period);
-  const blocks = Array.from(new Set(occasion.periods.flatMap((p) => p.blocks)));
-
-  const handleAddClick = () => {
-    if (getOccasionCollisions({ occasion }).length > 0) {
-      setSelectedOccasion(occasion);
-      setAlertOpen(true);
-    } else {
-      executeAdd({ course, occasion, strategy: "button" });
-    }
-  };
-
-  return (
-    <TableRow className="transition-colors hover:bg-muted/25">
-      <TableCell>
-        {relativeSemester + 1} ({occasion.semester} {occasion.year})
-      </TableCell>
-      <TableCell>{periods.length > 0 ? periods.join(", ") : "-"}</TableCell>
-      <TableCell>{blocks.length > 0 ? blocks.join(", ") : "-"}</TableCell>
-      {showRecommendedMaster && (
-        <TableCell align="center">
-          {occasion.recommendedMaster.length > 0
-            ? occasion.recommendedMaster.map((m) => (
-                <MasterBadge key={m.master} name={m.master} />
-              ))
-            : "-"}
-        </TableCell>
-      )}
-      {showAdd && (
-        <TableCell className="text-right">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={handleAddClick}
-            className="cursor-pointer h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
-          >
-            <Plus className="size-3.5" />
-            Add course
-          </Button>
-        </TableCell>
-      )}
-    </TableRow>
-  );
-};
