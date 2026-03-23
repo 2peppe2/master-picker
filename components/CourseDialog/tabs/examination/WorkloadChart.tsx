@@ -1,7 +1,8 @@
 "use client";
 
-import Translate from "@/common/components/translate/Translate";
-import { useEffect, useState, FC } from "react";
+import WorkloadChartLabel from "./components/WorkloadChartLabel";
+import { useAnimationKey } from "@/common/hooks/useAnimationKey";
+import { FC, useMemo } from "react";
 import { Label, Pie, PieChart } from "recharts";
 import {
   type ChartConfig,
@@ -35,28 +36,23 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
   scheduledHours,
   selfStudyHours,
 }) => {
-  const totalHours = scheduledHours + selfStudyHours;
-  const data = [
-    {
-      name: "scheduled",
-      hours: scheduledHours,
-      fill: "var(--color-scheduled)",
-    },
-    {
-      name: "selfStudy",
-      hours: selfStudyHours,
-      fill: "var(--color-selfStudy)",
-    },
-  ];
-  const [animationKey, setAnimationKey] = useState(0);
+  const animationKey = useAnimationKey([scheduledHours, selfStudyHours]);
 
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => {
-      setAnimationKey((prev) => prev + 1);
-    });
-
-    return () => cancelAnimationFrame(frame);
-  }, [scheduledHours, selfStudyHours]);
+  const data = useMemo(
+    () => [
+      {
+        name: "scheduled",
+        hours: scheduledHours,
+        fill: "var(--color-scheduled)",
+      },
+      {
+        name: "selfStudy",
+        hours: selfStudyHours,
+        fill: "var(--color-selfStudy)",
+      },
+    ],
+    [scheduledHours, selfStudyHours],
+  );
 
   return (
     <ChartContainer config={revenueChartConfig} className="h-30 w-30">
@@ -82,33 +78,12 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
           animationEasing="ease-out"
         >
           <Label
-            content={({ viewBox }) => {
-              if (!viewBox || !("cx" in viewBox) || !("cy" in viewBox))
-                return null;
-              return (
-                <text
-                  x={viewBox.cx}
-                  y={viewBox.cy}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                >
-                  <tspan
-                    className="fill-foreground text-sm font-medium"
-                    x={viewBox.cx}
-                    y={viewBox.cy}
-                  >
-                    {totalHours} h
-                  </tspan>
-                  <tspan
-                    className="fill-muted-foreground text-[10px]"
-                    x={viewBox.cx}
-                    y={(viewBox.cy || 0) + 13}
-                  >
-                    <Translate text="total" />
-                  </tspan>
-                </text>
-              );
-            }}
+            content={({ viewBox }) => (
+              <WorkloadChartLabel
+                viewBox={viewBox}
+                totalHours={scheduledHours + selfStudyHours}
+              />
+            )}
           />
         </Pie>
       </PieChart>
