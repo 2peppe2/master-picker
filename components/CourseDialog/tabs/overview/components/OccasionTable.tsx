@@ -2,10 +2,10 @@
 
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import ConflictResolverModal from "@/components/ConflictResolverModal";
-import OccasionTableHeader from "./OccasionTableHeader";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
-import OccasionTableRow from "./OccasionTableRow";
 import { Table, TableBody } from "@/components/ui/table";
+import OccasionTableHeader from "./OccasionTableHeader";
+import OccasionTableRow from "./OccasionTableRow";
 import { FC, useState } from "react";
 
 interface OccasionTableProps {
