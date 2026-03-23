@@ -3,7 +3,7 @@
 import Translate from "@/common/components/translate/Translate";
 import { ChartData } from "./DistributionList";
 import { Pie, PieChart, Cell } from "recharts";
-import { chartConfig } from "./constants";
+import { chartConfig } from "../constants";
 import { FC } from "react";
 import {
   ChartContainer,

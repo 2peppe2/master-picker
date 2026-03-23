@@ -5,7 +5,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { FC, useState, useMemo } from "react";
 import { Label } from "@/components/ui/label";
 import ExamSelectItem from "./ExamSelectItem";
-import { ProcessedModule } from "./types";
+import { ProcessedModule } from "../types";
 import ExamBadge from "./ExamBadge";
 import {
   Select,

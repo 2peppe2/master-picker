@@ -1,7 +1,7 @@
 "use client";
 
 import Translate from "@/common/components/translate/Translate";
-import { EXAM_MODULE_CODES } from "./constants";
+import { EXAM_MODULE_CODES } from "../constants";
 import { FC } from "react";
 
 interface ExamBadgeProps {

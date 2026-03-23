@@ -1,7 +1,7 @@
 "use client";
 
 import { SelectItem } from "@/components/ui/select";
-import { ProcessedModule } from "./types";
+import { ProcessedModule } from "../types";
 import ExamBadge from "./ExamBadge";
 import { FC } from "react";
 

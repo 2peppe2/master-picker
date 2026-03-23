@@ -4,11 +4,11 @@ import { useDefaultModuleSelection } from "./hooks/useDefaultModuleSelection";
 import { useCategorizedModules } from "./hooks/useCategorizedModules";
 import Translate from "@/common/components/translate/Translate";
 import { useCourseData } from "../../hooks/useCourseData";
-import ChartDistribution from "./ChartDistribution";
+import ChartDistribution from "./components/ChartDistribution";
 import { useChartData } from "./hooks/useChartData";
-import DistributionList from "./DistributionList";
+import DistributionList from "./components/DistributionList";
 import { Loader2, BarChart2 } from "lucide-react";
-import ModuleSelector from "./ModuleSelector";
+import ModuleSelector from "./components/ModuleSelector";
 import { Course } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";
 
