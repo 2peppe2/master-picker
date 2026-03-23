@@ -76,7 +76,6 @@ const ExaminationTable: FC<ExaminationTableProps> = ({
                 <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
                   <Translate text="_course_last_original_statistics" />
                 </TableHead>
-                <TableHead className="w-[50px]"></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

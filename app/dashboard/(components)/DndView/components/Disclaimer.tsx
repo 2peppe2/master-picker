@@ -18,7 +18,7 @@ const Disclaimer: FC = () => {
       <span className="text-xs text-muted-foreground mt-1">
         <Translate text="_dashboard_disclaimer_text" />{" "}
         <a
-          className="hover:underline"
+          className="underline hover:text-sky-600 dark:hover:text-sky-400"
           href={programLink}
           target="_blank"
           rel="noreferrer"

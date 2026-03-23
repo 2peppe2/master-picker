@@ -87,17 +87,10 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
             <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
               {isFulfilled ? (
                 <span className="text-emerald-600 dark:text-emerald-400">
-                  {selection.length === 1 ? (
-                    <Translate
-                      text="_guide_selected_count_singular"
-                      args={{ count: selection.length }}
-                    />
-                  ) : (
-                    <Translate
-                      text="_guide_selected_count_plural"
-                      args={{ count: selection.length }}
-                    />
-                  )}
+                  <Translate
+                    text="_guide_selected_of_count"
+                    args={{ count: selection.length, min: minRequired }}
+                  />
                 </span>
               ) : (
                 <span>
