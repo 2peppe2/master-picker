@@ -30,7 +30,7 @@ const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
             overflow: "hidden",
           }}
         >
-          <span className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline">
+          <span className="wrap-anywhere hyphens-manual cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline">
             <CourseTranslate text={course.name} />
           </span>
         </div>

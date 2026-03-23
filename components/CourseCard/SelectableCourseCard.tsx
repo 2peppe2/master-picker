@@ -96,7 +96,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
                 e.stopPropagation();
                 setOpenDialog(true);
               }}
-              className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
+              className="wrap-anywhere hyphens-auto cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
             >
               <CourseTranslate text={course.name} />
             </span>
