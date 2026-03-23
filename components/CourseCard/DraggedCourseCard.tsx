@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseCardFooter from "./CourseCardFooter";
 import { CourseCardProps } from ".";
 import {
@@ -30,7 +31,7 @@ const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
           }}
         >
           <span className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline">
-            {course.name}
+            <CourseTranslate text={course.name} />
           </span>
         </div>
       </CardDescription>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import CourseCardFooter from "./CourseCardFooter";
 import { Button } from "@/components/ui/button";
@@ -75,7 +76,7 @@ const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
               onClick={() => setOpenDialog(true)}
               className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
             >
-              {course.name}
+              <CourseTranslate text={course.name} />
             </span>
           </div>
         </CardDescription>

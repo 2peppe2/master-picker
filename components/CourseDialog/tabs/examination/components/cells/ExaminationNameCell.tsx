@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { TableCell } from "@/components/ui/table";
 import { FC } from "react";
 
@@ -8,8 +9,10 @@ interface ExaminationNameCellProps {
 }
 
 const ExaminationNameCell: FC<ExaminationNameCellProps> = ({ name }) => (
-  <TableCell>
-    {name.length <= 18 ? name : name.substring(0, 18) + "..."}
+  <TableCell className="max-w-[150px]">
+    <div className="truncate" title={name}>
+      <CourseTranslate text={name} />
+    </div>
   </TableCell>
 );
 

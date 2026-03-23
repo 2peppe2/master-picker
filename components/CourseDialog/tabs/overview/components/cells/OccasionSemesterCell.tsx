@@ -1,5 +1,6 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Semester } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
@@ -15,6 +16,7 @@ const OccasionSemesterCell: FC<OccasionSemesterCellProps> = ({
   semester,
 }) => {
   const yearAndSemesterToRelativeSemester = useToRelativeSemester();
+  const translate = useCommonTranslate();
 
   const relativeSemester = useMemo(
     () =>
@@ -27,7 +29,7 @@ const OccasionSemesterCell: FC<OccasionSemesterCellProps> = ({
 
   return (
     <TableCell>
-      {relativeSemester + 1} ({semester} {year})
+      {relativeSemester + 1} ({translate(semester)} {year})
     </TableCell>
   );
 };

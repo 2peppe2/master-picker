@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { Badge } from "@/components/ui/badge";
 import { ProcessedMaster } from "../types";
@@ -38,7 +39,7 @@ export const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
             key={m.master}
             className="text-xs py-1 border-b last:border-0 whitespace-nowrap"
           >
-            {m.name}{" "}
+            <CourseTranslate text={m.name ?? m.master} />{" "}
             <span className="text-muted-foreground ml-2">{m.progress}%</span>
           </div>
         ))}

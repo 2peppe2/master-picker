@@ -1,10 +1,13 @@
 "use client";
 
-import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
+import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
+import Translate from "@/common/components/translate/Translate";
 import { coursesAtom } from "@/app/dashboard/(store)/store";
 import MultiSelect from "@/components/ui/MultiSelect";
 import MasterBadge from "@/components/MasterBadge";
@@ -18,7 +21,6 @@ import {
   CircleStar,
   Shapes,
 } from "lucide-react";
-import Translate from "@/common/components/translate/Translate";
 
 const UnifiedSearchFilter: FC = () => {
   const showBachelorYears = useAtomValue(preferenceAtoms.showBachelorYearsAtom);
@@ -31,6 +33,8 @@ const UnifiedSearchFilter: FC = () => {
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
   const allCourses = useAtomValue(coursesAtom);
   const allMasters = useMasterAtom();
+
+  const coursesTranslate = useCourseTranslate();
   const translate = useCommonTranslate();
 
   const CATEGORY_LABELS = useMemo<Record<string, string>>(
@@ -61,11 +65,13 @@ const UnifiedSearchFilter: FC = () => {
     return {
       heading: translate("main_fields"),
       options: uniqueFields.map((field) => ({
-        label: field,
+        label: coursesTranslate(field),
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <Shapes className="h-4 w-4 opacity-70" />
-            <span className="truncate">{field}</span>
+            <span className="truncate">
+              <CourseTranslate text={field} />
+            </span>
           </div>
         ),
         searchKey: field,
@@ -143,7 +149,9 @@ const UnifiedSearchFilter: FC = () => {
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate w-full">
             <MasterBadge name={m.master} />
-            <span className="truncate font-medium">{m.name ?? m.master}</span>
+            <span className="truncate font-medium">
+              <CourseTranslate text={m.name ?? m.master} />
+            </span>
           </div>
         ),
         searchKey: m.name ?? m.master,

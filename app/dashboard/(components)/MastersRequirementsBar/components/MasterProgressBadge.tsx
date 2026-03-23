@@ -1,17 +1,17 @@
 "use client";
 
-import { MasterBadgeRequirementTooltip } from "./MasterBadgeRequirementTooltip";
+import MasterBadgeRequirementTooltip from "./MasterBadgeRequirementTooltip";
 import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import { MasterIcon } from "@/components/MasterIcon";
 import { Badge } from "@/components/ui/badge";
 import { ProcessedMaster } from "../types";
 import { cn } from "@/lib/utils";
-import { FC } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { FC } from "react";
 
 interface MasterProgressBadgeProps {
   master: ProcessedMaster;

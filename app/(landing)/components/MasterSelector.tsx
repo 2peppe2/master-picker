@@ -1,14 +1,15 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
-import Translate from "@/common/components/translate/Translate";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
+import Translate from "@/common/components/translate/Translate";
 import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
 import LoadingDots from "./LoadingDots";
+import { Loader2 } from "lucide-react";
 
 interface MasterSelectorProps {
   activeProgram: LandingPageProgram | null;
@@ -22,6 +23,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   isLoading,
 }) => {
   const { searchParams, setSearchParams } = useSearchParams();
+  const courseTranslate = useCourseTranslate();
   const translate = useCommonTranslate();
 
   const displayStates = useMemo(
@@ -51,7 +53,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
     if (!selectedYearData) return [];
 
     return selectedYearData.masters.map((m) => ({
-      label: m.name ?? translate("unknown_master"),
+      label: m.name ? courseTranslate(m.name) : translate("unknown_master"),
       value: m.program,
     }));
   }, [activeProgram, yearParam, translate]);

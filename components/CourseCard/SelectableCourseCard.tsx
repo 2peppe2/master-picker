@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseCardFooter from "./CourseCardFooter";
 import { Course } from "@/app/dashboard/page";
 import CourseDialog from "../CourseDialog";
@@ -97,7 +98,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
               }}
               className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
             >
-              {course.name}
+              <CourseTranslate text={course.name} />
             </span>
           </div>
         </CardDescription>

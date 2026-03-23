@@ -1,6 +1,7 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseSelectionRow from "./rows/CourseSelectionRow";
 import { RequirementUnion } from "../../../page";
 import MainFieldRow from "./rows/MainFieldRow";
@@ -22,7 +23,7 @@ interface MasterBadgeTooltipProps {
   fulfilled: RequirementUnion[];
 }
 
-export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
+const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   all,
   name,
   fulfilled,
@@ -53,7 +54,9 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   return (
     <div className="flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm">
       <header className="space-y-2">
-        <h4 className="font-bold text-sm tracking-tight">{name}</h4>
+        <h4 className="font-bold text-sm tracking-tight">
+          <CourseTranslate text={name} />
+        </h4>
       </header>
 
       <div className="space-y-5">
@@ -79,6 +82,8 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
     </div>
   );
 };
+
+export default MasterBadgeRequirementTooltip;
 
 interface SectionProps {
   title: string;

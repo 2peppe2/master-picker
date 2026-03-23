@@ -1,7 +1,8 @@
 "use client";
 
-import { BookOpen, Building2, GraduationCap, UserRound } from "lucide-react";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { BookOpen, Building2, GraduationCap, UserRound } from "lucide-react";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { LIU_DEPARTMENTS } from "@/lib/departmentShortName";
 import { Separator } from "@/components/ui/separator";
@@ -60,7 +61,7 @@ const OverviewDetailsSection: FC<OverviewDetailsSectionProps> = ({
                   variant="outline"
                   className="rounded-md px-2 py-0.5 text-[11px]"
                 >
-                  {field}
+                  <CourseTranslate text={field} />
                 </Badge>
               ))
             ) : (

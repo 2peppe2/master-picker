@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { MainFieldRequirement } from "@/app/dashboard/page";
 import { cn } from "@/lib/utils";
@@ -31,7 +32,9 @@ const MainFieldRow: FC<MainFieldRowProps> = ({
               : "bg-secondary/50 border-border text-muted-foreground",
           )}
         >
-          <span>{field}</span>
+          <span>
+            <CourseTranslate text={field} />
+          </span>
           <span className="font-mono font-bold border-l border-current/20 pl-1.5">
             {fieldProgress[field] || 0} HP
           </span>

@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
 import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import MasterBadge from "../MasterBadge";
@@ -52,7 +53,9 @@ const CourseCardFooter: FC<CourseCardFooterProps> = ({ masterPrograms }) => {
                 <div className="flex flex-col gap-2">
                   {masterPrograms.slice(3).map((program) => (
                     <div key={program.master}>
-                      {masters[program.master]?.name ?? program.master}
+                      <CourseTranslate
+                        text={masters[program.master]?.name ?? program.master}
+                      />
                     </div>
                   ))}
                 </div>

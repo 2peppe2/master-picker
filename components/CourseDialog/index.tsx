@@ -1,6 +1,7 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { FC, useMemo, useState, useEffect } from "react";
 import ExaminationTab from "./tabs/examination";
@@ -99,7 +100,9 @@ const CourseDialog: FC<CourseDialogProps> = ({
       <DialogContent className="flex h-[640px] w-full flex-col overflow-hidden sm:max-w-[39rem]">
         <DialogHeader className="shrink-0">
           <DialogTitle>{course.code}</DialogTitle>
-          <DialogDescription>{course.name}</DialogDescription>
+          <DialogDescription>
+            <CourseTranslate text={course.name} />
+          </DialogDescription>
           <div className="flex flex-wrap items-center gap-1.5 pt-1">
             <Badge
               variant="secondary"

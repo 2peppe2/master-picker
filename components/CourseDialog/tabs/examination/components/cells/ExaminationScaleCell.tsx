@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { Scale } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
 import { FC } from "react";
@@ -10,7 +11,7 @@ interface ExaminationScaleCellProps {
 
 const ExaminationScaleCell: FC<ExaminationScaleCellProps> = ({ scale }) => (
   <TableCell>
-    {scale == Scale.G_OR_U ? "U, G" : "U, 3, 4, 5"}
+    <Translate text={scale === Scale.G_OR_U ? "scale_gu" : "scale_345"} />
   </TableCell>
 );
 

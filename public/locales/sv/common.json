@@ -207,5 +207,9 @@
   "_view_pdf": "Visa PDF",
   "_wildcard_block_label": "Extra",
   "_wildcard_more_count": "+{{count}} fler",
-  "_wildcard_warning_text": "Potentiell krock: En standardkurs ligger i en wildcard-plats."
+  "_wildcard_warning_text": "Potentiell krock: En standardkurs ligger i en wildcard-plats.",
+  "scale_gu": "U, G",
+  "scale_345": "U, 3, 4, 5",
+  "HT": "Höst",
+  "VT": "Vår"
 }
