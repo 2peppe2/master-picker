@@ -1,6 +1,6 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { CourseRequirement } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";

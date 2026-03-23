@@ -1,7 +1,7 @@
 "use client";
 
 import { BookOpen, Building2, GraduationCap, UserRound } from "lucide-react";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { LIU_DEPARTMENTS } from "@/lib/departmentShortName";
 import { Separator } from "@/components/ui/separator";

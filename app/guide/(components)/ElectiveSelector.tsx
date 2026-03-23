@@ -1,7 +1,7 @@
 "use client";
 
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
 import Translate from "@/common/components/translate/Translate";
 import { normalizeCourse } from "@/app/courseNormalizer";

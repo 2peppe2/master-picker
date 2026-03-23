@@ -1,6 +1,6 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage";

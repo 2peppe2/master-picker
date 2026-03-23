@@ -2,7 +2,7 @@
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
 import Translate from "@/common/components/translate/Translate";

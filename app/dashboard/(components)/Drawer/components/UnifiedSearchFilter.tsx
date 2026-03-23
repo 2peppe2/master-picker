@@ -1,7 +1,7 @@
 "use client";
 
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";

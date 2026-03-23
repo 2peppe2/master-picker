@@ -1,6 +1,6 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import Translate from "@/common/components/translate/Translate";
 import { FC, useState, useCallback, useEffect } from "react";

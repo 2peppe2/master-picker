@@ -1,6 +1,6 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { EvaluationTrendPoint } from "../types";
 import { FC } from "react";
 import {

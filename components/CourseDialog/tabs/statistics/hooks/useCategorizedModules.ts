@@ -1,7 +1,7 @@
 "use client";
 
 import { getExpectedExamMonths } from "../../examination/hooks/useLatestOriginalStats";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { EXAM_MODULE_CODES, LAB_MODULE_CODES } from "../constants";
 import { ProcessedModule, CourseData } from "../types";
 import { Course } from "@/app/dashboard/page";

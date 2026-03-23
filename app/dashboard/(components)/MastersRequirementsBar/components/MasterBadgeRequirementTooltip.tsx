@@ -1,6 +1,6 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import CourseSelectionRow from "./rows/CourseSelectionRow";
 import { RequirementUnion } from "../../../page";
 import MainFieldRow from "./rows/MainFieldRow";

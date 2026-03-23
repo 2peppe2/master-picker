@@ -1,7 +1,7 @@
 "use client";
 
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
