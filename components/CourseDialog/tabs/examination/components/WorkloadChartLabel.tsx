@@ -1,10 +1,11 @@
 "use client";
 
 import Translate from "@/common/components/translate/Translate";
+import { ViewBox } from "recharts/types/util/types";
 import { FC } from "react";
 
 interface WorkloadChartLabelProps {
-  viewBox?: any;
+  viewBox?: ViewBox;
   totalHours: number;
 }
 
@@ -12,7 +13,9 @@ const WorkloadChartLabel: FC<WorkloadChartLabelProps> = ({
   viewBox,
   totalHours,
 }) => {
-  if (!viewBox || !("cx" in viewBox) || !("cy" in viewBox)) return null;
+  if (!viewBox || !("cx" in viewBox) || !("cy" in viewBox)) {
+    return null;
+  }
 
   return (
     <text

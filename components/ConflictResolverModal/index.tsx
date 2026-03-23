@@ -39,10 +39,6 @@ const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
 }) => {
   const { resolveConflict } = useCourseContlictResolver();
 
-  if (conflictData.collisions.length === 0) {
-    return null;
-  }
-
   const handleResolution = useCallback(
     (type: "replace" | "extra") => (e: React.MouseEvent) => {
       e.preventDefault();
@@ -54,6 +50,10 @@ const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
     },
     [resolveConflict, conflictData, setOpen],
   );
+
+  if (conflictData.collisions.length === 0) {
+    return null;
+  }
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>

@@ -155,7 +155,7 @@ export const useCategorizedModules = ({
         if (pA !== pB) return pA - pB;
         return (codeA as string).localeCompare(codeB as string);
       });
-  }, [courseData, course.Examination, course.CourseOccasion]);
+  }, [courseData, course.Examination, course.CourseOccasion, translate]);
 
   const allProcessedModules = useMemo(
     () =>

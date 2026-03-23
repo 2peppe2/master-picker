@@ -1,6 +1,5 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import {
   Card,

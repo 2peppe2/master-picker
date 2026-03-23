@@ -5,13 +5,6 @@ import Translate from "@/common/components/translate/Translate";
 import { CourseRequirement } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";
 
-const NUM_TO_TYPED: Record<number, string> = {
-  1: "one",
-  2: "two",
-  3: "three",
-  4: "four",
-};
-
 interface CourseSelectionRowProps {
   requirement: CourseRequirement;
 }
@@ -37,7 +30,7 @@ const CourseSelectionRow: FC<CourseSelectionRowProps> = ({ requirement }) => {
       11: translate("_num_eleven"),
       12: translate("_num_twelve"),
     }),
-    [],
+    [translate],
   );
 
   return (

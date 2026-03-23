@@ -3,10 +3,10 @@
 import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { FC, useMemo, useState, useEffect } from "react";
-import EvaluateScore from "./tabs/evaluate";
 import ExaminationTab from "./tabs/examination";
 import { Course } from "@/app/dashboard/page";
 import { Badge } from "@/components/ui/badge";
+import EvaluateScore from "./tabs/evaluate";
 import Statistics from "./tabs/statistics";
 import OverviewTab from "./tabs/overview";
 import DialogFooter from "./DialogFooter";
@@ -91,7 +91,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
         content: <EvaluateScore courseCode={course.code} />,
       },
     ],
-    [course, showAdd, initModule, selectedStatModule],
+    [course, showAdd, initModule, selectedStatModule, translate],
   );
 
   return (
