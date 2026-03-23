@@ -1,11 +1,13 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "@/components/ui/button";
 import {
   StrategyType,
   useCourseContlictResolver,
 } from "./hooks/useCourseContlictResolver";
+import { FC, useCallback } from "react";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -16,7 +18,6 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { FC } from "react";
 
 export interface ConflictData {
   course: Course;
@@ -31,7 +32,7 @@ interface ConflictResolverModalProps {
   conflictData: ConflictData;
 }
 
-export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
+const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
   open,
   setOpen,
   conflictData,
@@ -42,7 +43,7 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
     return null;
   }
 
-  const handleResolution =
+  const handleResolution = useCallback(
     (type: "replace" | "extra") => (e: React.MouseEvent) => {
       e.preventDefault();
       resolveConflict({
@@ -50,7 +51,9 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         type,
       });
       setOpen(false);
-    };
+    },
+    [resolveConflict, conflictData, setOpen],
+  );
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
@@ -61,10 +64,15 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         className="sm:max-w-[500px]"
       >
         <AlertDialogHeader>
-          <AlertDialogTitle>Block already occupied</AlertDialogTitle>
+          <AlertDialogTitle>
+            <Translate text="block_already_occupied" />
+          </AlertDialogTitle>
           <AlertDialogDescription>
-            The selected block for <strong>{conflictData.course.code}</strong>{" "}
-            is already occupied by:
+            <Translate
+              isBold
+              text="_selected_block_occupied_by"
+              args={{ code: conflictData.course.code }}
+            />
           </AlertDialogDescription>
         </AlertDialogHeader>
 
@@ -79,21 +87,28 @@ export const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
         </div>
 
         <p className="text-sm text-muted-foreground mb-4">
-          How would you like to proceed?
+          <Translate text="how_to_proceed" />
         </p>
 
         <AlertDialogFooter className="flex-col sm:flex-row gap-2 sm:gap-2">
-          <AlertDialogCancel className="mt-0">Cancel</AlertDialogCancel>
+          <AlertDialogCancel className="mt-0 cursor-pointer">
+            <Translate text="cancel" />
+          </AlertDialogCancel>
 
           <Button variant="outline" onClick={handleResolution("extra")}>
-            Add to new block
+            <Translate text="add_to_new_block" />
           </Button>
 
-          <AlertDialogAction onClick={handleResolution("replace")}>
-            Replace
+          <AlertDialogAction
+            className="cursor-pointer"
+            onClick={handleResolution("replace")}
+          >
+            <Translate text="replace" />
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );
 };
+
+export default ConflictResolverModal;

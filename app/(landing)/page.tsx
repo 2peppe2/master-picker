@@ -1,5 +1,6 @@
 "use server";
 
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import { landingPageProgramSelect } from "./queries";
 import LandingClientPage from "./LandingClientPage";
 import Header from "./components/Header";
@@ -26,10 +27,15 @@ const LandingPage = async () => {
   }));
 
   return (
-    <main className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
-      <Header />
-      <LandingClientPage programs={formattedPrograms} />
-    </main>
+    <div className="min-h-screen relative">
+      <div className="absolute top-4 right-4 z-10">
+        <LanguageSwitcher />
+      </div>
+      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20">
+        <Header />
+        <LandingClientPage programs={formattedPrograms} />
+      </main>
+    </div>
   );
 };
 

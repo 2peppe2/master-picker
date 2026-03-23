@@ -1,13 +1,14 @@
 "use client";
 
-import { useCourseContlictResolver } from "../../../ConflictResolverModal/hooks/useCourseContlictResolver";
+import { useCourseContlictResolver } from "@/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
-import { ConflictResolverModal } from "../../../ConflictResolverModal";
+import ConflictResolverModal from "@/components/ConflictResolverModal";
+import Translate from "@/common/components/translate/Translate";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
+import MasterBadge from "@/components/MasterBadge";
+import { Button } from "@/components/ui/button";
 import { FC, useMemo, useState } from "react";
-import MasterBadge from "../../../MasterBadge";
-import { Button } from "../../../ui/button";
 import { Plus } from "lucide-react";
 import {
   Table,
@@ -16,7 +17,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../ui/table";
+} from "@/components/ui/table";
 
 interface OccasionTableProps {
   course: Course;
@@ -53,14 +54,24 @@ const OccasionTable: FC<OccasionTableProps> = ({ course, showAdd }) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Semester</TableHead>
-            <TableHead>Period</TableHead>
-            <TableHead>Block</TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              <Translate text="semester" />
+            </TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              <Translate text="period" />
+            </TableHead>
+            <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+              <Translate text="block" />
+            </TableHead>
             {hasRecommendedMaster && (
-              <TableHead>Recommended for master</TableHead>
+              <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                <Translate text="recommended_for_master" />
+              </TableHead>
             )}
             {showAdd && (
-              <TableHead className="text-right">Add to schedule</TableHead>
+              <TableHead className="text-right py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                <Translate text="_course_add_to_schedule" />
+              </TableHead>
             )}
           </TableRow>
         </TableHeader>
@@ -134,7 +145,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
       <TableCell>{periods.length > 0 ? periods.join(", ") : "-"}</TableCell>
       <TableCell>{blocks.length > 0 ? blocks.join(", ") : "-"}</TableCell>
       {showRecommendedMaster && (
-        <TableCell align="center">
+        <TableCell>
           {occasion.recommendedMaster.length > 0
             ? occasion.recommendedMaster.map((m) => (
                 <MasterBadge key={m.master} name={m.master} />

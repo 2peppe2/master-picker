@@ -13,13 +13,14 @@ const Header: FC = ({}) => {
       <div className="px-8 h-25 flex items-center justify-between gap-6">
         <div className="flex flex-col w-full border-r h-12 px-4 items-center">
           <MastersRequirementsBar />
-          <Disclaimer  />
-          
+          <Disclaimer />
         </div>
-        <SettingsModal
-          isOpen={isSettingsOpen}
-          onOpenChange={setIsSettingsOpen}
-        />
+        <div className="flex items-center gap-4">
+          <SettingsModal
+            isOpen={isSettingsOpen}
+            onOpenChange={setIsSettingsOpen}
+          />
+        </div>
       </div>
     </header>
   );

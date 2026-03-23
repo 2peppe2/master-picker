@@ -1,15 +1,17 @@
 "use client";
 
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
+import Translate from "@/common/components/translate/Translate";
 import { normalizeCourse } from "@/app/courseNormalizer";
 import type { CourseRequirements } from "../page";
 import CourseCard from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Course } from "@/app/dashboard/page";
+import { useState, FC, useMemo } from "react";
 import { Check, X } from "lucide-react";
-import { useState, FC } from "react";
 import {
   Card,
   CardContent,
@@ -25,13 +27,6 @@ interface ElectiveSelectorProps {
   onSelectionChange: (course: Course) => void;
 }
 
-const NUM_TO_TYPED: Record<number, string> = {
-  1: "one",
-  2: "two",
-  3: "three",
-  4: "four",
-};
-
 const ElectiveSelector: FC<ElectiveSelectorProps> = ({
   index,
   electiveCourses,
@@ -39,6 +34,25 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
   onSelectionChange,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const translate = useCommonTranslate();
+
+  const NUM_TO_TYPED: Record<number, string> = useMemo(
+    () => ({
+      1: translate("_num_one"),
+      2: translate("_num_two"),
+      3: translate("_num_three"),
+      4: translate("_num_four"),
+      5: translate("_num_five"),
+      6: translate("_num_six"),
+      7: translate("_num_seven"),
+      8: translate("_num_eight"),
+      9: translate("_num_nine"),
+      10: translate("_num_ten"),
+      11: translate("_num_eleven"),
+      12: translate("_num_twelve"),
+    }),
+    [translate],
+  );
 
   const minRequired = electiveCourses.minCount ?? 1;
   const isFulfilled = selection.length >= minRequired;
@@ -50,21 +64,47 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400">
-                {minRequired < 5
-                  ? `Pick ${NUM_TO_TYPED[minRequired]}`
-                  : `Pick ${minRequired}`}
+                {minRequired < 12 ? (
+                  <Translate
+                    text="_guide_pick_count"
+                    args={{ num: NUM_TO_TYPED[minRequired] }}
+                  />
+                ) : (
+                  <Translate
+                    text="_guide_pick_count"
+                    args={{ num: minRequired }}
+                  />
+                )}
               </Badge>
-              <CardTitle>Elective Group {index + 1}</CardTitle>
+              <CardTitle>
+                <Translate
+                  text="_guide_elective_group"
+                  args={{ index: index + 1 }}
+                />
+              </CardTitle>
             </div>
 
             <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
               {isFulfilled ? (
                 <span className="text-emerald-600 dark:text-emerald-400">
-                  {selection.length} selected
+                  {selection.length === 1 ? (
+                    <Translate
+                      text="_guide_selected_count_singular"
+                      args={{ count: selection.length }}
+                    />
+                  ) : (
+                    <Translate
+                      text="_guide_selected_count_plural"
+                      args={{ count: selection.length }}
+                    />
+                  )}
                 </span>
               ) : (
                 <span>
-                  {selection.length} of {minRequired} selected
+                  <Translate
+                    text="_guide_selected_of_count"
+                    args={{ count: selection.length, min: minRequired }}
+                  />
                 </span>
               )}
 
@@ -92,8 +132,13 @@ const ElectiveSelector: FC<ElectiveSelectorProps> = ({
             </div>
           </div>
           <CardDescription>
-            This group has {electiveCourses.courses.length} options. You need to
-            select at least {minRequired}.
+            <Translate
+              text="_guide_options_desc"
+              args={{
+                count: electiveCourses.courses.length,
+                min: minRequired,
+              }}
+            />
           </CardDescription>
         </CardHeader>
 

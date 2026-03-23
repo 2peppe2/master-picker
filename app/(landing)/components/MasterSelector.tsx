@@ -1,17 +1,14 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
+import Translate from "@/common/components/translate/Translate";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
-import { LandingPageProgram } from "../LandingClientPage"; 
+import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import LoadingDots from "./LoadingDots";
-
-const DISPLAY_STATES = {
-  placeholder: "Select master",
-  empty: "No masters found.",
-} satisfies ComboboxDisplay;
 
 interface MasterSelectorProps {
   activeProgram: LandingPageProgram | null;
@@ -25,6 +22,16 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   isLoading,
 }) => {
   const { searchParams, setSearchParams } = useSearchParams();
+  const translate = useCommonTranslate();
+
+  const displayStates = useMemo(
+    () =>
+      ({
+        placeholder: translate("select_master"),
+        empty: translate("no_masters_found"),
+      }) satisfies ComboboxDisplay,
+    [translate],
+  );
   const masterParam = searchParams.get("master");
   const yearParam = searchParams.get("year");
 
@@ -44,10 +51,10 @@ const MasterSelector: FC<MasterSelectorProps> = ({
     if (!selectedYearData) return [];
 
     return selectedYearData.masters.map((m) => ({
-      label: m.name ?? "Unknown master",
+      label: m.name ?? translate("unknown_master"),
       value: m.program,
     }));
-  }, [activeProgram, yearParam]);
+  }, [activeProgram, yearParam, translate]);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -59,7 +66,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
           setLocal(next);
           setSearchParams({ master: next });
         }}
-        displayStates={DISPLAY_STATES}
+        displayStates={displayStates}
       />
       <Button
         variant="link"
@@ -68,9 +75,9 @@ const MasterSelector: FC<MasterSelectorProps> = ({
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoading ? (
-          <LoadingDots text="Loading dashboard" />
+          <LoadingDots text={translate("loading_dashboard")} />
         ) : (
-          "Pick master later"
+          <Translate text="pick_master_later" />
         )}
       </Button>
     </div>

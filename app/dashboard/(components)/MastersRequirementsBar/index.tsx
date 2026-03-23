@@ -5,6 +5,7 @@ import { useProgram } from "../../(store)/preferences/hooks/useProgram";
 import { MasterOverflowBadge } from "./components/MasterOverflowBadge";
 import MasterProgressBadge from "./components/MasterProgressBadge";
 import { useProcessedMasters } from "./hooks/useProcessedMasters";
+import Translate from "@/common/components/translate/Translate";
 import { useBadgeOverflow } from "./hooks/useBadgeOverflow";
 import { useMeasure } from "react-use";
 
@@ -39,7 +40,7 @@ const MastersRequirementsBar = () => {
       </div>
 
       <div className="hidden lg:block text-sm font-medium text-muted-foreground shrink-0">
-        Master&apos;s progress
+        <Translate text="_dashboard_master_progress" />
       </div>
 
       <div ref={barRef} className="flex-1 min-w-0">

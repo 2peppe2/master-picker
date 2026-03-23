@@ -1,6 +1,8 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
+import Translate from "@/common/components/translate/Translate";
 import { FC, useState, useCallback, useEffect } from "react";
 import { Loader2, Share2, Check } from "lucide-react";
 import copyToClipboard from "copy-to-clipboard";
@@ -29,6 +31,7 @@ export const useCopyToClipboard = (resetInterval = 2000) => {
 };
 
 const ShareButton: FC = () => {
+  const translate = useCommonTranslate();
   const { copied, copy } = useCopyToClipboard();
   const shareButtonLoadingUntil = useAtomValue(
     scheduleAtoms.shareButtonLoadingUntilAtom,
@@ -56,7 +59,7 @@ const ShareButton: FC = () => {
     const url = window.location.href;
     const shareData = {
       title: "Master Picker",
-      text: "Check out my Master Picker schedule!",
+      text: translate("_dashboard_share_text"),
       url: url,
     };
 
@@ -104,7 +107,13 @@ const ShareButton: FC = () => {
               : "text-foreground",
         )}
       >
-        {isAddCourseLoading ? "Loading" : copied ? "Copied" : "Share"}
+        {isAddCourseLoading ? (
+          <Translate text="loading" />
+        ) : copied ? (
+          <Translate text="_dashboard_share_copied" />
+        ) : (
+          <Translate text="_dashboard_share" />
+        )}
       </span>
     </Button>
   );

@@ -1,9 +1,10 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import CourseSelectionRow from "./rows/CourseSelectionRow";
+import { RequirementUnion } from "../../../page";
 import MainFieldRow from "./rows/MainFieldRow";
 import { FC, ReactNode, useMemo } from "react";
-import { RequirementUnion } from "../../../page";
 import CreditRow from "./rows/CreditRow";
 import { cn } from "@/lib/utils";
 import {
@@ -26,6 +27,8 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   name,
   fulfilled,
 }) => {
+  const translate = useCommonTranslate();
+
   const categories = useMemo(
     () => ({
       degree: all.filter((r) =>
@@ -55,19 +58,19 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
 
       <div className="space-y-5">
         <Section
-          title="Degree"
+          title={translate("degree")}
           icon={<LucideGraduationCap size={14} />}
           items={categories.degree}
           fulfilled={fulfilled}
         />
         <Section
-          title="Profile"
+          title={translate("profile")}
           icon={<LucideFolderTree size={14} />}
           items={categories.profile}
           fulfilled={fulfilled}
         />
         <Section
-          title="Courses"
+          title={translate("courses")}
           icon={<LucideBookOpen size={14} />}
           items={categories.courses}
           fulfilled={fulfilled}

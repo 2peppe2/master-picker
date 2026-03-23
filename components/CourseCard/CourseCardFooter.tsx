@@ -1,7 +1,7 @@
 "use client";
 
 import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
-import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import MasterBadge from "../MasterBadge";
 import { CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";

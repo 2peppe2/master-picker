@@ -1,5 +1,6 @@
-"use server";
+"use client";
 
+import Translate from "@/common/components/translate/Translate";
 import {
   Card,
   CardContent,
@@ -11,31 +12,31 @@ import {
 const SupportCard = () => (
   <Card>
     <CardHeader>
-      <CardTitle>Support us</CardTitle>
+      <CardTitle>
+        <Translate text="_about_support_title" />
+      </CardTitle>
       <CardDescription>
-        Unfortunately we lose money on this site :(
+        <Translate text="_about_support_description" />
       </CardDescription>
     </CardHeader>
     <CardContent className="grid gap-4 text-sm">
       <div className="space-y-1">
-        <p className="font-medium">Help out</p>
+        <p className="font-medium">
+          <Translate text="_about_support_help_title" />
+        </p>
         <p className="text-muted-foreground">
-          We would love your support to keep the project running and free for
-          everyone. You can help by sharing the project with friends, providing
-          feedback, or contributing code if you are a developer.
+          <Translate text="_about_support_help_text" />
         </p>
       </div>
       <div className="space-y-1">
-        <p className="font-medium">Found a bug?</p>
+        <p className="font-medium">
+          <Translate text="_about_support_bug_title" />
+        </p>
         <p className="text-muted-foreground">
-          Send us an email at{" "}
-          <a
-            href="mailto:hej@masterpicker.se"
-            className="font-medium text-muted-foreground hover:underline"
-          >
-            hej@masterpicker.se
-          </a>{" "}
-          with the details so we can fix it!
+          <Translate
+            text="_about_support_bug_text"
+            args={{ email: "hej@masterpicker.se" }}
+          />
         </p>
       </div>
     </CardContent>

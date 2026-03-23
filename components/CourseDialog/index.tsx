@@ -1,6 +1,7 @@
 "use client";
 
-import DialogFooter from "./DialogFooter";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
+import Translate from "@/common/components/translate/Translate";
 import { FC, useMemo, useState, useEffect } from "react";
 import EvaluateScore from "./tabs/evaluate-score";
 import ExaminationTab from "./tabs/examination";
@@ -8,6 +9,7 @@ import { Course } from "@/app/dashboard/page";
 import { Badge } from "@/components/ui/badge";
 import Statistics from "./tabs/statistics";
 import OverviewTab from "./tabs/overview";
+import DialogFooter from "./DialogFooter";
 import DialogTabs from "./DialogTabs";
 import {
   Dialog,
@@ -36,6 +38,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
   course,
   showAdd = true,
 }) => {
+  const translate = useCommonTranslate();
   const level = course.level.trim() === "" ? "N/A" : course.level;
   const [activeTab, setActiveTab] = useState("overview");
   const [initModule, setInitModule] = useState<string | undefined>();
@@ -52,12 +55,12 @@ const CourseDialog: FC<CourseDialogProps> = ({
   const tabs = useMemo(
     () => [
       {
-        name: "Overview",
+        name: translate("_course_tab_overview"),
         value: "overview",
         content: <OverviewTab course={course} showAdd={showAdd} />,
       },
       {
-        name: "Examination",
+        name: translate("_course_tab_examination"),
         value: "examination",
         content: (
           <ExaminationTab
@@ -70,7 +73,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
         ),
       },
       {
-        name: "Statistics",
+        name: translate("_course_tab_statistics"),
         value: "statistics",
         content: (
           <Statistics
@@ -83,7 +86,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
         ),
       },
       {
-        name: "Evaliuate Score",
+        name: translate("_course_tab_evaluate"),
         value: "evaliuate-score",
         content: <EvaluateScore courseCode={course.code} />,
       },
@@ -110,7 +113,7 @@ const CourseDialog: FC<CourseDialogProps> = ({
               className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
             >
               <CircleStar className="size-3" />
-              Level {level}
+              <Translate text="_course_level" /> {level}
             </Badge>
             <Badge
               variant="outline"
@@ -118,7 +121,11 @@ const CourseDialog: FC<CourseDialogProps> = ({
             >
               <NotebookText className="size-3" />
               {course.Examination.length}{" "}
-              {course.CourseOccasion.length > 1 ? "modules" : "module"}
+              {course.Examination.length > 1 ? (
+                <Translate text="_course_module_plural" />
+              ) : (
+                <Translate text="_course_module_singular" />
+              )}
             </Badge>
             <Badge
               variant="outline"
@@ -126,7 +133,11 @@ const CourseDialog: FC<CourseDialogProps> = ({
             >
               <CalendarClock className="size-3" />
               {course.CourseOccasion.length}{" "}
-              {course.CourseOccasion.length > 1 ? "occasions" : "occasion"}
+              {course.CourseOccasion.length > 1 ? (
+                <Translate text="_course_occasion_plural" />
+              ) : (
+                <Translate text="_course_occasion_singular" />
+              )}
             </Badge>
           </div>
         </DialogHeader>

@@ -1,21 +1,27 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useEffect, useMemo, useState } from "react";
-
-const DISPLAY_STATES = {
-  placeholder: "Select program",
-  empty: "No programs found.",
-} satisfies ComboboxDisplay;
 
 interface ProgramSelectorProps {
   programs: LandingPageProgram[];
 }
 
 const ProgramSelector: FC<ProgramSelectorProps> = ({ programs }) => {
+  const translate = useCommonTranslate();
   const { searchParams, setSearchParams } = useSearchParams();
+
+  const displayStates = useMemo(
+    () =>
+      ({
+        placeholder: translate("select_program"),
+        empty: translate("no_programs_found"),
+      }) satisfies ComboboxDisplay,
+    [translate],
+  );
   const [local, setLocal] = useState(searchParams.get("program"));
 
   useEffect(() => {
@@ -40,7 +46,7 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({ programs }) => {
         setLocal(next);
         setSearchParams({ program: next, year: null, master: null });
       }}
-      displayStates={DISPLAY_STATES}
+      displayStates={displayStates}
     />
   );
 };

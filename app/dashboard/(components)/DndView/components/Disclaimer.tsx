@@ -2,6 +2,7 @@
 
 import { useProgramId } from "@/app/dashboard/(store)/preferences/hooks/useProgramId";
 import { useProgram } from "@/app/dashboard/(store)/preferences/hooks/useProgram";
+import Translate from "@/common/components/translate/Translate";
 import { FC } from "react";
 
 const Disclaimer: FC = () => {
@@ -15,14 +16,14 @@ const Disclaimer: FC = () => {
   return (
     <div className="flex items-center gap-2 mt-4 justify-center">
       <span className="text-xs text-muted-foreground mt-1">
-        MasterPicker is a third-party site. Always verify content via the{" "}
+        <Translate text="_dashboard_disclaimer_text" />{" "}
         <a
           className="hover:underline"
           href={programLink}
           target="_blank"
           rel="noreferrer"
         >
-          LiU program page
+          <Translate text="_dashboard_disclaimer_link" />
         </a>
         .
       </span>

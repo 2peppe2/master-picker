@@ -8,6 +8,7 @@ import { relativeSemesterToYear } from "@/lib/semesterYearTranslations";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { CollapsibleTrigger } from "@/components/ui/collapsible";
+import Translate from "@/common/components/translate/Translate";
 import { ChevronRightIcon, TriangleAlert } from "lucide-react";
 import { Slot } from "@/app/dashboard/(store)/schedule/types";
 import SemesterSettingsModal from "./SemesterSettingsModal";
@@ -89,17 +90,19 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
     );
   }, [periods]);
 
-  const hasWildcardWarning = useMemo(() => {
-    return periods.some((period) =>
-      period.some((course, index) => {
-        if (index < WILDCARD_BLOCK_START || course === null) return false;
-        const hasSpecificBlocks = course.CourseOccasion.some((occ) =>
-          occ.periods.some((p) => p.blocks.length > 0),
-        );
-        return hasSpecificBlocks;
-      }),
-    );
-  }, [periods]);
+  const hasWildcardWarning = useMemo(
+    () =>
+      periods.some((period) =>
+        period.some((course, index) => {
+          if (index < WILDCARD_BLOCK_START || course === null) return false;
+          const hasSpecificBlocks = course.CourseOccasion.some((occ) =>
+            occ.periods.some((p) => p.blocks.length > 0),
+          );
+          return hasSpecificBlocks;
+        }),
+      ),
+    [periods],
+  );
 
   const relativeSemesterYear = useMemo(
     () => relativeSemesterToYear(startingYear, semester),
@@ -144,15 +147,15 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>
-                    Potential collision: A standard course is in a wildcard
-                    slot.
+                    <Translate text="_wildcard_warning_text" />
                   </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           )}
           <span className="font-bold tracking-tight">
-            Semester {targetSemester}, {ht_or_vt} {relativeSemesterYear}
+            <Translate text="_semester_label" args={{ s: targetSemester }} />,{" "}
+            {ht_or_vt} {relativeSemesterYear}
           </span>
 
           <span
@@ -161,7 +164,7 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
               credits > 30 ? "text-destructive" : "text-primary",
             )}
           >
-            Credits {credits} / 30 HP
+            <Translate text="_semester_credits" args={{ credits }} />
           </span>
           <ChevronRightIcon className="size-5 text-muted-foreground transition-transform duration-300 [[data-state=open]_&]:rotate-90 group-hover/header:text-foreground" />
         </CardTitle>

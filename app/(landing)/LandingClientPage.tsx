@@ -2,8 +2,10 @@
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
+import Translate from "@/common/components/translate/Translate";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProgramSelector from "./components/ProgramSelector";
 import { normalizeCourse } from "@/app/courseNormalizer";
@@ -34,6 +36,7 @@ interface LandingClientPageProps {
 const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
   const generateGrid = useGeneratePrefilledSchedule();
   const searchParams = useSearchParams();
+  const translate = useCommonTranslate();
   const router = useRouter();
 
   const [program, setProgram] = useState(searchParams.get("program"));
@@ -91,11 +94,11 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
   }, [master, program, router, year]);
 
   if (!programs) {
-    return <>No programs found.</>;
+    return <Translate text="no_programs_found" />;
   }
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 relative">
       <ProgramSelector programs={programs} />
 
       <div
@@ -129,14 +132,16 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoadingGuide ? (
-          <LoadingDots text="Running to guide" />
+          <LoadingDots text={translate("running_to_guide")} />
         ) : (
-          "Get started"
+          <Translate text="get_started" />
         )}
       </Button>
 
       <Button variant="link" asChild>
-        <Link href="/about">Learn more about the project</Link>
+        <Link href="/about">
+          <Translate text="learn_more_about_the_project" />
+        </Link>
       </Button>
     </div>
   );

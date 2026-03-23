@@ -2,6 +2,7 @@
 
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
+import Translate from "@/common/components/translate/Translate";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { Droppable } from "@/components/Droppable";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -57,7 +58,7 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
         >
           <SearchIcon className="text-zinc-500 group-hover:text-foreground size-8 mb-2 transition-colors" />
           <span className="text-zinc-500 font-medium select-none">
-            Block {data.blockNumber + 1}
+            <Translate text="_block_label" args={{ b: data.blockNumber + 1 }} />
           </span>
         </div>
       )}
