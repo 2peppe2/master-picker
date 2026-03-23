@@ -23,7 +23,7 @@ const ExaminationTable: FC<ExaminationTableProps> = ({
   onNavigateToStatistics,
 }) => {
   const { data: courseData, isLoading } = useCourseData(courseCode);
-  const getLatestStats = useLatestOriginalStats(courseData, occasions);
+  const getLatestStats = useLatestOriginalStats({ courseData, occasions });
 
   return (
     <div className="space-y-3 text-foreground">

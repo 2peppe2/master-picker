@@ -36,7 +36,9 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
   scheduledHours,
   selfStudyHours,
 }) => {
-  const animationKey = useAnimationKey([scheduledHours, selfStudyHours]);
+  const animationKey = useAnimationKey({
+    dependencies: [scheduledHours, selfStudyHours],
+  });
 
   const data = useMemo(
     () => [

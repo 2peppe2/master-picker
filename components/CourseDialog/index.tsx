@@ -3,7 +3,7 @@
 import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { FC, useMemo, useState, useEffect } from "react";
-import EvaluateScore from "./tabs/evaluate-score";
+import EvaluateScore from "./tabs/evaluate";
 import ExaminationTab from "./tabs/examination";
 import { Course } from "@/app/dashboard/page";
 import { Badge } from "@/components/ui/badge";

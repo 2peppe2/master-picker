@@ -7,7 +7,13 @@ import { useState, useEffect } from "react";
  * @param dependencies Optional list of dependencies to trigger a re-animation.
  * @returns The current animation key.
  */
-export const useAnimationKey = (dependencies: any[] = []) => {
+export interface UseAnimationKeyArgs {
+  dependencies?: any[];
+}
+
+export const useAnimationKey = ({
+  dependencies = [],
+}: UseAnimationKeyArgs = {}) => {
   const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
