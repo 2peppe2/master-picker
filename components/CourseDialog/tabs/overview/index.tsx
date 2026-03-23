@@ -87,9 +87,9 @@ const OverviewTab: FC<OverviewTabProps> = ({ course, showAdd }) => {
             <CalendarClock className="size-3.5" />
             {course.CourseOccasion.length}{" "}
             {course.CourseOccasion.length > 1 ? (
-              <Translate text="_course_option_plural" />
+              <Translate text="_course_occasion_plural" />
             ) : (
-              <Translate text="_course_option_singular" />
+              <Translate text="_course_occasion_singular" />
             )}
           </span>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { getExpectedExamMonths } from "../../examination/hooks/useLatestOriginalStats";
+import { useCommonTranslate } from "@/common/hooks/useCommonTranslate";
 import { EXAM_MODULE_CODES, LAB_MODULE_CODES } from "../constants";
 import { ProcessedModule, CourseData } from "../types";
 import { Course } from "@/app/dashboard/page";
@@ -16,6 +17,8 @@ export const useCategorizedModules = ({
   courseData,
   course,
 }: UseCategorizedModulesArgs) => {
+  const translate = useCommonTranslate();
+
   const categorizedModules = useMemo(() => {
     if (!courseData?.modules) return [];
 
@@ -50,7 +53,7 @@ export const useCategorizedModules = ({
               yearGroups[year] = {
                 ...m,
                 date: `${year}-01-01`,
-                displayDate: `${year} Total`,
+                displayDate: `${translate("summary_of")} ${year}`,
                 grades: [],
               };
             }

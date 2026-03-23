@@ -2,11 +2,12 @@
 
 import { useLatestOriginalStats } from "./hooks/useLatestOriginalStats";
 import { CourseExamination, CourseOccasion } from "@/app/dashboard/page";
+import Translate from "@/common/components/translate/Translate";
+import { useCourseData } from "../../hooks/useCourseData";
 import { Scale } from "@/prisma/generated/client/enums";
 import { NotebookText, BarChart2 } from "lucide-react";
-import { useCourseData } from "../../hooks/useCourseData";
-import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 import { Module } from "liu-tentor-package";
 import {
   Table,
@@ -44,22 +45,37 @@ const ExaminationTable: FC<ExaminationTableProps> = ({
       <section>
         <div className="mb-2 flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-            Examinations
+            <Translate text="_course_examinations" />
           </p>
           <span className="text-muted-foreground inline-flex items-center gap-1.5 text-xs">
             <NotebookText className="size-3.5" />
-            {examination.length} modules
+            {examination.length}{" "}
+            {examination.length === 1 ? (
+              <Translate text="_course_module_singular" />
+            ) : (
+              <Translate text="_course_module_plural" />
+            )}
           </span>
         </div>
         <div className="rounded-md border">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Module</TableHead>
-                <TableHead>Credits</TableHead>
-                <TableHead>Scale</TableHead>
-                <TableHead>Last original statistics</TableHead>
+                <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <Translate text="_course_name" />
+                </TableHead>
+                <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <Translate text="_course_module" />
+                </TableHead>
+                <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <Translate text="_course_credits" />
+                </TableHead>
+                <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <Translate text="_course_scale" />
+                </TableHead>
+                <TableHead className="py-2 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                  <Translate text="_course_last_original_statistics" />
+                </TableHead>
                 <TableHead className="w-[50px]"></TableHead>
               </TableRow>
             </TableHeader>

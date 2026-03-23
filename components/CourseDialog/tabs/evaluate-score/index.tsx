@@ -162,7 +162,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
       </div>
 
       <Collapsible open={reportsOpen} onOpenChange={setReportsOpen}>
-        <CollapsibleTrigger className="flex items-center justify-between w-full p-3 rounded-xl border bg-card/50 hover:bg-accent transition-colors">
+        <CollapsibleTrigger className="cursor-pointer flex items-center justify-between w-full p-3 rounded-xl border bg-card/50 hover:bg-accent transition-colors">
           <div className="flex flex-col items-start gap-0.5">
             <h3 className="text-sm font-semibold">
               <Translate text="_course_eval_archived_reports" /> (

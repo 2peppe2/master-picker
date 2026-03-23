@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { Label } from "@/components/ui/label";
 import { FC } from "react";
 
@@ -21,7 +22,7 @@ const DistributionList: FC<DistributionListProps> = ({
 }) => (
   <div className="space-y-3">
     <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
-      Distribution
+      <Translate text="distribution" />
     </Label>
     <div className="rounded-xl border bg-card/50 p-4 space-y-3">
       {chartData.map((item) => {
@@ -41,7 +42,10 @@ const DistributionList: FC<DistributionListProps> = ({
             </div>
             <div className="flex items-center gap-4">
               <span className="text-xs text-muted-foreground">
-                {item.quantity} students
+                {item.quantity}{" "}
+                <Translate
+                  text={item.quantity === 1 ? "_student" : "_students"}
+                />
               </span>
               <span className="text-sm font-mono font-bold w-12 text-right tabular-nums">
                 {percentage}%

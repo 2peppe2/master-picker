@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { useEffect, useState, FC } from "react";
 import { Label, Pie, PieChart } from "recharts";
 import {
@@ -103,7 +104,7 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
                     x={viewBox.cx}
                     y={(viewBox.cy || 0) + 13}
                   >
-                    Total
+                    <Translate text="total" />
                   </tspan>
                 </text>
               );

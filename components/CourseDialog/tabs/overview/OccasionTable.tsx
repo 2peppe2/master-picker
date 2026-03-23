@@ -163,7 +163,7 @@ const OccasionTableRow: FC<OccasionTableRowProps> = ({
             className="cursor-pointer h-8 gap-1.5 rounded-md border-border/80 bg-background px-2.5 text-xs font-semibold shadow-xs hover:bg-accent/60"
           >
             <Plus className="size-3.5" />
-            Add course
+            <Translate text="_course_add_course" />
           </Button>
         </TableCell>
       )}

@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { EXAM_MODULE_CODES } from "./constants";
 import { FC } from "react";
 
@@ -21,7 +22,7 @@ const ExamBadge: FC<ExamBadgeProps> = ({ moduleCode, isOriginal }) => {
           : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
       }`}
     >
-      {isOriginal ? "Original" : "Retake"}
+      {isOriginal ? <Translate text="original" /> : <Translate text="retake" />}
     </span>
   );
 };

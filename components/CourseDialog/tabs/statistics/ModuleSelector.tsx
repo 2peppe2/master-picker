@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { FC, useState, useMemo } from "react";
 import { Label } from "@/components/ui/label";
@@ -35,7 +36,7 @@ const ModuleSelector: FC<ModuleSelectorProps> = ({
   return (
     <div className="space-y-2">
       <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
-        Examination History
+        <Translate text="examination_history" />
       </Label>
       <Select
         value={selectedModule}
@@ -48,9 +49,11 @@ const ModuleSelector: FC<ModuleSelectorProps> = ({
         <SelectTrigger className="w-full overflow-hidden cursor-pointer">
           <div className="flex items-center justify-between w-full pr-4">
             <span className="truncate">
-              {selectedModule === "all"
-                ? "Summary (All Years)"
-                : `${selectedItem?.moduleCode}: ${selectedItem?.displayDate}`}
+              {selectedModule === "all" ? (
+                <Translate text="all_examinations" />
+              ) : (
+                `${selectedItem?.moduleCode}: ${selectedItem?.displayDate}`
+              )}
             </span>
             {selectedItem && (
               <ExamBadge
@@ -62,7 +65,7 @@ const ModuleSelector: FC<ModuleSelectorProps> = ({
         </SelectTrigger>
         <SelectContent className="max-h-[350px]" data-no-drag="true">
           <SelectItem value="all" className="font-bold cursor-pointer">
-            Summary (All Years)
+            <Translate text="all_examinations" />
           </SelectItem>
           {categorizedModules.map(([code, modules]) => (
             <CategoryGroup
@@ -150,7 +153,8 @@ const CategoryGroup: FC<CategoryGroupProps> = ({
               }}
             >
               <span className="w-full text-center">
-                Show more ({sortedModules.length - visibleCount})
+                <Translate text="show_more" /> (
+                {sortedModules.length - visibleCount})
               </span>
             </SelectItem>
           )}
