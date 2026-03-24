@@ -8,14 +8,16 @@ interface TranslateProps {
   args?: Record<string, unknown>;
   isBold?: boolean;
   namespace?: string;
-  components?: Record<string, React.ReactElement>;
+  components?: Record<string, React.ReactElement> | React.ReactElement[];
 }
 
 const Translate: FC<TranslateProps> = memo(
   ({ text, args, isBold, namespace = "common", components }) => {
     const { t: translate } = useTranslation(namespace);
 
-    const componentsToUse = isBold ? { b: <strong /> } : components;
+    const componentsToUse = isBold
+      ? { b: <strong />, ...components }
+      : components;
 
     if (componentsToUse) {
       return (
