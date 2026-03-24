@@ -1,5 +1,6 @@
 "use client";
 
+import LanguageDetector from "i18next-browser-languagedetector";
 import enCourses from "@/public/locales/en/courses.json";
 import svCourses from "@/public/locales/sv/courses.json";
 import enCommon from "@/public/locales/en/common.json";
@@ -18,13 +19,20 @@ const resources = {
   },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "en",
-  fallbackLng: "en",
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false,
+    },
+    detection: {
+      order: ["querystring", "localStorage", "cookie", "navigator"],
+      lookupQuerystring: "lang",
+      caches: ["localStorage", "cookie"],
+    },
+  });
 
 export default i18n;

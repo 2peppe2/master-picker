@@ -8,19 +8,22 @@ interface TranslateProps {
   args?: Record<string, unknown>;
   isBold?: boolean;
   namespace?: string;
+  components?: Record<string, React.ReactElement>;
 }
 
 const Translate: FC<TranslateProps> = memo(
-  ({ text, args, isBold, namespace = "common" }) => {
+  ({ text, args, isBold, namespace = "common", components }) => {
     const { t: translate } = useTranslation(namespace);
 
-    if (isBold) {
+    const componentsToUse = isBold ? { b: <strong /> } : components;
+
+    if (componentsToUse) {
       return (
         <Trans
           i18nKey={text}
           values={args}
-          components={{ b: <strong /> }}
           t={translate}
+          components={componentsToUse}
         />
       );
     }
@@ -28,8 +31,6 @@ const Translate: FC<TranslateProps> = memo(
     return <>{translate(text, args)}</>;
   },
 );
-
-
 
 Translate.displayName = "Translate";
 

@@ -36,6 +36,14 @@ const SupportCard = () => (
           <Translate
             text="_about_support_bug_text"
             args={{ email: "hej@masterpicker.se" }}
+            components={{
+              email: (
+                <a
+                  href="mailto:hej@masterpicker.se"
+                  className="text-primary hover:underline font-medium"
+                />
+              ),
+            }}
           />
         </p>
       </div>

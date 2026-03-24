@@ -2,6 +2,7 @@
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { useLanguage } from "@/common/components/translate/hooks/useLanguage";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
@@ -37,6 +38,7 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
   const generateGrid = useGeneratePrefilledSchedule();
   const searchParams = useSearchParams();
   const translate = useCommonTranslate();
+  const language = useLanguage();
   const router = useRouter();
 
   const [program, setProgram] = useState(searchParams.get("program"));
@@ -76,7 +78,11 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
 
       const compressed = serializeSchedule(coursesMap, newGrid);
 
-      const params = new URLSearchParams({ program, year });
+      const params = new URLSearchParams({
+        program,
+        year,
+        lang: language,
+      });
       if (compressed) {
         params.set("schedule", compressed);
       }
@@ -84,14 +90,28 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
       router.push(`/dashboard?${params.toString()}`);
     } catch (error) {
       console.error("Prefill failed:", error);
-      router.push(`/dashboard?program=${program}&year=${year}`);
+      router.push(
+        `/dashboard?program=${program}&year=${year}&lang=${language}`,
+      );
     }
-  }, [program, year, router, generateGrid]);
+  }, [program, year, router, generateGrid, language]);
 
   const handleOnGetStarted = useCallback(() => {
+    if (!program || !year || !master) {
+      return;
+    }
+
     setIsLoadingGuide(true);
-    router.push(`/guide?program=${program}&year=${year}&master=${master}`);
-  }, [master, program, router, year]);
+
+    const params = new URLSearchParams({
+      program,
+      year,
+      master,
+      lang: language,
+    });
+
+    router.push(`/guide?${params.toString()}`);
+  }, [master, program, router, year, language]);
 
   if (!programs) {
     return <Translate text="no_programs_found" />;

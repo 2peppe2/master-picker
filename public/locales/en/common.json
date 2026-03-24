@@ -73,7 +73,7 @@
   "_about_honorable_lukas": "For help with LiU statistics and general support at the end of the project.",
   "_about_honorable_tristan": "For the help with promoting the project and providing feedback.",
   "_about_repository": "Repository",
-  "_about_support_bug_text": "Send us an email at {{email}} with the details so we can fix it!",
+  "_about_support_bug_text": "Send us an email at <email>{{email}}</email> with the details so we can fix it!",
   "_about_support_bug_title": "Found a bug?",
   "_about_support_description": "Unfortunately we lose money on this site :(",
   "_about_support_help_text": "We would love your support to keep the project running and free for everyone. You can help by sharing the project with friends, providing feedback, or contributing code if you are a developer.",

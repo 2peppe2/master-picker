@@ -73,7 +73,7 @@
   "_about_honorable_lukas": "För hjälp med LiU-statistik och allmänt stöd i slutet av projektet.",
   "_about_honorable_tristan": "För hjälpen med att marknadsföra projektet och för din återkoppling.",
   "_about_repository": "Kodakriv",
-  "_about_support_bug_text": "Skicka ett e-postmeddelande till {{email}} med detaljerna så att vi kan fixa det!",
+  "_about_support_bug_text": "Skicka ett e-postmeddelande till <email>{{email}}</email> med detaljerna så att vi kan fixa det!",
   "_about_support_bug_title": "Hittat en bugg?",
   "_about_support_description": "Tyvärr förlorar vi pengar på den här sidan :(",
   "_about_support_help_text": "Vi skulle älska ditt stöd för att hålla projektet igång och gratis för alla. Du kan hjälpa till genom att dela projektet med vänner, ge återkoppling eller bidra med kod om du är en utvecklare.",
