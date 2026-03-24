@@ -2,9 +2,9 @@
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { FC, useCallback, useEffect, useMemo, useState, Suspense } from "react";
 import { useLanguage } from "@/common/components/translate/hooks/useLanguage";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
 import Translate from "@/common/components/translate/Translate";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -15,6 +15,7 @@ import YearSelector from "./components/YearSelector";
 import LoadingDots from "./components/LoadingDots";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import LandingLoading from "./loading";
 import Link from "next/link";
 
 export interface LandingPageProgram {
@@ -34,7 +35,7 @@ interface LandingClientPageProps {
   programs: LandingPageProgram[];
 }
 
-const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
+const LandingClientContent: FC<LandingClientPageProps> = ({ programs }) => {
   const generateGrid = useGeneratePrefilledSchedule();
   const searchParams = useSearchParams();
   const translate = useCommonTranslate();
@@ -166,5 +167,11 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
     </div>
   );
 };
+
+const LandingClientPage: FC<LandingClientPageProps> = (props) => (
+  <Suspense fallback={<LandingLoading />}>
+    <LandingClientContent {...props} />
+  </Suspense>
+);
 
 export default LandingClientPage;

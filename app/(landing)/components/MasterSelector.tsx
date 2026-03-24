@@ -56,7 +56,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
       label: m.name ? courseTranslate(m.name) : translate("unknown_master"),
       value: m.program,
     }));
-  }, [activeProgram, yearParam, translate]);
+  }, [activeProgram, yearParam, translate, courseTranslate]);
 
   return (
     <div className="flex flex-col items-center gap-2">

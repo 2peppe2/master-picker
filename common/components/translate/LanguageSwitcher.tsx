@@ -1,13 +1,13 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { FC, useCallback, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { Languages } from "lucide-react";
-import { FC, useCallback } from "react";
 import "@/lib/i18n";
 
-const LanguageSwitcher: FC = () => {
+const LanguageSwitcherInner: FC = () => {
   const { i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
@@ -36,5 +36,23 @@ const LanguageSwitcher: FC = () => {
     </Button>
   );
 };
+
+const LanguageSwitcher: FC = () => (
+  <Suspense
+    fallback={
+      <Button
+        variant="outline"
+        size="sm"
+        disabled
+        className="gap-2 h-9 px-4 text-sm font-medium opacity-50"
+      >
+        <Languages className="h-4 w-4" />
+        ...
+      </Button>
+    }
+  >
+    <LanguageSwitcherInner />
+  </Suspense>
+);
 
 export default LanguageSwitcher;

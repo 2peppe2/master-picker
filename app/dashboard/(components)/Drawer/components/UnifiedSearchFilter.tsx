@@ -78,7 +78,7 @@ const UnifiedSearchFilter: FC = () => {
         value: `mainField:${field}`,
       })),
     };
-  }, [allCourses, translate]);
+  }, [allCourses, translate, coursesTranslate]);
 
   const semesterOptions = useMemo(() => {
     const start = showBachelorYears ? 1 : 7;

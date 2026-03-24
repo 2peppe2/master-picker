@@ -1,18 +1,18 @@
 "use client";
 
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import CompulsorySummaryCard from "./(components)/CompulsorySummaryCard";
 import ElectiveSummaryCard from "./(components)/ElectiveSummaryCard";
 import CompulsorySelector from "./(components)/CompulsorySelector";
 import ElectiveSelector from "./(components)/ElectiveSelector";
-import type { Course, Master } from "../dashboard/page";
 import MasterProvider from "../(store)/MasterAtomContext";
+import type { Course, Master } from "../dashboard/page";
+import { FC, useMemo, useState, Suspense } from "react";
 import ProgressCard from "./(components)/ProgressCard";
 import GuideHeader from "./(components)/GuideHeader";
 import { Provider as JotaiProvider } from "jotai";
 import type { CourseRequirements } from "./page";
-import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
-import { FC, useMemo, useState } from "react";
 import { useHydrateAtoms } from "jotai/utils";
 import { mastersAtom } from "./(store)/store";
 
@@ -107,7 +107,9 @@ const GuideClientPage: FC<GuideClientPageProps> = (props) => (
   <QueryClientProvider client={client}>
     <JotaiProvider>
       <MasterProvider atom={mastersAtom}>
-        <GuideContent {...props} />
+        <Suspense fallback={null}>
+          <GuideContent {...props} />
+        </Suspense>
       </MasterProvider>
     </JotaiProvider>
   </QueryClientProvider>
