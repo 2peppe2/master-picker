@@ -5,7 +5,7 @@ import SettingsModal from "./SettingsModal";
 import Disclaimer from "./Disclaimer";
 import { FC, useState } from "react";
 
-const Header: FC = ({}) => {
+const Header: FC = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   return (
