@@ -1,6 +1,7 @@
 "use client";
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import Translate from "@/common/components/translate/Translate";
 import { Button } from "@/components/ui/button";
 import { Ellipsis, Plus } from "lucide-react";
 import {
@@ -39,7 +40,7 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
       <PopoverContent align="end" className="p-0 overflow-hidden">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
           <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            Semester settings
+            <Translate text="_semester_settings" />
           </p>
         </div>
 
@@ -56,10 +57,10 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
             </div>
             <div className="flex flex-col items-start leading-tight">
               <span className="font-medium text-foreground">
-                Add extra block
+                <Translate text="_semester_settings_add_block" />
               </span>
               <span className="text-[11px] text-muted-foreground w-fit">
-                Extend available slots for this semester
+                <Translate text="_semester_settings_extend_blocks" />
               </span>
             </div>
           </button>

@@ -4,8 +4,8 @@ import { useCourseContlictResolver } from "../ConflictResolverModal/hooks/useCou
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictManager";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
-import { ConflictResolverModal } from "@/components/ConflictResolverModal";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import ConflictResolverModal from "@/components/ConflictResolverModal";
 import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "../ui/button";

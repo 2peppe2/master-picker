@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { Droppable } from "@/components/Droppable";
 import { Plus } from "lucide-react";
 import { BlockProps } from ".";
@@ -13,7 +14,9 @@ const GhostBlock: FC<BlockProps> = ({ data }) => (
     <div className="flex h-40 w-40 items-center justify-center">
       <div className="flex flex-col items-center gap-2">
         <Plus className="h-6 w-6" />
-        <span className="text-sm font-medium">New Block</span>
+        <span className="text-sm font-medium">
+          <Translate text="new_block" />
+        </span>
       </div>
     </div>
   </Droppable>

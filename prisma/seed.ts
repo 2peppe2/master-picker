@@ -1,5 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
 import { prisma } from "../lib/prisma";
 import {
   CoursesType,
@@ -7,6 +5,8 @@ import {
   Scale,
   Semester,
 } from "./generated/client/enums";
+import path from "node:path";
+import fs from "node:fs";
 import {
   Course,
   CourseDetail,
@@ -25,6 +25,18 @@ function parseSemester(s: string): Semester {
   if (s === "HT") return Semester.HT;
   if (s === "VT") return Semester.VT;
   throw new Error(`Invalid semester: ${s}`);
+}
+
+/**
+ * Converts a raw string to its i18n slug key (matches the key generation
+ * logic used when building public/locales/{lang}/courses.json).
+ * e.g. "Written examination" → "written_examination"
+ */
+function toKey(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
 }
 
 /**
@@ -93,10 +105,11 @@ async function seedData() {
 }
 
 async function seedProgramData(p: Program) {
+  const nameKey = `program_${p.id}`;
   await prisma.program.upsert({
     where: { program: p.id },
-    update: { name: p.name, shortname: p.shortname },
-    create: { program: p.id, name: p.name, shortname: p.shortname },
+    update: { name: nameKey, shortname: p.shortname },
+    create: { program: p.id, name: nameKey, shortname: p.shortname },
   });
 }
 
@@ -244,7 +257,8 @@ async function seedExamination(
         programCourseID: id,
         credits: Number(exam.credits),
         module: exam.module,
-        name: exam.name,
+        // Store the i18n key so components can call t(exam.name) via useCourseTranslate.
+        name: `exam_${toKey(exam.name)}`,
         scale:
           exam.scale === "U_THREE_FOUR_FIVE"
             ? Scale.U_THREE_FOUR_FIVE
@@ -256,14 +270,18 @@ async function seedExamination(
 
 async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
   const department = detailedInfo?.department ?? "";
-  const mainField = Array.isArray(detailedInfo?.main_field)
-    ? detailedInfo.main_field
+
+  // Store i18n keys instead of raw strings so components can call t(course.name)
+  // and t(mainField) directly via useCourseTranslate.
+  const nameKey = `${c.code.toLowerCase()}_name`;
+  const mainFieldKeys = Array.isArray(detailedInfo?.main_field)
+    ? detailedInfo.main_field.map((f) => `field_${toKey(f)}`)
     : [];
 
   await prisma.course.upsert({
     where: { code_programCourseID: { code: c.code, programCourseID: id } },
     update: {
-      name: c.name,
+      name: nameKey,
       credits: Number(c.credits),
       level: c.level ?? "",
       link: c.link ?? "",
@@ -273,11 +291,11 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
       department: department,
-      mainField: mainField,
+      mainField: mainFieldKeys,
     },
     create: {
       code: c.code,
-      name: c.name,
+      name: nameKey,
       credits: Number(c.credits),
       level: c.level ?? "",
       link: c.link ?? "",
@@ -287,7 +305,7 @@ async function seedCourse(c: Course, id: number, detailedInfo: CourseDetail) {
       selfStudyHours: detailedInfo?.education_components?.[1] ?? 0,
       ecv: c.ecv ?? "",
       department: department,
-      mainField: mainField,
+      mainField: mainFieldKeys,
       programCourseID: id,
     },
   });
@@ -387,7 +405,7 @@ async function seedMasterRequirementsData(program: string, id: number) {
             type: "CREDITS_MAIN_FIELD_TOTAL",
             requirementId: requirementRow.id,
             credits: Number(req.credits),
-            fields: req.fields as string[],
+            fields: (req.fields as string[]).map((f) => `field_${toKey(f)}`),
           },
         });
       }
@@ -407,18 +425,19 @@ async function seedMastersData(program: string, id: number) {
     fs.readFileSync(mastersFilePath, "utf8"),
   ) as MasterName[];
   for (const info of mastersInfo) {
+    const nameKey = `master_${info.id}`;
     await prisma.master.upsert({
       where: {
         master_masterProgram: { master: info.id, masterProgram: program },
       },
       update: {
-        name: info.name,
+        name: nameKey,
         icon: info.icon,
         style: info.style,
       },
       create: {
         master: info.id,
-        name: info.name,
+        name: nameKey,
         icon: info.icon,
         style: info.style,
         masterProgram: program,

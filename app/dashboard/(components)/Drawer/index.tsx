@@ -54,10 +54,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
       <div className="overflow-y-auto flex-1 p-4 pt-1">
         {availableCourses.length === 0 ? (
-          <EmptyCourseState
-            title="No courses found"
-            description="Try adjusting your filters or search terms."
-          />
+          <EmptyCourseState />
         ) : (
           <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">
             {availableCourses.map((course) => {

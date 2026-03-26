@@ -1,6 +1,8 @@
 "use client";
 
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import Translate from "@/common/components/translate/Translate";
 import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FC, useCallback } from "react";
@@ -20,6 +22,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
   const [showBachelorYears, setShowBachelorYears] = useAtom(
     preferenceAtoms.showBachelorYearsAtom,
   );
+  const translate = useCommonTranslate();
 
   const handleToggleBachelorYears = useCallback(
     (state: boolean) => setShowBachelorYears(state),
@@ -34,7 +37,9 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
           className="cursor-pointer ml-auto px-4 h-10 gap-2 hover:bg-accent hover:text-accent-foreground"
         >
           <Settings className="w-4 h-4" />
-          <span className="text-sm font-medium">Settings</span>
+          <span className="text-sm font-medium">
+            <Translate text="settings" />
+          </span>
           <ChevronDown
             className={`w-3 h-3 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           />
@@ -44,7 +49,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
       <PopoverContent align="end" className="p-0 overflow-hidden w-64">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
           <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            Layout settings
+            <Translate text="layout_settings" />
           </p>
         </div>
 
@@ -52,8 +57,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
           <ToggleSettingsOption
             value={showBachelorYears}
             onChange={handleToggleBachelorYears}
-            label="Show bachelor years"
-            description="Semesters 1 - 6"
+            label={translate("show_bachelor_years")}
+            description={translate("semesters_1_to_6")}
           />
         </div>
       </PopoverContent>

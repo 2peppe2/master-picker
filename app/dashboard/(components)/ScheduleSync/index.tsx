@@ -4,13 +4,13 @@ import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import { coursesAtom } from "../../(store)/store";
 import { useAtomValue, useSetAtom } from "jotai";
-import { FC, useEffect } from "react";
+import { FC, useEffect, Suspense } from "react";
 import {
   readScheduleFromUrlAtom,
   writeScheduleToUrlAtom,
 } from "../../(store)/schedule/utils";
 
-const ScheduleSync: FC = () => {
+const ScheduleSyncInner: FC = () => {
   const { searchParams, setSearchParam } = useSearchParams();
 
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
@@ -31,5 +31,11 @@ const ScheduleSync: FC = () => {
 
   return null;
 };
+
+const ScheduleSync: FC = () => (
+  <Suspense fallback={null}>
+    <ScheduleSyncInner />
+  </Suspense>
+);
 
 export default ScheduleSync;

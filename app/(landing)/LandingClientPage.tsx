@@ -1,9 +1,12 @@
 "use client";
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { FC, useCallback, useEffect, useMemo, useState, Suspense } from "react";
+import { useLanguage } from "@/common/components/translate/hooks/useLanguage";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { getBachelorCourses } from "../actions/getBachelorCourses";
+import Translate from "@/common/components/translate/Translate";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProgramSelector from "./components/ProgramSelector";
 import { normalizeCourse } from "@/app/courseNormalizer";
@@ -12,6 +15,7 @@ import YearSelector from "./components/YearSelector";
 import LoadingDots from "./components/LoadingDots";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import LandingLoading from "./loading";
 import Link from "next/link";
 
 export interface LandingPageProgram {
@@ -31,9 +35,11 @@ interface LandingClientPageProps {
   programs: LandingPageProgram[];
 }
 
-const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
+const LandingClientContent: FC<LandingClientPageProps> = ({ programs }) => {
   const generateGrid = useGeneratePrefilledSchedule();
   const searchParams = useSearchParams();
+  const translate = useCommonTranslate();
+  const language = useLanguage();
   const router = useRouter();
 
   const [program, setProgram] = useState(searchParams.get("program"));
@@ -73,7 +79,11 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
 
       const compressed = serializeSchedule(coursesMap, newGrid);
 
-      const params = new URLSearchParams({ program, year });
+      const params = new URLSearchParams({
+        program,
+        year,
+        lang: language,
+      });
       if (compressed) {
         params.set("schedule", compressed);
       }
@@ -81,21 +91,35 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
       router.push(`/dashboard?${params.toString()}`);
     } catch (error) {
       console.error("Prefill failed:", error);
-      router.push(`/dashboard?program=${program}&year=${year}`);
+      router.push(
+        `/dashboard?program=${program}&year=${year}&lang=${language}`,
+      );
     }
-  }, [program, year, router, generateGrid]);
+  }, [program, year, router, generateGrid, language]);
 
   const handleOnGetStarted = useCallback(() => {
+    if (!program || !year || !master) {
+      return;
+    }
+
     setIsLoadingGuide(true);
-    router.push(`/guide?program=${program}&year=${year}&master=${master}`);
-  }, [master, program, router, year]);
+
+    const params = new URLSearchParams({
+      program,
+      year,
+      master,
+      lang: language,
+    });
+
+    router.push(`/guide?${params.toString()}`);
+  }, [master, program, router, year, language]);
 
   if (!programs) {
-    return <>No programs found.</>;
+    return <Translate text="no_programs_found" />;
   }
 
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 relative">
       <ProgramSelector programs={programs} />
 
       <div
@@ -129,17 +153,25 @@ const LandingClientPage: FC<LandingClientPageProps> = ({ programs }) => {
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoadingGuide ? (
-          <LoadingDots text="Running to guide" />
+          <LoadingDots text={translate("running_to_guide")} />
         ) : (
-          "Get started"
+          <Translate text="get_started" />
         )}
       </Button>
 
       <Button variant="link" asChild>
-        <Link href="/about">Learn more about the project</Link>
+        <Link href="/about">
+          <Translate text="learn_more_about_the_project" />
+        </Link>
       </Button>
     </div>
   );
 };
+
+const LandingClientPage: FC<LandingClientPageProps> = (props) => (
+  <Suspense fallback={<LandingLoading />}>
+    <LandingClientContent {...props} />
+  </Suspense>
+);
 
 export default LandingClientPage;

@@ -1,7 +1,8 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import { MasterIcon } from "./MasterIcon";
 import { FC, ReactNode } from "react";
 import { Badge } from "./ui/badge";
@@ -28,17 +29,21 @@ const MasterBadge: FC<MasterBadgeProps> = ({
   const masters = useMasterAtom();
   const master = masters[name];
   const masterName = master.name ?? "";
-  text = title ? masterName : text;
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge variant="outline" className={`mr-2 ${master.style} ${style}`}>
-          <MasterIcon iconName={master.icon} /> {text}
+          <MasterIcon iconName={master.icon} />{" "}
+          {title ? <CourseTranslate text={masterName} /> : text}
         </Badge>
       </TooltipTrigger>
-      <TooltipContent side="bottom">
-        {tooltip?.({ masterName }) ?? masterName}
+      <TooltipContent side="bottom" sideOffset={5}>
+        {tooltip ? (
+          tooltip({ masterName })
+        ) : (
+          <CourseTranslate text={masterName} />
+        )}
       </TooltipContent>
     </Tooltip>
   );

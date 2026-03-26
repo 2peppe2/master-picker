@@ -1,5 +1,8 @@
-import { FC } from "react";
+"use client";
+
+import Translate from "@/common/components/translate/Translate";
 import { CourseRequirements } from "../page";
+import { FC } from "react";
 
 interface CompulsoryCardSummaryProps {
   compulsoryCourses: CourseRequirements;
@@ -16,13 +19,13 @@ const CompulsorySummaryCard: FC<CompulsoryCardSummaryProps> = ({
   return (
     <div className="rounded-2xl border p-4 bg-card">
       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        Compulsory courses
+        <Translate text="_guide_compulsory_courses" />
       </p>
       <p className="mt-2 text-2xl font-semibold">
         {totalCompulsoryCourseCount}
       </p>
       <p className="text-xs text-muted-foreground">
-        Auto-added to your schedule
+        <Translate text="_guide_auto_added_short" />
       </p>
     </div>
   );

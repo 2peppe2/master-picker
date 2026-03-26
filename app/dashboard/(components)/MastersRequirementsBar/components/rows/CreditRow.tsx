@@ -1,7 +1,8 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { CreditsRequirement } from "@/app/dashboard/page";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 
 interface CreditRowProps {
   requirement: CreditsRequirement;
@@ -9,20 +10,24 @@ interface CreditRowProps {
 }
 
 const CreditRow: FC<CreditRowProps> = ({ requirement, current = 0 }) => {
-  const labels: Record<string, string> = {
-    CREDITS_TOTAL: "total credits across all years",
-    CREDITS_MASTER_TOTAL: "total credits for the Master's degree",
-    CREDITS_PROFILE_TOTAL: "total credits within the profile",
-    CREDITS_ADVANCED_PROFILE: "Advanced (A) level credits in profile",
-    CREDITS_ADVANCED_MASTER: "Advanced (A) level credits total",
-  };
+  const typeToLabel: Record<string, string> = useMemo(
+    () => ({
+      CREDITS_TOTAL: "_dashboard_credits_total",
+      CREDITS_MASTER_TOTAL: "_dashboard_credits_master_total",
+      CREDITS_PROFILE_TOTAL: "_dashboard_credits_profile_total",
+      CREDITS_ADVANCED_PROFILE: "_dashboard_credits_advanced_profile",
+      CREDITS_ADVANCED_MASTER: "_dashboard_credits_advanced_master",
+    }),
+    [],
+  );
 
   return (
     <span className="leading-snug">
-      Have at least <b className="text-foreground font-bold">{current}</b>
+      <Translate text="have_at_least" />{" "}
+      <b className="text-foreground font-bold">{current}</b>
       <span className="text-muted-foreground/60 mx-1">/</span>
       <b className="text-foreground">{requirement.credits} HP</b>{" "}
-      {labels[requirement.type] || "credits"}.
+      <Translate text={typeToLabel[requirement.type]} />.
     </span>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { EXAM_MODULE_CODES, LAB_MODULE_CODES } from "../constants";
+import { LAB_MODULE_CODES } from "../constants";
 import { Course } from "@/app/dashboard/page";
 import { useState, useEffect } from "react";
 import { ProcessedModule } from "../types";

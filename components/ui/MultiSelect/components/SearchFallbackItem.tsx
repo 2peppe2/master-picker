@@ -1,6 +1,8 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { CommandGroup, CommandItem } from "@/components/ui/command";
+import Translate from "@/common/components/translate/Translate";
 import { Search } from "lucide-react";
 import { FC } from "react";
 
@@ -15,12 +17,14 @@ const SearchFallbackItem: FC<SearchFallbackItemProps> = ({
   exactMatch,
   onSelect,
 }) => {
+  const translate = useCommonTranslate();
+
   if (!searchValue.trim() || exactMatch) {
     return null;
   }
 
   return (
-    <CommandGroup heading="Search">
+    <CommandGroup heading={translate("search")}>
       <CommandItem
         value={`search:${searchValue}`}
         onSelect={onSelect}
@@ -34,7 +38,8 @@ const SearchFallbackItem: FC<SearchFallbackItemProps> = ({
           <Search className="h-4 w-4 opacity-50" />
         </div>
         <div className="truncate flex items-center gap-2 flex-1 min-w-0 text-sm">
-          Search for <span className="font-semibold">{searchValue}</span>
+          <Translate text="search_for" />{" "}
+          <span className="font-semibold">{searchValue}</span>
         </div>
       </CommandItem>
     </CommandGroup>

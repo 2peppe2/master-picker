@@ -3,6 +3,7 @@
 import { useScheduleGetters } from "@/app/dashboard/(store)/schedule/hooks/useScheduleGetters";
 import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import Translate from "@/common/components/translate/Translate";
 import { Separator } from "@/components/ui/separator";
 import {
   scheduleAtoms,
@@ -61,7 +62,9 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
 
   return (
     <div className="flex flex-col">
-      <p className="text-muted-foreground text-sm">{`Period ${periodNumber + 1}`}</p>
+      <p className="text-muted-foreground text-sm">
+        <Translate text="_period_label" args={{ p: periodNumber + 1 }} />
+      </p>
       <div className="relative flex w-full max-w-full gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-zinc-300 justify-between">
         {range(0, blocks.length).map((index) => {
           const isWildcardStart = index === WILDCARD_BLOCK_START;

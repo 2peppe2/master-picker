@@ -2,12 +2,13 @@
 
 import { useDefaultModuleSelection } from "./hooks/useDefaultModuleSelection";
 import { useCategorizedModules } from "./hooks/useCategorizedModules";
+import Translate from "@/common/components/translate/Translate";
 import { useCourseData } from "../../hooks/useCourseData";
-import ChartDistribution from "./ChartDistribution";
+import ChartDistribution from "./components/ChartDistribution";
 import { useChartData } from "./hooks/useChartData";
-import DistributionList from "./DistributionList";
+import DistributionList from "./components/DistributionList";
 import { Loader2, BarChart2 } from "lucide-react";
-import ModuleSelector from "./ModuleSelector";
+import ModuleSelector from "./components/ModuleSelector";
 import { Course } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";
 
@@ -60,7 +61,9 @@ const Statistics: FC<StatisticsProps> = ({
     return (
       <div className="flex flex-col items-center justify-center min-h-[300px] h-full gap-4 text-muted-foreground w-full">
         <Loader2 className="h-8 w-8 animate-spin" />
-        <p className="text-sm font-medium">Loading statistics...</p>
+        <p className="text-sm font-medium">
+          <Translate text="_course_loading_stats" />
+        </p>
       </div>
     );
   }
@@ -68,7 +71,7 @@ const Statistics: FC<StatisticsProps> = ({
   if (error) {
     return (
       <div className="py-10 text-center text-destructive w-full">
-        Error loading data.
+        <Translate text="_course_stat_error" />
       </div>
     );
   }
@@ -80,7 +83,7 @@ const Statistics: FC<StatisticsProps> = ({
           <BarChart2 className="h-6 w-6 opacity-50" />
         </div>
         <p className="text-sm font-medium">
-          No statistical data available for this course.
+          <Translate text="_course_stat_none" />
         </p>
       </div>
     );

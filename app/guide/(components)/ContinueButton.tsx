@@ -2,6 +2,7 @@
 
 import { useGeneratePrefilledSchedule } from "@/app/dashboard/(store)/schedule/hooks/useGeneratePrefilledSchedule";
 import { serializeSchedule } from "@/app/dashboard/(store)/schedule/utils";
+import Translate from "@/common/components/translate/Translate";
 import { useRouter, useSearchParams } from "next/navigation";
 import { normalizeCourse } from "@/app/courseNormalizer";
 import { ArrowRight, Loader2 } from "lucide-react";
@@ -81,11 +82,11 @@ const ContinueButton: FC<ContinueButtonProps> = ({
       {isLoading ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Processing...
+          <Translate text="_guide_processing" />
         </>
       ) : (
         <>
-          Continue
+          <Translate text="_guide_continue" />
           <ArrowRight className="ml-2 h-4 w-4" />
         </>
       )}

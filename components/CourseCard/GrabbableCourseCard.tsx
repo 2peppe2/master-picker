@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseCardFooter from "./CourseCardFooter";
 import CourseAddButton from "./CourseAddButton";
 import CourseDialog from "../CourseDialog";
@@ -45,9 +46,9 @@ const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
           >
             <span
               onClick={() => setOpenDialog(true)}
-              className="cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
+              className="wrap-anywhere hyphens-manual cursor-pointer text-sm font-medium text-muted-foreground hover:underline underline-offset-2 inline"
             >
-              {course.name}
+              <CourseTranslate text={course.name} />
             </span>
           </div>
         </CardDescription>

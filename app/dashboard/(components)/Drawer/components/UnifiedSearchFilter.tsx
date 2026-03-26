@@ -1,9 +1,13 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
-import { useMasterAtom } from "@/app/store/hooks/useMasterAtom";
+import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
+import Translate from "@/common/components/translate/Translate";
 import { coursesAtom } from "@/app/dashboard/(store)/store";
 import MultiSelect from "@/components/ui/MultiSelect";
 import MasterBadge from "@/components/MasterBadge";
@@ -18,20 +22,6 @@ import {
   Shapes,
 } from "lucide-react";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  master: "Profiles",
-  semester: "Semesters",
-  block: "Blocks",
-  period: "Periods",
-  level: "Levels",
-  mainField: "Fields",
-};
-
-const LEVELS: Record<string, string> = {
-  G: "Basic",
-  A: "Advanced",
-};
-
 const UnifiedSearchFilter: FC = () => {
   const showBachelorYears = useAtomValue(preferenceAtoms.showBachelorYearsAtom);
   const [mainFields, selectMainFields] = useAtom(filterAtoms.mainFieldsAtom);
@@ -42,7 +32,30 @@ const UnifiedSearchFilter: FC = () => {
   const [levels, selectLevels] = useAtom(filterAtoms.levelsAtom);
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
   const allCourses = useAtomValue(coursesAtom);
-  const allMasters = useMasterAtom()
+  const allMasters = useMasterAtom();
+
+  const coursesTranslate = useCourseTranslate();
+  const translate = useCommonTranslate();
+
+  const CATEGORY_LABELS = useMemo<Record<string, string>>(
+    () => ({
+      master: translate("profiles"),
+      semester: translate("semesters"),
+      block: translate("blocks"),
+      period: translate("periods"),
+      level: translate("levels"),
+      mainField: translate("fields"),
+    }),
+    [translate],
+  );
+
+  const LEVELS_LABELS = useMemo<Record<string, string>>(
+    () => ({
+      G: translate("basic"),
+      A: translate("advanced"),
+    }),
+    [translate],
+  );
 
   const mainFieldOptions = useMemo(() => {
     const uniqueFields = uniq(
@@ -50,109 +63,119 @@ const UnifiedSearchFilter: FC = () => {
     ).sort();
 
     return {
-      heading: "Main Fields",
+      heading: translate("main_fields"),
       options: uniqueFields.map((field) => ({
-        label: field,
+        label: coursesTranslate(field),
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <Shapes className="h-4 w-4 opacity-70" />
-            <span className="truncate">{field}</span>
+            <span className="truncate">
+              <CourseTranslate text={field} />
+            </span>
           </div>
         ),
         searchKey: field,
         value: `mainField:${field}`,
       })),
     };
-  }, [allCourses]);
+  }, [allCourses, translate, coursesTranslate]);
 
   const semesterOptions = useMemo(() => {
     const start = showBachelorYears ? 1 : 7;
     return {
-      heading: "Semesters",
+      heading: translate("semesters"),
       options: range(start, 11).map((s) => ({
         label: `${s}`,
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <GraduationCap className="h-4 w-4 opacity-70" />
-            <span className="truncate">Semester {s}</span>
+            <span className="truncate">
+              <Translate text="_semester_label" args={{ s }} />
+            </span>
           </div>
         ),
-        searchKey: `Semester ${s}`,
+        searchKey: translate("_semester_label", { s }),
         value: `semester:${s}`,
       })),
     };
-  }, [showBachelorYears]);
+  }, [showBachelorYears, translate]);
 
   const blockOptions = useMemo(
     () => ({
-      heading: "Blocks",
+      heading: translate("blocks"),
       options: range(1, 5).map((b) => ({
         label: `${b}`,
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <LayoutGrid className="h-4 w-4 opacity-70" />
-            <span className="truncate">Block {b}</span>
+            <span className="truncate">
+              <Translate text="_block_label" args={{ b }} />
+            </span>
           </div>
         ),
-        searchKey: `Block {b}`,
+        searchKey: translate("_block_label", { b }),
         value: `block:${b}`,
       })),
     }),
-    [],
+    [translate],
   );
 
   const periodOptions = useMemo(
     () => ({
-      heading: "Periods",
+      heading: translate("periods"),
       options: range(1, 3).map((p) => ({
         label: `${p}`,
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <Calendar className="h-4 w-4 opacity-70" />
-            <span className="truncate">Period {p}</span>
+            <span className="truncate">
+              <Translate text="_period_label" args={{ p }} />
+            </span>
           </div>
         ),
-        searchKey: `Period ${p}`,
+        searchKey: translate("_period_label", { p }),
         value: `period:${p}`,
       })),
     }),
-    [],
+    [translate],
   );
 
   const masterOptions = useMemo(
     () => ({
-      heading: "Master Profiles",
+      heading: translate("master_profiles"),
       options: Object.values(allMasters).map((m) => ({
         value: `master:${m.master}`,
         label: <MasterBadge name={m.master} />,
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate w-full">
             <MasterBadge name={m.master} />
-            <span className="truncate font-medium">{m.name ?? m.master}</span>
+            <span className="truncate font-medium">
+              <CourseTranslate text={m.name ?? m.master} />
+            </span>
           </div>
         ),
         searchKey: m.name ?? m.master,
       })),
     }),
-    [allMasters],
+    [allMasters, translate],
   );
 
   const levelOptions = useMemo(
     () => ({
-      heading: "Levels",
-      options: Object.keys(LEVELS).map((level) => ({
+      heading: translate("levels"),
+      options: Object.keys(LEVELS_LABELS).map((level) => ({
         value: `level:${level}`,
-        label: LEVELS[level],
+        label: LEVELS_LABELS[level],
         dropdownLabel: (
           <div className="flex items-center gap-2 truncate">
             <CircleStar className="h-4 w-4 opacity-70" />
-            <span className="truncate">{LEVELS[level]}</span>
+            <span className="truncate">{LEVELS_LABELS[level]}</span>
           </div>
         ),
-        searchKey: LEVELS[level],
+        searchKey: LEVELS_LABELS[level],
       })),
     }),
-    [],
+    [LEVELS_LABELS, translate],
   );
 
   const groupedOptions = useMemo<MultiSelectGroup[]>(
@@ -236,7 +259,7 @@ const UnifiedSearchFilter: FC = () => {
         onValueChange={handleValueChange}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
-        placeholder="Filter by master, field, or type..."
+        placeholder={translate("filter_by_master_field_or_type")}
       />
     </div>
   );

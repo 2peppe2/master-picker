@@ -1,9 +1,11 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseSelectionRow from "./rows/CourseSelectionRow";
+import { RequirementUnion } from "../../../page";
 import MainFieldRow from "./rows/MainFieldRow";
 import { FC, ReactNode, useMemo } from "react";
-import { RequirementUnion } from "../../../page";
 import CreditRow from "./rows/CreditRow";
 import { cn } from "@/lib/utils";
 import {
@@ -21,11 +23,13 @@ interface MasterBadgeTooltipProps {
   fulfilled: RequirementUnion[];
 }
 
-export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
+const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   all,
   name,
   fulfilled,
 }) => {
+  const translate = useCommonTranslate();
+
   const categories = useMemo(
     () => ({
       degree: all.filter((r) =>
@@ -50,24 +54,26 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   return (
     <div className="flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm">
       <header className="space-y-2">
-        <h4 className="font-bold text-sm tracking-tight">{name}</h4>
+        <h4 className="font-bold text-sm tracking-tight">
+          <CourseTranslate text={name} />
+        </h4>
       </header>
 
       <div className="space-y-5">
         <Section
-          title="Degree"
+          title={translate("degree")}
           icon={<LucideGraduationCap size={14} />}
           items={categories.degree}
           fulfilled={fulfilled}
         />
         <Section
-          title="Profile"
+          title={translate("profile")}
           icon={<LucideFolderTree size={14} />}
           items={categories.profile}
           fulfilled={fulfilled}
         />
         <Section
-          title="Courses"
+          title={translate("courses")}
           icon={<LucideBookOpen size={14} />}
           items={categories.courses}
           fulfilled={fulfilled}
@@ -76,6 +82,8 @@ export const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
     </div>
   );
 };
+
+export default MasterBadgeRequirementTooltip;
 
 interface SectionProps {
   title: string;

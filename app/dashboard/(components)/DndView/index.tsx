@@ -1,7 +1,7 @@
 "use client";
 
 import { useScrollToCourseFeedback } from "@/common/hooks/useCourseAddedFeedback";
-import { ConflictResolverModal } from "@/components/ConflictResolverModal";
+import ConflictResolverModal from "@/components/ConflictResolverModal";
 import { useCourseDropHandler } from "./hooks/useCourseDropHandler";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
@@ -27,8 +27,7 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
     scheduleAtoms.draggedCourseAtom,
   );
 
-  const { handleDrop, conflictData, conflictOpen, setConflictOpen } =
-    useCourseDropHandler();
+  const dropHandler = useCourseDropHandler();
 
   useScrollToCourseFeedback();
 
@@ -39,12 +38,12 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
         return;
       }
 
-      handleDrop({
+      dropHandler.handleDrop({
         course: draggedCourse,
         overData: event.over.data.current as PeriodNodeData,
       });
     },
-    [handleDrop, draggedCourse, setDraggedCourse],
+    [dropHandler, draggedCourse, setDraggedCourse],
   );
 
   return (
@@ -61,11 +60,11 @@ const DndView: FC<DndViewProps> = ({ courses }) => {
       )}
     >
       <div className="grid [grid-template-columns:auto_1fr] relative min-h-screen items-start">
-        {conflictOpen && conflictData && (
+        {dropHandler.conflictOpen && dropHandler.conflictData && (
           <ConflictResolverModal
-            open={conflictOpen}
-            setOpen={setConflictOpen}
-            conflictData={conflictData}
+            open={dropHandler.conflictOpen}
+            setOpen={dropHandler.setConflictOpen}
+            conflictData={dropHandler.conflictData}
           />
         )}
 

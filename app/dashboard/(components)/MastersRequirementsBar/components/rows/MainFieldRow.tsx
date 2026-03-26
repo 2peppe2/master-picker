@@ -1,5 +1,7 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
+import Translate from "@/common/components/translate/Translate";
 import { MainFieldRequirement } from "@/app/dashboard/page";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
@@ -15,9 +17,9 @@ const MainFieldRow: FC<MainFieldRowProps> = ({
 }) => (
   <div className="flex flex-col gap-2">
     <span className="leading-snug">
-      Have at least{" "}
+      <Translate text="have_at_least" />{" "}
       <b className="text-foreground font-semibold">{requirement.credits} HP</b>{" "}
-      in one of:
+      <Translate text="in_one_of_the_following_fields" />:
     </span>
     <div className="flex flex-wrap gap-1.5">
       {requirement.fields.map((field) => (
@@ -30,7 +32,9 @@ const MainFieldRow: FC<MainFieldRowProps> = ({
               : "bg-secondary/50 border-border text-muted-foreground",
           )}
         >
-          <span>{field}</span>
+          <span>
+            <CourseTranslate text={field} />
+          </span>
           <span className="font-mono font-bold border-l border-current/20 pl-1.5">
             {fieldProgress[field] || 0} HP
           </span>

@@ -5,10 +5,15 @@ import { CourseData } from "../../statistics/types";
 import { Module } from "liu-tentor-package";
 import { useMemo } from "react";
 
-export const useLatestOriginalStats = (
-  courseData: CourseData | null | undefined,
-  occasions?: CourseOccasion[],
-) => {
+export interface UseLatestOriginalStatsArgs {
+  courseData: CourseData | null | undefined;
+  occasions?: CourseOccasion[];
+}
+
+export const useLatestOriginalStats = ({
+  courseData,
+  occasions,
+}: UseLatestOriginalStatsArgs) => {
   const expectedMonths = useMemo(
     () => (occasions ? getExpectedExamMonths(occasions) : undefined),
     // eslint-disable-next-line react-hooks/exhaustive-deps

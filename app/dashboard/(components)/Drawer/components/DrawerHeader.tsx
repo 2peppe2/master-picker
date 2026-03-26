@@ -1,5 +1,7 @@
 "use client";
 
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
+import Translate from "@/common/components/translate/Translate";
 import { ChevronLeft } from "lucide-react";
 import ShareButton from "./ShareButton";
 import Image from "next/image";
@@ -20,20 +22,23 @@ const DrawerHeader: FC = () => (
 
       <div className="flex flex-col min-w-0">
         <span className="text-xs font-bold leading-none transition-colors">
-          Dashboard
+          <Translate text="_dashboard_header_title" />
         </span>
 
         <div className="mt-1 text-[10px] tracking-wider font-medium">
           <span className="block group-hover:hidden text-muted-foreground transition-all">
-            Course Browser
+            <Translate text="_dashboard_browser_title" />
           </span>
           <span className="hidden group-hover:block text-[#00C8B3] animate-in fade-in slide-in-from-bottom-1 duration-200">
-            Return to Landing
+            <Translate text="_dashboard_return_to_landing" />
           </span>
         </div>
       </div>
     </Link>
-    <ShareButton />
+    <div className="flex items-center gap-2">
+      <LanguageSwitcher />
+      <ShareButton />
+    </div>
   </div>
 );
 

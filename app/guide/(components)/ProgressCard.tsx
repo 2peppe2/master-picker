@@ -1,5 +1,6 @@
 "use client";
 
+import Translate from "@/common/components/translate/Translate";
 import { Badge } from "@/components/ui/badge";
 import ContinueButton from "./ContinueButton";
 import { Course } from "@/app/dashboard/page";
@@ -11,11 +12,11 @@ import { cn } from "@/lib/utils";
 interface ProgressStep {
   states: {
     active: {
-      label: string;
+      labelKey: string;
       style: string;
     };
     default: {
-      label: string;
+      labelKey: string;
       style: string;
     };
   };
@@ -65,12 +66,12 @@ const ProgressCard: FC<ProgressCardProps> = ({
         {
           states: {
             active: {
-              label: "Required confirmed",
+              labelKey: "_guide_step_required_done",
               style:
                 "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400",
             },
             default: {
-              label: "Confirm required",
+              labelKey: "_guide_step_required_todo",
               style:
                 "border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400",
             },
@@ -80,12 +81,12 @@ const ProgressCard: FC<ProgressCardProps> = ({
         {
           states: {
             active: {
-              label: "Elective chosen",
+              labelKey: "_guide_step_elective_done",
               style:
                 "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400",
             },
             default: {
-              label: "Choose electives",
+              labelKey: "_guide_step_elective_todo",
               style:
                 "border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-400",
             },
@@ -102,7 +103,9 @@ const ProgressCard: FC<ProgressCardProps> = ({
         <div className="flex items-center gap-8">
           <div className="flex flex-1 flex-col gap-3">
             <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
-              <span>Selection Progress</span>
+              <span>
+                <Translate text="_guide_progress_selection" />
+              </span>
               <span className="text-emerald-600">{progressPercent}%</span>
             </div>
 
@@ -156,7 +159,8 @@ const ProgressBadge: FC<ProgressBadgeProps> = ({ id, states, isDone }) => {
       )}
     >
       {isDone && <Check className="h-3 w-3" />}
-      {`${id}. ${state.label}`}
+      {`${id}. `}
+      <Translate text={state.labelKey} />
     </Badge>
   );
 };

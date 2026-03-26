@@ -1,7 +1,9 @@
 "use client";
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
+import Translate from "@/common/components/translate/Translate";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
@@ -14,6 +16,7 @@ import { FC } from "react";
 const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const { deleteBlockFromSemester } = useScheduleMutators();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
+  const translate = useCommonTranslate();
 
   const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
   const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
@@ -52,14 +55,14 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
       ) : (
         <div className="relative flex flex-col items-center justify-center h-full w-full group transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50">
           <span className="text-zinc-500 text-xs uppercase tracking-wider select-none">
-            Extra
+            <Translate text="_wildcard_block_label" />
           </span>
           <button
             onClick={handleRemoveSlot}
             className="absolute top-2 right-2 text-zinc-400 border-2 border-transparent rounded-sm p-2
                        cursor-pointer transition-all duration-200 hover:bg-zinc-200 dark:hover:bg-zinc-700 
                        hover:text-zinc-600 dark:hover:text-zinc-200"
-            title="Remove block"
+            title={translate("remove_block")}
           >
             <X className="h-4 w-4" />
           </button>

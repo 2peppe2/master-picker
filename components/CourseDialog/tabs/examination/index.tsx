@@ -1,6 +1,7 @@
 "use client";
 
 import WorkloadChart, { WORKLOAD_COLORS } from "./WorkloadChart";
+import Translate from "@/common/components/translate/Translate";
 import ExaminationTable from "./ExaminationTable";
 import { BookOpen, Clock3 } from "lucide-react";
 import { Course } from "@/app/dashboard/page";
@@ -25,7 +26,7 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
     <div className="space-y-3 py-2 text-foreground">
       <section className="rounded-md border p-3">
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide">
-          Workload
+          <Translate text="_course_workload" />
         </p>
         <div className="grid items-center gap-3 sm:grid-cols-[auto_minmax(0,1fr)]">
           <WorkloadChart
@@ -40,7 +41,7 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.scheduled }}
                 />
-                Scheduled
+                <Translate text="_course_scheduled" />
                 <Clock3 aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
@@ -54,7 +55,7 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.selfStudy }}
                 />
-                Self-study
+                <Translate text="_course_self_study" />
                 <BookOpen aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
