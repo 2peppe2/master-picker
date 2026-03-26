@@ -18,7 +18,7 @@ const Header: FC = () => (
         height={70}
       />
       <h1 className={`text-2xl md:text-7xl font-bold ${playfair.className}`}>
-        <Translate text="_landing_header_title" />
+        Master Picker
       </h1>
     </div>
 
