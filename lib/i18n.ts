@@ -1,5 +1,3 @@
-"use client";
-
 import LanguageDetector from "i18next-browser-languagedetector";
 import enCourses from "@/public/locales/en/courses.json";
 import svCourses from "@/public/locales/sv/courses.json";
@@ -19,20 +17,28 @@ const resources = {
   },
 };
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: "sv",
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ["querystring", "localStorage", "cookie"],
-      lookupQuerystring: "lang",
-      caches: ["localStorage", "cookie"],
-    },
-  });
+const isClient = typeof window !== "undefined";
+
+const i18nInstance = i18n.use(initReactI18next);
+
+if (isClient) {
+  i18nInstance.use(LanguageDetector);
+}
+
+i18nInstance.init({
+  resources,
+  fallbackLng: "sv",
+  lng: isClient ? undefined : "sv",
+  interpolation: {
+    escapeValue: false,
+  },
+  detection: isClient
+    ? {
+        order: ["querystring", "localStorage", "cookie"],
+        lookupQuerystring: "lang",
+        caches: ["localStorage", "cookie"],
+      }
+    : undefined,
+});
 
 export default i18n;

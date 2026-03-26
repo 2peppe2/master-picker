@@ -1,7 +1,8 @@
 "use client";
 
 import { Trans, useTranslation } from "react-i18next";
-import { FC, memo } from "react";
+import { FC, memo, useEffect, useState } from "react";
+import "@/lib/i18n";
 
 interface TranslateProps {
   text: string;
@@ -14,10 +15,19 @@ interface TranslateProps {
 const Translate: FC<TranslateProps> = memo(
   ({ text, args, isBold, namespace = "common", components }) => {
     const { t: translate } = useTranslation(namespace);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+      setMounted(true);
+    }, []);
 
     const componentsToUse = isBold
       ? { b: <strong />, ...components }
       : components;
+
+    if (!mounted) {
+      return <>&nbsp;</>;
+    }
 
     if (componentsToUse) {
       return (

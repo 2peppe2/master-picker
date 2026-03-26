@@ -5,7 +5,7 @@ import { useCourseTranslate } from "@/common/components/translate/hooks/useCours
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage";
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useMemo, useState, useEffect } from "react";
 
 interface ProgramSelectorProps {
   programs: LandingPageProgram[];
