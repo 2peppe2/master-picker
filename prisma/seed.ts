@@ -105,10 +105,11 @@ async function seedData() {
 }
 
 async function seedProgramData(p: Program) {
+  const nameKey = `program_${p.id}`;
   await prisma.program.upsert({
     where: { program: p.id },
-    update: { name: p.name, shortname: p.shortname },
-    create: { program: p.id, name: p.name, shortname: p.shortname },
+    update: { name: nameKey, shortname: p.shortname },
+    create: { program: p.id, name: nameKey, shortname: p.shortname },
   });
 }
 

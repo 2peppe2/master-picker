@@ -1,6 +1,7 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import GenericCombobox, { ComboboxDisplay } from "./GenericComboBox";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { LandingPageProgram } from "../LandingClientPage";
@@ -11,6 +12,7 @@ interface ProgramSelectorProps {
 }
 
 const ProgramSelector: FC<ProgramSelectorProps> = ({ programs }) => {
+  const translateCourse = useCourseTranslate();
   const translate = useCommonTranslate();
   const { searchParams, setSearchParams } = useSearchParams();
 
@@ -31,10 +33,10 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({ programs }) => {
   const items = useMemo(
     () =>
       programs.map((p) => ({
-        label: `${p.shortname} - ${p.name}`,
+        label: `${p.shortname} - ${translateCourse(p.name)}`,
         value: p.program,
       })),
-    [programs],
+    [programs, translateCourse],
   );
 
   return (

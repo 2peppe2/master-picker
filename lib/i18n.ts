@@ -24,12 +24,12 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en",
+    fallbackLng: "sv",
     interpolation: {
       escapeValue: false,
     },
     detection: {
-      order: ["querystring", "localStorage", "cookie", "navigator"],
+      order: ["querystring", "localStorage", "cookie"],
       lookupQuerystring: "lang",
       caches: ["localStorage", "cookie"],
     },

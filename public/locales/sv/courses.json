@@ -428,5 +428,8 @@
   "master_DIDS": "Inbyggda digital system",
   "master_DSEC": "Säkra system",
   "master_DSOC": "System-on-chip",
-  "master_DELK": "Elektronik"
+  "master_DELK": "Elektronik",
+  "program_6CMJU": "Mjukvaruteknik",
+  "program_6CDDD": "Datateknik",
+  "program_6CITE": "Informationsteknologi"
 }
