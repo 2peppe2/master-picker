@@ -22,7 +22,7 @@ const MobileWarning: FC = () => (
         <Translate text="mobile_warning_text" />
       </h1>
 
-      <p className="max-w-[280px] text-sm leading-relaxed text-muted-foreground">
+      <p className="text-sm leading-relaxed text-muted-foreground">
         <Translate text="mobile_warning_subtext" />
       </p>
     </div>
