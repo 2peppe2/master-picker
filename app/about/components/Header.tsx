@@ -2,14 +2,9 @@
 
 import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import Translate from "@/common/components/translate/Translate";
-import { Playfair_Display } from "next/font/google";
-import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import Link from "next/link";
+import BackButton from "@/common/components/BackButton";
 import { FC } from "react";
 import "@/lib/i18n";
-
-const playfair = Playfair_Display({ weight: "600", subsets: ["latin"] });
 
 const Header: FC = () => {
   return (
@@ -18,28 +13,11 @@ const Header: FC = () => {
         <LanguageSwitcher />
       </div>
       <div className="flex items-center gap-4">
-        <Link
-          href="/"
-          aria-label="Go to home"
-          className="flex h-20 w-20 items-center justify-center rounded-2xl border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          <Image
-            src="/logo/mp_logo_icon.svg"
-            alt="Master Picker logo"
-            width={50}
-            height={50}
-          />
-        </Link>
-        <div className="flex flex-col gap-2">
-          <Badge variant="secondary">
-            <Translate text="about" />
-          </Badge>
-          <h1
-            className={`text-3xl tracking-tight sm:text-4xl md:text-5xl ${playfair.className}`}
-          >
-            Master Picker
-          </h1>
-        </div>
+        <BackButton
+          title="Master Picker"
+          subtitle="about"
+          returnText="_dashboard_return_to_landing"
+        />
       </div>
       <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
         <Translate text="_about_description" />
