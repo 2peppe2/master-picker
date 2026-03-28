@@ -7,6 +7,7 @@ import ElectiveSummaryCard from "./(components)/ElectiveSummaryCard";
 import CompulsorySelector from "./(components)/CompulsorySelector";
 import ElectiveSelector from "./(components)/ElectiveSelector";
 import MasterProvider from "../(store)/MasterAtomContext";
+import BackButton from "@/common/components/BackButton";
 import type { Course, Master } from "../dashboard/page";
 import { FC, useMemo, useState, Suspense } from "react";
 import ProgressCard from "./(components)/ProgressCard";
@@ -61,6 +62,13 @@ const GuideContent: FC<GuideClientPageProps> = ({
   return (
     <div className="min-h-screen">
       <div className="mx-auto w-full max-w-6xl pb-40 pt-24 px-4 relative">
+        <div className="absolute top-8 left-4">
+          <BackButton
+            title="Master Picker"
+            subtitle="Guide"
+            returnText="_dashboard_return_to_landing"
+          />
+        </div>
         <div className="absolute top-8 right-4">
           <LanguageSwitcher />
         </div>

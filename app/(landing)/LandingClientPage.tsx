@@ -14,8 +14,8 @@ import MasterSelector from "./components/MasterSelector";
 import YearSelector from "./components/YearSelector";
 import LoadingDots from "./components/LoadingDots";
 import { Button } from "@/components/ui/button";
+import { LandingFormLoading } from "./loading";
 import { Loader2 } from "lucide-react";
-import LandingLoading from "./loading";
 import Link from "next/link";
 
 export interface LandingPageProgram {
@@ -169,7 +169,7 @@ const LandingClientContent: FC<LandingClientPageProps> = ({ programs }) => {
 };
 
 const LandingClientPage: FC<LandingClientPageProps> = (props) => (
-  <Suspense fallback={<LandingLoading />}>
+  <Suspense fallback={<LandingFormLoading />}>
     <LandingClientContent {...props} />
   </Suspense>
 );
