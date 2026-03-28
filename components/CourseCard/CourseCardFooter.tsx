@@ -21,19 +21,18 @@ interface CourseCardFooterProps {
 
 const CourseCardFooter: FC<CourseCardFooterProps> = ({ masterPrograms }) => {
   const moreThanThree = masterPrograms.length > 3;
-  const moreThanFour = masterPrograms.length > 4;
   const masters = useMasterAtom();
 
   return (
     <CardFooter className="mt-auto text-foreground">
       <div
-        className={`flex items-center justify-center ${
+        className={`flex items-center justify-start ${
           moreThanThree ? "gap-1" : "gap-2"
         } w-full`}
       >
-        {moreThanFour ? (
+        {moreThanThree ? (
           <>
-            {masterPrograms.slice(0, 3).map((program) => (
+            {masterPrograms.slice(0, 2).map((program) => (
               <MasterBadge
                 name={program.master}
                 key={program.master}
@@ -46,12 +45,12 @@ const CourseCardFooter: FC<CourseCardFooterProps> = ({ masterPrograms }) => {
                   variant="outline"
                   className="h-5 w-8 rounded-full shrink-0"
                 >
-                  +{masterPrograms.length - 3}
+                  +{masterPrograms.length - 2}
                 </Badge>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="">
                 <div className="flex flex-col gap-2">
-                  {masterPrograms.slice(3).map((program) => (
+                  {masterPrograms.slice(2).map((program) => (
                     <div key={program.master}>
                       <CourseTranslate
                         text={masters[program.master]?.name ?? program.master}
