@@ -15,15 +15,15 @@ const Disclaimer: FC = () => {
     : "https://studieinfo.liu.se/en/";
 
   return (
-    <div className="flex items-center gap-2 py-2.5 px-4 bg-[rgb(0,200,179)]/25 dark:bg-[rgb(0,200,179)]/10 border-b border-[rgb(0,200,179)]/20 w-full justify-center">
+    <div className="flex items-center gap-2 py-2 px-4 bg-[rgb(0,200,179)]/25 dark:bg-[rgb(0,200,179)]/10 border-b border-[rgb(0,200,179)]/20 w-full justify-center overflow-hidden">
       <Info className="h-4 w-4 text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)] shrink-0" />
-      <span className="text-[10px] sm:text-xs text-foreground font-semibold tracking-wide">
+      <span className="text-[10px] sm:text-xs text-foreground font-semibold tracking-wide text-center leading-tight">
         <Translate
           text="_dashboard_disclaimer_full"
           components={[
             <a
               key="liu-link"
-              className="text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)] underline underline-offset-2 font-bold"
+              className="text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)] underline underline-offset-2 font-bold whitespace-nowrap"
               href={programLink}
               target="_blank"
               rel="noreferrer"
