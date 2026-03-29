@@ -16,13 +16,17 @@ import {
 
 export interface SelectableCourseCardProps extends CourseCardProps {
   onSelectionChange: (course: Course) => void;
+  onOccasionChange: (index: number) => void;
   isSelected: boolean;
+  selectedOccasionIndex: number;
 }
 
 const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   course,
   isSelected,
+  selectedOccasionIndex,
   onSelectionChange,
+  onOccasionChange,
 }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -105,6 +109,31 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
       </CardHeader>
 
       <CourseCardFooter masterPrograms={course.CourseMaster} />
+
+      {course.CourseOccasion.length > 1 && (
+        <div className="px-4 pb-4 mt-auto">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-lg bg-muted/50 border shadow-inner">
+            {course.CourseOccasion.map((occ, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOccasionChange(idx);
+                }}
+                className={cn(
+                  "flex-1 px-2 py-1 rounded-md text-[10px] font-bold transition-all whitespace-nowrap",
+                  selectedOccasionIndex === idx
+                    ? "bg-card text-foreground shadow-sm ring-1 ring-foreground/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                )}
+              >
+                {occ.semester.toLowerCase().includes("autumn") ? "HT" : "VT"}
+                {occ.year}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </Card>
   );
 };

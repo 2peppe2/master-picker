@@ -20,7 +20,7 @@ const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
   return (
     <header className="flex flex-col gap-2">
       <MasterBadge name={selectedMaster} title={true} style="text-base" />
-      <h1 className="text-3xl font-semibold tracking-tight">
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground">
         <Translate text={`_guide_title_${titleIndex}`} />
       </h1>
       <div className="mt-4 max-w-2xl">

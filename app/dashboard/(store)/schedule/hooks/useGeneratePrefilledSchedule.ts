@@ -22,7 +22,8 @@ export const useGeneratePrefilledSchedule = () => {
 
       const newGrid = produce(initialGrid, (draft) => {
         courses.forEach((course) => {
-          const occasion = course.CourseOccasion?.[0];
+          const selectedIndex = (course as any).selectedOccasionIndex ?? 0;
+          const occasion = course.CourseOccasion?.[selectedIndex];
 
           if (!occasion || !occasion.periods) return;
 
@@ -40,7 +41,7 @@ export const useGeneratePrefilledSchedule = () => {
             const periodBlocks = draft[semesterIndex][periodIndex];
             if (!periodBlocks) continue;
 
-            const isWildcardCourse = period.blocks.length === 0;
+            const isWildcardCourse = period.blocks.length === 0 || (course as any).forceWildcard;
 
             if (isWildcardCourse) {
               // Find first empty wildcard slot or add new block

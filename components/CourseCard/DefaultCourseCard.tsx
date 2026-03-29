@@ -5,6 +5,7 @@ import CourseCardFooter from "./CourseCardFooter";
 import CourseDialog from "../CourseDialog";
 import { FC, useState } from "react";
 import { CourseCardProps } from ".";
+import { cn } from "@/lib/utils";
 import {
   Card,
   CardDescription,
@@ -12,7 +13,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
+const DefaultCourseCard: FC<CourseCardProps> = ({ 
+  course,
+  selectedOccasionIndex,
+  onOccasionChange
+}) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
@@ -55,6 +60,31 @@ const DefaultCourseCard: FC<CourseCardProps> = ({ course }) => {
       </CardHeader>
 
       <CourseCardFooter masterPrograms={course.CourseMaster} />
+
+      {course.CourseOccasion.length > 1 && (
+        <div className="px-4 pb-4 mt-auto">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-lg bg-muted/50 border shadow-inner">
+            {course.CourseOccasion.map((occ, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOccasionChange?.(idx);
+                }}
+                className={cn(
+                  "flex-1 px-2 py-1 rounded-md text-[10px] font-bold transition-all whitespace-nowrap",
+                  selectedOccasionIndex === idx
+                    ? "bg-card text-foreground shadow-sm ring-1 ring-foreground/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                )}
+              >
+                {occ.semester.toLowerCase().includes("autumn") ? "HT" : "VT"}
+                {occ.year}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </Card>
   );
 };
