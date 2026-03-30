@@ -1,6 +1,11 @@
 "use client";
 
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
+import {
+  scheduleAtoms,
+  SHARE_BUTTON_LOADING_MS,
+  WILDCARD_BLOCK_START,
+} from "../atoms";
 import { Course } from "@/app/dashboard/page";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback, useMemo } from "react";
@@ -12,11 +17,6 @@ import {
   DeleteBlockFromSemesterArgs,
   RemoveCourseArgs,
 } from "../types";
-import {
-  scheduleAtoms,
-  SHARE_BUTTON_LOADING_MS,
-  WILDCARD_BLOCK_START,
-} from "../atoms";
 
 /**
  * Hook providing all state mutation functions without subscribing to state.
