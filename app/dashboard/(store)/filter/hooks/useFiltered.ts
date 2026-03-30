@@ -1,5 +1,6 @@
 "use client";
 
+import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import { useScheduleGetters } from "../../schedule/hooks/useScheduleGetters";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { useCallback, useDeferredValue, useMemo } from "react";
@@ -22,6 +23,7 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const masterPeriod = useAtomValue(preferenceAtoms.masterPeriodAtom);
   const yearAndSemesterToRelativeSemester = useToRelativeSemester();
   const { hasMatchingOccasion } = useScheduleGetters();
+  const translateCourse = useCourseTranslate();
 
   const search = useAtomValue(filterAtoms.searchAtom);
   const levels = useAtomValue(filterAtoms.levelsAtom);
@@ -46,24 +48,25 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
 
   const deferredFilters = useDeferredValue(filterObject);
 
-  const filterOutByTerm = useCallback((term: string, course: Course) => {
-    if (!term) return false;
+  const filterOutByTerm = useCallback(
+    (term: string, course: Course) => {
+      if (!term) return false;
 
-    const searchTerm = term.toLowerCase();
-    const courseName = course.name.toLowerCase();
-    const courseCode = course.code.toLowerCase();
-    const examiner = course.examiner.toLowerCase();
-    const department = course.department.toLowerCase();
-    const mainFields = course.mainField.join(" ").toLowerCase();
+      const searchTerm = term.toLowerCase();
+      const courseCode = course.code.toLowerCase();
+      const examiner = course.examiner.toLowerCase();
+      const department = course.department.toLowerCase();
+      const courseName = translateCourse(course.name).toLowerCase();
 
-    return (
-      !courseName.includes(searchTerm) &&
-      !courseCode.includes(searchTerm) &&
-      !department.includes(searchTerm) &&
-      !mainFields.includes(searchTerm) &&
-      !examiner.includes(searchTerm)
-    );
-  }, []);
+      return (
+        !courseName.includes(searchTerm) &&
+        !courseCode.includes(searchTerm) &&
+        !department.includes(searchTerm) &&
+        !examiner.includes(searchTerm)
+      );
+    },
+    [translateCourse],
+  );
 
   const filterOutByMasters = useCallback(
     (selectedMasters: string[], course: Course) => {
