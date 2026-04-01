@@ -22,6 +22,8 @@ export type CourseCardVariant =
 
 export interface CourseCardProps {
   course: Course;
+  selectedOccasionIndex?: number;
+  onOccasionChange?: (index: number) => void;
 }
 
 type CourseCardWrapperProps =
@@ -55,7 +57,9 @@ const CourseCard = memo<CourseCardWrapperProps>(
   },
   (prev, next) => {
     const isSameBase =
-      prev.variant === next.variant && prev.course.code === next.course.code;
+      prev.variant === next.variant &&
+      prev.course.code === next.course.code &&
+      prev.selectedOccasionIndex === next.selectedOccasionIndex;
 
     if (prev.variant === "selectable" && next.variant === "selectable") {
       return isSameBase && prev.isSelected === next.isSelected;
