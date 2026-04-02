@@ -31,7 +31,7 @@ const LandingPage = async () => {
       <div className="absolute top-4 right-4 z-10">
         <LanguageSwitcher />
       </div>
-      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20">
+      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 mb-20">
         <Header />
         <LandingClientPage programs={formattedPrograms} />
       </main>
