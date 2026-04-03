@@ -15,9 +15,13 @@ import { FC } from "react";
 
 interface MasterProgressBadgeProps {
   master: ProcessedMaster;
+  onHover?: () => void;
 }
 
-const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
+const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({
+  master,
+  onHover,
+}) => {
   const masters = useMasterAtom();
   const masterMeta = masters[master.master];
 
@@ -32,8 +36,9 @@ const MasterProgressBadge: FC<MasterProgressBadgeProps> = ({ master }) => {
       <TooltipTrigger asChild>
         <Badge
           variant="outline"
+          onMouseEnter={onHover}
           className={cn(
-            "min-w-[80px] h-8 w-full flex items-center justify-center relative transition-all duration-500 cursor-default overflow-hidden px-2",
+            "min-w-[80px] h-8 w-full flex items-center justify-center relative transition-all duration-200 cursor-default overflow-hidden px-2",
             masterMeta?.style,
           )}
         >
