@@ -2,18 +2,20 @@
 
 import MastersRequirementsSkeleton from "./components/MastersRequirementsBarSkeleton";
 import { useProgram } from "../../(store)/preferences/hooks/useProgram";
-import { MasterOverflowBadge } from "./components/MasterOverflowBadge";
+import MasterOverflowBadge from "./components/MasterOverflowBadge";
 import MasterProgressBadge from "./components/MasterProgressBadge";
 import { useProcessedMasters } from "./hooks/useProcessedMasters";
 import Translate from "@/common/components/translate/Translate";
 import { useBadgeOverflow } from "./hooks/useBadgeOverflow";
 import { useMeasure } from "react-use";
+import { useState } from "react";
 
 const GAP_SIZE = 12;
 
 const MastersRequirementsBar = () => {
   const [barRef, { width: barWidth }] = useMeasure<HTMLDivElement>();
   const [badgeRef, { width: badgeWidth }] = useMeasure<HTMLDivElement>();
+  const [isOverflowOpen, setIsOverflowOpen] = useState(false);
 
   const program = useProgram();
   const { processed, isLoading } = useProcessedMasters({
@@ -30,6 +32,7 @@ const MastersRequirementsBar = () => {
   if (isLoading) {
     return <MastersRequirementsSkeleton program={program} />;
   }
+
 
   return (
     <div className="flex items-center w-full h-full gap-4 min-w-0">
@@ -51,16 +54,21 @@ const MastersRequirementsBar = () => {
               className="flex-1 min-w-0"
               style={{ minWidth: badgeWidth }}
             >
-              <MasterProgressBadge master={master} />
+              <MasterProgressBadge
+                master={master}
+                onHover={() => setIsOverflowOpen(false)}
+              />
             </div>
           ))}
 
           {overflowItems.length > 0 && (
             <div className="flex-1 min-w-0" style={{ minWidth: badgeWidth }}>
               <MasterOverflowBadge
+                open={isOverflowOpen}
                 minWidth={badgeWidth}
                 masters={overflowItems}
                 count={overflowItems.length}
+                onOpenChange={setIsOverflowOpen}
               />
             </div>
           )}
