@@ -1,3 +1,6 @@
+"use client";
+
+import Translate from "@/common/components/translate/Translate";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,7 +20,7 @@ interface WildcardExpansionDialogProps {
   onConfirm: () => void;
 }
 
-export const WildcardExpansionDialog: FC<WildcardExpansionDialogProps> = ({
+const WildcardExpansionDialog: FC<WildcardExpansionDialogProps> = ({
   open,
   setOpen,
   courseCode,
@@ -26,23 +29,29 @@ export const WildcardExpansionDialog: FC<WildcardExpansionDialogProps> = ({
   <AlertDialog open={open} onOpenChange={setOpen}>
     <AlertDialogContent>
       <AlertDialogHeader>
-        <AlertDialogTitle>Add block to semester</AlertDialogTitle>
+        <AlertDialogTitle>
+          <Translate text="add_block_to_semester" />
+        </AlertDialogTitle>
         <AlertDialogDescription>
-          There are no empty blocks available in this semester. Adding this
-          course will create a new extra block.
+          <Translate text="no_empty_blocks_available" />
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>
-        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogCancel className="cursor-pointer">
+          <Translate text="cancel" />
+        </AlertDialogCancel>
         <AlertDialogAction
+          className="cursor-pointer"
           onClick={() => {
             onConfirm();
             setOpen(false);
           }}
         >
-          Add {courseCode}
+          <Translate text="_add_course" args={{ courseCode }} />
         </AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
   </AlertDialog>
 );
+
+export default WildcardExpansionDialog;

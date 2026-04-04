@@ -6,7 +6,8 @@ import { useConflictManager } from "../ConflictResolverModal/hooks/useConflictMa
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import ConflictResolverModal from "@/components/ConflictResolverModal";
-import { WildcardExpansionDialog } from "../WildcardExpansionDialog";
+import WildcardExpansionDialog from "../WildcardExpansionDialog";
+import Translate from "@/common/components/translate/Translate";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "../ui/button";
 import { FC, useState } from "react";
@@ -148,7 +149,7 @@ const MultiCourseDropdown: FC<MultiCourseDropdownProps> = ({
               <div className="flex flex-col items-start gap-1.5 w-full">
                 <div className="flex w-full justify-between items-center">
                   <span className="font-semibold text-foreground">
-                    Semester {relativeSemester}
+                    <Translate text="_semester_label" args={{ s: relativeSemester }}  />
                   </span>
                 </div>
                 <div className="text-xs text-muted-foreground flex flex-col items-center gap-2">

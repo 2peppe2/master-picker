@@ -105,7 +105,10 @@ const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
             className="cursor-pointer"
             onClick={handleResolution("replace")}
           >
-            <Translate text="replace" />
+            <Translate
+              text="_replace_block_with_course"
+              args={{ courseCode: conflictData.course.code }}
+            />
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
