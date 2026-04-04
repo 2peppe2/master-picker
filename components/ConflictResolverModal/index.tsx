@@ -1,5 +1,6 @@
 "use client";
 
+import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { Course, CourseOccasion } from "@/app/dashboard/page";
 import { Button } from "@/components/ui/button";
@@ -80,7 +81,8 @@ const ConflictResolverModal: FC<ConflictResolverModalProps> = ({
           <ul className="list-disc pl-4 space-y-1">
             {conflictData.collisions.map((c) => (
               <li key={c.code}>
-                <span className="font-semibold">{c.code}</span> - {c.name}
+                <span className="font-semibold">{c.code}</span> -{" "}
+                <CourseTranslate text={c.name} />
               </li>
             ))}
           </ul>
