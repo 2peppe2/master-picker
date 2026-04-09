@@ -10,10 +10,7 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic courses in probability. Linear algebra and multivariate analysis. Transform theory is helpful, but not required.",
     "main_field": [
       "Mathematics",
@@ -38,15 +35,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "Analysis, algebra, differential and integral calculus, power series and differential equations.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TANA15": {
     "examiner": "Fredrik Berntsson",
@@ -65,15 +56,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "Basic courses in Calculus in one and several variables and a course in linear algebra.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TANA23": {
     "examiner": "Fredrik Berntsson",
@@ -98,14 +83,9 @@
         "name": "Group assignment for all courses during the semester"
       }
     ],
-    "education_components": [
-      108.0,
-      105.0
-    ],
+    "education_components": [108.0, 105.0],
     "prerequisites": null,
-    "main_field": [
-      "Applied Mathematics"
-    ]
+    "main_field": ["Applied Mathematics"]
   },
   "TAOP04": {
     "examiner": "Chuan He",
@@ -118,15 +98,9 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Calculus, linear algebra, Matlab, and an introductory course in optimization.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TAOP63": {
     "examiner": "Nils-Hassan Quttineh",
@@ -145,15 +119,9 @@
         "name": "Oral exam"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "Optimization for engineers (or similar basic course in optimization).\nprogramming in Matlab.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TAOP89": {
     "examiner": "Björn Morén",
@@ -178,15 +146,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      68.0,
-      145.0
-    ],
+    "education_components": [68.0, 145.0],
     "prerequisites": "Linear algebra, Discrete structures, Data structures and algorithms",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA24": {
     "examiner": "Axel Hultman, Jan Snellman",
@@ -205,15 +167,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      108.0,
-      105.0
-    ],
+    "education_components": [108.0, 105.0],
     "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA40": {
     "examiner": "Hans Lundmark",
@@ -226,15 +182,9 @@
         "name": "Participation in at least 12 of 16 lectures"
       }
     ],
-    "education_components": [
-      32.0,
-      5.0
-    ],
+    "education_components": [32.0, 5.0],
     "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA41": {
     "examiner": "Magnus Herberthson, Mikael Langer, Fredrik Andersson, Erik Darpö",
@@ -247,15 +197,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "Foundation Course in Mathematics",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA53": {
     "examiner": "Jonathan Nilsson",
@@ -268,15 +212,9 @@
         "name": "Hand-in exercises"
       }
     ],
-    "education_components": [
-      38.0,
-      122.0
-    ],
+    "education_components": [38.0, 122.0],
     "prerequisites": "A basic course in linear algebra.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA55": {
     "examiner": "Jesper Thorén",
@@ -289,15 +227,9 @@
         "name": "Assignments"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Mathematics corresponding to basic courses in discrete algebra and linear algebra.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA64": {
     "examiner": "Carl Johan Casselgren",
@@ -310,15 +242,9 @@
         "name": "Hand-in assignment"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Elementary courses in linear algebra and discrete mathematics.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATA91": {
     "examiner": "Jesper Thorén",
@@ -331,15 +257,9 @@
         "name": "Written exam"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Calculus in one variable 1, Linear Algebra",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TATB04": {
     "examiner": "David Rule",
@@ -370,15 +290,9 @@
         "name": "Hand-in exercises and group work"
       }
     ],
-    "education_components": [
-      78.0,
-      82.0
-    ],
+    "education_components": [78.0, 82.0],
     "prerequisites": null,
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TBME03": {
     "examiner": "Padraig D´arcy",
@@ -403,14 +317,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic knowledge in biology and chemistry",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBME04": {
     "examiner": "Hanna Jonasson",
@@ -435,14 +344,9 @@
         "name": "Digital Examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic skills from first and second academic year at LiTH.",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMI02": {
     "examiner": "Anders Eklund",
@@ -461,15 +365,9 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic Linear Algebra: bases, scalar product, least squares problem, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended.",
-    "main_field": [
-      "Electrical Engineering",
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Electrical Engineering", "Biomedical Engineering"]
   },
   "TBMI04": {
     "examiner": "Håkan Örman",
@@ -488,14 +386,9 @@
         "name": "Written group report and individual reflection report"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Three years of university studies with an engineering major. Basic knowledge in anatomy and physiology.",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMI19": {
     "examiner": "Håkan Örman",
@@ -520,14 +413,9 @@
         "name": "Essay assignements"
       }
     ],
-    "education_components": [
-      58.0,
-      102.0
-    ],
+    "education_components": [58.0, 102.0],
     "prerequisites": "Basic laboratory skills and computer proficiency, basic skills regarding structured and systematic problem analysis; basic knowledge of anatomy and physiology is recommended but not required",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMI26": {
     "examiner": "Magnus Borga",
@@ -546,10 +434,7 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      54.0,
-      106.0
-    ],
+    "education_components": [54.0, 106.0],
     "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics. Recommended: Signal theory, programming (Python).",
     "main_field": [
       "Information Technology",
@@ -570,10 +455,7 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      0.0,
-      320.0
-    ],
+    "education_components": [0.0, 320.0],
     "prerequisites": "Knowledge from “eHealth: Aims and Applications” and “eHealth: from Idea to Impact”",
     "main_field": [
       "Information Technology",
@@ -600,10 +482,7 @@
         "name": "Tutorial groups"
       }
     ],
-    "education_components": [
-      44.0,
-      116.0
-    ],
+    "education_components": [44.0, 116.0],
     "prerequisites": "Three years of study at an engineering programme at university level. Knowledge in eHealth corresponding to TBMI04 eHealth: Aims and Applications.",
     "main_field": []
   },
@@ -624,14 +503,9 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Anatomy and Physiology",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMT26": {
     "examiner": "Johannes Johansson",
@@ -656,14 +530,9 @@
         "name": "Project assignment"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Anatomy and Physiology",
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMT32": {
     "examiner": "Håkan Örman",
@@ -682,14 +551,9 @@
         "name": "Essay (with seminar discussion)"
       }
     ],
-    "education_components": [
-      18.0,
-      35.0
-    ],
+    "education_components": [18.0, 35.0],
     "prerequisites": null,
-    "main_field": [
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Biomedical Engineering"]
   },
   "TBMT59": {
     "examiner": "Evren Özarslan",
@@ -714,15 +578,9 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      58.0,
-      102.0
-    ],
+    "education_components": [58.0, 102.0],
     "prerequisites": "Modern Physics, Signal Theory, Anatomy and Physiology, Biomedical Signal Processing.",
-    "main_field": [
-      "Electrical Engineering",
-      "Biomedical Engineering"
-    ]
+    "main_field": ["Electrical Engineering", "Biomedical Engineering"]
   },
   "TDDC17": {
     "examiner": "Fredrik Heintz",
@@ -741,15 +599,9 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Programming in a functional, imperative or object oriented programming language. Knowledge of data structures and algorithms. Knowledge in logic and discrete mathematics is useful.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDC34": {
     "examiner": "Thomas Rosenfall",
@@ -768,10 +620,7 @@
         "name": "Individual hand-in assignments"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Introduction to programming datastructures and algorithms, computer science, at least 45 credits. Basic course in industrial economics..",
     "main_field": [
       "Information Technology",
@@ -808,14 +657,9 @@
         "name": "A written examination"
       }
     ],
-    "education_components": [
-      82.0,
-      131.0
-    ],
+    "education_components": [82.0, 131.0],
     "prerequisites": null,
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDC77": {
     "examiner": "Sahand Sadjadee",
@@ -840,14 +684,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      110.0,
-      103.0
-    ],
+    "education_components": [110.0, 103.0],
     "prerequisites": null,
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDC90": {
     "examiner": "Ulf Kargén",
@@ -866,10 +705,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      42.0,
-      118.0
-    ],
+    "education_components": [42.0, 118.0],
     "prerequisites": "Basic course in security. Students are expected to have knowledge of operating systems, programming languages, and software engineering. Students should be able to develop, test and debug software in Unix or Linux environments. Some experience with C-programming as well as basic knowledge of web application development are recommended.",
     "main_field": [
       "Information Technology",
@@ -888,10 +724,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Programming (Java, C, C++,C#), Data Structures and Algorithms, practical experience in developing complex software.",
     "main_field": [
       "Information Technology",
@@ -916,15 +749,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "First and second programming courses. A course on concurrent programming and operating systems.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDD08": {
     "examiner": "Victor Lagerkvist",
@@ -943,10 +770,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic courses in discrete mathematics and logic, and a course on basic programming.",
     "main_field": [
       "Information Technology",
@@ -971,15 +795,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "Basic mathematics, for instance given by discrete mathematics courses. Logic.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDD20": {
     "examiner": "Peter Jonsson",
@@ -992,10 +810,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": "Discrete mathematics and logic. An introductory course on data structures and algorithms. That is, the student is expected to be familiar with asymptotic notation, basic data structures, such as lists, stacks, queues, trees etc., and algorithms for fundamental problems, such as searching, sorting, etc. Basic knowledge in probability theory and optimization.",
     "main_field": [
       "Information Technology",
@@ -1014,10 +829,7 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Programming 10 credits (at least 6 credits object-oriented programming), Basic course in Usable/Interactive systems or similar.",
     "main_field": [
       "Information Technology",
@@ -1043,15 +855,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Concurrent Programming and operating system or Real Time and Concurrent Programming",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDD27": {
     "examiner": "Erik Berglund",
@@ -1064,10 +870,7 @@
         "name": "Seminars and project"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Good programming skills and ability to work with frameworks. Good understanding of how HTML / CSS / Javascript forms the basis for system development in the browser. Good JavaScript knowledge and knowledge of asynchronous communication with server and use of ROUTS and JSON. Good understanding of the web's REST technologies, micro frameworks such as Flask and Express.js, integration of external services via REST API. Ability to build larger web-based interactive systems and to independently run software projects.",
     "main_field": [
       "Information Technology",
@@ -1092,10 +895,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "The course requires thorough knowledge in programming, data structures and algorithms, and mathematics preferrably directed towards discrete mathematics or logics.",
     "main_field": [
       "Information Technology",
@@ -1114,10 +914,7 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      84.0,
-      76.0
-    ],
+    "education_components": [84.0, 76.0],
     "prerequisites": "Good knowledge and skills in programming in at least one procedural and/or object-oriented language (e.g. Ada, C, Pascal, Java or C++), and knowledge about fundamentals of object-oriented programming (class, inheritance, polymorhism).",
     "main_field": [
       "Information Technology",
@@ -1154,14 +951,9 @@
         "name": "Group assignment for all courses during the semester"
       }
     ],
-    "education_components": [
-      64.0,
-      149.0
-    ],
+    "education_components": [64.0, 149.0],
     "prerequisites": null,
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDD41": {
     "examiner": "Patrick Lambrix",
@@ -1180,10 +972,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      26.0,
-      134.0
-    ],
+    "education_components": [26.0, 134.0],
     "prerequisites": "The course requires thorough knowledge in programming, discrete mathematics, data structures and algorithms and databases.",
     "main_field": [
       "Information Technology",
@@ -1208,10 +997,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Programming, Databases.",
     "main_field": [
       "Information Technology",
@@ -1236,10 +1022,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      64.0,
-      96.0
-    ],
+    "education_components": [64.0, 96.0],
     "prerequisites": "Basic knowledge and understanding of data structures and algorithms as well as logic and discrete mathematics. Knowledge and understanding of basic artificial intelligence techniques and concepts, including state-space search, heuristics and the A* search algorithm.",
     "main_field": [
       "Information Technology",
@@ -1258,10 +1041,7 @@
         "name": "Labs"
       }
     ],
-    "education_components": [
-      40.0,
-      67.0
-    ],
+    "education_components": [40.0, 67.0],
     "prerequisites": "Object-oriented programming",
     "main_field": [
       "Information Technology",
@@ -1287,10 +1067,7 @@
         "name": "Oral Presentation and Seminar Leadership"
       }
     ],
-    "education_components": [
-      24.0,
-      83.0
-    ],
+    "education_components": [24.0, 83.0],
     "prerequisites": "Basic knowledge of digital systems, computer architecture, programming, operating systems, and computer networks.",
     "main_field": [
       "Information Technology",
@@ -1307,7 +1084,7 @@
         "credits": 3.0,
         "module": "UPG2",
         "scale": "U_THREE_FOUR_FIVE",
-        "name": "Translation is not available"
+        "name": "Individual assignments"
       },
       {
         "credits": 3.0,
@@ -1316,10 +1093,7 @@
         "name": "Group Assignment"
       }
     ],
-    "education_components": [
-      32.0,
-      128.0
-    ],
+    "education_components": [32.0, 128.0],
     "prerequisites": "User-centred design at basic level (courses like System Usability Issues, Interaction Design, Interactive Systems, Mobile and Social Applcations, User Driven Product Development or Product Ergonomics, or Create and Understand 3D)",
     "main_field": [
       "Information Technology",
@@ -1345,15 +1119,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      32.0,
-      75.0
-    ],
+    "education_components": [32.0, 75.0],
     "prerequisites": "Participants are expected to have knowledge of: a procedural programming language such as Pascal, internal data structures such as arrays and lists, and theory and implementation of abstract data types.",
-    "main_field": [
-      "Information Technology",
-      "Computer Science and Engineering"
-    ]
+    "main_field": ["Information Technology", "Computer Science and Engineering"]
   },
   "TDDD56": {
     "examiner": "Christoph Kessler",
@@ -1372,10 +1140,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful.",
     "main_field": [
       "Information Technology",
@@ -1401,10 +1166,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Excellent programming skills and ability to independently carry out a programming project.",
     "main_field": [
       "Information Technology",
@@ -1430,10 +1192,7 @@
         "name": "Hand-in assignment"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area.",
     "main_field": [
       "Information Technology",
@@ -1458,15 +1217,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Design and Analysis of Algorithms",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDD97": {
     "examiner": "Sahand Sadjadee",
@@ -1479,10 +1232,7 @@
         "name": "Project and laboratory work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Good knowledge of object-oriented programming for example Python or Java. Basic familiarity with web browsers and the Internet is assumed.",
     "main_field": [
       "Information Technology",
@@ -1507,10 +1257,7 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Probability theory; Statistics; Mathematical analysis; Linear Algebra; Basic programming.",
     "main_field": [
       "Information Technology",
@@ -1529,10 +1276,7 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "The course requires that the student has advanced programming skills and good knowledge of any software-related technical field (e.g. computer networks, security, mobile and social applications, AI, signal processing, and computer graphics). The student has also experience from programming projects in teams. The student must also be able to search and organize information, and to communicate orally and in writing.",
     "main_field": [
       "Information Technology",
@@ -1557,15 +1301,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "An introductory AI course, Object-oriented programming (preferably in C++ or Python.)",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE07": {
     "examiner": "Bertil Wegmann",
@@ -1584,15 +1322,9 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Mathematical analysis; Linear Algebra; Probability and Statistics; Machine Learning; Basic programming.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE09": {
     "examiner": "Marco Kuhlmann",
@@ -1623,10 +1355,7 @@
         "name": "Project assignments (individual part)"
       }
     ],
-    "education_components": [
-      42.0,
-      118.0
-    ],
+    "education_components": [42.0, 118.0],
     "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\ngood knowledge of programming, data structures, and algorithms\nmachine learning (such as TDDE01 or TBMI26)\nThe lab series for the course uses Python and the PyTorch library.",
     "main_field": [
       "Information Technology",
@@ -1651,15 +1380,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "An introductory AI course, knowledge of programming, probabilities, and logic.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE15": {
     "examiner": "Jose M Pena",
@@ -1678,15 +1401,9 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Probability theory and Statistics; Bayesian Learning; Machine Learning; Mathematical analysis; Linear Algebra; Basic programming.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE16": {
     "examiner": "Marcel Bollmann",
@@ -1705,10 +1422,7 @@
         "name": "Laboratory exercises"
       }
     ],
-    "education_components": [
-      24.0,
-      136.0
-    ],
+    "education_components": [24.0, 136.0],
     "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory\nprogramming, data structures and algorithms\nmachine learning\nThe lab series for the course uses Python.",
     "main_field": [
       "Information Technology",
@@ -1733,15 +1447,9 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      110.0,
-      50.0
-    ],
+    "education_components": [110.0, 50.0],
     "prerequisites": "Skill in one imperative, object-oriented or functional programming language.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE19": {
     "examiner": "Mattias Tiger",
@@ -1754,15 +1462,9 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      64.0,
-      96.0
-    ],
+    "education_components": [64.0, 96.0],
     "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile \"AI and machine learning\" or the specialization \"AI and data mining\" in the area covered by the project.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE20": {
     "examiner": "Erik Berglund",
@@ -1775,10 +1477,7 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      64.0,
-      96.0
-    ],
+    "education_components": [64.0, 96.0],
     "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in the profile ”Game Programming\" or similar set of base courses for the webb and app- area covered by the project.",
     "main_field": [
       "Information Technology",
@@ -1797,10 +1496,7 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      64.0,
-      96.0
-    ],
+    "education_components": [64.0, 96.0],
     "prerequisites": "The course expects the student to have applied project management models in previous courses or other context. The student should also have acquired knowledge equivalent to basic courses in one the profiles \"Secure systems” or ”Computer systems”, or in one of the specializations ”Embedded systems” or ”Networks, distributed systems and security” in the area covered by the project.",
     "main_field": [
       "Information Technology",
@@ -1831,15 +1527,9 @@
         "name": "Computer-based hand-in assignments"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": null,
-    "main_field": [
-      "Information Technology",
-      "Computer Science and Engineering"
-    ]
+    "main_field": ["Information Technology", "Computer Science and Engineering"]
   },
   "TDDE31": {
     "examiner": "Huanyu Li",
@@ -1858,10 +1548,7 @@
         "name": "Written exam"
       }
     ],
-    "education_components": [
-      42.0,
-      118.0
-    ],
+    "education_components": [42.0, 118.0],
     "prerequisites": "Basic database course. Data mining or machine learning course.",
     "main_field": [
       "Information Technology",
@@ -1886,10 +1573,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Programming, discrete mathematics and logic",
     "main_field": [
       "Information Technology",
@@ -1914,10 +1598,7 @@
         "name": "Project assignment"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": "Software engineering - theory. Object-oriented programming. It is not required but good to have some experience in reading software engineering papers. Software quality. Metaprogramming.",
     "main_field": [
       "Information Technology",
@@ -1954,14 +1635,9 @@
         "name": "Assignments"
       }
     ],
-    "education_components": [
-      112.0,
-      208.0
-    ],
+    "education_components": [112.0, 208.0],
     "prerequisites": "Basic knowledge of computer programming and system development.\nThe course is preferably taken in parallell with the course Diversity and gender in application development, alternatively the student should have corresponding knowledge in the area of gender and diversity.",
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDE45": {
     "examiner": "Adrian Pop",
@@ -1986,10 +1662,7 @@
         "name": "Assignment"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Basic course in software engineering (including UML)\nAbility to program in multiple programming languages (including object-oriented programming and pointers / memory management)\nData structures\nThe student should know how to read research papers on software engineering and search information independently on new topics.",
     "main_field": [
       "Information Technology",
@@ -2020,10 +1693,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      76.0,
-      137.0
-    ],
+    "education_components": [76.0, 137.0],
     "prerequisites": "Programming. Data structures and algorithms. Computer hardware. Distributed version management (e.g., git).",
     "main_field": [
       "Information Technology",
@@ -2048,14 +1718,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      26.0,
-      81.0
-    ],
+    "education_components": [26.0, 81.0],
     "prerequisites": "Knowledge in Computer networks or Computer networks and distributed systems.",
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDE50": {
     "examiner": "Ola Leifler",
@@ -2080,10 +1745,7 @@
         "name": "Systems analysis"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -2104,10 +1766,7 @@
         "name": "Hand-in assignments"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": "Proficient in unit-level testing and software design principles and patterns. Also have basic proficiency in source code management tools and build tools for software. Proficient in reading technical English texts.",
     "main_field": [
       "Information Technology",
@@ -2126,10 +1785,7 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "Students from the swedish programme “Civilingenjör” are expected to have acquired knowledge corresponding to courses in one of the two profiles “Large Scale Software Engineering” or “Programming and Algorithms” depending on which focus area in the course the student chooses. In particular, for the “Large Scale Software Engineering” profile it is recommended to have acquired the knowledge from Methods and tools for large distributed projects.\nStudents from the international Master's programme in Computer Science are expected to have acquired knowledge corresponding to courses in the specialization “Programming and Software Methods”.",
     "main_field": [
       "Information Technology",
@@ -2166,14 +1822,9 @@
         "name": "Bachelor project with oral and written presentations"
       }
     ],
-    "education_components": [
-      240.0,
-      453.0
-    ],
+    "education_components": [240.0, 453.0],
     "prerequisites": "Knowledge is required in basic computer science, discrete structures, computer networks, databases, mobile networks, mathematical statistics, calculus and linear algebra. In addition, courses in programming are required",
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TDDE58": {
     "examiner": "Nikolaos Pappas",
@@ -2198,15 +1849,9 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Probability and Statistics.\nMathematical knowledge on basic information theoretic concepts and the time and frequency sharing ideas from for example “Signals, Information, Communication” is helpful but not a requirement.",
-    "main_field": [
-      "Information Technology",
-      "Computer Science and Engineering"
-    ]
+    "main_field": ["Information Technology", "Computer Science and Engineering"]
   },
   "TDDE61": {
     "examiner": "Mikael Asplund",
@@ -2237,10 +1882,7 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic security course\nBasic networking\nEthics",
     "main_field": [
       "Information Technology",
@@ -2265,10 +1907,7 @@
         "name": "Laboratory work and written assignments"
       }
     ],
-    "education_components": [
-      46.0,
-      114.0
-    ],
+    "education_components": [46.0, 114.0],
     "prerequisites": "Basic course in computer security. Basic understanding of operating system concepts and TCP/IP networks is recommended.",
     "main_field": [
       "Information Technology",
@@ -2287,10 +1926,7 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      12.0,
-      148.0
-    ],
+    "education_components": [12.0, 148.0],
     "prerequisites": "The course “Information Security: Privacy, System and Network Security”, or equivalent. Students are expected to be able to produce written reports of high quality and be capable of independent work in project form.",
     "main_field": [
       "Information Technology",
@@ -2315,15 +1951,9 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "Machine Learning an/or Data mining and/or a course in AI. A course in Statistics.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE65": {
     "examiner": "Christoph Kessler",
@@ -2342,15 +1972,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Basic course in programming. A course in process programming  is useful but not required, since understanding the process concept is assumed. Programming skills in C/C++ are required.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Computer Science"
-    ]
+    "main_field": ["Computer Science and Engineering", "Computer Science"]
   },
   "TDDE66": {
     "examiner": "Adrian Pop",
@@ -2369,10 +1993,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Data Structures and Algorithms. Formal Languages and Automata Theory, either via that course or studying selected material (check with lecturer). Some knowledge of C-based languages such as C++ is an advantage.",
     "main_field": [
       "Information Technology",
@@ -2403,10 +2024,7 @@
         "name": "Project Work"
       }
     ],
-    "education_components": [
-      42.0,
-      118.0
-    ],
+    "education_components": [42.0, 118.0],
     "prerequisites": "Calculus in one and several variables, linear algebra, statistics, optimization and programming. Basic machine learning (at least 6 credits) including artificial neural networks. Programming in Python and experience in programming for numerical problem solving and linear algebra (e.g. via NumPy, Matlab or Julia).",
     "main_field": [
       "Information Technology",
@@ -2437,10 +2055,7 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      54.0,
-      106.0
-    ],
+    "education_components": [54.0, 106.0],
     "prerequisites": "BSc in Computer Science, Computer Engineering, Information Technology or similar.",
     "main_field": [
       "Information Technology",
@@ -2459,10 +2074,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "Practical skills of programming in Python. Working knowledge of deep learning, especially deep neural networks from for example “Artificial Intelligence” (TDDC17) . Understanding of common concepts in computer science and optimization.",
     "main_field": [
       "Information Technology",
@@ -2493,14 +2105,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      24.0,
-      136.0
-    ],
+    "education_components": [24.0, 136.0],
     "prerequisites": "Basic knowledge regarding management control.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TDEI74": {
     "examiner": "Harald Brege",
@@ -2519,14 +2126,9 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "Industrial Economics, fundamental course in statistics.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TDTS07": {
     "examiner": "Ahmed Rezine",
@@ -2545,10 +2147,7 @@
         "name": "Laboratory Work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Computer Hardware and Basic Computer Architectures, Programming",
     "main_field": [
       "Information Technology",
@@ -2573,15 +2172,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Computer Hardware and Architecture",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   },
   "TDTS11": {
     "examiner": "Andrei Gurtov",
@@ -2606,14 +2199,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      46.0,
-      114.0
-    ],
+    "education_components": [46.0, 114.0],
     "prerequisites": "Perspectives on Information Technology.",
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TEAE01": {
     "examiner": "Sofi Rehme, Martin Kylinger",
@@ -2638,14 +2226,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      49.0,
-      111.0
-    ],
+    "education_components": [49.0, 111.0],
     "prerequisites": "Foundation Course in Mathematics",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEAE13": {
     "examiner": "Ingrid Thörn Berggren",
@@ -2658,10 +2241,7 @@
         "name": "Digital written examination"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Basic course in industrial engineering",
     "main_field": []
   },
@@ -2682,14 +2262,9 @@
         "name": "Digital written examination"
       }
     ],
-    "education_components": [
-      32.0,
-      128.0
-    ],
+    "education_components": [32.0, 128.0],
     "prerequisites": null,
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEAE21": {
     "examiner": "Marc Stuhldreier",
@@ -2708,10 +2283,7 @@
         "name": "Digital written examination"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -2732,14 +2304,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "Achieved Bachelor level studies in Computer Science.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIM11": {
     "examiner": "Daniel Ellström",
@@ -2758,14 +2325,9 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      44.0,
-      116.0
-    ],
+    "education_components": [44.0, 116.0],
     "prerequisites": "Basic course in industrial economics",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIO06": {
     "examiner": "Viktor Werner",
@@ -2784,14 +2346,9 @@
         "name": "Individual assignments"
       }
     ],
-    "education_components": [
-      47.0,
-      113.0
-    ],
+    "education_components": [47.0, 113.0],
     "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIO13": {
     "examiner": "Anna Yström",
@@ -2816,14 +2373,9 @@
         "name": "Project assignment"
       }
     ],
-    "education_components": [
-      88.0,
-      72.0
-    ],
+    "education_components": [88.0, 72.0],
     "prerequisites": "Industrial Management, Corporate Organization or corresponding relevant knowledge about general models and theories about organizations.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIO32": {
     "examiner": "Dag Swartling",
@@ -2854,14 +2406,9 @@
         "name": "Group assignment organization"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": null,
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIO90": {
     "examiner": "Viktor Werner",
@@ -2880,14 +2427,9 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      80.0,
-      80.0
-    ],
+    "education_components": [80.0, 80.0],
     "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TEIO97": {
     "examiner": "Stefan Cavalcante Bernat Junior",
@@ -2912,14 +2454,9 @@
         "name": "PArticipation in seminars"
       }
     ],
-    "education_components": [
-      48.0,
-      59.0
-    ],
+    "education_components": [48.0, 59.0],
     "prerequisites": "At least two years of academic studies.",
-    "main_field": [
-      "Industrial Engineering and Management"
-    ]
+    "main_field": ["Industrial Engineering and Management"]
   },
   "TFYA87": {
     "examiner": "Mats Eriksson",
@@ -2950,15 +2487,9 @@
         "name": "Voluntary assignments"
       }
     ],
-    "education_components": [
-      54.0,
-      106.0
-    ],
+    "education_components": [54.0, 106.0],
     "prerequisites": "Introductory mathematics, calculus of one variable, linear algebra, calculus of several variables, differential equations, basic programming",
-    "main_field": [
-      "Applied Physics",
-      "Physics"
-    ]
+    "main_field": ["Applied Physics", "Physics"]
   },
   "TFYB12": {
     "examiner": "Magnus Johansson",
@@ -2989,15 +2520,9 @@
         "name": "Voluntary assignments"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Mathematical algorithms and models, calculus in one and several variables, linear algebra, linear systems.",
-    "main_field": [
-      "Applied Physics",
-      "Physics"
-    ]
+    "main_field": ["Applied Physics", "Physics"]
   },
   "TGTU49": {
     "examiner": "Corinna Röver",
@@ -3016,10 +2541,7 @@
         "name": "Hand-in examination"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3052,10 +2574,7 @@
         "name": "Seminars, Ethics"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3076,10 +2595,7 @@
         "name": "Group Assignments"
       }
     ],
-    "education_components": [
-      26.0,
-      81.0
-    ],
+    "education_components": [26.0, 81.0],
     "prerequisites": "One year of studies at an engineering program or similar, as well as some experience of programming and systems development. To be able to complete the examination of the course, either the student has to take the course Design and development of interactive systems in parallel, or have previous or ongoing experiences from design of graphical user interfaces, similar to what is done in Design and development of interactive systems, as well as experience of group work/projects in larger groups than 2 students (e.g., PBL group work, project work, or similar).",
     "main_field": []
   },
@@ -3100,10 +2616,7 @@
         "name": "Successful completion of oral assignments"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "University studies corresponding to 60 credits / one year full time studies.",
     "main_field": []
   },
@@ -3124,10 +2637,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": "Requisite general qualifications for university.",
     "main_field": []
   },
@@ -3148,10 +2658,7 @@
         "name": "Hand-in Examination"
       }
     ],
-    "education_components": [
-      30.0,
-      130.0
-    ],
+    "education_components": [30.0, 130.0],
     "prerequisites": "At least two years studies at university.",
     "main_field": []
   },
@@ -3172,10 +2679,7 @@
         "name": "Assignment"
       }
     ],
-    "education_components": [
-      14.0,
-      39.0
-    ],
+    "education_components": [14.0, 39.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3196,10 +2700,7 @@
         "name": "Individual written assignment"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "BSc level within Computer Science, Computer Science and Engineering or Information Technology and Engineering. Completed course corresponding to 6 credits in AI, alternatively studied in parallel with course corresponding to 6 credits in AI.",
     "main_field": [
       "Information Technology",
@@ -3224,10 +2725,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3260,14 +2758,9 @@
         "name": "Group meetings"
       }
     ],
-    "education_components": [
-      0.0,
-      213.0
-    ],
+    "education_components": [0.0, 213.0],
     "prerequisites": null,
-    "main_field": [
-      "Information Technology"
-    ]
+    "main_field": ["Information Technology"]
   },
   "TINT01": {
     "examiner": "Christoph Röcklinsberg",
@@ -3292,10 +2785,7 @@
         "name": "Active participation in seminars and group discussions"
       }
     ],
-    "education_components": [
-      14.0,
-      39.0
-    ],
+    "education_components": [14.0, 39.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3322,10 +2812,7 @@
         "name": "Hand-in assignments and active participation in seminars"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3346,10 +2833,7 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      31.0,
-      129.0
-    ],
+    "education_components": [31.0, 129.0],
     "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous.",
     "main_field": [
       "Energy and Environmental Engineering",
@@ -3374,10 +2858,7 @@
         "name": "Digital examination"
       }
     ],
-    "education_components": [
-      45.0,
-      115.0
-    ],
+    "education_components": [45.0, 115.0],
     "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry.",
     "main_field": [
       "Energy and Environmental Engineering",
@@ -3402,14 +2883,9 @@
         "name": "Hand-in assignments"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "The course assumes that the student meets the requirements for studies in the higher levels of the engineering programs, and has good knowledge of mathematics as well as basic programming. The course is open to students from different backgrounds, and it is assumed that the student has good knowledge of general development methodology in his/her own subject area as well as specific technical knowledge corresponding to the last semester of the respective engineering program.",
-    "main_field": [
-      "Mechanical Engineering"
-    ]
+    "main_field": ["Mechanical Engineering"]
   },
   "TNA010": {
     "examiner": "Berkant Savas",
@@ -3428,15 +2904,9 @@
         "name": "Hand-in assignments"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB.",
-    "main_field": [
-      "Mathematics",
-      "Applied Mathematics"
-    ]
+    "main_field": ["Mathematics", "Applied Mathematics"]
   },
   "TNCG15": {
     "examiner": "Mark E Dieckmann",
@@ -3449,10 +2919,7 @@
         "name": "Project work with oral and written presentation"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Computer graphics, 3D Computer Graphics and Animation",
     "main_field": [
       "Computer Science and Engineering",
@@ -3477,10 +2944,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Computer Graphics, Physical modeling",
     "main_field": [
       "Information Technology",
@@ -3506,10 +2970,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      58.0,
-      102.0
-    ],
+    "education_components": [58.0, 102.0],
     "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables,  Programming",
     "main_field": [
       "Computer Science and Engineering",
@@ -3534,10 +2995,7 @@
         "name": "Oral examination"
       }
     ],
-    "education_components": [
-      51.0,
-      109.0
-    ],
+    "education_components": [51.0, 109.0],
     "prerequisites": "Programming.\nThe course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required.",
     "main_field": [
       "Computer Science and Engineering",
@@ -3556,10 +3014,7 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      12.0,
-      148.0
-    ],
+    "education_components": [12.0, 148.0],
     "prerequisites": "Artificial Intelligence",
     "main_field": [
       "Information Technology",
@@ -3585,10 +3040,7 @@
         "name": "Laborations"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++",
     "main_field": [
       "Information Technology",
@@ -3607,10 +3059,7 @@
         "name": "Assignment"
       }
     ],
-    "education_components": [
-      0.0,
-      160.0
-    ],
+    "education_components": [0.0, 160.0],
     "prerequisites": null,
     "main_field": []
   },
@@ -3637,14 +3086,9 @@
         "name": "Planning report, midterm assessment, written report, oral presentation and reflection document"
       }
     ],
-    "education_components": [
-      0.0,
-      800.0
-    ],
+    "education_components": [0.0, 800.0],
     "prerequisites": null,
-    "main_field": [
-      "see special list"
-    ]
+    "main_field": ["see special list"]
   },
   "TSBB06": {
     "examiner": "Mårten Wadenbäck",
@@ -3669,14 +3113,9 @@
         "name": "Laboratory Work"
       }
     ],
-    "education_components": [
-      68.0,
-      92.0
-    ],
+    "education_components": [68.0, 92.0],
     "prerequisites": "Basic Linear Algebra: vector spaces, bases, scalar product, least squares problems, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended.",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSBB08": {
     "examiner": "Maria Magnusson",
@@ -3695,15 +3134,9 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "From any of the courses Signals and Systems, Linear systems, Signals and Images, Multidimensional Signal and Image Analysis: Deterministic signals, linear systems, convolution, 1D continuous Fourier transform and its theorems, basic filters (low-pass, high-pass, and band-pass), discrete Fourier transform (desirable but not necessary), sampling and reconstruction (desirable but not necessary).\nFrom course Linear algebra: vector, matrix, determinant, scalar product, bases, the least square method.\nOne- and multidimensional calculus.\nProgramming in one of the following languages: C, C++, Java, Ada, Python or Matlab.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   },
   "TSBB19": {
     "examiner": "Per-Erik Forssén",
@@ -3722,14 +3155,9 @@
         "name": "Written examiation"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Basic image processing: thresholding, segmentation, edge detection from for example Signals, Information and Images or Digital Image Processing.\nUse of Python or Matlab.\nProbability Theory and Statistics.",
-    "main_field": [
-      "Computer Science and Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering"]
   },
   "TSBB21": {
     "examiner": "Maria Magnusson",
@@ -3748,14 +3176,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      50.0,
-      110.0
-    ],
+    "education_components": [50.0, 110.0],
     "prerequisites": "Linear algebra: points, lines and planes in two and three dimensions, vector spaces and linear maps. Basic optics (secondary school): light spectrum and light refraction in lenses. Basic use of Matlab. 1-D signal processing: linear systems, convolution, the continuous Fourier transform and its theorems, sampling and reconstruction. Digital image processing: 2-D Fourier transform, 2-D convolution on digital images, 2-D interpolation (desirable but not necessary).",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSBB22": {
     "examiner": "Yonghao Xu",
@@ -3768,10 +3191,7 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      52.0,
-      268.0
-    ],
+    "education_components": [52.0, 268.0],
     "prerequisites": "Digital image processing, machine learning, computer vision, linear algebra, statistics, and programming. Knowledge from the course computer graphics is beneficial.",
     "main_field": [
       "Information Technology",
@@ -3808,10 +3228,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      56.0,
-      157.0
-    ],
+    "education_components": [56.0, 157.0],
     "prerequisites": "Calculus and linear algebra. Fundamental knowledge in some programming language, for example Matlab, for generating simple graphs.",
     "main_field": [
       "Information Technology",
@@ -3842,15 +3259,9 @@
         "name": "Laboratory Work"
       }
     ],
-    "education_components": [
-      101.0,
-      59.0
-    ],
+    "education_components": [101.0, 59.0],
     "prerequisites": "Probability theory, estimation theory, the least squares method. From e.g. Multi-dimensional signal analysis: Projective spaces, homogeneous representations of 2D and 3D geometry, perspective projection, camera calibration, and epipolar geometry.\nBasic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   },
   "TSBB34": {
     "examiner": "Michael Felsberg",
@@ -3869,15 +3280,9 @@
         "name": "Laboratory Work"
       }
     ],
-    "education_components": [
-      100.0,
-      60.0
-    ],
+    "education_components": [100.0, 60.0],
     "prerequisites": "Probability theory, estimation theory, the least squares method, partial differential equations, 1D & 2D linear system theory (deterministic and stochastic). Basic image processing: thresholding, segmentation, edge detection.\nUse of Python.\nAs half the course is project work, experience with programming is also recommended.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   },
   "TSBK03": {
     "examiner": "Ingemar Ragnemalm",
@@ -3896,10 +3301,7 @@
         "name": "Laboratory work with tests"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics.",
     "main_field": [
       "Information Technology",
@@ -3931,10 +3333,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      48.0,
-      112.0
-    ],
+    "education_components": [48.0, 112.0],
     "prerequisites": "Linear algebra. Programming knowledge.",
     "main_field": [
       "Information Technology",
@@ -3959,15 +3358,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Probability theory, basic signal processing, basic transform theory.",
-    "main_field": [
-      "Electrical Engineering",
-      "Media Technology and Engineering"
-    ]
+    "main_field": ["Electrical Engineering", "Media Technology and Engineering"]
   },
   "TSDT14": {
     "examiner": "Danyo Danev",
@@ -3986,14 +3379,9 @@
         "name": "Written Examination"
       }
     ],
-    "education_components": [
-      56.0,
-      104.0
-    ],
+    "education_components": [56.0, 104.0],
     "prerequisites": "From Calculus: Derivatives and integrals. From Probability theory: Most, but with focus on binary distributions, rectangular distributions and Gaussian distributions. From Signals and systems or Linear Systems: Fourier transforms, LTI systems, convolution, amplitude modulation, sampling and pulse amplitude modulation. (all of it deterministic)",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSEA77": {
     "examiner": "Michael Josefsson",
@@ -4006,14 +3394,9 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      34.0,
-      73.0
-    ],
+    "education_components": [34.0, 73.0],
     "prerequisites": "To fully appreciate the course you should have previous knowledge of any high level language.",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSFS02": {
     "examiner": "Jan Åslund",
@@ -4032,15 +3415,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      56.0,
-      104.0
-    ],
+    "education_components": [56.0, 104.0],
     "prerequisites": "Automatic Control, Engineering Mechanics, and familiarity with Matlab/Simulink.",
-    "main_field": [
-      "Electrical Engineering",
-      "Mechanical Engineering"
-    ]
+    "main_field": ["Electrical Engineering", "Mechanical Engineering"]
   },
   "TSFS12": {
     "examiner": "Erik Frisk",
@@ -4065,15 +3442,9 @@
         "name": "Hand in exercises"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Automatic control, introductory courses in mechanics and programming",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   },
   "TSIN01": {
     "examiner": "Khac-Hoang Ngo",
@@ -4092,10 +3463,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      36.0,
-      124.0
-    ],
+    "education_components": [36.0, 124.0],
     "prerequisites": "Basic knowledge of Probability theory.",
     "main_field": [
       "Information Technology",
@@ -4120,10 +3488,7 @@
         "name": "Written examination."
       }
     ],
-    "education_components": [
-      38.0,
-      122.0
-    ],
+    "education_components": [38.0, 122.0],
     "prerequisites": "Basic knowledge in computer science",
     "main_field": [
       "Information Technology",
@@ -4148,10 +3513,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      32.0,
-      128.0
-    ],
+    "education_components": [32.0, 128.0],
     "prerequisites": "Probability theory",
     "main_field": [
       "Information Technology",
@@ -4176,10 +3538,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      32.0,
-      128.0
-    ],
+    "education_components": [32.0, 128.0],
     "prerequisites": "Linear Algebra",
     "main_field": [
       "Computer Science and Engineering",
@@ -4204,10 +3563,7 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      40.0,
-      120.0
-    ],
+    "education_components": [40.0, 120.0],
     "prerequisites": "Computer networks, Ethical hacking",
     "main_field": [
       "Information Technology",
@@ -4232,10 +3588,7 @@
         "name": "Laboratory work"
       }
     ],
-    "education_components": [
-      54.0,
-      106.0
-    ],
+    "education_components": [54.0, 106.0],
     "prerequisites": "Linear algebra. Basic knowledge and understanding of probability theory/statistics. Programming skills in Python and Matlab.",
     "main_field": [
       "Information Technology",
@@ -4255,14 +3608,9 @@
         "name": "Computer exercise"
       }
     ],
-    "education_components": [
-      14.0,
-      39.0
-    ],
+    "education_components": [14.0, 39.0],
     "prerequisites": "Linear algebra (can be studied in parallel), Programming",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT04": {
     "examiner": "Håkan Johansson, Mikael Olofsson, Danyo Danev",
@@ -4275,10 +3623,7 @@
         "name": "Computer exercise"
       }
     ],
-    "education_components": [
-      16.0,
-      37.0
-    ],
+    "education_components": [16.0, 37.0],
     "prerequisites": "Linear algebra (can be studied in parallel), Programming",
     "main_field": []
   },
@@ -4299,14 +3644,9 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      52.0,
-      108.0
-    ],
+    "education_components": [52.0, 108.0],
     "prerequisites": "Automatic control",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT08": {
     "examiner": "Anders Hansson",
@@ -4325,14 +3665,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      56.0,
-      104.0
-    ],
+    "education_components": [56.0, 104.0],
     "prerequisites": "Automatic Control, Basic course in optimization",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT09": {
     "examiner": "Claudio Altafini",
@@ -4351,14 +3686,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      60.0,
-      100.0
-    ],
+    "education_components": [60.0, 100.0],
     "prerequisites": "Automatic control, Statistics",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT14": {
     "examiner": "Gustaf Hendeby",
@@ -4377,14 +3707,9 @@
         "name": "Computer examination"
       }
     ],
-    "education_components": [
-      41.0,
-      119.0
-    ],
+    "education_components": [41.0, 119.0],
     "prerequisites": "A introductory course in statistics, as well as a course discussing signals and systems, for example Automatic Control or Signals and Systems.",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT19": {
     "examiner": "Johan Löfberg",
@@ -4403,14 +3728,9 @@
         "name": "Written examination"
       }
     ],
-    "education_components": [
-      64.0,
-      96.0
-    ],
+    "education_components": [64.0, 96.0],
     "prerequisites": "Calculus, one variable, Calculus, several variables, Linear Algebra",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT28": {
     "examiner": "Daniel Axehill",
@@ -4423,14 +3743,9 @@
         "name": "Project work"
       }
     ],
-    "education_components": [
-      26.0,
-      294.0
-    ],
+    "education_components": [26.0, 294.0],
     "prerequisites": "Automatic control and Control theory. Knowledge from the courses Industrial Control systems, Modelling and Learning for Dynamical Systems and/or Sensor Fusion is beneficial.",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSRT92": {
     "examiner": "Martin Enqvist",
@@ -4449,14 +3764,9 @@
         "name": "Laboratory Work"
       }
     ],
-    "education_components": [
-      58.0,
-      102.0
-    ],
+    "education_components": [58.0, 102.0],
     "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics.",
-    "main_field": [
-      "Electrical Engineering"
-    ]
+    "main_field": ["Electrical Engineering"]
   },
   "TSTE12": {
     "examiner": "Kent Palmkvist",
@@ -4475,14 +3785,8 @@
         "name": "Project"
       }
     ],
-    "education_components": [
-      44.0,
-      116.0
-    ],
+    "education_components": [44.0, 116.0],
     "prerequisites": "Basic courses in digital circuits. Basic courses in programming.",
-    "main_field": [
-      "Computer Science and Engineering",
-      "Electrical Engineering"
-    ]
+    "main_field": ["Computer Science and Engineering", "Electrical Engineering"]
   }
 }
