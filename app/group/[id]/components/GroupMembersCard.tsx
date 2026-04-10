@@ -16,9 +16,7 @@ const GroupMembersCard: FC<GroupMembersCardProps> = ({ members }) => (
         Group members
       </div>
     </div>
-    <CardHeader className="px-6 pt-6">
-      <CardTitle className="text-xl tracking-tight">Schedules</CardTitle>
-    </CardHeader>
+    
 
     <CardContent className="px-6 pb-8 pt-2">
       {members.length === 0 ? (
