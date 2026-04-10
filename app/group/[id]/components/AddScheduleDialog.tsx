@@ -1,6 +1,10 @@
 "use client";
 
-import { addGroupMember, AddGroupMemberResult } from "../actions";
+import {
+  addGroupMember,
+  GroupMemberMutationResult,
+  updateGroupMember,
+} from "../actions";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,37 +19,58 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { UserPlus } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { FC, FormEvent, useState, useTransition } from "react";
+import { FC, FormEvent, ReactNode, useState, useTransition } from "react";
 
 interface AddScheduleDialogProps {
   groupId: string;
+  member?: {
+    id: string;
+    name: string;
+    scheduleUrl: string;
+  };
+  trigger?: ReactNode;
 }
 
-const AddScheduleDialog: FC<AddScheduleDialogProps> = ({ groupId }) => {
+const AddScheduleDialog: FC<AddScheduleDialogProps> = ({
+  groupId,
+  member,
+  trigger,
+}) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [scheduleUrl, setScheduleUrl] = useState("");
-  const [submitResult, setSubmitResult] = useState<AddGroupMemberResult | null>(
-    null,
-  );
+  const [name, setName] = useState(member?.name ?? "");
+  const [scheduleUrl, setScheduleUrl] = useState(member?.scheduleUrl ?? "");
+  const [submitResult, setSubmitResult] =
+    useState<GroupMemberMutationResult | null>(null);
+  const isEditing = Boolean(member);
+
+  const initializeForm = () => {
+    setName(member?.name ?? "");
+    setScheduleUrl(member?.scheduleUrl ?? "");
+    setSubmitResult(null);
+  };
 
   const resetForm = () => {
-    setName("");
-    setScheduleUrl("");
-    setSubmitResult(null);
+    initializeForm();
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     startTransition(async () => {
-      const result = await addGroupMember({
-        groupId,
-        name,
-        scheduleUrl,
-      });
+      const result = isEditing
+        ? await updateGroupMember({
+            memberId: member!.id,
+            groupId,
+            name,
+            scheduleUrl,
+          })
+        : await addGroupMember({
+            groupId,
+            name,
+            scheduleUrl,
+          });
 
       setSubmitResult(result);
 
@@ -64,22 +89,31 @@ const AddScheduleDialog: FC<AddScheduleDialogProps> = ({ groupId }) => {
       open={isOpen}
       onOpenChange={(open) => {
         setIsOpen(open);
-        if (!open) {
-          resetForm();
+        if (open) {
+          initializeForm();
+          return;
         }
+
+        resetForm();
       }}
     >
       <DialogTrigger asChild>
-        <Button size="lg" className="w-full justify-center">
-          <UserPlus className="size-4" />
-          Add my schedule
-        </Button>
+        {trigger ?? (
+          <Button size="lg" className="w-full justify-center">
+            <UserPlus className="size-4" />
+            Add my schedule
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Add your schedule</DialogTitle>
+          <DialogTitle>
+            {isEditing ? "Update schedule" : "Add your schedule"}
+          </DialogTitle>
           <DialogDescription>
-            Fill in your details to add your schedule to the group.
+            {isEditing
+              ? "Update the saved details for this member."
+              : "Fill in your details to add your schedule to the group."}
           </DialogDescription>
         </DialogHeader>
 
@@ -137,7 +171,7 @@ const AddScheduleDialog: FC<AddScheduleDialogProps> = ({ groupId }) => {
               type="submit"
               disabled={!name.trim() || !scheduleUrl.trim() || isPending}
             >
-              Add schedule
+              {isEditing ? "Save changes" : "Add schedule"}
             </Button>
           </DialogFooter>
         </form>

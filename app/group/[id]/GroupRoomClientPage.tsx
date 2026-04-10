@@ -33,7 +33,7 @@ const GroupRoomClientPage: FC<GroupRoomClientPageProps> = ({
           }
         />
         <RoomActionsCard groupId={groupId} />
-        <GroupMembersCard members={members} />
+        <GroupMembersCard groupId={groupId} members={members} />
       </div>
     </GroupPageShell>
   );
