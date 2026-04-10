@@ -51,6 +51,7 @@ DB_NAME=masterpicker
 
 # Prisma Connection String
 DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/masterpicker?schema=public
+GROUPS_DATABASE_URL=postgresql://postgres:your_secure_password_here@localhost:5432/masterpicker_groups?schema=public
 ```
 
 2. Start the PostgreSQL database using Docker:

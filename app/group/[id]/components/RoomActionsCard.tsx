@@ -24,7 +24,7 @@ const RoomActionsCard: FC<RoomActionsCardProps> = ({ groupId }) => (
 
     <CardContent className="px-6 pb-8 pt-2">
       <div className="mx-auto grid max-w-xl gap-3 sm:grid-cols-2">
-        <AddScheduleDialog />
+        <AddScheduleDialog groupId={groupId} />
         <InviteFriendsButton groupId={groupId} />
       </div>
     </CardContent>
