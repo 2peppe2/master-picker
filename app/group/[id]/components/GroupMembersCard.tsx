@@ -1,14 +1,15 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { GroupMemberCardData } from "../memberScheduleData";
 import { ListChecks, Users } from "lucide-react";
 import { FC } from "react";
 import MemberScheduleCard from "./MemberScheduleCard";
 
 interface GroupMembersCardProps {
+  groupId: string;
   members: GroupMemberCardData[];
 }
 
-const GroupMembersCard: FC<GroupMembersCardProps> = ({ members }) => (
+const GroupMembersCard: FC<GroupMembersCardProps> = ({ groupId, members }) => (
   <Card className="overflow-hidden border-border/70 bg-card/80 py-0 shadow-xl backdrop-blur-sm">
     <div className="border-b border-border/60 bg-muted/30 px-6 py-4">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -32,7 +33,7 @@ const GroupMembersCard: FC<GroupMembersCardProps> = ({ members }) => (
       ) : (
         <div className="grid gap-4 lg:grid-cols-2">
           {members.map((member) => (
-            <MemberScheduleCard key={member.id} member={member} />
+            <MemberScheduleCard key={member.id} groupId={groupId} member={member} />
           ))}
         </div>
       )}

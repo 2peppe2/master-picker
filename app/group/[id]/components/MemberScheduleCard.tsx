@@ -1,23 +1,45 @@
 "use client";
 
+import { deleteGroupMember } from "../actions";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import AddScheduleDialog from "./AddScheduleDialog";
 import { evaluateMemberMasterProgress } from "../memberMasterProgress";
 import { GroupMemberCardData } from "../memberScheduleData";
 import {
   Blocks,
   CalendarRange,
+  Pencil,
   ExternalLink,
   GraduationCap,
+  Trash2,
   Trophy,
 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FC, useMemo } from "react";
 
 interface MemberScheduleCardProps {
+  groupId: string;
   member: GroupMemberCardData;
 }
 
-const MemberScheduleCard: FC<MemberScheduleCardProps> = ({ member }) => {
+const MemberScheduleCard: FC<MemberScheduleCardProps> = ({
+  groupId,
+  member,
+}) => {
+  const router = useRouter();
   const topMasters = useMemo(
     () =>
       member.mastersWithRequirements
@@ -48,6 +70,20 @@ const MemberScheduleCard: FC<MemberScheduleCardProps> = ({ member }) => {
     [member.mastersWithRequirements, member.selectedCourses, member.selectedMasterCourses],
   );
 
+  const handleRemove = async () => {
+    const result = await deleteGroupMember({
+      groupId,
+      memberId: member.id,
+    });
+
+    if (!result.success) {
+      console.error(result.formError);
+      return;
+    }
+
+    router.refresh();
+  };
+
   return (
     <div className="rounded-3xl border border-border/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(248,248,248,0.65))] p-5 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 dark:bg-[linear-gradient(180deg,rgba(38,38,38,0.95),rgba(28,28,28,0.85))]">
       <div className="flex items-start justify-between gap-4">
@@ -69,15 +105,69 @@ const MemberScheduleCard: FC<MemberScheduleCardProps> = ({ member }) => {
           </div>
         </div>
 
-        <a
-          href={member.scheduleUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-        >
-          Open
-          <ExternalLink className="size-4" />
-        </a>
+        <div className="flex items-center gap-1">
+          <AddScheduleDialog
+            groupId={groupId}
+            member={{
+              id: member.id,
+              name: member.name,
+              scheduleUrl: member.scheduleUrl,
+            }}
+            trigger={
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                className="text-muted-foreground/70 hover:text-foreground"
+                aria-label={`Update ${member.name}`}
+                title="Update member"
+              >
+                <Pencil className="size-4" />
+              </Button>
+            }
+          />
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                className="text-muted-foreground/70 hover:text-destructive"
+                aria-label={`Remove ${member.name}`}
+                title="Remove member"
+              >
+                <Trash2 className="size-4" />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Remove member?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This will remove {member.name} and their saved schedule from
+                  the room.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction
+                  className="bg-destructive text-white hover:bg-destructive/90"
+                  onClick={handleRemove}
+                >
+                  Remove
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+          <a
+            href={member.scheduleUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          >
+            Open
+            <ExternalLink className="size-4" />
+          </a>
+        </div>
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
