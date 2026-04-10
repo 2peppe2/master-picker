@@ -1,22 +1,34 @@
 "use client";
 
+import MasterProvider from "@/app/(store)/MasterAtomContext";
+import { Master } from "@/app/dashboard/page";
 import GroupPageHero from "../components/GroupPageHero";
 import GroupPageShell from "../components/GroupPageShell";
 import GroupMembersCard from "./components/GroupMembersCard";
 import RoomActionsCard from "./components/RoomActionsCard";
 import { GroupMemberCardData } from "./memberScheduleData";
 import { Users } from "lucide-react";
+import { Provider as JotaiProvider, atom } from "jotai";
+import { useHydrateAtoms } from "jotai/utils";
 import { FC } from "react";
+
+const groupMastersAtom = atom<Record<string, Master>>({});
 
 interface GroupRoomClientPageProps {
   groupId: string;
   members: GroupMemberCardData[];
+  masters: Record<string, Master>;
 }
 
-const GroupRoomClientPage: FC<GroupRoomClientPageProps> = ({
+const GroupRoomContent: FC<GroupRoomClientPageProps> = ({
   groupId,
   members,
+  masters,
 }) => {
+  useHydrateAtoms([[groupMastersAtom, masters]], {
+    dangerouslyForceHydrate: true,
+  });
+
   return (
     <GroupPageShell maxWidthClassName="max-w-5xl">
       <div className="w-full space-y-8">
@@ -38,5 +50,13 @@ const GroupRoomClientPage: FC<GroupRoomClientPageProps> = ({
     </GroupPageShell>
   );
 };
+
+const GroupRoomClientPage: FC<GroupRoomClientPageProps> = (props) => (
+  <JotaiProvider>
+    <MasterProvider atom={groupMastersAtom}>
+      <GroupRoomContent {...props} />
+    </MasterProvider>
+  </JotaiProvider>
+);
 
 export default GroupRoomClientPage;
