@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/groups-client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model GroupMemberSchedule {
+  id          String @id @default(cuid())
+  groupId     String
+  name        String
+  scheduleUrl String
+
+  @@unique([groupId, name])
+  @@index([groupId])
+}
