@@ -24,7 +24,13 @@ const GroupRoomClientPage: FC<GroupRoomClientPageProps> = ({
           badgeLabel="Group room"
           badgeIcon={Users}
           title="Your study group room is ready."
-          description="Bring your group together in one shared space."
+          description={
+            members.length > 0
+              ? `There ${members.length === 1 ? "is" : "are"} ${members.length} ${
+                  members.length === 1 ? "person" : "people"
+                } in this room.`
+              : "Bring your group together in one shared space."
+          }
         />
         <RoomActionsCard groupId={groupId} />
         <GroupMembersCard members={members} />
