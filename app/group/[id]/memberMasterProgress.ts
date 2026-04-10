@@ -13,6 +13,8 @@ export type MemberEvaluatedCourse = {
 
 interface MemberMasterProgress {
   progress: number;
+  fulfilled: RequirementUnion[];
+  allRequirementsWithProgress: RequirementUnion[];
 }
 
 interface GetProgressStatsArgs {
@@ -35,12 +37,12 @@ export const evaluateMemberMasterProgress = (
   masterCourses: MemberEvaluatedCourse[],
 ): MemberMasterProgress => {
   if (!requirements || requirements.length === 0) {
-    return { progress: 0 };
+    return { progress: 0, fulfilled: [], allRequirementsWithProgress: [] };
   }
 
   let totalProgressPoints = 0;
 
-  requirements.forEach((req) => {
+  const allRequirementsWithProgress = requirements.map((req) => {
     const stats = getProgressStats({
       master,
       requirement: req,
@@ -49,10 +51,20 @@ export const evaluateMemberMasterProgress = (
     });
 
     totalProgressPoints += stats.percent;
+    return {
+      ...req,
+      current: stats.current,
+      isFulfilled: stats.percent >= 1,
+      fieldProgress: stats.fieldProgress,
+    };
   });
+
+  const fulfilled = allRequirementsWithProgress.filter((r) => r.isFulfilled);
 
   return {
     progress: Math.floor((totalProgressPoints / requirements.length) * 100),
+    fulfilled,
+    allRequirementsWithProgress,
   };
 };
 
