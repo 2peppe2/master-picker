@@ -25,9 +25,7 @@ const GroupRoomContent: FC<GroupRoomClientPageProps> = ({
   members,
   masters,
 }) => {
-  useHydrateAtoms([[groupMastersAtom, masters]], {
-    dangerouslyForceHydrate: true,
-  });
+  useHydrateAtoms([[groupMastersAtom, masters]]);
 
   return (
     <GroupPageShell maxWidthClassName="max-w-5xl">
