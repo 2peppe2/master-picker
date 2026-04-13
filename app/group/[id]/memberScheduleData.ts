@@ -62,6 +62,13 @@ export async function getGroupMemberCardData(
     member,
     ...parseScheduleUrl(member.scheduleUrl),
   }));
+  const uniquePrograms = [
+    ...new Set(
+      parsedMembers
+        .map((entry) => entry.program)
+        .filter((program): program is string => Boolean(program)),
+    ),
+  ];
 
   const uniqueProgramYears = [
     ...new Set(
@@ -82,6 +89,25 @@ export async function getGroupMemberCardData(
     string,
     Awaited<ReturnType<typeof getMastersWithRequirements>>
   >();
+  const programShortnames = new Map<string, string>();
+
+  if (uniquePrograms.length > 0) {
+    const programs = await prisma.program.findMany({
+      where: {
+        program: {
+          in: uniquePrograms,
+        },
+      },
+      select: {
+        program: true,
+        shortname: true,
+      },
+    });
+
+    programs.forEach((program) => {
+      programShortnames.set(program.program, program.shortname);
+    });
+  }
 
   await Promise.all(
     uniqueProgramYears.map(async (programYearKey) => {
@@ -171,7 +197,7 @@ export async function getGroupMemberCardData(
       id: member.id,
       name: member.name,
       scheduleUrl: member.scheduleUrl,
-      program,
+      program: program ? programShortnames.get(program) ?? program : null,
       year,
       courseCount: courses.length,
       courses,
