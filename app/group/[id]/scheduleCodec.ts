@@ -15,7 +15,7 @@ interface SchedulePayloadV2 {
   d: ScheduleEntryV2[];
 }
 
-export type GroupSchedulePayload = SchedulePayloadV1 | SchedulePayloadV2;
+type GroupSchedulePayload = SchedulePayloadV1 | SchedulePayloadV2;
 
 export const decodeGroupSchedulePayload = (
   param: string,
@@ -31,34 +31,4 @@ export const decodeGroupSchedulePayload = (
     console.error("Failed to decode group schedule payload", error);
     return null;
   }
-};
-
-export const extractGroupScheduledCourseCodes = (
-  param: string,
-  courseKeys: string[],
-): string[] => {
-  const payload = decodeGroupSchedulePayload(param);
-  if (!payload) {
-    return [];
-  }
-
-  const codes = payload.d.flatMap((entry) => {
-    const codeOrIndex = entry[3];
-
-    if (payload.v === "v2") {
-      return typeof codeOrIndex === "string" ? [codeOrIndex] : [];
-    }
-
-    if (
-      typeof codeOrIndex === "number" &&
-      codeOrIndex >= 0 &&
-      codeOrIndex < courseKeys.length
-    ) {
-      return [courseKeys[codeOrIndex]];
-    }
-
-    return [];
-  });
-
-  return [...new Set(codes)];
 };

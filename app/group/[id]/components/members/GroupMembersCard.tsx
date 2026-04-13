@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { GroupMemberCardData } from "../memberScheduleData";
+import { GroupMemberCardData } from "../../memberScheduleData";
 import { ListChecks, Users } from "lucide-react";
 import { FC } from "react";
 import MemberScheduleCard from "./MemberScheduleCard";

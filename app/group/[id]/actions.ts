@@ -4,7 +4,7 @@ import { groupsPrisma } from "@/lib/groupsPrisma";
 import { Prisma } from "@/prisma/generated/groups-client/client";
 import { revalidatePath } from "next/cache";
 
-export interface AddGroupMemberInput {
+interface AddGroupMemberInput {
   groupId: string;
   name: string;
   scheduleUrl: string;
