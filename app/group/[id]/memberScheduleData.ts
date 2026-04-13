@@ -3,10 +3,7 @@ import { Course } from "@/app/dashboard/page";
 import { courseWithDetailsArgs, normalizeCourse } from "@/app/courseNormalizer";
 import { prisma } from "@/lib/prisma";
 import { GroupMemberSchedule } from "@/prisma/generated/groups-client/client";
-import {
-  decodeGroupSchedulePayload,
-  extractGroupScheduledCourseCodes,
-} from "./scheduleCodec";
+import { decodeGroupSchedulePayload } from "./scheduleCodec";
 
 const SCHEDULE_URL_BASE = "https://www.masterpicker.se";
 const MASTER_PERIOD = { start: 7, end: 10 };
@@ -18,9 +15,12 @@ export interface GroupMemberCardData {
   program: string | null;
   year: number | null;
   courseCount: number;
-  courses: {
+  scheduledMasterCourses: {
     code: string;
     name: string;
+    semester: number;
+    period: number;
+    block: number;
   }[];
   selectedCourses: Pick<
     Course,
@@ -53,6 +53,28 @@ const parseScheduleUrl = (scheduleUrl: string) => {
       scheduleParam: null,
     };
   }
+};
+
+type DecodedGroupSchedulePayload = NonNullable<
+  ReturnType<typeof decodeGroupSchedulePayload>
+>;
+
+const getCourseCodeFromScheduleEntry = (
+  payload: DecodedGroupSchedulePayload,
+  entry: DecodedGroupSchedulePayload["d"][number],
+  courseKeys: string[],
+) => {
+  const codeOrIndex = entry[3];
+
+  if (payload.v === "v2") {
+    return typeof codeOrIndex === "string" ? codeOrIndex : null;
+  }
+
+  return typeof codeOrIndex === "number" &&
+    codeOrIndex >= 0 &&
+    codeOrIndex < courseKeys.length
+    ? courseKeys[codeOrIndex]
+    : null;
 };
 
 export async function getGroupMemberCardData(
@@ -145,48 +167,63 @@ export async function getGroupMemberCardData(
       ? coursesByProgramYear.get(programYearKey) ?? {}
       : {};
     const courseKeys = Object.keys(courseMap).sort();
-    const courseCodes = scheduleParam
-      ? extractGroupScheduledCourseCodes(scheduleParam, courseKeys)
-      : [];
     const payload = scheduleParam
       ? decodeGroupSchedulePayload(scheduleParam)
       : null;
-    const courses = courseCodes
-      .map((code) => courseMap[code])
-      .filter((course): course is NonNullable<typeof courseMap[string]> =>
-        Boolean(course),
-      )
-      .map((course) => ({
-        code: course.code,
-        name: course.name,
-      }));
-    const masterCourseCodes = new Set(
-      payload
-        ? payload.d
-            .filter(([semesterIndex]) => {
-              const semesterNumber = semesterIndex + 1;
-              return (
-                semesterNumber >= MASTER_PERIOD.start &&
-                semesterNumber <= MASTER_PERIOD.end
+    const courseCodes = payload
+      ? [
+          ...new Set(
+            payload.d.flatMap((entry) => {
+              const courseCode = getCourseCodeFromScheduleEntry(
+                payload,
+                entry,
+                courseKeys,
               );
-            })
-            .flatMap((entry) => {
-              const codeOrIndex = entry[3];
 
-              if (payload.v === "v2") {
-                return typeof codeOrIndex === "string" ? [codeOrIndex] : [];
-              }
+              return courseCode ? [courseCode] : [];
+            }),
+          ),
+        ]
+      : [];
+    const scheduledMasterCourses = payload
+      ? payload.d.flatMap((entry) => {
+          const [semesterIndex, periodIndex, blockIndex] = entry;
+          const semesterNumber = semesterIndex + 1;
+          const isMasterPeriod =
+            semesterNumber >= MASTER_PERIOD.start &&
+            semesterNumber <= MASTER_PERIOD.end;
 
-              return typeof codeOrIndex === "number" &&
-                codeOrIndex >= 0 &&
-                codeOrIndex < courseKeys.length
-                ? [courseKeys[codeOrIndex]]
-                : [];
-            })
-        : [],
+          if (!isMasterPeriod) {
+            return [];
+          }
+
+          const courseCode = getCourseCodeFromScheduleEntry(
+            payload,
+            entry,
+            courseKeys,
+          );
+          const course = courseCode ? courseMap[courseCode] : null;
+
+          if (!course) {
+            return [];
+          }
+
+          return [
+            {
+              code: course.code,
+              name: course.name,
+              semester: semesterNumber,
+              period: periodIndex + 1,
+              block: blockIndex + 1,
+            },
+          ];
+        })
+      : [];
+    const masterCourseCodes = new Set(
+      scheduledMasterCourses.map((course) => course.code),
     );
-    const allCourses = courses
-      .map((course) => courseMap[course.code])
+    const allCourses = courseCodes
+      .map((courseCode) => courseMap[courseCode])
       .filter((course): course is NonNullable<typeof courseMap[string]> =>
         Boolean(course),
       );
@@ -199,8 +236,8 @@ export async function getGroupMemberCardData(
       scheduleUrl: member.scheduleUrl,
       program: program ? programShortnames.get(program) ?? program : null,
       year,
-      courseCount: courses.length,
-      courses,
+      courseCount: allCourses.length,
+      scheduledMasterCourses,
       selectedCourses: allCourses,
       selectedMasterCourses: masterCourses,
       mastersWithRequirements: programYearKey

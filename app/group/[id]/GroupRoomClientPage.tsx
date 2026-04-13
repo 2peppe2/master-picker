@@ -4,8 +4,8 @@ import MasterProvider from "@/app/(store)/MasterAtomContext";
 import { Master } from "@/app/dashboard/page";
 import GroupPageHero from "../components/GroupPageHero";
 import GroupPageShell from "../components/GroupPageShell";
-import GroupMembersCard from "./components/GroupMembersCard";
-import RoomActionsCard from "./components/RoomActionsCard";
+import GroupMembersCard from "./components/members/GroupMembersCard";
+import RoomActionsCard from "./components/actions/RoomActionsCard";
 import { GroupMemberCardData } from "./memberScheduleData";
 import { Users } from "lucide-react";
 import { Provider as JotaiProvider, atom } from "jotai";
@@ -42,7 +42,7 @@ const GroupRoomContent: FC<GroupRoomClientPageProps> = ({
               : "Bring your group together in one shared space."
           }
         />
-        <RoomActionsCard groupId={groupId} />
+        <RoomActionsCard groupId={groupId} members={members} />
         <GroupMembersCard groupId={groupId} members={members} />
       </div>
     </GroupPageShell>

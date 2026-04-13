@@ -4,7 +4,7 @@ import {
   addGroupMember,
   GroupMemberMutationResult,
   updateGroupMember,
-} from "../actions";
+} from "../../actions";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

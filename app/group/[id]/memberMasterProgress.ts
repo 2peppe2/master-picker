@@ -1,7 +1,7 @@
 import { RequirementUnion } from "@/app/dashboard/page";
 import _ from "lodash";
 
-export type MemberEvaluatedCourse = {
+type MemberEvaluatedCourse = {
   code: string;
   credits: number | null;
   level: string;

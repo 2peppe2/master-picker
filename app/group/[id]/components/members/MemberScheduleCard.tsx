@@ -1,30 +1,19 @@
 "use client";
 
 import MasterProgressBadge from "@/app/dashboard/(components)/MastersRequirementsBar/components/MasterProgressBadge";
-import { deleteGroupMember } from "../actions";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import { deleteGroupMember } from "../../actions";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import AddScheduleDialog from "./AddScheduleDialog";
-import { evaluateMemberMasterProgress } from "../memberMasterProgress";
-import { GroupMemberCardData } from "../memberScheduleData";
+import AddScheduleDialog from "../actions/AddScheduleDialog";
+import RemoveMemberDialog from "./RemoveMemberDialog";
+import { evaluateMemberMasterProgress } from "../../memberMasterProgress";
+import { GroupMemberCardData } from "../../memberScheduleData";
 import {
   CalendarDays,
   Blocks,
   CalendarRange,
   Pencil,
   GraduationCap,
-  Trash2,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -128,38 +117,10 @@ const MemberScheduleCard: FC<MemberScheduleCardProps> = ({
               </Button>
             }
           />
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button
-                type="button"
-                variant="ghost"
-                size="icon-sm"
-                className="text-muted-foreground/70 hover:text-destructive"
-                aria-label={`Remove ${member.name}`}
-                title="Remove member"
-              >
-                <Trash2 className="size-4" />
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Remove member?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  This will remove {member.name} and their saved schedule from
-                  the room.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction
-                  className="bg-destructive text-white hover:bg-destructive/90"
-                  onClick={handleRemove}
-                >
-                  Remove
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          <RemoveMemberDialog
+            memberName={member.name}
+            onRemove={handleRemove}
+          />
           <a
             href={member.scheduleUrl}
             target="_blank"
@@ -199,11 +160,7 @@ const MemberScheduleCard: FC<MemberScheduleCardProps> = ({
           {topMasters.length > 0 ? (
             <div className="mt-3 grid gap-2 sm:grid-cols-3">
               {topMasters.map((master) => (
-                <div
-                  key={master.master}
-                  className="min-w-0"
-                >
-                  
+                <div key={master.master} className="min-w-0">
                   <MasterProgressBadge master={master} />
                 </div>
               ))}
@@ -216,8 +173,6 @@ const MemberScheduleCard: FC<MemberScheduleCardProps> = ({
             </div>
           )}
         </div>
-
-       
       </div>
     </div>
   );
