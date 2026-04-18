@@ -6,7 +6,6 @@ import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import EmptyCourseState from "./components/EmptyCourseState";
-import DrawerHeader from "./components/DrawerHeader";
 import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
@@ -42,12 +41,10 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className="border-l shadow-sm 
+      className="xl:border-l shadow-sm 
         h-full sticky shrink-0 flex flex-col overflow-hidden
-        2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
+        2xl:w-[550px] 2xl:min-w-[550px] xl:w-[400px] xl:min-w-[400px] w-full pb-1"
     >
-      <DrawerHeader />
-
       <div className="p-4 shrink-0 z-10">
         <UnifiedSearchFilter />
       </div>
@@ -56,7 +53,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
         {availableCourses.length === 0 ? (
           <EmptyCourseState />
         ) : (
-          <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {availableCourses.map((course) => {
               const isDragging = draggedCourse?.code === course.code;
 

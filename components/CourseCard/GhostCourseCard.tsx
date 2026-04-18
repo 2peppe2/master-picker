@@ -6,7 +6,7 @@ import { FC } from "react";
 
 const GhostCourseCard: FC<CourseCardProps> = ({ course }) => (
   <Card
-    className="w-40 h-40 border-2 border-dashed border-muted-foreground/30 
+    className="w-[140px] h-[140px] md:w-40 md:h-40 border-2 border-dashed border-muted-foreground/30
                bg-muted/30 shadow-none flex flex-col items-center justify-center 
                opacity-60 transition-opacity"
   >

@@ -3,6 +3,8 @@
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
+import ShareButton from "../../Drawer/components/ShareButton";
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FC, useCallback } from "react";
@@ -60,6 +62,19 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
             label={translate("show_bachelor_years")}
             description={translate("semesters_1_to_6")}
           />
+        </div>
+
+        <div className="px-4 py-3 bg-muted/40 border-y border-border">
+          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+            <Translate text="language_settings" />
+          </p>
+        </div>
+
+        <div className="px-4 py-3 flex flex-col gap-3">
+          <LanguageSwitcher />
+          <div className="md:hidden self-stretch flex">
+            <ShareButton />
+          </div>
         </div>
       </PopoverContent>
     </Popover>

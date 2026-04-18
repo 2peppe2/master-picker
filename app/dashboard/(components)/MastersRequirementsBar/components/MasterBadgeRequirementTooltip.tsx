@@ -21,12 +21,14 @@ interface MasterBadgeTooltipProps {
   name: string;
   all: RequirementUnion[];
   fulfilled: RequirementUnion[];
+  className?: string;
 }
 
 const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   all,
   name,
   fulfilled,
+  className,
 }) => {
   const translate = useCommonTranslate();
 
@@ -52,7 +54,7 @@ const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   );
 
   return (
-    <div className="flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm">
+    <div className={cn("flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm", className)}>
       <header className="space-y-2">
         <h4 className="font-bold text-sm tracking-tight">
           <CourseTranslate text={name} />

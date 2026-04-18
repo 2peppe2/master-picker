@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useCallback, useState } from "react";
-import { PointerSensor, TouchSensor } from "./utils";
+import { PointerSensor } from "./utils";
 import {
   DndContext,
   DragOverlay,
@@ -35,6 +35,7 @@ interface DndProviderProps<T> {
   onDragCancel: (args: OnDragCancelArgs) => void;
   onDragStart: (args: OnDragStartArgs<T>) => void;
   renderDragged: (args: RenderDraggedArgs<T>) => ReactNode;
+  disabled?: boolean;
 }
 
 export const DndProvider = <T,>({
@@ -43,15 +44,16 @@ export const DndProvider = <T,>({
   onDragStart,
   onDragCancel,
   children,
+  disabled = false,
 }: DndProviderProps<T>) => {
   const [activeItem, setActiveItem] = useState<T | null>(null);
 
   const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: { delay: 250, tolerance: 5 },
-    }),
     useSensor(PointerSensor, {
-      activationConstraint: { distance: 6 },
+      activationConstraint: { 
+        // A huge distance effectively disables dragging when true
+        distance: disabled ? 100000 : 6 
+      },
     }),
   );
 

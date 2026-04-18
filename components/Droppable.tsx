@@ -68,7 +68,7 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
   }, [draggedCourse, blockNumber, periodNumber, year, semester, isWildcard]);
 
   const baseStyles =
-    "relative w-40 h-40 shrink-0 flex items-center justify-center border-4 border-dashed rounded-2xl transition-all duration-200";
+    "relative w-[140px] h-[140px] md:w-40 md:h-40 shrink-0 flex items-center justify-center border-4 border-dashed rounded-2xl transition-all duration-200";
 
   let stateStyles = "";
   let feedbackOverlay = null;
