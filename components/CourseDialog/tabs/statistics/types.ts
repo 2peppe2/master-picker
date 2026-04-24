@@ -21,3 +21,9 @@ export interface GradeMap {
 export type CourseData = {
   modules?: Module[] | null;
 };
+
+export interface CategorizedModules {
+  [key: string]: ProcessedModule[];
+}
+
+export type CategorizedModulesArray = (readonly [string, ProcessedModule[]])[];

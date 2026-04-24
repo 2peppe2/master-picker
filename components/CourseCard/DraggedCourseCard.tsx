@@ -12,7 +12,7 @@ import {
 import { FC } from "react";
 
 const DraggedCourseCard: FC<CourseCardProps> = ({ course }) => (
-  <Card className="w-40 h-40 border-amber-50 border-1 ease-linear cursor-grabbing">
+  <Card className="w-[140px] h-[140px] md:w-40 md:h-40 border-amber-50 border-1 ease-linear cursor-grabbing">
     <CardHeader>
       <CardTitle>
         <span className="cursor-pointer hover:underline underline-offset-2 text-left">

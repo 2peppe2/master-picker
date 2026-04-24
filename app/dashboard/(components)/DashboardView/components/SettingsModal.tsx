@@ -1,8 +1,10 @@
 "use client";
 
-import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
+import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import Translate from "@/common/components/translate/Translate";
+import ShareButton from "../../Drawer/components/ShareButton";
 import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FC, useCallback } from "react";
@@ -34,10 +36,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
       <PopoverTrigger asChild>
         <Button
           variant="ghost"
-          className="cursor-pointer ml-auto px-4 h-10 gap-2 hover:bg-accent hover:text-accent-foreground"
+          className="cursor-pointer ml-auto px-2 md:px-4 h-10 gap-1 md:gap-2 hover:bg-accent hover:text-accent-foreground"
         >
           <Settings className="w-4 h-4" />
-          <span className="text-sm font-medium">
+          <span className="text-sm font-medium hidden md:inline">
             <Translate text="settings" />
           </span>
           <ChevronDown
@@ -60,6 +62,16 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
             label={translate("show_bachelor_years")}
             description={translate("semesters_1_to_6")}
           />
+        </div>
+
+        <div className="px-4 py-3 bg-muted/40 border-y border-border">
+          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+            <Translate text="language_settings" />
+          </p>
+        </div>
+
+        <div className="px-4 py-3 flex flex-col gap-3">
+          <LanguageSwitcher />
         </div>
       </PopoverContent>
     </Popover>

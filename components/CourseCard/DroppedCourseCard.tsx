@@ -34,7 +34,7 @@ const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
   return (
     <Card
       data-course-code={course.code}
-      className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab"
+      className="relative w-[140px] h-[140px] md:w-40 md:h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab"
     >
       <CourseDialog
         course={course}

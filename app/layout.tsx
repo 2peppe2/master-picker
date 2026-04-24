@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@/components/ui/providers/ThemeProvider";
-import MobileWarning from "@/components/MobileWarning";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { FC, ReactNode } from "react";
@@ -29,7 +28,6 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
   <html lang="en" suppressHydrationWarning>
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <MobileWarning />
         {children}
         <Analytics />
       </ThemeProvider>

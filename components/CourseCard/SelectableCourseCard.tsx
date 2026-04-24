@@ -36,8 +36,8 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
       onClick={handleCardClick}
       className={cn(
         "hover:scale-[1.02] hover:shadow-md active:scale-95",
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg",
-        "relative w-40 h-40 cursor-pointer group rounded-2xl border text-left transition",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative w-[140px] h-[140px] md:w-40 md:h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg",
+        "relative w-[140px] h-[140px] md:w-40 md:h-40 cursor-pointer group rounded-2xl border text-left transition",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         "hover:-translate-y-[1px] hover:border-foreground/20 hover:shadow-sm",
         isSelected

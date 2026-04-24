@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useCallback, useState } from "react";
-import { PointerSensor, TouchSensor } from "./utils";
+import { PointerSensor } from "./utils";
 import {
   DndContext,
   DragOverlay,
@@ -9,49 +9,42 @@ import {
   useSensors,
   DragStartEvent,
   DragEndEvent,
-  Over,
   DragCancelEvent,
 } from "@dnd-kit/core";
+import {
+  OnDragCancelArgs,
+  OnDragEndArgs,
+  OnDragStartArgs,
+  OnRenderDraggedArgs,
+} from "./types";
 
-interface RenderDraggedArgs<T> {
-  active: T;
-}
-
-export interface OnDragStartArgs<T> {
-  active: T | null;
-}
-
-export interface OnDragEndArgs {
-  over: Over | null;
-}
-
-export interface OnDragCancelArgs {
-  over: Over | null;
-}
+// A huge distance effectively disables dragging when true
+const DISABLE_DRAGGING_DISTANCE = 100000;
 
 interface DndProviderProps<T> {
   children: ReactNode;
   onDragEnd: (args: OnDragEndArgs) => void;
   onDragCancel: (args: OnDragCancelArgs) => void;
   onDragStart: (args: OnDragStartArgs<T>) => void;
-  renderDragged: (args: RenderDraggedArgs<T>) => ReactNode;
+  onRenderDragged: (args: OnRenderDraggedArgs<T>) => ReactNode;
+  disabled?: boolean;
 }
 
-export const DndProvider = <T,>({
-  renderDragged: DraggedItem,
+const DndProvider = <T,>({
+  onRenderDragged: DraggedItem,
   onDragEnd,
   onDragStart,
   onDragCancel,
   children,
+  disabled = false,
 }: DndProviderProps<T>) => {
   const [activeItem, setActiveItem] = useState<T | null>(null);
 
   const sensors = useSensors(
-    useSensor(TouchSensor, {
-      activationConstraint: { delay: 250, tolerance: 5 },
-    }),
     useSensor(PointerSensor, {
-      activationConstraint: { distance: 6 },
+      activationConstraint: {
+        distance: disabled ? DISABLE_DRAGGING_DISTANCE : 6,
+      },
     }),
   );
 
@@ -103,3 +96,5 @@ export const DndProvider = <T,>({
     </DndContext>
   );
 };
+
+export default DndProvider;

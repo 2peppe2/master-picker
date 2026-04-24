@@ -47,7 +47,7 @@ const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
           style={{ minWidth }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="h-8 w-full shrink-0 cursor-default flex items-center justify-center border transition-colors hover:bg-muted/50"
+          className="h-8 w-full shrink-0 cursor-pointer flex items-center justify-center border transition-colors hover:bg-muted/50"
         >
           <Translate text="_wildcard_more_count" args={{ count }} />
         </Badge>
@@ -57,14 +57,14 @@ const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
         align="end"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="p-3 w-auto min-w-[500px] max-h-[500px] overflow-y-auto scrollbar-thin shadow-2xl border-muted-foreground/20 backdrop-blur-md"
+        className="p-3 w-[calc(100vw-32px)] sm:w-auto sm:min-w-[500px] max-h-[500px] overflow-y-auto scrollbar-thin shadow-2xl border-muted-foreground/20 backdrop-blur-md z-50"
       >
-        <div className="px-2 py-1 mb-3">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">
+        <div className="px-1 py-1 mb-2">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70 sm:text-left text-center">
             <Translate text="master_profiles" />
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {masters.map((master, index) => (
             <MasterOverflowRow
               key={master.master}

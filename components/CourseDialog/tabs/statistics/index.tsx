@@ -2,15 +2,15 @@
 
 import { useDefaultModuleSelection } from "./hooks/useDefaultModuleSelection";
 import { useCategorizedModules } from "./hooks/useCategorizedModules";
-import Translate from "@/common/components/translate/Translate";
 import { useCourseData } from "../../hooks/useCourseData";
-import ChartDistribution from "./components/ChartDistribution";
 import { useChartData } from "./hooks/useChartData";
-import DistributionList from "./components/DistributionList";
 import { Loader2, BarChart2 } from "lucide-react";
-import ModuleSelector from "./components/ModuleSelector";
+import Translate from "@/common/components/translate/Translate";
 import { Course } from "@/app/dashboard/page";
 import { FC, useMemo } from "react";
+import StatisticsLarge from "./components/StatisticsLarge";
+import StatisticsSmall from "./components/StatisticsSmall";
+import { useMediaQuery } from "react-responsive";
 
 interface StatisticsProps {
   course: Course;
@@ -27,6 +27,7 @@ const Statistics: FC<StatisticsProps> = ({
   setSelectedModule,
   onInitialStatConsumed,
 }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const { data: courseData, isLoading, error } = useCourseData(course.code);
 
   const { categorizedModules, allProcessedModules } = useCategorizedModules({
@@ -89,21 +90,20 @@ const Statistics: FC<StatisticsProps> = ({
     );
   }
 
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6">
-      <div className="flex flex-col gap-6">
-        <ModuleSelector
-          selectedModule={selectedModule}
-          setSelectedModule={setSelectedModule}
-          categorizedModules={categorizedModules}
-          selectedItem={selectedItem}
-        />
-        <DistributionList chartData={chartData} totalStudents={totalStudents} />
-      </div>
+  const commonProps = {
+    selectedModule,
+    setSelectedModule,
+    categorizedModules,
+    selectedItem,
+    chartData,
+    totalStudents,
+  };
 
-      <ChartDistribution chartData={chartData} totalStudents={totalStudents} />
-    </div>
-  );
+  if (isMobile) {
+    return <StatisticsSmall {...commonProps} />;
+  }
+
+  return <StatisticsLarge {...commonProps} />;
 };
 
 export default Statistics;

@@ -1,6 +1,7 @@
 "use client";
 
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
+import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import Translate from "@/common/components/translate/Translate";
 import { Draggable } from "@/components/DndProvider/Draggable";
@@ -21,11 +22,13 @@ const StandardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const selectBlocks = useSetAtom(filterAtoms.blocksAtom);
   const selectPeriods = useSetAtom(filterAtoms.periodsAtom);
   const selectSemesters = useSetAtom(filterAtoms.semestersAtom);
+  const setActiveTab = useSetAtom(preferenceAtoms.activeTabAtom);
 
   const handleFilterChange = () => {
     selectSemesters([data.semesterNumber + 1]);
     selectPeriods([data.periodNumber + 1]);
     selectBlocks([data.blockNumber + 1]);
+    setActiveTab("search");
   };
 
   return (

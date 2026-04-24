@@ -6,9 +6,11 @@ import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import EmptyCourseState from "./components/EmptyCourseState";
-import DrawerHeader from "./components/DrawerHeader";
+import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
+import ShareButton from "./components/ShareButton";
+import BackButton from "@/common/components/BackButton";
 import CourseCard from "@/components/CourseCard";
-import { FC, Fragment, useMemo } from "react";
+import { FC, Fragment, useMemo, useState } from "react";
 import { useAtomValue } from "jotai";
 import { Course } from "../../page";
 
@@ -42,21 +44,30 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className="border-l shadow-sm 
+      className="xl:border-l shadow-sm 
         h-full sticky shrink-0 flex flex-col overflow-hidden
-        2xl:w-[550px] 2xl:min-w-[550px] w-[400px] min-w-[400px] pb-1"
+        2xl:w-[550px] 2xl:min-w-[550px] xl:w-[400px] xl:min-w-[400px] w-full pb-1"
     >
-      <DrawerHeader />
-
-      <div className="p-4 shrink-0 z-10">
+      <div className="py-4 pr-4 pl-5 shrink-0 z-10 flex flex-col gap-4">
+        <div className="hidden xl:flex items-center justify-between gap-2">
+          <BackButton
+            title="MasterPicker"
+            subtitle="_dashboard_header_subtitle"
+            returnText="_dashboard_return_to_landing"
+          />
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <ShareButton />
+          </div>
+        </div>
         <UnifiedSearchFilter />
       </div>
 
-      <div className="overflow-y-auto flex-1 p-4 pt-1">
+      <div className="overflow-y-auto flex-1 py-1 pr-4 pl-5 pb-4">
         {availableCourses.length === 0 ? (
           <EmptyCourseState />
         ) : (
-          <div className="grid 2xl:grid-cols-3 grid-cols-2 justify-items-center gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 xl:flex xl:flex-wrap xl:justify-center gap-2 sm:gap-3 xl:gap-4">
             {availableCourses.map((course) => {
               const isDragging = draggedCourse?.code === course.code;
 

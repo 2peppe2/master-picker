@@ -6,7 +6,7 @@ import { MasterAtomContext } from "../(store)/MasterAtomContext";
 import { Provider as JotaiProvider, useStore } from "jotai";
 import { coursesAtom, mastersAtom } from "./(store)/store";
 import ScheduleSync from "./(components)/ScheduleSync";
-import DndView from "./(components)/DndView";
+import DashboardView from "./(components)/DashboardView";
 import { Course, Master } from "./page";
 
 interface ClientPageProps {
@@ -18,16 +18,12 @@ const DashboardContent: FC<ClientPageProps> = ({ courses, masters }) => {
   const [ready, setReady] = useState(false);
   const store = useStore();
 
-  const coursesMap = useMemo(
-    () => Object.fromEntries(courses.map((c) => [c.code, c])),
-    [courses],
-  );
-
   useLayoutEffect(() => {
+    const coursesMap = Object.fromEntries(courses.map((c) => [c.code, c]));
     store.set(coursesAtom, coursesMap);
     store.set(mastersAtom, masters);
     setReady(true);
-  }, [store, coursesMap, masters]);
+  }, [store, courses, masters]);
 
   if (!ready) {
     return null;
@@ -36,7 +32,7 @@ const DashboardContent: FC<ClientPageProps> = ({ courses, masters }) => {
   return (
     <>
       <ScheduleSync />
-      <DndView courses={courses} />
+      <DashboardView courses={courses} />
     </>
   );
 };

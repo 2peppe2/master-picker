@@ -81,3 +81,5 @@ export const useCourseDropHandler = () => {
 
   return { handleDrop, conflictData, conflictOpen, setConflictOpen };
 };
+
+export type UseCourseDropHandler = ReturnType<typeof useCourseDropHandler>;

@@ -81,8 +81,7 @@ const ShareButton: FC = () => {
       variant="outline"
       size="sm"
       className={cn(
-        "flex gap-2 w-[100px] cursor-pointer group h-9 px-4 text-sm font-medium transition-all duration-200",
-        "border-input text-foreground hover:bg-accent hover:text-accent-foreground",
+        "flex gap-2 w-auto cursor-pointer group h-9 px-4 xl:px-0 xl:min-w-[100px] text-sm font-medium transition-all duration-200",
         isAddCourseLoading && "cursor-default",
         copied &&
           !isAddCourseLoading &&

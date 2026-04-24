@@ -2,12 +2,13 @@
 
 import { useScheduleMutators } from "@/app/dashboard/(store)/schedule/hooks/useScheduleMutators";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { scheduleAtoms } from "@/app/dashboard/(store)/schedule/atoms";
 import Translate from "@/common/components/translate/Translate";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { Droppable } from "@/components/Droppable";
 import CourseCard from "@/components/CourseCard";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlockProps } from ".";
@@ -16,6 +17,7 @@ import { FC } from "react";
 const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const { deleteBlockFromSemester } = useScheduleMutators();
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
+  const setActiveTab = useSetAtom(preferenceAtoms.activeTabAtom);
   const translate = useCommonTranslate();
 
   const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
@@ -27,6 +29,10 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
       semester: data.semesterNumber,
       blockIndex: data.blockNumber,
     });
+  };
+
+  const handleFilterChange = () => {
+    setActiveTab("search");
   };
 
   return (
@@ -53,7 +59,10 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
           <CourseCard variant="dropped" course={courseSlot} />
         </div>
       ) : (
-        <div className="relative flex flex-col items-center justify-center h-full w-full group transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50">
+        <div
+          onClick={handleFilterChange}
+          className="relative flex flex-col items-center justify-center h-full w-full group transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-zinc-100/5 dark:hover:bg-zinc-800/50 cursor-pointer"
+        >
           <span className="text-zinc-500 text-xs uppercase tracking-wider select-none">
             <Translate text="_wildcard_block_label" />
           </span>

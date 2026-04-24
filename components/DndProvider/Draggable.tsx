@@ -3,6 +3,8 @@ import { Course } from "@/app/dashboard/page";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 
+import { useMediaQuery } from "react-responsive";
+
 interface DraggableProps {
   id: string;
   data: Course;
@@ -10,6 +12,7 @@ interface DraggableProps {
 }
 
 const Draggable: FC<DraggableProps> = ({ id, data, children }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const { attributes, listeners, setNodeRef, transform, active } = useDraggable(
     { id, data },
   );
@@ -18,7 +21,7 @@ const Draggable: FC<DraggableProps> = ({ id, data, children }) => {
 
   const style = {
     transform: CSS.Translate.toString(transform),
-    touchAction: "none",
+    touchAction: isMobile ? "auto" : "none",
     WebkitUserSelect: "none",
     userSelect: "none",
     WebkitTapHighlightColor: "transparent",

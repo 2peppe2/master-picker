@@ -17,7 +17,7 @@ const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <Card className="relative w-40 h-40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
+    <Card className="relative w-full aspect-square xl:w-40 xl:h-40 xl:aspect-auto transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-grab">
       <CourseDialog
         course={course}
         open={openDialog}
