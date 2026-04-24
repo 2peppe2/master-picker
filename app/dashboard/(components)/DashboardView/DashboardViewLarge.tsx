@@ -23,7 +23,7 @@ const DashboardViewLarge: FC<DashboardViewLargeProps> = ({
   useScrollToCourseFeedback();
 
   return (
-    <div className="flex-1 flex flex-col xl:grid xl:[grid-template-columns:auto_1fr] relative items-start w-full overflow-hidden">
+    <div className="flex-1 flex flex-col md:grid md:[grid-template-columns:auto_1fr] relative items-start w-full overflow-hidden">
       {dropHandler.conflictOpen && dropHandler.conflictData && (
         <ConflictResolverModal
           open={dropHandler.conflictOpen}
@@ -38,7 +38,7 @@ const DashboardViewLarge: FC<DashboardViewLargeProps> = ({
 
       <main className="flex flex-col flex-none h-full bg-black/50 min-w-0 w-full relative overflow-hidden flex-1">
         <div className="bg-background overflow-y-auto flex flex-col flex-1">
-          <div className="hidden xl:block shrink-0 border-b border-border/50">
+          <div className="bg-card hidden xl:block shrink-0 border-b border-border/50">
             <Disclaimer />
             <div className="flex items-center px-8 py-4 bg-card gap-4 border-b">
               <div className="flex-1 min-w-0">

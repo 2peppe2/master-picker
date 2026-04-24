@@ -44,9 +44,9 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
 
   return (
     <div
-      className="xl:border-l shadow-sm 
+      className="xl:border-l md:border-l shadow-sm 
         h-full sticky shrink-0 flex flex-col overflow-hidden
-        2xl:w-[550px] 2xl:min-w-[550px] xl:w-[400px] xl:min-w-[400px] w-full pb-1"
+        2xl:w-[550px] 2xl:min-w-[550px] xl:w-[400px] xl:min-w-[400px] md:w-[340px] md:min-w-[340px] w-full pb-1"
     >
       <div className="py-4 pr-4 pl-5 shrink-0 z-10 flex flex-col gap-4">
         <div className="hidden xl:flex items-center justify-between gap-2">
@@ -67,7 +67,7 @@ const Drawer: FC<DrawerProps> = ({ courses }) => {
         {availableCourses.length === 0 ? (
           <EmptyCourseState />
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 xl:flex xl:flex-wrap xl:justify-center gap-2 sm:gap-3 xl:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 xl:flex xl:flex-wrap xl:justify-center gap-2 sm:gap-3 xl:gap-4">
             {availableCourses.map((course) => {
               const isDragging = draggedCourse?.code === course.code;
 

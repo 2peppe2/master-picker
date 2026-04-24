@@ -4,7 +4,6 @@ import { useCommonTranslate } from "@/common/components/translate/hooks/useCommo
 import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import Translate from "@/common/components/translate/Translate";
-import ShareButton from "../../Drawer/components/ShareButton";
 import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FC, useCallback } from "react";
@@ -50,7 +49,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
       <PopoverContent align="end" className="p-0 overflow-hidden w-64">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
-          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+          <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
             <Translate text="layout_settings" />
           </p>
         </div>
@@ -64,14 +63,16 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
           />
         </div>
 
-        <div className="px-4 py-3 bg-muted/40 border-y border-border">
-          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            <Translate text="language_settings" />
-          </p>
-        </div>
+        <div className="block lg:hidden">
+          <div className="px-4 py-3 bg-muted/40 border-y border-border">
+            <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+              <Translate text="language_settings" />
+            </p>
+          </div>
 
-        <div className="px-4 py-3 flex flex-col gap-3">
-          <LanguageSwitcher />
+          <div className="px-4 py-3 flex flex-col gap-3">
+            <LanguageSwitcher />
+          </div>
         </div>
       </PopoverContent>
     </Popover>
