@@ -24,7 +24,15 @@ const DashboardContent: FC<ClientPageProps> = ({ courses, masters }) => {
   );
 
   useLayoutEffect(() => {
-    store.set(coursesAtom, coursesMap);
+    const currentCourses = store.get(coursesAtom);
+    const customCoursesOnly: Record<string, Course> = {};
+    for (const key in currentCourses) {
+      if (key.startsWith("custom_")) {
+        customCoursesOnly[key] = currentCourses[key];
+      }
+    }
+
+    store.set(coursesAtom, { ...coursesMap, ...customCoursesOnly });
     store.set(mastersAtom, masters);
     setReady(true);
   }, [store, coursesMap, masters]);

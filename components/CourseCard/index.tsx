@@ -1,16 +1,16 @@
 "use client";
 
-import { memo, ComponentType } from "react";
-import { Course } from "@/app/dashboard/page";
-
-import DefaultCourseCard from "./DefaultCourseCard";
-import DroppedCourseCard from "./DroppedCourseCard";
-import DraggedCourseCard from "./DraggedCourseCard";
-import GhostCourseCard from "./GhostCourseCard";
-import GrabbableCourseCard from "./GrabbableCourseCard";
 import SelectableCourseCard, {
   SelectableCourseCardProps,
 } from "./SelectableCourseCard";
+import GrabbableCourseCard from "./GrabbableCourseCard";
+import DefaultCourseCard from "./DefaultCourseCard";
+import DroppedCourseCard from "./DroppedCourseCard";
+import DraggedCourseCard from "./DraggedCourseCard";
+import CustomCourseCard from "./CustomCourseCard";
+import GhostCourseCard from "./GhostCourseCard";
+import { memo, ComponentType } from "react";
+import { Course } from "@/app/dashboard/page";
 
 export type CourseCardVariant =
   | "default"
@@ -47,6 +47,10 @@ const VARIANTS: {
 
 const CourseCard = memo<CourseCardWrapperProps>(
   (props) => {
+    if (props.course.code.startsWith("custom_")) {
+      return <CustomCourseCard variant={props.variant} course={props.course} />;
+    }
+
     const Component = VARIANTS[
       props.variant
     ] as ComponentType<CourseCardWrapperProps>;

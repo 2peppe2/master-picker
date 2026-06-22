@@ -1,33 +1,40 @@
 "use client";
 
+import { readCustomCoursesFromUrlAtom, serializeCustomCourses } from "../../(store)/customCourses/utils";
+import { readScheduleFromUrlAtom, serializeSchedule } from "../../(store)/schedule/utils";
+import { customCoursesAtoms } from "../../(store)/customCourses/atoms";
 import { useSearchParams } from "@/common/hooks/useSearchParams";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import { coursesAtom } from "../../(store)/store";
 import { useAtomValue, useSetAtom } from "jotai";
 import { FC, useEffect, Suspense } from "react";
-import {
-  readScheduleFromUrlAtom,
-  writeScheduleToUrlAtom,
-} from "../../(store)/schedule/utils";
 
 const ScheduleSyncInner: FC = () => {
-  const { searchParams, setSearchParam } = useSearchParams();
+  const { searchParams, setSearchParams } = useSearchParams();
 
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
   const courses = useAtomValue(coursesAtom);
+  const customCourses = useAtomValue(customCoursesAtoms.customCoursesAtom);
 
   const readFromUrl = useSetAtom(readScheduleFromUrlAtom);
-  const writeToUrl = useSetAtom(writeScheduleToUrlAtom);
+  const readCustomFromUrl = useSetAtom(readCustomCoursesFromUrlAtom);
 
   useEffect(() => {
     if (Object.keys(courses).length > 0) {
+      readCustomFromUrl({ searchParams });
       readFromUrl({ searchParams });
     }
-  }, [courses, searchParams, readFromUrl]);
+  }, [courses, searchParams, readFromUrl, readCustomFromUrl]);
 
   useEffect(() => {
-    writeToUrl({ searchParams, setSearchParam });
-  }, [schedules, searchParams, setSearchParam, writeToUrl]);
+    const customCompressed = serializeCustomCourses(customCourses);
+    const scheduleCompressed = serializeSchedule(courses, schedules);
+
+    setSearchParams({
+      custom: customCompressed,
+      schedule: scheduleCompressed,
+    });
+  }, [schedules, customCourses, courses, setSearchParams]);
 
   return null;
 };

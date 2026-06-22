@@ -1,12 +1,13 @@
 "use client";
 
 import { useFiltered } from "../../(store)/filter/hooks/useFiltered";
-import { useSortedCourses } from "@/common/hooks/useSortedCourses";
 import UnifiedSearchFilter from "./components/UnifiedSearchFilter";
+import { useSortedCourses } from "@/common/hooks/useSortedCourses";
 import { Draggable } from "@/components/DndProvider/Draggable";
 import { scheduleAtoms } from "../../(store)/schedule/atoms";
 import EmptyCourseState from "./components/EmptyCourseState";
 import DrawerHeader from "./components/DrawerHeader";
+import { coursesAtom } from "../../(store)/store";
 import CourseCard from "@/components/CourseCard";
 import { FC, Fragment, useMemo } from "react";
 import { useAtomValue } from "jotai";
@@ -16,11 +17,19 @@ interface DrawerProps {
   courses: Course[];
 }
 
-const Drawer: FC<DrawerProps> = ({ courses }) => {
+const Drawer: FC<DrawerProps> = ({ courses: initialCourses }) => {
   const draggedCourse = useAtomValue(scheduleAtoms.draggedCourseAtom);
   const schedules = useAtomValue(scheduleAtoms.schedulesAtom);
+  const coursesMap = useAtomValue(coursesAtom);
+  
+  const coursesArray = useMemo(() => {
+    // If coursesMap is relatively empty, fallback to initialCourses
+    const arr = Object.values(coursesMap);
+    return arr.length > 0 ? arr : initialCourses;
+  }, [coursesMap, initialCourses]);
+
   const filteredCourses = useFiltered({
-    courses,
+    courses: coursesArray,
   });
   const sortedCourses = useSortedCourses({
     courses: filteredCourses,

@@ -197,6 +197,13 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   return useMemo(
     () =>
       courses.filter((course) => {
+        if (course.code.startsWith("custom_")) {
+          if (filterOutByTerm(deferredFilters.search, course)) {
+            return false;
+          }
+          return true;
+        }
+
         if (filterOutBySemesters(deferredFilters.semesters, course)) {
           return false;
         }

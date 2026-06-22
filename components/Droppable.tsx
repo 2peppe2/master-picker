@@ -1,12 +1,12 @@
 "use client";
 
-import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
-import React, { FC, ReactNode, useMemo } from "react";
+import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import {
   scheduleAtoms,
   WILDCARD_BLOCK_START,
 } from "@/app/dashboard/(store)/schedule/atoms";
+import React, { FC, ReactNode, useMemo } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
 
@@ -40,6 +40,8 @@ export const Droppable: FC<DroppableProps> = ({ children, data, id }) => {
 
   const isValidDropTarget = useMemo(() => {
     if (!draggedCourse) return false;
+
+    if (draggedCourse.code.startsWith("custom_")) return true;
 
     const targetPeriod = periodNumber + 1;
     const targetBlock = blockNumber + 1;

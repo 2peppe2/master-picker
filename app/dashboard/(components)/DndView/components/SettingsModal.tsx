@@ -1,16 +1,18 @@
 "use client";
 
-import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
+import { Check, ChevronDown, Plus, Settings } from "lucide-react";
+import CustomCourseDialog from "@/components/CustomCourseDialog";
 import Translate from "@/common/components/translate/Translate";
-import { Check, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FC, useCallback } from "react";
 import {
-  Popover,
   PopoverContent,
   PopoverTrigger,
+  Popover,
 } from "@/components/ui/popover";
+import { useState } from "react";
 import { useAtom } from "jotai";
 
 interface SettingsModalProps {
@@ -28,6 +30,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
     (state: boolean) => setShowBachelorYears(state),
     [setShowBachelorYears],
   );
+
+  const [customCourseDialogOpen, setCustomCourseDialogOpen] = useState(false);
 
   return (
     <Popover open={isOpen} onOpenChange={onOpenChange}>
@@ -49,7 +53,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
       <PopoverContent align="end" className="p-0 overflow-hidden w-64">
         <div className="px-4 py-3 bg-muted/40 border-b border-border">
           <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            <Translate text="layout_settings" />
+            <Translate text="settings" />
           </p>
         </div>
 
@@ -60,8 +64,29 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
             label={translate("show_bachelor_years")}
             description={translate("semesters_1_to_6")}
           />
+          <button
+            onClick={() => setCustomCourseDialogOpen(true)}
+            className="cursor-pointer w-full flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors group mt-1"
+          >
+            <div className="w-4 h-4 rounded border border-input group-hover:border-muted-foreground flex items-center justify-center transition-all bg-muted">
+              <Plus className="w-3 h-3 text-muted-foreground group-hover:text-foreground" />
+            </div>
+            <div className="flex flex-col items-start leading-tight">
+              <span className="font-medium text-foreground">
+                <Translate text="add_custom_course" />
+              </span>
+              <span className="text-[11px] text-muted-foreground">
+                <Translate text="create_placeholder_course" />
+              </span>
+            </div>
+          </button>
         </div>
       </PopoverContent>
+
+      <CustomCourseDialog
+        open={customCourseDialogOpen}
+        onOpenChange={setCustomCourseDialogOpen}
+      />
     </Popover>
   );
 };

@@ -1,10 +1,10 @@
 "use client";
 
-import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
 import { WILDCARD_BLOCK_START } from "@/app/dashboard/(store)/schedule/atoms";
 import { PeriodNodeData } from "@/components/Droppable";
-import { Course } from "../../../page";
+import { Course, CourseOccasion } from "../../../page";
 
 interface ValidateDropArgs {
   course: Course;
@@ -20,15 +20,30 @@ export const useDropValidator = () => {
       overData.semesterNumber,
     );
 
+    const targetPeriod = overData.periodNumber + 1;
+    const targetBlock = overData.blockNumber + 1;
+    const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
+
+    if (course.code.startsWith("custom_")) {
+      return {
+        occasion: {
+          year,
+          semester,
+          periods: [{ period: targetPeriod, blocks: [targetBlock] }],
+          recommendedMaster: [],
+        } as unknown as CourseOccasion,
+        period: { period: targetPeriod, blocks: [targetBlock] },
+        targetPeriod,
+        targetBlock,
+        isWildcardDrop,
+      };
+    }
+
     const matchingOccasions = course.CourseOccasion.filter(
       (occ) => occ.year === year && occ.semester === semester,
     );
 
     if (matchingOccasions.length === 0) return null;
-
-    const targetPeriod = overData.periodNumber + 1;
-    const targetBlock = overData.blockNumber + 1;
-    const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
 
     for (const occasion of matchingOccasions) {
       const period = occasion.periods.find((p) => p.period === targetPeriod);
