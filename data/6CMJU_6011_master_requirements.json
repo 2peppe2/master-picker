@@ -6,7 +6,7 @@
     { "type": "CREDITS_ADVANCED_MASTER", "credits": 90 },
     {
       "type": "CREDITS_MAIN_FIELD_TOTAL",
-      "credits": 60,
+      "credits": 30,
       "fields": [
         "Information Technology",
         "Computer Science and Engineering",
