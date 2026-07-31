@@ -92,14 +92,12 @@ const getProgressStats = ({
           .reduce((sum, c) => sum + (c.credits || 0), 0);
       });
 
-      // Overall requirement progress is the sum of all valid main field credits
-      const totalInMainFields = masterCourses
-        .filter((c) => c.mainField?.some((f) => req.fields.includes(f)))
-        .reduce((sum, c) => sum + (c.credits || 0), 0);
+      // The requirement is met by reaching the threshold in any one field.
+      const highestFieldProgress = Math.max(0, ...Object.values(fieldProgress));
 
       return {
-        current: totalInMainFields,
-        percent: calculateMetricProgress(totalInMainFields, req.credits),
+        current: highestFieldProgress,
+        percent: calculateMetricProgress(highestFieldProgress, req.credits),
         fieldProgress,
       };
     }
