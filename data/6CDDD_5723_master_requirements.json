@@ -13,7 +13,7 @@
     { "type": "COURSE_SELECTION", "minCount": 1, "courses": ["TQXX33"] },
     {
       "type": "CREDITS_MAIN_FIELD_TOTAL",
-      "credits": 60,
+      "credits": 30,
       "fields": [
         "Computer Science and Engineering",
         "Electrical Engineering",

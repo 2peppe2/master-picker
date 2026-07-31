@@ -19,7 +19,7 @@ const MainFieldRow: FC<MainFieldRowProps> = ({
     <span className="leading-snug">
       <Translate text="have_at_least" />{" "}
       <b className="text-foreground font-semibold">{requirement.credits} HP</b>{" "}
-      <Translate text="in_one_of_the_following_fields" />:
+      <Translate text="courses_in_one_of_the_following_fields" />:
     </span>
     <div className="flex flex-wrap gap-1.5">
       {requirement.fields.map((field) => (
