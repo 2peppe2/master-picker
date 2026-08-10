@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import type { TOptions } from "i18next";
 import { useMemo, useState, useEffect } from "react";
 import "@/lib/i18n";
 
@@ -18,7 +19,7 @@ export const useCourseTranslate = () => {
   // This is a hydration guard to ensure the initial render matches the server default (Swedish).
   return useMemo(() => {
     if (!mounted) {
-      return ((key: string, options?: any) => {
+      return ((key: string, options?: TOptions) => {
         return i18n.t(key, { ...options, lng: "sv", ns: "courses" });
       }) as typeof t;
     }

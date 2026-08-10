@@ -70,6 +70,7 @@ const BackButtonIcon: FC<BackButtonIconProps> = ({ isHovered }) => (
             alt="Logo"
             width={44}
             height={38}
+            style={{ height: "auto" }}
             className="shrink-0"
           />
         </motion.div>

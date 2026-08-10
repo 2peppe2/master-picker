@@ -16,6 +16,7 @@ const Header: FC = () => (
         alt="LiU Master Logo"
         width={70}
         height={70}
+        style={{ height: "auto" }}
       />
       <h1 className={`text-2xl md:text-7xl font-bold ${playfair.className}`}>
         Master Picker

@@ -1,7 +1,6 @@
 "use client";
 
-import { useHotkey } from "@tanstack/react-hotkeys";
-import { FC, useRef, useState } from "react";
+import { FC, KeyboardEvent, useRef, useState } from "react";
 import {
   Combobox,
   ComboboxContent,
@@ -47,27 +46,24 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
     return options.filter((opt) => opt.label.toLowerCase().includes(term));
   };
 
-  useHotkey(
-    "Enter",
-    (e) => {
-      if (document.activeElement !== inputRef.current) return;
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key !== "Enter") return;
 
-      const matches = getMatches();
-      if (matches.length > 0) {
-        e.preventDefault();
-        onValueChange(matches[matchIndex % matches.length]);
-        inputRef.current?.blur();
-        setMatchIndex(0);
-      }
-    },
-    { ignoreInputs: false },
-  );
+    const matches = getMatches();
+    if (matches.length > 0) {
+      event.preventDefault();
+      onValueChange(matches[matchIndex % matches.length]);
+      inputRef.current?.blur();
+      setMatchIndex(0);
+    }
+  };
 
   return (
     <Combobox items={options} value={value} onValueChange={onValueChange}>
       <ComboboxInput
         ref={inputRef}
         placeholder={displayStates.placeholder}
+        onKeyDown={handleKeyDown}
         className="w-80 h-12 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg [&_[data-slot=input-group-control]]:px-4"
       />
       <ComboboxContent>
