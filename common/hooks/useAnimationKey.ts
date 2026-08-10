@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { DependencyList, useState, useEffect } from "react";
 
 /**
  * A hook that provides a key that increments after the first frame.
@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
  * @returns The current animation key.
  */
 export interface UseAnimationKeyArgs {
-  dependencies?: any[];
+  dependencies?: DependencyList;
 }
 
 export const useAnimationKey = ({
@@ -22,6 +22,8 @@ export const useAnimationKey = ({
     });
 
     return () => cancelAnimationFrame(frame);
+    // Consumers deliberately control when the animation restarts.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies);
 
   return animationKey;
