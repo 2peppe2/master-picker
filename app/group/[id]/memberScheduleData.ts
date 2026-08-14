@@ -111,7 +111,7 @@ export async function getGroupMemberCardData(
     string,
     Awaited<ReturnType<typeof getMastersWithRequirements>>
   >();
-  const programShortnames = new Map<string, string>();
+  const programShortNames = new Map<string, string>();
 
   if (uniquePrograms.length > 0) {
     const programs = await prisma.program.findMany({
@@ -127,7 +127,7 @@ export async function getGroupMemberCardData(
     });
 
     programs.forEach((program) => {
-      programShortnames.set(program.program, program.shortname);
+      programShortNames.set(program.program, program.shortname);
     });
   }
 
@@ -234,7 +234,7 @@ export async function getGroupMemberCardData(
       id: member.id,
       name: member.name,
       scheduleUrl: member.scheduleUrl,
-      program: program ? programShortnames.get(program) ?? program : null,
+      program: program ? programShortNames.get(program) ?? program : null,
       year,
       courseCount: allCourses.length,
       scheduledMasterCourses,
