@@ -12,6 +12,7 @@ import Translate from "@/common/components/translate/Translate";
 import { ChevronRightIcon, TriangleAlert } from "lucide-react";
 import { Slot } from "@/app/dashboard/(store)/schedule/types";
 import SemesterSettingsModal from "./SemesterSettingsModal";
+import TimeEditSemesterButton from "./TimeEditSemesterButton";
 import { useAtomValue, useSetAtom } from "jotai";
 import { FC, useMemo, useState } from "react";
 import PeriodView from "./PeriodView";
@@ -78,7 +79,7 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const targetSemester = semester + 1;
-  const ht_or_vt = semester % 2 === 0 ? "HT" : "VT";
+  const ht_or_vt: "HT" | "VT" = semester % 2 === 0 ? "HT" : "VT";
 
   const credits = useMemo(() => {
     const coursesInSemester = new Set(
@@ -170,7 +171,12 @@ const Header: FC<HeaderProps> = ({ periods, semester, isOpen, setIsOpen }) => {
         </CardTitle>
       </CollapsibleTrigger>
 
-      <div className="ml-4">
+      <div className="ml-4 flex items-center gap-1">
+        <TimeEditSemesterButton
+          periods={periods}
+          semester={ht_or_vt}
+          year={relativeSemesterYear}
+        />
         <SemesterSettingsModal
           semester={semester}
           isOpen={isSettingsOpen}
