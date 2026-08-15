@@ -51,6 +51,8 @@ const parseTimeEditCourseObjectId = (
   return null;
 };
 
+const objectIdCache = new Map<string, string>();
+
 export const resolveTimeEditCourseObjectIds = async (courseCodes: string[]) => {
   const uniqueCourseCodes = Array.from(
     new Set(courseCodes.map((code) => code.trim().toUpperCase()).filter(Boolean)),
@@ -58,11 +60,17 @@ export const resolveTimeEditCourseObjectIds = async (courseCodes: string[]) => {
 
   const results = await Promise.all(
     uniqueCourseCodes.map(async (courseCode) => {
+      const cached = objectIdCache.get(courseCode);
+      if (cached !== undefined) return { objectId: cached };
+
       const objectId =
         (await resolveTimeEditCourseObjectId(courseCode)) ??
         (await resolveTimeEditCourseObjectId(courseCode, [
           TIME_EDIT_NON_HISTORICAL_FILTER,
         ]));
+
+      // Only cache hits: a miss may just mean the course is not published yet.
+      if (objectId !== null) objectIdCache.set(courseCode, objectId);
 
       return { objectId };
     }),
@@ -87,24 +95,51 @@ const resolveTimeEditCourseObjectId = async (
   return parseTimeEditCourseObjectId(await response.text(), courseCode);
 };
 
-export const buildTimeEditSemesterUrl = ({
-  objectIds,
-  semester,
-  year,
-}: {
+interface TimeEditSemesterOptions {
   objectIds: string[];
   semester: "HT" | "VT";
   year: number;
-}) => {
+}
+
+const buildTimeEditSemesterParams = ({
+  objectIds,
+  semester,
+  year,
+}: TimeEditSemesterOptions) => {
   const range = getTimeEditSemesterRange({ semester, year });
-  const params = new URLSearchParams({
+
+  return new URLSearchParams({
     h: "t",
     sid: TIME_EDIT_SID,
     p: `${range.start}.x,${range.end}.x`,
     objects: objectIds.join(","),
-  });
+  }).toString();
+};
 
-  return `${TIME_EDIT_SCHEMA_BASE_URL}/ri.html?${params.toString()}`;
+export const buildTimeEditSemesterUrl = (options: TimeEditSemesterOptions) =>
+  `${TIME_EDIT_SCHEMA_BASE_URL}/ri.html?${buildTimeEditSemesterParams(options)}`;
+
+export const buildTimeEditSemesterIcsUrl = (options: TimeEditSemesterOptions) =>
+  `${TIME_EDIT_SCHEMA_BASE_URL}/ri.ics?${buildTimeEditSemesterParams(options)}`;
+
+/**
+ * Builds every link needed to either view the semester in TimeEdit or
+ * subscribe to it from a calendar app. The subscription targets point at
+ * TimeEdit directly so the feed keeps working independently of this app, and
+ * they cover the whole semester -- both study periods.
+ */
+export const buildTimeEditCalendarLinks = (
+  options: TimeEditSemesterOptions,
+) => {
+  const feedUrl = buildTimeEditSemesterIcsUrl(options);
+  const webcalUrl = feedUrl.replace(/^https?:/, "webcal:");
+
+  return {
+    timeEditUrl: buildTimeEditSemesterUrl(options),
+    icsUrl: feedUrl,
+    webcalUrl,
+    googleUrl: `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl)}`,
+  };
 };
 
 const getHtmlAttribute = (html: string, attribute: string) => {
