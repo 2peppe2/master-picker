@@ -2,6 +2,7 @@
 
 import { useCallback, RefObject } from "react";
 import { MultiSelectOption } from "../types";
+import { oppositeOptionValue } from "../polarity";
 
 interface UseMultiSelectActionsArgs {
   selected: string[];
@@ -33,9 +34,12 @@ export const useMultiSelectActions = ({
   const toggleOption = useCallback(
     (value: string) => {
       const isSearching = searchValue.trim() !== "";
+      // The two polarities of one option are mutually exclusive: including
+      // something that is currently excluded drops the exclusion, and back.
+      const opposite = oppositeOptionValue(value);
       const next = selected.includes(value)
         ? selected.filter((v) => v !== value)
-        : [...selected, value];
+        : [...selected.filter((v) => v !== opposite), value];
 
       setSelected(next);
       onValueChange(next);

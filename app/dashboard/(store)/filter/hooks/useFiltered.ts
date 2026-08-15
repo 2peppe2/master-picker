@@ -1,6 +1,10 @@
 "use client";
 
 import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
+import {
+  ExaminationType,
+  getCourseExaminationTypes,
+} from "@/lib/examinationTypes";
 import { useScheduleGetters } from "../../schedule/hooks/useScheduleGetters";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { useCallback, useDeferredValue, useMemo } from "react";
@@ -32,6 +36,17 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
   const masters = useAtomValue(filterAtoms.mastersAtom);
   const semesters = useAtomValue(filterAtoms.semestersAtom);
   const mainFields = useAtomValue(filterAtoms.mainFieldsAtom);
+  const examinationTypes = useAtomValue(filterAtoms.examinationTypesAtom);
+
+  const excludedMasters = useAtomValue(filterAtoms.excludedMastersAtom);
+  const excludedSemesters = useAtomValue(filterAtoms.excludedSemestersAtom);
+  const excludedPeriods = useAtomValue(filterAtoms.excludedPeriodsAtom);
+  const excludedBlocks = useAtomValue(filterAtoms.excludedBlocksAtom);
+  const excludedLevels = useAtomValue(filterAtoms.excludedLevelsAtom);
+  const excludedMainFields = useAtomValue(filterAtoms.excludedMainFieldsAtom);
+  const excludedExaminationTypes = useAtomValue(
+    filterAtoms.excludedExaminationTypesAtom,
+  );
 
   const filterObject = useMemo(
     () => ({
@@ -42,8 +57,32 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
       semesters,
       levels,
       mainFields,
+      examinationTypes,
+      excludedMasters,
+      excludedSemesters,
+      excludedPeriods,
+      excludedBlocks,
+      excludedLevels,
+      excludedMainFields,
+      excludedExaminationTypes,
     }),
-    [search, masters, blocks, periods, semesters, levels, mainFields],
+    [
+      search,
+      masters,
+      blocks,
+      periods,
+      semesters,
+      levels,
+      mainFields,
+      examinationTypes,
+      excludedMasters,
+      excludedSemesters,
+      excludedPeriods,
+      excludedBlocks,
+      excludedLevels,
+      excludedMainFields,
+      excludedExaminationTypes,
+    ],
   );
 
   const deferredFilters = useDeferredValue(filterObject);
@@ -170,6 +209,41 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
     );
   }, []);
 
+  /**
+   * "Utan" is the mirror of the matching predicates: a course is dropped when
+   * it *does* match one of the excluded values. The filterOutBy* callbacks
+   * report a miss, so a hit is simply their negation -- but only once
+   * something is actually excluded.
+   */
+  const filterOutByExcluded = useCallback(
+    <T>(
+      excluded: T[],
+      course: Course,
+      matchesNone: (values: T[], course: Course) => boolean,
+    ) => excluded.length > 0 && !matchesNone(excluded, course),
+    [],
+  );
+
+  const filterOutByExaminationTypes = useCallback(
+    (
+      included: ExaminationType[],
+      excluded: ExaminationType[],
+      course: Course,
+    ) => {
+      if (included.length === 0 && excluded.length === 0) return false;
+
+      const courseTypes = getCourseExaminationTypes(course.Examination);
+
+      // Included types are OR:ed, excluded types must all be absent.
+      if (included.length > 0 && !included.some((t) => courseTypes.has(t))) {
+        return true;
+      }
+
+      return excluded.some((type) => courseTypes.has(type));
+    },
+    [],
+  );
+
   const filterOutBachelors = useCallback(
     (
       showBachelorYears: boolean,
@@ -227,14 +301,62 @@ export const useFiltered = ({ courses }: UseFilteredArgs) => {
           return false;
         }
 
+        if (
+          filterOutByExaminationTypes(
+            deferredFilters.examinationTypes,
+            deferredFilters.excludedExaminationTypes,
+            course,
+          )
+        ) {
+          return false;
+        }
+
         if (filterOutByTerm(deferredFilters.search, course)) {
           return false;
         }
+
+        const isExcluded =
+          filterOutByExcluded(
+            deferredFilters.excludedSemesters,
+            course,
+            filterOutBySemesters,
+          ) ||
+          filterOutByExcluded(
+            deferredFilters.excludedLevels,
+            course,
+            filterOutByLevels,
+          ) ||
+          filterOutByExcluded(
+            deferredFilters.excludedMasters,
+            course,
+            filterOutByMasters,
+          ) ||
+          filterOutByExcluded(
+            deferredFilters.excludedMainFields,
+            course,
+            filterOutByMainFields,
+          ) ||
+          filterOutByExcluded(
+            deferredFilters.excludedPeriods,
+            course,
+            filterOutByPeriods,
+          ) ||
+          filterOutByExcluded(
+            deferredFilters.excludedBlocks,
+            course,
+            filterOutByBlocks,
+          );
+
+        if (isExcluded) return false;
 
         return true;
       }),
     [
       courses,
+      filterOutByExcluded,
+      filterOutByPeriods,
+      filterOutByBlocks,
+      filterOutByExaminationTypes,
       filterOutBySemesters,
       deferredFilters,
       filterOutByLevels,

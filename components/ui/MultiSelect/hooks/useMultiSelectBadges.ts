@@ -46,7 +46,7 @@ export const useMultiSelectBadges = ({
     });
 
     const badges: BadgeData[] = [];
-    const order = ["semester", "block", "period", "master"];
+    const order = ["semester", "block", "period", "master", "examination"];
     const sortedEntries = Object.entries(groups).sort(
       (a, b) => order.indexOf(a[0]) - order.indexOf(b[0]),
     );

@@ -38,14 +38,21 @@ export const useMultiSelectData = ({
     return hasMatches || hasSearchFallback;
   }, [allOptionsFlat, searchValue, exactMatch]);
 
-  const filteredGroups = useMemo(() => {
+  const filteredGroups = useMemo<MultiSelectGroup[]>(() => {
+    const matches = (option: MultiSelectOption) =>
+      option.searchKey.toLowerCase().includes(searchValue.toLowerCase());
+
     return (options as MultiSelectGroup[])
-      .map((group) => ({
-        ...group,
-        options: group.options.filter((o) =>
-          o.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
-        ),
-      }))
+      .flatMap<MultiSelectGroup>((group) =>
+        // Search results are listed per section, so a hit always says whether
+        // it is the "har" or the "utan" side of its category.
+        group.sections
+          ? group.sections.map((section) => ({
+              heading: section.headerLabel,
+              options: section.options.filter(matches),
+            }))
+          : [{ ...group, options: group.options.filter(matches) }],
+      )
       .filter((group) => group.options.length > 0);
   }, [options, searchValue]);
 

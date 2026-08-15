@@ -3,9 +3,11 @@
 import { Command, CommandGroup, CommandList } from "@/components/ui/command";
 import SearchFallbackItem from "./components/SearchFallbackItem";
 import GlobalClearButton from "./components/GlobalClearButton";
+import DrilldownHeader from "./components/DrilldownHeader";
 import { MultiSelectGroup, MultiSelectOption } from "./types";
 import MultiSelectBadge from "./components/MultiSelectBadge";
-import React, { forwardRef, HTMLAttributes } from "react";
+import CategoryItem from "./components/CategoryItem";
+import React, { forwardRef, HTMLAttributes, useMemo } from "react";
 import { useMultiSelect } from "./hooks/useMultiSelect";
 import { useHotkey } from "@tanstack/react-hotkeys";
 import { Command as CommandPrimitive } from "cmdk";
@@ -29,18 +31,42 @@ export interface MultiSelectProps extends Omit<
   defaultValue?: string[];
   placeholder?: string;
   categoryLabels: Record<string, string>;
+  /** Label of the row that leaves a drilled-in section. */
+  backLabel?: string;
 }
 
 const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
   (props, ref) => {
     const {
       placeholder = "Search...",
+      backLabel = "Back",
       className,
       onValueChange,
       onSearchChange,
     } = props;
 
     const { state, setters, refs, data, actions } = useMultiSelect(props);
+
+    const activeGroup = useMemo(() => {
+      if (!state.drilldown) return null;
+
+      return (
+        (props.options as MultiSelectGroup[]).find(
+          (g) => "heading" in g && g.heading === state.drilldown?.heading,
+        ) ?? null
+      );
+    }, [props.options, state.drilldown]);
+
+    const activeSection = useMemo(
+      () =>
+        activeGroup?.sections?.find(
+          (section) => section.key === state.drilldown?.sectionKey,
+        ) ?? null,
+      [activeGroup, state.drilldown],
+    );
+
+    const countSelected = (options: MultiSelectOption[]) =>
+      options.filter((option) => state.selected.includes(option.value)).length;
 
     useHotkey("Mod+K", (e) => {
       e.preventDefault();
@@ -62,6 +88,7 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
           onOpenChange={(open) => {
             setters.setIsPopoverOpen(open);
             if (!open) {
+              setters.setDrilldown(null);
               setTimeout(() => {
                 setters.setSearchValue("");
               }, 100);
@@ -125,6 +152,8 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                       setters.setSearchValue(val);
                       onSearchChange?.(val);
                       setters.setActiveValue("");
+                      // Searching spans every section, so leave the drill-down.
+                      if (val) setters.setDrilldown(null);
                       if (val && !state.isPopoverOpen)
                         setters.setIsPopoverOpen(true);
 
@@ -170,23 +199,107 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
             )}
             align="start"
             onOpenAutoFocus={(e) => e.preventDefault()}
+            onEscapeKeyDown={(e) => {
+              // Escape climbs one level at a time before closing the popover.
+              if (!state.drilldown) return;
+
+              e.preventDefault();
+              setters.setDrilldown(
+                state.drilldown.sectionKey
+                  ? { heading: state.drilldown.heading }
+                  : null,
+              );
+              refs.inputRef.current?.focus();
+            }}
           >
             <CommandList
               ref={refs.listRef}
               className="max-h-[400px] w-full relative"
             >
-              {data.filteredGroups.map((group) => (
-                <CommandGroup key={group.heading} heading={group.heading}>
-                  {group.options.map((option) => (
-                    <OptionItem
-                      key={option.value}
-                      option={option}
-                      isSelected={state.selected.includes(option.value)}
-                      onSelect={() => actions.toggleOption(option.value)}
+              {activeSection ? (
+                <>
+                  <DrilldownHeader
+                    heading={activeSection.headerLabel}
+                    backLabel={backLabel}
+                    onBack={() =>
+                      setters.setDrilldown({ heading: activeGroup!.heading })
+                    }
+                  />
+                  <CommandGroup>
+                    {activeSection.options.map((option) => (
+                      <OptionItem
+                        key={option.value}
+                        option={option}
+                        isSelected={state.selected.includes(option.value)}
+                        onSelect={() => actions.toggleOption(option.value)}
+                      />
+                    ))}
+                  </CommandGroup>
+                </>
+              ) : activeGroup ? (
+                <>
+                  <DrilldownHeader
+                    heading={activeGroup.heading}
+                    backLabel={backLabel}
+                    onBack={() => setters.setDrilldown(null)}
+                  />
+                  <CommandGroup>
+                    {activeGroup.sections
+                      ? activeGroup.sections.map((section) => (
+                          <CategoryItem
+                            key={section.key}
+                            label={section.label}
+                            icon={section.icon}
+                            selectedCount={countSelected(section.options)}
+                            value={`__section:${activeGroup.heading}:${section.key}`}
+                            onSelect={() =>
+                              setters.setDrilldown({
+                                heading: activeGroup.heading,
+                                sectionKey: section.key,
+                              })
+                            }
+                          />
+                        ))
+                      : activeGroup.options.map((option) => (
+                          <OptionItem
+                            key={option.value}
+                            option={option}
+                            isSelected={state.selected.includes(option.value)}
+                            onSelect={() => actions.toggleOption(option.value)}
+                          />
+                        ))}
+                  </CommandGroup>
+                </>
+              ) : state.searchValue ? (
+                // Searching spans every category, so show the hits themselves.
+                data.filteredGroups.map((group) => (
+                  <CommandGroup key={group.heading} heading={group.heading}>
+                    {group.options.map((option) => (
+                      <OptionItem
+                        key={option.value}
+                        option={option}
+                        isSelected={state.selected.includes(option.value)}
+                        onSelect={() => actions.toggleOption(option.value)}
+                      />
+                    ))}
+                  </CommandGroup>
+                ))
+              ) : (
+                <CommandGroup>
+                  {(props.options as MultiSelectGroup[]).map((group) => (
+                    <CategoryItem
+                      key={group.heading}
+                      label={group.heading}
+                      icon={group.icon}
+                      selectedCount={countSelected(group.options)}
+                      value={`__category:${group.heading}`}
+                      onSelect={() =>
+                        setters.setDrilldown({ heading: group.heading })
+                      }
                     />
                   ))}
                 </CommandGroup>
-              ))}
+              )}
 
               <SearchFallbackItem
                 searchValue={state.searchValue}
