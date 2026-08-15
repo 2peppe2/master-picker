@@ -1,5 +1,6 @@
 "use client";
 
+import { useCalendarAnnouncement } from "@/app/dashboard/(store)/preferences/hooks/useCalendarAnnouncement";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import Translate from "@/common/components/translate/Translate";
 import { Slot } from "@/app/dashboard/(store)/schedule/types";
@@ -32,6 +33,8 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
   year,
 }) => {
   const translate = useCommonTranslate();
+  const { isVisible: isAnnouncementVisible, markSeen } =
+    useCalendarAnnouncement();
 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -93,7 +96,12 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
-    if (open) void loadLinks();
+
+    if (open) {
+      void loadLinks();
+      // Finding the popover counts as seeing the announcement.
+      markSeen();
+    }
   };
 
   const hasCourses = courseCodes.length > 0;
@@ -104,7 +112,7 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
         <Button
           variant="ghost"
           size="sm"
-          className="h-8 gap-2 px-2 hover:bg-accent"
+          className="relative h-8 gap-2 px-2 hover:bg-accent"
           disabled={!hasCourses}
           title={
             hasCourses
@@ -117,6 +125,9 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
           <span className="hidden xl:inline">
             <Translate text="_calendar_button" />
           </span>
+          {isAnnouncementVisible && hasCourses && (
+            <span className="absolute -right-0.5 -top-0.5 size-2 animate-pulse rounded-full bg-primary" />
+          )}
         </Button>
       </PopoverTrigger>
 
