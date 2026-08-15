@@ -208,7 +208,7 @@
   "_semester_settings_extend_blocks": "Utöka tillgängliga block för denna termin",
   "_selected_block_occupied_by": "Det valda blocket för <b>{{code}}</b> är redan upptaget av:",
   "_calendar_apple": "Apple Kalender",
-  "_calendar_button": "Kalender",
+  "_calendar_button": "Schema",
   "_calendar_google": "Google Kalender",
   "_calendar_loading": "Söker upp dina kurser i TimeEdit...",
   "_calendar_replan_hint": "Endast kurser som redan är publicerade i TimeEdit tas med. Om du ändrar din plan senare, prenumerera igen.",

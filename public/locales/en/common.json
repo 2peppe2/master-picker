@@ -209,7 +209,7 @@
   "_semester_settings_extend_blocks": "Extend available blocks for this semester",
   "_selected_block_occupied_by": "The selected block for <b>{{code}}</b> is already occupied by:",
   "_calendar_apple": "Apple Calendar",
-  "_calendar_button": "Calendar",
+  "_calendar_button": "Schema",
   "_calendar_google": "Google Calendar",
   "_calendar_loading": "Looking up your courses in TimeEdit...",
   "_calendar_replan_hint": "Only courses already published in TimeEdit are included. If you change your plan later, subscribe again.",
