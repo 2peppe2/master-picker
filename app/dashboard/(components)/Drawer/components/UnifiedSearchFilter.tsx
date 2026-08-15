@@ -5,6 +5,10 @@ import { useCourseTranslate } from "@/common/components/translate/hooks/useCours
 import { preferenceAtoms } from "@/app/dashboard/(store)/preferences/atoms";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
+import {
+  encodeOptionValue,
+  parseOptionValue,
+} from "@/components/ui/MultiSelect/polarity";
 import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
 import { useMasterAtom } from "@/app/(store)/hooks/useMasterAtom";
 import Translate from "@/common/components/translate/Translate";
@@ -15,12 +19,43 @@ import { useAtom, useAtomValue } from "jotai";
 import React, { FC, useMemo } from "react";
 import { range, uniq } from "lodash";
 import {
+  EXAMINATION_TYPES,
+  ExaminationType,
+  getCourseExaminationTypes,
+  isExaminationType,
+} from "@/lib/examinationTypes";
+import {
   GraduationCap,
   LayoutGrid,
   Calendar,
   CircleStar,
+  Layers,
   Shapes,
+  FileText,
+  Laptop,
+  FlaskConical,
+  ClipboardList,
+  FolderKanban,
+  Mic,
+  Users,
+  ListChecks,
+  Ban,
+  Check,
 } from "lucide-react";
+
+const EXAMINATION_ICONS: Record<
+  ExaminationType,
+  React.ComponentType<{ className?: string }>
+> = {
+  written_exam: FileText,
+  computer_exam: Laptop,
+  lab: FlaskConical,
+  assignment: ClipboardList,
+  project: FolderKanban,
+  oral: Mic,
+  seminar: Users,
+  optional_test: ListChecks,
+};
 
 const UnifiedSearchFilter: FC = () => {
   const showBachelorYears = useAtomValue(preferenceAtoms.showBachelorYearsAtom);
@@ -31,6 +66,22 @@ const UnifiedSearchFilter: FC = () => {
   const [blocks, selectBlocks] = useAtom(filterAtoms.blocksAtom);
   const [levels, selectLevels] = useAtom(filterAtoms.levelsAtom);
   const [search, searchFor] = useAtom(filterAtoms.searchAtom);
+  const [examinationTypes, selectExaminationTypes] = useAtom(
+    filterAtoms.examinationTypesAtom,
+  );
+  const [exMainFields, excludeMainFields] = useAtom(
+    filterAtoms.excludedMainFieldsAtom,
+  );
+  const [exSemesters, excludeSemesters] = useAtom(
+    filterAtoms.excludedSemestersAtom,
+  );
+  const [exMasters, excludeMasters] = useAtom(filterAtoms.excludedMastersAtom);
+  const [exPeriods, excludePeriods] = useAtom(filterAtoms.excludedPeriodsAtom);
+  const [exBlocks, excludeBlocks] = useAtom(filterAtoms.excludedBlocksAtom);
+  const [exLevels, excludeLevels] = useAtom(filterAtoms.excludedLevelsAtom);
+  const [excludedExaminationTypes, excludeExaminationTypes] = useAtom(
+    filterAtoms.excludedExaminationTypesAtom,
+  );
   const allCourses = useAtomValue(coursesAtom);
   const allMasters = useMasterAtom();
 
@@ -45,7 +96,58 @@ const UnifiedSearchFilter: FC = () => {
       period: translate("periods"),
       level: translate("levels"),
       mainField: translate("fields"),
+      examination: translate("examinations"),
     }),
+    [translate],
+  );
+
+  /**
+   * Turns a plain category into the two-step "Har"/"Utan" shape: the same
+   * options twice, the second time with negated values and a struck-through
+   * chip label. Both polarities keep the category's prefix, so a dimension
+   * still consolidates into one badge.
+   */
+  const withPolarity = useMemo(
+    () =>
+      (group: MultiSelectGroup): MultiSelectGroup => {
+        const excludedOptions = group.options.map((option) => {
+          const { prefix, value } = parseOptionValue(option.value);
+
+          return {
+            ...option,
+            value: encodeOptionValue(prefix, value, { negated: true }),
+            label: (
+              <span className="text-destructive line-through">
+                {option.label}
+              </span>
+            ),
+            searchKey: `${translate("_exclude")} ${option.searchKey}`,
+          };
+        });
+
+        const noun = group.heading.toLowerCase();
+
+        return {
+          ...group,
+          options: [...group.options, ...excludedOptions],
+          sections: [
+            {
+              key: "include",
+              label: translate("_include"),
+              headerLabel: translate("_include_x", { x: noun }),
+              icon: Check,
+              options: group.options,
+            },
+            {
+              key: "exclude",
+              label: translate("_exclude"),
+              headerLabel: translate("_exclude_x", { x: noun }),
+              icon: Ban,
+              options: excludedOptions,
+            },
+          ],
+        };
+      },
     [translate],
   );
 
@@ -64,6 +166,7 @@ const UnifiedSearchFilter: FC = () => {
 
     return {
       heading: translate("main_fields"),
+      icon: Shapes,
       options: uniqueFields.map((field) => ({
         label: coursesTranslate(field),
         dropdownLabel: (
@@ -84,6 +187,7 @@ const UnifiedSearchFilter: FC = () => {
     const start = showBachelorYears ? 1 : 7;
     return {
       heading: translate("semesters"),
+      icon: GraduationCap,
       options: range(start, 11).map((s) => ({
         label: `${s}`,
         dropdownLabel: (
@@ -103,6 +207,7 @@ const UnifiedSearchFilter: FC = () => {
   const blockOptions = useMemo(
     () => ({
       heading: translate("blocks"),
+      icon: LayoutGrid,
       options: range(1, 5).map((b) => ({
         label: `${b}`,
         dropdownLabel: (
@@ -123,6 +228,7 @@ const UnifiedSearchFilter: FC = () => {
   const periodOptions = useMemo(
     () => ({
       heading: translate("periods"),
+      icon: Calendar,
       options: range(1, 3).map((p) => ({
         label: `${p}`,
         dropdownLabel: (
@@ -143,6 +249,7 @@ const UnifiedSearchFilter: FC = () => {
   const masterOptions = useMemo(
     () => ({
       heading: translate("master_profiles"),
+      icon: Layers,
       options: Object.values(allMasters).map((m) => ({
         value: `master:${m.master}`,
         label: <MasterBadge name={m.master} />,
@@ -163,6 +270,7 @@ const UnifiedSearchFilter: FC = () => {
   const levelOptions = useMemo(
     () => ({
       heading: translate("levels"),
+      icon: CircleStar,
       options: Object.keys(LEVELS_LABELS).map((level) => ({
         value: `level:${level}`,
         label: LEVELS_LABELS[level],
@@ -178,15 +286,54 @@ const UnifiedSearchFilter: FC = () => {
     [LEVELS_LABELS, translate],
   );
 
+  // Only offer types that some loaded course is actually examined by.
+  const availableExaminationTypes = useMemo(() => {
+    const available = new Set<ExaminationType>();
+
+    Object.values(allCourses).forEach((course) =>
+      getCourseExaminationTypes(course.Examination).forEach((type) =>
+        available.add(type),
+      ),
+    );
+
+    return EXAMINATION_TYPES.filter((type) => available.has(type));
+  }, [allCourses]);
+
+  const examinationOptions = useMemo(
+    () => ({
+      heading: translate("examinations"),
+      icon: FileText,
+      options: availableExaminationTypes.map((type) => {
+        const Icon = EXAMINATION_ICONS[type];
+        const label = translate(`_exam_type_${type}`);
+
+        return {
+          value: encodeOptionValue("examination", type),
+          label,
+          dropdownLabel: (
+            <div className="flex items-center gap-2 truncate">
+              <Icon className="h-4 w-4 opacity-70" />
+              <span className="truncate">{label}</span>
+            </div>
+          ),
+          searchKey: label,
+        };
+      }),
+    }),
+    [availableExaminationTypes, translate],
+  );
+
   const groupedOptions = useMemo<MultiSelectGroup[]>(
-    () => [
-      semesterOptions,
-      blockOptions,
-      periodOptions,
-      levelOptions,
-      masterOptions,
-      mainFieldOptions,
-    ],
+    () =>
+      [
+        semesterOptions,
+        blockOptions,
+        periodOptions,
+        levelOptions,
+        masterOptions,
+        mainFieldOptions,
+        examinationOptions,
+      ].map(withPolarity),
     [
       semesterOptions,
       blockOptions,
@@ -194,57 +341,96 @@ const UnifiedSearchFilter: FC = () => {
       masterOptions,
       levelOptions,
       mainFieldOptions,
+      examinationOptions,
+      withPolarity,
     ],
   );
 
   const selectedValues = useMemo(() => {
     const values: string[] = [];
 
-    semesters.forEach((s) => values.push(`semester:${s}`));
-    blocks.forEach((b) => values.push(`block:${b}`));
-    periods.forEach((p) => values.push(`period:${p}`));
-    masters.forEach((m) => values.push(`master:${m}`));
-    levels.forEach((l) => values.push(`level:${l}`));
-    mainFields.forEach((f) => values.push(`mainField:${f}`));
+    const push = (
+      prefix: string,
+      included: (string | number)[],
+      excluded: (string | number)[],
+    ) => {
+      included.forEach((v) => values.push(encodeOptionValue(prefix, v)));
+      excluded.forEach((v) =>
+        values.push(encodeOptionValue(prefix, v, { negated: true })),
+      );
+    };
+
+    push("semester", semesters, exSemesters);
+    push("block", blocks, exBlocks);
+    push("period", periods, exPeriods);
+    push("master", masters, exMasters);
+    push("level", levels, exLevels);
+    push("mainField", mainFields, exMainFields);
+    push("examination", examinationTypes, excludedExaminationTypes);
 
     if (search) {
       values.push(`search:${search}`);
     }
 
     return values;
-  }, [masters, semesters, blocks, periods, levels, search, mainFields]);
+  }, [
+    masters,
+    semesters,
+    blocks,
+    periods,
+    levels,
+    search,
+    mainFields,
+    examinationTypes,
+    exMasters,
+    exSemesters,
+    exBlocks,
+    exPeriods,
+    exLevels,
+    exMainFields,
+    excludedExaminationTypes,
+  ]);
 
   const handleValueChange = (newValues: string[]) => {
-    selectMasters(
-      newValues
-        .filter((v) => v.startsWith("master:"))
-        .map((v) => v.split(":")[1]),
-    );
-    selectSemesters(
-      newValues
-        .filter((v) => v.startsWith("semester:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
-    selectBlocks(
-      newValues
-        .filter((v) => v.startsWith("block:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
-    selectPeriods(
-      newValues
-        .filter((v) => v.startsWith("period:"))
-        .map((v) => Number(v.split(":")[1])),
-    );
-    selectLevels(
-      newValues
-        .filter((v) => v.startsWith("level:"))
-        .map((v) => v.split(":")[1]),
-    );
-    selectMainFields(
-      newValues
-        .filter((v) => v.startsWith("mainField:"))
-        .map((v) => v.split(":")[1]),
-    );
+    /** Splits one dimension's values into its included and excluded halves. */
+    const split = (prefix: string) => {
+      const parsed = newValues
+        .filter((v) => v.startsWith(`${prefix}:`))
+        .map(parseOptionValue);
+
+      return {
+        included: parsed.filter((p) => !p.negated).map((p) => p.value),
+        excluded: parsed.filter((p) => p.negated).map((p) => p.value),
+      };
+    };
+
+    const semester = split("semester");
+    selectSemesters(semester.included.map(Number));
+    excludeSemesters(semester.excluded.map(Number));
+
+    const block = split("block");
+    selectBlocks(block.included.map(Number));
+    excludeBlocks(block.excluded.map(Number));
+
+    const period = split("period");
+    selectPeriods(period.included.map(Number));
+    excludePeriods(period.excluded.map(Number));
+
+    const master = split("master");
+    selectMasters(master.included);
+    excludeMasters(master.excluded);
+
+    const level = split("level");
+    selectLevels(level.included);
+    excludeLevels(level.excluded);
+
+    const mainField = split("mainField");
+    selectMainFields(mainField.included);
+    excludeMainFields(mainField.excluded);
+
+    const examination = split("examination");
+    selectExaminationTypes(examination.included.filter(isExaminationType));
+    excludeExaminationTypes(examination.excluded.filter(isExaminationType));
 
     if (!newValues.some((v) => v.startsWith("search:"))) {
       searchFor("");
@@ -259,6 +445,7 @@ const UnifiedSearchFilter: FC = () => {
         onValueChange={handleValueChange}
         onSearchChange={searchFor}
         categoryLabels={CATEGORY_LABELS}
+        backLabel={translate("_back")}
         placeholder={translate("filter_by_master_field_or_type")}
       />
     </div>

@@ -14,11 +14,19 @@ interface UseMultiSelectArgs {
   categoryLabels: MultiSelectProps["categoryLabels"];
 }
 
+export interface DrilldownState {
+  heading: string;
+  sectionKey?: string;
+}
+
 export const useMultiSelect = (args: UseMultiSelectArgs) => {
   const [selected, setSelected] = useState<string[]>(args.defaultValue || []);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [activeValue, setActiveValue] = useState("");
+  // Where the dropdown currently is: a category, and optionally one of its
+  // sections. Null is the top-level menu.
+  const [drilldown, setDrilldown] = useState<DrilldownState | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -55,8 +63,14 @@ export const useMultiSelect = (args: UseMultiSelectArgs) => {
   });
 
   return {
-    state: { selected, isPopoverOpen, searchValue, activeValue },
-    setters: { setSelected, setIsPopoverOpen, setSearchValue, setActiveValue },
+    state: { selected, isPopoverOpen, searchValue, activeValue, drilldown },
+    setters: {
+      setSelected,
+      setIsPopoverOpen,
+      setSearchValue,
+      setActiveValue,
+      setDrilldown,
+    },
     refs: { inputRef, listRef },
     data: {
       exactMatch,
