@@ -1,6 +1,6 @@
 "use server";
 
-import { RequirementUnion } from "../dashboard/page";
+import { RequirementUnion } from "@/common/types";
 import { prisma } from "@/lib/prisma";
 
 export async function getMasters() {

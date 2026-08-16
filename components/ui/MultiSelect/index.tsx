@@ -22,13 +22,13 @@ import {
 
 export interface MultiSelectProps extends Omit<
   HTMLAttributes<HTMLDivElement>,
-  "defaultValue"
+  "value"
 > {
   options: MultiSelectOption[] | MultiSelectGroup[];
+  value: string[];
   onValueChange: (value: string[]) => void;
   onCreateOption?: (value: string) => void;
   onSearchChange?: (value: string) => void;
-  defaultValue?: string[];
   placeholder?: string;
   categoryLabels: Record<string, string>;
   /** Label of the row that leaves a drilled-in section. */
@@ -100,7 +100,7 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
             <div
               ref={ref}
               className={cn(
-                "group cursor-text flex p-1.5 rounded-lg border min-h-[3rem] h-auto items-center justify-between bg-background w-full shadow-sm hover:bg-background/90 transition-all focus-within:ring-2 focus-within:ring-ring/20 focus-within:border-ring",
+                "group cursor-text flex p-1.5 rounded-lg border min-h-[3rem] h-auto items-center justify-between bg-background max-md:bg-muted/50 w-full shadow-sm hover:bg-background/90 transition-all focus-within:ring-2 focus-within:ring-ring/20 focus-within:border-ring",
                 className,
               )}
               onClick={(e) => {
@@ -162,10 +162,8 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                       );
                       if (val) {
                         const next = [...filteredSelected, `search:${val}`];
-                        setters.setSelected(next);
                         onValueChange(next);
                       } else {
-                        setters.setSelected(filteredSelected);
                         onValueChange(filteredSelected);
                       }
                     }}

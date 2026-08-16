@@ -1,0 +1,2 @@
+export const WILDCARD_BLOCK_START = 4;
+export const SHARE_BUTTON_LOADING_MS = 600;

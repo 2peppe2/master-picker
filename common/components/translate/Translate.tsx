@@ -2,6 +2,7 @@
 
 import { Trans, useTranslation } from "react-i18next";
 import { FC, memo, useEffect, useState } from "react";
+import { useTranslationReady } from "./TranslationReadyContext";
 import "@/lib/i18n";
 
 interface TranslateProps {
@@ -15,6 +16,7 @@ interface TranslateProps {
 const Translate: FC<TranslateProps> = memo(
   ({ text, args, isBold, namespace = "common", components }) => {
     const { t: translate } = useTranslation(namespace);
+    const translationReady = useTranslationReady();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -25,7 +27,7 @@ const Translate: FC<TranslateProps> = memo(
       ? { b: <strong />, ...components }
       : components;
 
-    if (!mounted) {
+    if (!mounted && !translationReady) {
       return <>&nbsp;</>;
     }
 
