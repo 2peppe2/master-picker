@@ -1,0 +1,57 @@
+"use client";
+
+import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
+import { WILDCARD_BLOCK_START } from "@/features/dashboard/state/schedule/atoms";
+import { PeriodNodeData } from "@/features/dashboard/components/Droppable";
+import { Course } from "@/common/types";
+
+interface ValidateDropArgs {
+  course: Course;
+  overData: PeriodNodeData;
+}
+
+/** Validates a requested drag target against the course's available occasions. */
+export const useDropValidator = () => {
+  const startingYear = useStartingYear();
+
+  const validateDrop = ({ course, overData }: ValidateDropArgs) => {
+    const { year, semester } = relativeSemesterToYearAndSemester(
+      startingYear,
+      overData.semesterNumber,
+    );
+
+    const matchingOccasions = course.CourseOccasion.filter(
+      (occ) => occ.year === year && occ.semester === semester,
+    );
+
+    if (matchingOccasions.length === 0) return null;
+
+    const targetPeriod = overData.periodNumber + 1;
+    const targetBlock = overData.blockNumber + 1;
+    const isWildcardDrop = targetBlock > WILDCARD_BLOCK_START;
+
+    for (const occasion of matchingOccasions) {
+      const period = occasion.periods.find((p) => p.period === targetPeriod);
+
+      if (period) {
+        const isValidBlock =
+          isWildcardDrop || period.blocks.includes(targetBlock);
+
+        if (isValidBlock) {
+          return {
+            occasion,
+            period,
+            targetPeriod,
+            targetBlock,
+            isWildcardDrop,
+          };
+        }
+      }
+    }
+
+    return null;
+  };
+
+  return { validateDrop };
+};

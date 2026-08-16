@@ -1,30 +1,13 @@
 "use server";
 
 import { getBachelorCourses } from "../actions/getBachelorCourses";
-import { courseWithDetailsArgs } from "../courseNormalizer";
-import { Prisma } from "@/prisma/generated/client/client";
-import { normalizeCourse } from "@/app/courseNormalizer";
-import GuideClientPage from "./GuideClientPage";
-import type { Master } from "../dashboard/page";
+import { courseWithDetailsArgs } from "@/common/courseNormalizer";
+import { normalizeCourse } from "@/common/courseNormalizer";
+import GuideClientPage from "@/features/guide/GuideClientPage";
+import type { Master } from "@/common/types";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { FC } from "react";
-
-export type CourseRequirements = Prisma.RequirementGetPayload<{
-  select: {
-    courseRequirements: {
-      select: {
-        courses: {
-          select: {
-            course: typeof courseWithDetailsArgs;
-          };
-        };
-        type: true;
-        minCount: true;
-      };
-    };
-  };
-}>["courseRequirements"];
 
 interface GuidePageProps {
   searchParams: Promise<{

@@ -3,12 +3,12 @@
 import { useMultiSelectActions } from "./useMultiSelectActions";
 import { useMultiSelectBadges } from "./useMultiSelectBadges";
 import { useMultiSelectData } from "./useMultiSelectData";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { MultiSelectProps } from "..";
 
 interface UseMultiSelectArgs {
   options: MultiSelectProps["options"];
-  defaultValue?: MultiSelectProps["defaultValue"];
+  value: MultiSelectProps["value"];
   onValueChange: MultiSelectProps["onValueChange"];
   onSearchChange?: MultiSelectProps["onSearchChange"];
   categoryLabels: MultiSelectProps["categoryLabels"];
@@ -20,7 +20,6 @@ export interface DrilldownState {
 }
 
 export const useMultiSelect = (args: UseMultiSelectArgs) => {
-  const [selected, setSelected] = useState<string[]>(args.defaultValue || []);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [activeValue, setActiveValue] = useState("");
@@ -31,10 +30,6 @@ export const useMultiSelect = (args: UseMultiSelectArgs) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setSelected(args.defaultValue || []);
-  }, [args.defaultValue]);
-
   const { allOptionsFlat, exactMatch, hasMatchingOptions, filteredGroups } =
     useMultiSelectData({
       options: args.options,
@@ -42,15 +37,14 @@ export const useMultiSelect = (args: UseMultiSelectArgs) => {
     });
 
   const consolidatedBadges = useMultiSelectBadges({
-    selected,
+    selected: args.value,
     allOptionsFlat,
     categoryLabels: args.categoryLabels,
     searchValue,
   });
 
   const actions = useMultiSelectActions({
-    selected,
-    setSelected,
+    selected: args.value,
     searchValue,
     setSearchValue,
     setActiveValue,
@@ -63,9 +57,14 @@ export const useMultiSelect = (args: UseMultiSelectArgs) => {
   });
 
   return {
-    state: { selected, isPopoverOpen, searchValue, activeValue, drilldown },
+    state: {
+      selected: args.value,
+      isPopoverOpen,
+      searchValue,
+      activeValue,
+      drilldown,
+    },
     setters: {
-      setSelected,
       setIsPopoverOpen,
       setSearchValue,
       setActiveValue,

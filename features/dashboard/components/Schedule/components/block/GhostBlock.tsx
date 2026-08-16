@@ -1,0 +1,25 @@
+"use client";
+
+import Translate from "@/common/components/translate/Translate";
+import { Droppable } from "@/features/dashboard/components/Droppable";
+import { Plus } from "lucide-react";
+import { BlockProps } from ".";
+import { FC } from "react";
+
+const GhostBlock: FC<BlockProps> = ({ data }) => (
+  <Droppable
+    id={`ghost-semester-${data.semesterNumber}-period${data.periodNumber}-block-${data.blockNumber}`}
+    data={data}
+  >
+    <div className="flex h-full w-full items-center justify-center">
+      <div className="flex flex-col items-center gap-2">
+        <Plus className="h-6 w-6" />
+        <span className="text-sm font-medium">
+          <Translate text="new_block" />
+        </span>
+      </div>
+    </div>
+  </Droppable>
+);
+
+export default GhostBlock;

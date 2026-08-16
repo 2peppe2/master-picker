@@ -5,9 +5,14 @@ import { FC, useCallback, Suspense, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { Languages } from "lucide-react";
+import { cn } from "@/lib/utils";
 import "@/lib/i18n";
 
-const LanguageSwitcherInner: FC = () => {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+const LanguageSwitcherInner: FC<LanguageSwitcherProps> = ({ className }) => {
   const router = useRouter();
   const pathname = usePathname();
   const { i18n } = useTranslation();
@@ -36,7 +41,7 @@ const LanguageSwitcherInner: FC = () => {
       variant="outline"
       size="sm"
       onClick={toggleLanguage}
-      className="gap-2 h-9 px-4 text-sm font-medium"
+      className={cn("h-9 gap-2 px-4 text-sm font-medium", className)}
     >
       <Languages className="h-4 w-4" />
       {displayLanguage}
@@ -44,20 +49,20 @@ const LanguageSwitcherInner: FC = () => {
   );
 };
 
-const LanguageSwitcher: FC = () => (
+const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className }) => (
   <Suspense
     fallback={
       <Button
         variant="outline"
         size="sm"
-        className="gap-2 h-9 px-4 text-sm font-medium"
+        className={cn("h-9 gap-2 px-4 text-sm font-medium", className)}
       >
         <Languages className="h-4 w-4" />
         SV
       </Button>
     }
   >
-    <LanguageSwitcherInner />
+    <LanguageSwitcherInner className={className} />
   </Suspense>
 );
 

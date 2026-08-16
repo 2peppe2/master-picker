@@ -1,6 +1,6 @@
 "use client";
 
-import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
+import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
 import { useCallback } from "react";
 
 interface UseToRelativeSemesterArgs {
@@ -8,6 +8,7 @@ interface UseToRelativeSemesterArgs {
   semester: "HT" | "VT";
 }
 
+/** Converts an academic year/term pair into its schedule-grid index. */
 export const useToRelativeSemester = () => {
   const startingYear = useStartingYear();
 

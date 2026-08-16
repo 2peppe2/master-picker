@@ -6,7 +6,6 @@ import { oppositeOptionValue } from "../polarity";
 
 interface UseMultiSelectActionsArgs {
   selected: string[];
-  setSelected: (val: string[]) => void;
   searchValue: string;
   setSearchValue: (val: string) => void;
   setActiveValue: (val: string) => void;
@@ -20,7 +19,6 @@ interface UseMultiSelectActionsArgs {
 
 export const useMultiSelectActions = ({
   selected,
-  setSelected,
   searchValue,
   setSearchValue,
   setActiveValue,
@@ -41,7 +39,6 @@ export const useMultiSelectActions = ({
         ? selected.filter((v) => v !== value)
         : [...selected.filter((v) => v !== opposite), value];
 
-      setSelected(next);
       onValueChange(next);
 
       if (isSearching) {
@@ -75,7 +72,6 @@ export const useMultiSelectActions = ({
       inputRef,
       setActiveValue,
       setSearchValue,
-      setSelected,
     ],
   );
 
@@ -86,10 +82,9 @@ export const useMultiSelectActions = ({
         setSearchValue("");
         onSearchChange?.("");
       }
-      setSelected(next);
       onValueChange(next);
     },
-    [selected, onValueChange, onSearchChange, setSelected, setSearchValue],
+    [selected, onValueChange, onSearchChange, setSearchValue],
   );
 
   const clearAll = useCallback(() => {

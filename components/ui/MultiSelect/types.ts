@@ -2,6 +2,7 @@ import { ReactNode, ComponentType } from "react";
 
 export interface MultiSelectOption {
   label: ReactNode;
+  badgeLabel?: ReactNode;
   dropdownLabel?: ReactNode;
   searchKey: string;
   value: string;

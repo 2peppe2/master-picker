@@ -1,65 +1,126 @@
 "use client";
 
-import { useStartingYear } from "@/app/dashboard/(store)/preferences/hooks/useStartingYear";
-import { filterAtoms } from "@/app/dashboard/(store)/filter/atoms";
-import { Course, CourseOccasion } from "@/app/dashboard/page";
-import { useSetAtom } from "jotai";
+import { Course, CourseOccasion } from "@/common/types";
 import { useEffect } from "react";
 
-interface DispatchScrollToCourseArgs {
+export const COURSE_ADDED_EVENT = "course-added";
+
+export interface CourseAddedEventDetail {
   course: Course;
   occasion: CourseOccasion;
 }
 
-interface ScrollToCourseEvent {
-  course: Course;
-  occasion: CourseOccasion;
-}
-
-export const dispatchScrollToCourse = (args: DispatchScrollToCourseArgs) => {
+export const dispatchScrollToCourse = (args: CourseAddedEventDetail) => {
   window.dispatchEvent(
-    new CustomEvent<ScrollToCourseEvent>("course-added", {
+    new CustomEvent<CourseAddedEventDetail>(COURSE_ADDED_EVENT, {
       detail: args,
     }),
   );
 };
 
-export const useScrollToCourseFeedback = () => {
-  const showSemesters = useSetAtom(filterAtoms.semestersAtom);
-  const startingYear = useStartingYear();
+interface UseScrollToCourseFeedbackArgs {
+  onRevealSchedule: () => void;
+}
 
+const FEEDBACK_CLASSES = [
+  "border-teal-500",
+  "border-2",
+  "shadow-lg",
+  "shadow-teal-500/20",
+  "scale-[1.03]",
+  "transition-all",
+  "duration-150",
+];
+
+/** Reveals and briefly highlights cards when a course is added. */
+export const useScrollToCourseFeedback = ({
+  onRevealSchedule,
+}: UseScrollToCourseFeedbackArgs) => {
   useEffect(() => {
+    let revealTimer: ReturnType<typeof setTimeout> | null = null;
+    let highlightTimer: ReturnType<typeof setTimeout> | null = null;
+    let revealFrame: number | null = null;
+    let highlightedElements: Element[] = [];
+
     const handleFeedback = (event: Event) => {
-      const customEvent = event as CustomEvent<ScrollToCourseEvent>;
+      const customEvent = event as CustomEvent<CourseAddedEventDetail>;
       const { course } = customEvent.detail;
 
-      setTimeout(() => {
+      onRevealSchedule();
+
+      if (revealTimer) clearTimeout(revealTimer);
+
+      if (highlightTimer) clearTimeout(highlightTimer);
+
+      if (revealFrame) cancelAnimationFrame(revealFrame);
+      highlightedElements.forEach((element) =>
+        element.classList.remove(...FEEDBACK_CLASSES),
+      );
+      highlightedElements = [];
+
+      const revealCourse = (startedAt: number) => {
         const elements = document.querySelectorAll(
           `[data-course-code="${course.code}"]`,
         );
+        const visibleElements = Array.from(elements).filter(
+          (element) => element.getClientRects().length > 0,
+        );
 
-        if (elements.length > 0) {
-          elements[0].scrollIntoView({ behavior: "smooth", block: "center" });
-
-          const classes = [
-            "border-teal-500",
-            "border-2",
-            "shadow-lg",
-            "shadow-teal-500/20",
-            "scale-[1.03]",
-            "transition-all",
-            "duration-150",
-          ];
-
-          elements.forEach((el) => {
-            el.classList.add(...classes);
-            setTimeout(() => el.classList.remove(...classes), 1000);
-          });
+        if (visibleElements.length === 0) {
+          if (performance.now() - startedAt < 1000) {
+            revealFrame = requestAnimationFrame(() => revealCourse(startedAt));
+          }
+          return;
         }
-      }, 100);
+
+        visibleElements[0].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+
+        highlightedElements = Array.from(elements);
+        highlightedElements.forEach((element) =>
+          element.classList.add(...FEEDBACK_CLASSES),
+        );
+        highlightTimer = setTimeout(() => {
+          highlightedElements.forEach((element) =>
+            element.classList.remove(...FEEDBACK_CLASSES),
+          );
+          highlightedElements = [];
+        }, 1000);
+      };
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      revealTimer = setTimeout(
+        () => revealCourse(performance.now()),
+        reducedMotion ? 0 : 350,
+      );
     };
 
-    window.addEventListener("course-added", handleFeedback);
-    return () => window.removeEventListener("course-added", handleFeedback);
-  }, [startingYear, showSemesters]);
+    window.addEventListener(COURSE_ADDED_EVENT, handleFeedback);
+    return () => {
+      window.removeEventListener(COURSE_ADDED_EVENT, handleFeedback);
+      if (revealTimer) clearTimeout(revealTimer);
+
+      if (highlightTimer) clearTimeout(highlightTimer);
+
+      if (revealFrame) cancelAnimationFrame(revealFrame);
+      highlightedElements.forEach((element) =>
+        element.classList.remove(...FEEDBACK_CLASSES),
+      );
+    };
+  }, [onRevealSchedule]);
 };
+
+/** Reveals the compact schedule before applying course-added feedback. */
+export const useCompactCourseAddedFeedback = (
+  args: UseScrollToCourseFeedbackArgs,
+) => useScrollToCourseFeedback(args);
+
+const revealDesktopSchedule = () => undefined;
+
+/** Applies course-added feedback without changing the desktop layout. */
+export const useDesktopCourseAddedFeedback = () =>
+  useScrollToCourseFeedback({ onRevealSchedule: revealDesktopSchedule });

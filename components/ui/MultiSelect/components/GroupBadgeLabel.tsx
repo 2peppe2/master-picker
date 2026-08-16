@@ -14,7 +14,7 @@ const GroupBadgeLabel: FC<GroupBadgeLabelProps> = ({
   isProfile,
 }) => (
   <div className="flex flex-wrap items-center gap-x-1 max-w-full">
-    <span className="font-bold text-xsm uppercase tracking-tighter opacity-50 whitespace-nowrap">
+    <span className="font-bold text-xsm uppercase tracking-normal opacity-50 whitespace-nowrap">
       {title}:
     </span>
     <div

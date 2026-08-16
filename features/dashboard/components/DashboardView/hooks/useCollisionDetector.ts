@@ -1,0 +1,52 @@
+"use client";
+
+import {
+  useOccasionCollisions,
+  useSlotCourse,
+} from "@/features/dashboard/state/schedule/hooks/useScheduleQueries";
+import { Course, CourseOccasion } from "@/common/types";
+import { PeriodNodeData } from "@/features/dashboard/components/Droppable";
+
+interface DetectCollisionsArgs {
+  course?: Course;
+  occasion: CourseOccasion;
+  overData: PeriodNodeData;
+  targetPeriod: number;
+  targetBlock: number;
+}
+
+/** Finds the active droppable target for dashboard drag interactions. */
+export const useCollisionDetector = () => {
+  const getOccasionCollisions = useOccasionCollisions();
+  const getSlotCourse = useSlotCourse();
+
+  const detectCollisions = ({
+    course,
+    occasion,
+    overData,
+    targetBlock,
+    targetPeriod,
+  }: DetectCollisionsArgs) => {
+    let collisions = getOccasionCollisions({ occasion });
+    if (course) {
+      collisions = collisions.filter((c) => c.code !== course.code);
+    }
+
+    const existingSlot = getSlotCourse({
+      semester: overData.semesterNumber,
+      period: targetPeriod,
+      block: targetBlock,
+    });
+
+    const actualExistingSlot =
+      existingSlot?.code === course?.code ? null : existingSlot;
+
+    return {
+      collisions,
+      existingSlot: actualExistingSlot,
+      hasConflict: !!actualExistingSlot || collisions.length > 0,
+    };
+  };
+
+  return { detectCollisions };
+};

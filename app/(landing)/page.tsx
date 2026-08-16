@@ -2,8 +2,8 @@
 
 import LanguageSwitcher from "@/common/components/translate/LanguageSwitcher";
 import { landingPageProgramSelect } from "./queries";
-import LandingClientPage from "./LandingClientPage";
-import Header from "./components/Header";
+import LandingClientPage from "@/features/landing/LandingClientPage";
+import Header from "@/features/landing/components/Header";
 import { prisma } from "@/lib/prisma";
 
 const LandingPage = async () => {
@@ -27,11 +27,11 @@ const LandingPage = async () => {
   }));
 
   return (
-    <div className="min-h-screen relative">
-      <div className="absolute top-4 right-4 z-10">
+    <div className="relative min-h-screen">
+      <div className="absolute right-3 top-3 z-10 sm:right-4 sm:top-4">
         <LanguageSwitcher />
       </div>
-      <main className="flex flex-col items-center justify-center text-center px-4 pt-32 mb-20">
+      <main className="mb-16 flex flex-col items-center justify-center px-4 pt-24 text-center sm:mb-20 sm:pt-32">
         <Header />
         <LandingClientPage programs={formattedPrograms} />
       </main>

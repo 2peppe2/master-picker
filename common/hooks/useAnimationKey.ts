@@ -11,6 +11,7 @@ export interface UseAnimationKeyArgs {
   dependencies?: DependencyList;
 }
 
+/** Restarts an animation key whenever the observed value changes. */
 export const useAnimationKey = ({
   dependencies = [],
 }: UseAnimationKeyArgs = {}) => {
@@ -22,7 +23,7 @@ export const useAnimationKey = ({
     });
 
     return () => cancelAnimationFrame(frame);
-    // Consumers deliberately control when the animation restarts.
+    // The dependency list is deliberately supplied by callers of this utility.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies);
 

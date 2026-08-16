@@ -1,11 +1,12 @@
 import { useSearchParams } from "next/navigation";
-import { Course } from "@/app/dashboard/page";
+import { Course } from "@/common/types";
 import { useMemo } from "react";
 
 interface UseSortedCoursesArgs {
   courses: Course[];
 }
 
+/** Sorts courses into the stable presentation order used by search results. */
 export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
   const searchParams = useSearchParams();
   const master = searchParams.get("master");
@@ -23,6 +24,7 @@ export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
       const bMatches = matchMap.get(b.code);
 
       if (aMatches && !bMatches) return -1;
+
       if (!aMatches && bMatches) return 1;
 
       return a.name.localeCompare(b.name, "en");

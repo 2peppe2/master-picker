@@ -31,7 +31,7 @@ const BackButton: FC<BackButtonProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "group flex items-center gap-2 py-2 pr-4 rounded-xl transition-all duration-300",
+        "group flex min-w-0 items-center gap-2 rounded-xl py-2 pr-2 transition-all duration-300",
         "active:scale-95 active:bg-accent/10",
         className,
       )}
@@ -103,8 +103,8 @@ const BackButtonLabel: FC<BackButtonLabelProps> = ({
   returnText,
   isHovered,
 }) => (
-  <div className="flex flex-col min-w-0 pr-2">
-    <span className="text-sm font-bold tracking-tight text-foreground transition-colors group-hover:text-[#00C8B3]">
+  <div className="flex min-w-0 flex-col">
+    <span className="truncate whitespace-nowrap text-sm font-bold text-foreground transition-colors group-hover:text-[#00C8B3]">
       <Translate text={title} />
     </span>
 
@@ -117,7 +117,7 @@ const BackButtonLabel: FC<BackButtonLabelProps> = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="text-[10px] tracking-wider font-semibold uppercase text-muted-foreground flex items-center gap-1"
+            className="flex items-center gap-1 whitespace-nowrap text-[10px] font-semibold uppercase tracking-normal text-muted-foreground"
           >
             <Translate text={subtitle} />
           </motion.div>
@@ -128,7 +128,7 @@ const BackButtonLabel: FC<BackButtonLabelProps> = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="text-[10px] tracking-wider font-bold uppercase text-[#00C8B3] flex items-center gap-1"
+            className="flex items-center gap-1 whitespace-nowrap text-[10px] font-bold uppercase tracking-normal text-[#00C8B3]"
           >
             <Translate text={returnText} />
           </motion.div>
