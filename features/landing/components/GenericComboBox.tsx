@@ -3,13 +3,10 @@
 import { FC, KeyboardEvent, useRef, useState } from "react";
 import {
   Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
   ComboboxInput,
-  ComboboxItem,
-  ComboboxList,
   ComboboxTrigger,
 } from "@/components/ui/combobox";
+import ComboboxOptions from "./ComboboxOptions";
 
 export interface ComboboxOption {
   label: string;
@@ -111,23 +108,5 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
     </div>
   );
 };
-
-interface ComboboxOptionsProps {
-  empty: string;
-  anchor?: React.RefObject<HTMLElement | null>;
-}
-
-const ComboboxOptions: FC<ComboboxOptionsProps> = ({ empty, anchor }) => (
-  <ComboboxContent anchor={anchor}>
-    <ComboboxEmpty>{empty}</ComboboxEmpty>
-    <ComboboxList>
-      {(item: ComboboxOption) => (
-        <ComboboxItem key={item.value} value={item}>
-          {item.label}
-        </ComboboxItem>
-      )}
-    </ComboboxList>
-  </ComboboxContent>
-);
 
 export default GenericCombobox;

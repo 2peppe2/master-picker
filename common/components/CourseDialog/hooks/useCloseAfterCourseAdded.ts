@@ -12,7 +12,6 @@ interface UseCloseAfterCourseAddedArgs {
   open: boolean;
 }
 
-/** Closes an open dialog after its represented course is successfully added. */
 export const useCloseAfterCourseAdded = ({
   courseCode,
   onClose,

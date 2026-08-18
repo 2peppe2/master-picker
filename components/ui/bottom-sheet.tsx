@@ -47,6 +47,7 @@ function BottomSheet({
   snapToSequentialPoint = true,
   ...props
 }: BottomSheetProps) {
+  const parentBottomSheet = React.useContext(BottomSheetContext);
   const isShortViewport = useIsShortViewport();
   const snapPoints =
     snapPointsProp ??
@@ -101,20 +102,20 @@ function BottomSheet({
     [activeSnapPoint, handleOpenChange, initialSnapPoint, snapPoints],
   );
 
-  return (
-    <Drawer.Root
-      {...props}
-      open={open}
-      onOpenChange={handleOpenChange}
-      snapPoints={snapPoints}
-      activeSnapPoint={activeSnapPoint}
-      setActiveSnapPoint={setActiveSnapPoint}
-      closeThreshold={closeThreshold}
-      fadeFromIndex={fadeFromIndex}
-      snapToSequentialPoint={snapToSequentialPoint}
-    >
-      <BottomSheetContext value={contextValue}>{children}</BottomSheetContext>
-    </Drawer.Root>
+  return React.createElement(
+    parentBottomSheet ? Drawer.NestedRoot : Drawer.Root,
+    {
+      ...props,
+      open,
+      onOpenChange: handleOpenChange,
+      snapPoints,
+      activeSnapPoint,
+      setActiveSnapPoint,
+      closeThreshold,
+      fadeFromIndex,
+      snapToSequentialPoint,
+    },
+    <BottomSheetContext value={contextValue}>{children}</BottomSheetContext>,
   );
 }
 

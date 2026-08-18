@@ -9,7 +9,6 @@ export const LANGUAGES = ["sv", "en"] as const;
 
 export type Language = (typeof LANGUAGES)[number];
 
-/** Translation keys for each language's name, resolved in the active locale. */
 export const LANGUAGE_LABEL_KEYS: Record<Language, string> = {
   sv: "language_swedish",
   en: "language_english",

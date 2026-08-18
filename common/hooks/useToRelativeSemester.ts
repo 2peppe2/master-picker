@@ -8,7 +8,6 @@ interface UseToRelativeSemesterArgs {
   semester: "HT" | "VT";
 }
 
-/** Converts an academic year/term pair into its schedule-grid index. */
 export const useToRelativeSemester = () => {
   const startingYear = useStartingYear();
 

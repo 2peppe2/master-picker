@@ -7,7 +7,6 @@ interface UseMasterOverflowLayoutArgs {
   masters: ProcessedMaster[];
 }
 
-/** Measures badge rows to determine their overflow layout. */
 export const useMasterOverflowLayout = ({
   gap,
   masters,

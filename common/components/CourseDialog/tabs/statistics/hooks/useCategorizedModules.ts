@@ -16,7 +16,6 @@ interface UseCategorizedModulesArgs {
   course: Course;
 }
 
-/** Groups raw module statistics into the dialog's ordered presentation model. */
 export const useCategorizedModules = ({
   courseData,
   course,
@@ -26,7 +25,6 @@ export const useCategorizedModules = ({
   const categorizedModules = useMemo(() => {
     if (!courseData?.modules) return [];
 
-    // Derive expected original months from course occasions
     const expectedMonths = getExpectedExamMonths(course.CourseOccasion);
 
     const rawGroups = courseData.modules.reduce(

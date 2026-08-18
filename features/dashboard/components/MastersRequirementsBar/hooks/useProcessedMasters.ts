@@ -14,7 +14,6 @@ interface UseProcessedMastersArgs {
   program: string;
 }
 
-/** Builds the ordered master-progress presentation model for a program. */
 export const useProcessedMasters = ({ program }: UseProcessedMastersArgs) => {
   const evaluateMasterProgress = useEvaluateMasterProgress();
   const startingYear = useStartingYear();
@@ -52,15 +51,12 @@ export const useProcessedMasters = ({ program }: UseProcessedMastersArgs) => {
         };
       })
       .sort((a, b) => {
-        // Prioritize completed masters (100%)
         if (a.progress === 100 && b.progress !== 100) return -1;
 
         if (b.progress === 100 && a.progress !== 100) return 1;
 
-        // Sort by highest progress percentage
         if (b.progress !== a.progress) return b.progress - a.progress;
 
-        // Alphabetical fallback
         return a.master.localeCompare(b.master);
       }) satisfies ProcessedMaster[];
   }, [mastersWithRequirements, evaluateMasterProgress]);

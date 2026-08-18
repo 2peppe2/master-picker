@@ -14,7 +14,6 @@ import type {
   HasMatchingOccasionArgs,
 } from "../types";
 
-/** Reads the course occupying one schedule slot. */
 export const useSlotCourse = () =>
   useAtomCallback(
     useCallback(
@@ -24,7 +23,6 @@ export const useSlotCourse = () =>
     ),
   );
 
-/** Reads all blocks for one schedule period. */
 export const useSlotBlocks = () =>
   useAtomCallback(
     useCallback(
@@ -34,7 +32,6 @@ export const useSlotBlocks = () =>
     ),
   );
 
-/** Checks whether a course has an occasion matching selected periods and blocks. */
 export const useHasMatchingOccasion = () =>
   useCallback(
     ({ blocks, course, periods }: HasMatchingOccasionArgs) =>
@@ -49,7 +46,6 @@ export const useHasMatchingOccasion = () =>
     [],
   );
 
-/** Finds the occasion that can occupy one concrete schedule slot. */
 export const useFindMatchingOccasion = () =>
   useCallback(
     ({
@@ -74,7 +70,6 @@ export const useFindMatchingOccasion = () =>
     [],
   );
 
-/** Returns courses that collide with an occasion's occupied blocks. */
 export const useOccasionCollisions = () => {
   const toRelativeSemester = useToRelativeSemester();
   return useAtomCallback(
@@ -99,7 +94,6 @@ export const useOccasionCollisions = () => {
   );
 };
 
-/** Checks whether a wildcard occasion needs a new block before placement. */
 export const useWildcardExpansion = () => {
   const toRelativeSemester = useToRelativeSemester();
   return useAtomCallback(

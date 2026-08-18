@@ -10,7 +10,6 @@ export interface UseLatestOriginalStatsArgs {
   occasions?: CourseOccasion[];
 }
 
-/** Returns a lookup for each module's latest original examination statistics. */
 export const useLatestOriginalStats = ({
   courseData,
   occasions,
@@ -136,7 +135,6 @@ export const getLatestOriginalStat = (
   );
   const originalExams = byMonth.length > 0 ? byMonth : moduleExams;
 
-  // Find the latest month-year among original exams
   const sortedByDate = [...originalExams].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
@@ -144,7 +142,6 @@ export const getLatestOriginalStat = (
   const latestD = new Date(latestRef.date);
   const latestKey = `${latestD.getFullYear()}-${latestD.getMonth()}`;
 
-  // Collect all raw entries from that same month-year
   const sameMonthYear = originalExams.filter((m) => {
     const d = new Date(m.date);
     return `${d.getFullYear()}-${d.getMonth()}` === latestKey;
@@ -152,7 +149,6 @@ export const getLatestOriginalStat = (
 
   if (sameMonthYear.length === 1) return sameMonthYear[0];
 
-  // Aggregate grades across all entries in that month-year (same as Statistics tab)
   const gradeMap = new Map<
     string,
     { grade: string; quantity: number; gradeOrder: number }

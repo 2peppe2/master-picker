@@ -20,7 +20,6 @@ interface CourseCardPresentationProps {
   inert?: boolean;
 }
 
-/** The shared visual core used by both resting cards and the drag overlay. */
 const CourseCardPresentation: FC<CourseCardPresentationProps> = ({
   course,
   onOpen,

@@ -9,7 +9,6 @@ import { Check, ChevronDown } from "lucide-react";
 import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 
-/** Phone presentation: a disclosure list instead of a native select popover. */
 const ModuleSelectorSmall: FC<ModuleSelectorViewProps> = ({
   selectedModule,
   setSelectedModule,

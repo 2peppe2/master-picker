@@ -11,7 +11,6 @@ import CalendarRows from "./components/CalendarRows";
 import { CalendarViewProps } from "./types";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: a popover anchored to the trigger. */
 const TimeEditSemesterLarge: FC<CalendarViewProps> = ({
   isOpen,
   onOpenChange,

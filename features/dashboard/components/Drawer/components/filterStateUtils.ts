@@ -39,7 +39,6 @@ export const serializeFilters = (filters: FilterState) => [
   ...(filters.search ? [`search:${filters.search}`] : []),
 ];
 
-/** Splits one dimension's values into its included and excluded halves. */
 const splitDimension = (values: string[], prefix: string) => {
   const parsed = values
     .filter((value) => value.startsWith(`${prefix}:`))

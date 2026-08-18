@@ -61,18 +61,16 @@ const MasterSelector: FC<MasterSelectorProps> = ({
         onValueChange={(item) => onValueChange(item?.value ?? null)}
         displayStates={displayStates}
       />
-      <Button
-        variant="link"
-        onClick={onPickLater}
-        disabled={isLoading || !year}
-      >
-        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        {isLoading ? (
-          <LoadingDots text={translate("_loading_dashboard")} />
-        ) : (
-          <Translate text="_pick_master_later" />
-        )}
-      </Button>
+      <fieldset disabled={isLoading || !year} className="contents">
+        <Button variant="link" onClick={onPickLater}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? (
+            <LoadingDots text={translate("_loading_dashboard")} />
+          ) : (
+            <Translate text="_pick_master_later" />
+          )}
+        </Button>
+      </fieldset>
     </div>
   );
 };

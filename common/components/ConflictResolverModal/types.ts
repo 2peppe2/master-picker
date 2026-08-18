@@ -14,7 +14,6 @@ export interface ConflictResolverProps {
   conflictData: ConflictData;
 }
 
-/** Shared by both presentations: the two ways out of a block collision. */
 export interface ConflictResolutionProps extends ConflictResolverProps {
   onResolve: (type: "replace" | "extra") => (e: React.MouseEvent) => void;
 }

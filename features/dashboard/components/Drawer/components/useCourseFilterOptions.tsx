@@ -1,6 +1,7 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+import ExcludedFilterLabel from "./ExcludedFilterLabel";
 import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import { showBachelorYearsAtom } from "@/features/dashboard/state/preferences/atoms";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
@@ -55,7 +56,6 @@ const EXAMINATION_ICONS: Record<
   optional_test: ListChecks,
 };
 
-/** Builds translated search-filter groups from the hydrated course catalog. */
 export const useCourseFilterOptions = () => {
   const showBachelorYears = useAtomValue(showBachelorYearsAtom);
   const allCourses = useAtomValue(coursesAtom);
@@ -95,23 +95,25 @@ export const useCourseFilterOptions = () => {
       (group: MultiSelectGroup): MultiSelectGroup => {
         const excludedOptions = group.options.map((option) => {
           const { prefix, value } = parseOptionValue(option.value);
-          const excludedLabel = (
-            <span className="text-destructive line-through">
-              {option.badgeLabel ?? option.label}
-            </span>
-          );
-
           return {
             ...option,
             value: encodeOptionValue(prefix, value, { negated: true }),
-            label: excludedLabel,
-            badgeLabel: excludedLabel,
+            label: (
+              <ExcludedFilterLabel>
+                {option.badgeLabel ?? option.label}
+              </ExcludedFilterLabel>
+            ),
+            badgeLabel: (
+              <ExcludedFilterLabel>
+                {option.badgeLabel ?? option.label}
+              </ExcludedFilterLabel>
+            ),
             // The mobile panel lists both polarities together, so the row has
             // to carry the exclusion styling as well.
             dropdownLabel: (
-              <span className="text-destructive line-through">
+              <ExcludedFilterLabel>
                 {option.dropdownLabel ?? option.label}
-              </span>
+              </ExcludedFilterLabel>
             ),
             searchKey: `${translate("exclude")} ${option.searchKey}`,
           };
@@ -143,7 +145,6 @@ export const useCourseFilterOptions = () => {
     [translate],
   );
 
-  // Only offer types that some loaded course is actually examined by.
   const availableExaminationTypes = useMemo(() => {
     const available = new Set<ExaminationType>();
 

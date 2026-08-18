@@ -69,10 +69,18 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
     );
   }
 
-  const Presentation = prefersSheet ? TimeEditSemesterSmall : TimeEditSemesterLarge;
-
-  return (
-    <Presentation
+  return prefersSheet ? (
+    <TimeEditSemesterSmall
+      isOpen={isOpen}
+      onOpenChange={handleOpenChange}
+      links={links}
+      isLoading={isLoading}
+      errorKey={errorKey}
+      hasCourses={hasCourses}
+      showAnnouncement={isAnnouncementVisible}
+    />
+  ) : (
+    <TimeEditSemesterLarge
       isOpen={isOpen}
       onOpenChange={handleOpenChange}
       links={links}

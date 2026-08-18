@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, ComponentType, type FC } from "react";
+import { createElement, memo, ComponentType, type FC } from "react";
 import { Course } from "@/common/types";
 
 import DefaultCourseCard from "./DefaultCourseCard";
@@ -41,11 +41,10 @@ const VARIANTS: {
 };
 
 const CourseCardComponent: FC<CourseCardWrapperProps> = (props) => {
-  const Component = VARIANTS[
-    props.variant
-  ] as ComponentType<CourseCardWrapperProps>;
-
-  return <Component {...props} />;
+  return createElement(
+    VARIANTS[props.variant] as ComponentType<CourseCardWrapperProps>,
+    props,
+  );
 };
 
 const CourseCard = memo(CourseCardComponent, (prev, next) => {

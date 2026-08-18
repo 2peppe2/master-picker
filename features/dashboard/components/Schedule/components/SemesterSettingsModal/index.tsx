@@ -45,12 +45,14 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
     );
   }
 
-  const Presentation = prefersSheet
-    ? SemesterSettingsSmall
-    : SemesterSettingsLarge;
-
-  return (
-    <Presentation
+  return prefersSheet ? (
+    <SemesterSettingsSmall
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+      onAddBlock={handleAddBlock}
+    />
+  ) : (
+    <SemesterSettingsLarge
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       onAddBlock={handleAddBlock}

@@ -10,6 +10,7 @@ import { CourseOccasion } from "@/common/types";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Plus } from "lucide-react";
 import { FC, useMemo } from "react";
+import MobileValuePill from "./MobileValuePill";
 
 interface MobileOccasionCardProps {
   occasion: CourseOccasion;
@@ -100,19 +101,5 @@ const MobileOccasionCard: FC<MobileOccasionCardProps> = ({
     </article>
   );
 };
-
-interface MobileValuePillProps {
-  label: string;
-  values: number[];
-}
-
-const MobileValuePill: FC<MobileValuePillProps> = ({ label, values }) => (
-  <div className="min-w-14 rounded-xl bg-muted px-2.5 py-1.5 text-center">
-    <span className="block text-2xs text-muted-foreground">{label}</span>
-    <span className="font-semibold text-foreground">
-      {values.length > 0 ? values.join(", ") : "–"}
-    </span>
-  </div>
-);
 
 export default MobileOccasionCard;

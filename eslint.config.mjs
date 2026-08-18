@@ -20,6 +20,12 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    files: ["app/**/*.{ts,tsx}", "common/**/*.{ts,tsx}", "features/**/*.{ts,tsx}"],
+    rules: {
+      "no-nested-ternary": "error",
+    },
+  },
 ];
 
 export default eslintConfig;

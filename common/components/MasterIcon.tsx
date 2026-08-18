@@ -1,5 +1,5 @@
 import { getLucideIcon } from "@/lib/iconRegistry";
-import { FC } from "react";
+import { createElement, FC } from "react";
 
 type MasterIconProps = {
   iconName: string | null;
@@ -7,6 +7,5 @@ type MasterIconProps = {
 };
 
 export const MasterIcon: FC<MasterIconProps> = ({ iconName, className }) => {
-  const Icon = getLucideIcon(iconName);
-  return <Icon className={className} size={16} />;
+  return createElement(getLucideIcon(iconName), { className, size: 16 });
 };

@@ -25,9 +25,11 @@ const ConflictResolverModal: FC<ConflictResolverProps> = (props) => {
 
   if (conflictData.collisions.length === 0) return null;
 
-  const Presentation = prefersSheet ? ConflictResolverSmall : ConflictResolverLarge;
-
-  return <Presentation {...props} onResolve={handleResolution} />;
+  return prefersSheet ? (
+    <ConflictResolverSmall {...props} onResolve={handleResolution} />
+  ) : (
+    <ConflictResolverLarge {...props} onResolve={handleResolution} />
+  );
 };
 
 export default ConflictResolverModal;

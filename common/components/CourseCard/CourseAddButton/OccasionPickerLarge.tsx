@@ -10,7 +10,6 @@ import { OccasionPickerViewProps } from "./types";
 import AddButton from "./components/AddButton";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: the occasion list in a side popover. */
 const OccasionPickerLarge: FC<OccasionPickerViewProps> = ({
   course,
   isOpen,

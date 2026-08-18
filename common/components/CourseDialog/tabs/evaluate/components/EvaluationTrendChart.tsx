@@ -3,7 +3,7 @@
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useIsPhone } from "@/common/hooks/useResponsiveLayout";
 import { EvaluationTrendPoint } from "../types";
-import { TrendingDown, TrendingUp } from "lucide-react";
+import TrendDelta from "./TrendDelta";
 import { FC, useLayoutEffect, useRef, useState } from "react";
 import {
   Area,
@@ -18,7 +18,6 @@ interface EvaluationTrendChartProps {
   data: EvaluationTrendPoint[];
 }
 
-// Brand teal, matching the app accent used elsewhere (e.g. the disclaimer).
 const TREND_COLOR = "rgb(0, 200, 179)";
 
 const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
@@ -181,29 +180,6 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
         )}
       </div>
     </div>
-  );
-};
-
-interface TrendDeltaProps {
-  delta: number;
-}
-
-const TrendDelta: FC<TrendDeltaProps> = ({ delta }) => {
-  const positive = delta >= 0;
-  const Icon = positive ? TrendingUp : TrendingDown;
-
-  return (
-    <span
-      className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold tabular-nums ${
-        positive
-          ? "bg-emerald-500/12 text-emerald-600 dark:text-emerald-400"
-          : "bg-red-500/12 text-red-600 dark:text-red-400"
-      }`}
-    >
-      <Icon className="size-3.5" aria-hidden />
-      {positive ? "+" : "−"}
-      {Math.abs(delta).toFixed(2)}
-    </span>
   );
 };
 

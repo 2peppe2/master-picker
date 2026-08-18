@@ -26,7 +26,6 @@ export const DashboardTabProvider: FC<DashboardTabProviderProps> = ({
   </DashboardTabContext>
 );
 
-/** Reads and updates the active dashboard tab within the dashboard shell. */
 export const useDashboardTabs = () => {
   const value = useContext(DashboardTabContext);
 

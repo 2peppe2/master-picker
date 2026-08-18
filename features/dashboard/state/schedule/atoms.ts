@@ -46,7 +46,6 @@ const slotAtomFamily = atomFamily((key: number) => {
   );
 });
 
-/** Bounded numeric atom-family keys: 10 semesters × 2 periods × dynamic blocks. */
 export const semesterAtom = (semester: number) => semesterAtomFamily(semester);
 export const periodAtom = (semester: number, period: number) =>
   periodAtomFamily(semester * 10 + period);

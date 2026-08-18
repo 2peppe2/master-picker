@@ -13,7 +13,6 @@ import ExamSelectItem from "../../ExamSelectItem";
 import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 
-/** Desktop: a collapsible group inside the native-style select popover. */
 const CategoryGroup: FC<CategoryGroupProps> = ({
   code,
   modules,

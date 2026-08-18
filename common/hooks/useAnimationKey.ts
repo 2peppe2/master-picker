@@ -11,7 +11,6 @@ export interface UseAnimationKeyArgs {
   dependencies?: DependencyList;
 }
 
-/** Restarts an animation key whenever the observed value changes. */
 export const useAnimationKey = ({
   dependencies = [],
 }: UseAnimationKeyArgs = {}) => {

@@ -16,7 +16,6 @@ import { SettingsViewProps } from "../types";
 import { X } from "lucide-react";
 import { FC } from "react";
 
-/** Phone presentation: a draggable bottom sheet. */
 const SettingsSmall: FC<SettingsViewProps> = ({ isOpen, onOpenChange }) => {
   const translate = useCommonTranslate();
 

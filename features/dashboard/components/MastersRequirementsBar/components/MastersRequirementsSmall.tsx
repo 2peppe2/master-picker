@@ -3,7 +3,6 @@
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import {
   Sheet,
@@ -11,14 +10,11 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet";
-import MasterProgressBadge from "./MasterProgressBadge";
-import MasterOverflowRow from "./MasterOverflowRow";
+import MasterOverflowList from "./MasterOverflowList";
+import MastersRequirementsSmallBar from "./MastersRequirementsSmallBar";
 import Translate from "@/common/components/translate/Translate";
-import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useIsLandscapePhone } from "@/common/hooks/useResponsiveLayout";
-import { Badge } from "@/components/ui/badge";
 import { ProcessedMaster } from "../types";
 import { useMasterOverflowLayout } from "../hooks/useMasterOverflowLayout";
 import { useBottomScrollFade } from "@/common/hooks/useBottomScrollFade";
@@ -37,7 +33,6 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isLandscapePhone = useIsLandscapePhone();
-  const translate = useCommonTranslate();
 
   const { barRef, badgeRef, visibleItems, overflowItems } =
     useMasterOverflowLayout({
@@ -49,74 +44,6 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
     overflowItems,
   ]);
 
-  const moreLabel = (
-    <Translate
-      text="_wildcard_more_count"
-      args={{ count: overflowItems.length }}
-    />
-  );
-
-  const moreBadgeClassName = cn(
-    "h-8 text-2xs font-bold text-muted-foreground flex-1 min-w-0",
-    "bg-background/50 cursor-pointer hover:bg-muted/80 transition-colors",
-    "justify-center px-3",
-  );
-
-  const bar = (
-    <div
-      className={cn(
-        "flex items-center justify-between w-full gap-2 select-none group",
-        // min-h, not h: h-10 is a --spacing multiple and collapsed to 32px in
-        // landscape, squeezing the badges it is meant to contain.
-        "min-h-(--touch-sm) h-auto",
-      )}
-    >
-      {/* Invisible measurement template */}
-      <div className="absolute -top-[1000px] invisible pointer-events-none">
-        <div ref={badgeRef} className="inline-block">
-          {processed[0] && <MasterProgressBadge master={processed[0]} />}
-        </div>
-      </div>
-
-      <div
-        ref={barRef}
-        className="flex items-center gap-2 flex-1 min-w-0 overflow-hidden h-full"
-      >
-        {visibleItems.map((master) => (
-          <div key={master.master} className="shrink-0 h-8">
-            <MasterProgressBadge master={master} />
-          </div>
-        ))}
-        {overflowItems.length > 0 &&
-          (isLandscapePhone ? (
-            <SheetTrigger asChild>
-              <Badge variant="outline" className={moreBadgeClassName}>
-                {moreLabel}
-              </Badge>
-            </SheetTrigger>
-          ) : (
-            <CollapsibleTrigger asChild>
-              <Badge variant="outline" className={moreBadgeClassName}>
-                {moreLabel}
-              </Badge>
-            </CollapsibleTrigger>
-          ))}
-      </div>
-    </div>
-  );
-
-  const overflowList = (
-    <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-2 pr-1">
-      {overflowItems.map((master, index) => (
-        <MasterOverflowRow
-          key={master.master}
-          master={master}
-          side={index % 2 === 0 ? "left" : "right"}
-        />
-      ))}
-    </div>
-  );
-
   /*
    * Landscape sends the overflow to a side sheet rather than expanding it
    * under the bar. The bar lives in a sticky header, and the inline panel is
@@ -126,7 +53,14 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
   if (isLandscapePhone) {
     return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        {bar}
+        <MastersRequirementsSmallBar
+          badgeRef={badgeRef}
+          barRef={barRef}
+          measurementMaster={processed[0]}
+          overflowCount={overflowItems.length}
+          presentation="sheet"
+          visibleItems={visibleItems}
+        />
         <SheetContent
           side="right"
           className={cn(
@@ -140,10 +74,10 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
               <Translate text="_master_profiles" />
             </SheetTitle>
             <SheetDescription className="sr-only">
-              {translate("_dashboard_master_progress")}
+              <Translate text="_dashboard_master_progress" />
             </SheetDescription>
           </SheetHeader>
-          {overflowList}
+          <MasterOverflowList masters={overflowItems} className="pr-1" />
         </SheetContent>
       </Sheet>
     );
@@ -155,7 +89,14 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
       onOpenChange={setIsOpen}
       className="w-full flex flex-col"
     >
-      {bar}
+      <MastersRequirementsSmallBar
+        badgeRef={badgeRef}
+        barRef={barRef}
+        measurementMaster={processed[0]}
+        overflowCount={overflowItems.length}
+        presentation="collapsible"
+        visibleItems={visibleItems}
+      />
 
       <CollapsibleContent className="overflow-hidden transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
         <div className="relative">
@@ -165,10 +106,10 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
             className="max-h-[max(11rem,60dvh)] overflow-y-auto scrollbar-thin scrollbar-thumb-muted-foreground/20"
           >
             <div className="pt-4 pb-4">
-              {overflowList}
+              <MasterOverflowList masters={overflowItems} className="pr-1" />
               {overflowItems.length === 0 && (
                 <div className="py-4 text-center text-xs text-muted-foreground italic">
-                  All profiles visible above
+                  <Translate text="_all_master_profiles_visible_above" />
                 </div>
               )}
             </div>

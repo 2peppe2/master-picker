@@ -4,7 +4,6 @@ import { useCallback, useEffect, useId, useRef } from "react";
 
 const HISTORY_KEY = "__masterPickerCourseOverlay";
 
-/** Keeps a phone dialog's open state aligned with browser history. */
 export const useOverlayHistory = (
   open: boolean,
   onOpenChange: (open: boolean) => void,

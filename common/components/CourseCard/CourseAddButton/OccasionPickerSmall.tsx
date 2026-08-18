@@ -16,7 +16,6 @@ import AddButton from "./components/AddButton";
 import { X } from "lucide-react";
 import { FC } from "react";
 
-/** Phone presentation: the occasion list fills a bottom sheet. */
 const OccasionPickerSmall: FC<OccasionPickerViewProps> = ({
   course,
   isOpen,

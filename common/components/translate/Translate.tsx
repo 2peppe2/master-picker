@@ -3,6 +3,7 @@
 import { Trans, useTranslation } from "react-i18next";
 import { FC, memo, useEffect, useState } from "react";
 import { useTranslationReady } from "./TranslationReadyContext";
+import TranslationBold from "./TranslationBold";
 import "@/lib/i18n";
 
 interface TranslateProps {
@@ -23,21 +24,19 @@ const Translate: FC<TranslateProps> = memo(
       setMounted(true);
     }, []);
 
-    const componentsToUse = isBold
-      ? { b: <strong />, ...components }
-      : components;
-
     if (!mounted && !translationReady) {
       return <>&nbsp;</>;
     }
 
-    if (componentsToUse) {
+    if (isBold || components) {
       return (
         <Trans
           i18nKey={text}
           values={args}
           t={translate}
-          components={componentsToUse}
+          components={
+            isBold ? { b: <TranslationBold />, ...components } : components
+          }
         />
       );
     }

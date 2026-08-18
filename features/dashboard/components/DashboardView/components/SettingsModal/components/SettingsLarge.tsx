@@ -10,7 +10,6 @@ import SettingsContent from "./SettingsContent";
 import { SettingsViewProps } from "../types";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: an anchored popover. */
 const SettingsLarge: FC<SettingsViewProps> = ({ isOpen, onOpenChange }) => (
   <Popover open={isOpen} onOpenChange={onOpenChange}>
     <PopoverTrigger asChild>

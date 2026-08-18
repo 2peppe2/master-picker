@@ -12,7 +12,6 @@ import CategoryGroup from "./components/CategoryGroup";
 import { ModuleSelectorViewProps } from "./types";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: the standard select popover. */
 const ModuleSelectorLarge: FC<ModuleSelectorViewProps> = ({
   selectedModule,
   setSelectedModule,

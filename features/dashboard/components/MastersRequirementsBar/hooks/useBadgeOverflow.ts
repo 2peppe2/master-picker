@@ -8,7 +8,6 @@ interface UseBadgeOverflowArgs {
   masters: ProcessedMaster[];
 }
 
-/** Calculates which master badges fit in the available bar width. */
 export const useBadgeOverflow = ({
   barWidth,
   badgeWidth,

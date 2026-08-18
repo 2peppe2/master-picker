@@ -20,5 +20,32 @@ export default defineConfig({
       name: "mobile-safari-landscape",
       use: { ...devices["iPhone 13 landscape"] },
     },
+    {
+      name: "tablet-chrome",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 800, height: 1280 },
+        isMobile: true,
+        hasTouch: true,
+      },
+    },
+    {
+      name: "tablet-chrome-landscape",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1280, height: 800 },
+        isMobile: true,
+        hasTouch: true,
+      },
+    },
+    {
+      name: "tablet-chrome-wide",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1024, height: 1366 },
+        isMobile: true,
+        hasTouch: true,
+      },
+    },
   ],
 });

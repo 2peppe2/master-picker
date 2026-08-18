@@ -30,9 +30,11 @@ const SettingsModal: FC<SettingsViewProps> = (props) => {
     );
   }
 
-  const Presentation = prefersSheet ? SettingsSmall : SettingsLarge;
-
-  return <Presentation {...props} />;
+  return prefersSheet ? (
+    <SettingsSmall {...props} />
+  ) : (
+    <SettingsLarge {...props} />
+  );
 };
 
 export default SettingsModal;

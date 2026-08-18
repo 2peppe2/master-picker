@@ -6,6 +6,12 @@ import { Semester } from "@/prisma/generated/client/enums";
 import { prisma } from "@/lib/prisma";
 import { cache } from "react";
 
+const compareSemester = (left: Semester, right: Semester) => {
+  if (left === right) return 0;
+  if (left === Semester.VT) return -1;
+  return 1;
+};
+
 export const getBachelorCourses = cache(
   async (program: string, startYear: number) => {
     const firstSixSemesters = Array.from({ length: 6 }, (_, semesterNumber) =>
@@ -48,11 +54,7 @@ export const getBachelorCourses = cache(
       CourseOccasion: [...course.CourseOccasion].sort(
         (left, right) =>
           left.year - right.year ||
-          (left.semester === right.semester
-            ? 0
-            : left.semester === Semester.VT
-              ? -1
-              : 1),
+          compareSemester(left.semester, right.semester),
       ),
     }));
   },

@@ -7,7 +7,6 @@ export interface ModuleSelectorProps {
   selectedItem?: ProcessedModule;
 }
 
-/** Each presentation owns its own "show more" paging per category. */
 export interface ModuleSelectorViewProps extends ModuleSelectorProps {
   visibleCounts: Record<string, number>;
   setVisibleCount: (code: string, count: number) => void;

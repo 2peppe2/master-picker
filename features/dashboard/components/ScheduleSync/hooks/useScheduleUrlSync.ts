@@ -37,7 +37,6 @@ export const shouldWriteScheduleToUrl = (
   serializedSchedule: string | null,
 ) => scheduleFromUrl !== serializedSchedule;
 
-/** Synchronizes hydrated schedule state with the URL without feedback loops. */
 export const useScheduleUrlSync = ({
   onHydrated,
 }: UseScheduleUrlSyncArgs) => {

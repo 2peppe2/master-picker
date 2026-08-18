@@ -15,7 +15,6 @@ interface DetectCollisionsArgs {
   targetBlock: number;
 }
 
-/** Finds the active droppable target for dashboard drag interactions. */
 export const useCollisionDetector = () => {
   const getOccasionCollisions = useOccasionCollisions();
   const getSlotCourse = useSlotCourse();

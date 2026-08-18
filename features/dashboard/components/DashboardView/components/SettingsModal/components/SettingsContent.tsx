@@ -12,7 +12,6 @@ import { FC, Suspense, useCallback } from "react";
 import { useAtom } from "jotai";
 
 interface SettingsContentProps {
-  /** Phone sizing, plus the settings that only apply at that breakpoint. */
   phone?: boolean;
 }
 

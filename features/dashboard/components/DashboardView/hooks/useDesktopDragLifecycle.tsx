@@ -1,6 +1,5 @@
 "use client";
 
-import CourseCard from "@/common/components/CourseCard";
 import type { Course } from "@/common/types";
 import {
   clearDragAtom,
@@ -21,15 +20,13 @@ import type {
   OnDragEndArgs,
   OnDragOverArgs,
   OnDragStartArgs,
-  OnRenderDraggedArgs,
 } from "@/features/dashboard/components/DndProvider/types";
 import type { PeriodNodeData } from "@/features/dashboard/components/Droppable";
 import { useAtomValue, useSetAtom } from "jotai";
 import { startTransition, useCallback, useEffect, useRef } from "react";
 import { useCourseDropHandler } from "./useCourseDropHandler";
+import { renderDraggedCourse } from "./renderDraggedCourse";
 
-/** Owns transient desktop DnD state; the controller only composes the layout. */
-/** Owns the desktop drag lifecycle and its transient target feedback. */
 export const useDesktopDragLifecycle = () => {
   const draggedCourse = useAtomValue(draggedCourseAtom);
   const grid = useAtomValue(scheduleGridAtom);
@@ -120,12 +117,7 @@ export const useDesktopDragLifecycle = () => {
     clearDragTargetFeedback();
   }, [clearAutoExpandedSemesters, clearDragTargetFeedback]);
 
-  const handleRenderDragged = useCallback(
-    ({ active }: OnRenderDraggedArgs<Course>) => (
-      <CourseCard variant="dragged" course={active} />
-    ),
-    [],
-  );
+  const handleRenderDragged = useCallback(renderDraggedCourse, []);
 
   return {
     ...dropHandler,

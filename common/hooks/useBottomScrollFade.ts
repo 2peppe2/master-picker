@@ -11,7 +11,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
  * Pass values in `deps` (e.g. the rendered content) that should trigger a
  * re-measure when they change.
  */
-/** Reports whether a scroll container still has content below its viewport. */
 export const useBottomScrollFade = <T extends HTMLElement = HTMLDivElement>(
   deps: unknown[] = [],
 ) => {

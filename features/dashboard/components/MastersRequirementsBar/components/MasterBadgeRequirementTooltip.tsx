@@ -2,15 +2,11 @@
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
-import CourseSelectionRow from "./rows/CourseSelectionRow";
+import MasterRequirementSection from "./MasterRequirementSection";
 import { RequirementUnion } from "@/common/types";
-import MainFieldRow from "./rows/MainFieldRow";
-import { FC, ReactNode, useMemo } from "react";
-import CreditRow from "./rows/CreditRow";
+import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import {
-  LucideCircleCheck,
-  LucideCircleDashed,
   LucideGraduationCap,
   LucideFolderTree,
   LucideBookOpen,
@@ -54,7 +50,13 @@ const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
   );
 
   return (
-    <div className={cn("flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm", className)}>
+    <div
+      data-slot="master-requirement-panel"
+      className={cn(
+        "flex flex-col gap-4 p-3 max-w-[400px] bg-popover text-popover-foreground border border-border rounded-xl shadow-xl backdrop-blur-sm",
+        className,
+      )}
+    >
       <header className="space-y-2">
         <h4 className="text-sm font-bold">
           <CourseTranslate text={name} />
@@ -62,19 +64,19 @@ const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
       </header>
 
       <div className="space-y-5">
-        <Section
+        <MasterRequirementSection
           title={translate("degree")}
           icon={<LucideGraduationCap size={14} />}
           items={categories.degree}
           fulfilled={fulfilled}
         />
-        <Section
+        <MasterRequirementSection
           title={translate("profile")}
           icon={<LucideFolderTree size={14} />}
           items={categories.profile}
           fulfilled={fulfilled}
         />
-        <Section
+        <MasterRequirementSection
           title={translate("courses")}
           icon={<LucideBookOpen size={14} />}
           items={categories.courses}
@@ -86,103 +88,3 @@ const MasterBadgeRequirementTooltip: FC<MasterBadgeTooltipProps> = ({
 };
 
 export default MasterBadgeRequirementTooltip;
-
-interface SectionProps {
-  title: string;
-  icon: ReactNode;
-  items: RequirementUnion[];
-  fulfilled: RequirementUnion[];
-}
-
-const Section: FC<SectionProps> = ({ title, icon, items, fulfilled }) => {
-  if (!items.length) {
-    return null;
-  }
-
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-2 text-2xs font-bold uppercase tracking-normal text-muted-foreground">
-        <span className="p-1 rounded bg-secondary text-primary">{icon}</span>
-        {title}
-      </div>
-      <div className="grid gap-2 ml-1">
-        {items.map((requirement, index: number) => (
-          <RowRenderer
-            key={`master-requirement-row-${index}`}
-            requirement={requirement}
-            isFulfilled={fulfilled.some(
-              (f) => JSON.stringify(f) === JSON.stringify(requirement),
-            )}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-interface RowRendererProps {
-  requirement: RequirementUnion;
-  isFulfilled: boolean;
-}
-
-const RowRenderer: FC<RowRendererProps> = ({ requirement, isFulfilled }) => (
-  <div
-    className={cn(
-      "flex items-start gap-3 text-[12px] transition-all",
-      isFulfilled ? "opacity-100" : "opacity-90",
-    )}
-  >
-    <div className="mt-0.5 shrink-0">
-      {isFulfilled ? (
-        <LucideCircleCheck
-          className="text-green-500 dark:text-green-400"
-          size={14}
-          strokeWidth={3}
-        />
-      ) : (
-        <LucideCircleDashed
-          className="text-muted-foreground/30"
-          size={14}
-          strokeWidth={2}
-        />
-      )}
-    </div>
-
-    <div className="text-muted-foreground dark:text-zinc-400">
-      <RequirementRowContent requirement={requirement} />
-    </div>
-  </div>
-);
-
-interface RowContentProps {
-  requirement: RequirementUnion;
-}
-
-const RequirementRowContent: FC<RowContentProps> = ({ requirement }) => {
-  switch (requirement.type) {
-    case "COURSE_SELECTION":
-      return <CourseSelectionRow requirement={requirement} />;
-
-    case "CREDITS_MAIN_FIELD_TOTAL":
-      return (
-        <MainFieldRow
-          requirement={requirement}
-          fieldProgress={requirement.fieldProgress}
-        />
-      );
-
-    case "CREDITS_TOTAL":
-    case "CREDITS_MASTER_TOTAL":
-    case "CREDITS_PROFILE_TOTAL":
-    case "CREDITS_ADVANCED_PROFILE":
-    case "CREDITS_ADVANCED_MASTER":
-      return (
-        <CreditRow requirement={requirement} current={requirement.current} />
-      );
-
-    default:
-      throw new Error(
-        `Unhandled requirement type: ${JSON.stringify(requirement)}`,
-      );
-  }
-};

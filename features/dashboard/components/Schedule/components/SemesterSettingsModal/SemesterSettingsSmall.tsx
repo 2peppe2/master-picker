@@ -16,7 +16,6 @@ import { SemesterSettingsViewProps } from "./types";
 import { X } from "lucide-react";
 import { FC } from "react";
 
-/** Phone presentation: a bottom sheet. */
 const SemesterSettingsSmall: FC<SemesterSettingsViewProps> = ({
   isOpen,
   onOpenChange,

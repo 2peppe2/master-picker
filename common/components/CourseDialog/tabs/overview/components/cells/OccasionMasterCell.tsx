@@ -21,43 +21,54 @@ const OccasionMasterCell: FC<OccasionMasterCellProps> = ({
   const masters = useMasterAtom();
   const moreThanFour = recommendedMaster.length > 4;
 
+  if (recommendedMaster.length === 0) {
+    return <TableCell>-</TableCell>;
+  }
+
+  if (!moreThanFour) {
+    return (
+      <TableCell>
+        <div className="flex flex-wrap items-center gap-1">
+          {recommendedMaster.map((master) => (
+            <MasterBadge
+              key={master.master}
+              name={master.master}
+              style="mr-0"
+            />
+          ))}
+        </div>
+      </TableCell>
+    );
+  }
+
   return (
     <TableCell>
       <div className="flex flex-wrap items-center gap-1">
-        {moreThanFour ? (
-          <>
-            {recommendedMaster.slice(0, 3).map((m) => (
-              <MasterBadge key={m.master} name={m.master} style="mr-0" />
-            ))}
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Badge
-                  variant="outline"
-                  className="h-5 w-8 rounded-full shrink-0"
-                >
-                  +{recommendedMaster.length - 3}
-                </Badge>
-              </TooltipTrigger>
-              <TooltipContent side="bottom">
-                <div className="flex flex-col gap-2">
-                  {recommendedMaster.slice(3).map((m) => (
-                    <div key={m.master}>
-                      <CourseTranslate
-                        text={masters[m.master]?.name ?? m.master}
-                      />
-                    </div>
-                  ))}
+        {recommendedMaster.slice(0, 3).map((master) => (
+          <MasterBadge
+            key={master.master}
+            name={master.master}
+            style="mr-0"
+          />
+        ))}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Badge variant="outline" className="h-5 w-8 rounded-full shrink-0">
+              +{recommendedMaster.length - 3}
+            </Badge>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <div className="flex flex-col gap-2">
+              {recommendedMaster.slice(3).map((master) => (
+                <div key={master.master}>
+                  <CourseTranslate
+                    text={masters[master.master]?.name ?? master.master}
+                  />
                 </div>
-              </TooltipContent>
-            </Tooltip>
-          </>
-        ) : recommendedMaster.length > 0 ? (
-          recommendedMaster.map((m) => (
-            <MasterBadge key={m.master} name={m.master} style="mr-0" />
-          ))
-        ) : (
-          "-"
-        )}
+              ))}
+            </div>
+          </TooltipContent>
+        </Tooltip>
       </div>
     </TableCell>
   );

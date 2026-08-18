@@ -24,7 +24,6 @@ interface UsePhoneTabSwipeArgs {
   setActiveTab: (tab: DashboardTab) => void;
 }
 
-/** Maps completed phone swipes to adjacent dashboard tabs. */
 export const usePhoneTabSwipe = ({
   activeTab,
   setActiveTab,

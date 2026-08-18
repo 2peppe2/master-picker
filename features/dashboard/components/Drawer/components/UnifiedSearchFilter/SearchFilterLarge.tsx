@@ -5,7 +5,6 @@ import { useSearchFilterState } from "./hooks/useSearchFilterState";
 import MultiSelect from "@/components/ui/MultiSelect";
 import { FC } from "react";
 
-/** Desktop presentation: one combined multi-select, no overlay needed. */
 const SearchFilterLarge: FC = () => {
   const { categoryLabels, groupedOptions, selectedValues, handleValuesChange } =
     useSearchFilterState();

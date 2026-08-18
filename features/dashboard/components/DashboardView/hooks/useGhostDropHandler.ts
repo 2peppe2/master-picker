@@ -15,7 +15,6 @@ interface HandleGhostDropArgs {
   occasion: CourseOccasion;
 }
 
-/** Resolves drag drops that target an expandable wildcard slot. */
 export const useGhostDropHandler = () => {
   const { addCourse, removeCourse } = useCourseCommands();
   const { addBlockToSemester } = useBlockCommands();

@@ -12,7 +12,6 @@ import ConflictList from "./components/ConflictList";
 import { Button } from "@/components/ui/button";
 import { FC } from "react";
 
-/** Phone presentation: a bottom sheet with full-width stacked actions. */
 const ConflictResolverSmall: FC<ConflictResolutionProps> = ({
   open,
   setOpen,

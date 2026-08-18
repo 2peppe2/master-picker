@@ -55,8 +55,6 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
     handleAddAttempt(occasion);
   };
 
-  const OccasionPicker = prefersSheet ? OccasionPickerSmall : OccasionPickerLarge;
-
   return (
     <>
       {conflictOpen && conflictData && (
@@ -80,15 +78,25 @@ const CourseAddButton: FC<CourseAddButtonProps> = ({ course }) => {
         }
       />
 
-      {isMultiOccasion ? (
-        <OccasionPicker
+      {isMultiOccasion && prefersSheet && (
+        <OccasionPickerSmall
           course={course}
           isOpen={occasionPickerOpen}
           onOpenChange={setOccasionPickerOpen}
           preferredSemesters={preferredSemesters}
           onSelect={handleSelect}
         />
-      ) : (
+      )}
+      {isMultiOccasion && !prefersSheet && (
+        <OccasionPickerLarge
+          course={course}
+          isOpen={occasionPickerOpen}
+          onOpenChange={setOccasionPickerOpen}
+          preferredSemesters={preferredSemesters}
+          onSelect={handleSelect}
+        />
+      )}
+      {!isMultiOccasion && (
         <AddButton
           courseCode={course.code}
           onClick={() => handleAddAttempt(course.CourseOccasion[0])}

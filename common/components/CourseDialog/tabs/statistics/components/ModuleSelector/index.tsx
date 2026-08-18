@@ -18,19 +18,25 @@ const ModuleSelector: FC<ModuleSelectorProps> = (props) => {
     [],
   );
 
-  const Presentation = prefersSheet ? ModuleSelectorSmall : ModuleSelectorLarge;
-
   return (
     <div className="space-y-2" data-no-swipe="true">
       <Label className="text-sm font-medium text-foreground">
         <Translate text="_examination_history" />
       </Label>
 
-      <Presentation
-        {...props}
-        visibleCounts={visibleCounts}
-        setVisibleCount={setVisibleCount}
-      />
+      {prefersSheet ? (
+        <ModuleSelectorSmall
+          {...props}
+          visibleCounts={visibleCounts}
+          setVisibleCount={setVisibleCount}
+        />
+      ) : (
+        <ModuleSelectorLarge
+          {...props}
+          visibleCounts={visibleCounts}
+          setVisibleCount={setVisibleCount}
+        />
+      )}
     </div>
   );
 };

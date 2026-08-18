@@ -14,7 +14,6 @@ interface HandleDropArgs {
   overData: PeriodNodeData;
 }
 
-/** Coordinates validated course placement and any resulting conflict flow. */
 export const useCourseDropHandler = () => {
   const { showConflict, conflictData, conflictOpen, setConflictOpen } =
     useConflictManager();

@@ -14,10 +14,8 @@ import { FC, ReactNode } from "react";
 interface LandscapeSideSheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /** Rendered as the sheet's trigger, so it keeps its own button styling. */
   trigger: ReactNode;
   title: ReactNode;
-  /** Shown under the title; falls back to a screen-reader-only copy of it. */
   description?: ReactNode;
   children: ReactNode;
 }

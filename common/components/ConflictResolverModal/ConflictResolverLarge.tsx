@@ -16,7 +16,6 @@ import ConflictList from "./components/ConflictList";
 import { Button } from "@/components/ui/button";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: a centred alert dialog. */
 const ConflictResolverLarge: FC<ConflictResolutionProps> = ({
   open,
   setOpen,

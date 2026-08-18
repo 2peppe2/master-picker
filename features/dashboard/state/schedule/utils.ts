@@ -50,7 +50,6 @@ export const serializeSchedule = (
     semester.forEach((period, pIdx) =>
       period.forEach((block, bIdx) => {
         if (block?.code && courses[block.code]) {
-          // V2 uses the actual course code string
           entries.push([sIdx, pIdx, bIdx, block.code]);
         }
       }),

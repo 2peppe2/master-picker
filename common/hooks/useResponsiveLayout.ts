@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const PHONE_MAX_WIDTH = 639;
@@ -10,15 +11,17 @@ export const PHONE_QUERY = `(max-width: ${PHONE_MAX_WIDTH}px)`;
 export const COMPACT_QUERY = `(max-width: ${COMPACT_MAX_WIDTH}px)`;
 export const SHORT_VIEWPORT_QUERY = `(max-height: ${SHORT_VIEWPORT_MAX_HEIGHT}px)`;
 export const SHORT_LANDSCAPE_QUERY = `${SHORT_VIEWPORT_QUERY} and (orientation: landscape)`;
+export const ANY_COARSE_POINTER_QUERY = "(any-pointer: coarse)";
+
+const subscribeToNothing = () => () => {};
+const getTouchPointsSnapshot = () => navigator.maxTouchPoints > 0;
+const getTouchPointsServerSnapshot = () => false;
 
 export type LayoutTier = "phone" | "tablet" | "desktop";
 
 export interface LayoutSignals {
-  /** Matches PHONE_QUERY. */
   isNarrow: boolean;
-  /** Matches COMPACT_QUERY. */
   isCompactWidth: boolean;
-  /** Matches SHORT_LANDSCAPE_QUERY. */
   isShortLandscape: boolean;
 }
 
@@ -38,7 +41,6 @@ export const resolveLayoutTier = ({
   return isCompactWidth ? "tablet" : "desktop";
 };
 
-/** Reports which of the three mutually exclusive layout tiers is active. */
 export const useLayoutTier = (): LayoutTier =>
   resolveLayoutTier({
     isNarrow: useMediaQuery({ query: PHONE_QUERY }),
@@ -46,20 +48,15 @@ export const useLayoutTier = (): LayoutTier =>
     isShortLandscape: useMediaQuery({ query: SHORT_LANDSCAPE_QUERY }),
   });
 
-/** Reports whether the viewport uses the phone layout. */
 export const useIsPhone = () => useLayoutTier() === "phone";
 
-/** Reports whether the viewport is within the tablet breakpoint. */
 export const useIsTablet = () => useLayoutTier() === "tablet";
 
-/** Reports whether the dashboard uses its compact layout. */
 export const useIsCompact = () => useLayoutTier() !== "desktop";
 
-/** Reports whether the viewport is a phone held in landscape. */
 export const useIsLandscapePhone = () =>
   useMediaQuery({ query: SHORT_LANDSCAPE_QUERY });
 
-/** Reports whether the viewport is too short for percentage-height overlays. */
 export const useIsShortViewport = () =>
   useMediaQuery({ query: SHORT_VIEWPORT_QUERY });
 
@@ -88,3 +85,30 @@ export const usePrefersSheet = () => {
  * interaction must branch on this.
  */
 export const useIsTouchLayout = () => useIsPhone();
+
+export const useHasTouchPoints = () =>
+  useSyncExternalStore(
+    subscribeToNothing,
+    getTouchPointsSnapshot,
+    getTouchPointsServerSnapshot,
+  );
+
+export const useHasAnyCoarsePointer = () =>
+  useMediaQuery({ query: ANY_COARSE_POINTER_QUERY });
+
+export const prefersTapDisclosure = ({
+  isPhone,
+  hasTouchPoints,
+  hasAnyCoarsePointer,
+}: {
+  isPhone: boolean;
+  hasTouchPoints: boolean;
+  hasAnyCoarsePointer: boolean;
+}) => isPhone || hasTouchPoints || hasAnyCoarsePointer;
+
+export const usePrefersTapDisclosure = () =>
+  prefersTapDisclosure({
+    isPhone: useIsPhone(),
+    hasTouchPoints: useHasTouchPoints(),
+    hasAnyCoarsePointer: useHasAnyCoarsePointer(),
+  });

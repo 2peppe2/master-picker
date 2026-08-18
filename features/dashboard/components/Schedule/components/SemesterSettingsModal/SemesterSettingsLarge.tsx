@@ -13,7 +13,6 @@ import { SemesterSettingsViewProps } from "./types";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
-/** Tablet and desktop presentation: an anchored popover. */
 const SemesterSettingsLarge: FC<SemesterSettingsViewProps> = ({
   isOpen,
   onOpenChange,

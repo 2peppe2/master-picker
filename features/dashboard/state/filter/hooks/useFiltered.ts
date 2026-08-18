@@ -13,7 +13,6 @@ import { useHasMatchingOccasion } from "../../schedule/hooks/useScheduleQueries"
 import { filterStateAtom } from "../atoms";
 import { courseMatchesFilters } from "../domain";
 
-/** Applies the current catalog filters to a course list. */
 export const useFiltered = ({ courses }: { courses: Course[] }) => {
   const showBachelorYears = useAtomValue(showBachelorYearsAtom);
   const masterPeriod = useAtomValue(masterPeriodAtom);

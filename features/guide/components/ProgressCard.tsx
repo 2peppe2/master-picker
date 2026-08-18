@@ -1,27 +1,12 @@
 "use client";
 
 import Translate from "@/common/components/translate/Translate";
-import { Badge } from "@/components/ui/badge";
 import ContinueButton from "./ContinueButton";
+import ProgressBadge, { ProgressStep } from "./ProgressBadge";
 import { Course } from "@/common/types";
 import type { CourseRequirements } from "@/features/guide/types";
-import { Check } from "lucide-react";
 import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
-
-interface ProgressStep {
-  states: {
-    active: {
-      labelKey: string;
-      style: string;
-    };
-    default: {
-      labelKey: string;
-      style: string;
-    };
-  };
-  isDone: boolean;
-}
 
 interface ProgressCardProps {
   compulsoryCourses: CourseRequirements;
@@ -173,25 +158,3 @@ const ProgressCard: FC<ProgressCardProps> = ({
 };
 
 export default ProgressCard;
-
-interface ProgressBadgeProps extends ProgressStep {
-  id: string;
-}
-
-const ProgressBadge: FC<ProgressBadgeProps> = ({ id, states, isDone }) => {
-  const state = states[isDone ? "active" : "default"];
-
-  return (
-    <Badge
-      variant="outline"
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-2xs transition-all duration-300",
-        state.style,
-      )}
-    >
-      {isDone && <Check className="h-3 w-3" />}
-      {`${id}. `}
-      <Translate text={state.labelKey} />
-    </Badge>
-  );
-};

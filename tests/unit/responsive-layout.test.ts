@@ -1,9 +1,11 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
+  ANY_COARSE_POINTER_QUERY,
   COMPACT_MAX_WIDTH,
   PHONE_MAX_WIDTH,
   SHORT_VIEWPORT_MAX_HEIGHT,
+  prefersTapDisclosure,
   resolveLayoutTier,
   type LayoutTier,
 } from "@/common/hooks/useResponsiveLayout";
@@ -58,6 +60,48 @@ describe("resolveLayoutTier", () => {
       expect(isPhone && isTablet).toBe(false);
       expect(isCompact).toBe(isPhone || isTablet);
     }
+  });
+});
+
+describe("prefersTapDisclosure", () => {
+  const forDevice = ({
+    isPhone = false,
+    touch = false,
+    anyCoarse = touch,
+  }: {
+    isPhone?: boolean;
+    touch?: boolean;
+    anyCoarse?: boolean;
+  } = {}) =>
+    prefersTapDisclosure({
+      isPhone,
+      hasTouchPoints: touch,
+      hasAnyCoarsePointer: anyCoarse,
+    });
+
+  it("asks about touch capability rather than viewport width", () => {
+    expect(ANY_COARSE_POINTER_QUERY).toBe("(any-pointer: coarse)");
+    expect(ANY_COARSE_POINTER_QUERY).not.toContain("width");
+  });
+
+  it("uses tap disclosure whenever the browser reports touch points", () => {
+    expect(forDevice({ touch: true })).toBe(true);
+  });
+
+  it("keeps tap disclosure when a fine primary pointer is attached", () => {
+    expect(forDevice({ touch: true, anyCoarse: false })).toBe(true);
+  });
+
+  it("uses any coarse pointer as a fallback", () => {
+    expect(forDevice({ anyCoarse: true })).toBe(true);
+  });
+
+  it("keeps phones tap-driven before capability signals hydrate", () => {
+    expect(forDevice({ isPhone: true })).toBe(true);
+  });
+
+  it("leaves mouse-only viewports on hover", () => {
+    expect(forDevice()).toBe(false);
   });
 });
 

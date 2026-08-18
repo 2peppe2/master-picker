@@ -33,9 +33,9 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
     [stats],
   );
 
-  return (
-    <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
-      {isLoading ? (
+  if (isLoading) {
+    return (
+      <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
         <div className="flex gap-2">
           {scale == Scale.G_OR_U ? (
             <>
@@ -63,34 +63,44 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
             </>
           )}
         </div>
-      ) : stats ? (
-        <div className="flex gap-2">
-          {scale == Scale.G_OR_U ? (
-            <>
-              <span title={translate("course_pass")}>
-                G:{" "}
-                {getCount("G") + getCount("3") + getCount("4") + getCount("5")}
-              </span>
-              <span title={translate("course_fail")}>U: {getCount("U")}</span>
-            </>
-          ) : (
-            <>
-              <span title={translate("_grade_n", { grade: 5 })}>
-                5: {getCount("5")}
-              </span>
-              <span title={translate("_grade_n", { grade: 4 })}>
-                4: {getCount("4")}
-              </span>
-              <span title={translate("_grade_n", { grade: 3 })}>
-                3: {getCount("3")}
-              </span>
-              <span title={translate("course_fail")}>U: {getCount("U")}</span>
-            </>
-          )}
-        </div>
-      ) : (
-        "-"
-      )}
+      </TableCell>
+    );
+  }
+
+  if (!stats) {
+    return (
+      <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
+        -
+      </TableCell>
+    );
+  }
+
+  return (
+    <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
+      <div className="flex gap-2">
+        {scale == Scale.G_OR_U ? (
+          <>
+            <span title={translate("course_pass")}>
+              G:{" "}
+              {getCount("G") + getCount("3") + getCount("4") + getCount("5")}
+            </span>
+            <span title={translate("course_fail")}>U: {getCount("U")}</span>
+          </>
+        ) : (
+          <>
+            <span title={translate("_grade_n", { grade: 5 })}>
+              5: {getCount("5")}
+            </span>
+            <span title={translate("_grade_n", { grade: 4 })}>
+              4: {getCount("4")}
+            </span>
+            <span title={translate("_grade_n", { grade: 3 })}>
+              3: {getCount("3")}
+            </span>
+            <span title={translate("course_fail")}>U: {getCount("U")}</span>
+          </>
+        )}
+      </div>
     </TableCell>
   );
 };

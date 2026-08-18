@@ -3,9 +3,8 @@
 import { cn } from "@/lib/utils";
 
 import MastersRequirementsBar from "../../MastersRequirementsBar";
-import ShareButton from "../../Drawer/components/ShareButton";
-import BackButton from "@/common/components/BackButton";
-import SettingsModal from "./SettingsModal";
+import DashboardHeaderActions from "./DashboardHeaderActions";
+import DashboardHeaderWordmark from "./DashboardHeaderWordmark";
 import Disclaimer from "./Disclaimer";
 import { FC, useState } from "react";
 
@@ -19,22 +18,6 @@ interface DashboardHeaderProps {
 
 const DashboardHeader: FC<DashboardHeaderProps> = ({ dense = false }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-
-  const wordmark = (
-    <BackButton
-      title="Master Picker"
-      subtitle="dashboard_header_subtitle"
-      returnText="_dashboard_return_to_landing"
-      compact={dense}
-    />
-  );
-
-  const actions = (
-    <div className="flex shrink-0 items-center gap-1 sm:gap-2">
-      <ShareButton compact />
-      <SettingsModal isOpen={isSettingsOpen} onOpenChange={setIsSettingsOpen} />
-    </div>
-  );
 
   return (
     <header className="sticky top-0 z-40 flex w-full shrink-0 flex-col border-b border-border bg-card/90 backdrop-blur-md lg:hidden">
@@ -56,8 +39,11 @@ const DashboardHeader: FC<DashboardHeaderProps> = ({ dense = false }) => {
           {/* justify-between with the drawer's own px-4: the actions land on
               the same right edge as the filters button in the column below. */}
           <div className="flex min-w-0 items-center justify-between gap-2 px-4">
-            {wordmark}
-            {actions}
+            <DashboardHeaderWordmark dense={dense} />
+            <DashboardHeaderActions
+              isSettingsOpen={isSettingsOpen}
+              onSettingsOpenChange={setIsSettingsOpen}
+            />
           </div>
 
           <div className="flex min-w-0 items-center px-(--density-x)">
@@ -76,8 +62,11 @@ const DashboardHeader: FC<DashboardHeaderProps> = ({ dense = false }) => {
               "border-border/50 px-4 py-3 sm:px-6",
             )}
           >
-            {wordmark}
-            {actions}
+            <DashboardHeaderWordmark dense={dense} />
+            <DashboardHeaderActions
+              isSettingsOpen={isSettingsOpen}
+              onSettingsOpenChange={setIsSettingsOpen}
+            />
           </div>
 
           <div className="flex min-w-0 items-center bg-muted/10 px-4 py-2 sm:px-6">

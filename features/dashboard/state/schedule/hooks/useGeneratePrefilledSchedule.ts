@@ -45,7 +45,6 @@ export const generatePrefilledSchedule = ({
         const isWildcardCourse = period.blocks.length === 0;
 
         if (isWildcardCourse) {
-          // Find first empty wildcard slot or add new block
           let placed = false;
           for (let i = WILDCARD_BLOCK_START; i < periodBlocks.length; i++) {
             if (periodBlocks[i] === null) {
@@ -59,7 +58,6 @@ export const generatePrefilledSchedule = ({
             periodBlocks.push(course);
           }
         } else {
-          // Place in specified blocks
           for (const block of period.blocks) {
             const blockIndex = block - 1;
             periodBlocks[blockIndex] = course;
@@ -70,7 +68,6 @@ export const generatePrefilledSchedule = ({
   });
 };
 
-/** Creates a schedule-grid generator bound to the current scheduling rules. */
 export const useGeneratePrefilledSchedule = () =>
   useCallback(
     (args: GeneratePrefilledScheduleArgs) => generatePrefilledSchedule(args),

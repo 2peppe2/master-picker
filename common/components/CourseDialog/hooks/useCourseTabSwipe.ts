@@ -14,7 +14,6 @@ interface UseCourseTabSwipeArgs {
   onValueChange?: (value: string) => void;
 }
 
-/** Maps phone swipes to adjacent visible course-dialog tabs. */
 export const useCourseTabSwipe = ({
   enabled,
   tabValues,

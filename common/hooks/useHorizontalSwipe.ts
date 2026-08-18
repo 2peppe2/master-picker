@@ -36,7 +36,6 @@ export type HorizontalSwipeBindings = Pick<
 
 interface UseHorizontalSwipeArgs {
   enabled: boolean;
-  /** CSS selector for descendants that should not initiate a swipe. */
   exclusionSelector: string;
   /**
    * Invoked when a horizontal swipe is completed. Return `true` if it caused a
@@ -75,7 +74,6 @@ const isExcludedTarget = (
   return Boolean(element?.closest(exclusionSelector));
 };
 
-/** Tracks touch and pointer input, reporting completed horizontal swipes only. */
 export const useHorizontalSwipe = ({
   enabled,
   exclusionSelector,

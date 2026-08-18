@@ -4,10 +4,8 @@ import { cn } from "@/lib/utils";
 
 import { usePhoneScheduleLayout } from "@/features/dashboard/state/preferences/hooks/usePhoneScheduleLayout";
 import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
-import type { PhoneScheduleLayout } from "@/features/dashboard/state/preferences/atoms";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import Translate from "@/common/components/translate/Translate";
-import { Separator } from "@/components/ui/separator";
 import {
   periodAtom,
   semesterAtom,
@@ -17,10 +15,13 @@ import { draggedCourseAtom } from "@/features/dashboard/state/drag/atoms";
 import { useRightScrollFade } from "@/common/hooks/useBottomScrollFade";
 import RightFade from "@/common/components/RightFade";
 import { useAtomValue } from "jotai";
-import { FC, Fragment, useMemo } from "react";
+import { FC, useMemo } from "react";
 import { range } from "lodash";
 import Block from "./block";
 import { formatCredits, getPeriodCredits } from "./periodCredits";
+import PeriodBlockSlot from "./PeriodBlockSlot";
+import WildcardDivider from "./WildcardDivider";
+import { slotSizeClasses } from "./periodSlotStyles";
 
 interface PeriodViewProps {
   semesterNumber: number;
@@ -153,77 +154,3 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
 };
 
 export default PeriodView;
-
-/**
- * Slot box sizing. The carousel keeps fixed squares it can snap between; the
- * grid fills its column, which is the same shape the tablet breakpoint uses.
- */
-const slotSizeClasses = (carousel: boolean) =>
-  cn(
-    carousel
-      ? "size-40 shrink-0 snap-start"
-      : "mx-auto size-auto aspect-square w-full min-w-0 shrink",
-    "sm:mx-auto sm:size-auto sm:aspect-square sm:w-full sm:min-w-0 sm:shrink",
-    "lg:mx-0 lg:h-40 lg:w-40 lg:shrink-0",
-  );
-
-/**
- * Separates the standard blocks from user-added wildcard slots: a vertical rule
- * in the flex layouts, a full-width horizontal rule in the grid ones so the
- * wildcards start on a fresh row.
- */
-interface WildcardDividerProps {
-  carousel: boolean;
-}
-
-const WildcardDivider: FC<WildcardDividerProps> = ({ carousel }) => (
-  <div
-    className={cn(
-      carousel
-        ? "flex h-40 w-px shrink-0 items-center bg-transparent"
-        : "col-span-full my-1 h-px w-auto bg-border",
-      "sm:col-span-full sm:my-1 sm:h-px sm:w-auto sm:bg-border",
-      "lg:my-0 lg:h-40 lg:w-px lg:shrink-0",
-      "lg:bg-transparent",
-    )}
-  >
-    <Separator
-      orientation="vertical"
-      className={cn(
-        "h-full w-px bg-zinc-600 sm:hidden lg:block",
-        carousel ? "block" : "hidden",
-      )}
-    />
-  </div>
-);
-
-interface PeriodBlockSlotProps {
-  index: number;
-  layout: PhoneScheduleLayout;
-  semesterNumber: number;
-  periodNumber: number;
-}
-
-const PeriodBlockSlot: FC<PeriodBlockSlotProps> = ({
-  index,
-  layout,
-  semesterNumber,
-  periodNumber,
-}) => {
-  const isWildcardStart = index === WILDCARD_BLOCK_START;
-  const isWildcardBlock = index >= WILDCARD_BLOCK_START;
-  const carousel = layout === "carousel";
-
-  return (
-    <Fragment>
-      {isWildcardStart && <WildcardDivider carousel={carousel} />}
-
-      <div className={slotSizeClasses(carousel)}>
-        <Block
-          variant={isWildcardBlock ? "wildcard" : "standard"}
-          data={{ semesterNumber, periodNumber, blockNumber: index }}
-        />
-      </div>
-    </Fragment>
-  );
-};

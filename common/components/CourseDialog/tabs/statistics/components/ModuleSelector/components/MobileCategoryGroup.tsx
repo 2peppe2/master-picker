@@ -13,7 +13,6 @@ interface MobileCategoryGroupProps extends CategoryGroupProps {
   onSelect: (value: string) => void;
 }
 
-/** Phone: a collapsible group of tap targets, sized for thumbs. */
 const MobileCategoryGroup: FC<MobileCategoryGroupProps> = ({
   code,
   modules,

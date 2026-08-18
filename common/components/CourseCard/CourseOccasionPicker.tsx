@@ -5,6 +5,7 @@ import { sortCourseOccasionsByPreferredSemesters } from "@/common/courseOccasion
 import type { Course, CourseOccasion } from "@/common/types";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Button } from "@/components/ui/button";
+import OccasionDetails from "./OccasionDetails";
 import type { FC } from "react";
 
 interface CourseOccasionPickerProps {
@@ -13,6 +14,12 @@ interface CourseOccasionPickerProps {
   preferredSemesters: number[];
   showAddButton?: boolean;
 }
+
+const getOccasionRowClassName = (index: number) => {
+  if (index === 0) return "-mx-5 bg-muted px-5";
+  if (index > 1) return "border-t";
+  return "";
+};
 
 const CourseOccasionPicker: FC<CourseOccasionPickerProps> = ({
   course,
@@ -36,7 +43,6 @@ const CourseOccasionPicker: FC<CourseOccasionPickerProps> = ({
       }
     >
       {occasions.map((occasion, index) => {
-        const isMostRelevant = index === 0;
         const relativeSemester =
           toRelativeSemester({
             year: occasion.year,
@@ -73,13 +79,7 @@ const CourseOccasionPicker: FC<CourseOccasionPickerProps> = ({
           <div
             key={occasion.id}
             data-course-occasion-semester={relativeSemester}
-            className={`flex min-h-16 items-center gap-4 py-4 ${
-              isMostRelevant
-                ? "-mx-5 bg-muted px-5"
-                : index > 1
-                  ? "border-t"
-                  : ""
-            }`}
+            className={`flex min-h-16 items-center gap-4 py-4 ${getOccasionRowClassName(index)}`}
           >
             <OccasionDetails
               relativeSemester={relativeSemester}
@@ -100,27 +100,5 @@ const CourseOccasionPicker: FC<CourseOccasionPickerProps> = ({
     </div>
   );
 };
-
-interface OccasionDetailsProps {
-  relativeSemester: number;
-  periods: string;
-  blocks: string;
-}
-
-const OccasionDetails: FC<OccasionDetailsProps> = ({
-  relativeSemester,
-  periods,
-  blocks,
-}) => (
-  <div className="flex min-w-0 flex-1 flex-col items-start gap-1.5">
-    <span className="font-semibold text-foreground">
-      <Translate text="_semester_label" args={{ s: relativeSemester }} />
-    </span>
-    <span className="text-xs text-muted-foreground">
-      {periods ? `Period ${periods}` : "Unknown Period"} &bull;{" "}
-      {blocks ? `Block ${blocks}` : "No Block"}
-    </span>
-  </div>
-);
 
 export default CourseOccasionPicker;

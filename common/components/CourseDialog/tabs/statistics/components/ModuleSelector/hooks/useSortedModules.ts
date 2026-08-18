@@ -3,7 +3,6 @@
 import { ProcessedModule } from "../../../types";
 import { useMemo } from "react";
 
-/** Newest examination first; shared by both category-group presentations. */
 export const useSortedModules = (modules: ProcessedModule[]) =>
   useMemo(
     () =>

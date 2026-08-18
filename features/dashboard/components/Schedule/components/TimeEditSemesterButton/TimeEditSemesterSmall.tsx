@@ -16,7 +16,6 @@ import { CalendarViewProps } from "./types";
 import { X } from "lucide-react";
 import { FC } from "react";
 
-/** Phone presentation: a bottom sheet of calendar destinations. */
 const TimeEditSemesterSmall: FC<CalendarViewProps> = ({
   isOpen,
   onOpenChange,
