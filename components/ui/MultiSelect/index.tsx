@@ -141,7 +141,7 @@ const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                   )}
                 >
                   {state.searchValue && (
-                    <span className="text-[10px] uppercase font-bold text-primary mr-1.5 opacity-70">
+                    <span className="text-2xs uppercase font-bold text-primary mr-1.5 opacity-70">
                       Search:
                     </span>
                   )}

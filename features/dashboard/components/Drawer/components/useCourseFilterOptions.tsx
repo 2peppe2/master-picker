@@ -14,12 +14,13 @@ import {
   parseOptionValue,
 } from "@/components/ui/MultiSelect/polarity";
 import {
+  EXAMINATION_LABEL_KEYS,
   EXAMINATION_TYPES,
   ExaminationType,
   getCourseExaminationTypes,
 } from "@/lib/examinationTypes";
 import { useAtomValue } from "jotai";
-import { useMemo } from "react";
+import { useMemo, type FC } from "react";
 import { range, uniq } from "lodash";
 import {
   Ban,
@@ -112,7 +113,7 @@ export const useCourseFilterOptions = () => {
                 {option.dropdownLabel ?? option.label}
               </span>
             ),
-            searchKey: `${translate("_exclude")} ${option.searchKey}`,
+            searchKey: `${translate("exclude")} ${option.searchKey}`,
           };
         });
 
@@ -124,14 +125,14 @@ export const useCourseFilterOptions = () => {
           sections: [
             {
               key: "include",
-              label: translate("_include"),
+              label: translate("include"),
               headerLabel: translate("_include_x", { x: noun }),
               icon: Check,
               options: group.options,
             },
             {
               key: "exclude",
-              label: translate("_exclude"),
+              label: translate("exclude"),
               headerLabel: translate("_exclude_x", { x: noun }),
               icon: Ban,
               options: excludedOptions,
@@ -219,7 +220,7 @@ export const useCourseFilterOptions = () => {
         })),
       },
       {
-        heading: translate("master_profiles"),
+        heading: translate("_master_profiles"),
         icon: Layers,
         options: Object.values(allMasters).map((master) => ({
           value: `master:${master.master}`,
@@ -236,7 +237,7 @@ export const useCourseFilterOptions = () => {
         })),
       },
       {
-        heading: translate("main_fields"),
+        heading: translate("_main_fields"),
         icon: Shapes,
         options: mainFields.map((field) => ({
           label: coursesTranslate(field),
@@ -253,14 +254,16 @@ export const useCourseFilterOptions = () => {
         heading: translate("examinations"),
         icon: FileText,
         options: availableExaminationTypes.map((type) => {
-          const label = translate(`_exam_type_${type}`);
+          const label = translate(EXAMINATION_LABEL_KEYS[type]);
 
           return {
             value: encodeOptionValue("examination", type),
             label,
             badgeLabel: label,
             dropdownLabel: (
-              <FilterOption icon={EXAMINATION_ICONS[type]}>{label}</FilterOption>
+              <FilterOption icon={EXAMINATION_ICONS[type]}>
+                {label}
+              </FilterOption>
             ),
             searchKey: label,
           };
@@ -288,7 +291,7 @@ interface FilterOptionProps {
   children: React.ReactNode;
 }
 
-const FilterOption = ({ icon: Icon, children }: FilterOptionProps) => (
+const FilterOption: FC<FilterOptionProps> = ({ icon: Icon, children }) => (
   <div className="flex min-w-0 items-center gap-2">
     <Icon className="size-4 shrink-0 opacity-70" />
     <span className="truncate">{children}</span>

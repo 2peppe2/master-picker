@@ -112,10 +112,12 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
   );
 };
 
-const ComboboxOptions: FC<{
+interface ComboboxOptionsProps {
   empty: string;
   anchor?: React.RefObject<HTMLElement | null>;
-}> = ({ empty, anchor }) => (
+}
+
+const ComboboxOptions: FC<ComboboxOptionsProps> = ({ empty, anchor }) => (
   <ComboboxContent anchor={anchor}>
     <ComboboxEmpty>{empty}</ComboboxEmpty>
     <ComboboxList>

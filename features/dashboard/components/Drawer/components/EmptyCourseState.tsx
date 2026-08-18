@@ -18,10 +18,10 @@ const EmptyCourseState: FC = () => (
       <SearchX className="h-8 w-8 opacity-60" />
     </div>
     <h3 className="text-lg font-semibold text-foreground">
-      <Translate text="no_courses_found" />
+      <Translate text="_no_courses_found" />
     </h3>
     <p className="text-sm mt-2 max-w-[250px]">
-      <Translate text="try_adjusting_your_filters_or_search_terms" />
+      <Translate text="_try_adjusting_your_filters_or_search_terms" />
     </p>
   </div>
 );

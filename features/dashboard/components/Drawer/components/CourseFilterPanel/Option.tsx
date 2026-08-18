@@ -15,7 +15,7 @@ export const CourseFilterOption = ({
 }: CourseFilterOptionProps) => (
   <label
     className={cn(
-      "flex min-h-11 cursor-pointer items-center gap-3",
+      "flex min-h-(--touch) cursor-pointer items-center gap-3",
       "rounded-lg px-2 py-2 text-sm transition-colors",
       "hover:bg-muted/70",
     )}

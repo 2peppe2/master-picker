@@ -21,8 +21,8 @@ const YearSelector: FC<YearSelectorProps> = ({
   const displayStates = useMemo(
     () =>
       ({
-        placeholder: translate("select_starting_year"),
-        empty: translate("no_years_found"),
+        placeholder: translate("_select_starting_year"),
+        empty: translate("_no_years_found"),
       }) satisfies ComboboxDisplay,
     [translate],
   );

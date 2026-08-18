@@ -20,7 +20,7 @@ const ElectiveSummaryCard: FC<ElectiveSummaryCardProps> = ({
       </p>
       <p className="mt-2 text-2xl font-semibold">{totalElectiveCourseCount}</p>
       <p className="text-xs text-muted-foreground">
-        <Translate text="_guide_summary_selections" />
+        <Translate text="guide_summary_selections" />
       </p>
     </div>
   );

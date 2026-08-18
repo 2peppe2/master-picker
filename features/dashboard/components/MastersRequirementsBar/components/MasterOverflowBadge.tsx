@@ -64,8 +64,8 @@ const MasterOverflowBadge: FC<MasterOverflowBadgeProps> = ({
         className="p-3 w-[calc(100vw-32px)] sm:w-auto sm:min-w-[500px] max-h-[500px] overflow-y-auto scrollbar-thin shadow-2xl border-muted-foreground/20 backdrop-blur-md z-50"
       >
         <div className="px-1 py-1 mb-2">
-          <p className="text-[10px] font-bold uppercase tracking-normal text-muted-foreground/70 sm:text-left text-center">
-            <Translate text="master_profiles" />
+          <p className="text-2xs font-bold uppercase tracking-normal text-muted-foreground/70 sm:text-left text-center">
+            <Translate text="_master_profiles" />
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

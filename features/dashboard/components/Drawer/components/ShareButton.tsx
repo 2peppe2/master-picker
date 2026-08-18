@@ -84,10 +84,19 @@ const ShareButton: FC<ShareButtonProps> = ({ compact = false, className }) => {
       onClick={handleShare}
       variant="outline"
       size="sm"
+      // Opts out of the landscape hit-area floor so it can sit at the same
+      // height as the master badges beside it; the ::after below keeps the
+      // actual tap target at 32px despite the smaller footprint.
+      data-density-exempt
       className={cn(
         cn(
           "group flex h-9 w-auto gap-2 px-4 text-sm font-medium",
           "transition-all duration-200",
+        ),
+        cn(
+          "landscape-phone:relative landscape-phone:h-8",
+          "landscape-phone:after:absolute landscape-phone:after:inset-x-0",
+          "landscape-phone:after:-inset-y-1.5 landscape-phone:after:content-['']",
         ),
         compact &&
           cn(
@@ -142,9 +151,9 @@ const ShareButton: FC<ShareButtonProps> = ({ compact = false, className }) => {
         {isAddCourseLoading ? (
           <Translate text="loading" />
         ) : copied ? (
-          <Translate text="_dashboard_share_copied" />
+          <Translate text="dashboard_share_copied" />
         ) : (
-          <Translate text="_dashboard_share" />
+          <Translate text="dashboard_share" />
         )}
       </span>
     </Button>

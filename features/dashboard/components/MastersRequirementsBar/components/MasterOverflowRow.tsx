@@ -18,6 +18,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useIsTouchLayout } from "@/common/hooks/useResponsiveLayout";
 import { FC } from "react";
 
 interface MasterOverflowRowProps {
@@ -29,6 +30,7 @@ const MasterOverflowRow: FC<MasterOverflowRowProps> = ({
   master,
   side,
 }) => {
+  const isTouchLayout = useIsTouchLayout();
   const masters = useMasterAtom();
   const masterMeta = masters[master.master];
 
@@ -52,7 +54,7 @@ const MasterOverflowRow: FC<MasterOverflowRowProps> = ({
           </div>
         </div>
         {isStarted && (
-          <span className="text-[10px] font-bold tabular-nums opacity-60 shrink-0">
+          <span className="text-2xs font-bold tabular-nums opacity-60 shrink-0">
             {progressPercentage}%
           </span>
         )}
@@ -67,65 +69,65 @@ const MasterOverflowRow: FC<MasterOverflowRowProps> = ({
     </>
   );
 
-  return (
-    <>
-      <div className="hidden sm:block">
-        <Tooltip delayDuration={0}>
-          <TooltipTrigger asChild>
-            <div
-              className={cn(
-                "group relative px-3 py-2.5 rounded-lg transition-all duration-200 cursor-default flex flex-col gap-2 min-w-[200px]",
-                masterMeta?.style,
-              )}
-            >
-              {RowContent}
-            </div>
-          </TooltipTrigger>
-          <TooltipContent
-            side={side}
-            sideOffset={15}
-            className="p-0 border-none bg-transparent shadow-none z-50"
+  // Same width-vs-input trap as MasterProgressBadge: a `sm:` split hands a
+  // landscape phone the hover-only row, which it can never open.
+  if (isTouchLayout) {
+    return (
+      <BottomSheet>
+        <BottomSheetTrigger asChild>
+          <div
+            className={cn(
+              "group relative px-3 py-2.5 rounded-lg transition-all duration-200 cursor-pointer flex flex-col gap-2 min-w-[100%]",
+              masterMeta?.style,
+            )}
           >
+            {RowContent}
+          </div>
+        </BottomSheetTrigger>
+        <BottomSheetContent className="overflow-hidden">
+          <div className="min-h-0 overflow-y-auto p-6 pt-4">
+            <BottomSheetTitle className="sr-only">Requirements</BottomSheetTitle>
+            <BottomSheetDescription className="sr-only">
+              Master requirements details
+            </BottomSheetDescription>
             <MasterBadgeRequirementTooltip
               name={master.name}
               master={master.master}
               all={master.requirements}
               fulfilled={master.fulfilled}
+              className="p-0 max-w-none w-full border-none shadow-none bg-transparent backdrop-blur-none"
             />
-          </TooltipContent>
-        </Tooltip>
-      </div>
+          </div>
+        </BottomSheetContent>
+      </BottomSheet>
+    );
+  }
 
-      <div className="block sm:hidden">
-        <BottomSheet>
-          <BottomSheetTrigger asChild>
-            <div
-              className={cn(
-                "group relative px-3 py-2.5 rounded-lg transition-all duration-200 cursor-pointer flex flex-col gap-2 min-w-[100%]",
-                masterMeta?.style,
-              )}
-            >
-              {RowContent}
-            </div>
-          </BottomSheetTrigger>
-          <BottomSheetContent className="overflow-hidden">
-            <div className="min-h-0 overflow-y-auto p-6 pt-4">
-              <BottomSheetTitle className="sr-only">Requirements</BottomSheetTitle>
-              <BottomSheetDescription className="sr-only">
-                Master requirements details
-              </BottomSheetDescription>
-              <MasterBadgeRequirementTooltip
-                name={master.name}
-                master={master.master}
-                all={master.requirements}
-                fulfilled={master.fulfilled}
-                className="p-0 max-w-none w-full border-none shadow-none bg-transparent backdrop-blur-none"
-              />
-            </div>
-          </BottomSheetContent>
-        </BottomSheet>
-      </div>
-    </>
+  return (
+    <Tooltip delayDuration={0}>
+      <TooltipTrigger asChild>
+        <div
+          className={cn(
+            "group relative px-3 py-2.5 rounded-lg transition-all duration-200 cursor-default flex flex-col gap-2 min-w-[200px]",
+            masterMeta?.style,
+          )}
+        >
+          {RowContent}
+        </div>
+      </TooltipTrigger>
+      <TooltipContent
+        side={side}
+        sideOffset={15}
+        className="p-0 border-none bg-transparent shadow-none z-50"
+      >
+        <MasterBadgeRequirementTooltip
+          name={master.name}
+          master={master.master}
+          all={master.requirements}
+          fulfilled={master.fulfilled}
+        />
+      </TooltipContent>
+    </Tooltip>
   );
 };
 

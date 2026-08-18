@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FC } from "react";
 import CourseDialog from ".";
 import type { Course } from "@/common/types";
 
@@ -11,12 +11,12 @@ interface LazyCourseDialogProps {
   showAdd?: boolean;
 }
 
-const LazyCourseDialog = ({
+const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
   course,
   open,
   onOpenChange,
   showAdd,
-}: LazyCourseDialogProps) => {
+}) => {
   const [mounted, setMounted] = useState(open);
 
   useEffect(() => {

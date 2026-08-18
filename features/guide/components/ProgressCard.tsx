@@ -96,11 +96,33 @@ const ProgressCard: FC<ProgressCardProps> = ({
     [electiveConfirmed],
   );
 
+  // Fixed to the bottom edge, so in landscape it needs the inline insets too --
+  // that is the orientation where the notch sits on a side.
   return (
-    <div className="fixed bottom-0 z-20 flex w-full justify-center bg-gradient-to-t from-background via-background/80 to-transparent p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:p-4">
-      <div className="w-full max-w-6xl rounded-2xl border bg-card p-3 shadow-2xl ring-1 ring-foreground/5 sm:p-4 lg:p-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
-          <div className="flex flex-1 flex-col gap-3">
+    <div
+      className={cn(
+        "fixed bottom-0 z-20 flex w-full justify-center",
+        "bg-gradient-to-t from-background via-background/80 to-transparent",
+        "p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:p-4",
+        "landscape-phone:p-1",
+        "landscape-phone:ps-[calc(0.25rem+env(safe-area-inset-left))]",
+        "landscape-phone:pe-[calc(0.25rem+env(safe-area-inset-right))]",
+      )}
+    >
+      <div
+        className={cn(
+          "w-full max-w-6xl rounded-2xl border bg-card p-3 shadow-2xl",
+          "ring-1 ring-foreground/5 sm:p-4 lg:p-6",
+          "landscape-phone:rounded-xl landscape-phone:p-2",
+        )}
+      >
+        <div
+          className={cn(
+            "flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8",
+            "landscape-phone:gap-3",
+          )}
+        >
+          <div className="flex flex-1 flex-col gap-3 landscape-phone:gap-1.5">
             <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
               <span>
                 <Translate text="_guide_progress_selection" />
@@ -115,7 +137,17 @@ const ProgressCard: FC<ProgressCardProps> = ({
               />
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            {/* Wrapping to a second row is what pushes the fixed bar past a
+                third of a landscape viewport; it scrolls sideways instead. */}
+            <div
+              className={cn(
+                "flex flex-wrap gap-2",
+                "landscape-phone:flex-nowrap landscape-phone:gap-1",
+                "landscape-phone:overflow-x-auto",
+                "landscape-phone:[scrollbar-width:none]",
+                "landscape-phone:[&::-webkit-scrollbar]:hidden",
+              )}
+            >
               {steps.map((step, idx) => (
                 <ProgressBadge
                   key={`step-${idx}`}
@@ -153,7 +185,7 @@ const ProgressBadge: FC<ProgressBadgeProps> = ({ id, states, isDone }) => {
     <Badge
       variant="outline"
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] transition-all duration-300",
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-2xs transition-all duration-300",
         state.style,
       )}
     >

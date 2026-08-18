@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, ComponentType } from "react";
+import { memo, ComponentType, type FC } from "react";
 import { Course } from "@/common/types";
 
 import DefaultCourseCard from "./DefaultCourseCard";
@@ -13,12 +13,7 @@ import SelectableCourseCard, {
 } from "./SelectableCourseCard";
 
 export type CourseCardVariant =
-  | "default"
-  | "dropped"
-  | "dragged"
-  | "ghost"
-  | "selectable"
-  | "grabbable";
+  "default" | "dropped" | "dragged" | "ghost" | "selectable" | "grabbable";
 
 export interface CourseCardProps {
   course: Course;
@@ -45,29 +40,28 @@ const VARIANTS: {
   selectable: SelectableCourseCard,
 };
 
-const CourseCard = memo<CourseCardWrapperProps>(
-  (props) => {
-    const Component = VARIANTS[
-      props.variant
-    ] as ComponentType<CourseCardWrapperProps>;
+const CourseCardComponent: FC<CourseCardWrapperProps> = (props) => {
+  const Component = VARIANTS[
+    props.variant
+  ] as ComponentType<CourseCardWrapperProps>;
 
-    return <Component {...props} />;
-  },
-  (prev, next) => {
-    const isSameBase =
-      prev.variant === next.variant && prev.course.code === next.course.code;
+  return <Component {...props} />;
+};
 
-    if (prev.variant === "selectable" && next.variant === "selectable") {
-      return (
-        isSameBase &&
-        prev.isSelected === next.isSelected &&
-        prev.onSelectionChange === next.onSelectionChange
-      );
-    }
+const CourseCard = memo(CourseCardComponent, (prev, next) => {
+  const isSameBase =
+    prev.variant === next.variant && prev.course.code === next.course.code;
 
-    return isSameBase;
-  },
-);
+  if (prev.variant === "selectable" && next.variant === "selectable") {
+    return (
+      isSameBase &&
+      prev.isSelected === next.isSelected &&
+      prev.onSelectionChange === next.onSelectionChange
+    );
+  }
+
+  return isSameBase;
+});
 
 CourseCard.displayName = "CourseCard";
 

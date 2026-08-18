@@ -11,7 +11,7 @@ import { useBottomScrollFade } from "@/common/hooks/useBottomScrollFade";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { cn } from "@/lib/utils";
 import { ChevronLeft } from "lucide-react";
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type FC, type ReactNode } from "react";
 import { CourseFilterCategory } from "./Category";
 import { CourseFilterOptions } from "./Group";
 
@@ -24,7 +24,11 @@ import { CourseFilterOptions } from "./Group";
 const HEADING_ROW_CLASS = "flex min-w-0 items-center gap-2 py-2 pl-1 pr-2";
 
 /** Reserves the chevron's width even at the top level, where there is none. */
-const HeadingSlot = ({ children }: { children?: ReactNode }) => (
+interface HeadingSlotProps {
+  children?: ReactNode;
+}
+
+const HeadingSlot: FC<HeadingSlotProps> = ({ children }) => (
   <span
     aria-hidden
     className="flex size-6 shrink-0 items-center justify-center"
@@ -51,7 +55,7 @@ interface DrilldownState {
   sectionKey?: string;
 }
 
-const CourseFilterPanel = ({
+const CourseFilterPanel: FC<CourseFilterPanelProps> = ({
   groups,
   selectedValues,
   onToggle,
@@ -84,9 +88,7 @@ const CourseFilterPanel = ({
     options.filter((option) => selectedValues.includes(option.value)).length;
 
   const goBack = () =>
-    setDrilldown(
-      drilldown?.sectionKey ? { heading: drilldown.heading } : null,
-    );
+    setDrilldown(drilldown?.sectionKey ? { heading: drilldown.heading } : null);
 
   const title = activeSection?.headerLabel ?? activeGroup?.heading ?? null;
 
@@ -98,7 +100,7 @@ const CourseFilterPanel = ({
           <button
             type="button"
             onClick={goBack}
-            aria-label={`${translate("_back")}: ${title}`}
+            aria-label={`${translate("back")}: ${title}`}
             className={cn(
               HEADING_ROW_CLASS,
               "rounded-lg text-left transition-colors",
@@ -126,14 +128,14 @@ const CourseFilterPanel = ({
               clearing just that category. */}
           {!title && (
             <Button variant="ghost" size="sm" onClick={onClear}>
-              <Translate text="clear_filters" />
+              <Translate text="_clear_filters" />
             </Button>
           )}
           <Button
             variant="ghost"
             size="icon"
             onClick={onClose}
-            aria-label="Close filters"
+            aria-label={translate("close")}
             className="size-10"
           >
             <span aria-hidden className="text-xl leading-none">

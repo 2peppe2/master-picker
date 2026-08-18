@@ -101,7 +101,7 @@ const Section: FC<SectionProps> = ({ title, icon, items, fulfilled }) => {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-normal text-muted-foreground">
+      <div className="flex items-center gap-2 text-2xs font-bold uppercase tracking-normal text-muted-foreground">
         <span className="p-1 rounded bg-secondary text-primary">{icon}</span>
         {title}
       </div>

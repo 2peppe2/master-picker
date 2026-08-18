@@ -58,8 +58,8 @@ const MobileOccasionCard: FC<MobileOccasionCardProps> = ({
 
       {occasion.recommendedMaster.length > 0 && (
         <div className="mt-4 border-t border-border/50 pt-3">
-          <p className="mb-2 text-[11px] font-medium text-muted-foreground">
-            <Translate text="recommended_for_master" />
+          <p className="mb-2 text-2xs font-medium text-muted-foreground">
+            <Translate text="_recommended_for_master" />
           </p>
           <div className="flex flex-wrap gap-1.5">
             {occasion.recommendedMaster.map((master) => (
@@ -108,7 +108,7 @@ interface MobileValuePillProps {
 
 const MobileValuePill: FC<MobileValuePillProps> = ({ label, values }) => (
   <div className="min-w-14 rounded-xl bg-muted px-2.5 py-1.5 text-center">
-    <span className="block text-[10px] text-muted-foreground">{label}</span>
+    <span className="block text-2xs text-muted-foreground">{label}</span>
     <span className="font-semibold text-foreground">
       {values.length > 0 ? values.join(", ") : "–"}
     </span>

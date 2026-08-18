@@ -23,7 +23,7 @@ const StatisticsLayout: FC<StatisticsLayoutProps> = ({
   chartData,
   totalStudents,
 }) => (
-  <div className="w-full space-y-6 py-3 sm:py-6">
+  <div className="w-full space-y-6 py-3 sm:py-6 landscape-phone:space-y-4 landscape-phone:py-3">
     <ModuleSelector
       selectedModule={selectedModule}
       setSelectedModule={setSelectedModule}
@@ -37,7 +37,7 @@ const StatisticsLayout: FC<StatisticsLayoutProps> = ({
           <Translate text="distribution" />
         </h3>
         <span className="text-xs text-muted-foreground">
-          <Translate text="total_students" />: {totalStudents}
+          <Translate text="_total_students" />: {totalStudents}
         </span>
       </div>
       <DistributionList chartData={chartData} totalStudents={totalStudents} />

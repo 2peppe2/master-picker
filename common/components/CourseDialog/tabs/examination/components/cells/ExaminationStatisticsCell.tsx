@@ -1,5 +1,7 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+
 import LoadingDots from "@/common/components/loading/LoadingDots";
 import { Scale } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
@@ -22,6 +24,7 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
   stats,
   isLoading,
 }) => {
+  const translate = useCommonTranslate();
   const getCount = useCallback(
     (g: string) => {
       if (!stats) return 0;
@@ -64,18 +67,24 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
         <div className="flex gap-2">
           {scale == Scale.G_OR_U ? (
             <>
-              <span title="Pass">
+              <span title={translate("course_pass")}>
                 G:{" "}
                 {getCount("G") + getCount("3") + getCount("4") + getCount("5")}
               </span>
-              <span title="Fail">U: {getCount("U")}</span>
+              <span title={translate("course_fail")}>U: {getCount("U")}</span>
             </>
           ) : (
             <>
-              <span title="Grade 5">5: {getCount("5")}</span>
-              <span title="Grade 4">4: {getCount("4")}</span>
-              <span title="Grade 3">3: {getCount("3")}</span>
-              <span title="Fail">U: {getCount("U")}</span>
+              <span title={translate("_grade_n", { grade: 5 })}>
+                5: {getCount("5")}
+              </span>
+              <span title={translate("_grade_n", { grade: 4 })}>
+                4: {getCount("4")}
+              </span>
+              <span title={translate("_grade_n", { grade: 3 })}>
+                3: {getCount("3")}
+              </span>
+              <span title={translate("course_fail")}>U: {getCount("U")}</span>
             </>
           )}
         </div>

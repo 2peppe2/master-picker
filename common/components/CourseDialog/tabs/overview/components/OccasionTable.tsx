@@ -13,6 +13,7 @@ import { Table, TableBody } from "@/components/ui/table";
 import OccasionTableHeader from "./OccasionTableHeader";
 import OccasionTableRow from "./OccasionTableRow";
 import MobileOccasionCard from "./MobileOccasionCard";
+import { useIsTouchLayout } from "@/common/hooks/useResponsiveLayout";
 import { FC, useMemo, useState } from "react";
 
 interface OccasionTableProps {
@@ -29,6 +30,8 @@ const OccasionTable: FC<OccasionTableProps> = ({
   const [selectedOccasion, setSelectedOccasion] =
     useState<CourseOccasion | null>(null);
   const [alertOpen, setAlertOpen] = useState(false);
+
+  const isTouchLayout = useIsTouchLayout();
 
   const getOccasionCollisions = useOccasionCollisions();
   const { executeAdd } = useCourseContlictResolver();
@@ -63,12 +66,23 @@ const OccasionTable: FC<OccasionTableProps> = ({
         />
       )}
 
-      <div className="space-y-2 sm:hidden">
+      {/* Not `sm:` — a landscape phone is wide enough to pass a width check
+          and would get the desktop table inside a very short dialog. */}
+      <div
+        className={cn(
+          "space-y-2",
+          // Two per row in landscape: the cards are short and the panel is
+          // wide, so a single column left half the width empty.
+          "landscape-phone:grid landscape-phone:grid-cols-2",
+          "landscape-phone:gap-2 landscape-phone:space-y-0",
+          !isTouchLayout && "hidden",
+        )}
+      >
         {occasions.length === 0 ? (
           <div
             className={cn(
               "rounded-2xl bg-muted/40 p-5 text-center text-sm",
-              "text-muted-foreground",
+              "text-muted-foreground landscape-phone:col-span-full",
             )}
           >
             <Translate text="_course_no_occasions" />
@@ -100,7 +114,7 @@ const OccasionTable: FC<OccasionTableProps> = ({
         )}
       </div>
 
-      <div className="hidden sm:block">
+      <div className={cn(isTouchLayout && "hidden")}>
         <Table>
           <OccasionTableHeader
             showRecommendedMaster={hasRecommendedMaster}

@@ -8,16 +8,16 @@ const ExaminationTableHeader: FC = () => (
   <TableHeader>
     <TableRow>
       <TableHead className="py-2 text-xs font-medium text-muted-foreground">
-        <Translate text="_course_name" />
+        <Translate text="course_name" />
       </TableHead>
       <TableHead className="py-2 text-xs font-medium text-muted-foreground">
-        <Translate text="_course_module" />
+        <Translate text="course_module" />
       </TableHead>
       <TableHead className="py-2 text-xs font-medium text-muted-foreground">
-        <Translate text="_course_credits" />
+        <Translate text="course_credits" />
       </TableHead>
       <TableHead className="py-2 text-xs font-medium text-muted-foreground">
-        <Translate text="_course_scale" />
+        <Translate text="course_scale" />
       </TableHead>
       <TableHead className="py-2 text-xs font-medium text-muted-foreground">
         <Translate text="_course_last_original_statistics" />

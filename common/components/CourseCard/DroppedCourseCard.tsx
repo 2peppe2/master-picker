@@ -1,5 +1,7 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+
 import { useCourseCommands } from "@/features/dashboard/state/schedule/hooks/useScheduleCommands";
 import CourseCardPresentation from "./CourseCardPresentation";
 import { Button } from "@/components/ui/button";
@@ -11,6 +13,7 @@ import { isCourseCardInteractionBarrier } from "./interactionBarrier";
 import { Card } from "@/components/ui/card";
 
 const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
+  const translate = useCommonTranslate();
   const { removeCourse } = useCourseCommands();
 
   const [openDialog, setOpenDialog] = useState(false);
@@ -37,7 +40,7 @@ const DroppedCourseCard: FC<CourseCardProps> = ({ course }) => {
         size="icon"
         variant="ghost"
         onClick={() => removeCourse({ courseCode: course.code })}
-        aria-label={`Remove ${course.code}`}
+        aria-label={translate("_remove_course", { courseCode: course.code })}
         data-no-drag="true"
         className="absolute right-1 top-1 z-10 size-8 text-muted-foreground hover:text-foreground sm:right-1.5 sm:top-1.5"
       >

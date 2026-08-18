@@ -15,7 +15,7 @@ const ExaminationSectionHeader: FC<ExaminationSectionHeaderProps> = ({
 }) => (
   <div className="mb-2 flex items-center justify-between">
     <p className="text-sm font-medium text-foreground">
-      <Translate text="_course_examinations" />
+      <Translate text="course_examinations" />
     </p>
     <span
       className={cn(
@@ -26,9 +26,9 @@ const ExaminationSectionHeader: FC<ExaminationSectionHeaderProps> = ({
       <NotebookText className="size-3.5" />
       {count}{" "}
       {count === 1 ? (
-        <Translate text="_course_module_singular" />
+        <Translate text="course_module_singular" />
       ) : (
-        <Translate text="_course_module_plural" />
+        <Translate text="course_module_plural" />
       )}
     </span>
   </div>

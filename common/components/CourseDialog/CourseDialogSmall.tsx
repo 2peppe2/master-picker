@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, X } from "lucide-react";
 import { FC } from "react";
 import CourseMetadata from "./CourseMetadata";
-import DialogTabs from "./DialogTabs";
+import CourseDialogTabs from "./components/CourseDialogTabs";
 import { useCloseAfterCourseAdded } from "./hooks/useCloseAfterCourseAdded";
-import { useCourseDialogState } from "./hooks/useCourseDialogState";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useOverlayHistory } from "./hooks/useOverlayHistory";
 
 interface CourseDialogSmallProps {
@@ -34,13 +34,7 @@ const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
   showAdd = true,
   preferredSemesters,
 }) => {
-  const { activeTab, setActiveTab, setInitModule, tabs, translate } =
-    useCourseDialogState({
-      course,
-      open,
-      showAdd,
-      preferredSemesters,
-    });
+  const translate = useCommonTranslate();
 
   const handleOpenChange = useOverlayHistory(open, onOpenChange);
 
@@ -108,7 +102,7 @@ const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
               size="icon"
               onClick={() => handleOpenChange(false)}
               className="size-11 rounded-full"
-              aria-label={translate("_course_close")}
+              aria-label={translate("course_close")}
             >
               <X className="size-5" />
             </Button>
@@ -118,14 +112,12 @@ const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
         </header>
 
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-          <DialogTabs
-            tabs={tabs}
-            value={activeTab}
-            phone
-            onValueChange={(val) => {
-              setActiveTab(val);
-              if (val !== "statistics") setInitModule(undefined);
-            }}
+          <CourseDialogTabs
+            course={course}
+            open={open}
+            chrome="bottom"
+            showAdd={showAdd}
+            preferredSemesters={preferredSemesters}
           />
         </div>
       </BottomSheetContent>

@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Landscape phones, declared once so the media query below and every
+ * landscape-phone:* utility read from the same source. Kept in sync with
+ * SHORT_VIEWPORT_MAX_HEIGHT in common/hooks/useResponsiveLayout.ts by a unit
+ * test, since CSS cannot import the constant.
+ */
+@custom-variant landscape-phone (@media (max-height: 500px) and (orientation: landscape));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -44,6 +52,14 @@
 }
 
 @theme {
+  /*
+   * One step below text-xs, for the badge and tab labels previously written as
+   * text-[10px]/text-[11px]. As a token it participates in the landscape scale
+   * instead of standing still while the box around it shrinks.
+   */
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: calc(0.875 / 0.625);
+
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-octo-wave: octo-wave 0.4s ease-in-out infinite;
   --animate-dot-drop: dot-drop 0.4s ease-out both;
@@ -122,6 +138,24 @@
 :root {
   color-scheme: light dark;
   --radius: 0.625rem;
+
+  /*
+   * Touch and density knobs.
+   *
+   * These are absolute lengths on purpose. Sizing them off --spacing is how
+   * h-11 controls ended up near 35px under the landscape rescale: the knob
+   * that compresses layout must not also compress what a thumb has to hit.
+   */
+  --touch: 2.75rem; /* 44px, the usual guidance */
+  --touch-sm: 2.25rem; /* 36px, dense rows and icon buttons */
+
+  /*
+   * Block-axis chrome padding. Landscape compresses these and leaves the
+   * inline axis alone, because only the block axis is actually scarce.
+   */
+  --density-y: 0.75rem;
+  --density-gap-y: 0.75rem;
+  --density-x: 0.75rem;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -227,5 +261,125 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/*
+ * A phone in landscape has roughly 340px of height to spend, so the landscape
+ * dashboard runs a reduced scale to fit more of the schedule.
+ *
+ * Tailwind's text-* and spacing utilities read these tokens as custom
+ * properties, and custom properties cascade, so redefining them on a container
+ * rescales everything inside it. The line-height tokens are unitless ratios, so
+ * they follow the font sizes automatically.
+ *
+ * Two things this deliberately does NOT do, both of which it used to:
+ *
+ * 1. It does not take a second, deeper step on the content panes. --spacing is
+ *    isotropic -- p-2, gap-2 and h-11 all compile to calc(var(--spacing) * n) --
+ *    so a further 30% cut shrank every box while the type inside stayed put,
+ *    and dense labels spilled out of their containers.
+ * 2. It does not let --spacing set hit areas. Touch targets come from --touch
+ *    and --touch-sm, which are absolute rem values, so compressing layout can
+ *    no longer compress what a thumb has to hit.
+ *
+ * --spacing still takes one mild step because it is load-bearing for sizing,
+ * not just padding: the course tiles carry sm:h-40 sm:w-40 and `sm:` is active
+ * at this width, so without it a tile would be 160px inside a 340px viewport.
+ */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* The shell carries the attribute; sheets, dialogs and popovers portal to the
+     body, so they sit outside it and are matched by their own slots. */
+  [data-dashboard-landscape],
+  [data-vaul-drawer],
+  [data-slot="dialog-content"],
+  [data-slot="popover-content"],
+  [data-slot="select-content"],
+  [data-slot="sheet-content"] {
+    --spacing: 0.2rem;
+
+    /* --text-2xs is the floor and is intentionally absent: below 10px these
+       labels stop being readable, and their boxes no longer shrink past it. */
+    --text-xs: 0.6875rem;
+    --text-sm: 0.75rem;
+    --text-base: 0.8125rem;
+    --text-lg: 0.9375rem;
+    --text-xl: 1.0625rem;
+    --text-2xl: 1.1875rem;
+
+    --density-y: 0.25rem;
+    --density-gap-y: 0.25rem;
+    --density-x: 0.75rem;
+
+    /* 44px would spend 13% of a 340px viewport on a single control, so the
+       floor drops here -- still well above the 29px that h-9 lands at. */
+    --touch: 2.25rem;
+    --touch-sm: 2rem;
+  }
+
+  /*
+   * Hit-area floor, applied through the ui kit's data-slot attributes so no
+   * component has to opt in. min-block-size only raises a floor, so it never
+   * fights an explicit height.
+   */
+  :is(
+    [data-dashboard-landscape],
+    [data-vaul-drawer],
+    [data-slot="dialog-content"],
+    [data-slot="popover-content"],
+    [data-slot="select-content"],
+    [data-slot="sheet-content"]
+  )
+    :is(
+      [data-slot="button"],
+      [data-slot="input"],
+      [data-slot="textarea"],
+      [data-slot="select-trigger"],
+      [data-slot="select-item"],
+      [data-slot="combobox-trigger"],
+      [data-slot="combobox-item"],
+      [data-slot="command-item"],
+      [data-slot="tabs-trigger"]
+    ):not([data-density-exempt]) {
+    min-block-size: var(--touch-sm);
+  }
+
+  /*
+   * The dialog's tab panels take one step further down than the shell around
+   * them. They are dense reference content -- tables, stats, occasion rows --
+   * with no primary controls of their own, so the rail, header and action
+   * buttons keep the larger scale and stay comfortably tappable.
+   */
+  [data-slot="dialog-content"] [role="tabpanel"] {
+    --spacing: 0.1875rem;
+    --text-sm: 0.6875rem;
+    --text-base: 0.75rem;
+    --text-lg: 0.875rem;
+    --text-xl: 0.9375rem;
+    --text-2xl: 1.0625rem;
+  }
+
+  /* Icon-only buttons need the inline axis held open too. */
+  [data-dashboard-landscape] [data-slot="button"]:has(> svg:only-child) {
+    min-inline-size: var(--touch-sm);
+  }
+
+  /*
+   * Cards keep their inline padding -- the schedule pane has inline room and
+   * the 320px search column has none to give -- and lose it on the block axis.
+   */
+  [data-dashboard-landscape] [data-slot="card"] {
+    /* Not --density-y: that is tuned for stacked header chrome, and at 4px the
+       result tiles read as cramped against their own border. */
+    padding-block: 0.5rem;
+  }
+
+  [data-dashboard-landscape]
+    :is(
+      [data-slot="card-header"],
+      [data-slot="card-content"],
+      [data-slot="card-footer"]
+    ) {
+    padding-block: 0;
   }
 }

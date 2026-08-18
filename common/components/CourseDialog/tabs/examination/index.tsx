@@ -27,8 +27,8 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
   return (
     <div className="space-y-4 py-3 text-foreground">
       <section>
-        <p className="mb-3 text-sm font-medium text-foreground">
-          <Translate text="_course_workload" />
+        <p className="mb-3 text-sm font-medium text-foreground landscape-phone:mb-2">
+          <Translate text="course_workload" />
         </p>
         <div
           className={cn(
@@ -55,7 +55,7 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.scheduled }}
                 />
-                <Translate text="_course_scheduled" />
+                <Translate text="course_scheduled" />
                 <Clock3 aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">
@@ -74,7 +74,7 @@ const ExaminationTab: FC<ExaminationTabProps> = ({
                   className="size-2 rounded-full"
                   style={{ backgroundColor: WORKLOAD_COLORS.selfStudy }}
                 />
-                <Translate text="_course_self_study" />
+                <Translate text="course_self_study" />
                 <BookOpen aria-hidden className="size-2.5 opacity-70" />
               </span>
               <span className="font-medium text-foreground">

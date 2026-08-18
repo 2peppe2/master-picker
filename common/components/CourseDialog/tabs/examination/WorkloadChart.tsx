@@ -57,7 +57,14 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
   );
 
   return (
-    <ChartContainer config={revenueChartConfig} className="h-30 w-30">
+    // h-30/w-30 are --spacing multiples, but the pie's radii below are absolute
+    // pixels. The landscape panel scale shrinks the box to 90px while the pie
+    // still draws 100px across, which clipped it -- so landscape pins the box
+    // to the 120px it resolves to everywhere else.
+    <ChartContainer
+      config={revenueChartConfig}
+      className="h-30 w-30 landscape-phone:size-[7.5rem]"
+    >
       <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
         <ChartTooltip
           cursor={false}

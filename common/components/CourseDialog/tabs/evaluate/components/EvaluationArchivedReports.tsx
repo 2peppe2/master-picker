@@ -35,7 +35,7 @@ const EvaluationArchivedReports: FC<EvaluationArchivedReportsProps> = ({
             <Translate text="_course_eval_archived_reports" /> ({reports.length}
             )
           </h3>
-          <p className="text-[11px] text-muted-foreground">
+          <p className="text-2xs text-muted-foreground">
             <Translate text="_course_eval_login_required" />
           </p>
         </div>

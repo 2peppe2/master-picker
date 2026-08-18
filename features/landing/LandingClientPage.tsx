@@ -7,6 +7,7 @@ import { useLanguage } from "@/common/components/translate/hooks/useLanguage";
 import { serializeSchedule } from "@/features/dashboard/state/schedule/utils";
 import { getBachelorCourses } from "@/app/actions/getBachelorCourses";
 import Translate from "@/common/components/translate/Translate";
+import { cn } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProgramSelector from "@/features/landing/components/ProgramSelector";
 import MasterSelector from "@/features/landing/components/MasterSelector";
@@ -142,11 +143,28 @@ const LandingClientContent: FC<LandingClientPageProps> = ({ programs }) => {
   }, [master, program, router, year, language]);
 
   if (!programs) {
-    return <Translate text="no_programs_found" />;
+    return <Translate text="_no_programs_found" />;
   }
 
   return (
-    <div className="relative flex w-full flex-col items-center gap-8">
+    // One gap for every step, so the selectors, the CTA and the about link sit
+    // on a single rhythm rather than the 32px/8px mix they had before.
+    <div
+      className={cn(
+        "relative flex w-full max-w-80 flex-col items-center gap-4",
+        "landscape-phone:max-w-3xl landscape-phone:gap-3",
+      )}
+    >
+      {/* The three selectors run as a row in landscape: they are the one part
+          of this page that scales sideways, and stacked they pushed the CTA
+          off a ~390px screen. */}
+      <div
+        className={cn(
+          "flex w-full flex-col items-center gap-4",
+          "landscape-phone:flex-row landscape-phone:items-start",
+          "landscape-phone:gap-3",
+        )}
+      >
       <div className="w-full">
         <ProgramSelector
           programs={programs}
@@ -203,23 +221,24 @@ const LandingClientContent: FC<LandingClientPageProps> = ({ programs }) => {
           onPickLater={handleOnPickLater}
         />
       </div>
+      </div>
 
       <Button
         onClick={handleOnGetStarted}
-        className="w-80 h-12 text-lg"
+        className="h-12 w-full text-lg landscape-phone:max-w-80"
         disabled={!master || isLoadingGuide}
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoadingGuide ? (
-          <LoadingDots text={translate("running_to_guide")} />
+          <LoadingDots text={translate("_running_to_guide")} />
         ) : (
-          <Translate text="get_started" />
+          <Translate text="_get_started" />
         )}
       </Button>
 
-      <Button variant="link" asChild>
+      <Button variant="link" asChild className="-mt-1 h-auto py-1">
         <Link href="/about">
-          <Translate text="learn_more_about_the_project" />
+          <Translate text="_learn_more_about_the_project" />
         </Link>
       </Button>
     </div>

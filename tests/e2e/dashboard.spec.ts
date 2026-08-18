@@ -1,6 +1,13 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
+import {
+  isDesktop,
+  isLandscapePhone,
+  layoutTier,
+  revealSearchPanel,
+} from "./utils/viewport";
+
 const dashboardUrl = "/dashboard?program=6CMJU&year=2025&lang=en";
 const earlierDashboardUrl = "/dashboard?program=6CMJU&year=2022&lang=en";
 
@@ -76,10 +83,7 @@ test.describe("dashboard", () => {
   test("keeps semester filters synchronized with semester expansion", async ({
     page,
   }) => {
-    test.skip(
-      (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) <= 1023,
-      "Desktop filter badge only",
-    );
+    test.skip(!isDesktop(page), "Desktop filter badge only");
 
     const semesterCard = page.locator("[data-semester-index]").nth(1);
     const trigger = semesterCard.locator(
@@ -97,10 +101,7 @@ test.describe("dashboard", () => {
   });
 
   test("excludes a level from the compact filter panel", async ({ page }) => {
-    test.skip(
-      (page.viewportSize()?.width ?? 0) > 1023,
-      "Compact filter panel only",
-    );
+    test.skip(isDesktop(page), "Compact filter panel only");
 
     // Phones put the drawer behind a tab; tablets show it alongside.
     const searchTab = page.getByRole("tab", { name: "Search" });
@@ -130,10 +131,7 @@ test.describe("dashboard", () => {
   test("keeps the sidebar back button's hit area on its own content", async ({
     page,
   }) => {
-    test.skip(
-      (page.viewportSize()?.width ?? 0) <= 1023,
-      "Desktop sidebar header only",
-    );
+    test.skip(!isDesktop(page), "Desktop sidebar header only");
 
     const back = page.locator('a[href="/"]').first();
     await expect(back).toBeVisible();
@@ -163,10 +161,7 @@ test.describe("dashboard", () => {
   test("walks back out of the filter panel by pressing the title", async ({
     page,
   }) => {
-    test.skip(
-      (page.viewportSize()?.width ?? 0) > 1023,
-      "Compact filter panel only",
-    );
+    test.skip(isDesktop(page), "Compact filter panel only");
 
     const searchTab = page.getByRole("tab", { name: "Search" });
     if (await searchTab.isVisible()) await searchTab.click();
@@ -182,7 +177,9 @@ test.describe("dashboard", () => {
     ).toBeVisible();
 
     await page.getByRole("button", { name: /^Back: Levels$/ }).click();
-    await expect(page.getByRole("button", { name: "Examinations" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Examinations" }),
+    ).toBeVisible();
   });
 
   test("has no automatically detectable accessibility violations", async ({
@@ -198,9 +195,7 @@ test.describe("dashboard", () => {
       "activating its blank area",
     ].join(" "),
     async ({ page }) => {
-      if ((page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) <= 1023) {
-        await page.locator("#dashboard-search-tab").click();
-      }
+      await revealSearchPanel(page);
 
       const title = page.locator('[data-slot="course-card-title"]').first();
       const titleTrigger = title.locator(
@@ -213,21 +208,38 @@ test.describe("dashboard", () => {
       const description = title.locator("xpath=..");
 
       await expect(title).toBeVisible();
-      await expect(code).toHaveCSS("font-size", "16px");
+      // The code renders at the base type step. Resolving that from the card's
+      // own token keeps this honest under the landscape rescale instead of
+      // pinning a px value that every scale tweak has to chase.
+      const baseTypeStep = await code.evaluate((element) => {
+        const rootPx = parseFloat(
+          getComputedStyle(document.documentElement).fontSize,
+        );
+        const base = getComputedStyle(element).getPropertyValue("--text-base");
+
+        return `${parseFloat(base) * rootPx}px`;
+      });
+      await expect(code).toHaveCSS("font-size", baseTypeStep);
       await expect(title).toHaveCSS("-webkit-line-clamp", "2");
       await expect(titleTrigger).toHaveCSS("text-decoration-line", "none");
       expect(await title.getAttribute("class")).toContain(
         "max-w-[calc(100%-1rem)]",
       );
 
-      const descriptionHeights = await page
+      // Every card reserves exactly two clamped lines so the cards stay aligned.
+      // The height is derived rather than hard-coded, because the landscape
+      // shell rescales its type tokens.
+      const { heights, twoLines } = await page
         .locator('[data-slot="course-card-title"]')
-        .evaluateAll((titles) =>
-          titles.map(
+        .evaluateAll((titles) => ({
+          heights: titles.map(
             (title) => title.parentElement?.getBoundingClientRect().height ?? 0,
           ),
-        );
-      expect(descriptionHeights.every((height) => height === 40)).toBe(true);
+          twoLines: 2 * parseFloat(getComputedStyle(titles[0]).lineHeight),
+        }));
+      expect(new Set(heights).size).toBe(1);
+      // Within a pixel: line boxes round differently at fractional font sizes.
+      expect(heights[0]).toBeCloseTo(twoLines, 0);
 
       const supportsHover = await title.evaluate(
         () => window.matchMedia("(hover: hover)").matches,
@@ -256,12 +268,8 @@ test.describe("dashboard", () => {
     },
   );
 
-  test("uses the shared 20 px card inset for titles and badges", async ({
-    page,
-  }) => {
-    if ((page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) <= 1023) {
-      await page.locator("#dashboard-search-tab").click();
-    }
+  test("uses a shared card inset for titles and badges", async ({ page }) => {
+    await revealSearchPanel(page);
 
     const title = page.locator('[data-slot="course-card-title"]').first();
     const card = title.locator('xpath=ancestor::*[@data-slot="card"][1]');
@@ -269,23 +277,24 @@ test.describe("dashboard", () => {
     const footer = card.locator('[data-slot="card-footer"]');
 
     await expect(title).toBeVisible();
-    expect(
-      await header.evaluate((element) => getComputedStyle(element).paddingLeft),
-    ).toBe("20px");
-    expect(
-      await footer.evaluate(
-        (element) => getComputedStyle(element).paddingRight,
-      ),
-    ).toBe("20px");
+
+    const headerInset = await header.evaluate(
+      (element) => getComputedStyle(element).paddingLeft,
+    );
+    const footerInset = await footer.evaluate(
+      (element) => getComputedStyle(element).paddingRight,
+    );
+
+    // Both edges share one inset. The landscape shell rescales its spacing
+    // token, so only the unscaled tiers pin the exact 20px value.
+    expect(headerInset).toBe(footerInset);
+    if (!isLandscapePhone(page)) expect(headerInset).toBe("20px");
   });
 
   test("uses the resting card presentation for the inert drag overlay", async ({
     page,
   }) => {
-    test.skip(
-      (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) <= 1023,
-      "Desktop drag overlay only",
-    );
+    test.skip(!isDesktop(page), "Desktop drag overlay only");
 
     const restingTitle = page
       .locator('[data-slot="course-card-title"]')
@@ -359,8 +368,8 @@ test.describe("dashboard", () => {
     page,
   }) => {
     test.skip(
-      (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) > 1023,
-      "Compact view only",
+      isDesktop(page) || isLandscapePhone(page),
+      "Tabbed compact view only",
     );
 
     const scheduleTab = page.locator("#dashboard-schedule-tab");
@@ -395,11 +404,11 @@ test.describe("dashboard", () => {
     ].join(" "),
     async ({ page }) => {
       test.skip(
-        (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) > 639,
+        layoutTier(page) !== "phone",
         "Semester choices use a popover outside phone-sized layouts",
       );
 
-      await page.locator("#dashboard-search-tab").click();
+      await revealSearchPanel(page);
       await page.getByRole("textbox", { name: "Search" }).fill("TDDD53");
 
       await page
@@ -436,11 +445,11 @@ test.describe("dashboard", () => {
 
   test("adds a single-occasion course directly on phones", async ({ page }) => {
     test.skip(
-      (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) > 639,
+      layoutTier(page) !== "phone",
       "Semester choices use a popover outside phone-sized layouts",
     );
 
-    await page.locator("#dashboard-search-tab").click();
+    await revealSearchPanel(page);
     await page.getByRole("textbox", { name: "Search" }).fill("TANA21");
     await page.getByRole("button", { name: "Add TANA21", exact: true }).click();
 
@@ -454,7 +463,7 @@ test.describe("dashboard", () => {
     page,
   }) => {
     test.skip(
-      (page.viewportSize()?.width ?? Number.POSITIVE_INFINITY) <= 1023,
+      !isDesktop(page),
       "Semester choices use a bottom sheet in compact layouts",
     );
 
@@ -469,5 +478,57 @@ test.describe("dashboard", () => {
     expect((await semesterSeven.boundingBox())?.y).toBeLessThan(
       (await semesterNine.boundingBox())?.y ?? Number.POSITIVE_INFINITY,
     );
+  });
+
+  test("shows both panels side by side on a landscape phone", async ({
+    page,
+  }) => {
+    test.skip(!isLandscapePhone(page), "Landscape phone layout only");
+
+    const schedule = page.locator("#dashboard-schedule-panel");
+    const search = page.locator("#dashboard-search-panel");
+
+    await expect(schedule).toBeVisible();
+    await expect(search).toBeVisible();
+
+    // A tab bar would cost vertical space the viewport does not have.
+    await expect(page.getByRole("tablist")).toHaveCount(0);
+
+    const scheduleBox = await schedule.boundingBox();
+    const searchBox = await search.boundingBox();
+    expect(searchBox!.x + searchBox!.width).toBeLessThanOrEqual(
+      scheduleBox!.x + 1,
+    );
+  });
+
+  test("keeps landscape header chrome under a quarter of the screen", async ({
+    page,
+  }) => {
+    test.skip(!isLandscapePhone(page), "Landscape phone layout only");
+
+    const header = page.locator("header").first();
+    await expect(header).toBeVisible();
+
+    const height = (await header.boundingBox())?.height ?? 0;
+    const viewportHeight = page.viewportSize()?.height ?? 1;
+
+    // The portrait header stacks three rows and costs nearly 30% of the
+    // screen; landscape collapses it to a single row.
+    expect(height / viewportHeight).toBeLessThan(0.25);
+  });
+
+  test("adds a course without switching panels in landscape", async ({
+    page,
+  }) => {
+    test.skip(!isLandscapePhone(page), "Landscape phone layout only");
+
+    await page.getByRole("textbox", { name: "Search" }).fill("TANA21");
+    await page.getByRole("button", { name: "Add TANA21", exact: true }).click();
+
+    await expect(
+      page.locator('#dashboard-schedule-panel [data-course-code="TANA21"]'),
+    ).toBeVisible();
+    // The search panel never goes away, so the results stay put.
+    await expect(page.locator("#dashboard-search-panel")).toBeVisible();
   });
 });

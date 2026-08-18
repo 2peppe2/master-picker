@@ -23,8 +23,8 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({
   const displayStates = useMemo(
     () =>
       ({
-        placeholder: translate("select_program"),
-        empty: translate("no_programs_found"),
+        placeholder: translate("_select_program"),
+        empty: translate("_no_programs_found"),
       }) satisfies ComboboxDisplay,
     [translate],
   );

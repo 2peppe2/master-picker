@@ -184,7 +184,11 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
   );
 };
 
-const TrendDelta: FC<{ delta: number }> = ({ delta }) => {
+interface TrendDeltaProps {
+  delta: number;
+}
+
+const TrendDelta: FC<TrendDeltaProps> = ({ delta }) => {
   const positive = delta >= 0;
   const Icon = positive ? TrendingUp : TrendingDown;
 

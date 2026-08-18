@@ -1,13 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-const isDesktop = (width: number | undefined) => (width ?? 0) >= 1024;
+import { isDesktop } from "./utils/viewport";
 
 const DASHBOARD_URL = "/dashboard?program=6CMJU&year=2025&lang=en";
 
 test("opens the desktop dashboard on the mobile-support announcement", async ({
   page,
 }) => {
-  test.skip(!isDesktop(page.viewportSize()?.width), "Desktop-only announcement");
+  test.skip(!isDesktop(page), "Desktop-only announcement");
 
   await page.goto(DASHBOARD_URL);
 
@@ -20,7 +20,7 @@ test("opens the desktop dashboard on the mobile-support announcement", async ({
 });
 
 test("keeps the dashboard full height on both slides", async ({ page }) => {
-  test.skip(!isDesktop(page.viewportSize()?.width), "Desktop-only announcement");
+  test.skip(!isDesktop(page), "Desktop-only announcement");
   test.setTimeout(120_000);
 
   await page.goto(DASHBOARD_URL);
@@ -43,7 +43,7 @@ test("keeps the dashboard full height on both slides", async ({ page }) => {
 test("rotates from the announcement to the disclaimer and back", async ({
   page,
 }) => {
-  test.skip(!isDesktop(page.viewportSize()?.width), "Desktop-only announcement");
+  test.skip(!isDesktop(page), "Desktop-only announcement");
   test.setTimeout(120_000);
 
   await page.goto(DASHBOARD_URL);
@@ -64,7 +64,7 @@ test("rotates from the announcement to the disclaimer and back", async ({
 test("does not show the mobile-support announcement on mobile", async ({
   page,
 }) => {
-  test.skip(isDesktop(page.viewportSize()?.width), "Non-desktop-only assertion");
+  test.skip(isDesktop(page), "Non-desktop-only assertion");
 
   await page.goto(DASHBOARD_URL);
 
@@ -77,7 +77,7 @@ test("does not show the mobile-support announcement on mobile", async ({
 test("does not show the mobile-support announcement at tablet width", async ({
   page,
 }) => {
-  test.skip(!isDesktop(page.viewportSize()?.width), "Desktop baseline only");
+  test.skip(!isDesktop(page), "Desktop baseline only");
 
   await page.setViewportSize({ width: 768, height: 1024 });
   await page.goto(DASHBOARD_URL);
@@ -86,7 +86,7 @@ test("does not show the mobile-support announcement at tablet width", async ({
 });
 
 test("uses Swedish copy when Swedish is selected", async ({ page }) => {
-  test.skip(!isDesktop(page.viewportSize()?.width), "Desktop-only announcement");
+  test.skip(!isDesktop(page), "Desktop-only announcement");
 
   await page.goto("/dashboard?program=6CMJU&year=2025&lang=sv");
 

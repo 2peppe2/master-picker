@@ -33,8 +33,8 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   const displayStates = useMemo(
     () =>
       ({
-        placeholder: translate("select_master"),
-        empty: translate("no_masters_found"),
+        placeholder: translate("_select_master"),
+        empty: translate("_no_masters_found"),
       }) satisfies ComboboxDisplay,
     [translate],
   );
@@ -48,7 +48,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
     if (!selectedYearData) return [];
 
     return selectedYearData.masters.map((m) => ({
-      label: m.name ? courseTranslate(m.name) : translate("unknown_master"),
+      label: m.name ? courseTranslate(m.name) : translate("_unknown_master"),
       value: m.program,
     }));
   }, [activeProgram, year, translate, courseTranslate]);
@@ -68,9 +68,9 @@ const MasterSelector: FC<MasterSelectorProps> = ({
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoading ? (
-          <LoadingDots text={translate("loading_dashboard")} />
+          <LoadingDots text={translate("_loading_dashboard")} />
         ) : (
-          <Translate text="pick_master_later" />
+          <Translate text="_pick_master_later" />
         )}
       </Button>
     </div>

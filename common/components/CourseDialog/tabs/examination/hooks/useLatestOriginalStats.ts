@@ -69,6 +69,46 @@ export const getExpectedExamMonths = (
 };
 
 /**
+ * Resolves which months count as "original" sittings for a set of exam sessions.
+ *
+ * The occasion-derived months are only trustworthy when the course actually has a
+ * sitting in one of them — plan data regularly disagrees with reality (e.g. TAMS43
+ * is listed as HT period 1, which maps to October, yet its ordinary exam is in
+ * January). Without this guard every sitting would be labelled a retake.
+ *
+ * Falls back to the "month with the most students" heuristic, which yields a single
+ * month applied across all years so a course's badges stay stable year to year.
+ *
+ * Returns an empty set when there are no sessions.
+ */
+export const resolveOriginalMonths = (
+  sessions: Pick<Module, "date" | "grades">[],
+  expectedMonths?: Set<number>,
+): Set<number> => {
+  if (!sessions.length) return new Set();
+
+  if (expectedMonths?.size) {
+    const hasMatch = sessions.some((m) =>
+      expectedMonths.has(new Date(m.date).getMonth()),
+    );
+    if (hasMatch) return expectedMonths;
+  }
+
+  const monthTally: Record<number, number> = {};
+  sessions.forEach((m) => {
+    const month = new Date(m.date).getMonth();
+    const count = m.grades.reduce((sum, g) => sum + g.quantity, 0);
+    monthTally[month] = (monthTally[month] || 0) + count;
+  });
+
+  const primaryMonth = Object.entries(monthTally)
+    .sort((a, b) => b[1] - a[1])
+    .map((entry) => parseInt(entry[0]))[0];
+
+  return new Set([primaryMonth]);
+};
+
+/**
  * Returns the latest original session for a given module code, with grades
  * aggregated across all raw entries for the same month-year (matching the
  * same aggregation that the Statistics tab uses via useCategorizedModules).
@@ -90,29 +130,11 @@ export const getLatestOriginalStat = (
   const moduleExams = modules.filter((m) => m.moduleCode === moduleCode);
   if (!moduleExams.length) return null;
 
-  let originalExams: Module[];
-
-  if (expectedMonths && expectedMonths.size > 0) {
-    const byOccasion = moduleExams.filter((m) =>
-      expectedMonths.has(new Date(m.date).getMonth()),
-    );
-    originalExams = byOccasion.length > 0 ? byOccasion : moduleExams;
-  } else {
-    // Fallback: month with the most students is the original sitting
-    const monthTally: Record<number, number> = {};
-    moduleExams.forEach((m) => {
-      const month = new Date(m.date).getMonth();
-      const count = m.grades.reduce((sum, g) => sum + g.quantity, 0);
-      monthTally[month] = (monthTally[month] || 0) + count;
-    });
-    const primaryMonth = Object.entries(monthTally)
-      .sort((a, b) => b[1] - a[1])
-      .map((entry) => parseInt(entry[0]))[0];
-    const byStudents = moduleExams.filter(
-      (m) => new Date(m.date).getMonth() === primaryMonth,
-    );
-    originalExams = byStudents.length > 0 ? byStudents : moduleExams;
-  }
+  const originalMonths = resolveOriginalMonths(moduleExams, expectedMonths);
+  const byMonth = moduleExams.filter((m) =>
+    originalMonths.has(new Date(m.date).getMonth()),
+  );
+  const originalExams = byMonth.length > 0 ? byMonth : moduleExams;
 
   // Find the latest month-year among original exams
   const sortedByDate = [...originalExams].sort(

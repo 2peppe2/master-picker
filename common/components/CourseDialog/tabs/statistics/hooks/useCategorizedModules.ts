@@ -1,6 +1,9 @@
 "use client";
 
-import { getExpectedExamMonths } from "../../examination/hooks/useLatestOriginalStats";
+import {
+  getExpectedExamMonths,
+  resolveOriginalMonths,
+} from "../../examination/hooks/useLatestOriginalStats";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { EXAM_MODULE_CODES, LAB_MODULE_CODES } from "../constants";
 import { ProcessedModule, CourseData } from "../types";
@@ -54,7 +57,7 @@ export const useCategorizedModules = ({
               yearGroups[year] = {
                 ...m,
                 date: `${year}-01-01`,
-                displayDate: `${translate("summary_of")} ${year}`,
+                displayDate: `${translate("_summary_of")} ${year}`,
                 grades: [],
               };
             }
@@ -101,32 +104,15 @@ export const useCategorizedModules = ({
 
           const aggregatedModules = Object.values(monthYearGroups);
 
-          const processed = aggregatedModules.map((m: ProcessedModule) => {
-            const month = new Date(m.date).getMonth();
-            let isOriginal: boolean;
+          const originalMonths = resolveOriginalMonths(
+            aggregatedModules,
+            expectedMonths,
+          );
 
-            if (expectedMonths.size > 0) {
-              // Use occasion-derived months
-              isOriginal = expectedMonths.has(month);
-            } else {
-              // Fallback: month with the most students
-              const monthTally: Record<number, number> = {};
-              aggregatedModules.forEach((am: ProcessedModule) => {
-                const am_month = new Date(am.date).getMonth();
-                const count = am.grades.reduce(
-                  (sum: number, g) => sum + g.quantity,
-                  0,
-                );
-                monthTally[am_month] = (monthTally[am_month] || 0) + count;
-              });
-              const primaryMonth = Object.entries(monthTally)
-                .sort((a, b) => b[1] - a[1])
-                .map((entry) => parseInt(entry[0]))[0];
-              isOriginal = month === primaryMonth;
-            }
-
-            return { ...m, isOriginal };
-          });
+          const processed = aggregatedModules.map((m: ProcessedModule) => ({
+            ...m,
+            isOriginal: originalMonths.has(new Date(m.date).getMonth()),
+          }));
           return [code, processed] as const;
         }
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+
 import CourseCardPresentation from "./CourseCardPresentation";
 import { Course } from "@/common/types";
 import LazyCourseDialog from "../CourseDialog/LazyCourseDialog";
@@ -19,6 +21,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   isSelected,
   onSelectionChange,
 }) => {
+  const translate = useCommonTranslate();
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
@@ -31,7 +34,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
       onClick={handleCardClick}
       className={cn(
         "hover:scale-[1.02] hover:shadow-md active:scale-95",
-        "bg-card text-card-foreground flex flex-col gap-3 rounded-xl border py-4 shadow-sm relative aspect-square w-full max-w-40 sm:h-40 sm:w-40 transition-all duration-200 hover:shadow-lg",
+        "bg-card text-card-foreground flex flex-col gap-3 rounded-xl border py-4 shadow-sm relative aspect-square w-full max-w-40 sm:h-40 sm:w-40 landscape-phone:h-auto landscape-phone:w-full landscape-phone:max-w-none transition-all duration-200 hover:shadow-lg",
         "relative cursor-pointer group rounded-2xl border text-left transition",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         "hover:-translate-y-[1px] hover:border-foreground/20 hover:shadow-sm",
@@ -54,7 +57,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         type="button"
         variant="ghost"
         size="icon-sm"
-        aria-label={`Select ${course.code}`}
+        aria-label={translate("_select_course", { courseCode: course.code })}
         aria-pressed={isSelected}
         onClick={(event) => {
           event.stopPropagation();
@@ -72,7 +75,10 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
         )}
       </Button>
 
-      <CourseCardPresentation course={course} onOpen={() => setOpenDialog(true)} />
+      <CourseCardPresentation
+        course={course}
+        onOpen={() => setOpenDialog(true)}
+      />
     </Card>
   );
 };

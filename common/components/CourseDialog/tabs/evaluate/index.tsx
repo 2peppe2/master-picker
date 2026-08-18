@@ -35,7 +35,7 @@ const EvaluateScore: FC<EvaluateScoreProps> = ({ courseCode }) => {
 
   return (
     <EvaluationErrorBoundary key={courseCode}>
-      <div className="space-y-5 py-3 sm:space-y-6 sm:py-4">
+      <div className="space-y-5 py-3 sm:space-y-6 sm:py-4 landscape-phone:space-y-4 landscape-phone:py-3">
         <EvaluationTrendChart data={trendData} />
         <EvaluationSourceLink />
         <EvaluationArchivedReports reports={evaluationReports} />

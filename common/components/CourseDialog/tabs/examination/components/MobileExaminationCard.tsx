@@ -1,5 +1,7 @@
 "use client";
 
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+
 import { cn } from "@/lib/utils";
 
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
@@ -51,17 +53,17 @@ const MobileExaminationCard: FC<MobileExaminationCardProps> = ({
       )}
     >
       <div className="rounded-xl bg-background/60 p-2.5">
-        <dt className="text-[11px] text-muted-foreground">
-          <Translate text="_course_scale" />
+        <dt className="text-2xs text-muted-foreground">
+          <Translate text="course_scale" />
         </dt>
         <dd className="mt-1 font-medium text-foreground">
           <Translate
-            text={exam.scale === Scale.G_OR_U ? "scale_gu" : "scale_345"}
+            text={exam.scale === Scale.G_OR_U ? "_scale_gu" : "_scale_345"}
           />
         </dd>
       </div>
       <div className="rounded-xl bg-background/60 p-2.5">
-        <dt className="text-[11px] text-muted-foreground">
+        <dt className="text-2xs text-muted-foreground">
           <Translate text="_course_last_original_statistics" />
         </dt>
         <dd className="mt-1 min-h-4 font-medium text-foreground">
@@ -85,7 +87,7 @@ const MobileExaminationCard: FC<MobileExaminationCardProps> = ({
       )}
     >
       <BarChart2 className="size-4" />
-      <Translate text="_course_tab_statistics" />
+      <Translate text="course_tab_statistics" />
     </Button>
   </article>
 );
@@ -101,8 +103,9 @@ const MobileGradeSummary: FC<MobileGradeSummaryProps> = ({
   stats,
   isLoading,
 }) => {
+  const translate = useCommonTranslate();
   if (isLoading) {
-    return <span aria-label="Loading">•••</span>;
+    return <span aria-label={translate("loading")}>•••</span>;
   }
 
   if (!stats) {

@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/ui/providers/ThemeProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { FC, ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +19,17 @@ export const metadata = {
   title: "Master Picker",
   description: "App to help you choose your master's program",
 } satisfies Metadata;
+
+/**
+ * viewportFit: "cover" is what makes env(safe-area-inset-*) resolve to
+ * anything other than 0. Without it the bottom bars sit under the home
+ * indicator and, in landscape, content runs beneath the notch.
+ */
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+} satisfies Viewport;
 
 interface RootLayoutProps {
   children: ReactNode;

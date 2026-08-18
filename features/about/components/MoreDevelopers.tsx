@@ -16,7 +16,7 @@ const MoreDevelopers = () => (
   <Card className="w-full border-dashed bg-gradient-to-br from-card via-card to-muted/40">
     <CardHeader className="gap-2">
       <Badge variant="secondary" className="w-fit">
-        <Translate text="_about_contribute_title" />
+        <Translate text="about_contribute_title" />
       </Badge>
       <CardTitle>
         <Translate text="_about_contribute_subtitle" />
@@ -34,12 +34,12 @@ const MoreDevelopers = () => (
           href="https://github.com/2peppe2/master-picker"
         >
           <AnimatedGithub className="mr-2 h-4 w-4" />
-          <Translate text="_about_repository" />
+          <Translate text="about_repository" />
         </a>
       </Button>
       <Button variant="outline" asChild>
         <a href="mailto:hej@masterpicker.se">
-          <Translate text="_about_contact" />
+          <Translate text="about_contact" />
         </a>
       </Button>
     </CardFooter>

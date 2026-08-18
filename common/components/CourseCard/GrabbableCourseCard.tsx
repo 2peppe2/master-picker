@@ -19,7 +19,7 @@ const GrabbableCourseCard: FC<CourseCardProps> = ({ course }) => {
         if ((event.target as HTMLElement).closest("button, a")) return;
         setOpenDialog(true);
       }}
-      className="relative aspect-square w-full gap-3 overflow-hidden py-4 transition-all duration-200 hover:shadow-lg pointer-coarse:cursor-pointer lg:h-40 lg:w-40 lg:cursor-grab lg:hover:scale-[1.02] motion-reduce:transition-none"
+      className="relative aspect-square w-full gap-3 overflow-hidden py-4 transition-all duration-200 hover:shadow-lg pointer-coarse:cursor-pointer lg:cursor-grab lg:hover:scale-[1.02] motion-reduce:transition-none"
     >
       <LazyCourseDialog
         course={course}

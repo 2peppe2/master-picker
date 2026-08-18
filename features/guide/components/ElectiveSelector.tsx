@@ -38,18 +38,18 @@ const ElectiveSelectorComponent: FC<ElectiveSelectorProps> = ({
 
   const NUM_TO_TYPED: Record<number, string> = useMemo(
     () => ({
-      1: translate("_num_one"),
-      2: translate("_num_two"),
-      3: translate("_num_three"),
-      4: translate("_num_four"),
-      5: translate("_num_five"),
-      6: translate("_num_six"),
-      7: translate("_num_seven"),
-      8: translate("_num_eight"),
-      9: translate("_num_nine"),
-      10: translate("_num_ten"),
-      11: translate("_num_eleven"),
-      12: translate("_num_twelve"),
+      1: translate("num_one"),
+      2: translate("num_two"),
+      3: translate("num_three"),
+      4: translate("num_four"),
+      5: translate("num_five"),
+      6: translate("num_six"),
+      7: translate("num_seven"),
+      8: translate("num_eight"),
+      9: translate("num_nine"),
+      10: translate("num_ten"),
+      11: translate("num_eleven"),
+      12: translate("num_twelve"),
     }),
     [translate],
   );
@@ -65,7 +65,7 @@ const ElectiveSelectorComponent: FC<ElectiveSelectorProps> = ({
   };
 
   return (
-    <Card className="mt-6 gap-4 sm:mt-8" key={`choice-group-${index}`}>
+    <Card className="mt-6 gap-4 sm:mt-8 landscape-phone:mt-3" key={`choice-group-${index}`}>
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader>
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -144,7 +144,7 @@ const ElectiveSelectorComponent: FC<ElectiveSelectorProps> = ({
 
         <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
           <CardContent className="py-4">
-            <div className="grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 lg:grid-cols-4 landscape-phone:grid-cols-5 landscape-phone:gap-2">
               {electiveCourses.courses.map((courseEntry) => {
                 const course = normalizeCourse(courseEntry.course);
                 const isSelected = selectedCourseIds.includes(course.code);

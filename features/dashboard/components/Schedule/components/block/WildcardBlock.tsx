@@ -77,13 +77,13 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
                 "select-none",
               )}
             >
-              <Translate text="_wildcard_block_label" />
+              <Translate text="wildcard_block_label" />
             </span>
           </button>
           <button
             onClick={handleRemoveSlot}
             type="button"
-            aria-label={translate("remove_block")}
+            aria-label={translate("_remove_block")}
             className={cn(
               "absolute right-1 top-1 z-10 size-8 text-zinc-400",
               "border-2 border-transparent rounded-md p-2",

@@ -25,7 +25,7 @@ const CourseMetadata: FC<CourseMetadataProps> = ({
   const level = course.level.trim() || "N/A";
   const isCompact = compact || summaryOnly;
   const badgeClass = isCompact
-    ? "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px]"
+    ? "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-2xs"
     : "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs";
   const iconClass = isCompact ? "size-3" : "size-3.5";
 
@@ -41,7 +41,7 @@ const CourseMetadata: FC<CourseMetadataProps> = ({
       </Badge>
       <Badge variant="outline" className={badgeClass}>
         <CircleStar className={iconClass} />
-        <Translate text="_course_level" /> {level}
+        <Translate text="course_level" /> {level}
       </Badge>
       {!summaryOnly && (
         <>
@@ -51,8 +51,8 @@ const CourseMetadata: FC<CourseMetadataProps> = ({
             <Translate
               text={
                 course.Examination.length > 1
-                  ? "_course_module_plural"
-                  : "_course_module_singular"
+                  ? "course_module_plural"
+                  : "course_module_singular"
               }
             />
           </Badge>
@@ -62,8 +62,8 @@ const CourseMetadata: FC<CourseMetadataProps> = ({
             <Translate
               text={
                 course.CourseOccasion.length > 1
-                  ? "_course_occasion_plural"
-                  : "_course_occasion_singular"
+                  ? "course_occasion_plural"
+                  : "course_occasion_singular"
               }
             />
           </Badge>

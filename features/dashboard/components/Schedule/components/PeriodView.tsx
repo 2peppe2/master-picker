@@ -2,7 +2,9 @@
 
 import { cn } from "@/lib/utils";
 
+import { usePhoneScheduleLayout } from "@/features/dashboard/state/preferences/hooks/usePhoneScheduleLayout";
 import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
+import type { PhoneScheduleLayout } from "@/features/dashboard/state/preferences/atoms";
 import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import Translate from "@/common/components/translate/Translate";
 import { Separator } from "@/components/ui/separator";
@@ -12,6 +14,8 @@ import {
   WILDCARD_BLOCK_START,
 } from "@/features/dashboard/state/schedule/atoms";
 import { draggedCourseAtom } from "@/features/dashboard/state/drag/atoms";
+import { useRightScrollFade } from "@/common/hooks/useBottomScrollFade";
+import RightFade from "@/common/components/RightFade";
 import { useAtomValue } from "jotai";
 import { FC, Fragment, useMemo } from "react";
 import { range } from "lodash";
@@ -26,8 +30,11 @@ interface PeriodViewProps {
 const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
   const draggedCourse = useAtomValue(draggedCourseAtom);
   const startingYear = useStartingYear();
+  const { layout } = usePhoneScheduleLayout();
+  const isCarousel = layout === "carousel";
 
   const blocks = useAtomValue(periodAtom(semesterNumber, periodNumber));
+  const { scrollRef, showFade, handleScroll } = useRightScrollFade([blocks]);
   const periods = useAtomValue(semesterAtom(semesterNumber));
   const credits = useMemo(
     () => getPeriodCredits(periods, periodNumber),
@@ -82,49 +89,64 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
           />
         </span>
       </p>
-      <div
-        className={cn(
-          "relative grid w-full max-w-full grid-cols-2 gap-3",
-          "px-1 pb-3 sm:grid-cols-4 sm:gap-4 lg:flex",
-          "lg:justify-between lg:gap-3 lg:overflow-x-auto",
-          "lg:px-3 lg:py-3",
-        )}
-      >
-        {range(0, blocks.length).map((index) => (
-          <PeriodBlockSlot
-            key={index}
-            index={index}
-            semesterNumber={semesterNumber}
-            periodNumber={periodNumber}
-          />
-        ))}
+      <div className="relative">
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          // Only the carousel needs to keep sideways drags for itself; the grid
+          // has nothing to scroll, so it lets the dashboard tab swipe through.
+          data-no-swipe={isCarousel ? "true" : undefined}
+          className={cn(
+            "relative w-full max-w-full",
+            isCarousel
+              ? cn(
+                  // The panel above sets touch-pan-y, so re-allow pan-x here.
+                  "[touch-action:pan-x_pan-y]",
+                  // Phones swipe through one period per row so both periods
+                  // stay on screen.
+                  "flex snap-x snap-mandatory gap-3",
+                  "scroll-px-1 overflow-x-auto px-1 pb-3",
+                  "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+                )
+              : // Two blocks per row, so a whole period fits on one screen.
+                "grid grid-cols-2 gap-3 px-1 pb-3",
+            // Tablets get the four-column grid, desktop the wide row.
+            "sm:grid sm:snap-none sm:grid-cols-4 sm:gap-4",
+            "sm:touch-auto sm:overflow-visible lg:flex",
+            "lg:justify-between lg:gap-3 lg:overflow-x-auto",
+            "lg:px-3 lg:py-3",
+          )}
+        >
+          {range(0, blocks.length).map((index) => (
+            <PeriodBlockSlot
+              key={index}
+              index={index}
+              layout={layout}
+              semesterNumber={semesterNumber}
+              periodNumber={periodNumber}
+            />
+          ))}
 
-        {showGhost && blocks.length === WILDCARD_BLOCK_START && (
+          {showGhost && blocks.length === WILDCARD_BLOCK_START && (
+            <WildcardDivider carousel={isCarousel} />
+          )}
+
           <div
             className={cn(
-              "col-span-full h-px bg-border lg:h-40 lg:w-px",
-              "lg:shrink-0 lg:bg-transparent",
+              slotSizeClasses(isCarousel),
+              "transition-all duration-200 ease-in-out",
+              showGhost
+                ? "mx-auto flex translate-x-0 items-center lg:mx-0"
+                : "pointer-events-none hidden -translate-x-4 overflow-hidden",
             )}
           >
-            <Separator
-              orientation="vertical"
-              className="hidden h-full w-px bg-zinc-600 lg:block"
+            <Block
+              variant="ghost"
+              data={{ semesterNumber, periodNumber, blockNumber: blocks.length }}
             />
           </div>
-        )}
-
-        <div
-          className={`aspect-square w-full min-w-0 transition-all duration-200 ease-in-out lg:h-40 lg:w-40 lg:shrink-0 ${
-            showGhost
-              ? "mx-auto flex translate-x-0 items-center lg:mx-0"
-              : "pointer-events-none hidden -translate-x-4 overflow-hidden"
-          }`}
-        >
-          <Block
-            variant="ghost"
-            data={{ semesterNumber, periodNumber, blockNumber: blocks.length }}
-          />
         </div>
+        {isCarousel && showFade && <RightFade className="bottom-3 sm:hidden" />}
       </div>
     </div>
   );
@@ -132,43 +154,71 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
 
 export default PeriodView;
 
+/**
+ * Slot box sizing. The carousel keeps fixed squares it can snap between; the
+ * grid fills its column, which is the same shape the tablet breakpoint uses.
+ */
+const slotSizeClasses = (carousel: boolean) =>
+  cn(
+    carousel
+      ? "size-40 shrink-0 snap-start"
+      : "mx-auto size-auto aspect-square w-full min-w-0 shrink",
+    "sm:mx-auto sm:size-auto sm:aspect-square sm:w-full sm:min-w-0 sm:shrink",
+    "lg:mx-0 lg:h-40 lg:w-40 lg:shrink-0",
+  );
+
+/**
+ * Separates the standard blocks from user-added wildcard slots: a vertical rule
+ * in the flex layouts, a full-width horizontal rule in the grid ones so the
+ * wildcards start on a fresh row.
+ */
+interface WildcardDividerProps {
+  carousel: boolean;
+}
+
+const WildcardDivider: FC<WildcardDividerProps> = ({ carousel }) => (
+  <div
+    className={cn(
+      carousel
+        ? "flex h-40 w-px shrink-0 items-center bg-transparent"
+        : "col-span-full my-1 h-px w-auto bg-border",
+      "sm:col-span-full sm:my-1 sm:h-px sm:w-auto sm:bg-border",
+      "lg:my-0 lg:h-40 lg:w-px lg:shrink-0",
+      "lg:bg-transparent",
+    )}
+  >
+    <Separator
+      orientation="vertical"
+      className={cn(
+        "h-full w-px bg-zinc-600 sm:hidden lg:block",
+        carousel ? "block" : "hidden",
+      )}
+    />
+  </div>
+);
+
 interface PeriodBlockSlotProps {
   index: number;
+  layout: PhoneScheduleLayout;
   semesterNumber: number;
   periodNumber: number;
 }
 
 const PeriodBlockSlot: FC<PeriodBlockSlotProps> = ({
   index,
+  layout,
   semesterNumber,
   periodNumber,
 }) => {
   const isWildcardStart = index === WILDCARD_BLOCK_START;
   const isWildcardBlock = index >= WILDCARD_BLOCK_START;
+  const carousel = layout === "carousel";
 
   return (
     <Fragment>
-      {isWildcardStart && (
-        <div
-          className={cn(
-            "col-span-full my-1 flex h-px items-center bg-border",
-            "lg:my-0 lg:h-40 lg:w-px lg:shrink-0",
-            "lg:bg-transparent",
-          )}
-        >
-          <Separator
-            orientation="vertical"
-            className="hidden h-full w-px bg-zinc-600 lg:block"
-          />
-        </div>
-      )}
+      {isWildcardStart && <WildcardDivider carousel={carousel} />}
 
-      <div
-        className={cn(
-          "mx-auto aspect-square w-full min-w-0 lg:mx-0 lg:h-40",
-          "lg:w-40 lg:shrink-0",
-        )}
-      >
+      <div className={slotSizeClasses(carousel)}>
         <Block
           variant={isWildcardBlock ? "wildcard" : "standard"}
           data={{ semesterNumber, periodNumber, blockNumber: index }}

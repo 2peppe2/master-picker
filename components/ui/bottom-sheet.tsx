@@ -4,6 +4,7 @@ import * as React from "react";
 import { Drawer } from "vaul";
 
 import { COURSE_CARD_INTERACTION_BARRIER_ATTRIBUTE } from "@/common/components/CourseCard/interactionBarrier";
+import { useIsShortViewport } from "@/common/hooks/useResponsiveLayout";
 import { cn } from "@/lib/utils";
 
 const BottomSheetTrigger = Drawer.Trigger;
@@ -12,6 +13,11 @@ const BottomSheetTitle = Drawer.Title;
 const BottomSheetDescription = Drawer.Description;
 
 const NATIVE_SNAP_POINTS: (number | string)[] = [0.5, 1];
+/**
+ * Half of a landscape phone is barely 200px, so short viewports skip the
+ * intermediate stop and open at full height.
+ */
+const SHORT_VIEWPORT_SNAP_POINTS: (number | string)[] = [1];
 const SWIPE_STEP_DISTANCE = 48;
 
 interface BottomSheetContextValue {
@@ -34,13 +40,24 @@ function BottomSheet({
   open: controlledOpen,
   defaultOpen = false,
   onOpenChange,
-  initialSnapPoint = NATIVE_SNAP_POINTS[0],
-  snapPoints = NATIVE_SNAP_POINTS,
+  initialSnapPoint: initialSnapPointProp,
+  snapPoints: snapPointsProp,
   closeThreshold = 0.25,
   fadeFromIndex = 0,
   snapToSequentialPoint = true,
   ...props
 }: BottomSheetProps) {
+  const isShortViewport = useIsShortViewport();
+  const snapPoints =
+    snapPointsProp ??
+    (isShortViewport ? SHORT_VIEWPORT_SNAP_POINTS : NATIVE_SNAP_POINTS);
+  const requestedSnapPoint = initialSnapPointProp ?? snapPoints[0];
+  // Keep the initial stop inside the active list, otherwise the index lookup in
+  // stepDownOrDismiss misses and swipe-to-dismiss stops working.
+  const initialSnapPoint = snapPoints.includes(requestedSnapPoint)
+    ? requestedSnapPoint
+    : snapPoints[snapPoints.length - 1];
+
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(defaultOpen);
   const [activeSnapPoint, setActiveSnapPoint] = React.useState<
     number | string | null
