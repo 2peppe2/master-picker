@@ -1,6 +1,7 @@
 "use client";
 
 import { useCourseDialogState } from "../hooks/useCourseDialogState";
+import type { OccasionActions } from "../types";
 import CourseDialogPanels from "./CourseDialogPanels";
 import { Course } from "@/common/types";
 import DialogTabs from "../DialogTabs";
@@ -13,6 +14,7 @@ interface CourseDialogTabsProps {
   chrome?: DialogChrome;
   showAdd: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 /**
@@ -25,6 +27,7 @@ const CourseDialogTabs: FC<CourseDialogTabsProps> = ({
   chrome = "top",
   showAdd,
   preferredSemesters,
+  occasionActions,
 }) => {
   const {
     activeTab,
@@ -51,6 +54,7 @@ const CourseDialogTabs: FC<CourseDialogTabsProps> = ({
         chrome={chrome}
         showAdd={showAdd}
         preferredSemesters={preferredSemesters}
+        occasionActions={occasionActions}
         initModule={initModule}
         setInitModule={setInitModule}
         selectedStatModule={selectedStatModule}

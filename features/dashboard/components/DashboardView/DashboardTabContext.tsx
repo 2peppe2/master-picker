@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, FC, ReactNode, useContext } from "react";
+import { createContext, FC, ReactNode, useContext, useMemo } from "react";
 import type { DashboardTab } from ".";
 
 interface DashboardTabContextValue {
@@ -20,11 +20,14 @@ export const DashboardTabProvider: FC<DashboardTabProviderProps> = ({
   activeTab,
   setActiveTab,
   children,
-}) => (
-  <DashboardTabContext value={{ activeTab, setActiveTab }}>
-    {children}
-  </DashboardTabContext>
-);
+}) => {
+  const value = useMemo(
+    () => ({ activeTab, setActiveTab }),
+    [activeTab, setActiveTab],
+  );
+
+  return <DashboardTabContext value={value}>{children}</DashboardTabContext>;
+};
 
 export const useDashboardTabs = () => {
   const value = useContext(DashboardTabContext);

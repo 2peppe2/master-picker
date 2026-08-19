@@ -1,17 +1,18 @@
 import { cn } from "@/lib/utils";
-import Translate from "@/common/components/translate/Translate";
-import MobileOccasionCard from "./MobileOccasionCard";
+import OccasionCardSmall from "./OccasionCardSmall";
 import OccasionConflictResolver from "./OccasionConflictResolver";
 import { useOccasionTableState } from "../hooks/useOccasionTableState";
 import { OccasionTableProps } from "./OccasionTable.types";
 import { FC } from "react";
+import OccasionEmptyStateSmall from "../states/OccasionEmptyStateSmall";
 
 const OccasionTableSmall: FC<OccasionTableProps> = ({
   course,
   showAdd,
   preferredSemesters,
+  occasionActions,
 }) => {
-  const state = useOccasionTableState({ course, preferredSemesters });
+  const state = useOccasionTableState({ course, preferredSemesters, occasionActions });
 
   return (
     <>
@@ -25,6 +26,7 @@ const OccasionTableSmall: FC<OccasionTableProps> = ({
         }
         open={state.alertOpen}
         onOpenChange={state.setAlertOpen}
+        onResolve={state.handleResolveConflict}
       />
       <div
         className={cn(
@@ -34,17 +36,10 @@ const OccasionTableSmall: FC<OccasionTableProps> = ({
         )}
       >
         {state.occasions.length === 0 ? (
-          <div
-            className={cn(
-              "rounded-2xl bg-muted/40 p-5 text-center text-sm",
-              "text-muted-foreground landscape-phone:col-span-full",
-            )}
-          >
-            <Translate text="_course_no_occasions" />
-          </div>
+          <OccasionEmptyStateSmall />
         ) : (
           state.occasions.map((occasion) => (
-            <MobileOccasionCard
+            <OccasionCardSmall
               key={occasion.id}
               occasion={occasion}
               showAdd={showAdd}

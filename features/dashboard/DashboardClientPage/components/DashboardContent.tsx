@@ -1,7 +1,7 @@
 "use client";
 
 import { coursesAtom } from "@/features/dashboard/state/catalog-data/atoms";
-import { mastersAtom } from "@/features/catalog/data";
+import { mastersAtom } from "@/common/state/catalog";
 import ScheduleSync from "@/features/dashboard/components/ScheduleSync";
 import DashboardView from "@/features/dashboard/components/DashboardView";
 import DashboardLoading from "@/features/dashboard/components/DashboardLoading";

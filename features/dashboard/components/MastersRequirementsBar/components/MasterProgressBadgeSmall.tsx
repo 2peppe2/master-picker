@@ -4,7 +4,7 @@ import MasterProgressBadgeContent from "./MasterProgressBadgeContent";
 import MasterRequirementSheet from "./MasterRequirementSheet";
 import { MasterProgressBadgeProps } from "./MasterProgressBadge.types";
 import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
-import { useMasterAtom } from "@/features/catalog/hooks/useMasterAtom";
+import { useMasterAtom } from "@/common/state/catalog";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { FC } from "react";

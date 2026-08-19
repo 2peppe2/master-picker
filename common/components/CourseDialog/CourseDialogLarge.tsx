@@ -16,6 +16,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useCloseAfterCourseAdded } from "./hooks/useCloseAfterCourseAdded";
+import type { OccasionActions } from "./types";
 
 interface CourseDialogLargeProps {
   open: boolean;
@@ -23,6 +24,7 @@ interface CourseDialogLargeProps {
   course: Course;
   showAdd?: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
@@ -31,6 +33,7 @@ const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
   course,
   showAdd = true,
   preferredSemesters,
+  occasionActions,
 }) => {
   useCloseAfterCourseAdded({
     courseCode: course.code,
@@ -58,6 +61,7 @@ const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
           open={open}
           showAdd={showAdd}
           preferredSemesters={preferredSemesters}
+          occasionActions={occasionActions}
         />
         <DialogFooter course={course} />
       </DialogContent>

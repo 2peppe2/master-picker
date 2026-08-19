@@ -7,7 +7,7 @@ import Translate from "@/common/components/translate/Translate";
 import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import LoadingDots from "./LoadingDots";
+import LoadingLabel from "@/common/components/loading/LoadingLabel";
 import { Loader2 } from "lucide-react";
 
 interface MasterSelectorProps {
@@ -63,7 +63,7 @@ const MasterSelector: FC<MasterSelectorProps> = ({
         <Button variant="link" onClick={onPickLater}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? (
-            <LoadingDots text={translate("_loading_dashboard")} />
+            <LoadingLabel>{translate("_loading_dashboard")}</LoadingLabel>
           ) : (
             <Translate text="_pick_master_later" />
           )}

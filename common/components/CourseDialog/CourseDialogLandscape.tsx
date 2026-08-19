@@ -17,6 +17,7 @@ import { FC } from "react";
 import CourseMetadata from "./CourseMetadata";
 import CourseDialogTabs from "./components/CourseDialogTabs";
 import { useCloseAfterCourseAdded } from "./hooks/useCloseAfterCourseAdded";
+import type { OccasionActions } from "./types";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useOverlayHistory } from "./hooks/useOverlayHistory";
 
@@ -26,6 +27,7 @@ interface CourseDialogLandscapeProps {
   course: Course;
   showAdd?: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 /**
@@ -41,6 +43,7 @@ const CourseDialogLandscape: FC<CourseDialogLandscapeProps> = ({
   course,
   showAdd = true,
   preferredSemesters,
+  occasionActions,
 }) => {
   const translate = useCommonTranslate();
 
@@ -131,6 +134,7 @@ const CourseDialogLandscape: FC<CourseDialogLandscapeProps> = ({
             chrome="rail"
             showAdd={showAdd}
             preferredSemesters={preferredSemesters}
+            occasionActions={occasionActions}
           />
         </div>
       </DialogContent>

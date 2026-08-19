@@ -16,8 +16,7 @@ export const useLatestOriginalStats = ({
 }: UseLatestOriginalStatsArgs) => {
   const expectedMonths = useMemo(
     () => (occasions ? getExpectedExamMonths(occasions) : undefined),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [JSON.stringify(occasions)],
+    [occasions],
   );
 
   return useMemo(

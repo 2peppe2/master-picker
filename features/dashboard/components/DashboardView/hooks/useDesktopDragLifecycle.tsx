@@ -22,14 +22,13 @@ import type {
   OnDragStartArgs,
 } from "@/features/dashboard/components/DndProvider/types";
 import type { PeriodNodeData } from "@/features/dashboard/components/Droppable";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useSetAtom, useStore } from "jotai";
 import { startTransition, useCallback, useEffect, useRef } from "react";
 import { useCourseDropHandler } from "./useCourseDropHandler";
 import { renderDraggedCourse } from "./renderDraggedCourse";
 
 export const useDesktopDragLifecycle = () => {
-  const draggedCourse = useAtomValue(draggedCourseAtom);
-  const grid = useAtomValue(scheduleGridAtom);
+  const store = useStore();
   const startingYear = useStartingYear();
   const dropHandler = useCourseDropHandler();
   const setDraggedCourse = useSetAtom(setDraggedCourseAtom);
@@ -60,6 +59,7 @@ export const useDesktopDragLifecycle = () => {
   const handleDragEnd = useCallback(
     (event: OnDragEndArgs) => {
       const overData = event.over?.data.current as PeriodNodeData | undefined;
+      const draggedCourse = store.get(draggedCourseAtom);
       const wasDropped =
         Boolean(overData && draggedCourse) &&
         dropHandler.handleDrop({
@@ -74,9 +74,9 @@ export const useDesktopDragLifecycle = () => {
     [
       clearAutoExpandedSemesters,
       clearDragTargetFeedback,
-      draggedCourse,
       dropHandler,
       retainAutoExpandedSemester,
+      store,
     ],
   );
 
@@ -87,7 +87,11 @@ export const useDesktopDragLifecycle = () => {
       setCurrentDropTargetId(null);
       feedbackFrame.current = requestAnimationFrame(() => {
         feedbackFrame.current = null;
-        const feedback = getDragTargetFeedback({ course, grid, startingYear });
+        const feedback = getDragTargetFeedback({
+          course,
+          grid: store.get(scheduleGridAtom),
+          startingYear,
+        });
         setDraggedCourse(course);
         startTransition(() => {
           setValidDropTargetIds(feedback.validTargetIds);
@@ -96,12 +100,12 @@ export const useDesktopDragLifecycle = () => {
       });
     },
     [
-      grid,
       setCompatibleDragSemesters,
       setCurrentDropTargetId,
       setDraggedCourse,
       setValidDropTargetIds,
       startingYear,
+      store,
     ],
   );
 

@@ -268,6 +268,24 @@ test.describe("dashboard", () => {
     },
   );
 
+  test("opens a course dialog from the coarse-pointer card surface", async ({
+    page,
+  }) => {
+    await revealSearchPanel(page);
+    const isCoarsePointer = await page.evaluate(
+      () => window.matchMedia("(pointer: coarse)").matches,
+    );
+    test.skip(!isCoarsePointer, "Coarse-pointer interaction only");
+
+    const card = page
+      .locator('[data-slot="course-card-title"]')
+      .first()
+      .locator('xpath=ancestor::*[@data-slot="card"][1]');
+    await expect(card).toBeVisible();
+    await card.click({ position: { x: 10, y: 10 } });
+    await expect(page.getByRole("dialog")).toBeVisible();
+  });
+
   test("uses a shared card inset for titles and badges", async ({ page }) => {
     await revealSearchPanel(page);
 

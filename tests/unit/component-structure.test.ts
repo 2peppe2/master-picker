@@ -23,6 +23,16 @@ const collectComponentFiles = (root: string): string[] =>
         : [];
   });
 
+const collectSourceFiles = (root: string): string[] =>
+  readdirSync(root).flatMap((name) => {
+    const path = join(root, name);
+    return statSync(path).isDirectory()
+      ? collectSourceFiles(path)
+      : /\.(jsx?|tsx?)$/.test(path)
+        ? [path]
+        : [];
+  });
+
 const containsJsx = (node: ts.Node): boolean => {
   let found = false;
   const visit = (current: ts.Node) => {
@@ -255,6 +265,22 @@ describe("component file structure", () => {
       const contents = readFileSync(file, "utf8");
       return /\buse(?:Layout)?Effect\s*\(/.test(contents) ? [projectPath] : [];
     });
+
+    expect(findings).toEqual([]);
+  });
+
+  it("keeps common independent from top-level features", () => {
+    const findings = collectSourceFiles(join(process.cwd(), "common"))
+      .filter((file) => /from\s+["']@\/features\//.test(readFileSync(file, "utf8")))
+      .map((file) => relative(process.cwd(), file).replaceAll("\\", "/"));
+
+    expect(findings).toEqual([]);
+  });
+
+  it("reserves Mobile names for genuine device tiers", () => {
+    const findings = files
+      .filter((file) => /\bMobile[A-Z]|\b[A-Z][A-Za-z]*Mobile[A-Z]/.test(readFileSync(file, "utf8")))
+      .map((file) => relative(process.cwd(), file).replaceAll("\\", "/"));
 
     expect(findings).toEqual([]);
   });

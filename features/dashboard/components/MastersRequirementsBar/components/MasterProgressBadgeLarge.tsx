@@ -3,7 +3,7 @@
 import MasterProgressBadgeContent from "./MasterProgressBadgeContent";
 import MasterRequirementTooltip from "./MasterRequirementTooltip";
 import { MasterProgressBadgeProps } from "./MasterProgressBadge.types";
-import { useMasterAtom } from "@/features/catalog/hooks/useMasterAtom";
+import { useMasterAtom } from "@/common/state/catalog";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { FC } from "react";

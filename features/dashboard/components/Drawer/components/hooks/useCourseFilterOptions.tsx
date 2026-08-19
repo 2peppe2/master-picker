@@ -6,7 +6,7 @@ import { useCourseTranslate } from "@/common/components/translate/hooks/useCours
 import { showBachelorYearsAtom } from "@/features/dashboard/state/preferences/atoms";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
-import { useMasterAtom } from "@/features/catalog/hooks/useMasterAtom";
+import { useMasterAtom } from "@/common/state/catalog";
 import Translate from "@/common/components/translate/Translate";
 import { coursesAtom } from "@/features/dashboard/state/catalog-data/atoms";
 import MasterBadge from "@/common/components/MasterBadge";

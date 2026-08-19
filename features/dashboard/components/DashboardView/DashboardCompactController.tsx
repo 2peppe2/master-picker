@@ -6,7 +6,7 @@ import { useCompactCourseAddedFeedback } from "@/common/hooks/useCourseAddedFeed
 import { FC, useCallback, useState } from "react";
 import { DashboardTabProvider } from "./DashboardTabContext";
 import DashboardHeader from "./components/DashboardHeader";
-import MobileTabs from "./components/MobileTabs";
+import DashboardTabsSmall from "./components/DashboardTabsSmall";
 import DashboardViewSmall from "./DashboardViewSmall";
 import { usePhoneTabSwipe } from "./hooks/usePhoneTabSwipe";
 import type { DashboardTab } from ".";
@@ -37,7 +37,7 @@ const DashboardCompactController: FC = () => {
         >
           <DashboardViewSmall />
         </div>
-        <MobileTabs />
+        <DashboardTabsSmall />
       </div>
     </DashboardTabProvider>
   );

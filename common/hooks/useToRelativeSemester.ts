@@ -1,6 +1,6 @@
 "use client";
 
-import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
+import { useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 interface UseToRelativeSemesterArgs {
@@ -9,7 +9,8 @@ interface UseToRelativeSemesterArgs {
 }
 
 export const useToRelativeSemester = () => {
-  const startingYear = useStartingYear();
+  const params = useSearchParams();
+  const startingYear = Number.parseInt(params.get("year") ?? "2023", 10);
 
   return useCallback(
     ({ year, semester }: UseToRelativeSemesterArgs) => {

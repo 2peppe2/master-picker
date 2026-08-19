@@ -1,39 +1,27 @@
 "use client";
 
-import { Component, type ErrorInfo, type ReactNode } from "react";
-import EvaluateErrorState from "./EvaluateErrorState";
+import { ErrorBoundary } from "react-error-boundary";
+import type { FC, ReactNode } from "react";
+import EvaluationFallback from "./EvaluationFallback";
 
 interface EvaluationErrorBoundaryProps {
   children: ReactNode;
+  courseCode: string;
 }
 
-interface EvaluationErrorBoundaryState {
-  hasError: boolean;
-}
-
-class EvaluationErrorBoundary extends Component<
-  EvaluationErrorBoundaryProps,
-  EvaluationErrorBoundaryState
-> {
-  state: EvaluationErrorBoundaryState = {
-    hasError: false,
-  };
-
-  static getDerivedStateFromError(): EvaluationErrorBoundaryState {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error("Failed to render course evaluation", error, info);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <EvaluateErrorState hasError />;
+const EvaluationErrorBoundary: FC<EvaluationErrorBoundaryProps> = ({
+  children,
+  courseCode,
+}) => (
+  <ErrorBoundary
+    FallbackComponent={EvaluationFallback}
+    onError={(error, info) =>
+      console.error("Failed to render course evaluation", error, info)
     }
-
-    return this.props.children;
-  }
-}
+    resetKeys={[courseCode]}
+  >
+    {children}
+  </ErrorBoundary>
+);
 
 export default EvaluationErrorBoundary;

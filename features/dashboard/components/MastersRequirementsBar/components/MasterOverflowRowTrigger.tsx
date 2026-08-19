@@ -1,7 +1,7 @@
 "use client";
 
 import MasterOverflowRowContent from "./MasterOverflowRowContent";
-import { useMasterAtom } from "@/features/catalog/hooks/useMasterAtom";
+import { useMasterAtom } from "@/common/state/catalog";
 import { ProcessedMaster } from "../types";
 import { cn } from "@/lib/utils";
 import { ComponentPropsWithoutRef, forwardRef } from "react";

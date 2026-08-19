@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import ProgramSelector from "@/features/landing/components/ProgramSelector";
 import MasterSelector from "@/features/landing/components/MasterSelector";
 import YearSelector from "@/features/landing/components/YearSelector";
-import LoadingDots from "@/features/landing/components/LoadingDots";
+import LoadingLabel from "@/common/components/loading/LoadingLabel";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -118,7 +118,7 @@ const LandingClientContent: FC<LandingClientPageProps> = ({
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {isLoadingGuide ? (
-          <LoadingDots text={translate("_running_to_guide")} />
+          <LoadingLabel>{translate("_running_to_guide")}</LoadingLabel>
         ) : (
           <Translate text="_get_started" />
         )}

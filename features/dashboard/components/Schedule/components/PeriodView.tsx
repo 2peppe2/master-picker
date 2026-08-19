@@ -4,21 +4,20 @@ import { cn } from "@/lib/utils";
 
 import { usePhoneScheduleLayout } from "@/features/dashboard/state/preferences/hooks/usePhoneScheduleLayout";
 import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
-import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 import Translate from "@/common/components/translate/Translate";
 import {
-  periodAtom,
-  semesterAtom,
+  ghostVisibilityAtom,
+  periodCreditsAtom,
+  periodSlotCountAtom,
   WILDCARD_BLOCK_START,
 } from "@/features/dashboard/state/schedule/atoms";
-import { draggedCourseAtom } from "@/features/dashboard/state/drag/atoms";
 import { useRightScrollFade } from "@/common/hooks/useBottomScrollFade";
 import RightFade from "@/common/components/RightFade";
 import { useAtomValue } from "jotai";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 import { range } from "lodash";
 import Block from "./block";
-import { formatCredits, getPeriodCredits } from "./periodCredits";
+import { formatCredits } from "./periodCredits";
 import PeriodBlockSlot from "./PeriodBlockSlot";
 import WildcardDivider from "./WildcardDivider";
 import { slotSizeClasses } from "./periodSlotStyles";
@@ -29,39 +28,17 @@ interface PeriodViewProps {
 }
 
 const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
-  const draggedCourse = useAtomValue(draggedCourseAtom);
   const startingYear = useStartingYear();
   const { layout } = usePhoneScheduleLayout();
   const isCarousel = layout === "carousel";
-  const blocks = useAtomValue(periodAtom(semesterNumber, periodNumber));
-  const periods = useAtomValue(semesterAtom(semesterNumber));
-  const { scrollRef, showFade, handleScroll } = useRightScrollFade([blocks]);
-  const credits = useMemo(
-    () => getPeriodCredits(periods, periodNumber),
-    [periodNumber, periods],
+  const slotCount = useAtomValue(
+    periodSlotCountAtom(semesterNumber, periodNumber),
   );
-  const showGhost = useMemo(() => {
-    if (!draggedCourse) return false;
-    const isAlreadyInWildcard = blocks.some(
-      (course, index) =>
-        index >= WILDCARD_BLOCK_START && course?.code === draggedCourse.code,
-    );
-    if (isAlreadyInWildcard) return false;
-
-    const { year, semester } = relativeSemesterToYearAndSemester(
-      startingYear,
-      semesterNumber,
-    );
-    const hasWildcardOption = draggedCourse.CourseOccasion.some(
-      (occasion) =>
-        occasion.year === year &&
-        occasion.semester === semester &&
-        occasion.periods.some((period) => period.period === periodNumber + 1),
-    );
-    if (!hasWildcardOption) return false;
-
-    return blocks.slice(WILDCARD_BLOCK_START).every((slot) => slot !== null);
-  }, [blocks, draggedCourse, periodNumber, semesterNumber, startingYear]);
+  const credits = useAtomValue(periodCreditsAtom(semesterNumber, periodNumber));
+  const showGhost = useAtomValue(
+    ghostVisibilityAtom(semesterNumber, periodNumber, startingYear),
+  );
+  const { scrollRef, showFade, handleScroll } = useRightScrollFade([slotCount]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -109,7 +86,7 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
             "lg:px-3 lg:py-3",
           )}
         >
-          {range(0, blocks.length).map((index) => (
+          {range(0, slotCount).map((index) => (
             <PeriodBlockSlot
               key={index}
               index={index}
@@ -119,7 +96,7 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
             />
           ))}
 
-          {showGhost && blocks.length === WILDCARD_BLOCK_START && (
+          {showGhost && slotCount === WILDCARD_BLOCK_START && (
             <WildcardDivider carousel={isCarousel} />
           )}
 
@@ -134,7 +111,7 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
           >
             <Block
               variant="ghost"
-              data={{ semesterNumber, periodNumber, blockNumber: blocks.length }}
+              data={{ semesterNumber, periodNumber, blockNumber: slotCount }}
             />
           </div>
         </div>

@@ -13,3 +13,12 @@ export interface DialogTab {
  *            axis that viewport has to spare
  */
 export type DialogChrome = "top" | "bottom" | "rail";
+
+import type { Course, CourseOccasion } from "@/common/types";
+import type { ConflictData } from "../ConflictResolverModal";
+
+export interface OccasionActions {
+  getCollisions: (occasion: CourseOccasion) => Course[];
+  onAdd: (course: Course, occasion: CourseOccasion) => void;
+  onResolve: (data: ConflictData, type: "replace" | "extra") => void;
+}

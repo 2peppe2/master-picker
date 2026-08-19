@@ -6,7 +6,7 @@ import { useAtomValue } from "jotai";
 import StandardBlock from "./StandardBlock";
 import WildcardBlock from "./WildcardBlock";
 import GhostBlock from "./GhostBlock";
-import { createElement, FC } from "react";
+import { FC } from "react";
 
 export type BlockVariant = "standard" | "wildcard" | "ghost";
 
@@ -26,18 +26,19 @@ export interface BlockProps {
   courseSlot: Slot;
 }
 
-const BLOCK_VARIANTS: Record<BlockVariant, FC<BlockProps>> = {
-  standard: StandardBlock,
-  wildcard: WildcardBlock,
-  ghost: GhostBlock,
-};
-
 const Block: FC<BlockWrapperProps> = ({ variant, data }) => {
   const courseSlot = useAtomValue(
     slotAtom(data.semesterNumber, data.periodNumber, data.blockNumber),
   );
 
-  return createElement(BLOCK_VARIANTS[variant], { courseSlot, data });
+  switch (variant) {
+    case "standard":
+      return <StandardBlock courseSlot={courseSlot} data={data} />;
+    case "wildcard":
+      return <WildcardBlock courseSlot={courseSlot} data={data} />;
+    case "ghost":
+      return <GhostBlock courseSlot={courseSlot} data={data} />;
+  }
 };
 
 export default Block;

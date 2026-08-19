@@ -4,6 +4,19 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Translate from "@/common/components/translate/Translate";
 import { Badge } from "@/components/ui/badge";
 
+const HONORABLE_MENTIONS: HonorableMention[] = [
+  {
+    name: "Lukas",
+    handle: "lukasabbe",
+    descriptionKey: "_about_honorable_lukas",
+  },
+  {
+    name: "Tristan",
+    handle: "TristanTrille",
+    descriptionKey: "_about_honorable_tristan",
+  },
+];
+
 interface HonorableMention {
   name: string;
   handle: string;
@@ -11,19 +24,6 @@ interface HonorableMention {
 }
 
 const HonorableMentions = () => {
-  const HONORABLE_MENTIONS: HonorableMention[] = [
-    {
-      name: "Lukas",
-      handle: "lukasabbe",
-      descriptionKey: "_about_honorable_lukas",
-    },
-    {
-      name: "Tristan",
-      handle: "TristanTrille",
-      descriptionKey: "_about_honorable_tristan",
-    },
-  ];
-
   return (
     <Card className="w-full gap-0 border-dashed bg-gradient-to-br from-card via-card to-muted/40">
       <CardHeader className="gap-2">

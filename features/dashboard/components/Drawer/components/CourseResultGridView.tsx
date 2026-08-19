@@ -2,7 +2,7 @@
 
 import { Draggable } from "@/features/dashboard/components/DndProvider/Draggable";
 import EmptyCourseState from "./EmptyCourseState";
-import CourseCard from "@/common/components/CourseCard";
+import DashboardCourseCard from "@/features/dashboard/components/DashboardCourseCard";
 import { CourseResultGridViewProps } from "./CourseResultGrid.types";
 import { useCourseResultGridLayout } from "./hooks/useCourseResultGridLayout";
 import { FC, memo } from "react";
@@ -47,10 +47,10 @@ const CourseResultGridView: FC<CourseResultGridViewProps> = ({
               }}
             >
               {draggedCourseCode === course.code ? (
-                <CourseCard variant="ghost" course={course} />
+                <DashboardCourseCard variant="ghost" course={course} />
               ) : (
                 <Draggable id={course.code} data={course}>
-                  <CourseCard variant="grabbable" course={course} />
+                  <DashboardCourseCard variant="grabbable" course={course} />
                 </Draggable>
               )}
             </div>

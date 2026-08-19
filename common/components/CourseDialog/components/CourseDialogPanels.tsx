@@ -7,6 +7,7 @@ import Statistics from "../tabs/statistics";
 import OverviewTab from "../tabs/overview";
 import { Course } from "@/common/types";
 import { DialogChrome } from "../types";
+import type { OccasionActions } from "../types";
 import { FC } from "react";
 
 interface CourseDialogPanelsProps {
@@ -14,6 +15,7 @@ interface CourseDialogPanelsProps {
   chrome: DialogChrome;
   showAdd: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
   initModule?: string;
   setInitModule: (value: string | undefined) => void;
   selectedStatModule: string;
@@ -31,6 +33,7 @@ const CourseDialogPanels: FC<CourseDialogPanelsProps> = ({
   chrome,
   showAdd,
   preferredSemesters,
+  occasionActions,
   initModule,
   setInitModule,
   selectedStatModule,
@@ -43,6 +46,7 @@ const CourseDialogPanels: FC<CourseDialogPanelsProps> = ({
         course={course}
         showAdd={showAdd}
         preferredSemesters={preferredSemesters}
+        occasionActions={occasionActions}
       />
     </ScrollableTabsContent>
 

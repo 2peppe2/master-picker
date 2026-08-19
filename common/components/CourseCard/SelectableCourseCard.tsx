@@ -5,11 +5,12 @@ import { useCommonTranslate } from "@/common/components/translate/hooks/useCommo
 import CourseCardPresentation from "./CourseCardPresentation";
 import { Course } from "@/common/types";
 import LazyCourseDialog from "../CourseDialog/LazyCourseDialog";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { CourseCardProps } from ".";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useCourseCardDialogInteraction } from "./hooks/useCourseCardDialogInteraction";
 
 export interface SelectableCourseCardProps extends CourseCardProps {
   onSelectionChange: (course: Course) => void;
@@ -22,7 +23,8 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
   onSelectionChange,
 }) => {
   const translate = useCommonTranslate();
-  const [openDialog, setOpenDialog] = useState(false);
+  const { openDialog, setOpenDialog, openCourseDialog } =
+    useCourseCardDialogInteraction();
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (openDialog || e.defaultPrevented) return;
@@ -77,7 +79,7 @@ const SelectableCourseCard: FC<SelectableCourseCardProps> = ({
 
       <CourseCardPresentation
         course={course}
-        onOpen={() => setOpenDialog(true)}
+        onOpen={openCourseDialog}
       />
     </Card>
   );

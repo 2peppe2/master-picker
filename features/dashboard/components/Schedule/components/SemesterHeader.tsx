@@ -1,13 +1,15 @@
 "use client";
 
 import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
-import { compatibleDragSemestersAtom } from "@/features/dashboard/state/drag/atoms";
+import { compatibleTargetCountAtom } from "@/features/dashboard/state/drag/atoms";
 import {
   isSemesterExpandedAtom,
   toggleSemesterAtom,
 } from "@/features/dashboard/state/semester-ui/atoms";
-import { WILDCARD_BLOCK_START } from "@/features/dashboard/state/schedule/atoms";
-import type { Slot } from "@/features/dashboard/state/schedule/types";
+import {
+  semesterAtom,
+  WILDCARD_BLOCK_START,
+} from "@/features/dashboard/state/schedule/atoms";
 import Translate from "@/common/components/translate/Translate";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { Button } from "@/components/ui/button";
@@ -29,21 +31,20 @@ import SemesterSettingsModal from "./SemesterSettingsModal";
 import TimeEditSemesterButton from "./TimeEditSemesterButton";
 
 interface SemesterHeaderProps {
-  periods: Slot[][];
   semester: number;
 }
 
-const SemesterHeader: FC<SemesterHeaderProps> = ({ periods, semester }) => {
+const SemesterHeader: FC<SemesterHeaderProps> = ({ semester }) => {
   const toggleSemester = useSetAtom(toggleSemesterAtom);
   const startingYear = useStartingYear();
   const translate = useCommonTranslate();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const periods = useAtomValue(semesterAtom(semester));
   const targetSemester = semester + 1;
   const isExpanded = useAtomValue(isSemesterExpandedAtom(targetSemester));
-  const compatibleSemesters = useAtomValue(compatibleDragSemestersAtom);
-  const compatibleTargetCount = compatibleSemesters.find(
-    (item) => item.semesterNumber === semester,
-  )?.targetCount;
+  const compatibleTargetCount = useAtomValue(
+    compatibleTargetCountAtom(semester),
+  );
   const credits = useMemo(() => {
     const courses = new Set(periods.flat().filter((course) => course !== null));
     return [...courses].reduce((total, course) => total + course.credits, 0);

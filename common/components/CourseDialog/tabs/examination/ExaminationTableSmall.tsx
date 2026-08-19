@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import ExaminationSectionHeader from "./components/ExaminationSectionHeader";
-import MobileExaminationCard from "./components/MobileExaminationCard";
+import ExaminationCardSmall from "./components/ExaminationCardSmall";
 import Translate from "@/common/components/translate/Translate";
 import { ExaminationTableViewProps } from "./ExaminationTable.types";
 import { FC } from "react";
@@ -32,7 +32,7 @@ const ExaminationTableSmall: FC<ExaminationTableViewProps> = ({
           </div>
         ) : (
           examination.map((exam) => (
-            <MobileExaminationCard
+            <ExaminationCardSmall
               key={exam.module}
               exam={exam}
               stats={getLatestStats(exam.module)}

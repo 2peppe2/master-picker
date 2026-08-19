@@ -10,8 +10,9 @@ const OccasionTableLarge: FC<OccasionTableProps> = ({
   course,
   showAdd,
   preferredSemesters,
+  occasionActions,
 }) => {
-  const state = useOccasionTableState({ course, preferredSemesters });
+  const state = useOccasionTableState({ course, preferredSemesters, occasionActions });
 
   return (
     <>
@@ -25,6 +26,7 @@ const OccasionTableLarge: FC<OccasionTableProps> = ({
         }
         open={state.alertOpen}
         onOpenChange={state.setAlertOpen}
+        onResolve={state.handleResolveConflict}
       />
       <Table>
         <OccasionTableHeader
@@ -36,11 +38,9 @@ const OccasionTableLarge: FC<OccasionTableProps> = ({
             <OccasionTableRow
               key={occasion.id}
               occasion={occasion}
-              course={course}
               showRecommendedMaster={state.hasRecommendedMaster}
-              setAlertOpen={state.setAlertOpen}
-              setSelectedOccasion={state.setSelectedOccasion}
               showAdd={showAdd}
+              onAdd={() => state.handleAdd(occasion)}
             />
           ))}
         </TableBody>

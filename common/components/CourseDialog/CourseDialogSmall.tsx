@@ -16,6 +16,7 @@ import { FC } from "react";
 import CourseMetadata from "./CourseMetadata";
 import CourseDialogTabs from "./components/CourseDialogTabs";
 import { useCloseAfterCourseAdded } from "./hooks/useCloseAfterCourseAdded";
+import type { OccasionActions } from "./types";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { useOverlayHistory } from "./hooks/useOverlayHistory";
 
@@ -25,6 +26,7 @@ interface CourseDialogSmallProps {
   course: Course;
   showAdd?: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
@@ -33,6 +35,7 @@ const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
   course,
   showAdd = true,
   preferredSemesters,
+  occasionActions,
 }) => {
   const translate = useCommonTranslate();
 
@@ -118,6 +121,7 @@ const CourseDialogSmall: FC<CourseDialogSmallProps> = ({
             chrome="bottom"
             showAdd={showAdd}
             preferredSemesters={preferredSemesters}
+            occasionActions={occasionActions}
           />
         </div>
       </BottomSheetContent>

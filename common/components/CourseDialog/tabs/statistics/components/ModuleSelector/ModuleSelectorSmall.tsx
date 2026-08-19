@@ -1,6 +1,6 @@
 "use client";
 
-import MobileCategoryGroup from "./components/MobileCategoryGroup";
+import CategoryGroupSmall from "./components/CategoryGroupSmall";
 import Translate from "@/common/components/translate/Translate";
 import SelectedModule from "./components/SelectedModule";
 import { ModuleSelectorProps } from "./types";
@@ -76,7 +76,7 @@ const ModuleSelectorSmall: FC<ModuleSelectorProps> = ({
 
           <div className="mt-0.5 space-y-0.5">
             {categorizedModules.map(([code, modules]) => (
-              <MobileCategoryGroup
+              <CategoryGroupSmall
                 key={code}
                 code={code}
                 modules={modules}

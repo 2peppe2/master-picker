@@ -8,6 +8,7 @@ interface OccasionConflictResolverProps {
   collisions: Course[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onResolve: (type: "replace" | "extra") => void;
 }
 
 const OccasionConflictResolver: FC<OccasionConflictResolverProps> = ({
@@ -16,6 +17,7 @@ const OccasionConflictResolver: FC<OccasionConflictResolverProps> = ({
   collisions,
   open,
   onOpenChange,
+  onResolve,
 }) => {
   if (!occasion) return null;
 
@@ -29,6 +31,7 @@ const OccasionConflictResolver: FC<OccasionConflictResolverProps> = ({
         course,
         occasion,
       }}
+      onResolve={onResolve}
     />
   );
 };

@@ -2,11 +2,12 @@
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 
-import LoadingDots from "@/common/components/loading/LoadingDots";
 import { Scale } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
 import { Module } from "liu-tentor-package";
 import { FC } from "react";
+import ExaminationStatisticsLoadingCell from "../../states/ExaminationStatisticsLoadingCell";
+import ExaminationStatisticsUnavailableCell from "../../states/ExaminationStatisticsUnavailableCell";
 
 interface GradeCount {
   grade: string;
@@ -29,45 +30,11 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
     stats?.grades.find((item: GradeCount) => item.grade === grade)?.quantity ?? 0;
 
   if (isLoading) {
-    return (
-      <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
-        <div className="flex gap-2">
-          {scale == Scale.G_OR_U ? (
-            <>
-              <span>
-                G: <LoadingDots />
-              </span>
-              <span>
-                U: <LoadingDots />
-              </span>
-            </>
-          ) : (
-            <>
-              <span>
-                5: <LoadingDots />
-              </span>
-              <span>
-                4: <LoadingDots />
-              </span>
-              <span>
-                3: <LoadingDots />
-              </span>
-              <span>
-                U: <LoadingDots />
-              </span>
-            </>
-          )}
-        </div>
-      </TableCell>
-    );
+    return <ExaminationStatisticsLoadingCell scale={scale} />;
   }
 
   if (!stats) {
-    return (
-      <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
-        -
-      </TableCell>
-    );
+    return <ExaminationStatisticsUnavailableCell />;
   }
 
   return (

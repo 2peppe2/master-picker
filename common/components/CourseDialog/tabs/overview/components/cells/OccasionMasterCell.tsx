@@ -5,7 +5,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import { useMasterAtom } from "@/features/catalog/hooks/useMasterAtom";
+import { useMasterAtom } from "@/common/state/catalog";
 import MasterBadge from "@/common/components/MasterBadge";
 import { TableCell } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";

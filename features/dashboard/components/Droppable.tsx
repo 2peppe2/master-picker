@@ -3,8 +3,8 @@
 import DropTargetVisual from "./DropTargetVisual";
 import { WILDCARD_BLOCK_START } from "@/features/dashboard/state/schedule/atoms";
 import {
-  currentDropTargetIdAtom,
-  validDropTargetIdsAtom,
+  isCurrentDropTargetAtom,
+  isValidDropTargetAtom,
 } from "@/features/dashboard/state/drag/atoms";
 import { useDroppable } from "@dnd-kit/core";
 import { useAtomValue } from "jotai";
@@ -30,15 +30,15 @@ export const Droppable: FC<DroppableProps> = ({
   occupied = false,
 }) => {
   const { setNodeRef } = useDroppable({ id, data });
-  const validDropTargetIds = useAtomValue(validDropTargetIdsAtom);
-  const currentDropTargetId = useAtomValue(currentDropTargetIdAtom);
+  const isValidDropTarget = useAtomValue(isValidDropTargetAtom(id));
+  const isOver = useAtomValue(isCurrentDropTargetAtom(id));
 
   return (
     <DropTargetVisual
       ref={setNodeRef}
       occupied={occupied}
-      isOver={currentDropTargetId === id}
-      isValidDropTarget={validDropTargetIds.has(id)}
+      isOver={isOver}
+      isValidDropTarget={isValidDropTarget}
       isWildcard={data.blockNumber >= WILDCARD_BLOCK_START}
     >
       {children}

@@ -4,12 +4,15 @@ import { type FC } from "react";
 import CourseDialog from ".";
 import type { Course } from "@/common/types";
 import { useDelayedUnmount } from "@/common/hooks/useDelayedUnmount";
+import type { OccasionActions } from "./types";
 
 interface LazyCourseDialogProps {
   course: Course;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   showAdd?: boolean;
+  preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
@@ -17,6 +20,8 @@ const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
   open,
   onOpenChange,
   showAdd,
+  preferredSemesters,
+  occasionActions,
 }) => {
   const mounted = useDelayedUnmount(open, 250);
 
@@ -28,6 +33,8 @@ const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
       open={open}
       onOpenChange={onOpenChange}
       showAdd={showAdd}
+      preferredSemesters={preferredSemesters}
+      occasionActions={occasionActions}
     />
   );
 };

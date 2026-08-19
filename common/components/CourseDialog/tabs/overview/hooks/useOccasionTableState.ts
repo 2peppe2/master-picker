@@ -1,26 +1,25 @@
 "use client";
 
-import { useOccasionCollisions } from "@/features/dashboard/state/schedule/hooks/useScheduleQueries";
-import { useCourseContlictResolver } from "@/common/components/ConflictResolverModal/hooks/useCourseContlictResolver";
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { sortCourseOccasionsByPreferredSemesters } from "@/common/courseOccasionOrdering";
 import { Course, CourseOccasion } from "@/common/types";
 import { useMemo, useState } from "react";
+import type { OccasionActions } from "../../../types";
 
 interface UseOccasionTableStateArgs {
   course: Course;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 export const useOccasionTableState = ({
   course,
   preferredSemesters,
+  occasionActions,
 }: UseOccasionTableStateArgs) => {
   const [selectedOccasion, setSelectedOccasion] =
     useState<CourseOccasion | null>(null);
   const [alertOpen, setAlertOpen] = useState(false);
-  const getOccasionCollisions = useOccasionCollisions();
-  const { executeAdd } = useCourseContlictResolver();
   const toRelativeSemester = useToRelativeSemester();
   const occasions = useMemo(
     () =>
@@ -33,7 +32,7 @@ export const useOccasionTableState = ({
   );
 
   const getOtherCourseCollisions = (occasion: CourseOccasion) =>
-    getOccasionCollisions({ occasion }).filter(
+    (occasionActions?.getCollisions(occasion) ?? []).filter(
       (collision) => collision.code !== course.code,
     );
 
@@ -44,7 +43,7 @@ export const useOccasionTableState = ({
       return;
     }
 
-    executeAdd({ course, occasion, strategy: "button" });
+    occasionActions?.onAdd(course, occasion);
   };
 
   return {
@@ -55,6 +54,18 @@ export const useOccasionTableState = ({
     setSelectedOccasion,
     getOtherCourseCollisions,
     handleAdd,
+    handleResolveConflict: (type: "replace" | "extra") => {
+      if (!selectedOccasion) return;
+      occasionActions?.onResolve(
+        {
+          course,
+          occasion: selectedOccasion,
+          collisions: getOtherCourseCollisions(selectedOccasion),
+          strategy: "button",
+        },
+        type,
+      );
+    },
     hasRecommendedMaster: occasions.some(
       (occasion) => occasion.recommendedMaster.length > 0,
     ),

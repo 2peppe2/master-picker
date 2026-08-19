@@ -5,17 +5,20 @@ import OverviewSectionHeader from "./components/OverviewSectionHeader";
 import { Course } from "@/common/types";
 import OccasionTable from "./components/OccasionTable";
 import { FC } from "react";
+import type { OccasionActions } from "../../types";
 
 interface OverviewTabProps {
   course: Course;
   showAdd: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 const OverviewTab: FC<OverviewTabProps> = ({
   course,
   showAdd,
   preferredSemesters,
+  occasionActions,
 }) => (
   <div className="space-y-4 py-3 text-foreground">
     <OverviewDetailsSection course={course} />
@@ -26,6 +29,7 @@ const OverviewTab: FC<OverviewTabProps> = ({
         course={course}
         showAdd={showAdd}
         preferredSemesters={preferredSemesters}
+        occasionActions={occasionActions}
       />
     </section>
   </div>

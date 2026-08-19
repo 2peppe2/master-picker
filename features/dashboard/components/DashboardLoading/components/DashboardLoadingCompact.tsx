@@ -1,5 +1,5 @@
 import DashboardCompactHeaderSkeleton from "./DashboardCompactHeaderSkeleton";
-import DashboardMobileTabsSkeleton from "./DashboardMobileTabsSkeleton";
+import DashboardTabsSkeletonSmall from "./DashboardTabsSkeletonSmall";
 import DashboardScheduleSkeleton from "./DashboardScheduleSkeleton";
 import type { FC } from "react";
 
@@ -10,7 +10,7 @@ const DashboardLoadingCompact: FC = () => (
   >
     <DashboardCompactHeaderSkeleton />
     <DashboardScheduleSkeleton layout="compact" />
-    <DashboardMobileTabsSkeleton />
+    <DashboardTabsSkeletonSmall />
   </div>
 );
 
