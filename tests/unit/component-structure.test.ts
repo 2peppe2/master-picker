@@ -4,6 +4,14 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const COMPONENT_ROOTS = ["app", "features", "common"];
+const RESPONSIVE_SELECTOR_FILES = new Set([
+  "common/components/CourseDialog/tabs/examination/ExaminationTable.tsx",
+  "common/components/CourseDialog/tabs/overview/components/OccasionTable.tsx",
+  "features/dashboard/components/Drawer/components/CourseResultGrid.tsx",
+  "features/dashboard/components/MastersRequirementsBar/components/MasterOverflowBadge.tsx",
+  "features/dashboard/components/MastersRequirementsBar/components/MasterOverflowRow.tsx",
+  "features/dashboard/components/MastersRequirementsBar/components/MasterProgressBadge.tsx",
+]);
 
 const collectComponentFiles = (root: string): string[] =>
   readdirSync(root).flatMap((name) => {
@@ -220,6 +228,33 @@ describe("component file structure", () => {
       };
       visit(source);
     }
+
+    expect(findings).toEqual([]);
+  });
+
+  it("keeps responsive layout decisions in router components", () => {
+    const findings = files.flatMap((file) => {
+      const contents = readFileSync(file, "utf8");
+      if (!contents.includes("@/common/hooks/useResponsiveLayout")) return [];
+
+      const projectPath = relative(process.cwd(), file).replaceAll("\\", "/");
+      const isIndexRouter = projectPath.endsWith("/index.tsx");
+      const isNamedSelector = RESPONSIVE_SELECTOR_FILES.has(projectPath);
+
+      return isIndexRouter || isNamedSelector ? [] : [projectPath];
+    });
+
+    expect(findings).toEqual([]);
+  });
+
+  it("keeps lifecycle effects in dedicated hooks", () => {
+    const findings = files.flatMap((file) => {
+      const projectPath = relative(process.cwd(), file).replaceAll("\\", "/");
+      if (projectPath.includes("/hooks/")) return [];
+
+      const contents = readFileSync(file, "utf8");
+      return /\buse(?:Layout)?Effect\s*\(/.test(contents) ? [projectPath] : [];
+    });
 
     expect(findings).toEqual([]);
   });

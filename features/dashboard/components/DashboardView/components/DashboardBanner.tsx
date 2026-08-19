@@ -1,29 +1,14 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { DisclaimerMessage } from "./Disclaimer";
 import BannerSlide from "./BannerSlide";
 import NewsMessage from "./NewsMessage";
-
-type Slide = "news" | "disclaimer";
-
-const SLIDE_DURATION_MS: Record<Slide, number> = {
-  news: 10_000,
-  disclaimer: 30_000,
-};
+import { useDashboardBannerSlide } from "../hooks/useDashboardBannerSlide";
 
 const DashboardBanner: FC = () => {
-  const [slide, setSlide] = useState<Slide>("news");
-
-  useEffect(() => {
-    const timeout = setTimeout(
-      () => setSlide((current) => (current === "news" ? "disclaimer" : "news")),
-      SLIDE_DURATION_MS[slide],
-    );
-
-    return () => clearTimeout(timeout);
-  }, [slide]);
+  const slide = useDashboardBannerSlide();
 
   return (
     <div

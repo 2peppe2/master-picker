@@ -1,8 +1,7 @@
 "use client";
 
-import LandingClientContent, {
-  LandingClientPageProps,
-} from "./components/LandingClientContent";
+import LandingClientContent from "./components/LandingClientContent";
+import type { LandingClientPageProps } from "./types";
 import { LandingFormLoading } from "@/features/landing/components/LandingLoading";
 import { FC, Suspense } from "react";
 
@@ -12,5 +11,5 @@ const LandingClientPage: FC<LandingClientPageProps> = (props) => (
   </Suspense>
 );
 
-export type { LandingPageProgram } from "./components/LandingClientContent";
+export type { LandingPageProgram } from "./types";
 export default LandingClientPage;

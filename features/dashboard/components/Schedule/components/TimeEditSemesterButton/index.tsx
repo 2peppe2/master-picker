@@ -5,10 +5,7 @@ import {
   useIsLandscapePhone,
   usePrefersSheet,
 } from "@/common/hooks/useResponsiveLayout";
-import LandscapeSideSheet from "@/common/components/LandscapeSideSheet";
-import Translate from "@/common/components/translate/Translate";
-import CalendarTriggerButton from "./components/CalendarTriggerButton";
-import CalendarRows from "./components/CalendarRows";
+import TimeEditSemesterLandscape from "./TimeEditSemesterLandscape";
 import TimeEditSemesterSmall from "./TimeEditSemesterSmall";
 import TimeEditSemesterLarge from "./TimeEditSemesterLarge";
 import { useCalendarLinks } from "./hooks/useCalendarLinks";
@@ -45,27 +42,15 @@ const TimeEditSemesterButton: FC<TimeEditSemesterButtonProps> = ({
 
   if (isLandscapePhone) {
     return (
-      <LandscapeSideSheet
-        open={isOpen}
+      <TimeEditSemesterLandscape
+        isOpen={isOpen}
         onOpenChange={handleOpenChange}
-        trigger={
-          <CalendarTriggerButton
-            hasCourses={hasCourses}
-            showAnnouncement={isAnnouncementVisible}
-          />
-        }
-        title={<Translate text="_calendar_subscribe_title" />}
-        description={<Translate text="_calendar_replan_hint" />}
-      >
-        <div className="flex flex-col gap-2">
-          <CalendarRows links={links} isLoading={isLoading} phone />
-          {errorKey && (
-            <p className="px-3 pt-1 text-xs text-muted-foreground">
-              <Translate text={errorKey} />
-            </p>
-          )}
-        </div>
-      </LandscapeSideSheet>
+        links={links}
+        isLoading={isLoading}
+        errorKey={errorKey}
+        hasCourses={hasCourses}
+        showAnnouncement={isAnnouncementVisible}
+      />
     );
   }
 

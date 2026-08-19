@@ -2,7 +2,8 @@
 
 import Translate from "@/common/components/translate/Translate";
 import MasterBadge from "@/common/components/MasterBadge";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
+import { useRandomGuideTitle } from "../hooks/useRandomGuideTitle";
 
 /**
  * Spelled out rather than built from an index so every key stays greppable --
@@ -31,13 +32,7 @@ interface GuideHeaderProps {
 }
 
 const GuideHeader: FC<GuideHeaderProps> = ({ selectedMaster }) => {
-  const [titleKey, setTitleKey] = useState(GUIDE_TITLE_KEYS[0]);
-
-  useEffect(() => {
-    setTitleKey(
-      GUIDE_TITLE_KEYS[Math.floor(Math.random() * GUIDE_TITLE_KEYS.length)],
-    );
-  }, []);
+  const titleKey = useRandomGuideTitle(GUIDE_TITLE_KEYS);
 
   return (
     <header className="flex flex-col gap-2 landscape-phone:gap-1">

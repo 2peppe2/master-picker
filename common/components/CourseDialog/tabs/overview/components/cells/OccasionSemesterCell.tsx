@@ -4,7 +4,7 @@ import { useCommonTranslate } from "@/common/components/translate/hooks/useCommo
 import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { Semester } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 
 interface OccasionSemesterCellProps {
   year: number;
@@ -18,14 +18,7 @@ const OccasionSemesterCell: FC<OccasionSemesterCellProps> = ({
   const yearAndSemesterToRelativeSemester = useToRelativeSemester();
   const translate = useCommonTranslate();
 
-  const relativeSemester = useMemo(
-    () =>
-      yearAndSemesterToRelativeSemester({
-        year,
-        semester,
-      }),
-    [semester, year, yearAndSemesterToRelativeSemester],
-  );
+  const relativeSemester = yearAndSemesterToRelativeSemester({ year, semester });
 
   return (
     <TableCell>

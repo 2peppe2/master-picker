@@ -44,12 +44,10 @@ const SemesterHeader: FC<SemesterHeaderProps> = ({ periods, semester }) => {
   const compatibleTargetCount = compatibleSemesters.find(
     (item) => item.semesterNumber === semester,
   )?.targetCount;
-
   const credits = useMemo(() => {
     const courses = new Set(periods.flat().filter((course) => course !== null));
     return [...courses].reduce((total, course) => total + course.credits, 0);
   }, [periods]);
-
   const hasWildcardWarning = useMemo(
     () =>
       periods.some((period) =>
@@ -62,10 +60,8 @@ const SemesterHeader: FC<SemesterHeaderProps> = ({ periods, semester }) => {
       ),
     [periods],
   );
-
-  const handleToggle = () => {
-    toggleSemester(targetSemester);
-  };
+  const semesterYear = relativeSemesterToYear(startingYear, semester);
+  const handleToggle = () => toggleSemester(targetSemester);
 
   return (
     <div
@@ -112,7 +108,7 @@ const SemesterHeader: FC<SemesterHeaderProps> = ({ periods, semester }) => {
             <span className="min-w-0 truncate text-sm font-bold sm:text-base">
               <Translate text="_semester_label" args={{ s: targetSemester }} />,{" "}
               {semester % 2 === 0 ? "HT" : "VT"}{" "}
-              {relativeSemesterToYear(startingYear, semester)}
+              {semesterYear}
             </span>
           </span>
           <span
@@ -158,7 +154,7 @@ const SemesterHeader: FC<SemesterHeaderProps> = ({ periods, semester }) => {
         <TimeEditSemesterButton
           periods={periods}
           semester={semester % 2 === 0 ? "HT" : "VT"}
-          year={relativeSemesterToYear(startingYear, semester)}
+          year={semesterYear}
         />
         <SemesterSettingsModal
           semester={semester}

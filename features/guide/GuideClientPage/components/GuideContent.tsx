@@ -8,13 +8,13 @@ import CompulsorySelector from "@/features/guide/components/CompulsorySelector";
 import ElectiveSelector from "@/features/guide/components/ElectiveSelector";
 import BackButton from "@/common/components/BackButton";
 import type { Course, Master } from "@/common/types";
-import { useCallback, useMemo, useState, type FC } from "react";
+import { type FC, useMemo } from "react";
 import ProgressCard from "@/features/guide/components/ProgressCard";
 import GuideHeader from "@/features/guide/components/GuideHeader";
 import type { CourseRequirements } from "@/features/guide/types";
+import { useElectiveSelections } from "../hooks/useElectiveSelections";
 import { useHydrateAtoms } from "jotai/utils";
 import { mastersAtom } from "@/features/guide/state/store";
-import { normalizeCourse } from "@/common/courseNormalizer";
 
 export interface GuideClientPageProps {
   courseRequirements: CourseRequirements;
@@ -30,35 +30,19 @@ const GuideContent: FC<GuideClientPageProps> = ({
   bachelorCourses,
 }) => {
   useHydrateAtoms([[mastersAtom, masters]]);
-
   const compulsoryCourses = useMemo(
-    () => courseRequirements.filter((req) => req.courses.length === 1),
+    () => courseRequirements.filter((requirement) => requirement.courses.length === 1),
     [courseRequirements],
   );
-
   const electiveCourses = useMemo(
-    () => courseRequirements.filter((req) => req.courses.length > req.minCount),
+    () =>
+      courseRequirements.filter(
+        (requirement) => requirement.courses.length > requirement.minCount,
+      ),
     [courseRequirements],
   );
-
-  const [selectionIds, setSelectionIds] = useState<Record<number, string[]>>({});
-
-  const selections = useMemo<Record<number, Course[]>>(
-    () => electiveCourses.reduce<Record<number, Course[]>>((result, group, index) => {
-      result[index] = group.courses
-        .map((entry) => normalizeCourse(entry.course))
-        .filter((course) => selectionIds[index]?.includes(course.code));
-      return result;
-    }, {}),
-    [electiveCourses, selectionIds],
-  );
-
-  const handleElectiveSelection = useCallback(
-    (index: number, selection: string[]) => {
-      setSelectionIds((prev) => ({ ...prev, [index]: selection }));
-    },
-    [],
-  );
+  const { selectionIds, selections, selectElectiveCourses } =
+    useElectiveSelections(electiveCourses);
 
   return (
     <div className="min-h-screen">
@@ -97,7 +81,7 @@ const GuideContent: FC<GuideClientPageProps> = ({
           <ElectiveSelector
             key={`elective-group-${index}`}
             index={index}
-            onSelectionChange={handleElectiveSelection}
+            onSelectionChange={selectElectiveCourses}
             selectedCourseIds={selectionIds[index] ?? []}
             electiveCourses={electiveGroup}
           />

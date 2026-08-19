@@ -1,7 +1,7 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import ExcludedFilterLabel from "./ExcludedFilterLabel";
+import ExcludedFilterLabel from "../ExcludedFilterLabel";
 import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
 import { showBachelorYearsAtom } from "@/features/dashboard/state/preferences/atoms";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
@@ -21,7 +21,7 @@ import {
   getCourseExaminationTypes,
 } from "@/lib/examinationTypes";
 import { useAtomValue } from "jotai";
-import { useMemo, type FC } from "react";
+import { useMemo } from "react";
 import { range, uniq } from "lodash";
 import {
   Ban,
@@ -41,6 +41,7 @@ import {
   Shapes,
   Users,
 } from "lucide-react";
+import FilterOption from "../FilterOption";
 
 const EXAMINATION_ICONS: Record<
   ExaminationType,
@@ -286,15 +287,3 @@ export const useCourseFilterOptions = () => {
 
   return { categoryLabels, groupedOptions };
 };
-
-interface FilterOptionProps {
-  icon: React.ComponentType<{ className?: string }>;
-  children: React.ReactNode;
-}
-
-const FilterOption: FC<FilterOptionProps> = ({ icon: Icon, children }) => (
-  <div className="flex min-w-0 items-center gap-2">
-    <Icon className="size-4 shrink-0 opacity-70" />
-    <span className="truncate">{children}</span>
-  </div>
-);

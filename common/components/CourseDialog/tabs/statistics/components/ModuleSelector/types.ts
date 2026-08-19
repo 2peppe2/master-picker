@@ -7,11 +7,6 @@ export interface ModuleSelectorProps {
   selectedItem?: ProcessedModule;
 }
 
-export interface ModuleSelectorViewProps extends ModuleSelectorProps {
-  visibleCounts: Record<string, number>;
-  setVisibleCount: (code: string, count: number) => void;
-}
-
 export interface CategoryGroupProps {
   code: string;
   modules: ProcessedModule[];

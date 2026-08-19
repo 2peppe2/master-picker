@@ -1,9 +1,6 @@
 "use client";
 
-import type {
-  MultiSelectGroup,
-  MultiSelectSection,
-} from "@/components/ui/MultiSelect/types";
+import type { MultiSelectGroup } from "@/components/ui/MultiSelect/types";
 import { Button } from "@/components/ui/button";
 import Translate from "@/common/components/translate/Translate";
 import BottomFade from "@/common/components/BottomFade";
@@ -11,9 +8,10 @@ import { useBottomScrollFade } from "@/common/hooks/useBottomScrollFade";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
 import { cn } from "@/lib/utils";
 import { ChevronLeft } from "lucide-react";
-import { useMemo, useState, type FC } from "react";
+import { type FC } from "react";
 import CourseFilterPanelContent from "./components/CourseFilterPanelContent";
 import HeadingSlot from "./components/HeadingSlot";
+import { useCourseFilterDrilldown } from "./hooks/useCourseFilterDrilldown";
 
 const HEADING_ROW_CLASS = "flex min-w-0 items-center gap-2 py-2 pl-1 pr-2";
 
@@ -25,11 +23,6 @@ interface CourseFilterPanelProps {
   onClose: () => void;
 }
 
-interface DrilldownState {
-  heading: string;
-  sectionKey?: string;
-}
-
 const CourseFilterPanel: FC<CourseFilterPanelProps> = ({
   groups,
   selectedValues,
@@ -37,43 +30,21 @@ const CourseFilterPanel: FC<CourseFilterPanelProps> = ({
   onClear,
   onClose,
 }: CourseFilterPanelProps) => {
-  const [drilldown, setDrilldown] = useState<DrilldownState | null>(null);
   const translate = useCommonTranslate();
-
-  const activeGroup = useMemo(
-    () => groups.find((group) => group.heading === drilldown?.heading) ?? null,
-    [groups, drilldown],
-  );
-
-  const activeSection = useMemo(
-    () =>
-      activeGroup?.sections?.find(
-        (section) => section.key === drilldown?.sectionKey,
-      ) ?? null,
-    [activeGroup, drilldown],
-  );
+  const {
+    activeGroup,
+    activeSection,
+    title,
+    goBack,
+    selectGroup,
+    selectSection,
+  } = useCourseFilterDrilldown(groups);
 
   const { scrollRef, showFade, handleScroll } = useBottomScrollFade([
     groups,
     activeGroup,
     activeSection,
   ]);
-
-  const goBack = () =>
-    setDrilldown(drilldown?.sectionKey ? { heading: drilldown.heading } : null);
-
-  const title = activeSection?.headerLabel ?? activeGroup?.heading ?? null;
-
-  const selectGroup = (group: MultiSelectGroup) => {
-    setDrilldown({ heading: group.heading });
-  };
-
-  const selectSection = (
-    group: MultiSelectGroup,
-    section: MultiSelectSection,
-  ) => {
-    setDrilldown({ heading: group.heading, sectionKey: section.key });
-  };
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
@@ -113,7 +84,7 @@ const CourseFilterPanel: FC<CourseFilterPanelProps> = ({
             variant="ghost"
             size="icon"
             onClick={onClose}
-            aria-label={translate("close")}
+            aria-label={translate("close_filters")}
             className="size-10"
           >
             <span aria-hidden className="text-xl leading-none">

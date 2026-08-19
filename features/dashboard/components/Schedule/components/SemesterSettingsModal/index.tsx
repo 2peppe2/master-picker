@@ -5,11 +5,7 @@ import {
   useIsLandscapePhone,
   usePrefersSheet,
 } from "@/common/hooks/useResponsiveLayout";
-import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import LandscapeSideSheet from "@/common/components/LandscapeSideSheet";
-import Translate from "@/common/components/translate/Translate";
-import SettingsTriggerButton from "./components/SettingsTriggerButton";
-import AddBlockRow from "./components/AddBlockRow";
+import SemesterSettingsLandscape from "./SemesterSettingsLandscape";
 import SemesterSettingsSmall from "./SemesterSettingsSmall";
 import SemesterSettingsLarge from "./SemesterSettingsLarge";
 import { SemesterSettingsModalProps } from "./types";
@@ -23,7 +19,6 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
   const { addBlockToSemester } = useBlockCommands();
   const prefersSheet = usePrefersSheet();
   const isLandscapePhone = useIsLandscapePhone();
-  const translate = useCommonTranslate();
 
   const handleAddBlock = useCallback(() => {
     addBlockToSemester(semester);
@@ -32,16 +27,11 @@ const SemesterSettingsModal: FC<SemesterSettingsModalProps> = ({
 
   if (isLandscapePhone) {
     return (
-      <LandscapeSideSheet
-        open={isOpen}
+      <SemesterSettingsLandscape
+        isOpen={isOpen}
         onOpenChange={onOpenChange}
-        trigger={
-          <SettingsTriggerButton label={translate("_semester_settings")} />
-        }
-        title={<Translate text="_semester_settings" />}
-      >
-        <AddBlockRow onClick={handleAddBlock} phone />
-      </LandscapeSideSheet>
+        onAddBlock={handleAddBlock}
+      />
     );
   }
 

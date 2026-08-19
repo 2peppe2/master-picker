@@ -9,7 +9,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { FC, useRef } from "react";
+import { FC } from "react";
+import { useDelayedHoverOpen } from "../hooks/useDelayedHoverOpen";
 
 const MasterOverflowBadgeLarge: FC<MasterOverflowBadgeProps> = ({
   minWidth,
@@ -18,16 +19,8 @@ const MasterOverflowBadgeLarge: FC<MasterOverflowBadgeProps> = ({
   open,
   onOpenChange,
 }) => {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    onOpenChange(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => onOpenChange(false), 150);
-  };
+  const { handleMouseEnter, handleMouseLeave } =
+    useDelayedHoverOpen(onOpenChange);
 
   return (
     <Popover open={open} onOpenChange={onOpenChange}>

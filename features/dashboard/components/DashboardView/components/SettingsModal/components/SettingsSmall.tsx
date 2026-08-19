@@ -11,7 +11,7 @@ import { useCommonTranslate } from "@/common/components/translate/hooks/useCommo
 import Translate from "@/common/components/translate/Translate";
 import SettingsTriggerButton from "./SettingsTriggerButton";
 import { Button } from "@/components/ui/button";
-import SettingsContent from "./SettingsContent";
+import SettingsPhoneContent from "./SettingsPhoneContent";
 import { SettingsViewProps } from "../types";
 import { X } from "lucide-react";
 import { FC } from "react";
@@ -48,7 +48,7 @@ const SettingsSmall: FC<SettingsViewProps> = ({ isOpen, onOpenChange }) => {
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto pb-6">
-          <SettingsContent phone />
+          <SettingsPhoneContent />
         </div>
       </BottomSheetContent>
     </BottomSheet>

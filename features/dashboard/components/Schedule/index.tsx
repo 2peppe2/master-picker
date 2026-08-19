@@ -4,28 +4,26 @@ import {
   masterPeriodAtom,
   showBachelorYearsAtom,
 } from "@/features/dashboard/state/preferences/atoms";
-import { initializeSemesterAtom } from "@/features/dashboard/state/semester-ui/atoms";
 import { useStartingYear } from "@/features/dashboard/state/preferences/hooks/useStartingYear";
 import SemesterView from "@/features/dashboard/components/Schedule/components/SemesterView";
 import DragSemesterAutoExpand from "@/features/dashboard/components/Schedule/components/DragSemesterAutoExpand";
-import { useAtomValue, useSetAtom } from "jotai";
-import { useLayoutEffect, useMemo } from "react";
+import { useAtomValue } from "jotai";
+import { useMemo } from "react";
 import {
   getCurrentTermSemester,
   getVisibleSemesters,
 } from "@/features/dashboard/components/Schedule/currentTerm";
 import { useCurrentTermPosition } from "./hooks/useCurrentTermPosition";
+import { useInitializeSemester } from "./hooks/useInitializeSemester";
 
 const Schedule = () => {
   const showBachelorYears = useAtomValue(showBachelorYearsAtom);
   const masterPeriod = useAtomValue(masterPeriodAtom);
   const startingYear = useStartingYear();
-  const initializeSemester = useSetAtom(initializeSemesterAtom);
-
-  const semesters = useMemo(() => {
-    return getVisibleSemesters(showBachelorYears, masterPeriod);
-  }, [masterPeriod, showBachelorYears]);
-
+  const semesters = useMemo(
+    () => getVisibleSemesters(showBachelorYears, masterPeriod),
+    [masterPeriod, showBachelorYears],
+  );
   const currentSemester = useMemo(
     () =>
       getCurrentTermSemester({
@@ -35,10 +33,7 @@ const Schedule = () => {
     [semesters, startingYear],
   );
 
-  useLayoutEffect(() => {
-    initializeSemester(currentSemester + 1);
-  }, [currentSemester, initializeSemester]);
-
+  useInitializeSemester(currentSemester);
   useCurrentTermPosition(currentSemester);
 
   return (

@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import SettingsTriggerButton from "./SettingsTriggerButton";
-import SettingsContent from "./SettingsContent";
+import SettingsLargeContent from "./SettingsLargeContent";
 import { SettingsViewProps } from "../types";
 import { FC } from "react";
 
@@ -17,7 +17,7 @@ const SettingsLarge: FC<SettingsViewProps> = ({ isOpen, onOpenChange }) => (
     </PopoverTrigger>
 
     <PopoverContent align="end" className="p-0 overflow-hidden w-64">
-      <SettingsContent />
+      <SettingsLargeContent />
     </PopoverContent>
   </Popover>
 );

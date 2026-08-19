@@ -1,19 +1,16 @@
 "use client";
 
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 
-const LoadingDots: FC = () => {
-  const [dots, setDots] = useState(".");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDots((prev) => (prev.length >= 3 ? "." : prev + "."));
-    }, 450);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return <>{dots}</>;
-};
+const LoadingDots: FC = () => (
+  <span
+    aria-hidden="true"
+    className="inline-flex w-[3ch] justify-start"
+  >
+    <span className="animate-pulse [animation-delay:-400ms]">.</span>
+    <span className="animate-pulse [animation-delay:-200ms]">.</span>
+    <span className="animate-pulse">.</span>
+  </span>
+);
 
 export default LoadingDots;

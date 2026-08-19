@@ -6,7 +6,7 @@ import LoadingDots from "@/common/components/loading/LoadingDots";
 import { Scale } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
 import { Module } from "liu-tentor-package";
-import { FC, useCallback } from "react";
+import { FC } from "react";
 
 interface GradeCount {
   grade: string;
@@ -25,13 +25,8 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
   isLoading,
 }) => {
   const translate = useCommonTranslate();
-  const getCount = useCallback(
-    (g: string) => {
-      if (!stats) return 0;
-      return stats.grades.find((x: GradeCount) => x.grade === g)?.quantity || 0;
-    },
-    [stats],
-  );
+  const getCount = (grade: string) =>
+    stats?.grades.find((item: GradeCount) => item.grade === grade)?.quantity ?? 0;
 
   if (isLoading) {
     return (

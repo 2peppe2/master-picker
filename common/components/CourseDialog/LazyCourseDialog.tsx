@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState, type FC } from "react";
+import { type FC } from "react";
 import CourseDialog from ".";
 import type { Course } from "@/common/types";
+import { useDelayedUnmount } from "@/common/hooks/useDelayedUnmount";
 
 interface LazyCourseDialogProps {
   course: Course;
@@ -17,17 +18,7 @@ const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
   onOpenChange,
   showAdd,
 }) => {
-  const [mounted, setMounted] = useState(open);
-
-  useEffect(() => {
-    if (open) {
-      setMounted(true);
-      return;
-    }
-
-    const timeout = window.setTimeout(() => setMounted(false), 250);
-    return () => window.clearTimeout(timeout);
-  }, [open]);
+  const mounted = useDelayedUnmount(open, 250);
 
   if (!mounted && !open) return null;
 

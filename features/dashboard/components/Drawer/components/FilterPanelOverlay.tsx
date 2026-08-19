@@ -21,9 +21,9 @@ import CourseFilterPanel from "./CourseFilterPanel";
 
 interface FilterPanelOverlayProps {
   /**
-   * Tablets and landscape phones get a side sheet; portrait phones get a
-   * bottom sheet. A bottom sheet needs height to drill down through the
-   * categories, and landscape has none to give -- but it has width to spare.
+   * Short landscape phones get a side sheet because they have width to spare
+   * but too little height for the category drill-down. Portrait phones and
+   * tablets use a bottom sheet.
    */
   sideSheet: boolean;
   open: boolean;

@@ -59,7 +59,7 @@ test.describe("touch tablet master requirements", () => {
     ).toBeVisible();
   });
 
-  test("a row inside an overflow sheet opens a nested sheet", async ({
+  test("an overflow sheet hands off to details without nesting drawers", async ({
     page,
   }) => {
     test.skip(
@@ -80,9 +80,32 @@ test.describe("touch tablet master requirements", () => {
     await expect(drawers).toHaveCount(1);
     await drawers.locator("[data-master-overflow-row]").first().tap();
 
-    await expect(drawers).toHaveCount(2);
+    await expect(drawers).toHaveCount(1);
     await expect(
       page.locator("[data-slot='master-requirement-panel']"),
     ).toBeVisible();
+
+    await page.keyboard.press("Escape");
+    await expect(drawers).toHaveCount(0);
+    await expect(moreBadge).toHaveAttribute("data-state", "closed");
+  });
+
+  test("the compact iPad filter opens from the bottom", async ({ page }) => {
+    test.skip(
+      test.info().project.name !== "tablet-chrome",
+      "the compact portrait iPad renders the overlay filter",
+    );
+    await page.goto(dashboardUrl);
+    await page.getByRole("tab", { name: "Search" }).click();
+    await page.getByRole("button", { name: "Filters" }).click();
+
+    const drawer = page.locator("[data-vaul-drawer]");
+    await expect(drawer).toBeVisible();
+    await expect(page.locator("[data-slot='sheet-content']")).toHaveCount(0);
+
+    const viewport = page.viewportSize()!;
+    const box = (await drawer.boundingBox())!;
+    expect(box.y + box.height).toBeGreaterThanOrEqual(viewport.height - 2);
+    expect(box.width).toBeGreaterThanOrEqual(viewport.width - 2);
   });
 });

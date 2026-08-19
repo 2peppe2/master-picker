@@ -6,11 +6,13 @@ import { FC } from "react";
 interface MasterOverflowListProps {
   masters: ProcessedMaster[];
   className?: string;
+  onMasterSelect?: (master: ProcessedMaster) => void;
 }
 
 const MasterOverflowList: FC<MasterOverflowListProps> = ({
   masters,
   className,
+  onMasterSelect,
 }) => (
   <div
     className={cn(
@@ -23,6 +25,7 @@ const MasterOverflowList: FC<MasterOverflowListProps> = ({
         key={master.master}
         master={master}
         side={index % 2 === 0 ? "left" : "right"}
+        onMasterSelect={onMasterSelect}
       />
     ))}
   </div>

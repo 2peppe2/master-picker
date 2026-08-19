@@ -1,7 +1,5 @@
 import MasterProgressBadge from "./MasterProgressBadge";
-import MastersRequirementsMoreTrigger from "./MastersRequirementsMoreTrigger";
-import { CollapsibleTrigger } from "@/components/ui/collapsible";
-import { SheetTrigger } from "@/components/ui/sheet";
+import MastersRequirementsMoreControl from "./MastersRequirementsMoreControl";
 import { cn } from "@/lib/utils";
 import { ProcessedMaster } from "../types";
 import { FC, Ref } from "react";
@@ -11,7 +9,7 @@ interface MastersRequirementsSmallBarProps {
   barRef: Ref<HTMLDivElement>;
   measurementMaster?: ProcessedMaster;
   overflowCount: number;
-  presentation: "collapsible" | "sheet";
+  presentation: "bottom-sheet" | "collapsible" | "sheet";
   visibleItems: ProcessedMaster[];
 }
 
@@ -24,8 +22,7 @@ const MastersRequirementsSmallBar: FC<
   overflowCount,
   presentation,
   visibleItems,
-}) => {
-  return (
+}) => (
     <div
       className={cn(
         "flex items-center justify-between w-full gap-2 select-none group",
@@ -49,19 +46,14 @@ const MastersRequirementsSmallBar: FC<
             <MasterProgressBadge master={master} />
           </div>
         ))}
-        {overflowCount > 0 &&
-          (presentation === "sheet" ? (
-            <SheetTrigger asChild>
-              <MastersRequirementsMoreTrigger count={overflowCount} />
-            </SheetTrigger>
-          ) : (
-            <CollapsibleTrigger asChild>
-              <MastersRequirementsMoreTrigger count={overflowCount} />
-            </CollapsibleTrigger>
-          ))}
+        {overflowCount > 0 && (
+          <MastersRequirementsMoreControl
+            count={overflowCount}
+            presentation={presentation}
+          />
+        )}
       </div>
     </div>
-  );
-};
+);
 
 export default MastersRequirementsSmallBar;

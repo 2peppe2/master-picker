@@ -1,10 +1,6 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import {
-  useIsLandscapePhone,
-  useIsTablet,
-} from "@/common/hooks/useResponsiveLayout";
 import { useSearchFilterState } from "./hooks/useSearchFilterState";
 import { Search, SlidersHorizontal } from "lucide-react";
 import ActiveFilterChips from "../ActiveFilterChips";
@@ -19,10 +15,12 @@ import { cn } from "@/lib/utils";
  * Phone and tablet presentation: a search field beside a filter button that
  * opens the full filter set in an overlay.
  */
-const SearchFilterSmall: FC = () => {
+interface SearchFilterSmallProps {
+  sideSheet: boolean;
+}
+
+const SearchFilterSmall: FC<SearchFilterSmallProps> = ({ sideSheet }) => {
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const isTablet = useIsTablet();
-  const isLandscapePhone = useIsLandscapePhone();
   const translate = useCommonTranslate();
   const {
     filters,
@@ -82,7 +80,7 @@ const SearchFilterSmall: FC = () => {
       </div>
 
       <FilterPanelOverlay
-        sideSheet={isTablet || isLandscapePhone}
+        sideSheet={sideSheet}
         open={filtersOpen}
         title={translate("filters")}
         description={translate("_filter_by_master_field_or_type")}

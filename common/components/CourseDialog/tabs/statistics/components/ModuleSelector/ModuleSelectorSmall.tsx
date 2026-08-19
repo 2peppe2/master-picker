@@ -3,24 +3,28 @@
 import MobileCategoryGroup from "./components/MobileCategoryGroup";
 import Translate from "@/common/components/translate/Translate";
 import SelectedModule from "./components/SelectedModule";
-import { ModuleSelectorViewProps } from "./types";
+import { ModuleSelectorProps } from "./types";
+import { useModuleSelectorVisibleCounts } from "./hooks/useModuleSelectorVisibleCounts";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import { Check, ChevronDown } from "lucide-react";
 import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const ModuleSelectorSmall: FC<ModuleSelectorViewProps> = ({
+const ModuleSelectorSmall: FC<ModuleSelectorProps> = ({
   selectedModule,
   setSelectedModule,
   categorizedModules,
   selectedItem,
-  visibleCounts,
-  setVisibleCount,
 }) => {
   const [open, setOpen] = useState(false);
+  const { visibleCounts, setVisibleCount } = useModuleSelectorVisibleCounts();
 
   return (
-    <div>
+    <div className="space-y-2" data-no-swipe="true">
+      <Label className="text-sm font-medium text-foreground">
+        <Translate text="_examination_history" />
+      </Label>
       <Button
         type="button"
         variant="outline"

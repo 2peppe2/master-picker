@@ -33,44 +33,35 @@ const PeriodView: FC<PeriodViewProps> = ({ semesterNumber, periodNumber }) => {
   const startingYear = useStartingYear();
   const { layout } = usePhoneScheduleLayout();
   const isCarousel = layout === "carousel";
-
   const blocks = useAtomValue(periodAtom(semesterNumber, periodNumber));
-  const { scrollRef, showFade, handleScroll } = useRightScrollFade([blocks]);
   const periods = useAtomValue(semesterAtom(semesterNumber));
+  const { scrollRef, showFade, handleScroll } = useRightScrollFade([blocks]);
   const credits = useMemo(
     () => getPeriodCredits(periods, periodNumber),
     [periodNumber, periods],
   );
-
   const showGhost = useMemo(() => {
     if (!draggedCourse) return false;
-
     const isAlreadyInWildcard = blocks.some(
       (course, index) =>
         index >= WILDCARD_BLOCK_START && course?.code === draggedCourse.code,
     );
-
     if (isAlreadyInWildcard) return false;
 
     const { year, semester } = relativeSemesterToYearAndSemester(
       startingYear,
       semesterNumber,
     );
-
     const hasWildcardOption = draggedCourse.CourseOccasion.some(
-      (occ) =>
-        occ.year === year &&
-        occ.semester === semester &&
-        occ.periods.some((p) => p.period === periodNumber + 1),
+      (occasion) =>
+        occasion.year === year &&
+        occasion.semester === semester &&
+        occasion.periods.some((period) => period.period === periodNumber + 1),
     );
-
     if (!hasWildcardOption) return false;
 
-    const wildcardSlots = blocks.slice(WILDCARD_BLOCK_START);
-    const isFull = wildcardSlots.every((slot) => slot !== null);
-
-    return isFull;
-  }, [draggedCourse, blocks, semesterNumber, periodNumber, startingYear]);
+    return blocks.slice(WILDCARD_BLOCK_START).every((slot) => slot !== null);
+  }, [blocks, draggedCourse, periodNumber, semesterNumber, startingYear]);
 
   return (
     <div className="flex flex-col gap-2">

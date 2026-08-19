@@ -1,14 +1,12 @@
 "use client";
 
-import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import { shareButtonLoadingUntilAtom } from "@/features/dashboard/state/schedule/atoms";
 import ShareButtonIcon from "./components/ShareButtonIcon";
 import ShareButtonLabel from "./components/ShareButtonLabel";
-import { useCopyToClipboard } from "./hooks/useCopyToClipboard";
+import { useShareAction } from "./hooks/useShareAction";
+import { useShareLoading } from "./hooks/useShareLoading";
 import type { ShareButtonStatus } from "./types";
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { Button } from "@/components/ui/button";
-import { useAtomValue } from "jotai";
 import { cn } from "@/lib/utils";
 
 interface ShareButtonProps {
@@ -23,49 +21,14 @@ const statusClassNames: Record<ShareButtonStatus, string> = {
 };
 
 const ShareButton: FC<ShareButtonProps> = ({ compact = false, className }) => {
-  const translate = useCommonTranslate();
-  const { copied, copy } = useCopyToClipboard();
-  const shareButtonLoadingUntil = useAtomValue(shareButtonLoadingUntilAtom);
-  const [now, setNow] = useState(() => Date.now());
-
-  useEffect(() => {
-    if (shareButtonLoadingUntil <= Date.now()) {
-      setNow(Date.now());
-      return;
-    }
-
-    const timeoutId = window.setTimeout(() => {
-      setNow(Date.now());
-    }, shareButtonLoadingUntil - Date.now());
-
-    return () => window.clearTimeout(timeoutId);
-  }, [shareButtonLoadingUntil]);
-
-  const isAddCourseLoading = shareButtonLoadingUntil > now;
+  const { copied, share } = useShareAction();
+  const isLoading = useShareLoading();
   let status: ShareButtonStatus = "idle";
-  if (isAddCourseLoading) status = "loading";
+  if (isLoading) status = "loading";
   else if (copied) status = "copied";
 
-  const handleShare = async () => {
-    if (isAddCourseLoading) return;
-
-    const url = window.location.href;
-    const shareData = {
-      title: "Master Picker",
-      text: translate("_dashboard_share_text"),
-      url: url,
-    };
-
-    if (navigator.share && navigator.canShare?.(shareData)) {
-      try {
-        await navigator.share(shareData);
-        return;
-      } catch (err) {
-        console.log("Native share failed, falling back to copy: ", err);
-      }
-    }
-
-    copy(url);
+  const handleShare = () => {
+    if (!isLoading) void share();
   };
 
   return (
@@ -89,9 +52,9 @@ const ShareButton: FC<ShareButtonProps> = ({ compact = false, className }) => {
             "h-9 gap-2 px-3 max-[379px]:size-11 max-[379px]:gap-0",
             "max-[379px]:px-0",
           ),
-        isAddCourseLoading && "cursor-default",
+        isLoading && "cursor-default",
         copied &&
-          !isAddCourseLoading &&
+          !isLoading &&
           cn(
             "border-emerald-600 bg-emerald-600/10",
             "hover:bg-emerald-600/20 dark:border-emerald-400",

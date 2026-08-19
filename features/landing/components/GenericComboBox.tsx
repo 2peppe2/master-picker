@@ -1,22 +1,16 @@
 "use client";
 
-import { FC, KeyboardEvent, useRef, useState } from "react";
+import { FC } from "react";
 import {
   Combobox,
   ComboboxInput,
   ComboboxTrigger,
 } from "@/components/ui/combobox";
 import ComboboxOptions from "./ComboboxOptions";
+import { useComboboxKeyboardSelection } from "../hooks/useComboboxKeyboardSelection";
+import type { ComboboxDisplay, ComboboxOption } from "./GenericComboBox.types";
 
-export interface ComboboxOption {
-  label: string;
-  value: string;
-}
-
-export interface ComboboxDisplay {
-  placeholder: string;
-  empty: string;
-}
+export type { ComboboxDisplay, ComboboxOption } from "./GenericComboBox.types";
 
 interface GenericComboboxProps {
   options: ComboboxOption[];
@@ -33,31 +27,8 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
   displayStates,
   disabled = false,
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const desktopAnchorRef = useRef<HTMLDivElement>(null);
-  const [matchIndex, setMatchIndex] = useState(0);
-
-  const getMatches = () => {
-    const term = inputRef.current?.value.toLowerCase().trim() || "";
-
-    if (!term) {
-      return [];
-    }
-
-    return options.filter((opt) => opt.label.toLowerCase().includes(term));
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key !== "Enter") return;
-
-    const matches = getMatches();
-    if (matches.length > 0) {
-      event.preventDefault();
-      onValueChange(matches[matchIndex % matches.length]);
-      inputRef.current?.blur();
-      setMatchIndex(0);
-    }
-  };
+  const { inputRef, desktopAnchorRef, handleKeyDown } =
+    useComboboxKeyboardSelection({ options, onValueChange });
 
   return (
     <div className="mx-auto w-full max-w-80">

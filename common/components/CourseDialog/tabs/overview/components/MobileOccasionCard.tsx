@@ -9,7 +9,7 @@ import { useToRelativeSemester } from "@/common/hooks/useToRelativeSemester";
 import { CourseOccasion } from "@/common/types";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Plus } from "lucide-react";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 import MobileValuePill from "./MobileValuePill";
 
 interface MobileOccasionCardProps {
@@ -31,14 +31,10 @@ const MobileOccasionCard: FC<MobileOccasionCardProps> = ({
   const blocks = Array.from(
     new Set(occasion.periods.flatMap((item) => item.blocks)),
   );
-  const relativeSemester = useMemo(
-    () =>
-      toRelativeSemester({
-        year: occasion.year,
-        semester: occasion.semester,
-      }),
-    [occasion.semester, occasion.year, toRelativeSemester],
-  );
+  const relativeSemester = toRelativeSemester({
+    year: occasion.year,
+    semester: occasion.semester,
+  });
 
   return (
     <article className="rounded-2xl bg-muted/40 p-4">

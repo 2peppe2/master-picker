@@ -27,9 +27,8 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   onPickLater,
   isLoading,
 }) => {
-  const courseTranslate = useCourseTranslate();
   const translate = useCommonTranslate();
-
+  const courseTranslate = useCourseTranslate();
   const displayStates = useMemo(
     () =>
       ({
@@ -39,19 +38,18 @@ const MasterSelector: FC<MasterSelectorProps> = ({
     [translate],
   );
   const items = useMemo(() => {
-    if (!activeProgram || !year) return [];
-
-    const selectedYearData = activeProgram.years.find(
-      (y) => String(y.year) === year,
+    const selectedYear = activeProgram?.years.find(
+      (item) => String(item.year) === year,
     );
-
-    if (!selectedYearData) return [];
-
-    return selectedYearData.masters.map((m) => ({
-      label: m.name ? courseTranslate(m.name) : translate("_unknown_master"),
-      value: m.program,
-    }));
-  }, [activeProgram, year, translate, courseTranslate]);
+    return (
+      selectedYear?.masters.map((master) => ({
+        label: master.name
+          ? courseTranslate(master.name)
+          : translate("_unknown_master"),
+        value: master.program,
+      })) ?? []
+    );
+  }, [activeProgram, courseTranslate, translate, year]);
 
   return (
     <div className="w-full flex flex-col items-center gap-2">

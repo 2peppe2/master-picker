@@ -6,7 +6,7 @@ import {
 } from "@/features/dashboard/state/filter/atoms";
 import { oppositeOptionValue } from "@/components/ui/MultiSelect/polarity";
 import { parseFilters, serializeFilters } from "../../filterStateUtils";
-import { useCourseFilterOptions } from "../../useCourseFilterOptions";
+import { useCourseFilterOptions } from "../../hooks/useCourseFilterOptions";
 import { useCallback, useMemo } from "react";
 import { useAtom } from "jotai";
 

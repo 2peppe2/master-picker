@@ -17,7 +17,6 @@ const YearSelector: FC<YearSelectorProps> = ({
   onValueChange,
 }) => {
   const translate = useCommonTranslate();
-
   const displayStates = useMemo(
     () =>
       ({
@@ -26,14 +25,14 @@ const YearSelector: FC<YearSelectorProps> = ({
       }) satisfies ComboboxDisplay,
     [translate],
   );
-  const items = useMemo(() => {
-    if (!activeProgram?.years) return [];
-
-    return activeProgram.years.map((y) => ({
-      label: String(y.year),
-      value: String(y.year),
-    }));
-  }, [activeProgram]);
+  const items = useMemo(
+    () =>
+      activeProgram?.years.map(({ year }) => ({
+        label: String(year),
+        value: String(year),
+      })) ?? [],
+    [activeProgram],
+  );
 
   return (
     <GenericCombobox

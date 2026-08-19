@@ -1,10 +1,11 @@
 "use client";
 
 import { Trans, useTranslation } from "react-i18next";
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo } from "react";
 import { useTranslationReady } from "./TranslationReadyContext";
 import TranslationBold from "./TranslationBold";
 import "@/lib/i18n";
+import { useIsMounted } from "@/common/hooks/useIsMounted";
 
 interface TranslateProps {
   text: string;
@@ -18,11 +19,7 @@ const Translate: FC<TranslateProps> = memo(
   ({ text, args, isBold, namespace = "common", components }) => {
     const { t: translate } = useTranslation(namespace);
     const translationReady = useTranslationReady();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-      setMounted(true);
-    }, []);
+    const mounted = useIsMounted();
 
     if (!mounted && !translationReady) {
       return <>&nbsp;</>;

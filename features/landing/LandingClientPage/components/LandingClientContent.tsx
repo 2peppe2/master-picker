@@ -1,14 +1,9 @@
 "use client";
 
-import { useGeneratePrefilledSchedule } from "@/features/dashboard/state/schedule/hooks/useGeneratePrefilledSchedule";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import { useCallback, useEffect, useMemo, useState, type FC } from "react";
-import { useLanguage } from "@/common/components/translate/hooks/useLanguage";
-import { serializeSchedule } from "@/features/dashboard/state/schedule/utils";
-import { getBachelorCourses } from "@/app/actions/getBachelorCourses";
+import { type FC, useMemo } from "react";
 import Translate from "@/common/components/translate/Translate";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 import ProgramSelector from "@/features/landing/components/ProgramSelector";
 import MasterSelector from "@/features/landing/components/MasterSelector";
 import YearSelector from "@/features/landing/components/YearSelector";
@@ -16,132 +11,28 @@ import LoadingDots from "@/features/landing/components/LoadingDots";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
-import { normalizeCourse } from "@/common/courseNormalizer";
-import {
-  LandingQueryState,
-  QUERY_PARAM,
-  readLandingQuery,
-  updateLandingQuery,
-} from "@/common/navigation/queryState";
-
-export interface LandingPageProgram {
-  program: string;
-  name: string;
-  shortname: string;
-  years: {
-    year: number;
-    masters: {
-      program: string;
-      name: string | null;
-    }[];
-  }[];
-}
-
-export interface LandingClientPageProps {
-  programs: LandingPageProgram[];
-  initialSelection: LandingQueryState;
-}
+import type { LandingClientPageProps } from "../types";
+import { useLandingSelection } from "../hooks/useLandingSelection";
+import { useLandingNavigation } from "../hooks/useLandingNavigation";
 
 const LandingClientContent: FC<LandingClientPageProps> = ({
   programs,
   initialSelection,
 }) => {
-  const generateGrid = useGeneratePrefilledSchedule();
   const translate = useCommonTranslate();
-  const language = useLanguage();
-  const router = useRouter();
-
-  const [selection, setSelection] =
-    useState<LandingQueryState>(initialSelection);
+  const { selection, updateSelection } = useLandingSelection(initialSelection);
   const { program, master, year } = selection;
-
-  const [destination, setDestination] = useState<"dashboard" | "guide" | null>(null);
+  const { destination, getStarted, pickLater } = useLandingNavigation({
+    master,
+    program,
+    year,
+  });
+  const activeProgram = useMemo(
+    () => programs.find((item) => item.program === program) ?? null,
+    [program, programs],
+  );
   const isLoadingDashboard = destination === "dashboard";
   const isLoadingGuide = destination === "guide";
-
-  const updateSelection = useCallback((next: LandingQueryState) => {
-    setSelection(next);
-
-    const params = updateLandingQuery(
-      new URLSearchParams(window.location.search),
-      next,
-    );
-    const query = params.toString();
-    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
-
-    window.history.replaceState(window.history.state, "", nextUrl);
-  }, []);
-
-  useEffect(() => {
-    const syncSelectionFromUrl = () => {
-      setSelection(readLandingQuery(new URLSearchParams(window.location.search)));
-    };
-
-    window.addEventListener("popstate", syncSelectionFromUrl);
-    return () => window.removeEventListener("popstate", syncSelectionFromUrl);
-  }, []);
-
-  const activeProgram = useMemo(
-    () => programs.find((p) => p.program === program) ?? null,
-    [programs, program],
-  );
-
-  const handleOnPickLater = useCallback(async () => {
-    if (!program || !year) {
-      return;
-    }
-
-    setDestination("dashboard");
-
-    try {
-      const startingYear = parseInt(year);
-      const bachelorCourses = (
-        await getBachelorCourses(program, startingYear)
-      ).map((c) => normalizeCourse(c));
-
-      const coursesMap = Object.fromEntries(
-        bachelorCourses.map((c) => [c.code, c]),
-      );
-      const newGrid = generateGrid({ courses: bachelorCourses, startingYear });
-
-      const compressed = serializeSchedule(coursesMap, newGrid);
-
-      const params = new URLSearchParams({
-        [QUERY_PARAM.program]: program,
-        [QUERY_PARAM.year]: year,
-        [QUERY_PARAM.language]: language,
-      });
-      if (compressed) {
-        params.set(QUERY_PARAM.schedule, compressed);
-      }
-
-      router.push(`/dashboard?${params.toString()}`);
-    } catch (error) {
-      console.error("Prefill failed:", error);
-      router.push(
-        `/dashboard?program=${program}&year=${year}&lang=${language}`,
-      );
-    } finally {
-      setDestination(null);
-    }
-  }, [program, year, router, generateGrid, language]);
-
-  const handleOnGetStarted = useCallback(() => {
-    if (!program || !year || !master) {
-      return;
-    }
-
-    setDestination("guide");
-
-    const params = new URLSearchParams({
-      [QUERY_PARAM.program]: program,
-      [QUERY_PARAM.year]: year,
-      [QUERY_PARAM.master]: master,
-      [QUERY_PARAM.language]: language,
-    });
-
-    router.push(`/guide?${params.toString()}`);
-  }, [master, program, router, year, language]);
 
   if (!programs) {
     return <Translate text="_no_programs_found" />;
@@ -215,13 +106,13 @@ const LandingClientContent: FC<LandingClientPageProps> = ({
             })
           }
           isLoading={isLoadingDashboard}
-          onPickLater={handleOnPickLater}
+          onPickLater={pickLater}
         />
       </div>
       </div>
 
       <Button
-        onClick={handleOnGetStarted}
+        onClick={getStarted}
         className="h-12 w-full text-lg landscape-phone:max-w-80"
         disabled={!master || isLoadingGuide}
       >

@@ -19,7 +19,6 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({
 }) => {
   const translateCourse = useCourseTranslate();
   const translate = useCommonTranslate();
-
   const displayStates = useMemo(
     () =>
       ({
@@ -30,9 +29,9 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({
   );
   const items = useMemo(
     () =>
-      programs.map((p) => ({
-        label: `${p.shortname} - ${translateCourse(p.name)}`,
-        value: p.program,
+      programs.map((program) => ({
+        label: `${program.shortname} - ${translateCourse(program.name)}`,
+        value: program.program,
       })),
     [programs, translateCourse],
   );

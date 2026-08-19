@@ -4,84 +4,29 @@ import {
   Collapsible,
   CollapsibleContent,
 } from "@/components/ui/collapsible";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
 import MasterOverflowList from "./MasterOverflowList";
 import MastersRequirementsSmallBar from "./MastersRequirementsSmallBar";
 import Translate from "@/common/components/translate/Translate";
-import { useIsLandscapePhone } from "@/common/hooks/useResponsiveLayout";
-import { ProcessedMaster } from "../types";
 import { useMasterOverflowLayout } from "../hooks/useMasterOverflowLayout";
 import { useBottomScrollFade } from "@/common/hooks/useBottomScrollFade";
 import BottomFade from "@/common/components/BottomFade";
-import { cn } from "@/lib/utils";
+import { MastersRequirementsPresentationProps } from "./MastersRequirementsPresentation.types";
 import { FC, useState } from "react";
-
-interface MastersRequirementsSmallProps {
-  processed: ProcessedMaster[];
-}
 
 const GAP_SIZE = 8;
 
-const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
+const MastersRequirementsPhone: FC<MastersRequirementsPresentationProps> = ({
   processed,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const isLandscapePhone = useIsLandscapePhone();
-
   const { barRef, badgeRef, visibleItems, overflowItems } =
     useMasterOverflowLayout({
       gap: GAP_SIZE,
       masters: processed,
     });
-
   const { scrollRef, showFade, handleScroll } = useBottomScrollFade([
     overflowItems,
   ]);
-
-  /*
-   * Landscape sends the overflow to a side sheet rather than expanding it
-   * under the bar. The bar lives in a sticky header, and the inline panel is
-   * at least 11rem tall -- close to half the viewport -- so opening it pushed
-   * the whole dashboard down.
-   */
-  if (isLandscapePhone) {
-    return (
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <MastersRequirementsSmallBar
-          badgeRef={badgeRef}
-          barRef={barRef}
-          measurementMaster={processed[0]}
-          overflowCount={overflowItems.length}
-          presentation="sheet"
-          visibleItems={visibleItems}
-        />
-        <SheetContent
-          side="right"
-          className={cn(
-            "w-[min(26rem,90vw)] gap-0 sm:max-w-none",
-            "overflow-y-auto p-4",
-            "pe-[calc(1rem+env(safe-area-inset-right))]",
-          )}
-        >
-          <SheetHeader className="p-0 pb-3">
-            <SheetTitle className="text-base">
-              <Translate text="_master_profiles" />
-            </SheetTitle>
-            <SheetDescription className="sr-only">
-              <Translate text="_dashboard_master_progress" />
-            </SheetDescription>
-          </SheetHeader>
-          <MasterOverflowList masters={overflowItems} className="pr-1" />
-        </SheetContent>
-      </Sheet>
-    );
-  }
 
   return (
     <Collapsible
@@ -121,4 +66,4 @@ const MastersRequirementsSmall: FC<MastersRequirementsSmallProps> = ({
   );
 };
 
-export default MastersRequirementsSmall;
+export default MastersRequirementsPhone;

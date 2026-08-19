@@ -2,7 +2,7 @@
 
 import WorkloadChartLabel from "./components/WorkloadChartLabel";
 import { useAnimationKey } from "@/common/hooks/useAnimationKey";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 import { Label, Pie, PieChart } from "recharts";
 import {
   type ChartConfig,
@@ -40,21 +40,18 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
     dependencies: [scheduledHours, selfStudyHours],
   });
 
-  const data = useMemo(
-    () => [
-      {
-        name: "scheduled",
-        hours: scheduledHours,
-        fill: "var(--color-scheduled)",
-      },
-      {
-        name: "selfStudy",
-        hours: selfStudyHours,
-        fill: "var(--color-selfStudy)",
-      },
-    ],
-    [scheduledHours, selfStudyHours],
-  );
+  const data = [
+    {
+      name: "scheduled",
+      hours: scheduledHours,
+      fill: "var(--color-scheduled)",
+    },
+    {
+      name: "selfStudy",
+      hours: selfStudyHours,
+      fill: "var(--color-selfStudy)",
+    },
+  ];
 
   return (
     // h-30/w-30 are --spacing multiples, but the pie's radii below are absolute

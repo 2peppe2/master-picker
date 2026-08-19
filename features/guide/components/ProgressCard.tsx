@@ -26,12 +26,10 @@ const ProgressCard: FC<ProgressCardProps> = ({
     const hasCompulsory = compulsoryCourses.length > 0;
     const completedElectives = electiveRequirements.filter((group, index) => {
       const minRequired = group.minCount ?? 1;
-      const selectedCount = electiveSelections[index]?.length ?? 0;
-      return selectedCount >= minRequired;
+      return (electiveSelections[index]?.length ?? 0) >= minRequired;
     }).length;
     const electiveConfirmed =
       totalElectives === 0 || completedElectives === totalElectives;
-
     const totalSteps = (hasCompulsory ? 1 : 0) + totalElectives;
     const completedSteps = 1 + completedElectives;
 
@@ -42,8 +40,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
         totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
       ),
     };
-  }, [electiveRequirements, electiveSelections, compulsoryCourses]);
-
+  }, [compulsoryCourses, electiveRequirements, electiveSelections]);
   const steps = useMemo(
     () =>
       [
