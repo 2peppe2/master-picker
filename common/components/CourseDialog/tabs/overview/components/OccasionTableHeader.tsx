@@ -28,7 +28,7 @@ const OccasionTableHeader: FC<OccasionTableHeaderProps> = ({
       </TableHead>
       {showRecommendedMaster && (
         <TableHead className="py-2 text-xs font-medium text-muted-foreground">
-          <Translate text="recommended_for_master" />
+          <Translate text="_recommended_for_master" />
         </TableHead>
       )}
       {showAdd && (

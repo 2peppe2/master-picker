@@ -2,6 +2,7 @@
 
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import { useCourseTranslate } from "@/common/components/translate/hooks/useCourseTranslate";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { COURSE_CARD_INTERACTION_BARRIER_ATTRIBUTE } from "./interactionBarrier";
 
@@ -26,13 +27,21 @@ const CourseTitleButton: FC<CourseTitleButtonProps> = ({
       data-slot="course-card-title"
       {...{ [COURSE_CARD_INTERACTION_BARRIER_ATTRIBUTE]: "" }}
       onClick={(event) => event.stopPropagation()}
-      className="min-w-0 max-w-[calc(100%-1rem)] text-left text-sm font-medium text-muted-foreground [overflow-wrap:anywhere]"
-      style={{
-        display: "-webkit-box",
-        WebkitBoxOrient: "vertical",
-        WebkitLineClamp: 2,
-        overflow: "hidden",
-      }}
+      // min-h-[2lh] reserves both clamped lines so cards stay aligned even when
+      // a short title fits on one, which the smaller landscape type exposes.
+      //
+      // The clamp is a utility rather than an inline style so the landscape
+      // override below can win -- an inline style beats a class at any media
+      // query, which would have made landscape-phone:line-clamp-1 a no-op.
+      className={cn(
+        "line-clamp-2 min-h-[2lh] min-w-0 max-w-[calc(100%-1rem)]",
+        "text-left text-sm font-medium text-muted-foreground",
+        "[overflow-wrap:anywhere]",
+        // One line on a ~100px tile, and no reserved gutter: the add button's
+        // clearance already lives on the code row above.
+        "landscape-phone:line-clamp-1 landscape-phone:min-h-[1lh]",
+        "landscape-phone:max-w-full",
+      )}
     >
       <span
         data-slot="course-card-title-trigger"

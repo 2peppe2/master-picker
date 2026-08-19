@@ -23,7 +23,7 @@ const CreditRow: FC<CreditRowProps> = ({ requirement, current = 0 }) => {
 
   return (
     <span className="leading-snug">
-      <Translate text="have_at_least" />{" "}
+      <Translate text="_have_at_least" />{" "}
       <b className="text-foreground font-bold">{current}</b>
       <span className="text-muted-foreground/60 mx-1">/</span>
       <b className="text-foreground">{requirement.credits} HP</b>{" "}

@@ -32,7 +32,7 @@ const WorkloadChartLabel: FC<WorkloadChartLabelProps> = ({
         {totalHours} h
       </tspan>
       <tspan
-        className="fill-muted-foreground text-[10px]"
+        className="fill-muted-foreground text-2xs"
         x={viewBox.cx}
         y={(viewBox.cy || 0) + 13}
       >

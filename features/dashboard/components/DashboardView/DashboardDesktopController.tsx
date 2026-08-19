@@ -36,6 +36,7 @@ const DashboardDesktopController = () => {
               open={drag.conflictOpen}
               setOpen={drag.setConflictOpen}
               conflictData={drag.conflictData}
+              onResolve={drag.resolveConflict}
             />
           )}
           <DashboardViewLarge />

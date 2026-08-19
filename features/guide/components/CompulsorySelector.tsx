@@ -36,7 +36,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
   }
 
   return (
-    <Card className="mt-8 gap-4 sm:mt-10">
+    <Card className="mt-8 gap-4 sm:mt-10 landscape-phone:mt-4">
       <Collapsible
         open={isRequiredOpen}
         onOpenChange={(setOpen) => {
@@ -47,7 +47,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
               <Badge className="border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400">
-                <Translate text="_guide_auto_added" />
+                <Translate text="guide_auto_added" />
               </Badge>
               <CardTitle>
                 <Translate text="_guide_required_courses" />
@@ -105,7 +105,7 @@ const CompulsorySelector: FC<CompulsoryCardSummaryProps> = ({
         </CardHeader>
         <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
           <CardContent>
-            <div className="grid grid-cols-2 justify-items-center gap-4 py-4 sm:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 justify-items-center gap-4 py-4 sm:grid-cols-3 lg:grid-cols-4 landscape-phone:grid-cols-5 landscape-phone:gap-2 landscape-phone:py-2">
               {compulsoryCourses.map((req) =>
                 req.courses.map((courseEntry) => (
                   <div

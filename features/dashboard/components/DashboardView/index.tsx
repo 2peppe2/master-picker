@@ -1,19 +1,26 @@
 "use client";
 
+import DashboardLandscapeController from "./DashboardLandscapeController";
 import DashboardCompactController from "./DashboardCompactController";
 import DashboardDesktopController from "./DashboardDesktopController";
-import { useIsCompact } from "@/common/hooks/useResponsiveLayout";
+import {
+  useIsLandscapePhone,
+  useLayoutTier,
+} from "@/common/hooks/useResponsiveLayout";
 import { FC } from "react";
 
 export type DashboardTab = "schedule" | "search";
 
 const DashboardView: FC = () => {
-  const isCompact = useIsCompact();
+  const tier = useLayoutTier();
+  const isLandscapePhone = useIsLandscapePhone();
 
-  return isCompact ? (
-    <DashboardCompactController />
-  ) : (
+  if (isLandscapePhone) return <DashboardLandscapeController />;
+
+  return tier === "desktop" ? (
     <DashboardDesktopController />
+  ) : (
+    <DashboardCompactController />
   );
 };
 

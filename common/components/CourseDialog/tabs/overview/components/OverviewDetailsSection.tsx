@@ -34,19 +34,19 @@ const OverviewDetailsSection: FC<OverviewDetailsSectionProps> = ({
       <div className="mt-1">
         <OverviewDetailRow
           icon={UserRound}
-          label={translate("_course_examiner")}
+          label={translate("course_examiner")}
           value={examiner}
         />
         <Separator />
         <OverviewDetailRow
           icon={Building2}
-          label={translate("_course_department")}
+          label={translate("course_department")}
           value={department}
         />
         <Separator />
         <OverviewDetailRow
           icon={GraduationCap}
-          label={translate("_course_level")}
+          label={translate("course_level")}
           value={level}
         />
         <Separator />
@@ -67,7 +67,7 @@ const OverviewDetailsSection: FC<OverviewDetailsSectionProps> = ({
                 <Badge
                   key={field}
                   variant="outline"
-                  className="rounded-md px-2 py-0.5 text-[11px]"
+                  className="rounded-md px-2 py-0.5 text-2xs"
                 >
                   <CourseTranslate text={field} />
                 </Badge>

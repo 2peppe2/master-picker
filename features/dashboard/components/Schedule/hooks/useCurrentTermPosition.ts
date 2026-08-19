@@ -46,7 +46,6 @@ export const isScrollTargetReachable = ({
   return targetScrollTop <= maximumScrollTop;
 };
 
-/** Positions the first expanded current-term card beneath the sticky header. */
 export const useCurrentTermPosition = (currentSemester: number) => {
   const hasPositionedCurrentTerm = useRef(false);
 

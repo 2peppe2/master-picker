@@ -8,7 +8,7 @@ This applications sets out to help students at Linköping University (LiU) choos
 > **⚠️ Warning, Software under development**
 >
 >- Currently the application is under active development. Features may be incomplete or subject to change. Please report any issues or feature requests on the GitHub repository.
->- The application is not yet optimized for mobile devices.
+>- The application supports phones and tablets in both portrait and landscape, but the drag-and-drop flow is desktop only.
 >- The application currently only supports the 
 U-program, D-program and the IT-program at Linköping University.
 

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 import Translate from "@/common/components/translate/Translate";
 import type { NormalizedEvaluationReport } from "../normalizeEvaluationReports";
+import ArchivedReportRow from "./ArchivedReportRow";
 import { ChevronDown } from "lucide-react";
 import { FC, useState } from "react";
 import {
@@ -35,7 +36,7 @@ const EvaluationArchivedReports: FC<EvaluationArchivedReportsProps> = ({
             <Translate text="_course_eval_archived_reports" /> ({reports.length}
             )
           </h3>
-          <p className="text-[11px] text-muted-foreground">
+          <p className="text-2xs text-muted-foreground">
             <Translate text="_course_eval_login_required" />
           </p>
         </div>
@@ -61,35 +62,3 @@ const EvaluationArchivedReports: FC<EvaluationArchivedReportsProps> = ({
 };
 
 export default EvaluationArchivedReports;
-
-interface ArchivedReportRowProps {
-  report: NormalizedEvaluationReport;
-}
-
-const ArchivedReportRow: FC<ArchivedReportRowProps> = ({ report }) => (
-  <div
-    className={cn(
-      "flex min-h-12 items-center justify-between gap-3",
-      "rounded-xl bg-muted/40 p-3",
-    )}
-  >
-    <span className="text-sm font-medium">
-      {new Date(report.reportDate).toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "long",
-      })}
-    </span>
-    <a
-      href={`https://admin.evaliuate.liu.se/ReportFile/report/${report.reportId}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        "shrink-0 rounded-full bg-primary/10 px-3 py-1.5",
-        "text-xs font-bold text-primary transition-colors",
-        "hover:bg-primary/20",
-      )}
-    >
-      <Translate text="_view_pdf" />
-    </a>
-  </div>
-);

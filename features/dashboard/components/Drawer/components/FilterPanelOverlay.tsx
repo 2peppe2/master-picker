@@ -20,8 +20,12 @@ import type { FC } from "react";
 import CourseFilterPanel from "./CourseFilterPanel";
 
 interface FilterPanelOverlayProps {
-  compact: boolean;
-  tablet: boolean;
+  /**
+   * Short landscape phones get a side sheet because they have width to spare
+   * but too little height for the category drill-down. Portrait phones and
+   * tablets use a bottom sheet.
+   */
+  sideSheet: boolean;
   open: boolean;
   title: string;
   description: string;
@@ -33,8 +37,7 @@ interface FilterPanelOverlayProps {
 }
 
 const FilterPanelOverlay: FC<FilterPanelOverlayProps> = ({
-  compact,
-  tablet,
+  sideSheet,
   open,
   title,
   description,
@@ -44,19 +47,7 @@ const FilterPanelOverlay: FC<FilterPanelOverlayProps> = ({
   onClear,
   onOpenChange,
 }) => {
-  const panel = (
-    <CourseFilterPanel
-      groups={groups}
-      selectedValues={selectedValues}
-      onToggle={onToggle}
-      onClear={onClear}
-      onClose={() => onOpenChange(false)}
-    />
-  );
-
-  if (!compact) return null;
-
-  if (tablet) {
+  if (sideSheet) {
     return (
       <Sheet open={open} onOpenChange={onOpenChange}>
         <SheetContent
@@ -64,13 +55,21 @@ const FilterPanelOverlay: FC<FilterPanelOverlayProps> = ({
           className={cn(
             "w-[min(28rem,92vw)] gap-0 p-0 sm:max-w-none",
             "[&>button]:hidden",
+            // Clears the notch, which sits on a side edge when rotated.
+            "landscape-phone:pe-[env(safe-area-inset-right)]",
           )}
         >
           <SheetHeader className="sr-only">
             <SheetTitle>{title}</SheetTitle>
             <SheetDescription>{description}</SheetDescription>
           </SheetHeader>
-          {panel}
+          <CourseFilterPanel
+            groups={groups}
+            selectedValues={selectedValues}
+            onToggle={onToggle}
+            onClear={onClear}
+            onClose={() => onOpenChange(false)}
+          />
         </SheetContent>
       </Sheet>
     );
@@ -85,7 +84,13 @@ const FilterPanelOverlay: FC<FilterPanelOverlayProps> = ({
         <BottomSheetDescription className="sr-only">
           {description}
         </BottomSheetDescription>
-        {panel}
+        <CourseFilterPanel
+          groups={groups}
+          selectedValues={selectedValues}
+          onToggle={onToggle}
+          onClear={onClear}
+          onClose={() => onOpenChange(false)}
+        />
       </BottomSheetContent>
     </BottomSheet>
   );

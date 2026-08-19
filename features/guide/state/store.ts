@@ -1,3 +1,3 @@
 "use client";
 
-export { mastersAtom } from "@/features/catalog/data";
+export { mastersAtom } from "@/common/state/catalog";

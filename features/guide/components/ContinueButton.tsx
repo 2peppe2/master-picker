@@ -90,11 +90,11 @@ const ContinueButton: FC<ContinueButtonProps> = ({
       {isLoading ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          <Translate text="_guide_processing" />
+          <Translate text="guide_processing" />
         </>
       ) : (
         <>
-          <Translate text="_guide_continue" />
+          <Translate text="guide_continue" />
           <ArrowRight className="ml-2 h-4 w-4" />
         </>
       )}

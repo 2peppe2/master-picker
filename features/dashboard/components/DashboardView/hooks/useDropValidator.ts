@@ -11,7 +11,6 @@ interface ValidateDropArgs {
   overData: PeriodNodeData;
 }
 
-/** Validates a requested drag target against the course's available occasions. */
 export const useDropValidator = () => {
   const startingYear = useStartingYear();
 

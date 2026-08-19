@@ -14,7 +14,6 @@ interface UseDefaultModuleSelectionArgs {
   onInitialStatConsumed?: () => void;
 }
 
-/** Selects the requested or first meaningful statistics module exactly once. */
 export const useDefaultModuleSelection = ({
   course,
   allProcessedModules,
@@ -26,7 +25,6 @@ export const useDefaultModuleSelection = ({
   const [hasSetDefault, setHasSetDefault] = useState(false);
 
   useEffect(() => {
-    // Navigation from examination table: jump to the latest original for a specific module
     if (initialStatModule && allProcessedModules.length > 0) {
       const exams = allProcessedModules.filter(
         (m) => m.moduleCode === initialStatModule,
@@ -47,7 +45,6 @@ export const useDefaultModuleSelection = ({
       return;
     }
 
-    // Auto-default: only run once, and only when no module is yet selected
     if (
       allProcessedModules.length > 0 &&
       !hasSetDefault &&
@@ -68,7 +65,6 @@ export const useDefaultModuleSelection = ({
         return `${sorted[0].moduleCode}-${sorted[0].date}`;
       };
 
-      // Step 1: Iterate course.Examination in order, skip lab-type modules
       for (const exam of course.Examination) {
         const isLab = LAB_MODULE_CODES.some((code) =>
           exam.module.startsWith(code),
@@ -83,7 +79,6 @@ export const useDefaultModuleSelection = ({
         }
       }
 
-      // Step 2: No exam-type modules had data — fall back to first lab in examination order
       for (const exam of course.Examination) {
         const isLab = LAB_MODULE_CODES.some((code) =>
           exam.module.startsWith(code),
@@ -98,7 +93,6 @@ export const useDefaultModuleSelection = ({
         }
       }
 
-      // Step 3: Nothing found — show all
       setSelectedModule("all");
       setHasSetDefault(true);
     }

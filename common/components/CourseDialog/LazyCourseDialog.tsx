@@ -1,33 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type FC } from "react";
 import CourseDialog from ".";
 import type { Course } from "@/common/types";
+import { useDelayedUnmount } from "@/common/hooks/useDelayedUnmount";
+import type { OccasionActions } from "./types";
 
 interface LazyCourseDialogProps {
   course: Course;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   showAdd?: boolean;
+  preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
-const LazyCourseDialog = ({
+const LazyCourseDialog: FC<LazyCourseDialogProps> = ({
   course,
   open,
   onOpenChange,
   showAdd,
-}: LazyCourseDialogProps) => {
-  const [mounted, setMounted] = useState(open);
-
-  useEffect(() => {
-    if (open) {
-      setMounted(true);
-      return;
-    }
-
-    const timeout = window.setTimeout(() => setMounted(false), 250);
-    return () => window.clearTimeout(timeout);
-  }, [open]);
+  preferredSemesters,
+  occasionActions,
+}) => {
+  const mounted = useDelayedUnmount(open, 250);
 
   if (!mounted && !open) return null;
 
@@ -37,6 +33,8 @@ const LazyCourseDialog = ({
       open={open}
       onOpenChange={onOpenChange}
       showAdd={showAdd}
+      preferredSemesters={preferredSemesters}
+      occasionActions={occasionActions}
     />
   );
 };

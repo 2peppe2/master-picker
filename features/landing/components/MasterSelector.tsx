@@ -7,7 +7,7 @@ import Translate from "@/common/components/translate/Translate";
 import { LandingPageProgram } from "../LandingClientPage";
 import { FC, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import LoadingDots from "./LoadingDots";
+import LoadingLabel from "@/common/components/loading/LoadingLabel";
 import { Loader2 } from "lucide-react";
 
 interface MasterSelectorProps {
@@ -27,31 +27,29 @@ const MasterSelector: FC<MasterSelectorProps> = ({
   onPickLater,
   isLoading,
 }) => {
-  const courseTranslate = useCourseTranslate();
   const translate = useCommonTranslate();
-
+  const courseTranslate = useCourseTranslate();
   const displayStates = useMemo(
     () =>
       ({
-        placeholder: translate("select_master"),
-        empty: translate("no_masters_found"),
+        placeholder: translate("_select_master"),
+        empty: translate("_no_masters_found"),
       }) satisfies ComboboxDisplay,
     [translate],
   );
   const items = useMemo(() => {
-    if (!activeProgram || !year) return [];
-
-    const selectedYearData = activeProgram.years.find(
-      (y) => String(y.year) === year,
+    const selectedYear = activeProgram?.years.find(
+      (item) => String(item.year) === year,
     );
-
-    if (!selectedYearData) return [];
-
-    return selectedYearData.masters.map((m) => ({
-      label: m.name ? courseTranslate(m.name) : translate("unknown_master"),
-      value: m.program,
-    }));
-  }, [activeProgram, year, translate, courseTranslate]);
+    return (
+      selectedYear?.masters.map((master) => ({
+        label: master.name
+          ? courseTranslate(master.name)
+          : translate("_unknown_master"),
+        value: master.program,
+      })) ?? []
+    );
+  }, [activeProgram, courseTranslate, translate, year]);
 
   return (
     <div className="w-full flex flex-col items-center gap-2">
@@ -61,18 +59,16 @@ const MasterSelector: FC<MasterSelectorProps> = ({
         onValueChange={(item) => onValueChange(item?.value ?? null)}
         displayStates={displayStates}
       />
-      <Button
-        variant="link"
-        onClick={onPickLater}
-        disabled={isLoading || !year}
-      >
-        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        {isLoading ? (
-          <LoadingDots text={translate("loading_dashboard")} />
-        ) : (
-          <Translate text="pick_master_later" />
-        )}
-      </Button>
+      <fieldset disabled={isLoading || !year} className="contents">
+        <Button variant="link" onClick={onPickLater}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? (
+            <LoadingLabel>{translate("_loading_dashboard")}</LoadingLabel>
+          ) : (
+            <Translate text="_pick_master_later" />
+          )}
+        </Button>
+      </fieldset>
     </div>
   );
 };

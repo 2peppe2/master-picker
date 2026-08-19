@@ -15,7 +15,6 @@ import type {
   RemoveCourseArgs,
 } from "../types";
 
-/** Exposes schedule commands for placing and removing courses. */
 export const useCourseCommands = () => {
   const toRelativeSemester = useToRelativeSemester();
   const add = useSetAtom(addCourseAtom);
@@ -42,7 +41,6 @@ export const useCourseCommands = () => {
   );
 };
 
-/** Exposes commands for changing a semester's wildcard block capacity. */
 export const useBlockCommands = () => {
   const add = useSetAtom(addBlockToSemesterAtom);
   const remove = useSetAtom(deleteBlockFromSemesterAtom);

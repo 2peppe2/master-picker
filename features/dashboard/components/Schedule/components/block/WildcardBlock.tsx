@@ -2,13 +2,10 @@
 
 import { useBlockCommands } from "@/features/dashboard/state/schedule/hooks/useScheduleCommands";
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import { draggedCourseAtom } from "@/features/dashboard/state/drag/atoms";
 import { useDashboardTabs } from "../../../DashboardView/DashboardTabContext";
+import ScheduledCourseSlot from "./components/ScheduledCourseSlot";
 import Translate from "@/common/components/translate/Translate";
-import { Draggable } from "@/features/dashboard/components/DndProvider/Draggable";
 import { Droppable } from "@/features/dashboard/components/Droppable";
-import CourseCard from "@/common/components/CourseCard";
-import { useAtomValue } from "jotai";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlockProps } from ".";
@@ -16,12 +13,8 @@ import { FC } from "react";
 
 const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
   const { deleteBlockFromSemester } = useBlockCommands();
-  const draggedCourse = useAtomValue(draggedCourseAtom);
   const { setActiveTab } = useDashboardTabs();
   const translate = useCommonTranslate();
-
-  const isThisCourseBeingDragged = draggedCourse?.code === courseSlot?.code;
-  const shouldShowCourse = courseSlot && !isThisCourseBeingDragged;
 
   const handleRemoveSlot = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -41,25 +34,8 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
       id={`ghost-${data.semesterNumber}-${data.periodNumber}-${data.blockNumber}`}
       occupied={Boolean(courseSlot)}
     >
-      {shouldShowCourse ? (
-        <Draggable
-          data={courseSlot}
-          id={`${courseSlot.code}-${data.periodNumber}-${data.blockNumber}`}
-        >
-          <CourseCard variant="dropped" course={courseSlot} />
-        </Draggable>
-      ) : courseSlot && isThisCourseBeingDragged ? (
-        <div
-          className={cn(
-            "h-full w-full transition-opacity duration-200",
-            draggedCourse
-              ? "opacity-30 grayscale-[0.5] pointer-events-none"
-              : "opacity-100",
-          )}
-        >
-          <CourseCard variant="dropped" course={courseSlot} />
-        </div>
-      ) : (
+      <ScheduledCourseSlot courseSlot={courseSlot} data={data} />
+      {!courseSlot && (
         <div className="group relative h-full w-full">
           <button
             type="button"
@@ -77,13 +53,13 @@ const WildcardBlock: FC<BlockProps> = ({ courseSlot, data }) => {
                 "select-none",
               )}
             >
-              <Translate text="_wildcard_block_label" />
+              <Translate text="wildcard_block_label" />
             </span>
           </button>
           <button
             onClick={handleRemoveSlot}
             type="button"
-            aria-label={translate("remove_block")}
+            aria-label={translate("_remove_block")}
             className={cn(
               "absolute right-1 top-1 z-10 size-8 text-zinc-400",
               "border-2 border-transparent rounded-md p-2",

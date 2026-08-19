@@ -2,7 +2,7 @@
 
 import WorkloadChartLabel from "./components/WorkloadChartLabel";
 import { useAnimationKey } from "@/common/hooks/useAnimationKey";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 import { Label, Pie, PieChart } from "recharts";
 import {
   type ChartConfig,
@@ -40,24 +40,28 @@ const WorkloadChart: FC<WorkloadChartProps> = ({
     dependencies: [scheduledHours, selfStudyHours],
   });
 
-  const data = useMemo(
-    () => [
-      {
-        name: "scheduled",
-        hours: scheduledHours,
-        fill: "var(--color-scheduled)",
-      },
-      {
-        name: "selfStudy",
-        hours: selfStudyHours,
-        fill: "var(--color-selfStudy)",
-      },
-    ],
-    [scheduledHours, selfStudyHours],
-  );
+  const data = [
+    {
+      name: "scheduled",
+      hours: scheduledHours,
+      fill: "var(--color-scheduled)",
+    },
+    {
+      name: "selfStudy",
+      hours: selfStudyHours,
+      fill: "var(--color-selfStudy)",
+    },
+  ];
 
   return (
-    <ChartContainer config={revenueChartConfig} className="h-30 w-30">
+    // h-30/w-30 are --spacing multiples, but the pie's radii below are absolute
+    // pixels. The landscape panel scale shrinks the box to 90px while the pie
+    // still draws 100px across, which clipped it -- so landscape pins the box
+    // to the 120px it resolves to everywhere else.
+    <ChartContainer
+      config={revenueChartConfig}
+      className="h-30 w-30 landscape-phone:size-[7.5rem]"
+    >
       <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
         <ChartTooltip
           cursor={false}

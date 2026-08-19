@@ -4,6 +4,7 @@ import * as React from "react";
 import { Drawer } from "vaul";
 
 import { COURSE_CARD_INTERACTION_BARRIER_ATTRIBUTE } from "@/common/components/CourseCard/interactionBarrier";
+import { useIsShortViewport } from "@/common/hooks/useResponsiveLayout";
 import { cn } from "@/lib/utils";
 
 const BottomSheetTrigger = Drawer.Trigger;
@@ -12,10 +13,17 @@ const BottomSheetTitle = Drawer.Title;
 const BottomSheetDescription = Drawer.Description;
 
 const NATIVE_SNAP_POINTS: (number | string)[] = [0.5, 1];
+/**
+ * Half of a landscape phone is barely 200px, so short viewports skip the
+ * intermediate stop and open at full height.
+ */
+const SHORT_VIEWPORT_SNAP_POINTS: (number | string)[] = [1];
 const SWIPE_STEP_DISTANCE = 48;
 
 interface BottomSheetContextValue {
   stepDownOrDismiss: () => void;
+  /** A sheet opening at full height drops its rounded top and drag handle. */
+  fullscreen: boolean;
 }
 
 const BottomSheetContext = React.createContext<BottomSheetContextValue | null>(
@@ -34,13 +42,29 @@ function BottomSheet({
   open: controlledOpen,
   defaultOpen = false,
   onOpenChange,
-  initialSnapPoint = NATIVE_SNAP_POINTS[0],
-  snapPoints = NATIVE_SNAP_POINTS,
+  initialSnapPoint: initialSnapPointProp,
+  snapPoints: snapPointsProp,
   closeThreshold = 0.25,
   fadeFromIndex = 0,
   snapToSequentialPoint = true,
   ...props
 }: BottomSheetProps) {
+  const parentBottomSheet = React.useContext(BottomSheetContext);
+  const isShortViewport = useIsShortViewport();
+  const snapPoints =
+    snapPointsProp ??
+    (isShortViewport ? SHORT_VIEWPORT_SNAP_POINTS : NATIVE_SNAP_POINTS);
+  const requestedSnapPoint = initialSnapPointProp ?? snapPoints[0];
+  // Keep the initial stop inside the active list, otherwise the index lookup in
+  // stepDownOrDismiss misses and swipe-to-dismiss stops working.
+  const initialSnapPoint = snapPoints.includes(requestedSnapPoint)
+    ? requestedSnapPoint
+    : snapPoints[snapPoints.length - 1];
+  // Raw props, not the resolved snapPoints: the short-viewport substitution
+  // rewrites every sheet's list to [1], which would square them all off.
+  const fullscreen =
+    initialSnapPointProp === 1 || snapPointsProp?.length === 1;
+
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(defaultOpen);
   const [activeSnapPoint, setActiveSnapPoint] = React.useState<
     number | string | null
@@ -70,6 +94,7 @@ function BottomSheet({
 
   const contextValue = React.useMemo(
     () => ({
+      fullscreen,
       stepDownOrDismiss: () => {
         const activeIndex = snapPoints.indexOf(activeSnapPoint ?? initialSnapPoint);
 
@@ -81,23 +106,29 @@ function BottomSheet({
         handleOpenChange(false);
       },
     }),
-    [activeSnapPoint, handleOpenChange, initialSnapPoint, snapPoints],
+    [
+      activeSnapPoint,
+      fullscreen,
+      handleOpenChange,
+      initialSnapPoint,
+      snapPoints,
+    ],
   );
 
-  return (
-    <Drawer.Root
-      {...props}
-      open={open}
-      onOpenChange={handleOpenChange}
-      snapPoints={snapPoints}
-      activeSnapPoint={activeSnapPoint}
-      setActiveSnapPoint={setActiveSnapPoint}
-      closeThreshold={closeThreshold}
-      fadeFromIndex={fadeFromIndex}
-      snapToSequentialPoint={snapToSequentialPoint}
-    >
-      <BottomSheetContext value={contextValue}>{children}</BottomSheetContext>
-    </Drawer.Root>
+  return React.createElement(
+    parentBottomSheet ? Drawer.NestedRoot : Drawer.Root,
+    {
+      ...props,
+      open,
+      onOpenChange: handleOpenChange,
+      snapPoints,
+      activeSnapPoint,
+      setActiveSnapPoint,
+      closeThreshold,
+      fadeFromIndex,
+      snapToSequentialPoint,
+    },
+    <BottomSheetContext value={contextValue}>{children}</BottomSheetContext>,
   );
 }
 
@@ -105,6 +136,7 @@ function BottomSheetContent({
   className,
   children,
   showHandle = true,
+  fullscreen: fullscreenProp,
   onClickCapture,
   onPointerCancel,
   onPointerDown,
@@ -112,8 +144,11 @@ function BottomSheetContent({
   ...props
 }: React.ComponentPropsWithoutRef<typeof Drawer.Content> & {
   showHandle?: boolean;
+  /** Overrides what BottomSheet derived from the snap points. */
+  fullscreen?: boolean;
 }) {
   const bottomSheet = React.useContext(BottomSheetContext);
+  const fullscreen = fullscreenProp ?? bottomSheet?.fullscreen ?? false;
   const dragStartRef = React.useRef<{ id: number; y: number } | null>(null);
   const suppressClickUntilRef = React.useRef(0);
 
@@ -165,6 +200,7 @@ function BottomSheetContent({
         {...{ [COURSE_CARD_INTERACTION_BARRIER_ATTRIBUTE]: "" }}
         className={cn(
           "fixed inset-x-0 bottom-0 z-50 flex h-[100dvh] max-h-[100dvh] flex-col rounded-t-2xl border border-b-0 bg-background shadow-2xl outline-none",
+          fullscreen && "rounded-none border-0",
           className,
         )}
         onClickCapture={handleClickCapture}
@@ -173,7 +209,7 @@ function BottomSheetContent({
         onPointerUp={handlePointerUp}
         {...props}
       >
-        {showHandle && (
+        {showHandle && !fullscreen && (
           <Drawer.Handle className="mx-auto mt-2.5 h-1.5 w-12 shrink-0 rounded-full bg-muted-foreground/35" />
         )}
         {children}

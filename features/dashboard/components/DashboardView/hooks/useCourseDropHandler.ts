@@ -1,7 +1,7 @@
 "use client";
 
-import { useCourseContlictResolver } from "@/common/components/ConflictResolverModal/hooks/useCourseContlictResolver";
-import { useConflictManager } from "@/common/components/ConflictResolverModal/hooks/useConflictManager";
+import { useCourseConflictResolver } from "@/features/dashboard/hooks/useCourseConflictResolver";
+import { useConflictManager } from "@/features/dashboard/hooks/useConflictManager";
 import { useCourseCommands } from "@/features/dashboard/state/schedule/hooks/useScheduleCommands";
 import { useCollisionDetector } from "./useCollisionDetector";
 import { useGhostDropHandler } from "./useGhostDropHandler";
@@ -14,12 +14,11 @@ interface HandleDropArgs {
   overData: PeriodNodeData;
 }
 
-/** Coordinates validated course placement and any resulting conflict flow. */
 export const useCourseDropHandler = () => {
   const { showConflict, conflictData, conflictOpen, setConflictOpen } =
     useConflictManager();
   const { detectCollisions } = useCollisionDetector();
-  const { executeAdd } = useCourseContlictResolver();
+  const { executeAdd, resolveConflict } = useCourseConflictResolver();
   const { handleGhostDrop } = useGhostDropHandler();
   const { removeCourse } = useCourseCommands();
   const { validateDrop } = useDropValidator();
@@ -80,7 +79,15 @@ export const useCourseDropHandler = () => {
     return true;
   };
 
-  return { handleDrop, conflictData, conflictOpen, setConflictOpen };
+  return {
+    handleDrop,
+    conflictData,
+    conflictOpen,
+    setConflictOpen,
+    resolveConflict: (type: "replace" | "extra") => {
+      if (conflictData) resolveConflict({ ...conflictData, type });
+    },
+  };
 };
 
 export type UseCourseDropHandler = ReturnType<typeof useCourseDropHandler>;

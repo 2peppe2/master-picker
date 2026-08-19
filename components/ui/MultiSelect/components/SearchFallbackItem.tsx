@@ -38,7 +38,7 @@ const SearchFallbackItem: FC<SearchFallbackItemProps> = ({
           <Search className="h-4 w-4 opacity-50" />
         </div>
         <div className="truncate flex items-center gap-2 flex-1 min-w-0 text-sm">
-          <Translate text="search_for" />{" "}
+          <Translate text="_search_for" />{" "}
           <span className="font-semibold">{searchValue}</span>
         </div>
       </CommandItem>

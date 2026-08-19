@@ -30,10 +30,10 @@ const WildcardExpansionDialog: FC<WildcardExpansionDialogProps> = ({
     <AlertDialogContent>
       <AlertDialogHeader>
         <AlertDialogTitle>
-          <Translate text="add_block_to_semester" />
+          <Translate text="_add_block_to_semester" />
         </AlertDialogTitle>
         <AlertDialogDescription>
-          <Translate text="no_empty_blocks_available" />
+          <Translate text="_no_empty_blocks_available" />
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>

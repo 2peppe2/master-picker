@@ -15,7 +15,6 @@ interface MasterProgress {
   allRequirementsWithProgress: RequirementUnion[];
 }
 
-/** Evaluates selected courses against one master's requirements. */
 export const useEvaluateMasterProgress = () => {
   const selectedMasterCourses = useAtomValue(selectedMasterCoursesAtom);
   const selectedCourses = useAtomValue(selectedCoursesAtom);
@@ -87,14 +86,12 @@ const getProgressStats = ({
     case "CREDITS_MAIN_FIELD_TOTAL": {
       const fieldProgress: Record<string, number> = {};
 
-      // Calculate individual HP for each field in the list
       req.fields.forEach((field) => {
         fieldProgress[field] = masterCourses
           .filter((c) => c.mainField?.includes(field))
           .reduce((sum, c) => sum + (c.credits || 0), 0);
       });
 
-      // The requirement is met by reaching the threshold in any one field.
       const highestFieldProgress = Math.max(0, ...Object.values(fieldProgress));
 
       return {

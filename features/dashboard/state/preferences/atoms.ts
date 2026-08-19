@@ -15,3 +15,14 @@ export const calendarAnnouncementSeenAtom = atomWithStorage(
   "mp:seen:calendar-subscribe:v1",
   false,
 );
+
+export type PhoneScheduleLayout = "grid" | "carousel";
+
+/**
+ * Phone-only: whether a period's blocks stack two per row or scroll sideways.
+ * Wider viewports keep their own breakpoint layouts regardless of this value.
+ */
+export const phoneScheduleLayoutAtom = atomWithStorage<PhoneScheduleLayout>(
+  "mp:pref:phone-schedule-layout:v1",
+  "grid",
+);

@@ -5,7 +5,7 @@ import { FC } from "react";
 
 const EvaluationSourceLink: FC = () => (
   <div className="px-1">
-    <p className="text-[11px] leading-relaxed text-muted-foreground italic">
+    <p className="text-2xs leading-relaxed text-muted-foreground italic">
       <Translate text="_course_eval_data_via" />{" "}
       <a
         href="https://admin.evaliuate.liu.se/search"

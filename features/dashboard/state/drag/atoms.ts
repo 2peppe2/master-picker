@@ -1,5 +1,6 @@
 import type { Course } from "@/common/types";
 import { atom } from "jotai";
+import { atomFamily } from "jotai-family";
 import type { CompatibleSemester } from "./domain";
 
 const draggedCourseStateAtom = atom<Course | null>(null);
@@ -19,6 +20,33 @@ export const currentDropTargetIdAtom = atom((get) =>
 export const compatibleDragSemestersAtom = atom((get) =>
   get(compatibleSemestersStateAtom),
 );
+
+const isValidDropTargetAtomFamily = atomFamily((id: string) =>
+  atom((get) => get(validDropTargetIdsStateAtom).has(id)),
+);
+const isCurrentDropTargetAtomFamily = atomFamily((id: string) =>
+  atom((get) => get(currentDropTargetIdStateAtom) === id),
+);
+const isCourseBeingDraggedAtomFamily = atomFamily((courseCode: string) =>
+  atom((get) => get(draggedCourseStateAtom)?.code === courseCode),
+);
+const compatibleTargetCountAtomFamily = atomFamily((semester: number) =>
+  atom(
+    (get) =>
+      get(compatibleSemestersStateAtom).find(
+        (item) => item.semesterNumber === semester,
+      )?.targetCount,
+  ),
+);
+
+export const isValidDropTargetAtom = (id: string) =>
+  isValidDropTargetAtomFamily(id);
+export const isCurrentDropTargetAtom = (id: string) =>
+  isCurrentDropTargetAtomFamily(id);
+export const isCourseBeingDraggedAtom = (courseCode: string) =>
+  isCourseBeingDraggedAtomFamily(courseCode);
+export const compatibleTargetCountAtom = (semester: number) =>
+  compatibleTargetCountAtomFamily(semester);
 
 export const setDraggedCourseAtom = atom(
   null,

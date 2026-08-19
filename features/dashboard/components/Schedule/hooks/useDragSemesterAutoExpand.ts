@@ -32,7 +32,6 @@ export const shouldAutoOpenSemester = (
 ) =>
   hoveredSemester !== null && !expandedSemesters.includes(hoveredSemester + 1);
 
-/** Auto-expands compatible semesters while dragging and closes abandoned ones. */
 export const useDragSemesterAutoExpand = () => {
   const compatibleSemesters = useAtomValue(compatibleDragSemestersAtom);
   const expandedSemesters = useAtomValue(expandedSemestersAtom);

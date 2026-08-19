@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-import { semesterAtom } from "@/features/dashboard/state/schedule/atoms";
 import { Card, CardContent } from "@/components/ui/card";
 import { isSemesterExpandedAtom } from "@/features/dashboard/state/semester-ui/atoms";
 import { useAtomValue } from "jotai";
@@ -26,8 +25,6 @@ const SemesterView: FC<SemesterViewProps> = ({
 
   useRevealSemesterOnCourseAdded(semesterNumber);
 
-  const periods = useAtomValue(semesterAtom(semesterNumber));
-
   return (
     <Card
       data-semester-index={semesterNumber}
@@ -39,7 +36,7 @@ const SemesterView: FC<SemesterViewProps> = ({
       )}
     >
       <Collapsible open={isOpen}>
-        <SemesterHeader periods={periods} semester={semesterNumber} />
+        <SemesterHeader semester={semesterNumber} />
 
         <CollapsibleContent
           className={cn(
@@ -50,7 +47,7 @@ const SemesterView: FC<SemesterViewProps> = ({
         >
           <CardContent className="p-0 pt-6">
             <div className="flex flex-col gap-6">
-              {periods.map((_, index) => (
+              {[0, 1].map((index) => (
                 <PeriodView
                   key={`${semesterNumber}-period-${index}`}
                   periodNumber={index}

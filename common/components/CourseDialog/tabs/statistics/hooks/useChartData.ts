@@ -10,7 +10,6 @@ interface UseChartDataArgs {
   selectedItem?: ProcessedModule;
 }
 
-/** Derives chart-ready grade distributions for the selected module. */
 export const useChartData = ({
   courseData,
   selectedModule,

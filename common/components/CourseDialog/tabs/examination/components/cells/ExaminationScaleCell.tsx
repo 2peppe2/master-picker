@@ -11,7 +11,7 @@ interface ExaminationScaleCellProps {
 
 const ExaminationScaleCell: FC<ExaminationScaleCellProps> = ({ scale }) => (
   <TableCell>
-    <Translate text={scale === Scale.G_OR_U ? "scale_gu" : "scale_345"} />
+    <Translate text={scale === Scale.G_OR_U ? "_scale_gu" : "_scale_345"} />
   </TableCell>
 );
 

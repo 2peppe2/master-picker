@@ -1,10 +1,10 @@
 "use client";
 
 import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
-import { useIsPhone } from "@/common/hooks/useResponsiveLayout";
 import { EvaluationTrendPoint } from "../types";
-import { TrendingDown, TrendingUp } from "lucide-react";
-import { FC, useLayoutEffect, useRef, useState } from "react";
+import { useEvaluationChartWidth } from "../hooks/useEvaluationChartWidth";
+import TrendDelta from "./TrendDelta";
+import { FC } from "react";
 import {
   Area,
   AreaChart,
@@ -18,62 +18,15 @@ interface EvaluationTrendChartProps {
   data: EvaluationTrendPoint[];
 }
 
-// Brand teal, matching the app accent used elsewhere (e.g. the disclaimer).
-const TREND_COLOR = "rgb(0, 200, 179)";
+const TREND_COLOR = "var(--brand)";
 
 const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
   const translate = useCommonTranslate();
-  const isPhone = useIsPhone();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [chartWidth, setChartWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    let animationFrame = 0;
-    const measure = () => {
-      const nextWidth = Math.floor(container.getBoundingClientRect().width);
-      if (Number.isFinite(nextWidth) && nextWidth > 0) {
-        setChartWidth((currentWidth) =>
-          currentWidth === nextWidth ? currentWidth : nextWidth,
-        );
-      }
-    };
-    const scheduleMeasure = () => {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = requestAnimationFrame(measure);
-    };
-
-    const resizeObserver = new ResizeObserver(scheduleMeasure);
-    resizeObserver.observe(container);
-
-    const tabPanel = container.closest('[role="tabpanel"]');
-    const visibilityObserver = new MutationObserver(scheduleMeasure);
-    if (tabPanel) {
-      visibilityObserver.observe(tabPanel, {
-        attributes: true,
-        attributeFilter: ["class", "data-state", "hidden", "style"],
-      });
-    }
-
-    window.addEventListener("resize", scheduleMeasure);
-    measure();
-    scheduleMeasure();
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      resizeObserver.disconnect();
-      visibilityObserver.disconnect();
-      window.removeEventListener("resize", scheduleMeasure);
-    };
-  }, []);
-
+  const { containerRef, chartWidth, isCompactChart } = useEvaluationChartWidth();
   const latest = data.at(-1)?.avgScore ?? null;
   const previous = data.at(-2)?.avgScore ?? null;
   const delta = latest !== null && previous !== null ? latest - previous : null;
-
-  const chartHeight = isPhone ? 176 : 200;
+  const chartHeight = isCompactChart ? 176 : 200;
 
   return (
     <div className="w-full min-w-0">
@@ -104,7 +57,12 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
             width={chartWidth}
             height={chartHeight}
             data={data}
-            margin={{ top: 8, right: 12, bottom: 4, left: isPhone ? -18 : -8 }}
+            margin={{
+              top: 8,
+              right: 12,
+              bottom: 4,
+              left: isCompactChart ? -18 : -8,
+            }}
           >
             <defs>
               <linearGradient id="evalTrendFill" x1="0" y1="0" x2="0" y2="1">
@@ -123,9 +81,9 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
               axisLine={false}
               dy={8}
               interval="preserveStartEnd"
-              minTickGap={isPhone ? 24 : 36}
+              minTickGap={isCompactChart ? 24 : 36}
               tick={{
-                fontSize: isPhone ? 10 : 12,
+                fontSize: isCompactChart ? 10 : 12,
                 fill: "var(--muted-foreground)",
               }}
             />
@@ -134,9 +92,9 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
               ticks={[1, 2, 3, 4, 5]}
               tickLine={false}
               axisLine={false}
-              width={isPhone ? 32 : 44}
+              width={isCompactChart ? 32 : 44}
               tick={{
-                fontSize: isPhone ? 10 : 12,
+                fontSize: isCompactChart ? 10 : 12,
                 fill: "var(--muted-foreground)",
               }}
             />
@@ -181,25 +139,6 @@ const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
         )}
       </div>
     </div>
-  );
-};
-
-const TrendDelta: FC<{ delta: number }> = ({ delta }) => {
-  const positive = delta >= 0;
-  const Icon = positive ? TrendingUp : TrendingDown;
-
-  return (
-    <span
-      className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold tabular-nums ${
-        positive
-          ? "bg-emerald-500/12 text-emerald-600 dark:text-emerald-400"
-          : "bg-red-500/12 text-red-600 dark:text-red-400"
-      }`}
-    >
-      <Icon className="size-3.5" aria-hidden />
-      {positive ? "+" : "−"}
-      {Math.abs(delta).toFixed(2)}
-    </span>
   );
 };
 

@@ -24,9 +24,9 @@ const OverviewSectionHeader: FC<OverviewSectionHeaderProps> = ({ count }) => (
       <CalendarClock className="size-3.5" />
       {count}{" "}
       {count > 1 ? (
-        <Translate text="_course_occasion_plural" />
+        <Translate text="course_occasion_plural" />
       ) : (
-        <Translate text="_course_occasion_singular" />
+        <Translate text="course_occasion_singular" />
       )}
     </span>
   </div>

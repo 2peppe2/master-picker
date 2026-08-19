@@ -7,7 +7,6 @@ import {
   useSearchParams as useNextSearchParams,
 } from "next/navigation";
 
-/** Reads URL query state and exposes non-scrolling replacement commands. */
 export const useSearchParams = () => {
   const searchParams = useNextSearchParams();
   const pathname = usePathname();

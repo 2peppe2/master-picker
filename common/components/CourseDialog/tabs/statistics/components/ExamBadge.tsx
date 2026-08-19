@@ -16,7 +16,7 @@ const ExamBadge: FC<ExamBadgeProps> = ({ moduleCode, isOriginal }) => {
 
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-semibold leading-none ${
+      className={`inline-flex shrink-0 items-center justify-center rounded-full px-2 py-0.5 text-2xs font-semibold leading-none ${
         isOriginal
           ? "bg-emerald-500 text-white"
           : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"

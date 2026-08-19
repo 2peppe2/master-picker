@@ -5,7 +5,6 @@ import { useStartingYear } from "./useStartingYear";
 import { useProgram } from "./useProgram";
 import { useMemo } from "react";
 
-/** Reads the selected program identifier. */
 export const useProgramId = () => {
   const startingYear = useStartingYear();
   const program = useProgram();

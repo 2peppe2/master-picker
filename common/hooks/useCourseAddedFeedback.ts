@@ -32,7 +32,6 @@ const FEEDBACK_CLASSES = [
   "duration-150",
 ];
 
-/** Reveals and briefly highlights cards when a course is added. */
 export const useScrollToCourseFeedback = ({
   onRevealSchedule,
 }: UseScrollToCourseFeedbackArgs) => {
@@ -114,13 +113,11 @@ export const useScrollToCourseFeedback = ({
   }, [onRevealSchedule]);
 };
 
-/** Reveals the compact schedule before applying course-added feedback. */
 export const useCompactCourseAddedFeedback = (
   args: UseScrollToCourseFeedbackArgs,
 ) => useScrollToCourseFeedback(args);
 
 const revealDesktopSchedule = () => undefined;
 
-/** Applies course-added feedback without changing the desktop layout. */
 export const useDesktopCourseAddedFeedback = () =>
   useScrollToCourseFeedback({ onRevealSchedule: revealDesktopSchedule });

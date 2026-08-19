@@ -1,27 +1,12 @@
 "use client";
 
 import Translate from "@/common/components/translate/Translate";
-import { Badge } from "@/components/ui/badge";
 import ContinueButton from "./ContinueButton";
+import ProgressBadge, { ProgressStep } from "./ProgressBadge";
 import { Course } from "@/common/types";
 import type { CourseRequirements } from "@/features/guide/types";
-import { Check } from "lucide-react";
 import { FC, useMemo } from "react";
 import { cn } from "@/lib/utils";
-
-interface ProgressStep {
-  states: {
-    active: {
-      labelKey: string;
-      style: string;
-    };
-    default: {
-      labelKey: string;
-      style: string;
-    };
-  };
-  isDone: boolean;
-}
 
 interface ProgressCardProps {
   compulsoryCourses: CourseRequirements;
@@ -41,12 +26,10 @@ const ProgressCard: FC<ProgressCardProps> = ({
     const hasCompulsory = compulsoryCourses.length > 0;
     const completedElectives = electiveRequirements.filter((group, index) => {
       const minRequired = group.minCount ?? 1;
-      const selectedCount = electiveSelections[index]?.length ?? 0;
-      return selectedCount >= minRequired;
+      return (electiveSelections[index]?.length ?? 0) >= minRequired;
     }).length;
     const electiveConfirmed =
       totalElectives === 0 || completedElectives === totalElectives;
-
     const totalSteps = (hasCompulsory ? 1 : 0) + totalElectives;
     const completedSteps = 1 + completedElectives;
 
@@ -57,8 +40,7 @@ const ProgressCard: FC<ProgressCardProps> = ({
         totalSteps === 0 ? 100 : (completedSteps / totalSteps) * 100,
       ),
     };
-  }, [electiveRequirements, electiveSelections, compulsoryCourses]);
-
+  }, [compulsoryCourses, electiveRequirements, electiveSelections]);
   const steps = useMemo(
     () =>
       [
@@ -96,43 +78,84 @@ const ProgressCard: FC<ProgressCardProps> = ({
     [electiveConfirmed],
   );
 
+  // Fixed to the bottom edge, so in landscape it needs the inline insets too --
+  // that is the orientation where the notch sits on a side.
+  //
+  // The scrim stays full-bleed, but the card sits in a track repeating
+  // GuideContent's column so its edges land on the back button above it.
   return (
-    <div className="fixed bottom-0 z-20 flex w-full justify-center bg-gradient-to-t from-background via-background/80 to-transparent p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:p-4">
-      <div className="w-full max-w-6xl rounded-2xl border bg-card p-3 shadow-2xl ring-1 ring-foreground/5 sm:p-4 lg:p-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
-          <div className="flex flex-1 flex-col gap-3">
-            <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
-              <span>
-                <Translate text="_guide_progress_selection" />
-              </span>
-              <span className="text-emerald-600">{progressPercent}%</span>
+    <div
+      className={cn(
+        "fixed bottom-0 z-20 w-full",
+        "bg-gradient-to-t from-background via-background/80 to-transparent",
+        "py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:py-4",
+        "landscape-phone:py-1",
+      )}
+    >
+      <div
+        className={cn(
+          "mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-4",
+          "landscape-phone:ps-[calc(1.5rem+env(safe-area-inset-left))]",
+          "landscape-phone:pe-[calc(1.5rem+env(safe-area-inset-right))]",
+        )}
+      >
+        <div
+          className={cn(
+            "w-full rounded-2xl border bg-card p-3 shadow-2xl",
+            "ring-1 ring-foreground/5 sm:p-4 lg:p-6",
+            "landscape-phone:rounded-xl landscape-phone:p-2",
+          )}
+        >
+          <div
+            className={cn(
+              "flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8",
+              "landscape-phone:gap-3",
+            )}
+          >
+            <div className="flex flex-1 flex-col gap-3 landscape-phone:gap-1.5">
+              <div className="flex items-center justify-between text-sm text-muted-foreground/80">
+                <span>
+                  <Translate text="_guide_progress_selection" />
+                </span>
+                <span className="text-emerald-600">{progressPercent}%</span>
+              </div>
+
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted/50">
+                <div
+                  className="h-full bg-emerald-500 transition-all duration-700 ease-in-out motion-reduce:transition-none"
+                  style={{ width: `${progressPercent}%` }}
+                />
+              </div>
+
+              {/* Wrapping to a second row is what pushes the fixed bar past a
+                  third of a landscape viewport; it scrolls sideways instead. */}
+              <div
+                className={cn(
+                  "flex flex-wrap gap-2",
+                  "landscape-phone:flex-nowrap landscape-phone:gap-1",
+                  "landscape-phone:overflow-x-auto",
+                  "landscape-phone:[scrollbar-width:none]",
+                  "landscape-phone:[&::-webkit-scrollbar]:hidden",
+                )}
+              >
+                {steps.map((step, idx) => (
+                  <ProgressBadge
+                    key={`step-${idx}`}
+                    id={`${idx + 1}`}
+                    {...step}
+                  />
+                ))}
+              </div>
             </div>
 
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted/50">
-              <div
-                className="h-full bg-emerald-500 transition-all duration-700 ease-in-out motion-reduce:transition-none"
-                style={{ width: `${progressPercent}%` }}
+            <div className="w-full shrink-0 sm:w-auto">
+              <ContinueButton
+                disabled={!isComplete}
+                electiveCourses={electiveSelections}
+                bachelorCourses={bachelorCourses}
+                compulsoryCourses={compulsoryCourses}
               />
             </div>
-
-            <div className="flex flex-wrap gap-2">
-              {steps.map((step, idx) => (
-                <ProgressBadge
-                  key={`step-${idx}`}
-                  id={`${idx + 1}`}
-                  {...step}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full shrink-0 sm:w-auto">
-            <ContinueButton
-              disabled={!isComplete}
-              electiveCourses={electiveSelections}
-              bachelorCourses={bachelorCourses}
-              compulsoryCourses={compulsoryCourses}
-            />
           </div>
         </div>
       </div>
@@ -141,25 +164,3 @@ const ProgressCard: FC<ProgressCardProps> = ({
 };
 
 export default ProgressCard;
-
-interface ProgressBadgeProps extends ProgressStep {
-  id: string;
-}
-
-const ProgressBadge: FC<ProgressBadgeProps> = ({ id, states, isDone }) => {
-  const state = states[isDone ? "active" : "default"];
-
-  return (
-    <Badge
-      variant="outline"
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] transition-all duration-300",
-        state.style,
-      )}
-    >
-      {isDone && <Check className="h-3 w-3" />}
-      {`${id}. `}
-      <Translate text={state.labelKey} />
-    </Badge>
-  );
-};

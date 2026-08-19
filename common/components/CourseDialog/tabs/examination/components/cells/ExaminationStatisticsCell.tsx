@@ -1,10 +1,13 @@
 "use client";
 
-import LoadingDots from "@/common/components/loading/LoadingDots";
+import { useCommonTranslate } from "@/common/components/translate/hooks/useCommonTranslate";
+
 import { Scale } from "@/prisma/generated/client/enums";
 import { TableCell } from "@/components/ui/table";
 import { Module } from "liu-tentor-package";
-import { FC, useCallback } from "react";
+import { FC } from "react";
+import ExaminationStatisticsLoadingCell from "../../states/ExaminationStatisticsLoadingCell";
+import ExaminationStatisticsUnavailableCell from "../../states/ExaminationStatisticsUnavailableCell";
 
 interface GradeCount {
   grade: string;
@@ -22,66 +25,44 @@ const ExaminationStatisticsCell: FC<ExaminationStatisticsCellProps> = ({
   stats,
   isLoading,
 }) => {
-  const getCount = useCallback(
-    (g: string) => {
-      if (!stats) return 0;
-      return stats.grades.find((x: GradeCount) => x.grade === g)?.quantity || 0;
-    },
-    [stats],
-  );
+  const translate = useCommonTranslate();
+  const getCount = (grade: string) =>
+    stats?.grades.find((item: GradeCount) => item.grade === grade)?.quantity ?? 0;
+
+  if (isLoading) {
+    return <ExaminationStatisticsLoadingCell scale={scale} />;
+  }
+
+  if (!stats) {
+    return <ExaminationStatisticsUnavailableCell />;
+  }
 
   return (
     <TableCell className="text-xs text-muted-foreground whitespace-nowrap">
-      {isLoading ? (
-        <div className="flex gap-2">
-          {scale == Scale.G_OR_U ? (
-            <>
-              <span>
-                G: <LoadingDots />
-              </span>
-              <span>
-                U: <LoadingDots />
-              </span>
-            </>
-          ) : (
-            <>
-              <span>
-                5: <LoadingDots />
-              </span>
-              <span>
-                4: <LoadingDots />
-              </span>
-              <span>
-                3: <LoadingDots />
-              </span>
-              <span>
-                U: <LoadingDots />
-              </span>
-            </>
-          )}
-        </div>
-      ) : stats ? (
-        <div className="flex gap-2">
-          {scale == Scale.G_OR_U ? (
-            <>
-              <span title="Pass">
-                G:{" "}
-                {getCount("G") + getCount("3") + getCount("4") + getCount("5")}
-              </span>
-              <span title="Fail">U: {getCount("U")}</span>
-            </>
-          ) : (
-            <>
-              <span title="Grade 5">5: {getCount("5")}</span>
-              <span title="Grade 4">4: {getCount("4")}</span>
-              <span title="Grade 3">3: {getCount("3")}</span>
-              <span title="Fail">U: {getCount("U")}</span>
-            </>
-          )}
-        </div>
-      ) : (
-        "-"
-      )}
+      <div className="flex gap-2">
+        {scale == Scale.G_OR_U ? (
+          <>
+            <span title={translate("course_pass")}>
+              G:{" "}
+              {getCount("G") + getCount("3") + getCount("4") + getCount("5")}
+            </span>
+            <span title={translate("course_fail")}>U: {getCount("U")}</span>
+          </>
+        ) : (
+          <>
+            <span title={translate("_grade_n", { grade: 5 })}>
+              5: {getCount("5")}
+            </span>
+            <span title={translate("_grade_n", { grade: 4 })}>
+              4: {getCount("4")}
+            </span>
+            <span title={translate("_grade_n", { grade: 3 })}>
+              3: {getCount("3")}
+            </span>
+            <span title={translate("course_fail")}>U: {getCount("U")}</span>
+          </>
+        )}
+      </div>
     </TableCell>
   );
 };

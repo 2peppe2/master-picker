@@ -26,20 +26,19 @@ export interface BlockProps {
   courseSlot: Slot;
 }
 
-const BLOCK_VARIANTS: Record<BlockVariant, FC<BlockProps>> = {
-  standard: StandardBlock,
-  wildcard: WildcardBlock,
-  ghost: GhostBlock,
-};
-
 const Block: FC<BlockWrapperProps> = ({ variant, data }) => {
   const courseSlot = useAtomValue(
     slotAtom(data.semesterNumber, data.periodNumber, data.blockNumber),
   );
 
-  const Component = BLOCK_VARIANTS[variant];
-
-  return <Component courseSlot={courseSlot} data={data} />;
+  switch (variant) {
+    case "standard":
+      return <StandardBlock courseSlot={courseSlot} data={data} />;
+    case "wildcard":
+      return <WildcardBlock courseSlot={courseSlot} data={data} />;
+    case "ghost":
+      return <GhostBlock courseSlot={courseSlot} data={data} />;
+  }
 };
 
 export default Block;

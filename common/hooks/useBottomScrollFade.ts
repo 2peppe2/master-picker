@@ -11,7 +11,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
  * Pass values in `deps` (e.g. the rendered content) that should trigger a
  * re-measure when they change.
  */
-/** Reports whether a scroll container still has content below its viewport. */
 export const useBottomScrollFade = <T extends HTMLElement = HTMLDivElement>(
   deps: unknown[] = [],
 ) => {
@@ -24,6 +23,41 @@ export const useBottomScrollFade = <T extends HTMLElement = HTMLDivElement>(
 
     const { scrollTop, scrollHeight, clientHeight } = container;
     setShowFade(scrollHeight > clientHeight + scrollTop + 2);
+  }, []);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    handleScroll();
+    const observer = new ResizeObserver(handleScroll);
+    observer.observe(container);
+    const content = container.firstElementChild;
+    if (content) observer.observe(content);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleScroll, ...deps]);
+
+  return { scrollRef, showFade, handleScroll };
+};
+
+/**
+ * Horizontal sibling of {@link useBottomScrollFade}: reports whether a
+ * horizontally scrolling container still has content past its right edge, so a
+ * {@link RightFade} can hint that there is more to swipe.
+ */
+export const useRightScrollFade = <T extends HTMLElement = HTMLDivElement>(
+  deps: unknown[] = [],
+) => {
+  const scrollRef = useRef<T>(null);
+  const [showFade, setShowFade] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    setShowFade(scrollWidth > clientWidth + scrollLeft + 2);
   }, []);
 
   useEffect(() => {

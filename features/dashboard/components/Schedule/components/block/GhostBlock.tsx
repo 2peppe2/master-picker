@@ -15,7 +15,7 @@ const GhostBlock: FC<BlockProps> = ({ data }) => (
       <div className="flex flex-col items-center gap-2">
         <Plus className="h-6 w-6" />
         <span className="text-sm font-medium">
-          <Translate text="new_block" />
+          <Translate text="_new_block" />
         </span>
       </div>
     </div>

@@ -19,20 +19,19 @@ const ProgramSelector: FC<ProgramSelectorProps> = ({
 }) => {
   const translateCourse = useCourseTranslate();
   const translate = useCommonTranslate();
-
   const displayStates = useMemo(
     () =>
       ({
-        placeholder: translate("select_program"),
-        empty: translate("no_programs_found"),
+        placeholder: translate("_select_program"),
+        empty: translate("_no_programs_found"),
       }) satisfies ComboboxDisplay,
     [translate],
   );
   const items = useMemo(
     () =>
-      programs.map((p) => ({
-        label: `${p.shortname} - ${translateCourse(p.name)}`,
-        value: p.program,
+      programs.map((program) => ({
+        label: `${program.shortname} - ${translateCourse(program.name)}`,
+        value: program.program,
       })),
     [programs, translateCourse],
   );

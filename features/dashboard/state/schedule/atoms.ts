@@ -12,6 +12,8 @@ import type {
 } from "./types";
 import { placeCourse, removeCourseFromGrid } from "./domain";
 import { SHARE_BUTTON_LOADING_MS, WILDCARD_BLOCK_START } from "./constants";
+import { draggedCourseAtom } from "../drag/atoms";
+import { relativeSemesterToYearAndSemester } from "@/lib/semesterYearTranslations";
 
 export { SHARE_BUTTON_LOADING_MS, WILDCARD_BLOCK_START } from "./constants";
 
@@ -46,12 +48,80 @@ const slotAtomFamily = atomFamily((key: number) => {
   );
 });
 
-/** Bounded numeric atom-family keys: 10 semesters × 2 periods × dynamic blocks. */
+const periodSlotCountAtomFamily = atomFamily((key: number) =>
+  atom((get) => get(periodAtomFamily(key)).length),
+);
+
+const periodCreditsAtomFamily = atomFamily((key: number) => {
+  const semester = Math.floor(key / 10);
+  const periodNumber = key % 10;
+  return atom((get) => {
+    const periods = get(semesterAtomFamily(semester));
+    const courses = new Map(
+      (periods[periodNumber] ?? [])
+        .filter((course): course is Course => course !== null)
+        .map((course) => [course.code, course]),
+    );
+    return [...courses.values()].reduce((total, course) => {
+      const scheduledPeriodCount = periods.filter((period) =>
+        period.some((slot) => slot?.code === course.code),
+      ).length;
+      return total + course.credits / scheduledPeriodCount;
+    }, 0);
+  });
+});
+
+const ghostVisibilityAtomFamily = atomFamily((key: string) => {
+  const [semesterNumber, periodNumber, startingYear] = key
+    .split(":")
+    .map(Number);
+  return atom((get) => {
+    const draggedCourse = get(draggedCourseAtom);
+    if (!draggedCourse) return false;
+    const blocks = get(
+      periodAtomFamily(semesterNumber * 10 + periodNumber),
+    );
+    if (
+      blocks.some(
+        (course, index) =>
+          index >= WILDCARD_BLOCK_START && course?.code === draggedCourse.code,
+      )
+    ) {
+      return false;
+    }
+    const { year, semester } = relativeSemesterToYearAndSemester(
+      startingYear,
+      semesterNumber,
+    );
+    const hasWildcardOption = draggedCourse.CourseOccasion.some(
+      (occasion) =>
+        occasion.year === year &&
+        occasion.semester === semester &&
+        occasion.periods.some(
+          (period) => period.period === periodNumber + 1,
+        ),
+    );
+    return (
+      hasWildcardOption &&
+      blocks.slice(WILDCARD_BLOCK_START).every((slot) => slot !== null)
+    );
+  });
+});
+
 export const semesterAtom = (semester: number) => semesterAtomFamily(semester);
 export const periodAtom = (semester: number, period: number) =>
   periodAtomFamily(semester * 10 + period);
 export const slotAtom = (semester: number, period: number, block: number) =>
   slotAtomFamily(semester * 100 + period * 10 + block);
+export const periodSlotCountAtom = (semester: number, period: number) =>
+  periodSlotCountAtomFamily(semester * 10 + period);
+export const periodCreditsAtom = (semester: number, period: number) =>
+  periodCreditsAtomFamily(semester * 10 + period);
+export const ghostVisibilityAtom = (
+  semester: number,
+  period: number,
+  startingYear: number,
+) => ghostVisibilityAtomFamily(`${semester}:${period}:${startingYear}`);
 
 export const selectedCoursesAtom = atom((get) => {
   const uniqueCourses = new Map<string, Course>();

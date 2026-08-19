@@ -6,7 +6,6 @@ interface UseSortedCoursesArgs {
   courses: Course[];
 }
 
-/** Sorts courses into the stable presentation order used by search results. */
 export const useSortedCourses = ({ courses }: UseSortedCoursesArgs) => {
   const searchParams = useSearchParams();
   const master = searchParams.get("master");

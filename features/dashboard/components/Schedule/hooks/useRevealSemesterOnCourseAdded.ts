@@ -9,7 +9,6 @@ import { openSemesterAtom } from "@/features/dashboard/state/semester-ui/atoms";
 import { useSetAtom } from "jotai";
 import { useEffect } from "react";
 
-/** Opens the semester that receives a newly added course. */
 export const useRevealSemesterOnCourseAdded = (semesterNumber: number) => {
   const openSemester = useSetAtom(openSemesterAtom);
   const toRelativeSemester = useToRelativeSemester();

@@ -7,7 +7,7 @@ import { Course } from "@/common/types";
 import CourseTranslate from "@/common/components/translate/CourseTranslate";
 import CourseMetadata from "./CourseMetadata";
 import DialogFooter from "./DialogFooter";
-import DialogTabs from "./DialogTabs";
+import CourseDialogTabs from "./components/CourseDialogTabs";
 import {
   Dialog,
   DialogContent,
@@ -15,8 +15,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useCourseDialogState } from "./hooks/useCourseDialogState";
 import { useCloseAfterCourseAdded } from "./hooks/useCloseAfterCourseAdded";
+import type { OccasionActions } from "./types";
 
 interface CourseDialogLargeProps {
   open: boolean;
@@ -24,6 +24,7 @@ interface CourseDialogLargeProps {
   course: Course;
   showAdd?: boolean;
   preferredSemesters?: number[];
+  occasionActions?: OccasionActions;
 }
 
 const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
@@ -32,16 +33,8 @@ const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
   course,
   showAdd = true,
   preferredSemesters,
+  occasionActions,
 }) => {
-  const { activeTab, setActiveTab, setInitModule, tabs } = useCourseDialogState(
-    {
-      course,
-      open,
-      showAdd,
-      preferredSemesters,
-    },
-  );
-
   useCloseAfterCourseAdded({
     courseCode: course.code,
     onClose: () => onOpenChange(false),
@@ -63,13 +56,12 @@ const CourseDialogLarge: FC<CourseDialogLargeProps> = ({
           </DialogDescription>
           <CourseMetadata course={course} compact />
         </DialogHeader>
-        <DialogTabs
-          tabs={tabs}
-          value={activeTab}
-          onValueChange={(val) => {
-            setActiveTab(val);
-            if (val !== "statistics") setInitModule(undefined);
-          }}
+        <CourseDialogTabs
+          course={course}
+          open={open}
+          showAdd={showAdd}
+          preferredSemesters={preferredSemesters}
+          occasionActions={occasionActions}
         />
         <DialogFooter course={course} />
       </DialogContent>

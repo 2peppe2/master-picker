@@ -1,25 +1,16 @@
 "use client";
 
-import { FC, KeyboardEvent, useRef, useState } from "react";
+import { FC } from "react";
 import {
   Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
   ComboboxInput,
-  ComboboxItem,
-  ComboboxList,
   ComboboxTrigger,
 } from "@/components/ui/combobox";
+import ComboboxOptions from "./ComboboxOptions";
+import { useComboboxKeyboardSelection } from "../hooks/useComboboxKeyboardSelection";
+import type { ComboboxDisplay, ComboboxOption } from "./GenericComboBox.types";
 
-export interface ComboboxOption {
-  label: string;
-  value: string;
-}
-
-export interface ComboboxDisplay {
-  placeholder: string;
-  empty: string;
-}
+export type { ComboboxDisplay, ComboboxOption } from "./GenericComboBox.types";
 
 interface GenericComboboxProps {
   options: ComboboxOption[];
@@ -36,31 +27,8 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
   displayStates,
   disabled = false,
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const desktopAnchorRef = useRef<HTMLDivElement>(null);
-  const [matchIndex, setMatchIndex] = useState(0);
-
-  const getMatches = () => {
-    const term = inputRef.current?.value.toLowerCase().trim() || "";
-
-    if (!term) {
-      return [];
-    }
-
-    return options.filter((opt) => opt.label.toLowerCase().includes(term));
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key !== "Enter") return;
-
-    const matches = getMatches();
-    if (matches.length > 0) {
-      event.preventDefault();
-      onValueChange(matches[matchIndex % matches.length]);
-      inputRef.current?.blur();
-      setMatchIndex(0);
-    }
-  };
+  const { inputRef, desktopAnchorRef, handleKeyDown } =
+    useComboboxKeyboardSelection({ options, onValueChange });
 
   return (
     <div className="mx-auto w-full max-w-80">
@@ -72,7 +40,7 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
           disabled={disabled}
         >
           <ComboboxTrigger
-            className="flex h-12 w-full items-center justify-between rounded-md border border-input bg-transparent px-4 text-left text-base shadow-xs outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-11 w-full items-center justify-between rounded-md border border-input bg-transparent px-4 text-left text-base shadow-xs outline-none transition-[color,box-shadow] focus-visible:border-brand focus-visible:ring-[3px] focus-visible:ring-brand/40 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 sm:h-12 landscape-phone:h-10"
             aria-label={displayStates.placeholder}
           >
             <span
@@ -100,7 +68,7 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
             ref={inputRef}
             placeholder={displayStates.placeholder}
             onKeyDown={handleKeyDown}
-            className="h-12 w-full [&_[data-slot=input-group-control]]:px-4 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg"
+            className="h-11 w-full has-[:focus-visible]:border-brand has-[:focus-visible]:ring-[3px] has-[:focus-visible]:ring-brand/40 sm:h-12 [&_[data-slot=input-group-control]]:px-4 [&_[data-slot=input-group-control]]:text-base md:[&_[data-slot=input-group-control]]:text-lg"
           />
           <ComboboxOptions
             empty={displayStates.empty}
@@ -111,21 +79,5 @@ const GenericCombobox: FC<GenericComboboxProps> = ({
     </div>
   );
 };
-
-const ComboboxOptions: FC<{
-  empty: string;
-  anchor?: React.RefObject<HTMLElement | null>;
-}> = ({ empty, anchor }) => (
-  <ComboboxContent anchor={anchor}>
-    <ComboboxEmpty>{empty}</ComboboxEmpty>
-    <ComboboxList>
-      {(item: ComboboxOption) => (
-        <ComboboxItem key={item.value} value={item}>
-          {item.label}
-        </ComboboxItem>
-      )}
-    </ComboboxList>
-  </ComboboxContent>
-);
 
 export default GenericCombobox;

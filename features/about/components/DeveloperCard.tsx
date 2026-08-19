@@ -32,7 +32,9 @@ const DeveloperCard: FC<DeveloperCardProps> = ({
   return (
     <Card className="w-full pt-0 h-full overflow-hidden flex flex-col">
       <CardContent className="p-0">
-        <div className="relative w-full aspect-[4/3]">
+        {/* 4:3 in a multi-column grid is ~300px tall on a landscape phone,
+            close to the whole viewport for one photo. */}
+        <div className="relative w-full aspect-[4/3] landscape-phone:aspect-[16/9]">
           <Image
             src={imageSrc}
             alt={`${name}'s profile`}

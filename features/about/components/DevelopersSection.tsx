@@ -7,7 +7,7 @@ const DevelopersSection = () => {
   const translate = useCommonTranslate();
 
   return (
-    <div className="flex flex-col lg:flex-row lg:col-span-2 w-full gap-6 h-full">
+    <div className="flex flex-col lg:flex-row lg:col-span-2 w-full gap-6 h-full landscape-phone:flex-row landscape-phone:col-span-2 landscape-phone:gap-4">
       <DeveloperCard
         name="Petrus Jarl"
         description={translate("_about_devs_petrus_desc")}

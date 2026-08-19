@@ -8,7 +8,6 @@ export interface UseEvaluationTrendArgs {
   evaluationReports: NormalizedEvaluationReport[];
 }
 
-/** Aggregates evaluation reports into the trend series shown in the dialog. */
 export const useEvaluationTrend = ({
   evaluationReports,
 }: UseEvaluationTrendArgs): EvaluationTrendPoint[] => {
