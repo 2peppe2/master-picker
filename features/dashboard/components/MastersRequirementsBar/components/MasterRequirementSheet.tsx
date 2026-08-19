@@ -1,31 +1,22 @@
-import MasterRequirementSheetContent from "./MasterRequirementSheetContent";
-import { ProcessedMaster } from "../types";
-import {
-  BottomSheet,
-  BottomSheetContent,
-  BottomSheetTrigger,
-} from "@/components/ui/bottom-sheet";
-import { FC, ReactElement } from "react";
+import MasterRequirementBottomSheet from "./MasterRequirementBottomSheet";
+import MasterRequirementSideSheet from "./MasterRequirementSideSheet";
+import type { MasterRequirementSheetProps } from "./MasterRequirementSheet.types";
+import { FC } from "react";
 
-interface MasterRequirementSheetProps {
-  master: ProcessedMaster;
-  trigger?: ReactElement;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
+interface MasterRequirementSheetRouterProps
+  extends MasterRequirementSheetProps {
+  /** Landscape phones lack the height for a bottom sheet; portrait doesn't. */
+  sideSheet: boolean;
 }
 
-const MasterRequirementSheet: FC<MasterRequirementSheetProps> = ({
-  master,
-  trigger,
-  open,
-  onOpenChange,
-}) => (
-  <BottomSheet open={open} onOpenChange={onOpenChange}>
-    {trigger && <BottomSheetTrigger asChild>{trigger}</BottomSheetTrigger>}
-    <BottomSheetContent className="overflow-hidden">
-      <MasterRequirementSheetContent master={master} />
-    </BottomSheetContent>
-  </BottomSheet>
-);
+const MasterRequirementSheet: FC<MasterRequirementSheetRouterProps> = ({
+  sideSheet,
+  ...props
+}) =>
+  sideSheet ? (
+    <MasterRequirementSideSheet {...props} />
+  ) : (
+    <MasterRequirementBottomSheet {...props} />
+  );
 
 export default MasterRequirementSheet;

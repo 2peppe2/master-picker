@@ -3,14 +3,18 @@
 import MasterOverflowRowLarge from "./MasterOverflowRowLarge";
 import MasterOverflowRowSmall from "./MasterOverflowRowSmall";
 import { MasterOverflowRowProps } from "./MasterOverflowRow.types";
-import { usePrefersTapDisclosure } from "@/common/hooks/useResponsiveLayout";
+import {
+  useIsLandscapePhone,
+  usePrefersTapDisclosure,
+} from "@/common/hooks/useResponsiveLayout";
 import { FC } from "react";
 
 const MasterOverflowRow: FC<MasterOverflowRowProps> = (props) => {
   const prefersTapDisclosure = usePrefersTapDisclosure();
+  const isLandscapePhone = useIsLandscapePhone();
 
   return prefersTapDisclosure ? (
-    <MasterOverflowRowSmall {...props} />
+    <MasterOverflowRowSmall {...props} sideSheet={isLandscapePhone} />
   ) : (
     <MasterOverflowRowLarge {...props} />
   );

@@ -18,7 +18,7 @@ interface EvaluationTrendChartProps {
   data: EvaluationTrendPoint[];
 }
 
-const TREND_COLOR = "rgb(0, 200, 179)";
+const TREND_COLOR = "var(--brand)";
 
 const EvaluationTrendChart: FC<EvaluationTrendChartProps> = ({ data }) => {
   const translate = useCommonTranslate();

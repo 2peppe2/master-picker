@@ -82,15 +82,20 @@ test.describe("landscape phone layout", () => {
     await page.goto(dashboardUrl);
 
     // :visible skips the off-screen measurement template the overflow layout
-    // keeps around to size the real badges.
+    // keeps around to size the real badges. Keyed on the badge's own attribute
+    // rather than data-slot, which the sheet trigger overwrites when it wraps.
     const badge = page
-      .locator("[data-dashboard-landscape] header [data-slot='badge']:visible")
+      .locator(
+        "[data-dashboard-landscape] header [data-master-progress-badge]:visible",
+      )
       .first();
     await expect(badge).toBeVisible();
     await badge.click();
 
-    // A sheet, not the hover-only tooltip a width breakpoint would have given.
-    await expect(page.locator("[data-vaul-drawer]")).toBeVisible();
+    // A side sheet, not the hover-only tooltip a width breakpoint would have
+    // given, and not a bottom sheet -- there is no height for one here.
+    await expect(page.locator("[data-slot='sheet-content']")).toBeVisible();
+    await expect(page.locator("[data-vaul-drawer]")).toHaveCount(0);
   });
 
   test("the settings menu opens from the side, not the bottom", async ({

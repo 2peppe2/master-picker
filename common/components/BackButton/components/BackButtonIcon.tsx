@@ -48,12 +48,12 @@ const BackButtonIcon: FC<BackButtonIconProps> = ({ isHovered, compact }) => (
           exit={{ scale: 0.8, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className={cn(
-            "flex items-center justify-center bg-[#00C8B3]/10 rounded-xl",
+            "flex items-center justify-center bg-brand/10 rounded-xl",
             compact ? "size-7" : "size-9",
           )}
         >
           <ChevronLeft
-            className={cn("text-[#00C8B3]", compact ? "size-5" : "size-7")}
+            className={cn("text-brand", compact ? "size-5" : "size-7")}
           />
         </motion.div>
       )}

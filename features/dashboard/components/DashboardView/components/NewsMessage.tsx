@@ -11,7 +11,7 @@ const NewsMessage: FC = () => {
     <>
       <Smartphone
         aria-hidden="true"
-        className="size-4 shrink-0 text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)]"
+        className="size-4 shrink-0 text-brand-strong"
       />
       <p
         aria-label={translate("_mobile_support_announcement_title")}

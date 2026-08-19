@@ -3,7 +3,13 @@ import { cn } from "@/lib/utils";
 import type { FC } from "react";
 
 const LandingHeaderLoading: FC = () => (
-  <header className="flex w-full flex-col items-center px-2 py-5 sm:px-4 sm:py-6 landscape-phone:py-0">
+  <header
+    className={cn(
+      "flex w-full flex-col items-center px-2 py-5 sm:px-4 sm:py-6",
+      "landscape-phone:w-1/2 landscape-phone:max-w-sm landscape-phone:items-start",
+      "landscape-phone:px-0 landscape-phone:py-0",
+    )}
+  >
     <div className="mb-4 flex items-center justify-center gap-3 sm:gap-4 landscape-phone:mb-2 landscape-phone:gap-2">
       <Skeleton className="size-14 rounded-2xl sm:size-16 landscape-phone:size-10" />
       <Skeleton
@@ -13,7 +19,8 @@ const LandingHeaderLoading: FC = () => (
         )}
       />
     </div>
-    <Skeleton className="mb-6 h-5 w-64 max-w-full sm:mb-8 sm:h-6 sm:w-[540px] landscape-phone:mb-0 landscape-phone:h-4 landscape-phone:w-56" />
+    <Skeleton className="mb-3 h-5 w-64 max-w-full sm:mb-4 sm:h-6 sm:w-[540px] landscape-phone:mb-1 landscape-phone:h-4 landscape-phone:w-full" />
+    <Skeleton className="mb-6 h-4 w-48 sm:mb-8 landscape-phone:mb-0" />
   </header>
 );
 

@@ -4,19 +4,15 @@ import LandingSelectorLoading from "./LandingSelectorLoading";
 import type { FC } from "react";
 
 const LandingFormLoading: FC = () => (
+  // One selector, not three: only the program step is revealed on first paint.
   <div
     className={cn(
       "flex flex-col items-center gap-4 w-full max-w-80",
-      "landscape-phone:max-w-3xl landscape-phone:gap-3",
+      "landscape-phone:w-1/2 landscape-phone:gap-3",
     )}
   >
-    <div className="flex w-full flex-col items-center gap-4 landscape-phone:flex-row landscape-phone:items-start landscape-phone:gap-3">
-      <LandingSelectorLoading />
-      <LandingSelectorLoading />
-      <LandingSelectorLoading />
-    </div>
-    <Skeleton className="h-12 w-full rounded-lg landscape-phone:max-w-80" />
-    <Skeleton className="h-4 w-48" />
+    <LandingSelectorLoading />
+    <Skeleton className="h-11 w-full rounded-lg sm:h-12 landscape-phone:h-10" />
   </div>
 );
 

@@ -45,6 +45,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,6 +61,18 @@
    */
   --text-2xs: 0.625rem;
   --text-2xs--line-height: calc(0.875 / 0.625);
+
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --animate-landing-rise: landing-rise 0.5s var(--ease-emphasized) both;
+
+  @keyframes landing-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+  }
 
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-octo-wave: octo-wave 0.4s ease-in-out infinite;
@@ -156,6 +170,11 @@
   --density-y: 0.75rem;
   --density-gap-y: 0.75rem;
   --density-x: 0.75rem;
+
+  /* --brand tints surfaces and borders; --brand-strong is the text-safe
+     variant, which has to darken in light mode to stay readable. */
+  --brand: oklch(0.7471 0.134 181.77);
+  --brand-strong: oklch(0.4515 0.0809 181.98);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -192,6 +211,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     color-scheme: dark;
+    --brand-strong: var(--brand);
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
@@ -222,6 +242,7 @@
 }
 
 .dark {
+  --brand-strong: var(--brand);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -261,6 +282,20 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Scoped to [data-landing] rather than global: the dashboard's drag feedback
+   is functional motion and already guards itself per component. */
+@media (prefers-reduced-motion: reduce) {
+  [data-landing],
+  [data-landing] *,
+  [data-landing] *::before,
+  [data-landing] *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

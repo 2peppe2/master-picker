@@ -13,7 +13,7 @@ const DashboardBanner: FC = () => {
   return (
     <div
       aria-live="off"
-      className="relative h-9 w-full overflow-hidden border-b border-[rgb(0,200,179)]/20 bg-[rgb(0,200,179)]/25 dark:bg-[rgb(0,200,179)]/10"
+      className="relative h-9 w-full overflow-hidden border-b border-brand/20 bg-brand/25 dark:bg-brand/10"
     >
       <AnimatePresence mode="wait" initial={false}>
         {slide === "news" ? (

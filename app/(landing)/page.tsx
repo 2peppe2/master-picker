@@ -45,24 +45,30 @@ const LandingPage = async ({ searchParams }: LandingPageProps) => {
   };
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div data-landing className="flex min-h-[100dvh] flex-col">
+      {/* Dropped on landscape phones: the bar costs a whole row of ~375px, and
+          the switcher is still reachable from /about and /guide. */}
       <div
         className={cn(
           "flex shrink-0 justify-end px-4 py-3 sm:px-6",
           "pt-[calc(0.75rem+env(safe-area-inset-top))]",
           "pe-[calc(1rem+env(safe-area-inset-right))]",
-          "landscape-phone:py-2",
+          "landscape-phone:hidden",
         )}
       >
         <LanguageSwitcher />
       </div>
 
+      {/* Landscape phones split into two columns: stacking the header above the
+          form spends the block axis, the only one that is scarce here. */}
       <main
         className={cn(
           "mx-auto flex w-full max-w-4xl flex-1 flex-col items-center",
           "justify-center gap-8 px-4 pb-16 text-center",
-          "landscape-phone:max-w-3xl landscape-phone:gap-4",
-          "landscape-phone:px-6 landscape-phone:pb-4",
+          "landscape-phone:max-w-2xl landscape-phone:flex-row",
+          "landscape-phone:items-center landscape-phone:justify-center",
+          "landscape-phone:gap-8 landscape-phone:px-6 landscape-phone:pb-4",
+          "landscape-phone:text-left",
         )}
       >
         <Header />

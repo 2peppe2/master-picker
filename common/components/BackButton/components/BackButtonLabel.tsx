@@ -21,7 +21,7 @@ const BackButtonLabel: FC<BackButtonLabelProps> = ({
   compact,
 }) => (
   <div className="flex min-w-0 flex-col">
-    <span className="truncate whitespace-nowrap text-sm font-bold text-foreground transition-colors group-hover:text-[#00C8B3]">
+    <span className="truncate whitespace-nowrap text-sm font-bold text-foreground transition-colors group-hover:text-brand">
       <Translate text={title} />
     </span>
     <div
@@ -46,7 +46,7 @@ const BackButtonLabel: FC<BackButtonLabelProps> = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="flex items-center gap-1 whitespace-nowrap text-2xs font-bold uppercase tracking-normal text-[#00C8B3]"
+            className="flex items-center gap-1 whitespace-nowrap text-2xs font-bold uppercase tracking-normal text-brand"
           >
             <Translate text={returnText} />
           </motion.div>

@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import ProgramSelector from "@/features/landing/components/ProgramSelector";
 import MasterSelector from "@/features/landing/components/MasterSelector";
 import YearSelector from "@/features/landing/components/YearSelector";
+import RevealStep from "@/features/landing/components/RevealStep";
 import LoadingLabel from "@/common/components/loading/LoadingLabel";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import Link from "next/link";
 import type { LandingClientPageProps } from "../types";
 import { useLandingSelection } from "../hooks/useLandingSelection";
 import { useLandingNavigation } from "../hooks/useLandingNavigation";
@@ -42,78 +42,71 @@ const LandingClientContent: FC<LandingClientPageProps> = ({
     <div
       className={cn(
         "relative flex w-full max-w-80 flex-col items-center gap-4",
-        "landscape-phone:max-w-3xl landscape-phone:gap-3",
+        "landscape-phone:w-1/2 landscape-phone:gap-3",
       )}
     >
       <div
         data-protonpass-ignore="true"
         className={cn(
           "flex w-full flex-col items-center gap-4",
-          "landscape-phone:flex-row landscape-phone:items-start",
           "landscape-phone:gap-3",
         )}
       >
-      <div className="w-full">
-        <ProgramSelector
-          programs={programs}
-          value={program}
-          onValueChange={(nextProgram) =>
-            updateSelection({
-              program: nextProgram,
-              year: null,
-              master: null,
-            })
-          }
-        />
-      </div>
+        <div className="w-full animate-landing-rise [animation-delay:120ms]">
+          <ProgramSelector
+            programs={programs}
+            value={program}
+            onValueChange={(nextProgram) =>
+              updateSelection({
+                program: nextProgram,
+                year: null,
+                master: null,
+              })
+            }
+          />
+        </div>
 
-      <div
-        className={`w-full transition-all duration-300 ease-in-out ${
-          program
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <YearSelector
-          activeProgram={activeProgram}
-          value={year}
-          onValueChange={(nextYear) =>
-            updateSelection({
-              program,
-              year: nextYear,
-              master: null,
-            })
-          }
-        />
-      </div>
+        <RevealStep show={Boolean(program)}>
+          <YearSelector
+            activeProgram={activeProgram}
+            value={year}
+            onValueChange={(nextYear) =>
+              updateSelection({
+                program,
+                year: nextYear,
+                master: null,
+              })
+            }
+          />
+        </RevealStep>
 
-      <div
-        className={`flex w-full flex-col items-center gap-2 transition-all duration-300 ease-in-out ${
-          year
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <MasterSelector
-          activeProgram={activeProgram}
-          year={year}
-          value={master}
-          onValueChange={(nextMaster) =>
-            updateSelection({
-              program,
-              year,
-              master: nextMaster,
-            })
-          }
-          isLoading={isLoadingDashboard}
-          onPickLater={pickLater}
-        />
-      </div>
+        <RevealStep show={Boolean(year)}>
+          <div className="flex w-full flex-col items-center gap-2">
+            <MasterSelector
+              activeProgram={activeProgram}
+              year={year}
+              value={master}
+              onValueChange={(nextMaster) =>
+                updateSelection({
+                  program,
+                  year,
+                  master: nextMaster,
+                })
+              }
+              isLoading={isLoadingDashboard}
+              onPickLater={pickLater}
+            />
+          </div>
+        </RevealStep>
       </div>
 
       <Button
         onClick={getStarted}
-        className="h-12 w-full text-lg landscape-phone:max-w-80"
+        className={cn(
+          "h-11 w-full text-base transition-transform active:scale-[0.98]",
+          "sm:h-12 sm:text-lg landscape-phone:h-10 landscape-phone:text-base",
+          "animate-landing-rise [animation-delay:180ms]",
+        )}
         disabled={!master || isLoadingGuide}
       >
         {isLoadingGuide && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -122,12 +115,6 @@ const LandingClientContent: FC<LandingClientPageProps> = ({
         ) : (
           <Translate text="_get_started" />
         )}
-      </Button>
-
-      <Button variant="link" asChild className="-mt-1 h-auto py-1">
-        <Link href="/about">
-          <Translate text="_learn_more_about_the_project" />
-        </Link>
       </Button>
     </div>
   );

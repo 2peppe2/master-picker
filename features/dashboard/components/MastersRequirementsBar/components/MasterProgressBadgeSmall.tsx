@@ -9,7 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
-const MasterProgressBadgeSmall: FC<MasterProgressBadgeProps> = ({ master }) => {
+const MasterProgressBadgeSmall: FC<
+  MasterProgressBadgeProps & { sideSheet: boolean }
+> = ({ master, sideSheet }) => {
   const translateCourse = useCourseTranslate();
   const masterMeta = useMasterAtom()[master.master];
   const progressPercentage = Math.round(
@@ -20,6 +22,7 @@ const MasterProgressBadgeSmall: FC<MasterProgressBadgeProps> = ({ master }) => {
     <div className="w-full">
       <MasterRequirementSheet
         master={master}
+        sideSheet={sideSheet}
         trigger={
           <Badge asChild variant="outline">
             <button

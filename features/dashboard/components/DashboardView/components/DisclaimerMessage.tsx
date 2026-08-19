@@ -15,14 +15,14 @@ const DisclaimerMessage: FC = () => {
 
   return (
     <>
-      <Info className="h-4 w-4 text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)] shrink-0" />
+      <Info className="h-4 w-4 text-brand-strong shrink-0" />
       <span className="text-xs sm:text-xs text-foreground font-semibold tracking-normal text-center leading-tight">
         <Translate
           text="_dashboard_disclaimer_full"
           components={[
             <a
               key="liu-link"
-              className="text-[rgb(0,100,89)] dark:text-[rgb(0,200,179)] underline underline-offset-2 font-bold whitespace-nowrap"
+              className="text-brand-strong underline underline-offset-2 font-bold whitespace-nowrap"
               href={programLink}
               target="_blank"
               rel="noreferrer"

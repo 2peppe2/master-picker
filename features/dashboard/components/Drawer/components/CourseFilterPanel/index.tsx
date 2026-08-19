@@ -48,7 +48,15 @@ const CourseFilterPanel: FC<CourseFilterPanelProps> = ({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex items-center justify-between gap-1 px-5 py-3">
+      {/* The bottom-sheet branch is fullscreen and sits behind the status bar;
+          the landscape side sheet has nothing above it, hence the reset. */}
+      <div
+        className={cn(
+          "flex items-center justify-between gap-1 px-5 pb-3",
+          "pt-[calc(0.75rem+env(safe-area-inset-top))]",
+          "landscape-phone:pt-3",
+        )}
+      >
         {title ? (
           <button
             type="button"

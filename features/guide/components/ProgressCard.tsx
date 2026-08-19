@@ -80,73 +80,82 @@ const ProgressCard: FC<ProgressCardProps> = ({
 
   // Fixed to the bottom edge, so in landscape it needs the inline insets too --
   // that is the orientation where the notch sits on a side.
+  //
+  // The scrim stays full-bleed, but the card sits in a track repeating
+  // GuideContent's column so its edges land on the back button above it.
   return (
     <div
       className={cn(
-        "fixed bottom-0 z-20 flex w-full justify-center",
+        "fixed bottom-0 z-20 w-full",
         "bg-gradient-to-t from-background via-background/80 to-transparent",
-        "p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:p-4",
-        "landscape-phone:p-1",
-        "landscape-phone:ps-[calc(0.25rem+env(safe-area-inset-left))]",
-        "landscape-phone:pe-[calc(0.25rem+env(safe-area-inset-right))]",
+        "py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] sm:py-4",
+        "landscape-phone:py-1",
       )}
     >
       <div
         className={cn(
-          "w-full max-w-6xl rounded-2xl border bg-card p-3 shadow-2xl",
-          "ring-1 ring-foreground/5 sm:p-4 lg:p-6",
-          "landscape-phone:rounded-xl landscape-phone:p-2",
+          "mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-4",
+          "landscape-phone:ps-[calc(1.5rem+env(safe-area-inset-left))]",
+          "landscape-phone:pe-[calc(1.5rem+env(safe-area-inset-right))]",
         )}
       >
         <div
           className={cn(
-            "flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8",
-            "landscape-phone:gap-3",
+            "w-full rounded-2xl border bg-card p-3 shadow-2xl",
+            "ring-1 ring-foreground/5 sm:p-4 lg:p-6",
+            "landscape-phone:rounded-xl landscape-phone:p-2",
           )}
         >
-          <div className="flex flex-1 flex-col gap-3 landscape-phone:gap-1.5">
-            <div className="flex items-center justify-between text-sm  text-muted-foreground/80">
-              <span>
-                <Translate text="_guide_progress_selection" />
-              </span>
-              <span className="text-emerald-600">{progressPercent}%</span>
+          <div
+            className={cn(
+              "flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8",
+              "landscape-phone:gap-3",
+            )}
+          >
+            <div className="flex flex-1 flex-col gap-3 landscape-phone:gap-1.5">
+              <div className="flex items-center justify-between text-sm text-muted-foreground/80">
+                <span>
+                  <Translate text="_guide_progress_selection" />
+                </span>
+                <span className="text-emerald-600">{progressPercent}%</span>
+              </div>
+
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted/50">
+                <div
+                  className="h-full bg-emerald-500 transition-all duration-700 ease-in-out motion-reduce:transition-none"
+                  style={{ width: `${progressPercent}%` }}
+                />
+              </div>
+
+              {/* Wrapping to a second row is what pushes the fixed bar past a
+                  third of a landscape viewport; it scrolls sideways instead. */}
+              <div
+                className={cn(
+                  "flex flex-wrap gap-2",
+                  "landscape-phone:flex-nowrap landscape-phone:gap-1",
+                  "landscape-phone:overflow-x-auto",
+                  "landscape-phone:[scrollbar-width:none]",
+                  "landscape-phone:[&::-webkit-scrollbar]:hidden",
+                )}
+              >
+                {steps.map((step, idx) => (
+                  <ProgressBadge
+                    key={`step-${idx}`}
+                    id={`${idx + 1}`}
+                    {...step}
+                  />
+                ))}
+              </div>
             </div>
 
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted/50">
-              <div
-                className="h-full bg-emerald-500 transition-all duration-700 ease-in-out motion-reduce:transition-none"
-                style={{ width: `${progressPercent}%` }}
+            <div className="w-full shrink-0 sm:w-auto">
+              <ContinueButton
+                disabled={!isComplete}
+                electiveCourses={electiveSelections}
+                bachelorCourses={bachelorCourses}
+                compulsoryCourses={compulsoryCourses}
               />
             </div>
-
-            {/* Wrapping to a second row is what pushes the fixed bar past a
-                third of a landscape viewport; it scrolls sideways instead. */}
-            <div
-              className={cn(
-                "flex flex-wrap gap-2",
-                "landscape-phone:flex-nowrap landscape-phone:gap-1",
-                "landscape-phone:overflow-x-auto",
-                "landscape-phone:[scrollbar-width:none]",
-                "landscape-phone:[&::-webkit-scrollbar]:hidden",
-              )}
-            >
-              {steps.map((step, idx) => (
-                <ProgressBadge
-                  key={`step-${idx}`}
-                  id={`${idx + 1}`}
-                  {...step}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full shrink-0 sm:w-auto">
-            <ContinueButton
-              disabled={!isComplete}
-              electiveCourses={electiveSelections}
-              bachelorCourses={bachelorCourses}
-              compulsoryCourses={compulsoryCourses}
-            />
           </div>
         </div>
       </div>

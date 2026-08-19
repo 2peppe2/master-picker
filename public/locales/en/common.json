@@ -250,7 +250,7 @@
   "profiles": "Profiles",
   "replace": "Replace",
   "retake": "Retake",
-  "schedule_layout_carousel": "Swipe",
+  "schedule_layout_carousel": "Row",
   "schedule_layout_grid": "Grid",
   "search": "Search",
   "semester": "Semester",

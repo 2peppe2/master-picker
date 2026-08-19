@@ -3,10 +3,9 @@ import MasterRequirementSheet from "./MasterRequirementSheet";
 import { MasterOverflowRowProps } from "./MasterOverflowRow.types";
 import { FC } from "react";
 
-const MasterOverflowRowSmall: FC<MasterOverflowRowProps> = ({
-  master,
-  onMasterSelect,
-}) => {
+const MasterOverflowRowSmall: FC<
+  MasterOverflowRowProps & { sideSheet: boolean }
+> = ({ master, onMasterSelect, sideSheet }) => {
   if (onMasterSelect) {
     return (
       <MasterOverflowRowTrigger
@@ -20,6 +19,7 @@ const MasterOverflowRowSmall: FC<MasterOverflowRowProps> = ({
   return (
     <MasterRequirementSheet
       master={master}
+      sideSheet={sideSheet}
       trigger={
         <MasterOverflowRowTrigger master={master} presentation="sheet" />
       }
