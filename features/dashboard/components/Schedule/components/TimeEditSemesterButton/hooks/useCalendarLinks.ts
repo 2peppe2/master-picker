@@ -26,14 +26,17 @@ export const useCalendarLinks = ({
   // The course set the currently held links were resolved for.
   const resolvedForRef = useRef<string | null>(null);
 
-  const courseCodes = useMemo(
+  // `<period>:<code>`, so the API can pick the occasion for the period the
+  // course is scheduled in rather than every occasion in the semester.
+  const courseRequests = useMemo(
     () =>
       Array.from(
         new Set(
-          periods
-            .flat()
-            .filter((course) => course !== null)
-            .map((course) => course.code),
+          periods.flatMap((blocks, periodIndex) =>
+            blocks
+              .filter((course) => course !== null)
+              .map((course) => `${periodIndex + 1}:${course.code}`),
+          ),
         ),
       ),
     [periods],
@@ -41,10 +44,10 @@ export const useCalendarLinks = ({
 
   const searchParams = useMemo(() => {
     const params = new URLSearchParams({ semester, year: year.toString() });
-    courseCodes.forEach((code) => params.append("course", code));
+    courseRequests.forEach((request) => params.append("course", request));
 
     return params.toString();
-  }, [courseCodes, semester, year]);
+  }, [courseRequests, semester, year]);
 
   const loadLinks = useCallback(async () => {
     if (resolvedForRef.current === searchParams) return;
@@ -78,6 +81,6 @@ export const useCalendarLinks = ({
     isLoading,
     errorKey,
     loadLinks,
-    hasCourses: courseCodes.length > 0,
+    hasCourses: courseRequests.length > 0,
   };
 };
