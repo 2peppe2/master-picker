@@ -1,0 +1,1968 @@
+[
+  {
+    "code": "TDDC28",
+    "name": "Applications of Discrete-Event Simulation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC28",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE50",
+    "name": "Megagame - Design for Sustainable Development in the light of Climate Change",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE50",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE11",
+    "name": "Intellectual Property Rights",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE11",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE53",
+    "name": "Industrial Economics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE53/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIN01",
+    "name": "Business Strategies",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIN01",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO87",
+    "name": "Project Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO87/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU96",
+    "name": "Sustainable study situation",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU96/vt-2025",
+    "ecv": "V",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT01",
+    "name": "Introduction to Intercultural Competence",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT01",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU08",
+    "name": "Quality and Business Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU08",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA001",
+    "name": "Foundation Course in Mathematics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA001/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA002",
+    "name": "Linear Algebra",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA002/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA003",
+    "name": "Calculus I",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA003/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA004",
+    "name": "Calculus II",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA004/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA005",
+    "name": "Applied Mathematics in Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA005/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA006",
+    "name": "Calculus III",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA006/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TND002",
+    "name": "Object-Oriented Programming",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TND002/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNE043",
+    "name": "Mechanics and Wave Physics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNE043/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNFL12",
+    "name": "Urban Air Mobility and Unmanned Traffic Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNFL12",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG006",
+    "name": "Statistics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG006/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG015",
+    "name": "Signals and Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG015/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG016",
+    "name": "Engineering Applications Using Matlab",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG016",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG022",
+    "name": "Modelling and Simulation",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG022/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG028",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG028/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG032",
+    "name": "Applied Transform Theory",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG032/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG033",
+    "name": "Programming in C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG033",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG042",
+    "name": "Scientific Methodology in Logistics",
+    "credits": 2,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG042",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK044",
+    "name": "Transportation Systems",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK044/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK046",
+    "name": "Geographic Information Systems",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK046/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK047",
+    "name": "Optimization and System Analysis",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK047/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK049",
+    "name": "Optimization",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK049/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK051",
+    "name": "Planning of Air Traffic",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK051",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK089",
+    "name": "Discrete-Event Simulation",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK089",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK090",
+    "name": "Queueing Theory",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK090",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK091",
+    "name": "Traffic Safety Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK091",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK093",
+    "name": "Mobile Communication",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK093",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK098",
+    "name": "Planning of Public Transportation and Railway Traffic",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK098",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK103",
+    "name": "Analysis of Communication and Transport Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK103",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMPF",
+      "KMSS",
+      "KMTA"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "KMPF",
+          "KMSS",
+          "KMTA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK104",
+    "name": "Applied Optimization I",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK104",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK105",
+    "name": "Applied Optimization II",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK105",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK106",
+    "name": "Positioning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK106",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK108",
+    "name": "Computer Networking",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK108/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK113",
+    "name": "Transport Economics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK113/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK114",
+    "name": "Logistics in Supply Chains",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK114",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMPF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "KMPF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK115",
+    "name": "Smart Cities",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK115",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK116",
+    "name": "Internet of Things",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK116",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK118",
+    "name": "Transport Demand Forecasting",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK118",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMTA"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMTA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK119",
+    "name": "Traffic Theory and Simulation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK119",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMTA"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMTA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK120",
+    "name": "Traffic State Estimation, Prediction and Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK120",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMTA"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "KMTA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK121",
+    "name": "Communication Network Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK121",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK122",
+    "name": "Logistics and production planning",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK122/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK123",
+    "name": "Advanced Supply Chain Planning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK123",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMPF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMPF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK124",
+    "name": "Logistics Networks and Transport Logistics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK124",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMPF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "KMPF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK125",
+    "name": "Public Transportation and Rail Traffic",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK125",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK126",
+    "name": "Traffic Infrastructure",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK126/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK128",
+    "name": "Fundamental Programming for Data Analytics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK128/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK129",
+    "name": "Machine Learning for Smart Cities",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK129",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [
+      "KMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "KMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK130",
+    "name": "Data Analytics for Communications and Transport Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK130",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK132",
+    "name": "Bachelor Thesis Communication and Transportation",
+    "credits": 16,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK132",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNK134",
+    "name": "Communication within smart cities",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNK134/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNKA10",
+    "name": "Rethoric in Speech, Texts and Images",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNKA10",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNSL15",
+    "name": "Logistics and Sustainable Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNSL15",
+    "ecv": "E",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06",
+    "ecv": "V",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CKTS"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  }
+]

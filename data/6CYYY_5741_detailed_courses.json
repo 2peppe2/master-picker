@@ -1,0 +1,6133 @@
+{
+  "TAMS14": {
+    "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear algebra, differential and integral calculus, series.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      38,
+      69
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS17": {
+    "examiner": "Taras Bodnar",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic courses in probability theory and statistics. An advanced course in probability theory is helpful, but not required.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS24": {
+    "examiner": "Martin Singull",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus, matrix algebra and a first course in probability theory.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      44,
+      63
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS46": {
+    "examiner": "Xiangfeng Yang",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear algebra and multivariate analysis. Basic courses in probability and statistics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS32": {
+    "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic courses in probability. Linear algebra and multivariate analysis. Transform theory is helpful, but not required.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS43": {
+    "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A first course in probability theory and statistics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Compulsory Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS41": {
+    "examiner": "Martin Singull",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A first course in probability and statistics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAOP07": {
+    "examiner": "Elina Rönnberg",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus, linear algebra, and programming",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAOP04": {
+    "examiner": "Chuan He",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus, linear algebra, Matlab, and an introductory course in optimization.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAOP34": {
+    "examiner": "Torbjörn Larsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "An introductory course in optimization.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Exercise",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TANA21": {
+    "examiner": "Andrew Winters",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic courses in calculus, linear algebra and programming.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA34": {
+    "examiner": "Anders Björn",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A basic course in calculus and linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA24": {
+    "examiner": "Axel Hultman, Jan Snellman",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      108,
+      105
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 8,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA41": {
+    "examiner": "Magnus Herberthson, Mikael Langer, Fredrik Andersson, Erik Darpö",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA43": {
+    "examiner": "Vladimir Tkatjev",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear algebra and Calculus",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      76,
+      137
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 8,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA40": {
+    "examiner": "Hans Lundmark",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Admisson to the course requires , as well as general university requirements, secondary school mathematics (or equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      32,
+      5
+    ],
+    "examinations": [
+      {
+        "module": "MOM1",
+        "name": "Participation in at least 12 of 16 lectures",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATA42": {
+    "examiner": "Lars Alexandersson, Ulf Janfalk, Johan Thim",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus in one variable, part 1",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      64,
+      96
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR3",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR4",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATA55": {
+    "examiner": "Jesper Thorén",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Mathematics corresponding to basic courses in discrete algebra and linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA71": {
+    "examiner": "Hans Lundmark",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra, Calculus one variable, Calculus several variables (or their equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA78": {
+    "examiner": "Lars Alexandersson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Complex analysis or equivalent. In addition, Real analysis, honours course, or another more advanced course in mathematics is recommended.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments and oral presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA77": {
+    "examiner": "Mats Aigner",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus (one and several variables), Linear Algebra and Complex analysis or equivalent.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Electrical Engineering",
+      "Applied Physics",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATB11": {
+    "examiner": "Milagros Izquierdo",
+    "department": "Matematiska institutionen",
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics"
+    ],
+    "education_components": [
+      64,
+      96
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Optional assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional written assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Smaller assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATB10": {
+    "examiner": "Göran Bergqvist",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A second course in linear algebra or similar",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments and projects",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATM38": {
+    "examiner": "Mats Aigner",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Courses in Analysis and in Linear Algebra",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project reports",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATM85": {
+    "examiner": "Jana Björn",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra,Calculus in one variable, Calculus in several variables, Real Analysis Honours Course, is a good preparation, but is not a prerequisite.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA85": {
+    "examiner": "Björn Morén",
+    "department": "Matematiska institutionen",
+    "prerequisites": "The mandatory mathematics courses on the Y, TMA, MMAT or corresponding programme. The course offers various projects, and depending on the project chosen additional prerequisites may be required. Knowledge about the LIPS project model",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      20,
+      300
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATB01": {
+    "examiner": "Fredrik Andersson, Mikael Langer, Johan Thim",
+    "department": "Matematiska institutionen",
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      78,
+      82
+    ],
+    "examinations": [
+      {
+        "module": "TEN3",
+        "name": "Written summary examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Examination",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN4",
+        "name": "Written partial examination",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN5",
+        "name": "Written partial examination",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBME04": {
+    "examiner": "Hanna Jonasson",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Basic skills from first and second academic year at LiTH.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Seminars",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital Examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMI02": {
+    "examiner": "Anders Eklund",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Basic Linear Algebra: bases, scalar product, least squares problem, eigenvalue problems. Basic signal processing: sampling, convolution and Fourier transform of o1D signals. Basic programming skills in Matlab and Python are recommended.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBME03": {
+    "examiner": "Padraig D´arcy",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Basic knowledge in biology and chemistry",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Handing in task",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMI19": {
+    "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Basic laboratory skills and computer proficiency, basic skills regarding structured and systematic problem analysis; basic knowledge of anatomy and physiology is recommended but not required",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "BAS1",
+        "name": "Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Essay assignements",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA45": {
+    "examiner": "Lars Alexandersson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra and Calculus in ona and several variables or equivalent. Vector calculus is recommended but not necessary.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Optional Assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Optional Assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Optional Assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT01": {
+    "examiner": "Johannes Johansson",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and physiology, Signal theory/Fourier analysis. Experience with signal processing/programming in Matlab or similar.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminar assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "BAS1",
+        "name": "Tutorial sessions",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Essay assignement",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMT39": {
+    "examiner": "Marcus Larsson",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "The student should have basic knowledge in physics, mathematical modelling, programming and signal theory. The student should also have domain knowledge in biomedical engineering as well as in anatomy and physiology.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      96,
+      224
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDC17": {
+    "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Programming in a functional, imperative or object oriented programming language. Knowledge of data structures and algorithms. Knowledge in logic and discrete mathematics is useful.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDC88": {
+    "examiner": "Martin Sjölund",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic programming experience in Java, algorithms, and databases. Basic knowledge in web programming, teamwork, modeling, and testing.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      80,
+      240
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Voluntary hand-in assignment",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT57": {
+    "examiner": "Rolf Saager",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and Physiology, Biomedical Engineering, Biomedical Signal Processing, Medical Images and basic knowledge in electromagnetic radiation and optics.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written and Oral Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDD08": {
+    "examiner": "Victor Lagerkvist",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic courses in discrete mathematics and logic, and a course on basic programming.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD37": {
+    "examiner": "Olaf Hartig",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "The course requires thorough knowledge in programming, data structures and algorithms, and mathematics preferrably directed towards discrete mathematics or logics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA44": {
+    "examiner": "Vladimir Tkatjev",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Courses in calculus and linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      46,
+      61
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD38": {
+    "examiner": "Klas Arvidsson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Strong programming experience, familiarity with composite types or object-oriented programming, and proficiency in C++.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      84,
+      76
+    ],
+    "examinations": [
+      {
+        "module": "DAK1",
+        "name": "Voluntary examination in computer lab (part 1)",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK2",
+        "name": "Voluntary examination in computer lab (part 2)",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK3",
+        "name": "Voluntary examination in computer lab (part 3)",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT3",
+        "name": "Computer examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD56": {
+    "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD89": {
+    "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignment",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDD49": {
+    "examiner": "Sahand Sadjadee",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Object-oriented programming",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Programming"
+    ],
+    "education_components": [
+      40,
+      67
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Labs",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE01": {
+    "examiner": "Jose M Pena",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Probability theory; Statistics; Mathematical analysis; Linear Algebra; Basic programming.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT2",
+        "name": "Computer examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE16": {
+    "examiner": "Marcel Bollmann",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theory programming, data structures and algorithms machine learning The lab series for the course uses Python.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      24,
+      136
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory exercises",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE15": {
+    "examiner": "Jose M Pena",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Probability theory and Statistics; Bayesian Learning; Machine Learning; Mathematical analysis; Linear Algebra; Basic programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer-based laboratory exercises",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT2",
+        "name": "Computer examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE71": {
+    "examiner": "Klas Arvidsson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "A basic course in programming is required for this course, especially basic skills in problem solving and construction of small programs. Basic knowledge of computers and familiarity with unix based computer systems.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      98,
+      115
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Computer-based exercises",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK2",
+        "name": "Computer examination",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDTS06": {
+    "examiner": "Andrei Gurtov",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Knowledge of C or C++ are required in order to be able to do the laborations in the course. It is an advantage if the student also has knowledge corresponding to Concurrent Programming and Operating Systems, especially know how to explain the resource conflicts that can occur in a computer program and how to solve them. This knowledge can, however, be acquired while doing the laborations in the course. The student is also assumed to know how to construct and test programs in a Unix/Solaris environment.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Voluntary assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDTS08": {
+    "examiner": "Zebo Peng",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Computer Hardware and Architecture",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMT32": {
+    "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": null,
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      18,
+      35
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Active participation during at least 6 lectures and a studyvisit",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG4",
+        "name": "Essay (with seminar discussion)",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEAE05": {
+    "examiner": "Pernilla Ivehammar",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEAE01": {
+    "examiner": "Sofi Rehme, Stefan Maass",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      49,
+      111
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEIO29": {
+    "examiner": "Stefan Cavalcante Bernat Junior",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "At least two years of academic studies.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Written group assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Participation in seminars and individual assignment",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFFM08": {
+    "examiner": "Tien Son Nguyen",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Modern physics (atomic and nuclear physics), wave physics, and statistical physics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Examination",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFFY54": {
+    "examiner": "Magnus Boman",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Bachelor level physics, in particular some basics in modern physics or quantum physics. Linear algebra.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE44": {
+    "examiner": "Johan Falkenjack",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic computer skills.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      66,
+      147
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Data and program abstraction/intro to object-oriented programming",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Fundamentals in programming and computer system",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA37": {
+    "examiner": "Niclas Solin",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Mandatory courses in mathematics and physics for the Y-program or equal.",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA18": {
+    "examiner": "Iryna Yakymenko",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "One-variable and multi-variable calculus, linear algebra, vector analysis, complex analysis, Fourier analysis.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "A written examination containing theory problems",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA38": {
+    "examiner": "Wei-Xin Ni",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge in modern physics or nanotechnology.",
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Quiz tests",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Homework assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "A written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA40": {
+    "examiner": "Iryna Yakymenko",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Mechanics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA39": {
+    "examiner": "Yuttapoom Puttisong",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Modern Physics",
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Homework and Oral Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFKE59": {
+    "examiner": "Eleonore von Castelmur",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Chemistry"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFFM12": {
+    "examiner": "Yuttapoom Puttisong",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      18,
+      35
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Written reports",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA43": {
+    "examiner": "Naureen Ghafoor",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge in mechanics and wave physics",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional written tests",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Active Participation in the Student Conference",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA73": {
+    "examiner": "Mats Eriksson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Mathematics, Calculus, Linear algebra, Mechanics, Wave Motion, Electromagnetic Field Theory.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      44,
+      63
+    ],
+    "examinations": [
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional Assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA90": {
+    "examiner": "Davide Sangiovanni",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Thermodynamics and statistical mechanics (TFYA12) and Quantum Mechanics (TFFY54), or corresponding courses that cover the same material and prerequisites. Also, basic understanding of computers and computer programming.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written Assignments",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA97": {
+    "examiner": "Kenneth Järrendahl",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Bachelor level mathematics and physics. In particular Calculus, Linear algebra, Electromagnetics, Wave physics and Optics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional Assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Group Assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Submodule of Written Examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB02": {
+    "examiner": "Ferenc Tasnadi",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic courses in Analytical Mechanics, Classical Electrodynamic, and Quantum Mechanics. Knowledge of perturbation theory as well as Statistical physics is recommended.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Optional oral examination for higher grades",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Homework assignments and oral presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYB01": {
+    "examiner": "Ferenc Tasnadi",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Introductory course in electromagnetism, vector analysis, integral- and differential calculus in many variables, complex analysis, Fourier transforms.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB05": {
+    "examiner": "Joel Davidsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Calculus with One and Several Variables, Vector Analysis, Mechanics and basic concepts from Physics.",
+    "main_field": [
+      "Applied Physics"
+    ],
+    "education_components": [
+      38,
+      69
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYB04": {
+    "examiner": "Bo Durbeej",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Linear Algebra, Calculus in One Variable.",
+    "main_field": [
+      "Applied Physics"
+    ],
+    "education_components": [
+      0,
+      213
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional written examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYB08": {
+    "examiner": "Kenneth Järrendahl",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic mathematics course, calculus in one variable, multivariable calculus, and linear algebra. Basic mechanics (including oscillatory motion) and basic electromagnetism.",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Submodule of Written Examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional Assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB13": {
+    "examiner": "Rickard Armiento",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Knowledge in Physics and mathematics, corresponding at least to the bachelor level in a civil engineering or master program that in part includes courses in physics, e.g., the Y- and TMA programs. For sensor-based and experimental-oriented projects, it is desirable with prior knowledge in sensor and measurement technology, sensor systems, software for data analysis, and basics on electronics. For simulation-based and theory-oriented projects, recommended prior knowledge is on programming and computational physics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      56,
+      264
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Group work assignment",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB14": {
+    "examiner": "Johan Klarbring",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Calculus in one and several variables; Basic mechanics and basic quantum mechanics (from Modern Physics I)",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYM01": {
+    "examiner": "Ivan Gueorguiev Ivanov",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Modern physics, Statistical mechanics, and Quantum Mechanics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYM03": {
+    "examiner": "Plamen Paskov",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Solid state physics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Project Work",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU49": {
+    "examiner": "Corinna Röver",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Seminars",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM2",
+        "name": "Hand-in examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU94": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "Requisite general qualifications for university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignment, seminar",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU91": {
+    "examiner": "Victoria Pihlgren",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "University studies corresponding to 60 credits / one year full time studies.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Successful completion of written assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Successful completion of oral assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TINT01": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MOM1",
+        "name": "Active participation in seminars and group discussions",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB09": {
+    "examiner": "Magnus Boman",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Calculus with One and Several Variables, Vector Analysis, Electrostatics and Magnetostatics, Mechanics and basic concepts from Physics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      42,
+      65
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written Examination, part 1",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Written Examination, part 2",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Computer Exercises",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TGTU96": {
+    "examiner": "Maria Eidenskog",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TKMJ24": {
+    "examiner": "Annica Carlsson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Product Development",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      45,
+      115
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMHL03": {
+    "examiner": "Peter Schmidt",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Multi-variable calculus, basic Solid Mechanics including multi-axial stress states",
+    "main_field": [
+      "Aeronautical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LABA",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TENA",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "THEN18": {
+    "examiner": "Mikael Svensson",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN2",
+        "name": "Oral examination and assignments",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMKM90": {
+    "examiner": "Viktor Norman",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Engineering Materials, Solid Mechanics",
+    "main_field": [
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMMV01": {
+    "examiner": "Roland Gårdhagen",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Calculus, Algebra, Physics (thermodynamics) and Mechanics and Fluid mechanics, Matlab or corresponding programming skills.",
+    "main_field": [
+      "Aeronautical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "UPG7",
+        "name": "Assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMMV11": {
+    "examiner": "Roland Gårdhagen",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Calculus, Algebra and Thermodynamics.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TMME50": {
+    "examiner": "Lars Johansson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Calculus in one and several variables including ordinary differential equations, vector algebra, matrix algebra, basic rigid body dynamics, basic automatic control.",
+    "main_field": [
+      "Aeronautical Engineering",
+      "Applied Physics",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Exercise",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMMV18": {
+    "examiner": "Hossein Nadali Najafabadi",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Thermodynamics, fluid mechanics and heat transfer",
+    "main_field": [
+      "Aeronautical Engineering",
+      "Energy and Environmental Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Tasks to be examined in written and oral (seminar) form",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignments, written presentation",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNA010": {
+    "examiner": "Berkant Savas",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Inplementation and report of applied project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNE071": {
+    "examiner": "Shaofang Gong",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Electromagnetism, RF Electronics",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with oral and written presentation",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNE083": {
+    "examiner": "Magnus Karlsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "High (radio) frequency electronics, electromagnetism.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNE111": {
+    "examiner": "Magnus Karlsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Circuit Theory, Analog Electronics, Digital electronics, Signals and systems, RF electronics",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Oral examination",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional written examination",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYY51": {
+    "examiner": "Urban Forsberg",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics"
+    ],
+    "education_components": [
+      108,
+      52
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project",
+        "credits": 4.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Seminars",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TPPE17": {
+    "examiner": "Katarina Eriksson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic knowledge in industrial engineering, optimisation, probability theory and statistics.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "A written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPPE29": {
+    "examiner": "Jörgen Blomvall",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic knowledge in accounting, capital budgeting, probability theory and statistics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      28,
+      132
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM116": {
+    "examiner": "Karljohan Lundin Palmerius",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laborations",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM067": {
+    "examiner": "Ingrid Hotz",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer Graphics, Physical modeling",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TPPE53": {
+    "examiner": "Jonas Ekblom",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Introductory courses in statistics, probability theory, and financial theory (Corporate Finance and/or Financial Markets and Instruments, and Financial Risk Management or comparable courses). An introductory course in stochastic processes is recommended.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examinations",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPTE06": {
+    "examiner": "Nämndspecifikt",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBB06": {
+    "examiner": "Mårten Wadenbäck",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic Linear Algebra: vector spaces, bases, scalar product, least squares problems, eigenvalue problems. Basic signal processing (corresponding to Linear Systems): sampling, convolution and Fourier transform of one-variable signals. Basic skills in Matlab is recommended.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      68,
+      92
+    ],
+    "examinations": [
+      {
+        "module": "TEN2",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional Written Test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TPPE61": {
+    "examiner": "Jörgen Blomvall",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Introduction to Operations Researchand Mathematical Statistics, first course (or corresponding courses on other programs). The courses Financial Markets and Instruments, Financial Valuation Methodology , and Portfolio Management are desirable, but not necessary.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      22,
+      138
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Project",
+        "credits": 6,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral test",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSBB08": {
+    "examiner": "Maria Magnusson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "From any of the courses Signals and Systems, Linear systems, Signals and Images, Multidimensional Signal and Image Analysis: Deterministic signals, linear systems, convolution, 1D continuous Fourier transform and its theorems, basic filters (low-pass, high-pass, and band-pass), discrete Fourier transform (desirable but not necessary), sampling and reconstruction (desirable but not necessary).From course Linear algebra: vector, matrix, determinant, scalar product, bases, the least square method.One- and multidimensional calculus.Programming in one of the following languages: C, C++, Java, Ada, Python or Matlab.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSBB22": {
+    "examiner": "Yonghao Xu",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Digital image processing, machine learning, computer vision, linear algebra, statistics, and programming. Knowledge from the course computer graphics is beneficial.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      268
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBB21": {
+    "examiner": "Maria Magnusson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra: points, lines and planes in two and three dimensions, vector spaces and linear maps. Basic optics (secondary school): light spectrum and light refraction in lenses. Basic use of Matlab. 1-D signal processing: linear systems, convolution, the continuous Fourier transform and its theorems, sampling and reconstruction. Digital image processing: 2-D Fourier transform, 2-D convolution on digital images, 2-D interpolation (desirable but not necessary).",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSBK03": {
+    "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with tests",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBB19": {
+    "examiner": "Per-Erik Forssén",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic image processing: thresholding, segmentation, edge detection from for example Signals, Information and Images or Digital Image Processing. Use of Python or Matlab. Probability Theory and Statistics.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project with oral and written presentation",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examiation",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEA26": {
+    "examiner": "Oscar Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Microprocessor fundamentals corresponding to the contents of Computer hardware and architecture. Basic knowledge of DSP, corresponding to the contents of Signals and systems. Basic knowledge of VHDL or Verilog, corresponding to the contents of Computer hardware and architecture or Design of Digital Systems.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      66,
+      94
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Individual laboratory work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSDT14": {
+    "examiner": "Danyo Danev",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "From Calculus: Derivatives and integrals. From Probability theory: Most, but with focus on binary distributions, rectangular distributions and Gaussian distributions. From Signals and systems or Linear Systems: Fourier transforms, LTI systems, convolution, amplitude modulation, sampling and pulse amplitude modulation. (all of it deterministic)",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSDT18": {
+    "examiner": "Lasse Alfredsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Calculus, Linear Algebra, Basic Electronics. Good handling of Fourier series, Fourier transforms, Laplace transforms, and z-transforms.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEA81": {
+    "examiner": "Kent Palmkvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Computer Hardware and Architecture, Programming and Data Structures, basic knowledge of programming in the C programming language. (If you have used C in your bachelor project in Electronics this is typically enough.)",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Translation is not available",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEA28": {
+    "examiner": "Kent Palmkvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Switching theory and logical design. Basic knowledge in analogue electronics. Be able to perform a simple programming task.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEA84": {
+    "examiner": "Oscar Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Design of digital systems or similar, Application-specific integrated circuits or similar.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEA85": {
+    "examiner": "Oscar Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Switching Theory and Logical Design, Computer Hardware and Architecture, Digital Project Laboratory, C/C++ programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEK03": {
+    "examiner": "Alireza Saberkari",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Radio Electronics, Analog CMOS Integrated Circuits. To follow the course the students are required to have a good knowledge in circuit analysis and design of analog circuits.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEK07": {
+    "examiner": "Hampus Malmberg",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic courses in electronics.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work and oral presentation",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEK37": {
+    "examiner": "Saghi Forouhi",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Digital Integrated Circuits",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional Assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEK02": {
+    "examiner": "Alireza Saberkari",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic knowledge in circuit theory, electronics, and mathematic.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSFS02": {
+    "examiner": "Jan Åslund",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic Control, Engineering Mechanics, and familiarity with Matlab.",
+    "main_field": [
+      "Electrical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSFS09": {
+    "examiner": "Lars Eriksson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Engineering Mechanics, Automatic Control and Matlab",
+    "main_field": [
+      "Electrical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      63,
+      97
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Project assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Optional written examination for higher grades",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSFS12": {
+    "examiner": "Erik Frisk",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic control, introductory courses in mechanics and programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Hand in exercise for higher grade",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PROJ",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand in exercises",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIN01": {
+    "examiner": "Zheng Chen",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic knowledge of Probability theory.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Assignment report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIN02": {
+    "examiner": "Harald Nautsch",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic knowledge in computer science",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination.",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIT02": {
+    "examiner": "Arunava Naha",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "At least one course in basic computer science, and some knowledge on operating systems and computer communications.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      28,
+      132
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIT03": {
+    "examiner": "Erik Mårtensson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Probability theory",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIT06": {
+    "examiner": "Guilherme B. Xavier",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Quantum algorithms and quantum information, Machine learning",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Applied Physics"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Labatory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSIT13": {
+    "examiner": "Guilherme B. Xavier",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear Algebra. A recommendation but not strict requirement would be Quantum Electronics and Quantum Optics",
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEA51": {
+    "examiner": "Oscar Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Ability to handle simple functional expressions. Ability to solve simple problems in basic electronics, i.e. Ohm's law and Kirchhoff's laws.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      59
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS15": {
+    "examiner": "Karl-Ludwig Besser",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra, Probability theory, and a course similar to Signals, Information and Communications or Information and Communications Engineering.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSKS35": {
+    "examiner": "Diana Pamela Moya Osorio",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "A course in signals and systems, or linear systems. A basic course in probability theory.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      62,
+      98
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSKS33": {
+    "examiner": "Danyo Danev",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra. Basic knowledge and understanding of probability theory/statistics. Programming skills in Python and Matlab.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS25": {
+    "examiner": "Danyo Danev",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Signals and Systems, continous Linear Systems or Multidimensional Signal and Image AnalysisSignal Theory, Detection and Estimation of SignalsBasic computer programming skills, preferably in an object-oriented language.Preferably one or more advanced-level courses in the fields of communications, signal processing, networking, or data science.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      16,
+      304
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS18": {
+    "examiner": "Khac-Hoang Ngo",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Calculus (e.g., differentiation and integration), linear algebra (e.g., matrix operations), and probability (e.g., random variables, central limit theorem) • A first course in machine learning, e.g., Machine Learning • Python programming skills, e.g., to train a machine learning model",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer Based Laboratory Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Exam",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT08": {
+    "examiner": "Anders Hansson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic Control, Basic course in optimization",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSKS38": {
+    "examiner": "Zheng Chen",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra, Probability theory, Stochastic processes, Programming skills in Python.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT28": {
+    "examiner": "Daniel Axehill",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic control and Control theory. Knowledge from the courses Industrial Control systems, Modelling and Learning for Dynamical Systems and/or Sensor Fusion is beneficial.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      26,
+      294
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSRT78": {
+    "examiner": "Fredrik Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Signal Theory, Signals and Systems.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      57,
+      103
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Written/Computer Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT92": {
+    "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "DAT1",
+        "name": "Computer Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSTE26": {
+    "examiner": "Lars Eriksson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Direct current and alternating current theory from a basic electrical course. Previous programming in Matlab helps, but is not necessary..",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSTE12": {
+    "examiner": "Kent Palmkvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic courses in digital circuits. Basic courses in programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work and Home Assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS37": {
+    "examiner": "Karl-Ludwig Besser",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra (can be studied in parallel), Programming",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer exercise",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSTE28": {
+    "examiner": "Arvind Balachandran",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Direct current theory from a basic electrical course. PI controllers from a control engineering basic course.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSTE85": {
+    "examiner": "Mark Vesterbacka",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Comprehension of basic electrical theory. Comprehension and skill in digital circuit design.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSTE86": {
+    "examiner": "Mark Vesterbacka",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Knowledge on basic electrical components like resistors, capacitors, inductors, and semiconductors. Ability to solve basic electrical, switching theory, and logical design problems.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSTE05": {
+    "examiner": "Mikael Olofsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "From Foundation Course in Mathematics: General mathematical ability, specifically Complex numbers.From Calculus in one variable: Derivatives, differential equations.From Linear algebra: Matrices and vectors.",
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics",
+      "Physics",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      82,
+      131
+    ],
+    "examinations": [
+      {
+        "module": "LABB",
+        "name": "Laboratory work IFM",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LABA",
+        "name": "Laboratory work ISY",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPGA",
+        "name": "Home assignments",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS29": {
+    "examiner": "Torkel Erhardsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra, Analysis. Introduction to Probability Theory. A course in Stochastic processes is useful.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TANA31": {
+    "examiner": "Andrew Winters",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus in several variables, Linear algebra and some skills in programming.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TANA15": {
+    "examiner": "Fredrik Berntsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic courses in Calculus in one and several variables and a course in linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS39": {
+    "examiner": "Martin Singull",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra, Calculus of Several Variables, course/s in Probability and Statistics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Laboratory work and hand in assignments/project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAOP24": {
+    "examiner": "Jan Rolfes",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Introduction to optimization.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory course",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA27": {
+    "examiner": "Hans Lundmark",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear algebra, single and multi-variable calculus, vector analysis, Fourier analysis, complex analysis.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATA53": {
+    "examiner": "Jonathan Nilsson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A basic course in linear algebra.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in exercises",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA54": {
+    "examiner": "Jan Snellman",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic concepts in discrete mathematics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA66": {
+    "examiner": "Mats Aigner",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra, Caculus in one and severel variables, Fourier Analysis or Transform Theory",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBME08": {
+    "examiner": "Neda Haj Hosseini",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and physiology. Some programing experience is assumed.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project Work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATA75": {
+    "examiner": "Fredrik Andersson",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Vector Analysis, Mechanics.In addition to these formal prerequisites considerable 'mathematical maturity' is required. Therefore it is advantageous to have taken one or several additional courses in advanced mathematics and theoretical physics e.g., Complex analysis, Differential geometry, Functional analysis, Cosmology and/or Analytical mechanics.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Homework problems and oral presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMI26": {
+    "examiner": "Magnus Borga",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics.Recommended: Signal theory, programming (Python).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMT09": {
+    "examiner": "Tino Ebbers",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and Physiology",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMT26": {
+    "examiner": "Johannes Johansson",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and Physiology",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT59": {
+    "examiner": "Evren Özarslan",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Modern Physics, Signal Theory, Anatomy and Physiology, Biomedical Signal Processing.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "BAS1",
+        "name": "Work in PBL-group",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD20": {
+    "examiner": "Peter Jonsson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Discrete mathematics and logic. An introductory course on data structures and algorithms. That is, the student is expected to be familiar with asymptotic notation, basic data structures, such as lists, stacks, queues, trees etc., and algorithms for fundamental problems, such as searching, sorting, etc. Basic knowledge in probability theory and optimization.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD41": {
+    "examiner": "Patrick Lambrix",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "The course requires thorough knowledge in programming, discrete mathematics, data structures and algorithms and databases.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      26,
+      134
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD12": {
+    "examiner": "Olaf Hartig",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic programming and Data structures and algorithms.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Programming"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD95": {
+    "examiner": "Fredrik Heintz",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Design and Analysis of Algorithms",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE09": {
+    "examiner": "Marco Kuhlmann",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "discrete mathematics, calculus, linear algebra, probability theorygood knowledge of programming, data structures, and algorithmsmachine learning (such as TDDE01 or TBMI26) The lab series for the course uses Python and the PyTorch library.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Theory assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB3",
+        "name": "Laboratory assignments",
+        "credits": 1.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Project assignments (group part)",
+        "credits": 1.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG5",
+        "name": "Project assignments (individual part)",
+        "credits": 1.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE31": {
+    "examiner": "Huanyu Li",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic database course. Data mining or machine learning course.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Labs",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE70": {
+    "examiner": "Fredrik Lindsten",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Calculus in one and several variables, linear algebra, statistics, optimization and programming. Basic machine learning (at least 6 credits) including artificial neural networks. Programming in Python and experience in programming for numerical problem solving and linear algebra (e.g. via NumPy, Matlab or Julia).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer Based Laboratory Assignmnets",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital Examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project Work",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE07": {
+    "examiner": "Bertil Wegmann",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Mathematical analysis; Linear Algebra; Probability and Statistics; Machine Learning; Basic programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT2",
+        "name": "Computer examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE65": {
+    "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic course in programming. A course in process programming is useful but not required, since understanding the process concept is assumed. Programming skills in C/C++ are required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDTS07": {
+    "examiner": "Ahmed Rezine",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Computer Hardware and Basic Computer Architectures, Programming",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 3.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEAE20": {
+    "examiner": "Marc Stuhldreier",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Mandatory seminars and written assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEAE13": {
+    "examiner": "Ingrid Thörn Berggren",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic course in industrial engineering",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIO94": {
+    "examiner": "Jeanette Engzell",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Two years studies at university level. Students should be able to search for and structure information, communicate orally and in writing, plan and execute a group project assignment and make basic mathematical calculations. They should also have an ability for creative and critical thinking.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project group assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Reflection assignment individual/in pairs",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFMT19": {
+    "examiner": "Jens Eriksson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic courses in physics and electronics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Optional written assignment for higher grade",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in exercises and quizzes",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA17": {
+    "examiner": "Martin Magnuson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic courses in physics as well as at least 12 ECTS credits of advanced-level courses in physics. Depending on the choice of project, there may also be a need for specific prerequisites.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      8,
+      152
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "A written report in the form of a \"scientific article\"",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA36": {
+    "examiner": "Magnus Johansson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Linear algebra, Mechanics, Electromagnetism and basic knowledge of the physics of waves, some knowledge of Fourier analysis and partial differential equations, basic knowledge of quantum physics corresponding e.g. to a course in Modern physics or Mathematical methods of physics. Courses in Analytical mechanics, Quantum mechanics and Solid state physics are not required but may be recommended for a deeper understanding.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Oral Presentation of Solved Problems",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 5.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYB03": {
+    "examiner": "Iryna Yakymenko",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Quantum Mechanics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in exercises and oral presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA74": {
+    "examiner": "Rickard Armiento",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Calculus, Mechanics, Wave Motion and Electromagnetic Field Theory",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      52,
+      55
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work with written assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA85": {
+    "examiner": "Sergiy Valyukh",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge in physics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Site visiting and/or guest lectures",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA75": {
+    "examiner": "Per Sandström",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      245,
+      182
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Project work",
+        "credits": 11,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG4",
+        "name": "Written report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG5",
+        "name": "Ethics",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG6",
+        "name": "Oral presentation and opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYB11": {
+    "examiner": "Florian Trybel",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Thermodynamics and Statistical Mechanics, Solid state physics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYM02": {
+    "examiner": "Martin Magnuson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Solid state physics I",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Oral presentation",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYM04": {
+    "examiner": "Fredrik Eriksson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Solid state physics.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU95": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "At least two years studies at university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Compulsory Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Hand-in Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU84": {
+    "examiner": "H Devinney",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "MOM1",
+        "name": "Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TINT02": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project with oral presentation and opposition",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Individual written analysis and group discussion",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments and active participation in seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TKMJ15": {
+    "examiner": "Jonas Ammenberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Industrial Engineering and Management",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      31,
+      129
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMMS30": {
+    "examiner": "Peter Christensen",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic courses in calculus, algebra and mechanics.",
+    "main_field": [
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TKMJ29": {
+    "examiner": "Tomohiko Sakao",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Environmental engineering and knowledge about product development required in ordinary engineering programs",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Product Development",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM079": {
+    "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables, Programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB4",
+        "name": "Laboratory work",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN3",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMME69": {
+    "examiner": "Lars Johansson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "A basic mechanics course, such as Meechanics and fundamental physical concepts, calculus including differential equations, vector and matrix algebra.",
+    "main_field": [
+      "Applied Physics"
+    ],
+    "education_components": [
+      48,
+      59
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Computer assignments",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM111": {
+    "examiner": "Andreas Kerren",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming. The course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      51,
+      109
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments with oral and written presentations",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPPE32": {
+    "examiner": "Hoang Nguyen",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Introductory courses in statistics, probability theory, calculus, linear algebra, optimization",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminar assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TQXX33": {
+    "examiner": "",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "see special list"
+    ],
+    "education_components": [
+      0,
+      800
+    ],
+    "examinations": [
+      {
+        "module": "AUSK",
+        "name": "Attendance at three thesis presentations",
+        "credits": 0.5
+      },
+      {
+        "module": "OPPO",
+        "name": "Opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Planning report, midterm assessment, written report, oral presentation and reflection document",
+        "credits": 28,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TRTE21": {
+    "examiner": "Thanh Wang",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      45,
+      115
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work and seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPPE33": {
+    "examiner": "Hoang Nguyen",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic course in optimization, mathematical statistics and basic course about financial instruments",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Written and oral presentation of project work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral test",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSBB33": {
+    "examiner": "Per-Erik Forssén",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Probability theory, estimation theory, the least squares method.From e.g. Multi-dimensional signal analysis: Projective spaces, homogeneous representations of 2D and 3D geometry, perspective projection, camera calibration, and epipolar geometry. Basic image processing: thresholding, segmentation, edge detection. Use of Python. As half the course is project work, experience with programming is also recommended.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      101,
+      59
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBK07": {
+    "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra. Programming knowledge.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project, oral and written examination",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSBK38": {
+    "examiner": "Harald Nautsch",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Probability theory, basic signal processing, basic transform theory.",
+    "main_field": [
+      "Electrical Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBB34": {
+    "examiner": "Michael Felsberg",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Probability theory, estimation theory, the least squares method, partial differential equations, 1D & 2D linear system theory (deterministic and stochastic).Basic image processing: thresholding, segmentation, edge detection. Use of Python. As half the course is project work, experience with programming is also recommended.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      100,
+      60
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Project Work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEA56": {
+    "examiner": "Mattias Krysander",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "The project work requires knowledge within programming, logic design, computer hardware and architecture and project methods.",
+    "main_field": [
+      "Electrical Engineering",
+      "Engineering"
+    ],
+    "education_components": [
+      328,
+      99
+    ],
+    "examinations": [
+      {
+        "module": "UPG6",
+        "name": "Presentation and opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG5",
+        "name": "Ethics",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG4",
+        "name": "Written report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Project work",
+        "credits": 11,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSEK38": {
+    "examiner": "Saghi Forouhi",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Background in RF electronics, integrated circuits and communication theory.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project Work",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSFS03": {
+    "examiner": "Lars Eriksson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Matlab/Simulink, Mechanics, Automatic Control, Optimization",
+    "main_field": [
+      "Electrical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      46,
+      114
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG4",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG5",
+        "name": "Optional assignments",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSEK06": {
+    "examiner": "Alireza Saberkari",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Good knowledge in fundamentals of electronics, digital technique, MOS transistors and CMOS technology, basic knowledge of digital and/or analog integrated circuits.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      260
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Entrepreneurship Assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project Work",
+        "credits": 7.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSFS04": {
+    "examiner": "Daniel Jung",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic knowledge of circuit theory, electromagnetism, and Matlab.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSFS19": {
+    "examiner": "Mattias Krysander",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Introductory courses in electricity, automatic control, mathematical programming, and probability theory.",
+    "main_field": [
+      "Electrical Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSIT11": {
+    "examiner": "Joakim Argillander",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear Algebra",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering",
+      "Applied Physics"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSFS22": {
+    "examiner": "Daniel Jung",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic Control, Probability theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer exam",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSIT12": {
+    "examiner": "Guilherme B. Xavier",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear Algebra.",
+    "main_field": [
+      "Electrical Engineering",
+      "Applied Physics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS17": {
+    "examiner": "Diana Pamela Moya Osorio",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear algebra, basic probability theory, a related course on signals and systems, programming skills.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS10": {
+    "examiner": "Erik G. Larsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic working knowledge of the Fourier transform and linear systems. Probability theory.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      40,
+      67
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer based laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSKS16": {
+    "examiner": "Håkan Johansson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic knowledge of continuous-time and discrete-time signals and systems, sampling, pulse amplitude modulation, filtering, and transforms.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSKS36": {
+    "examiner": "Khac-Hoang Ngo",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Signal Theory, Information and Communications Engineering.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT07": {
+    "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic control",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT12": {
+    "examiner": "Daniel Axehill",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Calculus, one variable, Calculus, several variables, Linear algebra, Signals and Systems (or Multidimensional Signal and Image Analysis)",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      64,
+      96
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT09": {
+    "examiner": "Claudio Altafini",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic control, Statistics",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT14": {
+    "examiner": "Gustaf Hendeby",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "A introductory course in statistics, as well as a course discussing signals and systems, for example Automatic Control or Signals and Systems.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      41,
+      119
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSTE06": {
+    "examiner": "Håkan Johansson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic courses in circuit theory and linear systems.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSTE14": {
+    "examiner": "Håkan Johansson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Circuit Theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSTE87": {
+    "examiner": "Oscar Gustafsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Basic courses in digital circuits",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      68,
+      92
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MUN1",
+        "name": "Optional Oral Examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN2",
+        "name": "Optional Oral Examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  }
+}

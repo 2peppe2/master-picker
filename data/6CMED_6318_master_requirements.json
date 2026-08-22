@@ -1,0 +1,299 @@
+{
+  "$schema": "./schemas/master_requirement.schema.json",
+  "COMMON_BASE": [
+    {
+      "type": "CREDITS_TOTAL",
+      "credits": 300
+    },
+    {
+      "type": "CREDITS_MASTER_TOTAL",
+      "credits": 120
+    },
+    {
+      "type": "CREDITS_ADVANCED_MASTER",
+      "credits": 90
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    },
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Electrical Engineering",
+        "Biomedical Engineering",
+        "Applied Physics"
+      ]
+    }
+  ],
+  "MEBA": [
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Electrical Engineering"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSDT14"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI26"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT59"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSBK07"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSBB22"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI02"
+      ]
+    },
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 54
+    }
+  ],
+  "MEEH": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI19"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSDT14"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI04"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBME08"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI28"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD38",
+        "TDDD97"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI32"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDC73"
+      ]
+    }
+  ],
+  "MEMA": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT14",
+        "TFYA99"
+      ]
+    },
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Applied Physics"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFKE59"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYA37"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYM01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYB11"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYM04"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYA47"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT39",
+        "TFYB13"
+      ]
+    }
+  ],
+  "MEMO": [
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Biomedical Engineering"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD38",
+        "TDDD97",
+        "TDDC73"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI19"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSDT14"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT09"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBME08"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT39"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT57"
+      ]
+    },
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 54
+    }
+  ]
+}

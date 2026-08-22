@@ -1,0 +1,93 @@
+[
+  {
+    "id": "IMDA",
+    "name": "Computer Science and Engineering",
+    "icon": "Server",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMDB",
+    "name": "Digital Business Development",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMEL",
+    "name": "Electrical Engineering",
+    "icon": "CircuitBoard",
+    "style": "bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/20 dark:text-emerald-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMEM",
+    "name": "Energy and Environmental Engineering",
+    "icon": "Zap",
+    "style": "bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-900/20 dark:text-amber-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMFI",
+    "name": "Finance",
+    "icon": "Pi",
+    "style": "bg-rose-100 text-rose-800 border-rose-300 dark:bg-rose-900/20 dark:text-rose-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMIM",
+    "name": "Industrial Marketing",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-indigo-900/20 dark:text-indigo-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMKV",
+    "name": "Quality Technology and Management",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-lime-100 text-lime-800 border-lime-300 dark:bg-lime-900/20 dark:text-lime-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMLS",
+    "name": "Logistics and Supply Chain Management",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-cyan-100 text-cyan-800 border-cyan-300 dark:bg-cyan-900/20 dark:text-cyan-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMMA",
+    "name": "Mechanical Engineering",
+    "icon": "TrafficCone",
+    "style": "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300 dark:bg-fuchsia-900/20 dark:text-fuchsia-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMPI",
+    "name": "Project, Innovation and Entrepreneurship",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900/20 dark:text-orange-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMPL",
+    "name": "Operations Management",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMSS",
+    "name": "Strategic Management and Control",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900/20 dark:text-purple-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  },
+  {
+    "id": "IMTM",
+    "name": "Applied Mathematics",
+    "icon": "Pi",
+    "style": "bg-pink-100 text-pink-800 border-pink-300 dark:bg-pink-900/20 dark:text-pink-300",
+    "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus"
+  }
+]

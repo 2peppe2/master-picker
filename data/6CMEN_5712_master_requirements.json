@@ -1,0 +1,50 @@
+{
+  "$schema": "./schemas/master_requirement.schema.json",
+  "COMMON_BASE": [
+    {
+      "type": "CREDITS_TOTAL",
+      "credits": 300
+    },
+    {
+      "type": "CREDITS_MASTER_TOTAL",
+      "credits": 120
+    },
+    {
+      "type": "CREDITS_ADVANCED_MASTER",
+      "credits": 90
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TNM094"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    },
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Media Technology and Engineering",
+        "Computer Science and Engineering"
+      ]
+    }
+  ],
+  "MTDS": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD89"
+      ]
+    }
+  ],
+  "MTLB": [],
+  "MTVS": []
+}

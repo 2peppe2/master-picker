@@ -6,22 +6,33 @@
     "years": [
       {
         "year": 2022,
-        "id": 5144
+        "id": 5144,
+        "link": "https://studieinfo.liu.se/program/6CMJU/5144#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2023,
-        "id": 5430
+        "id": 5430,
+        "link": "https://studieinfo.liu.se/program/6CMJU/5430#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2024,
-        "id": 5713
+        "id": 5713,
+        "link": "https://studieinfo.liu.se/program/6CMJU/5713#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2025,
-        "id": 6011
+        "id": 6011,
+        "link": "https://studieinfo.liu.se/program/6CMJU/6011#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6293,
+        "link": "https://studieinfo.liu.se/program/6CMJU/6293#syllabus",
+        "campus": "Linköping"
       }
     ]
   },
@@ -32,21 +43,33 @@
     "years": [
       {
         "year": 2022,
-        "id": 5155
+        "id": 5155,
+        "link": "https://studieinfo.liu.se/program/6CDDD/5155#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2023,
-        "id": 5440
+        "id": 5440,
+        "link": "https://studieinfo.liu.se/program/6CDDD/5440#syllabus",
+        "campus": "Linköping"
       },
       {
         "year": 2024,
-        "id": 5723
+        "id": 5723,
+        "link": "https://studieinfo.liu.se/program/6CDDD/5723#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2025,
-        "id": 6016
+        "id": 6016,
+        "link": "https://studieinfo.liu.se/program/6CDDD/6016#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6298,
+        "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus",
+        "campus": "Linköping"
       }
     ]
   },
@@ -57,21 +80,532 @@
     "years": [
       {
         "year": 2022,
-        "id": 5142
+        "id": 5142,
+        "link": "https://studieinfo.liu.se/program/6CITE/5142#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2023,
-        "id": 5428
+        "id": 5428,
+        "link": "https://studieinfo.liu.se/program/6CITE/5428#syllabus",
+        "campus": "Linköping"
       },
       {
         "year": 2024,
-        "id": 5711
+        "id": 5711,
+        "link": "https://studieinfo.liu.se/program/6CITE/5711#syllabus",
+        "campus": "Linköping"
       },
-
       {
         "year": 2025,
-        "id": 6009
+        "id": 6009,
+        "link": "https://studieinfo.liu.se/program/6CITE/6009#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6292,
+        "link": "https://studieinfo.liu.se/program/6CITE/6292#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CYYY",
+    "name": "Applied Physics and Electrical Engineering",
+    "shortname": "Y",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5173,
+        "link": "https://studieinfo.liu.se/program/6CYYY/5173#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5458,
+        "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5741,
+        "link": "https://studieinfo.liu.se/program/6CYYY/5741#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6029,
+        "link": "https://studieinfo.liu.se/program/6CYYY/6029#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6309,
+        "link": "https://studieinfo.liu.se/program/6CYYY/6309#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CMMM",
+    "name": "Mechanical Engineering",
+    "shortname": "M",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5172,
+        "link": "https://studieinfo.liu.se/program/6CMMM/5172#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5457,
+        "link": "https://studieinfo.liu.se/program/6CMMM/5457#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5740,
+        "link": "https://studieinfo.liu.se/program/6CMMM/5740#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6028,
+        "link": "https://studieinfo.liu.se/program/6CMMM/6028#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6308,
+        "link": "https://studieinfo.liu.se/program/6CMMM/6308#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CIII",
+    "name": "Industrial Engineering and Management",
+    "shortname": "I",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5181,
+        "link": "https://studieinfo.liu.se/program/6CIII/5181#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5466,
+        "link": "https://studieinfo.liu.se/program/6CIII/5466#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5749,
+        "link": "https://studieinfo.liu.se/program/6CIII/5749#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6037,
+        "link": "https://studieinfo.liu.se/program/6CIII/6037#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6317,
+        "link": "https://studieinfo.liu.se/program/6CIII/6317#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CMED",
+    "name": "Biomedical Engineering",
+    "shortname": "MED",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5182,
+        "link": "https://studieinfo.liu.se/program/6CMED/5182#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5467,
+        "link": "https://studieinfo.liu.se/program/6CMED/5467#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5750,
+        "link": "https://studieinfo.liu.se/program/6CMED/5750#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6038,
+        "link": "https://studieinfo.liu.se/program/6CMED/6038#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6318,
+        "link": "https://studieinfo.liu.se/program/6CMED/6318#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CDPU",
+    "name": "Design and Product Development",
+    "shortname": "DPU",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5180,
+        "link": "https://studieinfo.liu.se/program/6CDPU/5180#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5465,
+        "link": "https://studieinfo.liu.se/program/6CDPU/5465#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5748,
+        "link": "https://studieinfo.liu.se/program/6CDPU/5748#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6036,
+        "link": "https://studieinfo.liu.se/program/6CDPU/6036#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6316,
+        "link": "https://studieinfo.liu.se/program/6CDPU/6316#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CEMM",
+    "name": "Energy - Environment - Management",
+    "shortname": "EMM",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5160,
+        "link": "https://studieinfo.liu.se/program/6CEMM/5160#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5445,
+        "link": "https://studieinfo.liu.se/program/6CEMM/5445#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5728,
+        "link": "https://studieinfo.liu.se/program/6CEMM/5728#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6021,
+        "link": "https://studieinfo.liu.se/program/6CEMM/6021#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6301,
+        "link": "https://studieinfo.liu.se/program/6CEMM/6301#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CKEB",
+    "name": "Chemical Biology",
+    "shortname": "KB",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5171,
+        "link": "https://studieinfo.liu.se/program/6CKEB/5171#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5456,
+        "link": "https://studieinfo.liu.se/program/6CKEB/5456#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5739,
+        "link": "https://studieinfo.liu.se/program/6CKEB/5739#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6027,
+        "link": "https://studieinfo.liu.se/program/6CKEB/6027#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6307,
+        "link": "https://studieinfo.liu.se/program/6CKEB/6307#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CTBI",
+    "name": "Engineering Biology",
+    "shortname": "TB",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5183,
+        "link": "https://studieinfo.liu.se/program/6CTBI/5183#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5468,
+        "link": "https://studieinfo.liu.se/program/6CTBI/5468#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5751,
+        "link": "https://studieinfo.liu.se/program/6CTBI/5751#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6039,
+        "link": "https://studieinfo.liu.se/program/6CTBI/6039#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6319,
+        "link": "https://studieinfo.liu.se/program/6CTBI/6319#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CTMA",
+    "name": "Engineering Mathematics",
+    "shortname": "MAT",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5270,
+        "link": "https://studieinfo.liu.se/program/6CTMA/5270#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5480,
+        "link": "https://studieinfo.liu.se/program/6CTMA/5480#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2024,
+        "id": 5763,
+        "link": "https://studieinfo.liu.se/program/6CTMA/5763#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2025,
+        "id": 6051,
+        "link": "https://studieinfo.liu.se/program/6CTMA/6051#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2026,
+        "id": 6330,
+        "link": "https://studieinfo.liu.se/program/6CTMA/6330#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CIEI-JA",
+    "name": "Industrial Engineering and Management, International (Japanese)",
+    "shortname": "I-Ja",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5166,
+        "link": "https://studieinfo.liu.se/program/6CIEI/5166#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5451,
+        "link": "https://studieinfo.liu.se/program/6CIEI/5451#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CMEN",
+    "name": "Media Technology and Engineering",
+    "shortname": "MT",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5143,
+        "link": "https://studieinfo.liu.se/program/6CMEN/5143#syllabus",
+        "campus": "Norrköping"
+      },
+      {
+        "year": 2023,
+        "id": 5429,
+        "link": "https://studieinfo.liu.se/program/6CMEN/5429#syllabus",
+        "campus": "Norrköping"
+      },
+      {
+        "year": 2024,
+        "id": 5712,
+        "link": "https://studieinfo.liu.se/program/6CMEN/5712#syllabus",
+        "campus": "Norrköping"
+      }
+    ]
+  },
+  {
+    "id": "6CKTS",
+    "name": "Communication and Transport Systems",
+    "shortname": "KTS",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5161,
+        "link": "https://studieinfo.liu.se/program/6CKTS/5161#syllabus",
+        "campus": "Norrköping"
+      },
+      {
+        "year": 2023,
+        "id": 5446,
+        "link": "https://studieinfo.liu.se/program/6CKTS/5446#syllabus",
+        "campus": "Norrköping"
+      },
+      {
+        "year": 2024,
+        "id": 5729,
+        "link": "https://studieinfo.liu.se/program/6CKTS/5729#syllabus",
+        "campus": "Norrköping"
+      }
+    ]
+  },
+  {
+    "id": "6CIEI-FR",
+    "name": "Industrial Engineering and Management, International (French)",
+    "shortname": "I-Fr",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5163,
+        "link": "https://studieinfo.liu.se/program/6CIEI/5163#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CIEI-DE",
+    "name": "Industrial Engineering and Management, International (German)",
+    "shortname": "I-De",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5162,
+        "link": "https://studieinfo.liu.se/program/6CIEI/5162#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CIEI-ES",
+    "name": "Industrial Engineering and Management, International (Spanish)",
+    "shortname": "I-Es",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5165,
+        "link": "https://studieinfo.liu.se/program/6CIEI/5165#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CYYI-FR",
+    "name": "Applied Physics and Electrical Engineering, International (French)",
+    "shortname": "Y-Fr",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5146,
+        "link": "https://studieinfo.liu.se/program/6CYYI/5146#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CYYI-DE",
+    "name": "Applied Physics and Electrical Engineering, International (German)",
+    "shortname": "Y-De",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5147,
+        "link": "https://studieinfo.liu.se/program/6CYYI/5147#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CYYI-ES",
+    "name": "Applied Physics and Electrical Engineering, International (Spanish)",
+    "shortname": "Y-Es",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5148,
+        "link": "https://studieinfo.liu.se/program/6CYYI/5148#syllabus",
+        "campus": "Linköping"
+      }
+    ]
+  },
+  {
+    "id": "6CYYI-JA",
+    "name": "Applied Physics and Electrical Engineering, International (Japanese)",
+    "shortname": "Y-Ja",
+    "years": [
+      {
+        "year": 2022,
+        "id": 5149,
+        "link": "https://studieinfo.liu.se/program/6CYYI/5149#syllabus",
+        "campus": "Linköping"
+      },
+      {
+        "year": 2023,
+        "id": 5435,
+        "link": "https://studieinfo.liu.se/program/6CYYI/5435#syllabus",
+        "campus": "Linköping"
       }
     ]
   }

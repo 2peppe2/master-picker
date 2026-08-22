@@ -1,0 +1,4037 @@
+[
+  {
+    "code": "TAMS11",
+    "name": "Probability and Statistics, First Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS11/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP63",
+    "name": "Optimization of complex systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP63",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV",
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF",
+          "EMSV",
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP88",
+    "name": "Engineering Optimization",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP88",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA41",
+    "name": "Calculus in One Variable 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA41/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA67",
+    "name": "Linear Algebra with Geometry",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA67/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA71",
+    "name": "Ordinary Differential Equations and Dynamical Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA71",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATB01",
+    "name": "Foundation Course in Mathematics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB01/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATB08",
+    "name": "Calculus in One Variable 2",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB08/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATB09",
+    "name": "Calculus in Several Variables",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB09/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD12",
+    "name": "Database Technology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD12",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE10",
+    "name": "Object Oriented Programming in Java",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE10",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE18",
+    "name": "Programming C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE18",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE50",
+    "name": "Megagame - Design for Sustainable Development in the light of Climate Change",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE50",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE54",
+    "name": "Programming and problem solving",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE54/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE56",
+    "name": "Foundations of AI and Machine Learning",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE56",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE01",
+    "name": "Industrial Economics, Basic Course",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE01/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE05",
+    "name": "Resource Theory",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE05/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE09",
+    "name": "Environmental Law",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE09",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE13",
+    "name": "Civil and Commercial Law",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE13",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE18",
+    "name": "Sustainable Value Chain Strategies",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE18",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE06",
+    "name": "Corporate Planning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE06",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE42",
+    "name": "Industrial Sales Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE42",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE72",
+    "name": "Corporate Strategies",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE72",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIG03",
+    "name": "Innovation and sustainability transition",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIG03",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM09",
+    "name": "International Business",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM09",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM11",
+    "name": "Industrial Marketing",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM11",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO06",
+    "name": "Innovative Entrepreneurship",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO06",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO13",
+    "name": "Leadership and Organizational Change",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO13",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO19",
+    "name": "Industrial Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO19",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO41",
+    "name": "Corporate Social Responsibility",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO41",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO90",
+    "name": "Innovation Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO90",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO96",
+    "name": "Integrated Project Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO96",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS27",
+    "name": "Supply Chain Logistics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS27",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS31",
+    "name": "Logistics Strategies",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS31",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS36",
+    "name": "Sustainable Logistics Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS36",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF",
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS44",
+    "name": "Logistics and Quality Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS44",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS57",
+    "name": "Logistics Analysis",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS57",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS58",
+    "name": "Strategic Purchasing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS58",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA43",
+    "name": "Nanotechnology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA43",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU49",
+    "name": "History of Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU49",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU59",
+    "name": "Responding to Global Climate Change",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU59",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU84",
+    "name": "Diversity and Gender in Engineering",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU84",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU91",
+    "name": "Oral and Written Communication",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU91",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU95",
+    "name": "Philosophy of Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU95",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU96",
+    "name": "Sustainable study situation",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU96/vt-2026",
+    "ecv": "V",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "THEN18",
+    "name": "English",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/THEN18/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT01",
+    "name": "Introduction to Intercultural Competence",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT01",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ15",
+    "name": "Environmental Management Strategies",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ15",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ31",
+    "name": "Biofuels for Transportation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ31",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ35",
+    "name": "Industrial Ecology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ35",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ38",
+    "name": "Industrial Symbiosis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ38",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ39",
+    "name": "Resource Efficient Products and Production",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ39",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ41",
+    "name": "Bachelor Thesis - Energy and Environmental Engineering",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ41",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ47",
+    "name": "Environmental Systems Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ47",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF",
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ48",
+    "name": "Sustainable City Development",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ48",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ50",
+    "name": "Environmental and Energy Related Policy Instruments",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ50",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF",
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ56",
+    "name": "Project Course Advanced - Sustainable Business Development",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ56",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ57",
+    "name": "Environmental technology solutions",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ57/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ59",
+    "name": "Environment and innovation, development of business models",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ59",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES24",
+    "name": "Sustainable Energy Systems",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES24/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES27",
+    "name": "Modelling of Energy Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES27",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF",
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES30",
+    "name": "Building Energy Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES30",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES31",
+    "name": "Efficient Industrial Energy Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES31",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES41",
+    "name": "Strategic Development of Sustainable Energy Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES41",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES43",
+    "name": "Analysis and Modelling of Industrial Energy Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES43",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES45",
+    "name": "Energy Planning and Modelling of Communities",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES45",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES51",
+    "name": "International Energy Markets",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES51",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES52",
+    "name": "Policies and Instruments for the Energy Conversion",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES52",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES53",
+    "name": "Energy Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES53",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMHL22",
+    "name": "Solid Mechanics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMHL22",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMHP02",
+    "name": "Fluid Power Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMHP02",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA09",
+    "name": "Disruptive Technologies",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA09",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA10",
+    "name": "Design for Sustainable Everyday Life",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA10",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA11",
+    "name": "Model-based System-of-Systems Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA11",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA13",
+    "name": "Wood - Innovation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA13",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKM16",
+    "name": "Sustainable Material Selection",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKM16",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKM21",
+    "name": "Engineering Materials",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKM21",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKO01",
+    "name": "Advanced Materials and the Environment",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKO01",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKO03",
+    "name": "Metals for Lightweight Applications",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKO03",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKO05",
+    "name": "Additive Manufacturing for Industrial Applications",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKO05",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKO06",
+    "name": "Biopolymers and Biocomposites",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKO06",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT78",
+    "name": "Product Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT78",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT80",
+    "name": "Wood - Material",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT80",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT83",
+    "name": "Small Scale Renewable Energy Conversion",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT83",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMME28",
+    "name": "Engineering Mechanics - Dynamics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMME28",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMME62",
+    "name": "Engineering Mechanics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMME62",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMME67",
+    "name": "Musculoskeletal Biomechanics and Human Movements",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMME67",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV01",
+    "name": "Aerodynamics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV01",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV04",
+    "name": "Engineering Thermodynamics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV04/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV07",
+    "name": "Computational Fluid Dynamics, Advanced Course",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV07",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV08",
+    "name": "Computational Fluid Dynamics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV08",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV11",
+    "name": "Fluid Mechanics and Heat Transfer",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV11/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV12",
+    "name": "Gas Turbine Engines",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV12",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV18",
+    "name": "Fluid Mechanics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV18",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV59",
+    "name": "Applied Computational Fluid Dynamics",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV59",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV60",
+    "name": "Applied Energy Conversion",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV60",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV62",
+    "name": "Computational Heat Transfer",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV62",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV64",
+    "name": "Machine Learning for Mechanical Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV64",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPE07",
+    "name": "Project Course Advanced - System Tools for Sustainable Development",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPE07",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMSV"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMSV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPM11",
+    "name": "Project Course Advanced - Technology for Sustainable Development",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPM11",
+    "ecv": "C/E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPR01",
+    "name": "Wood - Realisation",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPR01",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPR03",
+    "name": "CAD-driven Product Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPR03",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPR09",
+    "name": "CAD and Design Engineering",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPR09/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU04",
+    "name": "Six Sigma Quality",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU04",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU12",
+    "name": "Lean Production",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU12",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU31",
+    "name": "Statistical Quality Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU31",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMHF"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMHF"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2030,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TRTE21",
+    "name": "The engineer's environmental impact with focus on purification and recycling",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TRTE21",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS03",
+    "name": "Vehicle Propulsion Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS03",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS04",
+    "name": "Electrical Drives",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS04",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS09",
+    "name": "Modelling and Control of Engines and Drivelines",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS09",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS16",
+    "name": "Electric power technology",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS16/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS17",
+    "name": "Electric power systems",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS17",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS19",
+    "name": "Battery Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS19",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS23",
+    "name": "Project Course Advanced - Electrical Power for Sustainable Transition",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS23",
+    "ecv": "C/E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIU02",
+    "name": "Computer Hardware and Architecture",
+    "credits": 4,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIU02",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT04",
+    "name": "Introduction in Matlab",
+    "credits": 2,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT04",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT06",
+    "name": "Automatic Control, Advanced Course",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT06",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT07",
+    "name": "Industrial Control Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT07",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT22",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT22",
+    "ecv": "C",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSTE26",
+    "name": "Powergrid and Technology for Renewable Production",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSTE26",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSTE28",
+    "name": "Power Electronics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSTE28",
+    "ecv": "E",
+    "program": [
+      "6CEMM"
+    ],
+    "mastersPrograms": [
+      "EMTE"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "EMTE"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

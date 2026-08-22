@@ -1,0 +1,2854 @@
+{
+  "NBIA23": {
+    "examiner": "Yasuhiko Irie",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry",
+    "main_field": [
+      "Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      47,
+      113
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NBIB54": {
+    "examiner": "Jordi Altimiras",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Cellbiology or equivalent.",
+    "main_field": [
+      "Biology",
+      "Biotechnology",
+      "Engineering Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      40,
+      67
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NBIA25": {
+    "examiner": "Agneta Johansson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Biochemistry 1 or corresponding",
+    "main_field": [
+      "Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKEA04": {
+    "examiner": "Maria Lundqvist",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry 1",
+    "main_field": [
+      "Chemical Engineering",
+      "Chemistry"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKEA06": {
+    "examiner": "Annika Niklasson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry",
+    "main_field": [
+      "Chemical Engineering",
+      "Chemistry"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKEA02": {
+    "examiner": "Helena Herbertsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Chemical Engineering",
+      "Chemistry"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKEA08": {
+    "examiner": "Helena Herbertsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry and Organic Chemistry",
+    "main_field": [
+      "Chemical Biology",
+      "Chemistry"
+    ],
+    "education_components": [
+      51,
+      109
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work and written test",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NVFA09": {
+    "examiner": "Eva Lindström",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Biochemistry",
+    "main_field": [
+      "Biology",
+      "Chemical Biology",
+      "Chemistry"
+    ],
+    "education_components": [
+      47,
+      113
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Approved laboratory course",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS41": {
+    "examiner": "Martin Singull",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A first course in probability and statistics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS11": {
+    "examiner": "Xiangfeng Yang",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Analysis, algebra, differential and integral calculus, power series and differential equations.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "UPGA",
+        "name": "Exercise",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TENB",
+        "name": "Written Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAMS81": {
+    "examiner": "Zhenxia Liu",
+    "department": "Matematiska institutionen",
+    "prerequisites": "A first course in probability and statistics inference and deeper knowledge in regression methods.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TAOP63": {
+    "examiner": "Nils-Hassan Quttineh",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Optimization for engineers (or similar basic course in optimization). programming in Matlab.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral exam",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TAOP88": {
+    "examiner": "Björn Morén",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus, linear algebra, and Matlab.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TANA21": {
+    "examiner": "Andrew Winters",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Basic courses in calculus, linear algebra and programming.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA16": {
+    "examiner": "Vitalij Tjatyrko",
+    "department": "Matematiska institutionen",
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      84,
+      76
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Exercise",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA41": {
+    "examiner": "Magnus Herberthson, Mikael Langer, Fredrik Andersson, Erik Darpö",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATA83": {
+    "examiner": "Vitalij Tjatyrko",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Linear Algebra, Calculus, one variable",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATB02": {
+    "examiner": "Göran Forsling",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Admission to the course requires, as well as general university entrance requirements, secondary school mathematics E (or equivalent).",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      74,
+      86
+    ],
+    "examinations": [
+      {
+        "module": "TEN3",
+        "name": "Written summary examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written partial examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital partial examination",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TATA42": {
+    "examiner": "Lars Alexandersson, Ulf Janfalk, Johan Thim",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Calculus in one variable, part 1",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      64,
+      96
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR3",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR4",
+        "name": "Optional digital test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMI04": {
+    "examiner": "Håkan Örman",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Three years of university studies with an engineering major. Basic knowledge in anatomy and physiology.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "BAS1",
+        "name": "Tutorial groups and seminars",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written group report and individual reflection report",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMI28": {
+    "examiner": "Elin Nyman",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Knowledge from “eHealth: Aims and Applications” and “eHealth: from Idea to Impact”",
+    "main_field": [
+      "Information Technology",
+      "Engineering Biology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      0,
+      320
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 12,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT01": {
+    "examiner": "Johannes Johansson",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and physiology, Signal theory/Fourier analysis. Experience with signal processing/programming in Matlab or similar.",
+    "main_field": [
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminar assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "BAS1",
+        "name": "Tutorial sessions",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Essay assignement",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TATM38": {
+    "examiner": "Mats Aigner",
+    "department": "Matematiska institutionen",
+    "prerequisites": "Courses in Analysis and in Linear Algebra",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project reports",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMT42": {
+    "examiner": "Gunnar Cedersund",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Calculus, linear algebra, statistical modeling, and programming (or corresponding courses). Preferably also courses in physiology and/or cell biology",
+    "main_field": [
+      "Engineering Biology",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Test",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT57": {
+    "examiner": "Rolf Saager",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and Physiology, Biomedical Engineering, Biomedical Signal Processing, Medical Images and basic knowledge in electromagnetic radiation and optics.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written and Oral Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE18": {
+    "examiner": "Klas Arvidsson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Skill in one imperative, object-oriented or functional programming language.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      110,
+      50
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Programming assignments",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE54": {
+    "examiner": "Torbjörn Jonsson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      82,
+      78
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work Ada",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work Python",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Computer examination Ada, location independent",
+        "credits": 1,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Computer examination Python, location independent",
+        "credits": 1,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE56": {
+    "examiner": "Dominik Drexler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Linear algebra, probability theory, basic programming. Knowledge in logic and discrete mathematics is useful.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments (online material)",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Individual reflection paper after the project",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEAE01": {
+    "examiner": "Sofi Rehme, Stefan Maass",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      49,
+      111
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEIG03": {
+    "examiner": "Thomas Magnusson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Innovation management",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Individual oral examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Group assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "SEM1",
+        "name": "Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEIO29": {
+    "examiner": "Stefan Cavalcante Bernat Junior",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "At least two years of academic studies.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Written group assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Participation in seminars and individual assignment",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEIO90": {
+    "examiner": "Viktor Werner",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic course in project management, industrial engineering, industrial management, or equivalent.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      80,
+      80
+    ],
+    "examinations": [
+      {
+        "module": "UPG6",
+        "name": "Group assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFKE70": {
+    "examiner": "Martin Karlsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Cell Biology, Microbiology, Gene Technology.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project assignment, oral and written presentation",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with written report",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFKE36": {
+    "examiner": "Magdalena Svensson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General chemistry, Organic chemsitry 1 and Biochemistry 1",
+    "main_field": [
+      "Biotechnology",
+      "Chemical Biology",
+      "Chemistry"
+    ],
+    "education_components": [
+      46,
+      114
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFKE72": {
+    "examiner": "Martin Karlsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Biochemistry (specifically enzyme mechanisms and enzyme kinetics), Gene Technology.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with written report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFTB33": {
+    "examiner": "Edwin Jager",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge of physics, chemistry, biology, biosensor technology, surfaces science and supramolecular chemistry.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN3",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFTB46": {
+    "examiner": "Björn Wallner",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Biochemistry, Cellbiology, Microbiology, Gene technology and molecular genetics, Bioinformatics.",
+    "main_field": [
+      "Engineering Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFTB50": {
+    "examiner": "Johan Karlsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Prior knowledge and laboratory skills in engineering and physics, chemistry/biochemistry, cell biology and mathematics from the first three years of the TB and KB programmes, or equivalent.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFTB48": {
+    "examiner": "Daniel Aili",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic chemistry, biochemistry, cell biology, physiology, mechanics, materials and nanotechnology, surfaces and interfaces, supramolecular chemistry.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Preparatory examination",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA16": {
+    "examiner": "Marcus Ekholm",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Linear Algebra, Calculus",
+    "main_field": [
+      "Biotechnology",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA37": {
+    "examiner": "Niclas Solin",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Mandatory courses in mathematics and physics for the Y-program or equal.",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA43": {
+    "examiner": "Naureen Ghafoor",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge in mechanics and wave physics",
+    "main_field": [
+      "Applied Physics",
+      "Physics",
+      "Materials Science and Materials Technology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional written tests",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Active Participation in the Student Conference",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE49": {
+    "examiner": "Olaf Hartig",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic programming course and basic knowledge in Biochemistry.",
+    "main_field": [
+      "Biotechnology",
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work and project",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA47": {
+    "examiner": "Thomas Ederth",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge of calculus in many variables, probability and statistics, classical physics, general chemistry, physical chemistry and quantum mechanics.",
+    "main_field": [
+      "Engineering Biology",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory course",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFMT23": {
+    "examiner": "Per Sandström",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Be able to explain and solve problems in simple circuits, with series and parallel connections using the jw-method together with Ohm’s and Kirchhoff´s laws, i.e., basic knowledge of electronics. Basic programming skills. Basic knowledge in mathematical analysis with one variable.",
+    "main_field": [
+      "Biotechnology"
+    ],
+    "education_components": [
+      32,
+      75
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Continuous examination",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYY55": {
+    "examiner": "Peder Bergman",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Algebra, Calculus one variable, Mechanics",
+    "main_field": [
+      "Biotechnology",
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Preparatory written examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU49": {
+    "examiner": "Corinna Röver",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Seminars",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM2",
+        "name": "Hand-in examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU91": {
+    "examiner": "Victoria Pihlgren",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "University studies corresponding to 60 credits / one year full time studies.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Successful completion of written assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Successful completion of oral assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TGTU94": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "Requisite general qualifications for university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignment, seminar",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "THEN18": {
+    "examiner": "Mikael Svensson",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN2",
+        "name": "Oral examination and assignments",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU96": {
+    "examiner": "Maria Eidenskog",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TINT01": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MOM1",
+        "name": "Active participation in seminars and group discussions",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TKMJ24": {
+    "examiner": "Annica Carlsson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "At least one year study of engineering. Basic knowledge of chemistry.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Product Development",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      45,
+      115
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA78": {
+    "examiner": "Thomas Ederth",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge about multivariable calculus, algebra, probability and statistics, classical mechanics, electromagnetics.",
+    "main_field": [
+      "Biotechnology"
+    ],
+    "education_components": [
+      64,
+      149
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TKMJ31": {
+    "examiner": "Roozbeh Feiz",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Courses: Large Technical Systems and Environment, Environmental Technology or equivalent.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      92,
+      68
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Approved project assignments and approved seminars",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "At-home examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TKMJ35": {
+    "examiner": "Annica Carlsson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Environmental Engineering or Corporate Sustainability Management",
+    "main_field": [
+      "Energy and Environmental Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMPS36": {
+    "examiner": "Johan Persson",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic knowledge in programming and statistics. Knowledge on the bio-processes taught in preceding courses in the programme, or equivalent.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written report",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMQU03": {
+    "examiner": "Magdalena Smeds",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Probability and statistics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "DAT2",
+        "name": "Computer examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TPPE82": {
+    "examiner": "Martin Kylinger",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Calculus, Mathematical statistics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMQU12": {
+    "examiner": "Promporn Wangwacharakul",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Basic course in Quality Management",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      78,
+      82
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Hand-in assignments",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Individual written knowledge test",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA46": {
+    "examiner": "Kajsa Uvdal",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": null,
+    "main_field": [
+      "Biotechnology",
+      "Chemical Engineering",
+      "Engineering Biology"
+    ],
+    "education_components": [
+      35,
+      125
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 4.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Active participation at lectures, exercises and conference",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TRTE18": {
+    "examiner": "Alex Enrich Prast",
+    "department": "Institutionen för Tema",
+    "prerequisites": "90 hp in chemistry/biology or equivalent",
+    "main_field": [
+      "Engineering Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      96,
+      64
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory report",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written report and oral presentation.",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TSRT23": {
+    "examiner": "Johan Löfberg",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Linear Algebra, Calculus",
+    "main_field": [
+      "Biotechnology",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      64,
+      96
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TTII02": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "One year of studies in chemistry, biology or biotechnology.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      8,
+      45
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MOM1",
+        "name": "Seminar",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSRT92": {
+    "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Statistics, Automatic Control, Basic knowledge of mechanics",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "DAT1",
+        "name": "Computer Examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TVCB13": {
+    "examiner": "Stefan Koch",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Three years of previous studies in the area of biotechnology.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      32,
+      128
+    ],
+    "examinations": [
+      {
+        "module": "BAS1",
+        "name": "Study group participation",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Individually written report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Seminar on Ethical Issues of Stem Cell Technology",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work and Report",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSTE92": {
+    "examiner": "Mikael Olofsson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "From Foundation Course in Mathematics: General mathematical ability and specifically Complex numbers.From Calculus in one variable: Derivatives and differential equations.From linear algebra: Matrices and vectors.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TVMB26": {
+    "examiner": "Johan Nordgren",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Biochemistry, Cell Biology, Microbiology and Immunology, Gene Technology and Molecular Genetics",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Seminar",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TVMB17": {
+    "examiner": "Jonas Wetterö",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Basic knowledge in biochemistry, cell biology and microbiology, the corresponding rates Biokemi2, Cell Biology and Microbiology or equivalent",
+    "main_field": [
+      "Biotechnology",
+      "Engineering Biology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work, report of assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TVCB14": {
+    "examiner": "Francisca Lottersberger",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Biochemistry and Cell Biology",
+    "main_field": [
+      "Biotechnology",
+      "Engineering Biology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work, tutorial groups and seminars",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKEB10": {
+    "examiner": "Johan Dahlén",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry, Organic Chemistry, Calculation tools for chemistry students, Analytical Chemistry",
+    "main_field": [
+      "Chemical Engineering",
+      "Chemistry"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with tests",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "NKED20": {
+    "examiner": "Peter Nilsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Three years of studies in the field of Chemistry or Biotechnology.",
+    "main_field": [
+      "Engineering Biology",
+      "Chemical Biology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Group assignments including written and oral presentations",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBME08": {
+    "examiner": "Neda Haj Hosseini",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Anatomy and physiology. Some programing experience is assumed.",
+    "main_field": [
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project Work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMI26": {
+    "examiner": "Magnus Borga",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Requisite: Linear algebra, multivariable calculus, mathematical statistics.Recommended: Signal theory, programming (Python).",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Electrical Engineering",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TBMI32": {
+    "examiner": "Rolf Saager",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Three years of study at an engineering programme at university level. Knowledge in eHealth corresponding to TBMI04 eHealth: Aims and Applications.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "BAS1",
+        "name": "Tutorial groups",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE10": {
+    "examiner": "Emma Enocksson Svensson",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic course in programming.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      86,
+      74
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 1,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE50": {
+    "examiner": "Ola Leifler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Reflection report",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Systems analysis",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT33": {
+    "examiner": "Gunnar Cedersund",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": null,
+    "main_field": [
+      "Biotechnology"
+    ],
+    "education_components": [
+      125,
+      302
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Opposition",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work with poster presentation, written report, etc",
+        "credits": 15,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEIO94": {
+    "examiner": "Jeanette Engzell",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Two years studies at university level. Students should be able to search for and structure information, communicate orally and in writing, plan and execute a group project assignment and make basic mathematical calculations. They should also have an ability for creative and critical thinking.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project group assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Reflection assignment individual/in pairs",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFKE73": {
+    "examiner": "Martin Karlsson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Theoretical and practical abilities in the topics of Chemistry, Chemical Biology or Engineering Biology to the level of BSc. Fundamental knowledge in biochemistry and gene technology.",
+    "main_field": [
+      "Chemical Biology"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment with written report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TBMT19": {
+    "examiner": "William Lövfors",
+    "department": "Institutionen för medicinsk teknik",
+    "prerequisites": "Basics courses in Chemistry, Biology and Mathematics",
+    "main_field": [
+      "Biotechnology"
+    ],
+    "education_components": [
+      22,
+      31
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Test",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFTB34": {
+    "examiner": "Daniel Aili",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Biochemistry, General Chemistry, Basic Spectroscopy",
+    "main_field": [
+      "Engineering Biology",
+      "Biomedical Engineering"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Oral or written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFMT19": {
+    "examiner": "Jens Eriksson",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic courses in physics and electronics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Optional written assignment for higher grade",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in exercises and quizzes",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFTB35": {
+    "examiner": "Kajsa Uvdal",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "General Chemistry, Molecular Physics, Surface Physics",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      68,
+      92
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "ANN1",
+        "name": "Presentation of mini project",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 2.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFTB51": {
+    "examiner": "Pierfrancesco Pagella",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic biology, chemistry and mathematics as in the TB/KB curricula of 1-3 years, or equivalent. The course Microbial Cell Factories or equivalent.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      46,
+      114
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Written laboratory report",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFTB43": {
+    "examiner": "Zhangjun Hu",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Previous courses within the Engineering Biology programme.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      14,
+      146
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFTB53": {
+    "examiner": "Pierfrancesco Pagella",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic physics, proficiency in chemistry/biochemistry, and in cell and molecular biology, as in the TB/KB curricula of 1-3 years, or equivalent.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFYA85": {
+    "examiner": "Sergiy Valyukh",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Basic knowledge in physics",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Site visiting and/or guest lectures",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TFTB52": {
+    "examiner": "Pierfrancesco Pagella",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Courses in Industrial Enzyme Technology, Microbial Cell Factories, Biotechnology Manufacturing and Quality Management (the two latter is read in parallel to this course) or equivalent are recommended.",
+    "main_field": [
+      "Engineering Biology"
+    ],
+    "education_components": [
+      28,
+      132
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project concept",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TGTU84": {
+    "examiner": "H Devinney",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "MOM1",
+        "name": "Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TINT02": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project with oral presentation and opposition",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Individual written analysis and group discussion",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments and active participation in seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TGTU95": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "At least two years studies at university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Compulsory Seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Hand-in Examination",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TKMJ15": {
+    "examiner": "Jonas Ammenberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Two years of engineering studies. General knowledge concerning industry and environmental issues is advantageous.",
+    "main_field": [
+      "Energy and Environmental Engineering",
+      "Industrial Engineering and Management",
+      "Mechanical Engineering"
+    ],
+    "education_components": [
+      31,
+      129
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DIT1",
+        "name": "Digital examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMQU31": {
+    "examiner": "Promporn Wangwacharakul",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Mathematical statistics, Quality Management and Engineering",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignment",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TMQU46": {
+    "examiner": "Jason Martin",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "At least two years studies at the Institute of Technology and knowledge within mathematical statistics.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Hand-in-assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT2",
+        "name": "Computer examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPTE06": {
+    "examiner": "Nämndspecifikt",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSRT07": {
+    "examiner": "Martin Enqvist",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Automatic control",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TQXX33": {
+    "examiner": "",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "see special list"
+    ],
+    "education_components": [
+      0,
+      800
+    ],
+    "examinations": [
+      {
+        "module": "AUSK",
+        "name": "Attendance at three thesis presentations",
+        "credits": 0.5
+      },
+      {
+        "module": "OPPO",
+        "name": "Opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Planning report, midterm assessment, written report, oral presentation and reflection document",
+        "credits": 28,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBB14": {
+    "examiner": "Maria Magnusson",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "One- and multidimensional calculus, Programming.",
+    "main_field": [
+      "Biotechnology",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      71,
+      89
+    ],
+    "examinations": [
+      {
+        "module": "LABA",
+        "name": "Laboratory work",
+        "credits": 2.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TENA",
+        "name": "Written examination",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TVCB11": {
+    "examiner": "Robert Blomgran",
+    "department": "Institutionen för biomedicinska och kliniska vetenskaper",
+    "prerequisites": "Biology, Biochemistry, Cell Biology, Microbioloy",
+    "main_field": [
+      "Biotechnology",
+      "Engineering Biology"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments w oral a written presentation.Opposition",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with oral and written reports",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  }
+}

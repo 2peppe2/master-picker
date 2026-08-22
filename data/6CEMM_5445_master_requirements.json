@@ -1,0 +1,164 @@
+{
+  "$schema": "./schemas/master_requirement.schema.json",
+  "COMMON_BASE": [
+    {
+      "type": "CREDITS_TOTAL",
+      "credits": 300
+    },
+    {
+      "type": "CREDITS_MASTER_TOTAL",
+      "credits": 120
+    },
+    {
+      "type": "CREDITS_ADVANCED_MASTER",
+      "credits": 90
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ41"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    }
+  ],
+  "EMHF": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIE72"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIM11"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO90"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEAE09"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ47"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ50"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ56"
+      ]
+    }
+  ],
+  "EMSV": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ38"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMES27"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMES45"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ47"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMES43"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TKMJ48"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMPE07"
+      ]
+    }
+  ],
+  "EMTE": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMKM16"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TAOP63"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMMV62"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMPM11",
+        "TSFS23"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "$schema": "./schemas/master_requirement.schema.json",
+  "COMMON_BASE": [
+    {
+      "type": "CREDITS_TOTAL",
+      "credits": 300
+    },
+    {
+      "type": "CREDITS_MASTER_TOTAL",
+      "credits": 120
+    },
+    {
+      "type": "CREDITS_ADVANCED_MASTER",
+      "credits": 90
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMT33"
+      ]
+    }
+  ],
+  "TBBI": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB54"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFYA47"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TAMS41"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TVCB13"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TANA21",
+        "TAOP88",
+        "TATM38",
+        "TBMT42",
+        "TEAE01",
+        "TMQU03",
+        "TPPE82"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI04",
+        "TEIO29"
+      ]
+    }
+  ],
+  "TBBP": [],
+  "TBIB": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFKE72"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB50"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TAMS41"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFKE70"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB51"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB52"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMQU46"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB53"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMPS36"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TANA21",
+        "TAOP88",
+        "TATM38",
+        "TBMT42",
+        "TEAE01",
+        "TPPE82"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO29"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMQU31"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO94"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TAMS81",
+        "TEIO90",
+        "TSRT92"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TMQU12"
+      ]
+    }
+  ],
+  "TBSM": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB34"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB35"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB48"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB33"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TFTB43",
+        "TMQU46"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI32",
+        "TEAE01",
+        "TEIO94"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TAMS81",
+        "TANA21",
+        "TAOP88",
+        "TATM38",
+        "TBMI28",
+        "TBMT42",
+        "TMQU03",
+        "TPPE82",
+        "TSRT92"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO29"
+      ]
+    }
+  ]
+}

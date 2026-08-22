@@ -1,0 +1,86 @@
+[
+  {
+    "id": "DAIM",
+    "name": "AI and Machine Learning",
+    "icon": "Sparkles",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DAUT",
+    "name": "Autonomus systems",
+    "icon": "Layers",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DDAS",
+    "name": "Computer Systems Architecture",
+    "icon": "Cpu",
+    "style": "bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/20 dark:text-emerald-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DDME",
+    "name": "Micro electronics",
+    "icon": "Microchip",
+    "style": "bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-900/20 dark:text-amber-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DDSA",
+    "name": "Computer Vision and Signal Analysis",
+    "icon": "ScanEye",
+    "style": "bg-rose-100 text-rose-800 border-rose-300 dark:bg-rose-900/20 dark:text-rose-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DIDS",
+    "name": "Embedded digital systems",
+    "icon": "CircuitBoard",
+    "style": "bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-indigo-900/20 dark:text-indigo-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DIND",
+    "name": "Industrial Economics",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-lime-100 text-lime-800 border-lime-300 dark:bg-lime-900/20 dark:text-lime-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DMEI",
+    "name": "Medical Informatics",
+    "icon": "Pill",
+    "style": "bg-cyan-100 text-cyan-800 border-cyan-300 dark:bg-cyan-900/20 dark:text-cyan-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DPAL",
+    "name": "Programming and Algorithms",
+    "icon": "Server",
+    "style": "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300 dark:bg-fuchsia-900/20 dark:text-fuchsia-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DSEC",
+    "name": "Secure Systems",
+    "icon": "Shield",
+    "style": "bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900/20 dark:text-orange-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DSMU",
+    "name": "Large Scale Software Engineering",
+    "icon": "Server",
+    "style": "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  },
+  {
+    "id": "DSPE",
+    "name": "Computer Games Programming",
+    "icon": "Joystick",
+    "style": "bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900/20 dark:text-purple-300",
+    "link": "https://studieinfo.liu.se/program/6CDDD/6298#syllabus"
+  }
+]

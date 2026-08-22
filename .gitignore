@@ -51,3 +51,5 @@ prisma/*.db-shm
 prisma/generated
 
 dev.db
+# scraper HTML cache
+/.cache

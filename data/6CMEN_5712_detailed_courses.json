@@ -1,0 +1,1936 @@
+{
+  "TDDC73": {
+    "examiner": "Anders Fröberg",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Programming 15 credits, of which at least 6 credits are object-oriented programming",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD23": {
+    "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Programming 10 credits (at least 6 credits object-oriented programming), Basic course in Usable/Interactive systems or similar.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Programming"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD56": {
+    "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Computer engineering. Data structures and algorithms. Concurrent programming and operating systems. Programming skills in C. Some basic familiarity with C++ is useful.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDE02": {
+    "examiner": "Aseel Berglund",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "The course requires that the student has advanced programming skills and good knowledge of any software-related technical field (e.g. computer networks, security, mobile and social applications, AI, signal processing, and computer graphics). The student has also experience from programming projects in teams. The student must also be able to search and organize information, and to communicate orally and in writing.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TDDD89": {
+    "examiner": "Christoph Kessler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "30hp advanced courses in students' topic area. Experience in reading scientific peer-reviewed papers in students' topic area.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignment",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE45": {
+    "examiner": "Adrian Pop",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Basic course in software engineering (including UML) Ability to program in multiple programming languages (including object-oriented programming and pointers / memory management) Data structures The student should know how to read research papers on software engineering and search information independently on new topics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "DAT1",
+        "name": "Computer-based exam",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TEAE11": {
+    "examiner": "Kalle Ahlqvist",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIO87": {
+    "examiner": "Dzamila Bienkowska",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Introductory course in industrial engineering and management or a course with a completed larger project.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written Test",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU94": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "Requisite general qualifications for university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignment, seminar",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TINT01": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MOM1",
+        "name": "Active participation in seminars and group discussions",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM031": {
+    "examiner": "Pierangelo Dellacqua",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Internet Programming and Digital Images, Algorithms and data structures",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Optional oral examination for higher grade",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Individual assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM034": {
+    "examiner": "Daniel Nyström",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Image Processing and Analysis. Programming skills in Matlab.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNA010": {
+    "examiner": "Berkant Savas",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, multivariate analysis, mathematical statistics, applied mathematics, basic knowledge in MATLAB.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Inplementation and report of applied project",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNCG15": {
+    "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer graphics, 3D Computer Graphics and Animation",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project work with oral and written presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM084": {
+    "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus, multivariate calculus, linear algebra. Basic computer graphics. Technical aspects of 3D modeling and animation. Programming plus Object Oriented Programming, Data Structures and Algorithms. Knowledge in image processing and image analysis and deep learning is desirable and useful as a prerequisite, but not required.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM067": {
+    "examiner": "Ingrid Hotz",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer Graphics, Physical modeling",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM091": {
+    "examiner": "Karljohan Lundin Palmerius",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming skills in C++. Linear Algebra. Experience of 3D computer graphics. Beneficial but not a requirement: basic sound physics and video production.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "PRA2",
+        "name": "Project",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM089": {
+    "examiner": "Daniel Nyström",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, Statistics, Transform Theory, Image Processing and Analysis, Matlab programming. Knowledge of color systems and color spaces.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      140,
+      20
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory assignments",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Project work",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MUN1",
+        "name": "Voluntary oral examination for grade 5",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM103": {
+    "examiner": "Niklas Rönnberg",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Signals and Systems, Transforms Theory, Sound Physics or similar. Basic programming.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "HEM1",
+        "name": "Home-assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM108": {
+    "examiner": "Pierangelo Dellacqua",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Probability and statistics, mathematical analysis, linear algebra and basic programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      20,
+      140
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM107": {
+    "examiner": "Niklas Rönnberg",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Prerequisites: (valid for students admitted to programmes within which the course is offered) 30hp on advanced level in main subject area. Experience in reading scientific peer-reviewed papers in main subject area.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM112": {
+    "examiner": "Gabriel Eilertsen",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Probability theory and statistics, calculus, linear algebra, and basic programming. Foundations in machine learning is beneficial but not required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM114": {
+    "examiner": "Pierangelo Dellacqua",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Artificial Intelligence",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      12,
+      148
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM116": {
+    "examiner": "Karljohan Lundin Palmerius",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "3D Computer Graphics, Linear Algebra, Programminig in C++",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laborations",
+        "credits": 4,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBK03": {
+    "examiner": "Ingemar Ragnemalm",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Programming Skills. Computer graphics. Linear Algebra. Fundamental physics.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work with tests",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDD27": {
+    "examiner": "Erik Berglund",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": "Good programming skills and ability to work with frameworks. Good understanding of how HTML / CSS / Javascript forms the basis for system development in the browser. Good JavaScript knowledge and knowledge of asynchronous communication with server and use of ROUTS and JSON. Good understanding of the web's REST technologies, micro frameworks such as Flask and Express.js, integration of external services via REST API. Ability to build larger web-based interactive systems and to independently run software projects.",
+    "main_field": [
+      "Information Technology",
+      "Computer Science and Engineering",
+      "Computer Science"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Seminars and project",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIE53": {
+    "examiner": "Sofi Rehme",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Labs",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Group project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TINT02": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project with oral presentation and opposition",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Individual written analysis and group discussion",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments and active participation in seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM096": {
+    "examiner": "Pierangelo Dellacqua",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming, data structures and algorithms. Introduction to Artificial Intelligence.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM097": {
+    "examiner": "Sasan Gooran",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Courses in Graphic arts and Image processing and analysis. Basic programming knowledge in Matlab.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      94,
+      66
+    ],
+    "examinations": [
+      {
+        "module": "MUN1",
+        "name": "Voluntary oral examination for higher grade",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNKA10": {
+    "examiner": "Maria Thunborg",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": null,
+    "main_field": [
+      "Graphic Design and Communication"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars and Written Assignment",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Oral Presentations and Written Evaluation",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM100": {
+    "examiner": "Camilla Forsell",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Communication and User Interfaces",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      42,
+      118
+    ],
+    "examinations": [
+      {
+        "module": "UPG4",
+        "name": "Group assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG5",
+        "name": "Group assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG7",
+        "name": "Group assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM098": {
+    "examiner": "Katerina Vrotsou",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Skills in mathematics, programming and web programming. Knowledge in information visualization via the course in Information Visualization or equivalent. Knowledge in and/or interest for data mining/machine learning is advantageous but not a requirement.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM113": {
+    "examiner": "Niklas Rönnberg",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge from courses in user interface, visualization, and programming, as well as basic sound technology and signal processing.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM079": {
+    "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer Graphics, Linear Algebra, Calculus in several variables, Programming",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB4",
+        "name": "Laboratory work",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN3",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM111": {
+    "examiner": "Andreas Kerren",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming. The course “Practical Data Visualization and Virtual Reality” as well as skills in visual perception, computer graphics and web programming are beneficial but not required.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Computer Science",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      51,
+      109
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments with oral and written presentations",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TPTE06": {
+    "examiner": "Nämndspecifikt",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TQXX33": {
+    "examiner": "",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "see special list"
+    ],
+    "education_components": [
+      0,
+      800
+    ],
+    "examinations": [
+      {
+        "module": "AUSK",
+        "name": "Attendance at three thesis presentations",
+        "credits": 0.5
+      },
+      {
+        "module": "OPPO",
+        "name": "Opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Planning report, midterm assessment, written report, oral presentation and reflection document",
+        "credits": 28,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TSBK38": {
+    "examiner": "Harald Nautsch",
+    "department": "Institutionen för systemteknik",
+    "prerequisites": "Probability theory, basic signal processing, basic transform theory.",
+    "main_field": [
+      "Electrical Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TFYA65": {
+    "examiner": "Per Sandström",
+    "department": "Institutionen för fysik, kemi och biologi",
+    "prerequisites": "Signals and Systems, Mechanics and Wave Physics",
+    "main_field": [
+      "Applied Physics",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNA001": {
+    "examiner": "Claes Algström",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      89,
+      71
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional examinations",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignments and oral presentations",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA002": {
+    "examiner": "George Baravdish",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundadtion course in mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      87,
+      73
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR3",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR4",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA003": {
+    "examiner": "Olof Svensson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundation course in mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      84,
+      76
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR3",
+        "name": "Optional examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA004": {
+    "examiner": "Lukás Malý",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Analysis I",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      70,
+      90
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Voluntary assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA005": {
+    "examiner": "Berkant Savas",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundation course in mathematics, Linear algebra, Programming. Calculus in one variable can be studied in parallel with this course, or is otherwise prerequisite.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      37,
+      123
+    ],
+    "examinations": [
+      {
+        "module": "UPGC",
+        "name": "Mini group project; Oral and written presentation and opposition",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPGD",
+        "name": "Individual mini project. Oral and written presentation",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK1",
+        "name": "Test in computer lab, introduction to Matlab",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK2",
+        "name": "Test in computer lab, mathematics in AI",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA007": {
+    "examiner": "Olof Svensson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus and Linear algebra",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR4",
+        "name": "Optional Written Test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR5",
+        "name": "Optional Written Test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA006": {
+    "examiner": "Olof Svensson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus I-II and Linear algebra, or similar courses.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TND002": {
+    "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Introductory course in programming",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      70,
+      90
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TND004": {
+    "examiner": "Aida Nordman",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming in C++, mathematical concepts like series from Calculus II",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TND012": {
+    "examiner": "Aida Nordman",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Prerequisites: (valid for students admitted to programmes within which the course is offered) Note: Admission requirements for non-programme students usually also include admission requirements for the programme and threshhold requirements for progression within the programme, or corresponding.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      68,
+      92
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Voluntary assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNE043": {
+    "examiner": "Isak Engquist",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Courses in calculus and linear algebra, important subjects are vector algebra, differentiation and integration of elementary functions, linear differential equations with constant coefficients.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Written report in Swedish, oral presentation and opposition",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "A written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG006": {
+    "examiner": "Tomas Johansson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus in several variables",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG015": {
+    "examiner": "Naveen Kumar Dasanadoddi Venkategowda",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear Algebra, Calculus in Several Variables, Transform Theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "TEN7",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN6",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB5",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNG028": {
+    "examiner": "Anna Lombardi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Signals and systems, Transform theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG032": {
+    "examiner": "Lukás Malý",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Single variable calculus, Linear Algebra, Multi variable calculus",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "TEN3",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB4",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNG033": {
+    "examiner": "Aida Nordman",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming, Object-Oriented Programming.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "At-computer exam",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG022": {
+    "examiner": "Anna Lombardi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Statistics and Probability, Automatic Control, Basic Technical English.",
+    "main_field": [
+      "Electrical Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPGA",
+        "name": "Active participation and assignments",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPGB",
+        "name": "Written report in English",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM040": {
+    "examiner": "Camilla Forsell",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Java programming. Introduction to Web Programming.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      76,
+      84
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Group programming assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Individual assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM046": {
+    "examiner": "Sasan Gooran",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, fundamental skills in programming, skills in object oriented programming",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM059": {
+    "examiner": "Sasan Gooran",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundation Course in Mathematics",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory course",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM061": {
+    "examiner": "Martin Falk",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Computer Graphics",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Group project assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory course",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 1.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM087": {
+    "examiner": "Daniel Nyström",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, Calculus in several variables, Signals and systems, Matlab programming, Graphic Arts, Applied transform theory",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory course",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNM088": {
+    "examiner": "Camilla Forsell",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project presentation",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM093": {
+    "examiner": "Kostiantyn Kucher",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Algebra and calculus, programming in C++, object orientation and algorithms, 3D Computer graphics",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM094": {
+    "examiner": "Daniel Jönsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "For admission to the course, see LiTH's general rules for the candidate's work for the Master of Science Programs in the student handbook.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      56,
+      424
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Opposition",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Written assignment",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 14,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM115": {
+    "examiner": "Nico Reski",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Introductory course in programming.",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      84,
+      76
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in evaluation assignment",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work including hand-in assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNM119": {
+    "examiner": "Elmira Zohrevandi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Multi-variable analysis, linear algebra, statistics, programming",
+    "main_field": [
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboration",
+        "credits": 3.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignment",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  }
+}

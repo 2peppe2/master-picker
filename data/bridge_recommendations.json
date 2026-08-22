@@ -1,0 +1,64 @@
+[
+  {
+    "program": "6IDAT",
+    "programCourseIDs": [62022, 62023, 62024, 62025],
+    "tracks": [
+      {
+        "code": "DIPV",
+        "name": "track_6IDAT_DIPV",
+        "startSemester": 4,
+        "recommendations": [
+          {
+            "master": "6MICS",
+            "rank": 1,
+            "rationale": "bridge_6IDAT_DIPV_6MICS",
+            "officialUrl": "https://liu.se/utbildning/program/6mics",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          },
+          {
+            "master": "6MCYS",
+            "rank": 2,
+            "rationale": "bridge_6IDAT_DIPV_6MCYS",
+            "officialUrl": "https://liu.se/utbildning/program/6mcys",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          },
+          {
+            "master": "6MIND",
+            "rank": 3,
+            "rationale": "bridge_6IDAT_DIPV_6MIND",
+            "officialUrl": "https://liu.se/utbildning/program/6mind",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "code": "DIIS",
+        "name": "track_6IDAT_DIIS",
+        "startSemester": 4,
+        "recommendations": [
+          {
+            "master": "6MCYS",
+            "rank": 1,
+            "rationale": "bridge_6IDAT_DIIS_6MCYS",
+            "officialUrl": "https://liu.se/utbildning/program/6mcys",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          },
+          {
+            "master": "6MICS",
+            "rank": 2,
+            "rationale": "bridge_6IDAT_DIIS_6MICS",
+            "officialUrl": "https://liu.se/utbildning/program/6mics",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          },
+          {
+            "master": "6MIND",
+            "rank": 3,
+            "rationale": "bridge_6IDAT_DIIS_6MIND",
+            "officialUrl": "https://liu.se/utbildning/program/6mind",
+            "reviewedAt": "2026-08-20T00:00:00.000Z"
+          }
+        ]
+      }
+    ]
+  }
+]

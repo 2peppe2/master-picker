@@ -1,0 +1,3669 @@
+[
+  {
+    "code": "NBIA23",
+    "name": "Microbiology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NBIA23/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NBIA25",
+    "name": "Cell Biology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NBIA25/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NBIB54",
+    "name": "Principles in Physiology and Technological Applications",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NBIB54/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKEA02",
+    "name": "General Chemistry 1",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/NKEA02/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKEA04",
+    "name": "General Chemistry 2",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NKEA04/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKEA06",
+    "name": "Organic Chemistry 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NKEA06/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKEA08",
+    "name": "Biochemistry 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NKEA08/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKEB10",
+    "name": "Analytical Chemistry - Chromatography",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/NKEB10",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NKED20",
+    "name": "Drug Discovery and Pharmaceutical Development",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/NKED20",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NVFA09",
+    "name": "Pharmacology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/NVFA09",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS11",
+    "name": "Probability and Statistics, First Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS11",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS41",
+    "name": "Statistical Modelling with Regression Methods",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS41",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS81",
+    "name": "Experimental Design",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS81",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TANA21",
+    "name": "Scientific Computing",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TANA21",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP63",
+    "name": "Optimization of complex systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP63",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP88",
+    "name": "Engineering Optimization",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP88",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA16",
+    "name": "Linear Algebra",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA16/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA41",
+    "name": "Calculus in One Variable 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA41/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA42",
+    "name": "Calculus in One Variable 2",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA42/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA83",
+    "name": "Calculus, Several Variables",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA83",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATB02",
+    "name": "Foundation Course in Mathematics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB02/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATM38",
+    "name": "Mathematical Models in Biology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATM38",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBME08",
+    "name": "Biomedical Modeling and Simulation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBME08",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI04",
+    "name": "eHealth: Aims and Applications",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI04",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI26",
+    "name": "Neural Networks and Learning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI26",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI28",
+    "name": "eHealth Project",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI28",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI32",
+    "name": "eHealth: from Idea to Impact",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI32",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT01",
+    "name": "Biomedical Signal Processing",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT01",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT19",
+    "name": "Models in System Biology",
+    "credits": 2,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT19",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT33",
+    "name": "System Biology and Modelling, Bachelor Project",
+    "credits": 16,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT33",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT42",
+    "name": "Systems Biology, Digital Twins and AI",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT42",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMT57",
+    "name": "Biomedical Optics",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMT57",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE10",
+    "name": "Object Oriented Programming in Java",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE10",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE18",
+    "name": "Programming C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE18",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE49",
+    "name": "Databases and Information Security for Bioinformatics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE49",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE50",
+    "name": "Megagame - Design for Sustainable Development in the light of Climate Change",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE50",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE54",
+    "name": "Programming and Problem Solving",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE54/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE56",
+    "name": "Foundations of AI and Machine Learning",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE56",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE01",
+    "name": "Industrial Economics, Basic Course",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE01",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIG03",
+    "name": "Innovation and sustainability transition",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIG03",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO29",
+    "name": "Leadership and Organisation",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO29",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO90",
+    "name": "Innovation Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO90",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO94",
+    "name": "Entrepreneurship and Idea Development",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO94",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFKE36",
+    "name": "Biochemistry 2",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFKE36",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFKE70",
+    "name": "Microbial Cell Factories",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFKE70",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFKE72",
+    "name": "Industrial Enzyme Technology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFKE72",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFKE73",
+    "name": "Therapeutic Proteins",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFKE73",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFMT19",
+    "name": "Chemical Sensor Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFMT19",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFMT23",
+    "name": "Measurement technology and computerised mesaurement systems",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFMT23",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB33",
+    "name": "Microsystems and Nanobiology",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB33",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB34",
+    "name": "Biosensor Technology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB34",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB35",
+    "name": "Surface Science",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB35",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB43",
+    "name": "Materials in Medicine (CDIO-Project)",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB43",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB46",
+    "name": "Advanced Bioinformatics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB46",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB48",
+    "name": "Biomedical Materials",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB48",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB50",
+    "name": "Bioprocess Analytical Technologies",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB50",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB51",
+    "name": "Biotechnology Manufacturing",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB51",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB52",
+    "name": "Design of Biotechnical Processes, Project Course",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB52",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFTB53",
+    "name": "Production of Biopharmaceuticals",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFTB53",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA16",
+    "name": "Engineering Mechanics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA16/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA37",
+    "name": "Soft Condensed Matter Physics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA37",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA43",
+    "name": "Nanotechnology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA43",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA46",
+    "name": "Engineering Project",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA46/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA47",
+    "name": "Surfaces and Interfaces",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA47",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA78",
+    "name": "Molecular Physics",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA78",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA85",
+    "name": "Alternative Energy Sources and their Applications",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA85",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYY55",
+    "name": "Physics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYY55",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU49",
+    "name": "History of Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU49",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU84",
+    "name": "Diversity and Gender in Engineering",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU84",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU91",
+    "name": "Oral and Written Communication",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU91",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU95",
+    "name": "Philosophy of Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU95",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU96",
+    "name": "Sustainable study situation",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU96/vt-2026",
+    "ecv": "V",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "THEN18",
+    "name": "English",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/THEN18",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT01",
+    "name": "Introduction to Intercultural Competence",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT01",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ15",
+    "name": "Environmental Management Strategies",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ15",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ24",
+    "name": "Environmental Engineering",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ24",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ31",
+    "name": "Biofuels for Transportation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ31",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ35",
+    "name": "Industrial Ecology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ35",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPS36",
+    "name": "Machine Learning in Bioprocess Engineering",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPS36",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU03",
+    "name": "Quality Management and Engineering",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU03",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU12",
+    "name": "Lean Production",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU12",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU31",
+    "name": "Statistical Quality Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU31",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU46",
+    "name": "Quality Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU46",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE82",
+    "name": "Manufacturing Planning and Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE82",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2030,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TRTE18",
+    "name": "The Biogas Process",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TRTE18",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB14",
+    "name": "Signal and Image Processing",
+    "credits": 6,
+    "level": "G2X",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB14",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT07",
+    "name": "Industrial Control Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT07",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT23",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT23",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT92",
+    "name": "Modelling and Learning for Dynamical Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT92",
+    "ecv": "C/E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSTE92",
+    "name": "Electric Circuits",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSTE92",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TTII02",
+    "name": "Professional ethics",
+    "credits": 2,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TTII02/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TVCB11",
+    "name": "Cellbiological Methodology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TVCB11",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TVCB13",
+    "name": "Stem Cell Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TVCB13",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TVCB14",
+    "name": "Molecular Genetics and Gene Technology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TVCB14",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TVMB17",
+    "name": "Immunobiology and Immunological Techniques",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TVMB17/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TVMB26",
+    "name": "Molecular Virology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TVMB26",
+    "ecv": "E",
+    "program": [
+      "6CTBI"
+    ],
+    "mastersPrograms": [
+      "TBIB",
+      "TBSM"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2029,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "TBIB",
+          "TBSM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

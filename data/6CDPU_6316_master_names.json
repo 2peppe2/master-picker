@@ -1,0 +1,23 @@
+[
+  {
+    "id": "DMAN",
+    "name": "Product Development - Management",
+    "icon": "BriefcaseBusiness",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CDPU/6316#syllabus"
+  },
+  {
+    "id": "KONS",
+    "name": "Product development - Design and Manufacturing",
+    "icon": "TrafficCone",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CDPU/6316#syllabus"
+  },
+  {
+    "id": "PUTV",
+    "name": "Product Development - Design Engineering",
+    "icon": "TrafficCone",
+    "style": "bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/20 dark:text-emerald-300",
+    "link": "https://studieinfo.liu.se/program/6CDPU/6316#syllabus"
+  }
+]

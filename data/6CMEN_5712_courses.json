@@ -1,0 +1,2185 @@
+[
+  {
+    "code": "TDDC73",
+    "name": "Interaction Programming",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC73",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD23",
+    "name": "Design and Programming of Computer Games",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD23",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD27",
+    "name": "Advanced Web Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD27",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD56",
+    "name": "Multicore and GPU Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD56",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD89",
+    "name": "Scientific Method",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD89",
+    "ecv": "C/E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE02",
+    "name": "Software Entrepreneurship",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE02",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE45",
+    "name": "Software Design and Construction",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE45",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE11",
+    "name": "Intellectual Property Rights",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE11",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE53",
+    "name": "Industrial Economics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE53",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO87",
+    "name": "Project Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO87",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA65",
+    "name": "Physics of Sound",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA65/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT01",
+    "name": "Introduction to Intercultural Competence",
+    "credits": 2,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT01",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA001",
+    "name": "Foundation Course in Mathematics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA001/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA002",
+    "name": "Linear Algebra",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA002/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA003",
+    "name": "Calculus I",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA003/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA004",
+    "name": "Calculus II",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA004/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA005",
+    "name": "Applied Mathematics in Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA005/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA006",
+    "name": "Calculus III",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA006/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA007",
+    "name": "Vector Analysis",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA007/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNA010",
+    "name": "Matrix Methods for AI",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNA010",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNCG15",
+    "name": "Advanced Global Illumination and Rendering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNCG15",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TND002",
+    "name": "Object-Oriented Programming",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TND002/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TND004",
+    "name": "Data Structures",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TND004",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TND012",
+    "name": "Programming",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TND012/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNE043",
+    "name": "Mechanics and Wave Physics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNE043/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG006",
+    "name": "Statistics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG006/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG015",
+    "name": "Signals and Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG015/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG022",
+    "name": "Modelling and Simulation",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG022/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG028",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG028/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG032",
+    "name": "Applied Transform Theory",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG032/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNG033",
+    "name": "Programming in C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNG033/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNKA10",
+    "name": "Rethoric in Speech, Texts and Images",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNKA10",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM031",
+    "name": "Network Programming and Security",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM031",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM034",
+    "name": "Advanced Image Processing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM034",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM040",
+    "name": "Communication and User Interfaces",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM040/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM046",
+    "name": "Computer Graphics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM046/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM059",
+    "name": "Graphic Arts",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM059/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM061",
+    "name": "3D Computer Graphics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM061/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM067",
+    "name": "Scientific Visualization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM067",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM079",
+    "name": "Modelling and Animation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM079",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM084",
+    "name": "Procedural Methods for Images",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM084",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTLB",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS",
+          "MTLB",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM087",
+    "name": "Image Processing and Analysis",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM087/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM088",
+    "name": "Digital Media",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM088/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM089",
+    "name": "Imaging Technology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM089",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM091",
+    "name": "Media Production for Immersive Environments",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM091",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTLB",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM093",
+    "name": "Practical Data Visualization and Virtual Reality",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM093/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM094",
+    "name": "Media Technology - Bachelor Project",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM094",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM096",
+    "name": "Artificial Intelligence - Principles and Techniques",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM096",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM097",
+    "name": "Image Reproduction and Image Quality",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM097",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM098",
+    "name": "Advanced Visual Data Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM098",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM100",
+    "name": "Structural Methods for User Experience (UX)",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM100",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTDS",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM103",
+    "name": "Sound Technology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM103",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM107",
+    "name": "Scientific Method",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM107",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM108",
+    "name": "Machine Learning for Social Media",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM108",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM111",
+    "name": "Information Visualization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM111",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM112",
+    "name": "Deep Learning for Media Technology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM112",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTLB",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTLB",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM113",
+    "name": "Procedural Sound Design for User Interfaces",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM113",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTDS",
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM114",
+    "name": "Artificial Intelligence for Interactive Media, Project",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM114",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM115",
+    "name": "Introduction to Web Programming and Publishing",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM115/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM116",
+    "name": "eXtended Reality (XR) - Principles and Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM116",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTVS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS",
+          "MTVS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TNM119",
+    "name": "Introduction to Artificial Intelligence",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TNM119",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2029,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBK03",
+    "name": "Advanced Game Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBK03",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "MTDS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBK38",
+    "name": "Image and Audio Compression",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBK38",
+    "ecv": "E",
+    "program": [
+      "6CMEN"
+    ],
+    "mastersPrograms": [
+      "MTDS",
+      "MTLB"
+    ],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "MTDS",
+          "MTLB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

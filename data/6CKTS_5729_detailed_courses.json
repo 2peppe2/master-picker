@@ -1,0 +1,1866 @@
+{
+  "TDDC28": {
+    "examiner": "Krisjanis Steins",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Discrete-event simulation",
+    "main_field": [
+      "Industrial Engineering and Management",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work: Simulation model, report and presentation",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEAE11": {
+    "examiner": "Kalle Ahlqvist",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "DIT1",
+        "name": "Digital written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIN01": {
+    "examiner": "Thomas Rosenfall",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      34,
+      126
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIO87": {
+    "examiner": "Dzamila Bienkowska",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Introductory course in industrial engineering and management or a course with a completed larger project.",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written Test",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU94": {
+    "examiner": "Elin Palm",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": "Requisite general qualifications for university.",
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Written assignment, seminar",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TEIE53": {
+    "examiner": "Harald Brege",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Labs",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA2",
+        "name": "Group project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TGTU96": {
+    "examiner": "Maria Eidenskog",
+    "department": "Institutionen för Tema",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignment",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TMQU08": {
+    "examiner": "",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": "Probability and Statistics",
+    "main_field": [
+      "Industrial Engineering and Management"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Assignments",
+        "credits": 4,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "MUN1",
+        "name": "Oral examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TINT01": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      14,
+      39
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Digital assignment",
+        "credits": 0.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "MOM1",
+        "name": "Active participation in seminars and group discussions",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA001": {
+    "examiner": "Claes Algström",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      89,
+      71
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional examinations",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignments and oral presentations",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA002": {
+    "examiner": "George Baravdish",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundadtion course in mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      87,
+      73
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR3",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR4",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG3",
+        "name": "Individual assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA003": {
+    "examiner": "Olof Svensson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundation course in mathematics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      84,
+      76
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Optional assignment",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR3",
+        "name": "Optional examination",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA004": {
+    "examiner": "Lukás Malý",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Analysis I",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      70,
+      90
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written exam",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Voluntary assignments",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNA005": {
+    "examiner": "Berkant Savas",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Foundation course in mathematics, Linear algebra, Programming. Calculus in one variable can be studied in parallel with this course, or is otherwise prerequisite.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      37,
+      123
+    ],
+    "examinations": [
+      {
+        "module": "UPGC",
+        "name": "Mini group project; Oral and written presentation and opposition",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPGD",
+        "name": "Individual mini project. Oral and written presentation",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK1",
+        "name": "Test in computer lab, introduction to Matlab",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAK2",
+        "name": "Test in computer lab, mathematics in AI",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TND002": {
+    "examiner": "Mark E Dieckmann",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Introductory course in programming",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      70,
+      90
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "Computer examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNA006": {
+    "examiner": "Olof Svensson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus I-II and Linear algebra, or similar courses.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNFL12": {
+    "examiner": "Valentin Polishchuk",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge of math and programming.",
+    "main_field": [
+      "Logistics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG3",
+        "name": "Seminars",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNE043": {
+    "examiner": "Isak Engquist",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Courses in calculus and linear algebra, important subjects are vector algebra, differentiation and integration of elementary functions, linear differential equations with constant coefficients.",
+    "main_field": [
+      "Applied Physics",
+      "Physics"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Written report in Swedish, oral presentation and opposition",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "A written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG006": {
+    "examiner": "Tomas Johansson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Calculus in several variables",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG015": {
+    "examiner": "Naveen Kumar Dasanadoddi Venkategowda",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear Algebra, Calculus in Several Variables, Transform Theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "TEN7",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN6",
+        "name": "Written examination",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB5",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNG022": {
+    "examiner": "Anna Lombardi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Statistics and Probability, Automatic Control, Basic Technical English.",
+    "main_field": [
+      "Electrical Engineering",
+      "Media Technology and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN2",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPGA",
+        "name": "Active participation and assignments",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPGB",
+        "name": "Written report in English",
+        "credits": 0.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNG033": {
+    "examiner": "Aida Nordman",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming, Object-Oriented Programming.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      54,
+      106
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "DAT1",
+        "name": "At-computer exam",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG028": {
+    "examiner": "Anna Lombardi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Signals and systems, Transform theory",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      60,
+      100
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG032": {
+    "examiner": "Lukás Malý",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Single variable calculus, Linear Algebra, Multi variable calculus",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      56,
+      104
+    ],
+    "examinations": [
+      {
+        "module": "TEN3",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB4",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Optional written test",
+        "credits": 0,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK044": {
+    "examiner": "Anders Peterson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      51,
+      109
+    ],
+    "examinations": [
+      {
+        "module": "UPG5",
+        "name": "Individual assignments with oral and written presentation",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG7",
+        "name": "Active participation at lectures and seminars",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Individual assignments with oral and written presentation",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG6",
+        "name": "Group project assignments with oral and written presentation",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK051": {
+    "examiner": "Christiane Schmidt",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Transport System, Industrial Economics, Optimization, Object-Oriented Programming, Physical Modelling.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK047": {
+    "examiner": "Carl Henrik Häll",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Linear algebra, Optimization,Statistics and probability.",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK090": {
+    "examiner": "Johan M Karlsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Statistics",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      38,
+      122
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK046": {
+    "examiner": "Carl Henrik Häll",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Computer Science and Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      52,
+      108
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK098": {
+    "examiner": "Anders Peterson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Programming, optimization, traffic planning and simulation",
+    "main_field": [
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Group Assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK049": {
+    "examiner": "Stefan Engevall",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Fundamentals in mathematical analysis and linear algebra",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK103": {
+    "examiner": "Tatiana Polishchuk",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Planning and simulation of traffic systems or Logistics networks and transports or Data communication and the Internet",
+    "main_field": [
+      "Electrical Engineering",
+      "Industrial Engineering and Management",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      16,
+      144
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK104": {
+    "examiner": "Valentin Polishchuk",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge in linear programming and integer programming",
+    "main_field": [
+      "Mathematics",
+      "Applied Mathematics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK105": {
+    "examiner": "Marian Codreanu",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Applied optimization I, programming principles, and data structures, or equivalent",
+    "main_field": [
+      "Applied Mathematics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      20,
+      140
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Project work",
+        "credits": 6,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK091": {
+    "examiner": "Ghazwan Al-Haji",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Admission requirements for master programme/master level.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      57,
+      103
+    ],
+    "examinations": [
+      {
+        "module": "UPG3",
+        "name": "Written project work and oral presentation",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG4",
+        "name": "Individual assignment",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG5",
+        "name": "Case study",
+        "credits": 1,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK106": {
+    "examiner": "David Gundlegård",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge in linear algebra, calculus, statistics, programming in Matlab and mobile communications.",
+    "main_field": [
+      "Electrical Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Group assignment with oral and written report. Seminar",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK108": {
+    "examiner": "Marian Codreanu",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Telecommunication systems, Programming, Object-Oriented Programming, or equivalent.",
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK114": {
+    "examiner": "Anna Fredriksson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic logistics course, such as TNK112.",
+    "main_field": [
+      "Industrial Engineering and Management",
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "KTR2",
+        "name": "Written examination",
+        "credits": 0,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Assignments",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK120": {
+    "examiner": "David Gundlegård",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge about traffic theory and planning and simulation of traffic.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Individual Assignments",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory Work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK113": {
+    "examiner": "Erik Bergfeldt",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Industrial economics, Transportation economics, Linear algebra, Calculus.",
+    "main_field": [
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      46,
+      114
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK125": {
+    "examiner": "Nils Breyer",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Geographic information systems, basic knowledge of traffic planning",
+    "main_field": [
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Project",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK129": {
+    "examiner": "Marian Codreanu",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge in linear algebra, calculus, statistics and probability theory as well as computer programming.",
+    "main_field": [
+      "Computer Science and Engineering",
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Individual assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Lab assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK122": {
+    "examiner": "Martin Waldemarsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Mathematics corresponding to a foundation course in mathematics, basic knowledge in economics, basic knowledge in statistics and probability theory",
+    "main_field": [
+      "Logistics"
+    ],
+    "education_components": [
+      40,
+      120
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR2",
+        "name": "Preparatory written test",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK126": {
+    "examiner": "Henrik Fredriksson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Transport Systems, Transport Economics",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK130": {
+    "examiner": "David Gundlegård",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge in linear algebra, calculus, statistics and probability theory as well as computer programming.",
+    "main_field": [
+      "Electrical Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written Test",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK128": {
+    "examiner": "Nils Breyer",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Computer Science and Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "DAT1",
+        "name": "Computer exam Python",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work in Python",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work in Matlab",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNSL15": {
+    "examiner": "Martin Waldemarsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      30,
+      130
+    ],
+    "examinations": [
+      {
+        "module": "UPG4",
+        "name": "Project work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG5",
+        "name": "Assignments",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB2",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK134": {
+    "examiner": "Johan M Karlsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 4.5,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Project",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TDDE50": {
+    "examiner": "Ola Leifler",
+    "department": "Institutionen för datavetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      50,
+      110
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Reflection report",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Systems analysis",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TINT02": {
+    "examiner": "Christoph Röcklinsberg",
+    "department": "Institutionen för ekonomisk och industriell utveckling",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project with oral presentation and opposition",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Individual written analysis and group discussion",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG2",
+        "name": "Hand-in assignments and active participation in seminars",
+        "credits": 1,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNG016": {
+    "examiner": "Anna Lombardi",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "System engineering courses such as Automatic control and Modelling and simulation.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      20,
+      140
+    ],
+    "examinations": [
+      {
+        "module": "UPG4",
+        "name": "Laboratory work",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA3",
+        "name": "Project work with written report and oral presentation",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNG042": {
+    "examiner": "Anders Peterson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": null,
+    "main_field": [
+      "Logistics"
+    ],
+    "education_components": [
+      16,
+      37
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK093": {
+    "examiner": "Marian Codreanu",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic course in computer networking, telecommunications or both",
+    "main_field": [
+      "Electrical Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK116": {
+    "examiner": "Vangelis Angelakis",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "The course labs and project will deal with IoT devices programming, thus programming/developing skills (especially in C/Java) are necessary.",
+    "main_field": [
+      "Electrical Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK118": {
+    "examiner": "Clas Rydergren",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Math corresponding to Calculus, Optimization and basic knowledge about transport and transport systems.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory Work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written Examination",
+        "credits": 4,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK119": {
+    "examiner": "Johan Olstam",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge about statistics and probablity, methodology and theory for discrete simulation, Traffc Infrastructure and Optimization.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      36,
+      124
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Computer Exercises",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Individual Hand-in Assignments",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK121": {
+    "examiner": "Scott Fowler",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic knowledge in queueing theory, linear programming and integer programming. Also, insight in computer networking, data communications and mobile communications, or equivalent.",
+    "main_field": [
+      "Electrical Engineering"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project work",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory assignments",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK115": {
+    "examiner": "Vangelis Angelakis",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "The course labs and project will deal with Android programming hence programming skills (preferably in Java) are highly recommended. The following, or similar courses, are also required: Mobile Communication and Networks, Computer Networking",
+    "main_field": [
+      "Electrical Engineering",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "PRA1",
+        "name": "Project",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "KTR1",
+        "name": "Written test",
+        "credits": 2,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNK123": {
+    "examiner": "Martin Waldemarsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basics in economics, logistics, production and distribution planning, modeling, optimization, simulation, statistics and probability theory.",
+    "main_field": [
+      "Industrial Engineering and Management",
+      "Logistics",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      44,
+      116
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "UPG1",
+        "name": "Assignments",
+        "credits": 2,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK089": {
+    "examiner": "Krisjanis Steins",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Statistics and Probability.",
+    "main_field": [
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Series of model-building exercises",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      },
+      {
+        "module": "TEN1",
+        "name": "Written examination",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TNKA10": {
+    "examiner": "Maria Thunborg",
+    "department": "Institutionen för kultur och samhälle",
+    "prerequisites": null,
+    "main_field": [
+      "Graphic Design and Communication"
+    ],
+    "education_components": [
+      48,
+      112
+    ],
+    "examinations": [
+      {
+        "module": "UPG2",
+        "name": "Seminars and Written Assignment",
+        "credits": 3,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Oral Presentations and Written Evaluation",
+        "credits": 3,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK124": {
+    "examiner": "Niki Matinrad",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "Basic courses in economic, logistics, optimization and simulation. Basic knowledge of AMPL or other mathematical modelling language. Basic programming skills.",
+    "main_field": [
+      "Industrial Engineering and Management",
+      "Transportation Systems Engineering"
+    ],
+    "education_components": [
+      58,
+      102
+    ],
+    "examinations": [
+      {
+        "module": "LAB1",
+        "name": "Laboratory work",
+        "credits": 1,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "PRA1",
+        "name": "Project assignment",
+        "credits": 2,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "TEN1",
+        "name": "Exam",
+        "credits": 3,
+        "scale": "U_THREE_FOUR_FIVE"
+      }
+    ]
+  },
+  "TQXX33": {
+    "examiner": "",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "see special list"
+    ],
+    "education_components": [
+      0,
+      800
+    ],
+    "examinations": [
+      {
+        "module": "AUSK",
+        "name": "Attendance at three thesis presentations",
+        "credits": 0.5
+      },
+      {
+        "module": "OPPO",
+        "name": "Opposition",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG1",
+        "name": "Planning report, midterm assessment, written report, oral presentation and reflection document",
+        "credits": 28,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TNK132": {
+    "examiner": "Johan M Karlsson",
+    "department": "Institutionen för teknik och naturvetenskap",
+    "prerequisites": "The project assumes knowledge in geographic information systems, logistics, data communication, programming, optimization and project management.",
+    "main_field": [
+      "Transportation Systems Engineering",
+      "Engineering"
+    ],
+    "education_components": [
+      128,
+      299
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Ethics",
+        "credits": 1.5,
+        "scale": "G_OR_U"
+      },
+      {
+        "module": "UPG2",
+        "name": "Project and individual written report",
+        "credits": 14.5,
+        "scale": "G_OR_U"
+      }
+    ]
+  },
+  "TPTE06": {
+    "examiner": "Nämndspecifikt",
+    "department": "Tekniska fakultetens kansli",
+    "prerequisites": null,
+    "main_field": [
+      "No main field of study"
+    ],
+    "education_components": [
+      0,
+      160
+    ],
+    "examinations": [
+      {
+        "module": "UPG1",
+        "name": "Assignment",
+        "credits": 6,
+        "scale": "G_OR_U"
+      }
+    ]
+  }
+}

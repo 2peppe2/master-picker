@@ -1,0 +1,6143 @@
+[
+  {
+    "code": "NBIB55",
+    "name": "Environmental Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/NBIB55",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NBID79",
+    "name": "Ecosystem Services in CSR and Conservation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/NBID79/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS29",
+    "name": "Stochastic Processes Applied to Financial Models",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS29",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS32",
+    "name": "Stochastic Processes",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS32/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS39",
+    "name": "Multivariate Statistical Methods",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS39",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS46",
+    "name": "Probability Theory, Second Course",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS46/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS65",
+    "name": "Mathematical Statistics, Second Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS65/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAMS79",
+    "name": "Mathematical Statistics, First Course",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAMS79/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TANA21",
+    "name": "Scientific Computing",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TANA21/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP04",
+    "name": "Mathematical Optimization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP04/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP18",
+    "name": "Supply Chain Optimization",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP18",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP34",
+    "name": "Large Scale Optimization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP34/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP52",
+    "name": "Introduction to Operations Research",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP52/vt-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TAOP62",
+    "name": "Operations Research, Extended Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TAOP62/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA31",
+    "name": "Linear Algebra",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA31/ht-2023",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2023,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA34",
+    "name": "Real Analysis, Honours Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA34/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA41",
+    "name": "Calculus in One Variable 1",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA41/ht-2023",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2023,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA42",
+    "name": "Calculus in One Variable 2",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA42/vt-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA44",
+    "name": "Vector Analysis",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA44/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA45",
+    "name": "Complex Analysis",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA45/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA53",
+    "name": "Linear Algebra, Honours Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA53",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA69",
+    "name": "Calculus in Several Variables",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA69/vt-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATA82",
+    "name": "Discrete Mathematics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TATA82/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATB01",
+    "name": "Foundation Course in Mathematics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATB01/ht-2023",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2023,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TATM38",
+    "name": "Mathematical Models in Biology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TATM38",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TBMI26",
+    "name": "Neural Networks and Learning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TBMI26",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC17",
+    "name": "Artificial Intelligence",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC17/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC88",
+    "name": "Software Engineering",
+    "credits": 12,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC88/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDC90",
+    "name": "Software Security",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDC90",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD04",
+    "name": "Software Testing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD04",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD07",
+    "name": "Real Time Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD07/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD12",
+    "name": "Database Technology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD12/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD23",
+    "name": "Design and Programming of Computer Games",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD23/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD27",
+    "name": "Advanced Web Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD27",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD41",
+    "name": "Data Mining - Clustering and Association Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD41",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD43",
+    "name": "Advanced Data Models and Databases",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD43/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD57",
+    "name": "Physical Interaction and Game Programming",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD57",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD81",
+    "name": "Database Technology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD81/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD83",
+    "name": "Computer Engineering - Bachelor Project",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD83/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1,
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDD89",
+    "name": "Scientific Method",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDD89",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE01",
+    "name": "Machine Learning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE01/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE07",
+    "name": "Bayesian Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE07",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE10",
+    "name": "Object Oriented Programming in Java",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE10/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE15",
+    "name": "Advanced Machine Learning",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE15",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE18",
+    "name": "Programming C++",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE18/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE22",
+    "name": "Data Structures and Algorithms",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE22/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE31",
+    "name": "Big Data Analytics",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE31",
+    "ecv": "C/E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE41",
+    "name": "Software Architectures",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE41",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE45",
+    "name": "Software Design and Construction",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE45",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDA"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDA"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE50",
+    "name": "Megagame - Design for Sustainable Development in the light of Climate Change",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE50",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE65",
+    "name": "Programming of Parallel Computers - Methods and Tools",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE65",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDDE67",
+    "name": "Introduction to Programming",
+    "credits": 8,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDDE67/vt-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI19",
+    "name": "Management Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI19/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI35",
+    "name": "Strategy and Management Control",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI35",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI73",
+    "name": "Digital Business Models",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI73/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDB",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDB",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI74",
+    "name": "Business Analytics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI74",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDB",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDB",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI75",
+    "name": "Advanced Digital Business Development",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI75",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDB"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMDB"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDEI76",
+    "name": "Enterprise Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TDEI76",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMDB"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMDB"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDTS04",
+    "name": "Computer Networks and Distributed Systems",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDTS04",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TDTS10",
+    "name": "Computer Architecture",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TDTS10/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE13",
+    "name": "Civil and Commercial Law",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE13",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEAE18",
+    "name": "Sustainable Value Chain Strategies",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEAE18",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE06",
+    "name": "Corporate Planning",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE06",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE17",
+    "name": "Industrial Economics",
+    "credits": 10,
+    "level": "G1X",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE17/ht-2023",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2023,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE42",
+    "name": "Industrial Sales Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE42/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMIM",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE72",
+    "name": "Corporate Strategies",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE72/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMIM",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIE88",
+    "name": "Computer Law",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIE88",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIG02",
+    "name": "Advanced Project Course - Management and Innovation",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIG02",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIG03",
+    "name": "Innovation and sustainability transition",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIG03/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEII18",
+    "name": "Japanese for Engineers III",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEII18/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEII22",
+    "name": "Japanese for Engineers I, Part 2",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEII22/vt-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 2,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEII41",
+    "name": "Japanese for Engineers II, Part 1",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEII41/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEII42",
+    "name": "Japanese for Engineers II, Part 2",
+    "credits": 2,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEII42/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEII43",
+    "name": "Japanese for Engineers 1",
+    "credits": 6,
+    "level": "G1X",
+    "link": "https://studieinfo.liu.se/en/kurs/TEII43/ht-2023",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2023,
+        "semester": 1,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 0,
+            "blocks": []
+          },
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM04",
+    "name": "Industrial Market and Technology Strategies",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM04",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM07",
+    "name": "Industrial Market Research",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM07",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMIM",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM09",
+    "name": "International Business",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM09",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMIM",
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM10",
+    "name": "Industrial Service Development",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM10/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMIM",
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMIM"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM13",
+    "name": "Intercultural Communication",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM13/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIM32",
+    "name": "Industrial Marketing",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIM32/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIN02",
+    "name": "Business Model Innovation Strategies",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIN02",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMSS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMSS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO04",
+    "name": "Project Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO04/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO06",
+    "name": "Innovative Entrepreneurship",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO06",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO07",
+    "name": "Project Based Organization and Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO07/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO13",
+    "name": "Leadership and Organizational Change",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO13",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO41",
+    "name": "Corporate Social Responsibility",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO41",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO61",
+    "name": "Industrial Management",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO61/vt-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO90",
+    "name": "Innovation Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO90/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TEIO91",
+    "name": "Project Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TEIO91/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS27",
+    "name": "Supply Chain Logistics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS27/ht-2026",
+    "ecv": "C/E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS31",
+    "name": "Logistics Strategies",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS31",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS36",
+    "name": "Sustainable Logistics Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS36",
+    "ecv": "C/E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS37",
+    "name": "Basics in Logistics Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS37/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS38",
+    "name": "Logistics Project",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS38",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS56",
+    "name": "Logistics and Quality in Health Care",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS56",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV",
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMKV",
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS57",
+    "name": "Logistics Analysis",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS57",
+    "ecv": "C/E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TETS58",
+    "name": "Strategic Purchasing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TETS58/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFBI11",
+    "name": "Genetics and Evolution",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFBI11/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFBI22",
+    "name": "Cell Biology and Microbial Processes",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFBI22/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFBI23",
+    "name": "Ecology and the Environment",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFBI23/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFBI25",
+    "name": "Environmental Health Assessment and Toxicology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFBI25/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFBI26",
+    "name": "Biological Resources and Sustainability - Bachelor Project",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TFBI26/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFKE64",
+    "name": "Environmental Impact of Molecules",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TFKE64/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TFYA85",
+    "name": "Alternative Energy Sources and their Applications",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TFYA85",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU84",
+    "name": "Diversity and Gender in Engineering",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU84",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU91",
+    "name": "Oral and Written Communication",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU91",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU94",
+    "name": "Technology and Ethics",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU94",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TGTU95",
+    "name": "Philosophy of Science and Technology",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TGTU95",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TINT02",
+    "name": "Intercultural Competence and Intercultural Communication, Continued Course",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TINT02",
+    "ecv": "V",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ31",
+    "name": "Biofuels for Transportation",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ31/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ35",
+    "name": "Industrial Ecology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ35/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ39",
+    "name": "Resource Efficient Products and Production",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ39/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ47",
+    "name": "Environmental Systems Analysis",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ47",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ51",
+    "name": "Corporate Sustainability Management",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ51/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TKMJ59",
+    "name": "Environment and innovation, development of business models",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TKMJ59/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES17",
+    "name": "Building Energy Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES17/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES21",
+    "name": "Industrial Energy Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES21",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES41",
+    "name": "Strategic Development of Sustainable Energy Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES41",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES43",
+    "name": "Analysis and Modelling of Industrial Energy Systems",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES43",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES44",
+    "name": "Energy Systems - Supply and Demand",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES44/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMES51",
+    "name": "International Energy Markets",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMES51",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMHL22",
+    "name": "Solid Mechanics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMHL22/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMHP03",
+    "name": "Engineering Systems Design",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMHP03/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA03",
+    "name": "Industrial Design",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA03",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKA11",
+    "name": "Model-based System-of-Systems Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKA11/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKM12",
+    "name": "Engineering Materials",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKM12/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKM16",
+    "name": "Sustainable Material Selection",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKM16/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT39",
+    "name": "Machine Elements",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT39/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT48",
+    "name": "Design Optimization",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT48",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT57",
+    "name": "Product Modelling",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT57",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT71",
+    "name": "Affective Engineering",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT71/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT74",
+    "name": "Advanced CAD",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT74",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT77",
+    "name": "System Safety",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT77",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMKT83",
+    "name": "Small Scale Renewable Energy Conversion",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMKT83",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMME11",
+    "name": "Road Vehicle Dynamics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMME11",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMME27",
+    "name": "Engineering Mechanics",
+    "credits": 10,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMME27/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMI46",
+    "name": "Industrial Automation",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMI46/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMS21",
+    "name": "Mechatronics",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMS21",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV04",
+    "name": "Engineering Thermodynamics",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV04/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV11",
+    "name": "Fluid Mechanics and Heat Transfer",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV11/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV16",
+    "name": "Energy Engineering - Bachelor Project",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV16/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV58",
+    "name": "Modelling and Simulation of Energy and Heat Transfer Processes",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV58/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMMV61",
+    "name": "Applied Energy Engineering",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMMV61/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPE10",
+    "name": "Project Course Advanced - Sustainability Engineering and Management",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPE10",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPM08",
+    "name": "Project Course Advanced - Manufacturing Engineering",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPM08",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPR02",
+    "name": "Introduction to Mechanical Engineering",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPR02/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPR05",
+    "name": "Advanced production processes and systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPR05",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPS27",
+    "name": "Production Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPS27",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPS31",
+    "name": "Sustainable Manufacturing",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPS31/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPS32",
+    "name": "Mechanical Engineering - Bachelor Project",
+    "credits": 18,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPS32/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMPS34",
+    "name": "Manufacturing Engineering",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMPS34/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU03",
+    "name": "Quality Management and Engineering",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU03/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU04",
+    "name": "Six Sigma Quality",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU04",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU12",
+    "name": "Lean Production",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU12/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU13",
+    "name": "Customer Focused Product and Service Development",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU13",
+    "ecv": "C/E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU27",
+    "name": "Quality Management - Project Course",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU27",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU31",
+    "name": "Statistical Quality Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU31",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TMQU47",
+    "name": "Quality Engineering and Design",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TMQU47",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMKV"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMKV"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE13",
+    "name": "Production and Operations Management",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE13/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE16",
+    "name": "Manufacturing Strategies",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE16/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE17",
+    "name": "Corporate Finance",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE17/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE24",
+    "name": "Economic Analysis: Decision- and Financial Methodology",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE24/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE29",
+    "name": "Financial Markets and Instruments",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE29/ht-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE32",
+    "name": "Financial Risk Management",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE32",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE33",
+    "name": "Portfolio Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE33",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE53",
+    "name": "Financial Valuation Methodology",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE53",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE61",
+    "name": "Financial Optimization",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE61",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE66",
+    "name": "Investment Valuation",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE66",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMFI"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMFI"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE73",
+    "name": "Operations Management - Project Course",
+    "credits": 12,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE73",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE74",
+    "name": "Design and Development of Manufacturing Operations",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE74",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE76",
+    "name": "Operations Planning and Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE76/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE78",
+    "name": "Quantitative Models and Analysis in Operations Management",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE78",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE98",
+    "name": "Economic Analysis: Economic Theory",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE98/ht-2024",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2024,
+        "semester": 3,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPPE99",
+    "name": "Simulation in Production and Logistics",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TPPE99",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [
+      "IMLS",
+      "IMPL"
+    ],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [
+          "IMLS",
+          "IMPL"
+        ],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TPTE06",
+    "name": "Industrial Placement",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TPTE06/vt-2026",
+    "ecv": "V",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TQXX33",
+    "name": "Degree project - Master’s Thesis",
+    "credits": 30,
+    "level": "A2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TQXX33",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2028,
+        "semester": 10,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": []
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSBB18",
+    "name": "Embedded Perception Systems",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSBB18/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSDT14",
+    "name": "Signal Theory",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSDT14/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSDT84",
+    "name": "Signals and Systems, and Transform Theory",
+    "credits": 8,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSDT84/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSEA22",
+    "name": "Switching Theory and Logical Design",
+    "credits": 6,
+    "level": "G1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA22/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSEA52",
+    "name": "Switching Theory and Logical Design",
+    "credits": 6,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA52/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSEA56",
+    "name": "Electronics Engineering - Bachelor Project",
+    "credits": 16,
+    "level": "G2E",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA56/vt-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSEA81",
+    "name": "Computer Engineering and Real-time Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA81/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSEA82",
+    "name": "Computer Hardware and Architecture",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSEA82/vt-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSFS12",
+    "name": "Autonomous Vehicles - Planning, Control, and Learning Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSFS12",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIT02",
+    "name": "Computer Security",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIT02/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSIT03",
+    "name": "Cryptology",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSIT03",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSKS10",
+    "name": "Signals, Information and Communication",
+    "credits": 4,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSKS10/vt-2026",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 6,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSKS16",
+    "name": "Signal Processing for Communications",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSKS16",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSKS33",
+    "name": "Complex Networks and Big Data",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSKS33/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT04",
+    "name": "Introduction in Matlab",
+    "credits": 2,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT04/vt-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 4,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          },
+          {
+            "period": 2,
+            "blocks": [
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT07",
+    "name": "Industrial Control Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT07",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT08",
+    "name": "Optimal Control",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT08",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 9,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT09",
+    "name": "Control Theory",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT09",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2027,
+        "semester": 8,
+        "ht_or_vt": "VT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT22",
+    "name": "Automatic Control",
+    "credits": 6,
+    "level": "G2F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT22/ht-2025",
+    "ecv": "C",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT78",
+    "name": "Digital Signal Processing",
+    "credits": 6,
+    "level": "A1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT78/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 2,
+            "blocks": [
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSRT92",
+    "name": "Modelling and Learning for Dynamical Systems",
+    "credits": 6,
+    "level": "A1N",
+    "link": "https://studieinfo.liu.se/en/kurs/TSRT92/ht-2026",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2026,
+        "semester": 7,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TSTE95",
+    "name": "Electronics",
+    "credits": 4,
+    "level": "G1F",
+    "link": "https://studieinfo.liu.se/en/kurs/TSTE95/ht-2025",
+    "ecv": "E",
+    "program": [
+      "6CIEI-JA"
+    ],
+    "mastersPrograms": [],
+    "occasions": [
+      {
+        "year": 2025,
+        "semester": 5,
+        "ht_or_vt": "HT",
+        "recommended_masters": [],
+        "periods": [
+          {
+            "period": 1,
+            "blocks": [
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

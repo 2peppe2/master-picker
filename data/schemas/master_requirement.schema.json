@@ -51,7 +51,7 @@
             "minCount": { "type": "integer", "minimum": 1 },
             "courses": {
               "type": "array",
-              "items": { "type": "string", "pattern": "^[A-Z]{4}\\d{2}$" },
+              "items": { "type": "string", "pattern": "^[A-Z]{3,4}\\d{2,3}$" },
               "minItems": 1
             }
           },

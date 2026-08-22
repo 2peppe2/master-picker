@@ -1,0 +1,93 @@
+[
+  {
+    "id": "YDAM",
+    "name": "Data Science and Machine Intelligence",
+    "icon": "Sparkles",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YDSA",
+    "name": "Computer Vision and Signal Analysis",
+    "icon": "ScanEye",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YFMA",
+    "name": "Financial Mathematics",
+    "icon": "Pi",
+    "style": "bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/20 dark:text-emerald-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YFOT",
+    "name": "Photonics and Quantum Technology",
+    "icon": "Microchip",
+    "style": "bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-900/20 dark:text-amber-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YIDS",
+    "name": "Embedded digital systems",
+    "icon": "CircuitBoard",
+    "style": "bg-rose-100 text-rose-800 border-rose-300 dark:bg-rose-900/20 dark:text-rose-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YKOM",
+    "name": "Communication",
+    "icon": "CircuitBoard",
+    "style": "bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-indigo-900/20 dark:text-indigo-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YMED",
+    "name": "Biomedical Engineering",
+    "icon": "Pill",
+    "style": "bg-lime-100 text-lime-800 border-lime-300 dark:bg-lime-900/20 dark:text-lime-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YMEK",
+    "name": "Mechanics and Control",
+    "icon": "Bot",
+    "style": "bg-cyan-100 text-cyan-800 border-cyan-300 dark:bg-cyan-900/20 dark:text-cyan-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YMNF",
+    "name": "Applied Physics - Materials and Nano Physics",
+    "icon": "Microchip",
+    "style": "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300 dark:bg-fuchsia-900/20 dark:text-fuchsia-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YSIS",
+    "name": "Control and Information Systems",
+    "icon": "Bot",
+    "style": "bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900/20 dark:text-orange-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YTMA",
+    "name": "Engineering Mathematics",
+    "icon": "Pi",
+    "style": "bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/20 dark:text-blue-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YTMD",
+    "name": "Applied Physics - Theory, Modelling and Computation",
+    "icon": "Pi",
+    "style": "bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900/20 dark:text-purple-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  },
+  {
+    "id": "YYME",
+    "name": "Micro electronics",
+    "icon": "Microchip",
+    "style": "bg-pink-100 text-pink-800 border-pink-300 dark:bg-pink-900/20 dark:text-pink-300",
+    "link": "https://studieinfo.liu.se/program/6CYYY/5458#syllabus"
+  }
+]

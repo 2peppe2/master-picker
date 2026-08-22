@@ -1,0 +1,16 @@
+[
+  {
+    "id": "TMBA",
+    "name": "Computational Mathematics and Analysis",
+    "icon": "Pi",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CTMA/5270#syllabus"
+  },
+  {
+    "id": "TMSO",
+    "name": "Mathematical Statistics and Optimization",
+    "icon": "Pi",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CTMA/5270#syllabus"
+  }
+]

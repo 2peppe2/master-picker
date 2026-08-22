@@ -1,0 +1,16 @@
+[
+  {
+    "id": "KBIB",
+    "name": "Industrial Bioprocesses",
+    "icon": "Pill",
+    "style": "bg-violet-100 text-violet-800 border-violet-300 dark:bg-violet-900/20 dark:text-violet-300",
+    "link": "https://studieinfo.liu.se/program/6CKEB/5171#syllabus"
+  },
+  {
+    "id": "KBPS",
+    "name": "Protein Science and Technology",
+    "icon": "Pill",
+    "style": "bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-900/20 dark:text-sky-300",
+    "link": "https://studieinfo.liu.se/program/6CKEB/5171#syllabus"
+  }
+]

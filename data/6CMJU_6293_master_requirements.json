@@ -1,0 +1,281 @@
+{
+  "$schema": "./schemas/master_requirement.schema.json",
+  "COMMON_BASE": [
+    {
+      "type": "CREDITS_TOTAL",
+      "credits": 300
+    },
+    {
+      "type": "CREDITS_MASTER_TOTAL",
+      "credits": 120
+    },
+    {
+      "type": "CREDITS_ADVANCED_MASTER",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD96"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TQXX33"
+      ]
+    },
+    {
+      "type": "CREDITS_MAIN_FIELD_TOTAL",
+      "credits": 30,
+      "fields": [
+        "Computer Science",
+        "Computer Science and Engineering",
+        "Information Technology"
+      ]
+    }
+  ],
+  "DAIM": [
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 36
+    },
+    {
+      "type": "CREDITS_ADVANCED_PROFILE",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TGTU99"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE19"
+      ]
+    }
+  ],
+  "DIND": [
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEAE01"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO32"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDC34"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE02"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO06"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIM11"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TEIO90"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDEI74",
+        "TEIO13"
+      ]
+    }
+  ],
+  "DMEI": [
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 36
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBME04"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TBMI19"
+      ]
+    }
+  ],
+  "DPAL": [
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 36
+    },
+    {
+      "type": "CREDITS_ADVANCED_PROFILE",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TATA64",
+        "TDDD08",
+        "TDDD20",
+        "TDDE34"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSIT02"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE52"
+      ]
+    }
+  ],
+  "DSEC": [
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 36
+    },
+    {
+      "type": "CREDITS_ADVANCED_PROFILE",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSIT02"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE62"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDC90"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE21",
+        "TDDE63"
+      ]
+    }
+  ],
+  "DSMU": [
+    {
+      "type": "CREDITS_ADVANCED_PROFILE",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDE52"
+      ]
+    }
+  ],
+  "DSPE": [
+    {
+      "type": "CREDITS_PROFILE_TOTAL",
+      "credits": 36
+    },
+    {
+      "type": "CREDITS_ADVANCED_PROFILE",
+      "credits": 30
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD23"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDC73"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TDDD57"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSBK07"
+      ]
+    },
+    {
+      "type": "COURSE_SELECTION",
+      "minCount": 1,
+      "courses": [
+        "TSBK03"
+      ]
+    }
+  ]
+}
