@@ -145,6 +145,7 @@
   "_schedule_layout_carousel_description": "Scroll blocks sideways",
   "_schedule_layout_grid_description": "Two blocks per row",
   "_search_for": "Search for master, field, or type...",
+  "_searching_for": "Searching for",
   "_select_course": "Select {{courseCode}}",
   "_select_master": "Select master",
   "_select_program": "Select program",
