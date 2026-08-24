@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getSwipeDirection } from "@/common/hooks/useHorizontalSwipe";
+import { getGridLayout } from "@/features/dashboard/components/Drawer/components/hooks/useCourseResultGridLayout";
 import {
   getCurrentTermScrollTarget,
   isScrollTargetReachable,
@@ -85,5 +86,47 @@ describe("hook decision helpers", () => {
       shouldWriteScheduleToUrl("encoded", "encoded"),
     ).toBe(false);
     expect(shouldWriteScheduleToUrl(null, "encoded")).toBe(true);
+  });
+
+  it("keeps the course grid lane count finite when the container is unmeasured", () => {
+    // A detached container reports no width, which used to reach the
+    // virtualizer as a NaN lane count and throw "invalid array length".
+    for (const contentWidth of [Number.NaN, 0, -20]) {
+      expect(getGridLayout({ contentWidth, minTileSize: 130, tileGap: 12 })).toEqual({
+        columns: 1,
+        tileSize: 0,
+        isMeasured: false,
+      });
+    }
+  });
+
+  it("fits course grid tiles inside the measured width", () => {
+    const tileGap = 12;
+    const contentWidth = 560;
+    const { columns, tileSize, isMeasured } = getGridLayout({
+      contentWidth,
+      minTileSize: 130,
+      tileGap,
+    });
+
+    expect(isMeasured).toBe(true);
+    expect(Number.isInteger(columns)).toBe(true);
+    expect(columns).toBeGreaterThanOrEqual(1);
+    expect(columns * tileSize + (columns - 1) * tileGap).toBeLessThanOrEqual(
+      contentWidth,
+    );
+  });
+
+  it("always yields an integer lane count for the grid", () => {
+    for (const contentWidth of [Number.NaN, 0, 1, 91.5, 320, 1_007.3]) {
+      for (const [minTileSize, tileGap] of [
+        [130, 12],
+        [92, 8],
+      ]) {
+        const { columns } = getGridLayout({ contentWidth, minTileSize, tileGap });
+        expect(Number.isInteger(columns)).toBe(true);
+        expect(columns).toBeGreaterThanOrEqual(1);
+      }
+    }
   });
 });

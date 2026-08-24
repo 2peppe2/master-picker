@@ -145,6 +145,7 @@
   "_schedule_layout_carousel_description": "Bläddra block i sidled",
   "_schedule_layout_grid_description": "Två block per rad",
   "_search_for": "Sök efter master, huvudområde eller typ...",
+  "_searching_for": "Söker efter",
   "_select_course": "Välj {{courseCode}}",
   "_select_master": "Välj master",
   "_select_program": "Välj program",
