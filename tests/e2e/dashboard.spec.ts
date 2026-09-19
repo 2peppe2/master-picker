@@ -382,6 +382,27 @@ test.describe("dashboard", () => {
     },
   );
 
+  test("opens master overflow without selecting its first item", async ({
+    page,
+  }) => {
+    test.skip(!isDesktop(page), "Desktop overflow popover only");
+
+    await page.setViewportSize({ width: 1280, height: 720 });
+    await page.goto(earlierDashboardUrl);
+
+    const moreBadge = page.locator("[data-master-overflow-badge]:visible");
+    await expect(moreBadge).toBeVisible();
+    await moreBadge.hover();
+
+    const overflow = page.locator('[data-slot="popover-content"]:visible');
+    const firstMaster = overflow.locator("[data-master-overflow-row]").first();
+    await expect(overflow).toBeVisible();
+    await expect(firstMaster).not.toBeFocused();
+    await expect(
+      page.locator('[data-slot="tooltip-content"]:visible'),
+    ).toHaveCount(0);
+  });
+
   test("supports keyboard navigation between compact dashboard tabs", async ({
     page,
   }) => {
