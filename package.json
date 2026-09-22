@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "overrides": {
-    "deepmerge-ts": "8.0.1"
+    "deepmerge-ts": "8.0.1",
+    "mysql2": "3.24.4"
   },
   "scripts": {
     "dev": "next dev --turbopack",
