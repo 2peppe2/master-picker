@@ -16,7 +16,7 @@ const BannerSlide: FC<BannerSlideProps> = ({ children }) => {
       initial={{ y: offset, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -offset, opacity: 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.35, ease: "easeOut" }}
       className="absolute inset-0 flex items-center justify-center gap-2 px-4"
     >
       {children}

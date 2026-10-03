@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-import Disclaimer from "./components/Disclaimer";
+import DashboardBanner from "./components/DashboardBanner";
 import Schedule from "../Schedule";
 import Drawer from "../Drawer";
 import { FC } from "react";
@@ -39,12 +39,12 @@ const DashboardViewLandscape: FC = () => (
       )}
     >
       {/*
-       * The disclaimer sits over the schedule rather than spanning the whole
+       * The banner sits over the schedule rather than spanning the whole
        * app: the header row above is already the full width, and stacking a
        * second full-width strip on it ate the little height landscape has.
        */}
       <div className="shrink-0">
-        <Disclaimer dense />
+        <DashboardBanner dense />
       </div>
 
       <div

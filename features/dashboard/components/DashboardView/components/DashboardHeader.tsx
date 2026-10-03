@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import MastersRequirementsBar from "../../MastersRequirementsBar";
 import DashboardHeaderActions from "./DashboardHeaderActions";
 import DashboardHeaderWordmark from "./DashboardHeaderWordmark";
-import Disclaimer from "./Disclaimer";
+import DashboardBanner from "./DashboardBanner";
 import { FC, useState } from "react";
 
 interface DashboardHeaderProps {
@@ -53,7 +53,7 @@ const DashboardHeader: FC<DashboardHeaderProps> = ({ dense = false }) => {
       ) : (
         <>
           <div>
-            <Disclaimer />
+            <DashboardBanner compact />
           </div>
 
           <div
