@@ -4,7 +4,7 @@ export const chartConfig = {
   quantity: { label: "Students" },
 };
 
-export const EXAM_MODULE_CODES = ["TEN", "DIT", "DAT", "PRA"];
+export const EXAM_MODULE_CODES = ["TEN", "DIT", "DAT", "PRA", "MUN"];
 
 export const LAB_MODULE_CODES = ["LAB", "UPG", "KTR"];
 
