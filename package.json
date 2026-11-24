@@ -45,7 +45,7 @@
     "copy-to-clipboard": "^3.3.3",
     "dotenv": "^17.3.1",
     "framer-motion": "^12.23.24",
-    "i18next": "^25.8.13",
+    "i18next": "^27.2.7",
     "i18next-browser-languagedetector": "^8.2.1",
     "immer": "^10.2.0",
     "jotai": "^2.15.0",
