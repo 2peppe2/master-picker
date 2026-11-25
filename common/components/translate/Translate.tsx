@@ -38,7 +38,7 @@ const Translate: FC<TranslateProps> = memo(
       );
     }
 
-    return <>{translate(text, args)}</>;
+    return <>{args ? translate(text, args) : translate(text)}</>;
   },
 );
 

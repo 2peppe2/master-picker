@@ -4,7 +4,8 @@
   "private": true,
   "overrides": {
     "deepmerge-ts": "8.0.1",
-    "mysql2": "3.24.4"
+    "mysql2": "3.24.4",
+    "effect": "3.22.1"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -45,7 +46,7 @@
     "copy-to-clipboard": "^3.3.3",
     "dotenv": "^17.3.1",
     "framer-motion": "^12.23.24",
-    "i18next": "^25.8.13",
+    "i18next": "^27.2.7",
     "i18next-browser-languagedetector": "^8.2.1",
     "immer": "^10.2.0",
     "jotai": "^2.15.0",
