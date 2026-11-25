@@ -4,7 +4,8 @@
   "private": true,
   "overrides": {
     "deepmerge-ts": "8.0.1",
-    "mysql2": "3.24.4"
+    "mysql2": "3.24.4",
+    "effect": "3.22.1"
   },
   "scripts": {
     "dev": "next dev --turbopack",
