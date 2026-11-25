@@ -23,7 +23,7 @@ export const useCourseTranslate = () => {
     if (!mounted && !translationReady) {
       return ((key: string, options?: TOptions) => {
         return i18n.t(key, { ...options, lng: "sv", ns: "courses" });
-      }) as typeof t;
+      }) as unknown as typeof t;
     }
     return t;
   }, [t, i18n, mounted, translationReady]);
